@@ -1,0 +1,31 @@
+E:\Projects\IGEM 2013\iGEM-SYSU\bin\Release\CefSharp-Example.exe
+E:\Projects\IGEM 2013\iGEM-SYSU\bin\Release\CefSharp-Example.pdb
+E:\Projects\IGEM 2013\iGEM-SYSU\bin\Release\CefSharp.dll
+E:\Projects\IGEM 2013\iGEM-SYSU\bin\Release\CefSharp.WinForms.dll
+E:\Projects\IGEM 2013\iGEM-SYSU\obj\Release\ResolveAssemblyReference.cache
+E:\Projects\IGEM 2013\iGEM-SYSU\obj\Release\iGEM.iGEM.resources
+E:\Projects\IGEM 2013\iGEM-SYSU\obj\Release\CefSharp-Example.Properties.Resources.resources
+E:\Projects\IGEM 2013\iGEM-SYSU\obj\Release\ResGen.read.1.tlog
+E:\Projects\IGEM 2013\iGEM-SYSU\obj\Release\ResGen.write.1.tlog
+E:\Projects\IGEM 2013\iGEM-SYSU\obj\Release\CefSharp-Example.exe
+E:\Projects\IGEM 2013\iGEM-SYSU\obj\Release\CefSharp-Example.pdb
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\obj\Release\CefSharp-Example.exe
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\obj\Release\CefSharp-Example.pdb
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\bin\Release\CefSharp-Example.exe
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\bin\Release\CefSharp-Example.pdb
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\bin\Release\CefSharp.dll
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\bin\Release\CefSharp.WinForms.dll
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\obj\Release\iGEM-SYSU.csprojResolveAssemblyReference.cache
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\obj\Release\iGEM.iGEM.resources
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\obj\Release\CefSharp-Example.Properties.Resources.resources
+F:\中大\IGem\2013\iGEM-SOFTWARE\iGEM-Browser\obj\Release\iGEM-SYSU.csproj.GenerateResource.Cache
+F:\igemgit\project\iGEM-Browser\obj\Release\CefSharp-Example.exe
+F:\igemgit\project\iGEM-Browser\obj\Release\CefSharp-Example.pdb
+F:\igemgit\project\iGEM-Browser\bin\Release\CefSharp-Example.exe
+F:\igemgit\project\iGEM-Browser\bin\Release\CefSharp-Example.pdb
+F:\igemgit\project\iGEM-Browser\bin\Release\CefSharp.dll
+F:\igemgit\project\iGEM-Browser\bin\Release\CefSharp.WinForms.dll
+F:\igemgit\project\iGEM-Browser\obj\Release\iGEM-SYSU.csprojResolveAssemblyReference.cache
+F:\igemgit\project\iGEM-Browser\obj\Release\iGEM.iGEM.resources
+F:\igemgit\project\iGEM-Browser\obj\Release\CefSharp-Example.Properties.Resources.resources
+F:\igemgit\project\iGEM-Browser\obj\Release\iGEM-SYSU.csproj.GenerateResource.Cache

@@ -1,0 +1,13 @@
+C:\Users\q\Desktop\CefSharp-Example-master\bin\Debug\CefSharp-Example.exe
+C:\Users\q\Desktop\CefSharp-Example-master\bin\Debug\CefSharp-Example.pdb
+C:\Users\q\Desktop\CefSharp-Example-master\bin\Debug\CefSharp.dll
+C:\Users\q\Desktop\CefSharp-Example-master\bin\Debug\CefSharp.WinForms.dll
+C:\Users\q\Desktop\CefSharp-Example-master\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\q\Desktop\CefSharp-Example-master\obj\Debug\iGEM.iGEM.resources
+C:\Users\q\Desktop\CefSharp-Example-master\obj\Debug\CefSharp-Example.Properties.Resources.resources
+C:\Users\q\Desktop\CefSharp-Example-master\obj\Debug\ResGen.read.1.tlog
+C:\Users\q\Desktop\CefSharp-Example-master\obj\Debug\ResGen.write.1.tlog
+C:\Users\q\Desktop\CefSharp-Example-master\obj\Debug\CefSharp-Example.exe
+C:\Users\q\Desktop\CefSharp-Example-master\obj\Debug\CefSharp-Example.pdb
+E:\Projects\IGEM 2013\iGEM-SYSU\obj\Debug\CefSharp-Example.exe
+E:\Projects\IGEM 2013\iGEM-SYSU\obj\Debug\CefSharp-Example.pdb
