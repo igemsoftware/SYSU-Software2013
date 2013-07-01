@@ -14,7 +14,7 @@ SYSU iGEM software
 2. Open the "IGEM-Browser"
 	> See "Hello world" in browser
 
-Following jobs:
+Following jobs:<br>
 	1. Chromium CEF, optimize ( C++ & C# )
 	2. Web client ( HTML, CSS, JAVASCRIPT )
 	3. Server, GPU Computing ( Python & C++ )
