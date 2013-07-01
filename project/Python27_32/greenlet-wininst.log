@@ -1,0 +1,14 @@
+*** Installation started 2013/05/11 17:14 ***
+Source: F:\tddownload\新建文件夹\lol\greenlet-0.4.0.win32-py2.7.exe
+999 Root Key: HKEY_LOCAL_MACHINE
+020 Reg DB Key: [Software\Microsoft\Windows\CurrentVersion\Uninstall]greenlet-py2.7
+040 Reg DB Value: [Software\Microsoft\Windows\CurrentVersion\Uninstall\greenlet-py2.7]DisplayName=Python 2.7 greenlet-0.4.0
+040 Reg DB Value: [Software\Microsoft\Windows\CurrentVersion\Uninstall\greenlet-py2.7]UninstallString="E:\Python27_32\Removegreenlet.exe" -u "E:\Python27_32\greenlet-wininst.log"
+100 Made Dir: E:\Python27_32\Include\greenlet
+200 File Copy: E:\Python27_32\Include\greenlet\greenlet.h
+200 File Copy: E:\Python27_32\Lib\site-packages\greenlet.pyd
+200 File Copy: E:\Python27_32\Lib\site-packages\greenlet-0.4.0-py2.7.egg-info\dependency_links.txt
+200 File Copy: E:\Python27_32\Lib\site-packages\greenlet-0.4.0-py2.7.egg-info\not-zip-safe
+200 File Copy: E:\Python27_32\Lib\site-packages\greenlet-0.4.0-py2.7.egg-info\PKG-INFO
+200 File Copy: E:\Python27_32\Lib\site-packages\greenlet-0.4.0-py2.7.egg-info\SOURCES.txt
+200 File Copy: E:\Python27_32\Lib\site-packages\greenlet-0.4.0-py2.7.egg-info\top_level.txt

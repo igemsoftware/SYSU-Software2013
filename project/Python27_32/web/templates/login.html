@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Welcome to iGem</title>
+		
+		<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+		
+		<style type="text/css">
+			.header {
+				text-align: center;
+			}
+
+			.login-form {
+				width: 270px;
+				margin: 0 auto;
+			}
+
+			.input-prepend label{
+				margin-bottom: 0px;
+			}
+
+			.btn-group {
+				width: 100px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="header">
+					<h2>Login</h2>
+				</div>
+			</div>
+			
+			<div class="alert" style="display: none">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>The login credentials you supplied could not be recognized. Please try again.</strong> 
+			</div>
+
+			<div class="row-fluid">  
+				<div class="login-form">
+					<div class="input-prepend">
+						<label class="add-on" for="username">帐号:</label>
+						<input type="text" name="userName" id="username"/>
+					</div>  
+					<div class="input-prepend">
+						<label class="add-on" for="password">密码:</label>  
+						<input type="password" name="password" id="password"/>
+					</div>  
+					<div class="btn-group">  
+						<button class="btn btn-primary" id="btn-login" type="submit">登录</button>
+						<button class="btn" type="reset">重置</button> 
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../static/js/jquery-1.8.0.min.js"></script>
+		<script src="../static/js/login.js"></script>
+	</body>
+</html>

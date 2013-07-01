@@ -1,0 +1,208 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Graphiti</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+	<style>
+	body {
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+    background-color: #333; 
+	}
+	</style>
+	<link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="../static/css/graphiti.css">
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+    
+
+    <div class="container">
+      <div class="row">
+          <div class="header">
+              <h1 style="color:#fff;">iGEM</h1>
+          </div>
+      </div>
+      <div class="row">
+        <div id="canvas" class="span8">
+        </div>
+        <div class="span3">
+          <div class="well sidebar-nav" style="background-color:#FFF;">
+            <ul class="nav nav-list">
+              <li class="nav-header">工具栏</li>
+              <li data-shape="g.Shapes.Process" class="palette_node_element graphiti_droppable" >
+                <a href="">
+                  <img src="../static/img/process.png" class="toolbar_icon" /> 圆
+                </a>
+              </li> 
+              <li data-shape="g.Shapes.Arrow" class="palette_node_element graphiti_droppable" >
+                <a href="">
+                  <img src="../static/img/Protein coding sequences.png" class="toolbar_icon" /> Protein coding sequences
+                </a>
+              </li> 
+              <li data-shape="g.Shapes.Rectangle" class="palette_node_element graphiti_droppable" >
+                <a href="">
+                  <img src="../static/img/external.png" class="toolbar_icon" /> 矩形
+                </a>
+              </li> 
+              <li data-shape="g.Shapes.Diamond" class="palette_node_element graphiti_droppable" >
+                <a href="">
+                  <img src="../static/img/diamond.png" class="toolbar_icon" /> 菱形
+                </a>
+              </li> 
+              <li>
+                <button id="btn-load">加载</button>
+              </li>
+              <li>
+                <button id="btn-save">保存</button>
+              </li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+
+
+      </div>
+    </div> <!-- /container -->
+
+
+<script src="../static/js/underscore-min.js"></script>
+<script src="../static/js/jquery-1.8.0.min.js"></script>
+<script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>
+
+<!-- graphiti -->
+<script src="../static/js/lib/shifty.js"></script>
+<script src="../static/js/lib/raphael.js"></script>
+<script src="../static/js/lib/jquery.layout.js"></script>
+
+<script src="../static/js/lib/rgbcolor.js"></script>
+<script src="../static/js/lib/canvg.js"></script>
+<script src="../static/js/lib/Class.js"></script>
+<script src="../static/js/lib/json2.js"></script>
+
+<script src="../static/js/graphiti/graphiti.js"></script>
+<script src="../static/js/graphiti/SnapToHelper.js"></script>
+
+
+<script src="../static/js/graphiti/util/Color.js"></script>
+<script src="../static/js/graphiti/util/ArrayList.js"></script>
+<script src="../static/js/graphiti/util/UUID.js"></script>
+<script src="../static/js/graphiti/geo/PositionConstants.js"></script>
+<script src="../static/js/graphiti/geo/Point.js"></script>
+<script src="../static/js/graphiti/geo/Rectangle.js"></script>
+
+<script src="../static/js/graphiti/command/CommandType.js"></script>
+<script src="../static/js/graphiti/command/Command.js"></script>
+<script src="../static/js/graphiti/command/CommandStack.js"></script>
+<script src="../static/js/graphiti/command/CommandStackEvent.js"></script>
+<script src="../static/js/graphiti/command/CommandStackEventListener.js"></script>
+<script src="../static/js/graphiti/command/CommandMove.js"></script>
+<script src="../static/js/graphiti/command/CommandResize.js"></script>
+<script src="../static/js/graphiti/command/CommandConnect.js"></script>
+<script src="../static/js/graphiti/command/CommandReconnect.js"></script>
+<script src="../static/js/graphiti/command/CommandDelete.js"></script>
+<script src="../static/js/graphiti/command/CommandAdd.js"></script>
+
+<script src="../static/js/graphiti/layout/connection/ConnectionRouter.js"></script>
+<script src="../static/js/graphiti/layout/connection/DirectRouter.js"></script>
+<script src="../static/js/graphiti/layout/connection/ManhattanConnectionRouter.js"></script>
+
+<script src="../static/js/graphiti/layout/mesh/MeshLayouter.js"></script>
+<script src="../static/js/graphiti/layout/mesh/ExplodeLayouter.js"></script>
+<script src="../static/js/graphiti/layout/mesh/ProposedMeshChange.js"></script>
+
+<script src="../static/js/graphiti/layout/locator/Locator.js"></script>
+<script src="../static/js/graphiti/layout/locator/PortLocator.js"></script>
+<script src="../static/js/graphiti/layout/locator/InputPortLocator.js"></script>
+<script src="../static/js/graphiti/layout/locator/OutputPortLocator.js"></script>
+<script src="../static/js/graphiti/layout/locator/ConnectionLocator.js"></script>
+<script src="../static/js/graphiti/layout/locator/ManhattanMidpointLocator.js"></script>
+<script src="../static/js/graphiti/layout/locator/CenterLocator.js"></script>
+<script src="../static/js/graphiti/layout/locator/TopLocator.js"></script>
+<script src="../static/js/graphiti/layout/locator/RightLocator.js"></script>
+<script src="../static/js/graphiti/layout/locator/LeftLocator.js"></script>
+<script src="../static/js/graphiti/layout/locator/BottomLocator.js"></script>
+
+<script src="../static/js/graphiti/Canvas.js"></script>
+<script src="../static/js/graphiti/Figure.js"></script>
+<script src="../static/js/graphiti/shape/node/Node.js"></script>
+<script src="../static/js/graphiti/VectorFigure.js"></script>
+<script src="../static/js/graphiti/shape/basic/Rectangle.js"></script>
+<script src="../static/js/graphiti/SetFigure.js"></script>
+<script src="../static/js/graphiti/SVGFigure.js"></script>
+
+<script src="../static/js/graphiti/shape/icon/Icon.js"></script>
+<script src="../static/js/graphiti/shape/icon/ProteinArrow.js"></script>
+
+<script src="../static/js/graphiti/shape/basic/Oval.js"></script>
+<script src="../static/js/graphiti/shape/basic/Circle.js"></script>
+<script src="../static/js/graphiti/shape/basic/Diamond.js"></script>
+<script src="../static/js/graphiti/shape/basic/Label.js"></script>
+<script src="../static/js/graphiti/shape/basic/Line.js"></script>
+<script src="../static/js/graphiti/shape/basic/PolyLine.js"></script>
+<script src="../static/js/graphiti/Connection.js"></script>
+<script src="../static/js/graphiti/ResizeHandle.js"></script>
+<script src="../static/js/graphiti/LineResizeHandle.js"></script>
+<script src="../static/js/graphiti/LineStartResizeHandle.js"></script>
+<script src="../static/js/graphiti/LineEndResizeHandle.js"></script>
+<script src="../static/js/graphiti/Port.js"></script>
+<script src="../static/js/graphiti/InputPort.js"></script>
+<script src="../static/js/graphiti/OutputPort.js"></script>
+<script src="../static/js/graphiti/HybridPort.js"></script>
+<script src="../static/js/graphiti/ConnectionAnchor.js"></script>
+
+<script src="../static/js/graphiti/shape/arrow/CalligrapherArrowLeft.js"></script>
+<script src="../static/js/graphiti/shape/arrow/CalligrapherArrowDownLeft.js"></script>
+<script src="../static/js/graphiti/shape/node/Start.js"></script>
+<script src="../static/js/graphiti/shape/node/End.js"></script>
+<script src="../static/js/graphiti/shape/node/Between.js"></script>
+<script src="../static/js/graphiti/shape/note/PostIt.js"></script>
+
+<script src="../static/js/graphiti/shape/widget/Widget.js"></script>
+<script src="../static/js/graphiti/shape/widget/Slider.js"></script>
+
+<script src="../static/js/graphiti/shape/diagram/Diagram.js"></script>
+<script src="../static/js/graphiti/shape/diagram/Pie.js"></script>
+<script src="../static/js/graphiti/shape/diagram/Sparkline.js"></script>
+
+<script src="../static/js/graphiti/shape/analog/OpAmp.js"></script>
+<script src="../static/js/graphiti/shape/analog/ResistorBridge.js"></script>
+<script src="../static/js/graphiti/shape/analog/ResistorVertical.js"></script>
+<script src="../static/js/graphiti/shape/analog/VoltageSupplyHorizontal.js"></script>
+<script src="../static/js/graphiti/shape/analog/VoltageSupplyVertical.js"></script>
+
+<script src="../static/js/graphiti/ui/LabelEditor.js"></script>
+<script src="../static/js/graphiti/ui/LabelInplaceEditor.js"></script>
+
+<script src="../static/js/graphiti/io/Reader.js"></script>
+<script src="../static/js/graphiti/io/Writer.js"></script>
+<script src="../static/js/graphiti/io/png/Writer.js"></script>
+<script src="../static/js/graphiti/io/svg/Writer.js"></script>
+<script src="../static/js/graphiti/io/json/Writer.js"></script>
+<script src="../static/js/graphiti/io/json/Reader.js"></script>
+
+<script src="../static/js/graphiti/decoration/connection/Decorator.js"></script>
+<script src="../static/js/graphiti/decoration/connection/ArrowDecorator.js"></script>
+<script src="../static/js/graphiti/decoration/connection/DiamondDecorator.js"></script>
+<script src="../static/js/graphiti/decoration/connection/TDecorator.js"></script>
+
+
+<!-- Custom js -->
+<script src="../static/js/script.js"></script>
+
+<!-- <script src="static/js/libs/bootstrap/bootstrap.min.js"></script> -->
+
+
+</body>
+</html>
