@@ -1,0 +1,104 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>4548</part_id>
+<part_name>BBa_E0021</part_name>
+<part_short_name>E0021</part_short_name>
+<part_short_desc>ECFP (RBS+ LVA-)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Unavailable</part_status>
+<part_results>None</part_results>
+<part_nickname>ecfp</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_E0021</part_url>
+<part_entered>2004-04-22</part_entered>
+<part_author>Caitlin Conboy and Jennifer Braff</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gaaagaggagaaattaagcatggtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacg
+gcgacgtaaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttc
+atctgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccctgacctggggcgtgcagtgcttcagccg
+ctaccccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttct
+tcaaggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaag
+ggcatcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaactacatcagccacaacgtctatatcac
+cgccgacaagcagaagaacggcatcaaggccaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccg
+accactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagcacccagtccgcc
+ctgagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcat
+ggacgagctgtacaagtaat
+</seq_data></sequences>
+<features>
+<feature>
+<id>353636</id>
+<title>Clontech RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>19</endpos></feature>
+<feature>
+<id>353637</id>
+<title>ECFP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>736</endpos></feature>
+<feature>
+<id>353638</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>737</startpos>
+<endpos>739</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>tag</name>
+<value>None</value>
+<units></units>
+<url></url>
+<id>3486</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>3487</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>emission</name>
+<value>CFP</value>
+<units></units>
+<url></url>
+<id>3488</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>3489</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//function/reporter</category>
+<category>//function/reporter/fluorescence</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

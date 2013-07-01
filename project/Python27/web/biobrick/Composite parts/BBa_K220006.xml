@@ -1,0 +1,201 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>17039</part_id>
+<part_name>BBa_K220006</part_name>
+<part_short_name>K220006</part_short_name>
+<part_short_desc>Salt Stress Activated Promoter Pro U and RBS+RFP+Term</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K220006</part_url>
+<part_entered>2009-10-20</part_entered>
+<part_author>Sarah Sandock</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>16473</part_id>
+<part_name>BBa_K220004</part_name>
+<part_short_desc>Salt Stress Activated Promoter Pro U</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>16473</part_id>
+<part_name>BBa_K220004</part_name>
+<part_short_desc>Salt Stress Activated Promoter Pro U</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5461</part_id>
+<part_name>BBa_I13507</part_name>
+<part_short_desc>Screening plasmid intermediate</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>16473</part_id>
+<part_name>BBa_K220004</part_name>
+<part_short_desc>Salt Stress Activated Promoter Pro U</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5461</part_id>
+<part_name>BBa_I13507</part_name>
+<part_short_desc>Screening plasmid intermediate</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aatatcactacccgcagcagggaaataattcccgccaaatagctttttatcacgcaaataatttgtggtgatctacactg
+atactctgttgcattattcgcctgaaaccacaatattcaggcgttttttcgctatctttgacaaaaaatatcaactttct
+cgatttgctctcagcccttatatcacgggaaattccggcgatttgctcgcatcaatattcatgccacatttgccatcagg
+ggttgcctcagattctcagtatgttagggtagaaaaaagtgactatttccattgggtaatatatcgacatagacaaataa
+aggaatctttctattgcatggcaattaaattagaaattaaaaatctttataaaatatttggcgagcatccacagcgagcg
+ttcaaatatatcgaacaaggactttcaaaagaacaaattctggaaaaaactgggctatcgcttggcgtaaaagacgccag
+tctggccattgaagaaggcgagatatttgtcatcatgggattatccggctcgggtaaatccacaatggtacgccttctca
+atcgcctgattgaacccacccgcgggcaagtgctgattgatggtgtggatattgccaaaatatccgacgccgaactccgt
+gaggtgcgcagaaaaaagtactagagaaagaggagaaatactagatggcttcctccgaagacgttatcaaagagttcatg
+cgtttcaaagttcgtatggaaggttccgttaacggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacga
+aggtacccagaccgctaaactgaaagttaccaaaggtggtccgctgccgttcgcttgggacatcctgtccccgcagttcc
+agtacggttccaaagcttacgttaaacacccggctgacatcccggactacctgaaactgtccttcccggaaggtttcaaa
+tgggaacgtgttatgaacttcgaagacggtggtgttgttaccgttacccaggactcctccctgcaagacggtgagttcat
+ctacaaagttaaactgcgtggtaccaacttcccgtccgacggtccggttatgcagaaaaaaaccatgggttgggaagctt
+ccaccgaacgtatgtacccggaagacggtgctctgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcac
+tacgacgctgaagttaaaaccacctacatggctaaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaact
+ggacatcacctcccacaacgaagactacaccatcgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgctt
+aataacgctgatagtgctagtgtagatcgctactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactggg
+cctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgc
+gtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2057105</id>
+<title>BBa_K220004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>658</endpos></feature>
+<feature>
+<id>2057107</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>667</startpos>
+<endpos>678</endpos></feature>
+<feature>
+<id>2057106</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>671</startpos>
+<endpos>674</endpos></feature>
+<feature>
+<id>2057108</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>685</startpos>
+<endpos>1359</endpos></feature>
+<feature>
+<id>2057109</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>685</startpos>
+<endpos>1365</endpos></feature>
+<feature>
+<id>2057110</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1366</startpos>
+<endpos>1390</endpos></feature>
+<feature>
+<id>2057111</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1399</startpos>
+<endpos>1478</endpos></feature>
+<feature>
+<id>2057112</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1410</startpos>
+<endpos>1453</endpos></feature>
+<feature>
+<id>2057113</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1487</startpos>
+<endpos>1527</endpos></feature>
+<feature>
+<id>2057114</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1494</startpos>
+<endpos>1513</endpos></feature>
+<feature>
+<id>2057115</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1514</startpos>
+<endpos>1527</endpos></feature>
+<feature>
+<id>2057116</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1520</startpos>
+<endpos>1520</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

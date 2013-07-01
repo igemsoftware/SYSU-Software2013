@@ -1,0 +1,221 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>6307</part_id>
+<part_name>BBa_I50000</part_name>
+<part_short_name>I50000</part_short_name>
+<part_short_desc>F plasmid backbone with BioBrick sites removed.  </part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname>F plasmid</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I50000</part_url>
+<part_entered>2005-11-16</part_entered>
+<part_author>Reshma Shetty</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tcgagtgagcgaggaagcaccagggaacagcacttatatattctgcttacacacgatgcctgaaaaaacttcccttgggg
+ttatccacttatccacggggatatttttataattattttttttatagtttttagatcttcttttttagagcgccttgtag
+gcctttatccatgctggttctacagaaggtgttgtgacaaattgccctttcagtgtgacaaatcaccctcaaatgacagt
+cctgtctgtgacaaattgcccttaaccctgtgacaaattgccctcagaagaagctgttttttcacaaagttatccctgct
+tattgactcttttttatttagtgtgacaatctaaaaacttgtcacacttcacatggatctgtcatggcggaaacagcggt
+tatcaatcacaagaaacgtaaaaatagcccgcgaatcgtccagtcaaacgacctcactgaggcggcatatagtctctccc
+gggatcaaaaacgtatgctgtatctgttcgttgaccagatcagaaaatctgatggcaccctacaggaacatgacggtatc
+tgcgagatccatgttgctaaatatgctgaaatattcggattgacctctgcggaagccagtaaggatatacggcaggcatt
+gaagagtttcgcggggaaggaagtggttttttatcgccctgaagaggatgccggcgatgaaaaaggctatgaatcttttc
+cttggtttatcaaacgtgcgcacagtccatccagagggctttacagtgtacatatcaacccatatctcattcccttcttt
+atcgggttacagaaccggtttacgcagtttcggcttagtgaaacaaaagaaatcaccaatccgtatgccatgcgtttata
+cgaatccctgtgtcagtatcgtaagccggatggctcaggcatcgtctctctgaaaatcgactggatcatagagcgttacc
+agctgcctcaaagttaccagcgtatgcctgacttccgccgccgcttcctgcaagtctgtgttaatgagatcaacagcaga
+actccaatgcgcctctcatacattgagaaaaagaaaggccgccagacgactcatatcgtattttccttccgcgatatcac
+ttccatgacgacaggatagtctgagggttatctgtcacagatttgagggtggttcgtcacatttgttctgacctactgag
+ggtaatttgtcacagttttgctgtttccttcagcctgcatggattttctcatactttttgaactgtaatttttaaggaag
+ccaaatttgagggcagtttgtcacagttgatttccttctctttcccttcgtcatgtgacttgatatcgggggttagttcg
+tcatcattgatgagggttgattatcacagtttattactctgaattggctatccgcgtgtgtacctctacctggagttttt
+cccacggtggatatttcttcttgcgctgagcgtaagagctatctgacagaacagttcttctttgcttcctcgccagttcg
+ctcgctatgctcggttacacggctgcggcgagcgctagtgataataagtgactgaggtatgtgctcttcttatctccttt
+tgtagtgttgctcttattttaaacaactttgcggttttttgatgactttgcgattttgttgttgctttgcagtaaattgc
+aagatttaataaaaaaacgcaaagcaatgattaaaggatgttcagaatgaaactcatggaaacacttaaccagtgcataa
+acgctggtcatgaaatgacgaaggctatcgccattgcacagtttaatgatgacagcccggaagcgaggaaaataacccgg
+cgctggagaataggtgaagcagcggatttagttggggtttcttctcaggctatcagagatgccgagaaagcagggcgact
+accgcacccggatatggaaattcgaggacgggttgagcaacgtgttggttatacaattgaacaaattaatcatatgcgtg
+atgtgtttggtacgcgattgcgacgtgctgaagacgtatttccaccggtgatcggggttgctgcccataaaggtggcgtt
+tacaaaacctcagtttctgttcatcttgctcaggatctggctctgaaggggctacgtgttttgctcgtggaaggtaacga
+cccccagggaacagcctcaatgtatcacggatgggtaccagatcttcatattcatgcagaagacactctcctgcctttct
+atcttggggaaaaggacgatgtcacttatgcaataaagcccacttgctggccggggcttgacattattccttcctgtctg
+gctctgcaccgtattgaaactgagttaatgggcaaatttgatgaaggtaaactgcccaccgatccacacctgatgctccg
+actggccattgaaactgttgctcatgactatgatgtcatagttattgacagcgcgcctaacctgggtatcggcacgatta
+atgtcgtatgtgctgctgatgtgctgattgttcccacgcctgctgagttgtttgactacacctccgcactgcaatttttc
+gatatgcttcgtgatctgctcaagaacgttgatcttaaagggttcgagcctgatgtacgtattttgcttaccaaatacag
+caatagtaatggctctcagtccccgtggatggaggagcaaattcgggatgcctggggaagcatggttctaaaaaatgttg
+tacgtgaaacggatgaagttggtaaaggtcagatccggatgagaactgtttttgaacaggccattgatcaacgctcttca
+actggtgcctggagaaatgctctttctatttgggaacctgtctgcaatgaaattttcgatcgtctgattaaaccacgctg
+ggagattagataatgaagcgtgcgcctgttattccaaaacatacgctcaatactcaaccggttgaagatacttcgttatc
+gacaccagctgccccgatggtggattcgttaattgcgcgcgtaggagtaatggctcgcggtaatgccattactttgcctg
+tatgtggtcgggatgtgaagtttactcttgaagtgctccggggtgatagtgttgagaagacctctcgggtatggtcaggt
+aatgaacgtgaccaggagctgcttactgaggacgcactggatgatctcatcccttcttttctactgactggtcaacagac
+accggcgttcggtcgaagagtatctggtgtcatagaaattgccgatgggagtcgccgtcgtaaagctgctgcacttaccg
+aaagtgattatcgtgttctggttggcgagctggatgatgagcagatggctgcattatccagattgggtaacgattatcgc
+ccaacaagtgcttatgaacgtggtcagcgttatgcaagccgattgcagaatgaatttgctggaaatatttctgcgctggc
+tgatgcggaaaatatttcacgtaagattattacccgctgtatcaacaccgccaaattgcctaaatcagttgttgctcttt
+tttctcaccccggtgaactatctgcccggtcaggtgatgcacttcaaaaagcctttacagataaagaggaattacttaag
+cagcaggcatctaaccttcatgagcagaaaaaagctggggtgatatttgaagctgaagaagttatcactcttttaacttc
+tgtgcttaaaacgtcatctgcatcaagaacaagtttaagctcacgacatcagtttgctcctggagcgacagtattgtata
+agggcgataaaatggtgcttaacctggacaggtctcgtgttccaactgagtgtatagagaaaattgaggccattcttaag
+gaacttgaaaagccagcaccctgatgcgaccacgttttagtctacgtttatctgtctttacttaatgtcctttgttacag
+gccagaaagcataactggcctgaatattctctctgggcccactgttccacttgtatcgtcggtctgataatcagactggg
+accacggtcccactcgtatcgtcggtctgattattagtctgggaccacggtcccactcgtatcgtcggtctgattattag
+tctgggaccacggtcccactcgtatcgtcggtctgataatcagactgggaccacggtcccactcgtatcgtcggtctgat
+tattagtctgggaccatggtcccactcgtatcgtcggtctgattattagtctgggaccacggtcccactcgtatcgtcgg
+tctgattattagtctggaaccacggtcccactcgtatcgtcggtctgattattagtctgggaccacggtcccactcgtat
+cgtcggtctgattattagtctgggaccacgatcccactcgtgttgtcggtctgattatcggtctgggaccacggtcccac
+ttgtattgtcgatcagactatcagcgtgagactacgattccatcaatgcctgtcaagggcaagtattgacatgtcgtcgt
+aacctgtagaacggagtaacctcggtgtgcggttgtatgcctgctgtggattgctgctgtgtcctgcttatccacaacat
+tttgcgcacggttatgtggacaaaatacctggttacccaggccgtgccggcacgttcaccgggctgcatccgatgcaagt
+</seq_data></sequences>
+<features>
+<feature>
+<id>1757407</id>
+<title>sequence derived from F plasmid in GenBank Accession Number AP001918</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1390</endpos></feature>
+<feature>
+<id>1757409</id>
+<title>ori2 (oriS) single copy replication origin</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>290</endpos></feature>
+<feature>
+<id>1757420</id>
+<title>DnaA box</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>81</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>1757414</id>
+<title>DnaA box</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>97</endpos></feature>
+<feature>
+<id>1757415</id>
+<title>A/T region</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>101</startpos>
+<endpos>147</endpos></feature>
+<feature>
+<id>1757413</id>
+<title>C to G mutation (eliminates XbaI site, noncoding region)</title>
+<type>mutation</type>
+<direction>reverse</direction>
+<startpos>183</startpos>
+<endpos>183</endpos></feature>
+<feature>
+<id>1757416</id>
+<title>iteron (repeat region)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>192</startpos>
+<endpos>211</endpos></feature>
+<feature>
+<id>1757417</id>
+<title>iteron (repeat region)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>213</startpos>
+<endpos>232</endpos></feature>
+<feature>
+<id>1757418</id>
+<title>iteron (repeat region)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>246</startpos>
+<endpos>265</endpos></feature>
+<feature>
+<id>1757419</id>
+<title>iteron (repeat region)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>268</startpos>
+<endpos>287</endpos></feature>
+<feature>
+<id>1757408</id>
+<title>repE</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>384</startpos>
+<endpos>1139</endpos></feature>
+<feature>
+<id>1757412</id>
+<title>C to T mutation (eliminates PstI site)</title>
+<type>s_mutation</type>
+<direction>reverse</direction>
+<startpos>1013</startpos>
+<endpos>1013</endpos></feature>
+<feature>
+<id>1757406</id>
+<title>parA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1718</startpos>
+<endpos>2893</endpos></feature>
+<feature>
+<id>1757421</id>
+<title>sequence derived from F plasmid in GenBank Accession Number AP001918</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1720</startpos>
+<endpos>4640</endpos></feature>
+<feature>
+<id>1757410</id>
+<title>C to T mutation (eliminates PstI site)</title>
+<type>s_mutation</type>
+<direction>reverse</direction>
+<startpos>2553</startpos>
+<endpos>2553</endpos></feature>
+<feature>
+<id>1757405</id>
+<title>parB</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>2893</startpos>
+<endpos>3864</endpos></feature>
+<feature>
+<id>1757411</id>
+<title>A to T mutation (eliminates SpeI site)</title>
+<type>s_mutation</type>
+<direction>reverse</direction>
+<startpos>3711</startpos>
+<endpos>3711</endpos></feature>
+<feature>
+<id>1757395</id>
+<title>sopC(IncD) repeat region</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>3938</startpos>
+<endpos>4640</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/plasmid/uncategorized</category>
+<category>//plasmid/component/origin</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,236 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15081</part_id>
+<part_name>BBa_K238015</part_name>
+<part_short_name>K238015</part_short_name>
+<part_short_desc>blue light promoter and GFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K238015</part_url>
+<part_entered>2009-09-22</part_entered>
+<part_author>Annelien Verfaillie</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>14455</part_id>
+<part_name>BBa_K238013</part_name>
+<part_short_desc>Exact promoter of the blue light receptor</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>BLp</part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>14455</part_id>
+<part_name>BBa_K238013</part_name>
+<part_short_desc>Exact promoter of the blue light receptor</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>BLp</part_nickname></subpart>
+<subpart>
+<part_id>5339</part_id>
+<part_name>BBa_E0240</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP report</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>14455</part_id>
+<part_name>BBa_K238013</part_name>
+<part_short_desc>Exact promoter of the blue light receptor</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>BLp</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5339</part_id>
+<part_name>BBa_E0240</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP report</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>attgcaaaaaattaatttatcattctgtacacatatttcgtacaagtttgctattgttacttcacttaacattgattaac
+attttttactagagtcacacaggaaagtactagatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgt
+tgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaactta
+cccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaa
+tgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaag
+aactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaa
+tcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaat
+gtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgt
+tcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtcca
+cacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggatt
+acacatggcatggatgaactatacaaataataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagact
+gggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttc
+tgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2025303</id>
+<title>BBa_K238013</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>86</endpos></feature>
+<feature>
+<id>2025297</id>
+<title>-35 box</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>28</startpos>
+<endpos>33</endpos></feature>
+<feature>
+<id>2025298</id>
+<title>spacer</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>34</startpos>
+<endpos>51</endpos></feature>
+<feature>
+<id>2025299</id>
+<title>-10 box</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>52</startpos>
+<endpos>58</endpos></feature>
+<feature>
+<id>2025300</id>
+<title>inverted repeat part 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>53</startpos>
+<endpos>59</endpos></feature>
+<feature>
+<id>2025301</id>
+<title>transcription start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>64</startpos>
+<endpos>65</endpos></feature>
+<feature>
+<id>2025302</id>
+<title>inverted repeat part 2</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>67</startpos>
+<endpos>73</endpos></feature>
+<feature>
+<id>2025304</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>95</startpos>
+<endpos>107</endpos></feature>
+<feature>
+<id>2025305</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>95</startpos>
+<endpos>107</endpos></feature>
+<feature>
+<id>2025306</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>101</startpos>
+<endpos>104</endpos></feature>
+<feature>
+<id>2025307</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>114</startpos>
+<endpos>833</endpos></feature>
+<feature>
+<id>2025308</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>114</startpos>
+<endpos>833</endpos></feature>
+<feature>
+<id>2025309</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>842</startpos>
+<endpos>921</endpos></feature>
+<feature>
+<id>2025310</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>853</startpos>
+<endpos>896</endpos></feature>
+<feature>
+<id>2025311</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>930</startpos>
+<endpos>970</endpos></feature>
+<feature>
+<id>2025312</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>937</startpos>
+<endpos>956</endpos></feature>
+<feature>
+<id>2025313</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>957</startpos>
+<endpos>970</endpos></feature>
+<feature>
+<id>2025314</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>963</startpos>
+<endpos>963</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,60 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>9606</part_id>
+<part_name>BBa_I746351</part_name>
+<part_short_name>I746351</part_short_name>
+<part_short_desc>pag activator from PSP3 phage</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I746351</part_url>
+<part_entered>2007-09-12</part_entered>
+<part_author>Stefan Milde</part_author>
+<best_quality>Partially Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>aaagaggagaaatactagatgatgcactgcccgttatgccaaaacgctgcacatgctcgcactagccggtaccttagcac
+cgaaacgaaagaacgttatcaccagtgccaaaacataaattgcggatgtacatttatcacttttgagacactatcaagat
+tcattgtgaaaccggggactgttgatcctgctccgccccaccccatcagaaaccaacaacagcaactttggctttga
+</seq_data></sequences>
+<features>
+<feature>
+<id>1943868</id>
+<title>B0034</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>1943869</id>
+<title>PSP3 pag</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>19</endpos></feature>
+<feature>
+<id>1943870</id>
+<title>PSP3 pag</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>237</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/regulation/transcriptional</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

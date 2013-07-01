@@ -1,0 +1,443 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>17742</part_id>
+<part_name>BBa_J18936</part_name>
+<part_short_name>J18936</part_short_name>
+<part_short_desc>FKBP ~ mCherry</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J18936</part_url>
+<part_entered>2010-01-26</part_entered>
+<part_author>Raik Gruenberg</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>17718</part_id>
+<part_name>BBa_J18912</part_name>
+<part_short_desc>T7 promoter + RBS + START</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname>T7start</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17731</part_id>
+<part_name>BBa_J18925</part_name>
+<part_short_desc>FKBP12</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>FKBP12</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17728</part_id>
+<part_name>BBa_J18922</part_name>
+<part_short_desc>10aa [GS]x linker</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>5xGS</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17738</part_id>
+<part_name>BBa_J18932</part_name>
+<part_short_desc>mCherry RFP</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>mCherry</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17725</part_id>
+<part_name>BBa_J18919</part_name>
+<part_short_desc>preScission protease cleavage site (E. coli-optimized)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>preSCsite</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17705</part_id>
+<part_name>BBa_J18909</part_name>
+<part_short_desc>His tag (6xHis; E. coli - optimized)</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>HisTag</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17719</part_id>
+<part_name>BBa_J18913</part_name>
+<part_short_desc>T7 terminator (incl. STOP)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname>T7stop</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>17718</part_id>
+<part_name>BBa_J18912</part_name>
+<part_short_desc>T7 promoter + RBS + START</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname>T7start</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17731</part_id>
+<part_name>BBa_J18925</part_name>
+<part_short_desc>FKBP12</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>FKBP12</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17728</part_id>
+<part_name>BBa_J18922</part_name>
+<part_short_desc>10aa [GS]x linker</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>5xGS</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17738</part_id>
+<part_name>BBa_J18932</part_name>
+<part_short_desc>mCherry RFP</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>mCherry</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17725</part_id>
+<part_name>BBa_J18919</part_name>
+<part_short_desc>preScission protease cleavage site (E. coli-optimized)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>preSCsite</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17705</part_id>
+<part_name>BBa_J18909</part_name>
+<part_short_desc>His tag (6xHis; E. coli - optimized)</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>HisTag</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17719</part_id>
+<part_name>BBa_J18913</part_name>
+<part_short_desc>T7 terminator (incl. STOP)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname>T7stop</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>17718</part_id>
+<part_name>BBa_J18912</part_name>
+<part_short_desc>T7 promoter + RBS + START</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname>T7start</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17731</part_id>
+<part_name>BBa_J18925</part_name>
+<part_short_desc>FKBP12</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>FKBP12</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17728</part_id>
+<part_name>BBa_J18922</part_name>
+<part_short_desc>10aa [GS]x linker</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>5xGS</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17738</part_id>
+<part_name>BBa_J18932</part_name>
+<part_short_desc>mCherry RFP</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>mCherry</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17725</part_id>
+<part_name>BBa_J18919</part_name>
+<part_short_desc>preScission protease cleavage site (E. coli-optimized)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>preSCsite</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17705</part_id>
+<part_name>BBa_J18909</part_name>
+<part_short_desc>His tag (6xHis; E. coli - optimized)</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>HisTag</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>17719</part_id>
+<part_name>BBa_J18913</part_name>
+<part_short_desc>T7 terminator (incl. STOP)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname>T7stop</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>taatacgactcactatagggagaccacaacggtttccctctagcaataattttgtttaactttaagaaggagatatacat
+atgaccggcggtgtgcaggtggaaaccattagcccgggtgatggccgtacctttccgaaacgtggccagacctgcgtggt
+gcattataccggcatgctggaagatggcaaaaaatttgatagcagccgcgatcgtaacaaaccgttcaaattcatgctgg
+gcaaacaggaagtgattcgcggctgggaggaaggcgtggcgcagatgagcgttggccagcgtgcgaaactgaccatcagc
+ccggattatgcgtatggcgcgaccggccatccgggtattattccgccgcatgcgaccctggtgtttgatgtggaactgct
+gaaactggaaaccggcggtagcggcagcggtagcggtagcggcagcaccggcgtgagcaaaggcgaggaagataacatgg
+cgatcattaaagaatttatgcgctttaaagtgcatatggaaggcagcgtgaacggccatgaatttgaaattgaaggcgaa
+ggcgaaggtcgtccgtatgaaggcacccagaccgcgaaactgaaagtgaccaaaggcggtccgctgccgtttgcgtggga
+tattctgagcccgcagtttatgtatggcagcaaagcgtatgtgaaacatccggcggatattccggattatctgaaactga
+gctttccggaaggctttaaatgggaacgcgtgatgaactttgaagatggcggcgtggtgaccgtgacccaggatagcagc
+ctgcaagatggcgaatttatctataaagtgaaactgcgtggcaccaactttccgagcgatggcccggtgatgcagaaaaa
+aaccatgggctgggaagcgagcagcgaacgtatgtatccggaagatggcgcgctgaaaggcgaaattaaacagcgcctga
+aactgaaagatggcggccattatgatgcggaagtgaaaaccacctataaagcgaaaaaaccagtgcagctgccgggtgcg
+tataacgtgaacatcaaactggatatcaccagccacaacgaagattataccatcgtggaacagtatgaacgtgcggaagg
+ccgtcatagcaccggcggcatggatgaactgtataaaaccggcctggaagtgctgtttcagggcccgaccggccatcatc
+atcatcatcataccggctagtgactgctaacaaagcccgaaaggaagctgagttggctgctgccaccgctgagcaataac
+tagcataaccccttggggcctctaaacgggtcttgaggggttttttgctgaaaggaggaactatatccggat
+</seq_data></sequences>
+<features>
+<feature>
+<id>2066377</id>
+<title>BBa_J18912</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>83</endpos></feature>
+<feature>
+<id>2066376</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>81</startpos>
+<endpos>83</endpos></feature>
+<feature>
+<id>2066378</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>84</startpos>
+<endpos>89</endpos></feature>
+<feature>
+<id>2066379</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>84</startpos>
+<endpos>89</endpos></feature>
+<feature>
+<id>2066380</id>
+<title>BBa_J18925</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>90</startpos>
+<endpos>410</endpos></feature>
+<feature>
+<id>2066382</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>411</startpos>
+<endpos>416</endpos></feature>
+<feature>
+<id>2066381</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>411</startpos>
+<endpos>416</endpos></feature>
+<feature>
+<id>2066383</id>
+<title>BBa_J18922</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>417</startpos>
+<endpos>446</endpos></feature>
+<feature>
+<id>2066385</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>447</startpos>
+<endpos>452</endpos></feature>
+<feature>
+<id>2066384</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>447</startpos>
+<endpos>452</endpos></feature>
+<feature>
+<id>2066386</id>
+<title>BBa_J18932</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>453</startpos>
+<endpos>1157</endpos></feature>
+<feature>
+<id>2066388</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1158</startpos>
+<endpos>1163</endpos></feature>
+<feature>
+<id>2066387</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1158</startpos>
+<endpos>1163</endpos></feature>
+<feature>
+<id>2066389</id>
+<title>BBa_J18919</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1164</startpos>
+<endpos>1187</endpos></feature>
+<feature>
+<id>2066390</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1188</startpos>
+<endpos>1193</endpos></feature>
+<feature>
+<id>2066391</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1188</startpos>
+<endpos>1193</endpos></feature>
+<feature>
+<id>2066393</id>
+<title>BBa_J18909</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1194</startpos>
+<endpos>1211</endpos></feature>
+<feature>
+<id>2066392</id>
+<title>PolyHis</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>1194</startpos>
+<endpos>1211</endpos></feature>
+<feature>
+<id>2066394</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1212</startpos>
+<endpos>1217</endpos></feature>
+<feature>
+<id>2066395</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1212</startpos>
+<endpos>1217</endpos></feature>
+<feature>
+<id>2066396</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1218</startpos>
+<endpos>1223</endpos></feature>
+<feature>
+<id>2066397</id>
+<title>BBa_J18913</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1218</startpos>
+<endpos>1352</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//cds</category>
+<category>//proteindomain/binding</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

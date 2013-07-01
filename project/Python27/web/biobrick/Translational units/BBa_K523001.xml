@@ -1,0 +1,103 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>21741</part_id>
+<part_name>BBa_K523001</part_name>
+<part_short_name>K523001</part_short_name>
+<part_short_desc>RBS + malS (E. coli periplasmic &amp;#945;-amylase)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K523001</part_url>
+<part_entered>2011-07-19</part_entered>
+<part_author>Mun Ching Lee, Sylvia Ispasanie, Allan Crossman</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atctgaaatcgcagcaataaggactcatccgccatgaaactcgccgcctgttttctgacactccttcctggcttcgccgt
+tgccgccagctggacttctccggggtttcccgcctttagcgaacaggggacaggaacatttgtcagccacgcgcagttgc
+ccaaaggtacgcgtccactaacgctaaattttgaccaacagtgctggcagcctgcggatgcgataaaactcaatcagatg
+ctttccctgcaaccttgtagcaacacgccgcctcaatggcgattgttcagggacggcgaatatacgctgcaaatagacac
+ccgctccggtacgccaacattgatgatttccatccagaacgccgccgaaccggtagcaagcctggtccgtgaatgcccga
+aatgggatggattaccgctcacagtggatgtcagcgccactttcccggaaggagccgccgtacgggattattacagccag
+caaattgcgatagtgaagaacggtcaaataatgttacaacccgctgccaccagcaacggtttactcctgctggaacgggc
+agaaactgacacatccgcccctttcgactggcataacgccacggtttactttgtgctgacagatcgtttcgaaaacggcg
+atcccagtaatgaccagagttacggacgtcataaagacggtatggcggaaattggcacttttcacggcggcgatttacgc
+ggcctgaccaacaaactggattacctccagcagttgggcgttaatgctttatggataagcgccccatttgagcaaattca
+cggctgggtcggcggcggtacaaaaggcgatttcccgcattatgcctaccacggttattacacacaggactggacgaatc
+ttgatgccaatatgggcaacgaagccgatctacggacgctggttgatagcgcacatcagcgcggtattcgtattctcttt
+gatgtcgtgatgaaccacaccggctatgccacgctggcggatatgcaggagtatcagtttggcgcgttatatctttctgg
+tgacgaagtgaaaaaatcgctgggtgaacgctggagcgactggaaacctgccgccgggcaaacctggcatagctttaacg
+attacattaatttcagcgacaaaacaggctgggataaatggtggggaaaaaactggatcagaacggatatcggcgattac
+gacaatcctggattcgacgatctcactatgtcgctagcctttttgccggatatcaaaaccgaatcaactaccgcttctgg
+tctgccggtgttctataaaaacaaaatggatacccacgccaaagccattgacggctatacgccgcgcgattacttaaccc
+actggttaagtcagtgggtccgcgactatgggattgatggttttcgggtcgataccgccaaacatgttgagttgcccgcc
+tggcagcaactgaaaaccgaagccagcgccgcgcttcgcgaatggaaaaaagctaaccccgacaaagcattagatgacaa
+acctttctggatgaccggtgaagcctggggccacggcgtgatgcaaagtgactactatcgccacggcttcgatgcgatga
+tcaatttcgattatcaggagcaggcggcgaaagcagtcgactgtctggcgcagatggatacgacctggcagcaaatggcg
+gagaaattgcagggtttcaacgtgttgagctacctctcgtcgcatgatacccgcctgttccgtgaagggggcgacaaagc
+agcagagttattactattagcgccaggcgcggtacaaatcttttatggtgatgaatcctcgcgtccgttcggtcctacag
+gttctgatccgctgcaaggtacacgttcggatatgaactggcaggatgttagcggtaaatctgccgccagcgtcgcgcac
+tggcagaaaatcagccagttccgcgcccgccatcccgcaattggcgcgggcaaacaaacgacacttttgctgaagcaggg
+ctacggctttgttcgtgagcatggcgacgataaagtgctggtcgtctgggcagggcaacagtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2123625</id>
+<title>BglII</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>4</endpos></feature>
+<feature>
+<id>2123626</id>
+<title>Native RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>23</endpos></feature>
+<feature>
+<id>2123628</id>
+<title>malS</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>34</startpos>
+<endpos>2067</endpos></feature>
+<feature>
+<id>2123627</id>
+<title>ATG</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>34</startpos>
+<endpos>34</endpos></feature>
+<feature>
+<id>2123639</id>
+<title>Predicted (cleaved) signal peptide</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>34</startpos>
+<endpos>84</endpos></feature>
+<feature>
+<id>2123629</id>
+<title>TAATAA</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2062</startpos>
+<endpos>2062</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

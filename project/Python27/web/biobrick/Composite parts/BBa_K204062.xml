@@ -1,0 +1,236 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16102</part_id>
+<part_name>BBa_K204062</part_name>
+<part_short_name>K204062</part_short_name>
+<part_short_desc>pcI + mOrange</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K204062</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>Uno Keisuke</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>196</part_id>
+<part_name>BBa_R1051</part_name>
+<part_short_desc>Promoter, Standard (lambda cI regulated)&lt;br&gt;</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5356</part_id>
+<part_name>BBa_E2050</part_name>
+<part_short_desc>derivative of mRFP1, yeast-optimized</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>196</part_id>
+<part_name>BBa_R1051</part_name>
+<part_short_desc>Promoter, Standard (lambda cI regulated)&lt;br&gt;</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<subpart>
+<part_id>16099</part_id>
+<part_name>BBa_K204033</part_name>
+<part_short_desc>mOrange</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>196</part_id>
+<part_name>BBa_R1051</part_name>
+<part_short_desc>Promoter, Standard (lambda cI regulated)&lt;br&gt;</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>16099</part_id>
+<part_name>BBa_K204033</part_name>
+<part_short_desc>mOrange</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>taacaccgtgcgtgttgacaattttacctctggcggtgatactggttgctactagagaaagaggagaaatactagatggc
+aactagcggcatggttagtaaaggagaagaaaacaatatggcaatcataaaagaatttatgagattcaaagtcagaatgg
+aaggttctgtaaatggtcacgagttcgaaatagaaggggaaggtgaaggtagaccctatgaaggctttcaaacggctaaa
+ttaaaagttaccaagggtggaccattgccctttgcttgggatatcctgtctcctcagttcacttatggtagtaaagccta
+tgttaagcatcctgctgatattcctgattacttcaagttgagttttccagaaggtttcaaatgggagagagttatgaatt
+ttgaagatggcggagttgtgacagtgacacaagactcctcacttcaagacggtgagtttatttacaaggtaaaactacgt
+ggcactaactttccgtcggatggaccagtcatgcaaaaaaagacgatgggttgggaggcttcatctgagcgaatgtatcc
+agaagatggggcactaaagggcgaaattaagatgaggctcaaattaaaggatggtggacattatacctcggaagtgaaaa
+ctacctataaagccaaaaagccagttcaattacctggtgcatacattgttggcattaagttggacatcacaagccacaat
+gaagattatacaatagtagagcagtacgaacgcgcggaaggtaggcattctactggaggcatggatgaactatacaaagg
+ttctggtaccgcataataactctgatagtgctagtgtagatctctactagagccaggcatcaaataaaacgaaaggctca
+gtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgg
+gtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2045308</id>
+<title>OR2</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>17</endpos></feature>
+<feature>
+<id>2045309</id>
+<title>BBa_R1051</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>49</endpos></feature>
+<feature>
+<id>2045310</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>15</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2045311</id>
+<title>OR1</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>25</startpos>
+<endpos>41</endpos></feature>
+<feature>
+<id>2045312</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>38</startpos>
+<endpos>43</endpos></feature>
+<feature>
+<id>2045314</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>58</startpos>
+<endpos>69</endpos></feature>
+<feature>
+<id>2045313</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>62</startpos>
+<endpos>65</endpos></feature>
+<feature>
+<id>2045315</id>
+<title>MATSG linker</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>90</endpos></feature>
+<feature>
+<id>2045316</id>
+<title>mOrange</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>813</endpos></feature>
+<feature>
+<id>2045318</id>
+<title>BBa_E2050</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>76</startpos>
+<endpos>819</endpos></feature>
+<feature>
+<id>2045317</id>
+<title>GSGTA linker</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>799</startpos>
+<endpos>813</endpos></feature>
+<feature>
+<id>2045319</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>820</startpos>
+<endpos>844</endpos></feature>
+<feature>
+<id>2045320</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>853</startpos>
+<endpos>932</endpos></feature>
+<feature>
+<id>2045321</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>864</startpos>
+<endpos>907</endpos></feature>
+<feature>
+<id>2045322</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>941</startpos>
+<endpos>981</endpos></feature>
+<feature>
+<id>2045323</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>948</startpos>
+<endpos>967</endpos></feature>
+<feature>
+<id>2045324</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>968</startpos>
+<endpos>981</endpos></feature>
+<feature>
+<id>2045325</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>974</startpos>
+<endpos>974</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

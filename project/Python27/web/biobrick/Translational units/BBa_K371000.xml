@@ -1,0 +1,182 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18901</part_id>
+<part_name>BBa_K371000</part_name>
+<part_short_name>K371000</part_short_name>
+<part_short_desc>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K371000</part_url>
+<part_entered>2010-08-27</part_entered>
+<part_author>Yang Zhang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ccacaggagaaaagcagtatgaataacgcactgggactggttgaaacaaaagggcttgtcggcgctattgaagccgctga
+tgccatggtgaaatccgcaaacgtgcagttggttggttacgaaaaaatcggctctggcctgatcaacgttatggttcgcg
+gtgatgtcggcgcggtgaaagcagccgtagatgctggaagcgcagcagcaagcgccgttggtgaggtgaaatcctgccac
+gttatcccgcgtccgcacagcgacgttgaagccattttacctaaatccgcataagtcgttgcaaccaaggagcacagcgt
+gaagcaatcactgggattacttgaagttagtggtctggcattagccatcagttgcgcggacgtcatggcgaaagccgcct
+ccatcacgctggtgggcctcgaaaaaaccaacggctcaggctggacggtgatcaagataatcggggatgtggcctccgtc
+caggcggccatttccactggtgtcagtttcgctgaccagcgagatggactggtggctcacaaagtcatttccagacccgg
+ggacgggatcctgtcgcatagcgttgtcctggagcctgaaccaacgcccgaccccataccagccataccacatgaagaaa
+tccctgaggaccatgcggcacccgaagcaccgcaagatgcagaattgattagctgcaatttgtgtcttgatcctgcctgc
+cctcgccaaaaaggtgagccgcgcacactttgtcttcactccggcaaacgaggtgaagcgtga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2078670</id>
+<title>pduJ RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>5</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2078671</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>2078672</id>
+<title>pduJ coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>294</endpos></feature>
+<feature>
+<id>2078674</id>
+<title>stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>292</startpos>
+<endpos>294</endpos></feature>
+<feature>
+<id>2078675</id>
+<title>pduK RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>307</startpos>
+<endpos>312</endpos></feature>
+<feature>
+<id>2078673</id>
+<title>pduK coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>319</startpos>
+<endpos>783</endpos></feature>
+<feature>
+<id>2078676</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>319</startpos>
+<endpos>321</endpos></feature>
+<feature>
+<id>2078677</id>
+<title>stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>781</startpos>
+<endpos>783</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>origin</name>
+<value>Citrobacter Freundii</value>
+<units></units>
+<url></url>
+<id>11479</id>
+<m_date>2010-10-26 22:12:16</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>11478</id>
+<m_date>2010-10-26 22:11:32</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</value>
+<units></units>
+<url></url>
+<id>11476</id>
+<m_date>2010-10-26 22:10:40</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</value>
+<units></units>
+<url></url>
+<id>10253</id>
+<m_date>2010-09-15 13:48:35</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</value>
+<units></units>
+<url></url>
+<id>10254</id>
+<m_date>2010-09-15 13:48:35</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</value>
+<units></units>
+<url></url>
+<id>10255</id>
+<m_date>2010-09-15 13:48:35</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</value>
+<units></units>
+<url></url>
+<id>10250</id>
+<m_date>2010-09-15 13:48:32</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</value>
+<units></units>
+<url></url>
+<id>10251</id>
+<m_date>2010-09-15 13:48:32</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</value>
+<units></units>
+<url></url>
+<id>10252</id>
+<m_date>2010-09-15 13:48:32</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

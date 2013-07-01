@@ -1,0 +1,139 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15342</part_id>
+<part_name>BBa_K238029</part_name>
+<part_short_name>K238029</part_short_name>
+<part_short_desc>fcs + RBS</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K238029</part_url>
+<part_entered>2009-10-06</part_entered>
+<part_author>Annelien Verfaillie</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>9174</part_id>
+<part_name>BBa_J15001</part_name>
+<part_short_desc>strong synthetic E. coli ribosome binding site with SacI site.</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>9989</part_id>
+<part_name>BBa_I742114</part_name>
+<part_short_desc>Feruloyl-CoA synthase (fcs)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>9174</part_id>
+<part_name>BBa_J15001</part_name>
+<part_short_desc>strong synthetic E. coli ribosome binding site with SacI site.</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>9989</part_id>
+<part_name>BBa_I742114</part_name>
+<part_short_desc>Feruloyl-CoA synthase (fcs)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>9174</part_id>
+<part_name>BBa_J15001</part_name>
+<part_short_desc>strong synthetic E. coli ribosome binding site with SacI site.</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>9989</part_id>
+<part_name>BBa_I742114</part_name>
+<part_short_desc>Feruloyl-CoA synthase (fcs)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ctcaaggaggtactagatgcgtagcctggaaccgctggccgaactgccggcacgtctgctggatcgtctggtgcattggg
+cgcgtgtgcgtccggaacagacctttattgcggcgcgtcaggcgggtggtgattggcgtcgtgtgagctatcgcgaaatg
+ctggatggcgtgcgtgcgattgcgcagggcctgctgtcttatggcctgagcgcggataaaccgctggccctgctgtctgg
+caacgatattgaacatctgcaagtggcgctgggcgcaatgtatgcgggcattccgtattgcccggtgagcccggcgtata
+gcctgctgtctcaggattttgcgaaactgcgtcatgtgtgcgatctgctgcaaccgggcctggtttttgtgtctgatgcg
+ccggcatatcagcgtgcgattgatgcggttctgccgccggaaaccccgctgattagcgtgcgtggccaggttccgggccg
+tacgcagattagctttgcgagcctgctgcataccagcgcgggcaccgaagcggatgcggcgtttaacgcgaccggtccgg
+atagcattgcgaaatttctgtttaccagcggcagcaccaaactgccgaaagcggtgattaccacccagcgtatgctgtgc
+gcgaaccagcagatgctgctgcaaacctttccggtgtttggcgaagaaccgccggtgctggttgattggctgccgtggaa
+ccacacctttggcggcagccataacgtgggcattgtgctgtataacggcggcaccttttatctggatgatggcaaaccga
+ccgcccagggctttgcacagacgctgcgcaacctgaaagaaattagcccgaccgcgtatctgaccgtgccgaaaggctgg
+gaagaactggtgaacgcgctggaacaggatgcggcgctgcgtgaacgtttttttgcgcgcatgaaactgtttttttttgc
+ggcggcaggcctgagccagagcgtgtgggatcgtctggatcgtgtggcggaacaacattgtggcgaacgtattcgcatga
+tggcgggcctgggcatgaccgaagcggcaccgagctgcacctttaccaccggtccgctgtctatggcgggctatattggc
+ctgccggcaccgggttgtgaagtgcgtctggtgccggtggatggcaaatttgaaggccgttttcgtggcccgcatatcat
+gccgggttattggcgtgcaccggaacagaccgcggaagtgtttgatgaacagggctattattgcagcggtgatgcgatca
+aactggccgatccgcatcagccgcattggggcctgatgtttgatggccgtattgcggaagattttaaactgagcagcggc
+gtgtttgtgtccgtgggcccgctgcgtaatcgtgcggttctggaaggcagcccgtatgtgcaggatctggtgattgcggc
+accggatcgtgaatgcctgggcgccctggtttttccgcgtgcgtatgaatgccgtcgtctgagcggcctgaacgcggaag
+cgtctgatgcggaagtgctgaacagcgcaccggttcgtcagtggtttggcgattggctgcaacgtctgaaccgtgaagcg
+accggcaatgcgagccgtctggaatggatcgcggtgctggatgaaccggcgagcattgatcgtggcgaaattaccgataa
+aggcagcattaaccagcgcgcggtgctgcaatggcgtgcggcgaaagtggaagcgctgtatcgtggcgaagatccgacca
+ttctgcgtgcgggtccgaaaccgtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2028790</id>
+<title>SacI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2028792</id>
+<title>BBa_J15001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2028791</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2028793</id>
+<title>fcs coding region</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>17</startpos>
+<endpos>1789</endpos></feature>
+<feature>
+<id>2028794</id>
+<title>BBa_I742114</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>17</startpos>
+<endpos>1789</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_I742115</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

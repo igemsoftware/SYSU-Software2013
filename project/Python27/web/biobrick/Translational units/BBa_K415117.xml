@@ -1,0 +1,102 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18384</part_id>
+<part_name>BBa_K415117</part_name>
+<part_short_name>K415117</part_short_name>
+<part_short_desc>RBS Weak : pVIII-Fos</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K415117</part_url>
+<part_entered>2010-07-11</part_entered>
+<part_author>Grant Robinson</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tcacacaggaaacctactagatgaaaaagtctttagtcctcaaagcctctgtagccgttgctaccctcgttccgatgctg
+tctttcgctgctgagggtgacgatcccgcaaaagcggcctttaactccctgcaagcctcagcgaccgaatatatcggtta
+tgcgtgggcgatggttgttgtcattgtcggcgcaactatcggtatcaagctgtttaagaaattcacctcgaaagcaagct
+gaggaggaggaggaagtatgatgttctcgggtttcaacgccgactacgaggcgtcatcctcccgctgtagtagcgcctcc
+ccggccggggacagcctttcctactaccattccccagccgactccttctccagcatgggctctcctgtcaacacacagga
+cttttgcgcagatctgtccgtctctagtgccaactttatccccacggtgacagccatctccaccagcccagacctgcaat
+ggctggtgcagcccactctggtctcctccgtggccccatcgcagaccagagcgccccatccttacggactccccacccag
+tctgctggggcttacgccagagcgggaatggtgaagaccgtgtcaggaggcagagcgcagagcatcggcagaaggggcaa
+agtagagcagctatctcctgaagaggaagagaaacggagaatccgaagggaacggaataagatggctgccgccaagtgcc
+ggaatcggaggagggagctgacagatacactccaagcggagacagatcaacttgaagatgagaagtctgcgttgcagact
+gagattgccaatctgctgaaagagaaggaaaaactggagtttattttggcagcccaccgacctgcctgcaagatccccga
+tgaccttggcttcccagaggagatgtctgtggcctccctggatttgactggaggtctgcctgaggcttccaccccagagt
+ctgaggaggccttcaccctgccccttctcaacgaccctgagcccaagccatccttggagccagtcaagagcatcagcaac
+gtggagctgaaggcagaaccctttgatgacttcttgtttccggcatcatctaggcccagtggctcagagacctcccgctc
+tgtgccagatgtggacctgtccggttccttctatgcagcagactgggagcctctgcacagcaattccttggggatggggc
+ccatggtcacagagctggagcccctgtgtactcccgtggtcacctgtactccgggctgcactacttacacgtcttccttt
+gtcttcacctaccctgaagctgactccttcccaagctgtgccgctgcccaccgaaagggcagcagcagcaacgagccctc
+ctccgactccctgagctcacccacgctgctggccctgtga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2073110</id>
+<title>B0031 RBS Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>14</endpos></feature>
+<feature>
+<id>2073113</id>
+<title>pVIII (M13KE)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>242</endpos></feature>
+<feature>
+<id>2073111</id>
+<title>Glycine-Serine Linker</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>243</startpos>
+<endpos>257</endpos></feature>
+<feature>
+<id>2073112</id>
+<title>Fos (Murine)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>258</startpos>
+<endpos>1400</endpos></feature>
+<feature>
+<id>2073114</id>
+<title>Silent C to T</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>308</startpos>
+<endpos>308</endpos></feature>
+<feature>
+<id>2073115</id>
+<title>Silent G to A</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>479</startpos>
+<endpos>479</endpos></feature>
+<feature>
+<id>2073116</id>
+<title>Silent A to C</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>710</startpos>
+<endpos>710</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

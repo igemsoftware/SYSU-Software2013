@@ -1,0 +1,103 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12850</part_id>
+<part_name>BBa_K165021</part_name>
+<part_short_name>K165021</part_short_name>
+<part_short_desc>Kozak + LexA Synthetic Activator (untagged)</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K165021</part_url>
+<part_entered>2008-10-27</part_entered>
+<part_author>John Szymanski</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>12631</part_id>
+<part_name>BBa_K165002</part_name>
+<part_short_desc>Kozak sequence (yeast RBS)</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12849</part_id>
+<part_name>BBa_K165020</part_name>
+<part_short_desc>LexA Synthetic Activator (untagged)</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname>lexA</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>12631</part_id>
+<part_name>BBa_K165002</part_name>
+<part_short_desc>Kozak sequence (yeast RBS)</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12849</part_id>
+<part_name>BBa_K165020</part_name>
+<part_short_desc>LexA Synthetic Activator (untagged)</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname>lexA</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>12631</part_id>
+<part_name>BBa_K165002</part_name>
+<part_short_desc>Kozak sequence (yeast RBS)</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>12849</part_id>
+<part_name>BBa_K165020</part_name>
+<part_short_desc>LexA Synthetic Activator (untagged)</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname>lexA</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>cccgccgccaccatggagtactagagaaagcgttaacggccaggcaacaagaggtgtttgatctcatccgtgatcacatc
+agccagacaggtatgccgccgacgcgtgcggaaatcgcgcagcgtttggggttccgttccccaaacgcggctgaagaaca
+tctgaaggcgctggcacgcaaaggcgttattgaaattgtttccggcgcatcacgcgggattcgtctgttgcaggaagagg
+aagaagggttgccgctggtaggtcgtgtggctgccggtgaaccaactagagacgctttggacgacttcgacttggacatg
+ttgggttctgacgctttggacgacttcgacttggacatgttgggttctgacgctttggacgacttcgacttggacatgtt
+gggttctgacgctttggacgacttcgacttggacatgttgactagacccaagaaaaagcgcaaggtaactagataataag
+cgaatttcttatgatttatgatttttattattaaataagttataaaaaaaataagtgtatacaaattttaaagtgactct
+taggttttaaaacgaaaattcttattcttgagtaactctttcctgtaggtcaggttgctttctcaggtatagcatgaggt
+cgctcttattgaccacacctctaccggcatgccgagcaaatgcctgcaaatcgctccc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1992128</id>
+<title>BBa_K165002</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>18</endpos></feature>
+<feature>
+<id>1992129</id>
+<title>BBa_K165020</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>27</startpos>
+<endpos>698</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//chassis/eukaryote/yeast</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

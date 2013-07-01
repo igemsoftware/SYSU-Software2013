@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15693</part_id>
+<part_name>BBa_K283010</part_name>
+<part_short_name>K283010</part_short_name>
+<part_short_desc>Streptavidin</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K283010</part_url>
+<part_entered>2009-10-13</part_entered>
+<part_author>Shi Lei</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggctgaagctggtatcaccggcacctggtacaaccagctgggatccaccttcatcgttaccgctggtgctgacggtgc
+tctgaccggtacctacgaatccgctgttggtaacgctgaaagccgctacgttctgaccggtcgttacgactccgctccgg
+ctaccgacggttccggaaccgctctgggttggaccgttgcttggaaaaacaactaccgtaacgctcactccgctaccacc
+tggtctggccagtacgttggtggtgctgaagctcgtatcaacacccagtggttgttgacctccggcaccaccgaagccaa
+cgcgtggaaatccaccctggttggtcacgacaccttcaccaaagttaaaccgtccgctgcttcctaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2052962</id>
+<title>streptavidin </title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>387</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>Streptavidin</value>
+<units></units>
+<url></url>
+<id>7371</id>
+<m_date>2009-10-16 12:44:43</m_date>
+<user_id>5494</user_id>
+<user_name>NelsonChu</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Streptavidin</value>
+<units></units>
+<url></url>
+<id>7372</id>
+<m_date>2009-10-16 12:44:43</m_date>
+<user_id>5494</user_id>
+<user_name>NelsonChu</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Streptavidin</value>
+<units></units>
+<url></url>
+<id>7373</id>
+<m_date>2009-10-16 12:44:43</m_date>
+<user_id>5494</user_id>
+<user_name>NelsonChu</user_name></parameter></parameters>
+<categories>
+<category>//cds/ligand</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

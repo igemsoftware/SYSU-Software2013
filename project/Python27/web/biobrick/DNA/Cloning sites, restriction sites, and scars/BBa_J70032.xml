@@ -1,0 +1,255 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13591</part_id>
+<part_name>BBa_J70032</part_name>
+<part_short_name>J70032</part_short_name>
+<part_short_desc>A Composite BioScaffold Part (PpiI and PsrI) for Protein Fusions (see Design Page)</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J70032</part_url>
+<part_entered>2008-12-12</part_entered>
+<part_author>Julie Norville</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>13589</part_id>
+<part_name>BBa_J70030</part_name>
+<part_short_desc>A BioScaffold Part (Uses PpiI), Protein Tail Remover see Part Design Page</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13590</part_id>
+<part_name>BBa_J70031</part_name>
+<part_short_desc>Linker for BioScaffold Parts, example of Gamma BioScaffold part</part_short_desc>
+<part_type>Temporary</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10973</part_id>
+<part_name>BBa_J70012</part_name>
+<part_short_desc>A BioScaffold Part (Uses PsrI), Protein Head Remover see Part Design page</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>13589</part_id>
+<part_name>BBa_J70030</part_name>
+<part_short_desc>A BioScaffold Part (Uses PpiI), Protein Tail Remover see Part Design Page</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13590</part_id>
+<part_name>BBa_J70031</part_name>
+<part_short_desc>Linker for BioScaffold Parts, example of Gamma BioScaffold part</part_short_desc>
+<part_type>Temporary</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10973</part_id>
+<part_name>BBa_J70012</part_name>
+<part_short_desc>A BioScaffold Part (Uses PsrI), Protein Head Remover see Part Design page</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>13589</part_id>
+<part_name>BBa_J70030</part_name>
+<part_short_desc>A BioScaffold Part (Uses PpiI), Protein Tail Remover see Part Design Page</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>13590</part_id>
+<part_name>BBa_J70031</part_name>
+<part_short_desc>Linker for BioScaffold Parts, example of Gamma BioScaffold part</part_short_desc>
+<part_type>Temporary</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>10973</part_id>
+<part_name>BBa_J70012</part_name>
+<part_short_desc>A BioScaffold Part (Uses PsrI), Protein Head Remover see Part Design page</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ctggttcacctggttaattaattaattaaaccaggtgaacgtggtctctactagagaccaggttactagagacctggtta
+ctagagaacacctggtacagcaggtggcgcgccggcgcgccagctggtgaacaccagg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2000353</id>
+<title>BBa_J70030</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>48</endpos></feature>
+<feature>
+<id>2000345</id>
+<title>PpiI 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>7</endpos></feature>
+<feature>
+<id>2000346</id>
+<title>MabI 1</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>8</startpos>
+<endpos>14</endpos></feature>
+<feature>
+<id>2000347</id>
+<title>PacI 1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>14</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2000348</id>
+<title>PacI3</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>18</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>2000349</id>
+<title>PacI 2</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>29</endpos></feature>
+<feature>
+<id>2000350</id>
+<title>MabI 2</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>30</startpos>
+<endpos>36</endpos></feature>
+<feature>
+<id>2000351</id>
+<title>PpiI 2</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>37</startpos>
+<endpos>40</endpos></feature>
+<feature>
+<id>2000352</id>
+<title>PpiI 2</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>46</startpos>
+<endpos>48</endpos></feature>
+<feature>
+<id>2000354</id>
+<title>MabI</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>57</startpos>
+<endpos>63</endpos></feature>
+<feature>
+<id>2000357</id>
+<title>BBa_J70031</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>57</startpos>
+<endpos>78</endpos></feature>
+<feature>
+<id>2000355</id>
+<title>BBa Scar</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>64</startpos>
+<endpos>71</endpos></feature>
+<feature>
+<id>2000356</id>
+<title>MabI</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>72</startpos>
+<endpos>78</endpos></feature>
+<feature>
+<id>2000365</id>
+<title>BBa_J70012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>87</startpos>
+<endpos>138</endpos></feature>
+<feature>
+<id>2000358</id>
+<title>PsrI 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>87</startpos>
+<endpos>89</endpos></feature>
+<feature>
+<id>2000359</id>
+<title>Mab 1</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>90</startpos>
+<endpos>96</endpos></feature>
+<feature>
+<id>2000360</id>
+<title>PsrI 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>96</startpos>
+<endpos>98</endpos></feature>
+<feature>
+<id>2000361</id>
+<title>AscI 1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>106</startpos>
+<endpos>113</endpos></feature>
+<feature>
+<id>2000362</id>
+<title>AscI 2 </title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>114</startpos>
+<endpos>120</endpos></feature>
+<feature>
+<id>2000363</id>
+<title>PsrI 2</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>129</startpos>
+<endpos>132</endpos></feature>
+<feature>
+<id>2000364</id>
+<title>Mab 2</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>133</startpos>
+<endpos>138</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//DNA/bioscaffold</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

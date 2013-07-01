@@ -1,0 +1,244 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16239</part_id>
+<part_name>BBa_K283035</part_name>
+<part_short_name>K283035</part_short_name>
+<part_short_desc>RFP-double terminators</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K283035</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>Shi Lei,  Nelson Chu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atggcttcctccgaagacgttatcaaagagttcatgcgtttcaaagttcgtatggaaggttccgttaacggtcacgagtt
+cgaaatcgaaggtgaaggtgaaggtcgtccgtacgaaggtacccagaccgctaaactgaaagttaccaaaggtggtccgc
+tgccgttcgcttgggacatcctgtccccgcagttccagtacggttccaaagcttacgttaaacacccggctgacatcccg
+gactacctgaaactgtccttcccggaaggtttcaaatgggaacgtgttatgaacttcgaagacggtggtgttgttaccgt
+tacccaggactcctccctgcaagacggtgagttcatctacaaagttaaactgcgtggtaccaacttcccgtccgacggtc
+cggttatgcagaaaaaaaccatgggttgggaagcttccaccgaacgtatgtacccggaagacggtgctctgaaaggtgaa
+atcaaaatgcgtctgaaactgaaagacggtggtcactacgacgctgaagttaaaaccacctacatggctaaaaaaccggt
+tcagctgccgggtgcttacaaaaccgacatcaaactggacatcacctcccacaacgaagactacaccatcgttgaacagt
+acgaacgtgctgaaggtcgtcactccaccggtgcttaataacgctgatagtgctagtgtagatcgctactagagccaggc
+atcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactag
+agtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2047517</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>681</endpos></feature>
+<feature>
+<id>2047516</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>675</endpos></feature>
+<feature>
+<id>2047518</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>682</startpos>
+<endpos>706</endpos></feature>
+<feature>
+<id>2047519</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>715</startpos>
+<endpos>794</endpos></feature>
+<feature>
+<id>2047520</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>726</startpos>
+<endpos>769</endpos></feature>
+<feature>
+<id>2047521</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>803</startpos>
+<endpos>843</endpos></feature>
+<feature>
+<id>2047522</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>810</startpos>
+<endpos>829</endpos></feature>
+<feature>
+<id>2047523</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>830</startpos>
+<endpos>843</endpos></feature>
+<feature>
+<id>2047524</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>836</startpos>
+<endpos>836</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>RFP-double terminators</value>
+<units></units>
+<url></url>
+<id>8144</id>
+<m_date>2009-10-20 18:19:47</m_date>
+<user_id>3719</user_id>
+<user_name>stone</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RFP-double terminators</value>
+<units></units>
+<url></url>
+<id>8145</id>
+<m_date>2009-10-20 18:19:47</m_date>
+<user_id>3719</user_id>
+<user_name>stone</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RFP-double terminators</value>
+<units></units>
+<url></url>
+<id>8146</id>
+<m_date>2009-10-20 18:19:47</m_date>
+<user_id>3719</user_id>
+<user_name>stone</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RFP-double terminators</value>
+<units></units>
+<url></url>
+<id>8141</id>
+<m_date>2009-10-20 18:19:39</m_date>
+<user_id>3719</user_id>
+<user_name>stone</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RFP-double terminators</value>
+<units></units>
+<url></url>
+<id>8142</id>
+<m_date>2009-10-20 18:19:39</m_date>
+<user_id>3719</user_id>
+<user_name>stone</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RFP-double terminators</value>
+<units></units>
+<url></url>
+<id>8143</id>
+<m_date>2009-10-20 18:19:39</m_date>
+<user_id>3719</user_id>
+<user_name>stone</user_name></parameter></parameters>
+<categories>
+<category>//classic/composite/uncategorized</category>
+<category>//function/reporter/fluorescence</category></categories>
+<twins>
+<twin>BBa_I13501</twin>
+<twin>BBa_J04650</twin>
+<twin>BBa_J01095</twin>
+<twin>BBa_K175015</twin>
+<twin>BBa_K199112</twin>
+<twin>BBa_K606012</twin>
+<twin>BBa_S04566</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

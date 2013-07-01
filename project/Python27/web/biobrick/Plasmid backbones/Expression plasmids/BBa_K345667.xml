@@ -1,0 +1,90 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20521</part_id>
+<part_name>BBa_K345667</part_name>
+<part_short_name>K345667</part_short_name>
+<part_short_desc>Lac regulated insertable promoter</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K345667</part_url>
+<part_entered>2010-10-24</part_entered>
+<part_author>Florencia Camus</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>caatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcg
+ggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggcttaagactttatgcttccgcatcg
+attgttgtgtggaattgtgagcggataacaatttcacacatactagagaaagaggagaaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2114590</id>
+<title>end of LacI coding region (inactive)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>85</endpos></feature>
+<feature>
+<id>2114591</id>
+<title>BBa_K345667</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>220</endpos></feature>
+<feature>
+<id>2114592</id>
+<title>CAP binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>86</startpos>
+<endpos>127</endpos></feature>
+<feature>
+<id>2114594</id>
+<title>AflII restriction site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>136</startpos>
+<endpos>141</endpos></feature>
+<feature>
+<id>2114595</id>
+<title>ClaI restriction site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>156</startpos>
+<endpos>161</endpos></feature>
+<feature>
+<id>2114593</id>
+<title>LacI binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>164</startpos>
+<endpos>198</endpos></feature>
+<feature>
+<id>2114596</id>
+<title>B0034</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>209</startpos>
+<endpos>220</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/intermediate/uncategorized</category>
+<category>//plasmidbackbone/expression/inducible</category>
+<category>//standard/10</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13315</part_id>
+<part_name>BBa_K152001</part_name>
+<part_short_name>K152001</part_short_name>
+<part_short_desc>rbs + crtE</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K152001</part_url>
+<part_entered>2008-10-29</part_entered>
+<part_author>David Johnston Monje</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>agaaggaggattaccatatgacggtctgcgcaaaaaaacacgttcatctcactcgcgatgctgcggagcagttactggct
+gatattgatcgacgccttgatcagttattgcccgtggagggagaacgggatgttgtgggtgccgcgatgcgtgaaggtgc
+gctggcaccgggaaaacgtattcgccccatgttgctgttgctgaccgcccgcgatctgggttgcgctgtcagccatgacg
+gattactggatttggcctgtgcggtggaaatggtccacgcggcttcgctgatccttgacgatatgccctgcatggacgat
+gcgaagctgcggcgcggacgccctaccattcattctcattacggagagcatgtggcaatactggcggcggttgccttgct
+gagtaaagcctttggcgtaattgccgatgcagatggcctcacgccgctggcaaaaaatcgggcggtttctgaactgtcaa
+acgccatcggcatgcaaggattggttcagggtcagttcaaggatctgtctgaaggggataagccgcgcagcgctgaagct
+attttgatgacgaatcactttaaaaccagcacgctgttctgtgcctccatgcagatggcctcgattgttgcgaatgcctc
+cagcgaagcgcgtgattgcctgcatcgtttttcacttgatcttggtcaggcatttcaactgctggacgatttgaccgatg
+gcatgaccgacaccggtaaggatagcaatcaggacgccggtaaatcgacgctggtcaatctgttaggcccgagggcggtt
+gaagaacgtctgagacaacatcttcagcttgccagtgagcatctctctgcggcctgccaacacgggcacgccacccaaca
+ttttattcaggcgtggtttgacaaaaaactcgctgccgtcagttaact
+</seq_data></sequences>
+<features>
+<feature>
+<id>1999567</id>
+<title></title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>3</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>1999568</id>
+<title></title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>18</startpos>
+<endpos>926</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/biosynthesis/isoprenoid</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

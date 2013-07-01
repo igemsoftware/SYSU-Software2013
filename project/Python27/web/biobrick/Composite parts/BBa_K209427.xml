@@ -1,0 +1,244 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15259</part_id>
+<part_name>BBa_K209427</part_name>
+<part_short_name>K209427</part_short_name>
+<part_short_desc>SSFYFP-hM2D-ActA(30-612)</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K209427</part_url>
+<part_entered>2009-10-02</part_entered>
+<part_author>Katja Kolar</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>14929</part_id>
+<part_name>BBa_K209399</part_name>
+<part_short_desc>AarI A-D acceptor vector</part_short_desc>
+<part_type>Plasmid</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15246</part_id>
+<part_name>BBa_K209402</part_name>
+<part_short_desc>AarI A-B part, signal sequence-FLAG-YFP  [SSFYFP]</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15188</part_id>
+<part_name>BBa_K209415</part_name>
+<part_short_desc>AarI B-C part, hM2D</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15178</part_id>
+<part_name>BBa_K209404</part_name>
+<part_short_desc>AarI C-D part, ActA (30-612)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>14929</part_id>
+<part_name>BBa_K209399</part_name>
+<part_short_desc>AarI A-D acceptor vector</part_short_desc>
+<part_type>Plasmid</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15246</part_id>
+<part_name>BBa_K209402</part_name>
+<part_short_desc>AarI A-B part, signal sequence-FLAG-YFP  [SSFYFP]</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15188</part_id>
+<part_name>BBa_K209415</part_name>
+<part_short_desc>AarI B-C part, hM2D</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15178</part_id>
+<part_name>BBa_K209404</part_name>
+<part_short_desc>AarI C-D part, ActA (30-612)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>14929</part_id>
+<part_name>BBa_K209399</part_name>
+<part_short_desc>AarI A-D acceptor vector</part_short_desc>
+<part_type>Plasmid</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>15246</part_id>
+<part_name>BBa_K209402</part_name>
+<part_short_desc>AarI A-B part, signal sequence-FLAG-YFP  [SSFYFP]</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>15188</part_id>
+<part_name>BBa_K209415</part_name>
+<part_short_desc>AarI B-C part, hM2D</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>15178</part_id>
+<part_name>BBa_K209404</part_name>
+<part_short_desc>AarI C-D part, ActA (30-612)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ctttcctgcgttatcccctgattctgtggataaccgtattaccgcctttgagtgagctgataccgctcgccgcagccgaa
+cgaccgagcgcagcgagtcagtgagcgaggaagcggaagagcgcccaatacgcaaaccgcctctccccgcgcgttggccg
+attcattaatgcagctggcacgacaggtttcccgactggaaagcgggcagtgagcgcaacgcaattaatacgcgtaccgc
+tagccaggaagagtttgtagaaacgcaaaaaggccatccgtcaggatggccttctgcttagtttgatgcctggcagttta
+tggcgggcgtcctgcccgccaccctccgggccgttgcttcacaacgttcaaatccgctcccggcggatttgtcctactca
+ggagagcgttcaccgacaaacaacagataaaacgaaaggcccagtcttccgactgagcctttcgttttatttgatgcctg
+gcagttccctactctcgcgttaacgctagcatggatgttttcccagtcacgacgttgtaaaacgacggccagtcttaagc
+tcgggccccaaataatgattttattttgactgatagtgacctgttcgttgcaacacattgatgagcaatgcttttttata
+atgccaactttgtacaaaaaagcaggctttaaggagcaaggcaggtggacaagaggagttctagtggatccttgaacttg
+tctagaagctggaactcccacctgcaacatgcgaatacccagctttcttgtacaaagttggcattataagaaagcattgc
+ttatcaatttgttgcaacgaacaggtcactatcagtcaaaataaaatcattatttgccatccagctgatatcccctatag
+tgagtcgtattacatggtcatagctgtttcctggcagctctggcccgtgtctcaaaatctctgatgttacattgcacaag
+ataaaataatatcatcatgaacaataaaactgtctgcttacataaacagtaatacaaggggtgttatgagccatattcaa
+cgggaaacgtcgaggccgcgattaaattccaacatggatgctgatttatatgggtataaatgggctcgcgataatgtcgg
+gcaatcaggtgcgacaatctatcgcttgtatgggaagcccgatgcgccagagttgtttctgaaacatggcaaaggtagcg
+ttgccaatgatgttacagatgagatggtcagactaaactggctgacggaatttatgcctcttccgaccatcaagcatttt
+atccgtactcctgatgatgcatggttactcaccactgcgatccccggaaaaacagcattccaggtattagaagaatatcc
+tgattcaggtgaaaatattgttgatgcgctggcagtgttcctgcgccggttgcattcgattcctgtttgtaattgtcctt
+ttaacagcgatcgcgtatttcgtctcgctcaggcgcaatcacgaatgaataacggtttggttgatgcgagtgattttgat
+gacgagcgtaatggctggcctgttgaacaagtctggaaagaaatgcataaacttttgccattctcaccggattcagtcgt
+cactcatggtgatttctcacttgataaccttatttttgacgaggggaaattaataggttgtattgatgttggacgagtcg
+gaatcgcagaccgataccaggatcttgccatcctatggaactgcctcggtgagttttctccttcattacagaaacggctt
+tttcaaaaatatggtattgataatcctgatatgaataaattgcagtttcatttgatgctcgatgagtttttctaatcaga
+attggttaattggttgtaacactggcagagcattacgctgacttgacgggacggcgcaagctcatgaccaaaatccctta
+acgtgagttacgcgtcgttccactgagcgtcagaccccgtagaaaagatcaaaggatcttcttgagatcctttttttctg
+cgcgtaatctgctgcttgcaaacaaaaaaaccaccgctaccagcggtggtttgtttgccggatcaagagctaccaactct
+ttttccgaaggtaactggcttcagcagagcgcagataccaaatactgttcttctagtgtagccgtagttaggccaccact
+tcaagaactctgtagcaccgcctacatacctcgctctgctaatcctgttaccagtggctgctgccagtggcgataagtcg
+tgtcttaccgggttggactcaagacgatagttaccggataaggcgcagcggtcgggctgaacggggggttcgtgcacaca
+gcccagcttggagcgaacgacctacaccgaactgagatacctacagcgtgagctatgagaaagcgccacgcttcccgaag
+ggagaaaggcggacaggtatccggtaagcggcagggtcggaacaggagagcgcacgagggagcttccagggggaaacgcc
+tggtatctttatagtcctgtcgggtttcgccacctctgacttgagcgtcgatttttgtgatgctcgtcaggggggcggag
+cctatggaaaaacgccagcaacgcggcctttttacggttcctggccttttgctggccttttgctcacatgtttactagat
+ggacagcaaaggttcgtcgcagaaagggtcccgcctgctcctgctgctggtggtgtcaaatctactcttgtgccagggtg
+tggtctccgattacaaagatgatgatgatgtcgactccccgatccagatcttccgcggcatggtgagcaagggcgaggag
+ctgttcaccggggtggtgcccatcctggtcgagctggacggcgacgtaaacggccacaagttcagcgtgtccggcgaggg
+cgagggcgatgccacctacggcaagctgaccctgaagctgatctgcaccaccggcaagctgcccgtgccctggcccaccc
+tcgtgaccaccctgggctacggcctgcagtgcttcgcccgctaccccgaccacatgaagcagcacgacttcttcaagtcc
+gccatgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacggcaactacaagacccgcgccgaggtgaa
+gttcgagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttcaaggaggacggcaacatcctggggcaca
+agctggagtacaactacaacagccacaacgtctatatcaccgccgacaagcagaagaacggcatcaaggccaacttcaag
+atccgccacaacatcgaggacggcggcgtgcagctcgccgaccactaccagcagaacacccccatcggcgacggccccgt
+gctgctgcccgacaaccactacctgagctaccagtccgccctgagcaaagaccccaacgagaagcgcgatcacatggtcc
+tgctggagttcgtgaccgccgccgggatcactctcggcatggacgagctgtacaagtactagatgaataactcaacaaac
+tcctctaacaatagcctggctcttacaagtccttataagacatttgaagtggtgtttattgtcctggtggctggatccct
+cagtttggtgaccattatcgggaacatcctagtcatggtttccattaaagtcaaccgccacctccagaccgtcaacaatt
+actttttattcagcttggcctgtgctgaccttatcataggtgttttctccatgaacttgtacaccctctacactgtgatt
+ggttactggcctttgggacctgtggtgtgtgacctttggctagccctggactgtgtggtcagcaatgcctcagttatgaa
+tctgctcatcatcagctttgacaggtacttctgtgtcacaaaacctctgacctacccagtcaagcggaccacaaaaatgg
+caggtatgatgattgcagctgcttgggtcctctctttcatcctctgggctccagccattctcttctggcagttcattgta
+ggggtgagaactgtggaggatggggagtgctacattcagtttttttccaatgctgctgtcacctttggtacggctattgc
+aggcttctatttgccagtgatcatcatgactgtgctatattggcacatatcccgagccagcaagagcaggataaagaagg
+acaagaaggagcctgttgccaaccaagaccccgtttctccaagtctggtacaaggaaggatagtgaagccaaacaataac
+aacatgcccagcagtgacgatggcctggagcacaacaaaatccagaatggcaaagcccccagggatcctgtgactgaaaa
+ctgtgttcagggagaggagaaggagagctccaatgactccacctcagtcagtgctgttgcctctaatatgagagatgatg
+aaataacccaggatgaaaacacagtttccacttccctgggccattccaaagatgagaactctaagcaaacatgcatcaga
+attggcaccaagaccccaaaaagtgactcatgtaccccaactaataccaccgtggaggtagtggggtcttcaggtcagaa
+tggagatgaaaagcagaatattgtagcccgcaagattgtgaagatgactaagcagcctgcaaaaaagaagcctcctcctt
+cccgggaaaagaaagtcaccaggacaatcttggctattctgttggctttcatcatcacttgggccccatacaatgtcatg
+gtgctcattaacaccttttgtgcaccttgcatccccaacactgtgtggacaattggttactggctttgttacatcaacag
+cactatcaaccctgcctgctatgcactttgcaatgccaccttcaagaagacctttaaacaccttctcatgtgtcattata
+agaacataggcgctacaaggtactagatggaagattctagtctaaacacagatgaatgggaagaagaaaaaacagaagag
+cagccaagcgaggtaaatacgggaccaagatacgaaactgcacgtgaagtaagttcacgtgatattgaggaactagaaaa
+atcgaataaagtgaaaaatacgaacaaagcagacctaatagcaatgttgaaagcaaaagcagaaaaaggtccaaatatta
+ataataacaacagtgaacaaagcgagaatgtggctataaatgaagaagcttcaggatccgaccgaccagctatacaagtg
+gagcgtcgtcatccagggttgccatcggatagcgccgcggaaattaaaaaaagaaggaaagctatagcatcatcggatag
+tgagcttgaaagccttacttatccggataaaccaacaaaagcaactaagaaaaaagtggcgaaagcgtcagttacggata
+cttctgaaagtgacttagattctagcatgcagtcagcggatgagtctacaccacaacctttaaaagcaaatcaacaacca
+tttttccctaaagtatttaaaaaaataaaagatgcgggtaaatgggtacgtgataaaatcgacgaaaatcccgaagtgaa
+gaaagcaattgttgataaaagtgcagggttaattgaccaattattaactaagaagaaaaatgaagaggtaaatgcttcgg
+actttccaccaccacctacggatgaagagttaagacttgctttgccagagacaccgatgcttcttggttttaatgctcct
+gctacatcggaaccgagctcattcgaatttccaccaccacctacggatgaagagttaagacttgctttgccagagacgcc
+aatgcttcttggttttaatgctcctgctacatcggaaccgagctcattcgaatttccaccgcctccaacagaagatgaac
+tagaaattatgcgggaaacagcaccttcgctagattctagttttacaagcggggatttagctagttcgagaagtgctatt
+aatcgccatagccaaaatttctctgattttccaccaatgccaacagaagaagagttgaacgggagaggtggtataccaac
+atctgaagaatttagttcgctgaatagtggcgattttacagatgacgaaaacagcgagacaacagaagaagaaattgatc
+gcctagctgatttaagagatagaggaacaggaaaacactcaagaaatgcgggttttttaccattaaatccgtttactagc
+agtccggttccttcgttaactccaaaggtaccgaaaataagcgcgccggctctgataactgacataactaaaaaagcacc
+atttaaaaatccgccacagccattaaatgtgtttaacaaaaaaactacaacgaaaacagcgccaaaaaaaataacccctg
+tgaataccgcgccaaagctagcagcacttcctatcacgaaagcgcaagaaactgagcttggggaaaataaagcaccattt
+atagaaaaacaagcagagacaaacaatcggccaattgatatgccgagcctaccagtaatccaaaaagaagttacagaaag
+aaataaagaggaaatgaaaccgcaaaccgaggaaaaagtggtaggagaaagcgaaccagctaataatgtgaacggaaaaa
+aacgttctgctggcattgaagaaggaaaattaattgctaaaagtgcagaagacgaaaaagcaaaagaagaaccagggaac
+catacgacg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2028317</id>
+<title>BBa_K209399</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>2632</endpos></feature>
+<feature>
+<id>2028318</id>
+<title>BBa_K209402</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2639</startpos>
+<endpos>3496</endpos></feature>
+<feature>
+<id>2028319</id>
+<title>BBa_K209415</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>3503</startpos>
+<endpos>4900</endpos></feature>
+<feature>
+<id>2028320</id>
+<title>BBa_K209404</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>4907</startpos>
+<endpos>6649</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//standard/28</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

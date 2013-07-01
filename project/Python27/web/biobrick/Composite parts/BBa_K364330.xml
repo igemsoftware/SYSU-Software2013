@@ -1,0 +1,165 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19999</part_id>
+<part_name>BBa_K364330</part_name>
+<part_short_name>K364330</part_short_name>
+<part_short_desc>TRE-PolyA</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K364330</part_url>
+<part_entered>2010-10-20</part_entered>
+<part_author>Endre K�roly Krist�f</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>18802</part_id>
+<part_name>BBa_K364304</part_name>
+<part_short_desc>TRE-CMV</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>18777</part_id>
+<part_name>BBa_K364302</part_name>
+<part_short_desc>PolyA</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>18802</part_id>
+<part_name>BBa_K364304</part_name>
+<part_short_desc>TRE-CMV</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>18777</part_id>
+<part_name>BBa_K364302</part_name>
+<part_short_desc>PolyA</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>18802</part_id>
+<part_name>BBa_K364304</part_name>
+<part_short_desc>TRE-CMV</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>18777</part_id>
+<part_name>BBa_K364302</part_name>
+<part_short_desc>PolyA</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tcgagtttactccctatcagtgatagagaacgtatgtcgagtttactccctatcagtgatagagaacgatgtcgagttta
+ctccctatcagtgatagagaacgtatgtcgagtttactccctatcagtgatagagaacgtatgtcgagtttactccctat
+cagtgatagagaacgtatgtcgagtttatccctatcagtgatagagaacgtatgtcgagtttactccctatcagtgatag
+agaacgtatgtcgaggtaggcgtgtacggtgggaggcctatataagcagagctcgtttagtgaaccgtcagatcgcctgg
+atactagagggatcataatcagccataccacatttgtagaggttttacttgctttaaaaaacctcccacacctccccctg
+aacctgaaacataaaatgaatgcaattgttgttgttaacttgtttattgcagcttataatggttacaaataaagcaatag
+catcacaaatttcacaaataaagcatttttttcactgcct
+</seq_data></sequences>
+<features>
+<feature>
+<id>2090724</id>
+<title>TRE</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>249</endpos></feature>
+<feature>
+<id>2090733</id>
+<title>BBa_K364304</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>321</endpos></feature>
+<feature>
+<id>2090725</id>
+<title>1st tetO</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>9</startpos>
+<endpos>27</endpos></feature>
+<feature>
+<id>2090726</id>
+<title>2nd tetO</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>45</startpos>
+<endpos>63</endpos></feature>
+<feature>
+<id>2090727</id>
+<title>3rd tetO</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>80</startpos>
+<endpos>98</endpos></feature>
+<feature>
+<id>2090728</id>
+<title>4th tetO</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>116</startpos>
+<endpos>134</endpos></feature>
+<feature>
+<id>2090729</id>
+<title>5th tetO</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>152</startpos>
+<endpos>170</endpos></feature>
+<feature>
+<id>2090730</id>
+<title>6th tetO</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>187</startpos>
+<endpos>205</endpos></feature>
+<feature>
+<id>2090731</id>
+<title>7th tetO</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>223</startpos>
+<endpos>241</endpos></feature>
+<feature>
+<id>2090732</id>
+<title>minimal P-CMV</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>255</startpos>
+<endpos>315</endpos></feature>
+<feature>
+<id>2090734</id>
+<title>BBa_K364302</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>330</startpos>
+<endpos>520</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_K364331</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

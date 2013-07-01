@@ -1,0 +1,223 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>5446</part_id>
+<part_name>BBa_I13413</part_name>
+<part_short_name>I13413</part_short_name>
+<part_short_desc>Pbad.RBS.CFP (insertion site) RBS.YFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I13413</part_url>
+<part_entered>2005-05-23</part_entered>
+<part_author>jkm</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>5443</part_id>
+<part_name>BBa_I13411</part_name>
+<part_short_desc>I15016 with extra REN sites</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4460</part_id>
+<part_name>BBa_E0030</part_name>
+<part_short_desc>enhanced yellow fluorescent protein derived from A. victoria GFP</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>eyfp</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>5443</part_id>
+<part_name>BBa_I13411</part_name>
+<part_short_desc>I15016 with extra REN sites</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4460</part_id>
+<part_name>BBa_E0030</part_name>
+<part_short_desc>enhanced yellow fluorescent protein derived from A. victoria GFP</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>eyfp</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5443</part_id>
+<part_name>BBa_I13411</part_name>
+<part_short_desc>I15016 with extra REN sites</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>4460</part_id>
+<part_name>BBa_E0030</part_name>
+<part_short_desc>enhanced yellow fluorescent protein derived from A. victoria GFP</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>eyfp</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttatgacaacttgacggctacatcattcactttttcttcacaaccggcacggaactcgctcgggctggccccggtgcatt
+ttttaaatacccgcgagaaatagagttgatcgtcaaaaccaacattgcgaccgacggtggcgataggcatccgggtggtg
+ctcaaaagcagcttcgcctggctgatacgttggtcctcgcgccagcttaagacgctaatccctaactgctggcggaaaag
+atgtgacagacgcgacggcgacaagcaaacatgctgtgcgacgctggcgatatcaaaattgctgtctgccaggtgatcgc
+tgatgtactgacaagcctcgcgtacccgattatccatcggtggatggagcgactcgttaatcgcttccatgcgccgcagt
+aacaattgctcaagcagatttatcgccagcagctccgaatagcgcccttccccttgcccggcgttaatgatttgcccaaa
+caggtcgctgaaatgcggctggtgcgcttcatccgggcgaaagaaccccgtattggcaaatattgacggccagttaagcc
+attcatgccagtaggcgcgcggacgaaagtaaacccactggtgataccattcgcgagcctccggatgacgaccgtagtga
+tgaatctctcctggcgggaacagcaaaatatcacccggtcggcaaacaaattctcgtccctgatttttcaccaccccctg
+accgcgaatggtgagattgagaatataacctttcattcccagcggtcggtcgataaaaaaatcgagataaccgttggcct
+caatcggcgttaaacccgccaccagatgggcattaaacgagtatcccggcagcaggggatcattttgcgcttcagccata
+cttttcatactcccgccattcagagaagaaaccaattgtccatattgcatcagacattgccgtcactgcgtcttttactg
+gctcttctcgctaaccaaaccggtaaccccgcttattaaaagcattctgtaacaaagcgggaccaaagccatgacaaaaa
+cgcgtaacaaaagtgtctataatcacggcagaaaagtccacattgattatttgcacggcgtcacactttgctatgccata
+gcatttttatccataagattagcggatcctacctgacgctttttatcgcaactctctactgtttctccatacccgttttt
+ttgggctagctactagagtcacacaggaaagtactagatggtgagcaagggcgaggagctgttcaccggggtggtgccca
+tcctggtcgagctggacggcgacgtgaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggc
+aagctgaccctgaagttcatctgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccctgacctgggg
+cgtgcagtgcttcagccgctaccccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtcc
+aggagcgcaccatcttcttcaaggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtg
+aaccgcatcgagctgaagggcatcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaactacatcag
+ccacaacgtctatatcaccgccgacaagcagaagaacggcatcaaggccaacttcaagatccgccacaacatcgaggacg
+gcagcgtgcagctcgccgaccactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactac
+ctgagcacccagtccgccctgagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgc
+cgggatcactctcggcatggacgagctgtacaagtaataaaagctttaccatggattactagagtcacacaggaaagtac
+tagatggtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggcgacgtaaacggcca
+caagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcatctgcaccaccggca
+agctgcccgtgccctggcccaccctcgtgaccaccttcggctacggcctgcaatgcttcgcccgctaccccgaccacatg
+aagctgcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacggcaa
+ctacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttcaagg
+aggacggcaacatcctggggcacaagctggagtacaactacaacagccacaacgtctatatcatggccgacaagcagaag
+aacggcatcaaggtgaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccgaccactaccagcagaa
+cacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagctaccagtccgccctgagcaaagacccca
+acgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcatggacgagctgtacaag
+taataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1496200</id>
+<title>BBa_I0500</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>1496206</id>
+<title>B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1219</startpos>
+<endpos>1231</endpos></feature>
+<feature>
+<id>1496208</id>
+<title>BBa_I13411</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1219</startpos>
+<endpos>1976</endpos></feature>
+<feature>
+<id>1496207</id>
+<title>E0020</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1238</startpos>
+<endpos>1960</endpos></feature>
+<feature>
+<id>1496215</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1985</startpos>
+<endpos>1997</endpos></feature>
+<feature>
+<id>1496216</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1985</startpos>
+<endpos>1997</endpos></feature>
+<feature>
+<id>1496217</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1991</startpos>
+<endpos>1994</endpos></feature>
+<feature>
+<id>1496219</id>
+<title>BBa_E0030</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2004</startpos>
+<endpos>2726</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/composite/uncategorized</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

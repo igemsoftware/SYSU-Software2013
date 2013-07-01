@@ -1,0 +1,131 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20181</part_id>
+<part_name>BBa_K374015</part_name>
+<part_short_name>K374015</part_short_name>
+<part_short_desc>Lambda nutR site followed by BioBrick terminator BBa_B0011</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K374015</part_url>
+<part_entered>2010-10-21</part_entered>
+<part_author>Thomas Trolle, Anastasiya S. Haugaard, Juliet Frederiksen, Martin Malthe Borch, Patrick Fortuna</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19666</part_id>
+<part_name>BBa_K374005</part_name>
+<part_short_desc>Lambda nutR site -  N utilization site + Tr1 rho dependent terminator.</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>144</part_id>
+<part_name>BBa_B0011</part_name>
+<part_short_desc>LuxICDABEG (+/-)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19666</part_id>
+<part_name>BBa_K374005</part_name>
+<part_short_desc>Lambda nutR site -  N utilization site + Tr1 rho dependent terminator.</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>144</part_id>
+<part_name>BBa_B0011</part_name>
+<part_short_desc>LuxICDABEG (+/-)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19666</part_id>
+<part_name>BBa_K374005</part_name>
+<part_short_desc>Lambda nutR site -  N utilization site + Tr1 rho dependent terminator.</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>144</part_id>
+<part_name>BBa_B0011</part_name>
+<part_short_desc>LuxICDABEG (+/-)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ataaccccgctcttacacattccagccctgaaaaagggcatcaaattaaaccacacctatggtgtatgcatttatttgca
+tacattcaatcaattgttatctaaggaaatacttacattactagagagagaatataaaaagccagattattaatccggct
+tttttattattt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2091307</id>
+<title>BBa_K374005</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>118</endpos></feature>
+<feature>
+<id>2091303</id>
+<title>Rho utilization site A (rutA)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>8</startpos>
+<endpos>25</endpos></feature>
+<feature>
+<id>2091304</id>
+<title>N utilization rightward</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>24</startpos>
+<endpos>40</endpos></feature>
+<feature>
+<id>2091305</id>
+<title>Rho utilization site B (rutB)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>41</startpos>
+<endpos>60</endpos></feature>
+<feature>
+<id>2091306</id>
+<title>Rho dependant tR1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>77</startpos>
+<endpos>101</endpos></feature>
+<feature>
+<id>2091308</id>
+<title>BBa_B0011</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>127</startpos>
+<endpos>172</endpos></feature>
+<feature>
+<id>2091309</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>139</startpos>
+<endpos>161</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

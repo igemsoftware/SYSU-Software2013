@@ -1,0 +1,61 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23573</part_id>
+<part_name>BBa_K646000</part_name>
+<part_short_name>K646000</part_short_name>
+<part_short_desc>Hemeoxygenase with RBS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>HO1</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K646000</part_url>
+<part_entered>2011-09-29</part_entered>
+<part_author>Edward Moh</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ctttaagaaggagatatacatatgagtgtcaacttagcttcccagttgcgggaagggacgaaaaaatcccactccatggc
+ggagaacgtcggctttgtcaaatgcttcctcaagggcgttgtcgagaaaaattcctaccgtaagctggttggcaatctct
+actttgtctacagtgccatggaagaggaaatggcaaaatttaaggaccatcccatcctcagccacatttacttccccgaa
+ctcaaccgcaaacaaagcctagagcaagacctgcaattctattacggctccaactggcggcaagaagtgaaaatttctgc
+cgctggccaagcctatgtggaccgagtccggcaagtggccgctacggcccctgaattgttggtggcccattcctacaccc
+gttacctgggggatctttccggcggtcaaattctcaagaaaattgcccaaaatgccatgaatctccacgatggtggcaca
+gctttctatgaatttgccgacattgatgacgaaaaggcttttaaaaatacctaccgtcaagctatgaatgatctgcccat
+tgaccaagccaccgccgaacggattgtggatgaagccaatgacgcctttgccatgaacatgaaaatgttcaacgaacttg
+aaggcaacctgatcaaggcgatcggcattatggtgttcaacagcctcacccgtcgccgcagtcaaggcagcaccgaagtt
+ggcctcgccacctccgaaggctag
+</seq_data></sequences>
+<features>
+<feature>
+<id>2147982</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>9</startpos>
+<endpos>14</endpos></feature>
+<feature>
+<id>2147983</id>
+<title>Heme Oxygenase 1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>744</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//cds/biosynthesis</category>
+<category>//cds/enzyme</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,60 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19049</part_id>
+<part_name>BBa_K358012</part_name>
+<part_short_name>K358012</part_short_name>
+<part_short_desc>S&amp;#916;TMD1</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K358012</part_url>
+<part_entered>2010-09-19</part_entered>
+<part_author>Ken Kajita</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gagcaaatccccttattgggggtaagacatgaagatgccagaaaaacatgaccgcggcagatataatggcggtgcgttta
+caaaaacagtaatcgacgcaacgatgtgcgccattatcgcctggttcattcgtgaccttctcgacttcgccggactaagt
+agcaatctcgcttatataacgagcgtgtttatcggctacatcggtactgactcgattggttcgcttatcaaacgcttcgc
+tgctaaaaaagccggagtagaagatggtagaaatcaataatactagagt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2093182</id>
+<title>wt-RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>2</startpos>
+<endpos>26</endpos></feature>
+<feature>
+<id>2093183</id>
+<title>SdeletionTMD1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>29</startpos>
+<endpos>280</endpos></feature>
+<feature>
+<id>2093184</id>
+<title>Scar</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>281</startpos>
+<endpos>289</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

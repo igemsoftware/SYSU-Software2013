@@ -1,0 +1,133 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>21473</part_id>
+<part_name>BBa_M36004</part_name>
+<part_short_name>M36004</part_short_name>
+<part_short_desc>predicted glycogen synthesis protein (w/ UTR&amp;term)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_M36004</part_url>
+<part_entered>2011-04-28</part_entered>
+<part_author>Jesse Palmer, Elliot Lui</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>21453</part_id>
+<part_name>BBa_M36009</part_name>
+<part_short_desc>5&apos; Bicistronic UTR (strong), does not include ATG start 		</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21454</part_id>
+<part_name>BBa_M36008</part_name>
+<part_short_desc>predicted glycogen synthesis protein</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21455</part_id>
+<part_name>BBa_M36010</part_name>
+<part_short_desc>Transcription Terminator (Strong)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>21453</part_id>
+<part_name>BBa_M36009</part_name>
+<part_short_desc>5&apos; Bicistronic UTR (strong), does not include ATG start 		</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21454</part_id>
+<part_name>BBa_M36008</part_name>
+<part_short_desc>predicted glycogen synthesis protein</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21455</part_id>
+<part_name>BBa_M36010</part_name>
+<part_short_desc>Transcription Terminator (Strong)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>21453</part_id>
+<part_name>BBa_M36009</part_name>
+<part_short_desc>5&apos; Bicistronic UTR (strong), does not include ATG start 		</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>21454</part_id>
+<part_name>BBa_M36008</part_name>
+<part_short_desc>predicted glycogen synthesis protein</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>21455</part_id>
+<part_name>BBa_M36010</part_name>
+<part_short_desc>Transcription Terminator (Strong)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tatagagggtattaataatgtatggattaaaaggggaggtataacaatactagatggatcatagtcttaattctttaaat
+aatttcgatttcctggcgcgtagttttgccagaatgcacgcagaaggtcgcccggtcgatattctggccgttactggtaa
+catggatgaagaacatagaacctggttttgcgcacgttatgcctggtattgtcaacagatgatgcaggcaagagagctgg
+agttagagcactgatactagagtcggtcagtttcacctgatttacgtaaaaacccgcttcggcgggtttttgcttttgga
+ggggcagaaagatgaatgactgtc
+</seq_data></sequences>
+<features>
+<feature>
+<id>2117837</id>
+<title>BBa_M36009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>47</endpos></feature>
+<feature>
+<id>2117838</id>
+<title>BBa_M36008</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>54</startpos>
+<endpos>254</endpos></feature>
+<feature>
+<id>2117839</id>
+<title>BBa_M36010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>263</startpos>
+<endpos>344</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//cds/biosynthesis</category>
+<category>//chassis/prokaryote/ecoli</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,187 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7585</part_id>
+<part_name>BBa_J63010</part_name>
+<part_short_name>J63010</part_short_name>
+<part_short_desc>Protein fusion vector (Silver lab standard)</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>V0120</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J63010</part_url>
+<part_entered>2006-10-18</part_entered>
+<part_author>Ira Phillips and Caroline Ajo-Franklin</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>actagtagcggccgctgcagagcaagagacgactgactgactgactggaaagaggaagggctggaagaggaaggagcttg
+gcgtaatcatggtcatagctgtttcctgtgtgaaattgttatccgctcacaattccacacaacatacgagccggaagcat
+aaagtgtaaagcctggggtgcctaatgagtgagctaactcacattaattgcgttgcgctcactgcccgctttccagtcgg
+gaaacctgtcgtgccagctgcattaatgaatcggccaacgcgcggggagaggcggtttgcgtattgggcgctcttccgct
+tcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctcactcaaaggcggtaatacggtt
+atccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggccaggaaccgtaaaaaggccg
+cgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacgctcaagtcagaggtggcgaaac
+ccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcctgttccgaccctgccgcttac
+cggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcacgctgtaggtatctcagttcggtgt
+aggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcgccttatccggtaactatcgt
+cttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacaggattagcagagcgaggtatgt
+aggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaaggacagtatttggtatctgcgctctgc
+tgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccgctggtagcggtggttttttt
+gtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatcttttctacggggtctgacgctca
+gtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttcacctagatccttttaaattaaa
+aatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttaccaatgcttaatcagtgaggcacct
+atctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagataactacgatacgggagggctt
+accatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagatttatcagcaataaaccagccag
+ccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctattaattgttgccgggaagctaga
+gtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcgtggtgtcacgctcgtcgtttgg
+tatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgttgtgcaaaaaagcggttagct
+ccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggttatggcagcactgcataattct
+cttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtcattctgagaatagtgtatgcg
+gcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcagaactttaaaagtgctcatcattg
+gaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcgatgtaacccactcgtgcaccc
+aactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgccgcaaaaaaggg
+aataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaagcatttatcagggttattgtc
+tcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgcacatttccccgaaaagtgcca
+cctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggccctttcgtctcgcgcg
+tttcggtgatgacggtgaaaacctctgacacatgcagctcccggagacggtcacagcttgtctgtaagcggatgccggga
+gcagacaagcccgtcagggcgcgtcagcgggtgttggcgggtgtcggggctggcttaactatgcggcatcagagcagatt
+gtactgagagtgcaccataaaattgtaaacgttaatattttgttaaaattcgcgttaaatttttgttaaatcagctcatt
+ttttaaccaatagaccgaaatcggcaaaatcccttataaatcaaaagaatagcccgagatagagttgagtgttgttccag
+tttggaacaagagtccactattaaagaacgtggactccaacgtcaaagggcgaaaaaccgtctatcagggcgatggccca
+ctacgtgaaccatcacccaaatcaagttttttggggtcgaggtgccgtaaagcactaaatcggaaccctaaagggagccc
+ccgatttagagcttgacggggaaagccggcgaacgtggcgagaaaggaagggaagaaagcgaaaggagcgggcgctaagg
+cgctggcaagtgtagcggtcacgctgcgcgtaaccaccacacccgccgcgcttaatgcgccgctacagggcgcgtactat
+ggttgctttgacgtatgcggtgtgaaataccgcacagatgcgtaaggagaaaataccgcatcaggcgccattcgccattc
+aggctgcgcaactgttgggaagggcgatcggtgcgggcctcttcgctattacgccagctggcgaaagggggatgtgctgc
+aaggcgattaagttgggtaacgccagggttttcccagtcacgacgttgtaaaacgacggccagtgaattggaggctacag
+tcagtggagaggactttcactgactgactgactgcgtctcaacctgaattcgcggccgcatctaga
+</seq_data></sequences>
+<features>
+<feature>
+<id>1908166</id>
+<title>modified BioBrick suffix</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>1908167</id>
+<title>rep pMB1 replication origin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>479</startpos>
+<endpos>1093</endpos></feature>
+<feature>
+<id>1969670</id>
+<title>RNAII transcript</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>494</startpos>
+<endpos>1046</endpos></feature>
+<feature>
+<id>1969671</id>
+<title>RNAI transcript</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>936</startpos>
+<endpos>1043</endpos></feature>
+<feature>
+<id>1908165</id>
+<title>beta-lactamase (bla gene)</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>1253</startpos>
+<endpos>2113</endpos></feature>
+<feature>
+<id>1969668</id>
+<title>f1 origin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2632</startpos>
+<endpos>2938</endpos></feature>
+<feature>
+<id>1969669</id>
+<title>lacZ alpha peptide</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>3028</startpos>
+<endpos>3187</endpos></feature>
+<feature>
+<id>1969672</id>
+<title>modified BioBrick prefix</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>3246</startpos>
+<endpos>3266</endpos></feature>
+<feature>
+<id>2172657</id>
+<title>incorrect silver fusion prefix</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>3260</startpos>
+<endpos>3260</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>copies</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4171</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>A</value>
+<units></units>
+<url></url>
+<id>4172</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>mcs</name>
+<value>Silver</value>
+<units></units>
+<url></url>
+<id>4173</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4174</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4175</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//chassis/eukaryote/yeast</category>
+<category>//plasmidbackbone/proteinfusion</category>
+<category>//standard/23</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

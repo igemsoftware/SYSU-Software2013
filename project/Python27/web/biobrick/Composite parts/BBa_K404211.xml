@@ -1,0 +1,106 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18926</part_id>
+<part_name>BBa_K404211</part_name>
+<part_short_name>K404211</part_short_name>
+<part_short_desc>ViralBrick-587KO-His-Tag  </part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K404211</part_url>
+<part_entered>2010-08-28</part_entered>
+<part_author>Freiburg Bioware 2010</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>caatatttgggatccgtatctaccaacctccaggctggcaacaccggccatcatcatcatcatcatggcctgagcgccca
+agcagctacagctgatagtcgactg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2079131</id>
+<title>upstream 453</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>9</endpos></feature>
+<feature>
+<id>2079132</id>
+<title>upstream 587</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>10</startpos>
+<endpos>42</endpos></feature>
+<feature>
+<id>2079133</id>
+<title>R=&gt;A</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>34</startpos>
+<endpos>36</endpos></feature>
+<feature>
+<id>2079134</id>
+<title>TG Spacer</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>43</startpos>
+<endpos>48</endpos></feature>
+<feature>
+<id>2079135</id>
+<title>His-Tag</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>49</startpos>
+<endpos>66</endpos></feature>
+<feature>
+<id>2079136</id>
+<title>GLS Spacer</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>67</startpos>
+<endpos>75</endpos></feature>
+<feature>
+<id>2079137</id>
+<title>R=&gt;A</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>78</endpos></feature>
+<feature>
+<id>2079138</id>
+<title>downstream 587</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>96</endpos></feature>
+<feature>
+<id>2079139</id>
+<title>downstream 453</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>97</startpos>
+<endpos>105</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//chassis/eukaryote/human</category>
+<category>//proteindomain/affinity</category>
+<category>//standard/25</category>
+<category>//viral_vectors</category>
+<category>//viral_vectors/aav</category>
+<category>//viral_vectors/aav/miscellaneous</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

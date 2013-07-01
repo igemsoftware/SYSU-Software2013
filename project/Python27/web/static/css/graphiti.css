@@ -1,0 +1,62 @@
+
+
+/* ===== Primary Styles ========================================================
+   Author:
+   ========================================================================== */
+
+#catalog {
+	border-radius: 6px;
+  border: 1px solid #ddd;
+	margin-left: 0;
+	min-height: 500px;
+	background-color: #FFF;
+}
+
+#canvas {	
+  background-color: #FFF;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  min-height: 500px;
+}
+
+.toolbar_icon {
+  height: 32px;
+  width: 32px;
+  margin: 2px;
+}
+
+#toggleBar {
+  position: absolute;
+  display: none;
+  width: 137px;
+  height: 25px;
+}
+
+#configBar p {
+  word-break: break-all;
+  width: 130px;
+}
+
+#configBar label {
+  margin-bottom: 0px;
+}
+
+#configBar input {
+  width: 80px;
+}
+
+.footer {
+  width: 500px;
+  margin: 10px auto;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12898</part_id>
+<part_name>BBa_K123000</part_name>
+<part_short_name>K123000</part_short_name>
+<part_short_desc>BisdA</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>BisdA</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K123000</part_url>
+<part_entered>2008-10-27</part_entered>
+<part_author>Jason Gardiner</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggccggccctcatatccaagtgactacccgcgatggggagatacgcgaactcgacgtcgcagcctccgggttcctgat
+ggaagcccttcgcgacgccaatatcgacggcgtcgaggcgatgtgcggcggatgctgctcctgcgcgacctgccacgtct
+acatcgacgctgctcccgccgggaccctgccgccggtctcctccgacgaggagatgctgctttccggcctggtctcgacc
+cccggacggtcgcggctctcctgccaaattccggtcacggccgaactggatggccttaagctcacgatcccgccggactc
+caccggttaa
+</seq_data></sequences>
+<features></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/[team_name]/favorite</category>
+<category>//function/biosynthesis</category>
+<category>//function/degradation/bisphenol</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

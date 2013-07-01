@@ -1,0 +1,204 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>5480</part_id>
+<part_name>BBa_I13517</part_name>
+<part_short_name>I13517</part_short_name>
+<part_short_desc>Screening plasmid intermediate</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I13517</part_url>
+<part_entered>2005-06-06</part_entered>
+<part_author>jkm</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<barcode></barcode></specified_subscars>
+<sequences>
+<seq_data>ttatgacaacttgacggctacatcattcactttttcttcacaaccggcacggaactcgctcgggctggccccggtgcatt
+ttttaaatacccgcgagaaatagagttgatcgtcaaaaccaacattgcgaccgacggtggcgataggcatccgggtggtg
+ctcaaaagcagcttcgcctggctgatacgttggtcctcgcgccagcttaagacgctaatccctaactgctggcggaaaag
+atgtgacagacgcgacggcgacaagcaaacatgctgtgcgacgctggcgatatcaaaattgctgtctgccaggtgatcgc
+tgatgtactgacaagcctcgcgtacccgattatccatcggtggatggagcgactcgttaatcgcttccatgcgccgcagt
+aacaattgctcaagcagatttatcgccagcagctccgaatagcgcccttccccttgcccggcgttaatgatttgcccaaa
+caggtcgctgaaatgcggctggtgcgcttcatccgggcgaaagaaccccgtattggcaaatattgacggccagttaagcc
+attcatgccagtaggcgcgcggacgaaagtaaacccactggtgataccattcgcgagcctccggatgacgaccgtagtga
+tgaatctctcctggcgggaacagcaaaatatcacccggtcggcaaacaaattctcgtccctgatttttcaccaccccctg
+accgcgaatggtgagattgagaatataacctttcattcccagcggtcggtcgataaaaaaatcgagataaccgttggcct
+caatcggcgttaaacccgccaccagatgggcattaaacgagtatcccggcagcaggggatcattttgcgcttcagccata
+cttttcatactcccgccattcagagaagaaaccaattgtccatattgcatcagacattgccgtcactgcgtcttttactg
+gctcttctcgctaaccaaaccggtaaccccgcttattaaaagcattctgtaacaaagcgggaccaaagccatgacaaaaa
+cgcgtaacaaaagtgtctataatcacggcagaaaagtccacattgattatttgcacggcgtcacactttgctatgccata
+gcatttttatccataagattagcggatcctacctgacgctttttatcgcaactctctactgtttctccatacccgttttt
+ttgggctagctactagagtcacacaggaaagtactagatggcttcctccgaagacgttatcaaagagttcatgcgtttca
+aagttcgtatggaaggttccgttaacggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacgaaggtacc
+cagaccgctaaactgaaagttaccaaaggtggtccgctgccgttcgcttgggacatcctgtccccgcagttccagtacgg
+ttccaaagcttacgttaaacacccggctgacatcccggactacctgaaactgtccttcccggaaggtttcaaatgggaac
+gtgttatgaacttcgaagacggtggtgttgttaccgttacccaggactcctccctgcaagacggtgagttcatctacaaa
+gttaaactgcgtggtaccaacttcccgtccgacggtccggttatgcagaaaaaaaccatgggttgggaagcttccaccga
+acgtatgtacccggaagacggtgctctgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcactacgacg
+ctgaagttaaaaccacctacatggctaaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaactggacatc
+acctcccacaacgaagactacaccatcgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgcttaataacg
+ctgatagtgctagtgtagatcgc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1505502</id>
+<title>AraC</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1079</endpos></feature>
+<feature>
+<id>1505505</id>
+<title>BBa_I0500</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>1505503</id>
+<title>PC</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1043</startpos>
+<endpos>1114</endpos></feature>
+<feature>
+<id>1505504</id>
+<title>Pbad</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1080</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>1505513</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1219</startpos>
+<endpos>1231</endpos></feature>
+<feature>
+<id>1505512</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1219</startpos>
+<endpos>1231</endpos></feature>
+<feature>
+<id>1505514</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1225</startpos>
+<endpos>1228</endpos></feature>
+<feature>
+<id>1505520</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1238</startpos>
+<endpos>1912</endpos></feature>
+<feature>
+<id>1505521</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1238</startpos>
+<endpos>1918</endpos></feature>
+<feature>
+<id>1505522</id>
+<title></title>
+<type>barcode</type>
+<direction>forward</direction>
+<startpos>1919</startpos>
+<endpos>1943</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/composite/uncategorized</category></categories>
+<twins>
+<twin>BBa_I13509</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

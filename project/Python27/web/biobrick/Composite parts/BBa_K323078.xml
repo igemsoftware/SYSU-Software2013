@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19906</part_id>
+<part_name>BBa_K323078</part_name>
+<part_short_name>K323078</part_short_name>
+<part_short_desc>Jazz link nYFP stop T7 terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K323078</part_url>
+<part_entered>2010-10-20</part_entered>
+<part_author>Jernej Turn�ek</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19936</part_id>
+<part_name>BBa_K323108</part_name>
+<part_short_desc>Jazz zinc finger + linker</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19900</part_id>
+<part_name>BBa_K323072</part_name>
+<part_short_desc>N-split fragment of mCitrine with stop</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19958</part_id>
+<part_name>BBa_K323130</part_name>
+<part_short_desc>stop T7 terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19936</part_id>
+<part_name>BBa_K323108</part_name>
+<part_short_desc>Jazz zinc finger + linker</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19900</part_id>
+<part_name>BBa_K323072</part_name>
+<part_short_desc>N-split fragment of mCitrine with stop</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19958</part_id>
+<part_name>BBa_K323130</part_name>
+<part_short_desc>stop T7 terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19936</part_id>
+<part_name>BBa_K323108</part_name>
+<part_short_desc>Jazz zinc finger + linker</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19900</part_id>
+<part_name>BBa_K323072</part_name>
+<part_short_desc>N-split fragment of mCitrine with stop</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19958</part_id>
+<part_name>BBa_K323130</part_name>
+<part_short_desc>stop T7 terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>gcaagtgatgatcgtccgtatgcatgtccggttgaaagctgtgatcgtcgttttagccgtagtgatgaactgacccgtca
+tattcgtattcatacaggtcagaaaccttttcagtgtcgtatttgcatgcgtaattttagctcaagagatgttctgcgtc
+gtcataatcgtacccatacgggtgaaaaaccgtttgcatgtgatatttgcggtcgtaaatttgcaagtcgtgacgtgctg
+cgtcgccataaccgcattcatctgcgtcagaatgatctggaaggtggtagcggtggtggttcaggtggtagttactagag
+gtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggcgacgtaaacggccacaagtt
+cagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcatctgcaccaccggcaagctgc
+ccgtgccctggcccaccctcgtgaccaccttcggctacggcctgatgtgcttcgcccgctaccccgaccacatgaagcag
+cacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacggcaactacaa
+gacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttcaaggaggacg
+gcaacatcctggggcacaagctggagtacaactacaacagccacaacgtctatatcatggccgacaagcagaagaacggc
+atcaaggtgaacttcaagatccgccacaacatctaatactagagtaactagcataaccccttggggcctctaaacgggtc
+ttgaggggttttttg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2109142</id>
+<title>BBa_K323108</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>312</endpos></feature>
+<feature>
+<id>2109143</id>
+<title>BBa_K323072</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>321</startpos>
+<endpos>836</endpos></feature>
+<feature>
+<id>2109144</id>
+<title>BBa_K323130</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>845</startpos>
+<endpos>895</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

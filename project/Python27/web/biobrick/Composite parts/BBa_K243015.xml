@@ -1,0 +1,310 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15836</part_id>
+<part_name>BBa_K243015</part_name>
+<part_short_name>K243015</part_short_name>
+<part_short_desc>Strep-DigA-Split Linker-Fok_i </part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K243015</part_url>
+<part_entered>2009-10-14</part_entered>
+<part_author>Freiburg Bioware09</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>12758</part_id>
+<part_name>BBa_K157012</part_name>
+<part_short_desc>Strep affinity tag II; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15523</part_id>
+<part_name>BBa_K243003</part_name>
+<part_short_desc>Digoxigenin binding protein (DigA)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>DigA</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>12752</part_id>
+<part_name>BBa_K157009</part_name>
+<part_short_desc>Split fluorophore linker; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>linker</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15428</part_id>
+<part_name>BBa_K243001</part_name>
+<part_short_desc>Protein domain (inactive) of the restriction endonuclease FokI</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>Fok_i</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>12758</part_id>
+<part_name>BBa_K157012</part_name>
+<part_short_desc>Strep affinity tag II; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15523</part_id>
+<part_name>BBa_K243003</part_name>
+<part_short_desc>Digoxigenin binding protein (DigA)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>DigA</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>12752</part_id>
+<part_name>BBa_K157009</part_name>
+<part_short_desc>Split fluorophore linker; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>linker</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15428</part_id>
+<part_name>BBa_K243001</part_name>
+<part_short_desc>Protein domain (inactive) of the restriction endonuclease FokI</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>Fok_i</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>12758</part_id>
+<part_name>BBa_K157012</part_name>
+<part_short_desc>Strep affinity tag II; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15523</part_id>
+<part_name>BBa_K243003</part_name>
+<part_short_desc>Digoxigenin binding protein (DigA)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>DigA</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>12752</part_id>
+<part_name>BBa_K157009</part_name>
+<part_short_desc>Split fluorophore linker; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>linker</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15428</part_id>
+<part_name>BBa_K243001</part_name>
+<part_short_desc>Protein domain (inactive) of the restriction endonuclease FokI</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>Fok_i</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tggagccatccgcagtttgaaaaaaccggcgacgtgtaccacgacggcgcctgccccgaagtgaagcccgtggacaactt
+cgactggtcccagtaccacggcaagtggtggcaggtggccgcttatcccgaccacatcaccaagtacggcaagtgcggct
+gggccgagtacacccccgagggcaagagcgtgaaggtgtcccggtacagcgtgatccacggcaaagagtacttcagcgag
+ggcaccgcctaccctgtgggcgacagcaagatcggcaagatctaccacagctacaccatcggcggcgtgacccaggtggg
+cgtgagcaacgtgctgtccaccgacaacaagaactacatcatcggctacttttgcagatacgacgaggacaagaagggcc
+actgggacgccgtgtgggtgctgtcccggtccatggtgctgaccggcgaggccaagaccgccgtggagaactacctgatc
+ggcagccccgtggtggacagccagaaactggtgtacagcgacttctccgaggccgcctgcaaagtgaacaacagcaactg
+gtcccacccccagttcgaaaagaccggccgaccagcctgtaagattccaaatgacctgaagcagaaagttatgaatcaca
+ccggcaaatctgaactggaggagaaaaaatccgagctgcgccacaaactgaaatatgtgcctcacgagtatatcgaactg
+atcgagatcgcccgtaatagtacccaagaccgtatcctggaaatgaaagtgatggagttcttcatgaaagtctatggcta
+tcgtggcaaacatctgggtggtagccgtaaaccagcaggtgccatttataccgttggttccccgatcgattatggcgtta
+tcgtggccacaaaagcgtattctggcggttataatctgccgattggtcaggctgatgagatggaacgttatgtggaagag
+aatcagacccgtaacaaacatctgaacccgaacgaatggtggaaagtgtatccgtcaagtgtcaccgagttcaaatttct
+gttcgtgagcggccactttaaaggcaactataaagcccagctgactcgtctgaaccatatcaccaatagcaatggggcag
+tgctgagtgttgaggaactgctgatcggtggagaaatgatcaaagcaggcaccctgactctggaagaagttcgccgtaaa
+ttcaacaatggcgagatcaatttt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2042646</id>
+<title>BBa_K157012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>2042645</id>
+<title>Strep-Tag II</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>2042644</id>
+<title>Strep-Tag II</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>2042647</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>25</startpos>
+<endpos>30</endpos></feature>
+<feature>
+<id>2042648</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>25</startpos>
+<endpos>30</endpos></feature>
+<feature>
+<id>2042650</id>
+<title>BBa_K243003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>31</startpos>
+<endpos>582</endpos></feature>
+<feature>
+<id>2042649</id>
+<title>Digoxigenin tag</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>31</startpos>
+<endpos>582</endpos></feature>
+<feature>
+<id>2042651</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>583</startpos>
+<endpos>588</endpos></feature>
+<feature>
+<id>2042652</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>583</startpos>
+<endpos>588</endpos></feature>
+<feature>
+<id>2042654</id>
+<title>BBa_K157009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>589</startpos>
+<endpos>639</endpos></feature>
+<feature>
+<id>2042653</id>
+<title>Split-Fluorophore Linker</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>589</startpos>
+<endpos>639</endpos></feature>
+<feature>
+<id>2042655</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>640</startpos>
+<endpos>645</endpos></feature>
+<feature>
+<id>2042656</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>640</startpos>
+<endpos>645</endpos></feature>
+<feature>
+<id>2042657</id>
+<title>Foki</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>646</startpos>
+<endpos>1224</endpos></feature>
+<feature>
+<id>2042658</id>
+<title>BBa_K243001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>646</startpos>
+<endpos>1224</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>Strep-DigA-Split Linker-Fok_i </value>
+<units></units>
+<url></url>
+<id>8043</id>
+<m_date>2009-10-20 13:24:44</m_date>
+<user_id>4656</user_id>
+<user_name>Sarah</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Strep-DigA-Split Linker-Fok_i </value>
+<units></units>
+<url></url>
+<id>8044</id>
+<m_date>2009-10-20 13:24:44</m_date>
+<user_id>4656</user_id>
+<user_name>Sarah</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Strep-DigA-Split Linker-Fok_i </value>
+<units></units>
+<url></url>
+<id>8045</id>
+<m_date>2009-10-20 13:24:44</m_date>
+<user_id>4656</user_id>
+<user_name>Sarah</user_name></parameter></parameters>
+<categories>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

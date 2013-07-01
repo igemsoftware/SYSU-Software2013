@@ -1,0 +1,107 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20508</part_id>
+<part_name>BBa_K361001</part_name>
+<part_short_name>K361001</part_short_name>
+<part_short_desc>Message gene template</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>Message</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K361001</part_url>
+<part_entered>2010-10-24</part_entered>
+<part_author>Jacky, Fong Chuen, Loo</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gggcccagatctagaaagatggcaatactttcgtgccaatccggtacgtggtttgtcttacaatcgttgtttgagtgtaa
+caatcgatctttcattgactcgcacaatgtatcggacaatcgatccttgtctcttacaatgtatcggtctgtctttgtat
+ccatctttgacacaatcattgagacaatcactgactcggtgtatccatctttgactgagacaatcggtgacacaatgaat
+ctttgactccttgagtccaacaatgtatcggtctgtctttgtatccatctttgacacaatcattgagacaatgtatcggt
+cggtcgatgagctgctggcctacgtgccaatccggtacgtggagtgagaataagagagagagagaaagacagcaagtgag
+taagctagcaagatagactaatagtcggatccctcgag
+</seq_data></sequences>
+<features>
+<feature>
+<id>2095196</id>
+<title>Header</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>13</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2095198</id>
+<title>repeat 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>51</endpos></feature>
+<feature>
+<id>2095200</id>
+<title>repeat 2</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>332</startpos>
+<endpos>362</endpos></feature>
+<feature>
+<id>2095201</id>
+<title>Footer</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>363</startpos>
+<endpos>426</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>copies</name>
+<value>Message copies</value>
+<units></units>
+<url></url>
+<id>11800</id>
+<m_date>2010-10-27 13:44:26</m_date>
+<user_id>6123</user_id>
+<user_name>Jacky_Loo</user_name></parameter>
+<parameter>
+<name>copies</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>11799</id>
+<m_date>2010-10-27 13:44:14</m_date>
+<user_id>6123</user_id>
+<user_name>Jacky_Loo</user_name></parameter>
+<parameter>
+<name>tag</name>
+<value>no</value>
+<units></units>
+<url></url>
+<id>11798</id>
+<m_date>2010-10-27 13:43:53</m_date>
+<user_id>6123</user_id>
+<user_name>Jacky_Loo</user_name></parameter>
+<parameter>
+<name>tag</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>11797</id>
+<m_date>2010-10-27 13:43:45</m_date>
+<user_id>6123</user_id>
+<user_name>Jacky_Loo</user_name></parameter></parameters>
+<categories>
+<category>//classic/other/uncategorized</category>
+<category>//dna/nucleotide</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

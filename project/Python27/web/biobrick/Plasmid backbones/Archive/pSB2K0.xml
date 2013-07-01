@@ -1,0 +1,154 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>5520</part_id>
+<part_name>pSB2K0</part_name>
+<part_short_name>pSB2K0</part_short_name>
+<part_short_desc>pSB2K0 (pSCANS-BNL; Replaced by pSB2K3)</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Available</part_status>
+<part_results>Fails</part_results>
+<part_nickname>pSB2K0</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:pSB2K0</part_url>
+<part_entered>2005-06-13</part_entered>
+<part_author>Brookhaven National Lab</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgagccatattcaacgggaaacgtcttgctcgaggccgcgattaaattccaacatggatgctgatttatatgggtataa
+atgggctcgcgataatgtcgggcaatcaggtgcgacaatctatcgattgtatgggaagcccgatgcgccagagttgtttc
+tgaaacatggcaaaggtagcgttgccaatgatgttacagatgagatggtcagactaaactggctgacggaatttatgcct
+cttccgaccatcaagcattttatccgtactcctgatgatgcatggttactcaccactgcgatccccgggaaaacagcatt
+ccaggtattagaagaatatcctgattcaggtgaaaatattgttgatgcgctggcagtgttcctgcgccggttgcattcga
+ttcctgtttgtaattgtccttttaacagcgatcgcgtatttcgtctcgctcaggcgcaatcacgaatgaataacggtttg
+gttgatgcgagtgattttgatgacgagcgtaatggctggcctgttgaacaagtctggaaagaaatgcataaactgttgcc
+attctcaccggattcagtcgtcactcatggtgatttctcacttgataaccttatttttgacgaggggaaattaataggtt
+gtattgatgttggacgagtcggaatcgcagaccgataccaggatcttgccatcctatggaactgcctcggtgagttttct
+ccttcattacagaaacggctttttcaaaaatatggtattgataatcctgatatgaataaattgcagtttcatttgatgct
+cgatgagtttttctaatcagaattggttaattggttgtaacactggcgagctcggatcgcggccgtcgctaccttaggac
+cgttatagtagggataacagggtaatggcgccgacgtcggccgaggcccgggcgtttaaacatttaaatgtcgacatacg
+atttaggtgacactatagaactctaatacgactcactatagggaatttggccctcgaggccaagaattcccgactacgta
+gtcggggatccactagtgcatgcatatgcggccgcaagcttaattaacctggtagcttattccctttagtgagggttaat
+tttagcttggcactggccgtcgttttacaacgtcgtgactgggaaaaccctgttaaccggcgcgccacgcgtacccataa
+tacccataatagctgtttgccatcgcgtatgcatcgatcacgtgtccacgttctttaatagtggactcttgttccaaact
+ggaacaacactcggatcgatccggcgcgcaccgtgggaaaaactccaggtagaggtacacacgcggatagccaattcaga
+gtaataaactgtgataatcaaccctcatcaatgatgacgaactaacccccgatatcaggtcacatgacgaagggaaagag
+aaggaaatcaactgtgacaaactgccctcaaatttggcttccttaaaaattacagttcaaaaagtatgagaaaatccatg
+caggctgaaggaaacagcaaaactgtgacaaattaccctcagtaggtcagaacaaatgtgacgaaccaccctcaaatctg
+tgacagataaccctcagactatcctgtcgtcatggaagtgatatcgcggaaggaaaatacgatatgagtcgtctggcggc
+ctttctttttctcaatgtatgagaggcgcattggagttctgctgttgatctcattaacacagacctgcaggaagcggcgg
+cggaagtcaggcatacgctggtaactttgaggcagctggtaacgctctatgatccagtcgattttcagagagacgatgcc
+tgagccatccggcttacgatactgacacagggattcgtataaacgcatggcatacggattggtgatttcttttgtttcac
+taagccgaaactgcgtaaaccggttctgtaacccgataaagaagggaatgagatatgggttgatatgtacactgtaaagc
+cctctggatggactgtgcgcacgtttgataaaccaaggaaaagattcatagcctttttcatcgccggcatcctcttcagg
+gcgataaaaaaccacttccttccccgcgaaactcttcaatgcctgccgtatatccttactggcttccgcagaggtcaatc
+cgaatatttcagcatatttagcaacatggatctcgcagataccgtcatgttcctgtagggtgccatcagattttctgatc
+tggtcaacgaacagatacagcatacgtttttgatcccgggagagactatatgccgcctcagtgaggtcgtttgactggac
+gattcgcgggctatttttacgtttcttgtgattgataaccgctgtttccgccatgacagatccatgtgaagtgtgacaag
+tttttagattgtcacactaaataaaaaagagtcaataagcagggataactttgtgaaaaaacagcttcttctgagggcaa
+tttgtcacagggttaagggcaatttgtcacagacaggactgtcatttgagggtgatttgtcacactgaaagggcaatttg
+tcacaacaccttctctagaaccagcatggataaaggcctacaaggcgctctaaaaaagaagatctaaaaactataaaaaa
+aataattataaaaatatccccgtggataagtggataaccccaagggaagttttttcaggcatcgtgtgtaagcagaatat
+ataagtgctgttccctggtgcttcctcgctcactcgaaattcccggggatagctttatgcttgtaaaccgttttgtgaaa
+aaatttttaaaataaaaaaggggacctctagggtccccaattaattagtaatataatctattaaaggtcattcaaaaggt
+catccaccggatcaattcccctgctcgcgcaggctgggtgccaagctctcgggtaacatcaaggcccgatccttggagcc
+cttgccctcccgcacgatgatcgtgccgtgatcgaaatccagatccttgacccgcagttgcaaaccctcactgatccgat
+tcattaatgcagctggcacgacaggtttcccgactggaaagcgggcagtgagcgcaacgcaattaatgtgagttagctca
+ctcattaggcaccccaggctttacactttatgcttccggctcgtatgttgtgtggaattgtgagcggataacaatttcac
+acaggaaacagctatgaccatgattacgccaagcgcggtacctgtcgcggcaacgcgctaacagacgtagtaagaaccac
+cagcattgtaatgctggctaaagtcactttcctgagctgtataacgatgagcgattttactttttctggctatgaattgg
+cctgctttgtaacacactccggtctatcccgtagcgccgggcatatcctgtcgcaatgtgcaaatctcgcggcaacaacc
+agtgaatacttcattcacaagcctcaccgcctgatcgcggcagaaactggttatagccaatcaaccgtcgttcgtgcatt
+ccgtgaagctgtaaacaaaggtatcctgtctgtagagattgttatcggcgatcaccgtgaacgtcgcgctaacctgtacc
+ggtttacaccatcctttttggccttcgcacaacaagccaaaaatgcgctgatagaaagcaaattaaagatctcttcagcg
+gcaaccaaggttaaagctgttctcgctaagacattggctttatttaattttttatccacacccccatgtcaaaatgatac
+cccctccccctgtcaggatgacgtggcaataaagaataagaagtcacaagttaaaaaaacaaaaagatcagtttccggcg
+gtgccggaacaaccagcctcaaaaaattgacttcatggatcgctaaggcaaaagcaaaggctgacaatctgcggttatcc
+aaaaaacgcactcaaaaacatgagttcaagcagaaagtagaggcggctgcgcggaaatatgcttacctgaagaacaagcg
+ttcgcctgatattggcgggatatcaaacttcgataacctaccgcattgcatgacggtaaacgaagctcttaatgcggttt
+tagccaaaaataaagataacgaacaatggggtataccggcaggattcagagggtaatgaattgctctaattataaccatg
+catactttcaacacctctagtttgccatgaggcaaactcataggtgtcctggtaagaggacactgttgccaaaactggac
+gccccattattgcaattaataaacaactaacggacaattctacctaacaataagtggagttgcggccggccgcgatccgc
+tagcaaagccacgttgtgtctcaaaatctctgatgttacattgcacaagataaaaatatatcatcatgaacaataaaact
+gtctgcttacataaacagtaatacaaggggtgtt
+</seq_data></sequences>
+<features>
+<feature>
+<id>1782703</id>
+<title>kanR</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>816</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>insert</name>
+<value>None</value>
+<units></units>
+<url></url>
+<id>3550</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>copies</name>
+<value>&lt;10 or &gt;100</value>
+<units></units>
+<url></url>
+<id>3551</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>K</value>
+<units></units>
+<url></url>
+<id>3552</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>mcs</name>
+<value>Nonstandard</value>
+<units></units>
+<url></url>
+<id>3553</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>3554</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>3555</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//classic/plasmid/uncategorized</category>
+<category>//plasmidbackbone/archive</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

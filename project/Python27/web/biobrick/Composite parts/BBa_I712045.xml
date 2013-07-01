@@ -1,0 +1,206 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10334</part_id>
+<part_name>BBa_I712045</part_name>
+<part_short_name>I712045</part_short_name>
+<part_short_desc>CMVp - myristoilation site - HIV protease cleavage site - GFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Issues</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I712045</part_url>
+<part_entered>2007-10-24</part_entered>
+<part_author>Katja Kolar</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10244</part_id>
+<part_name>BBa_I712026</part_name>
+<part_short_desc>myristoilation signal sequence; anchors protein to membrane</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>myristoila</part_nickname></subpart>
+<subpart>
+<part_id>10068</part_id>
+<part_name>BBa_I712015</part_name>
+<part_short_desc>HIV-1 protease cleavage site</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7552</part_id>
+<part_name>BBa_J52642</part_name>
+<part_short_desc>Green Flourescence Protein</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10244</part_id>
+<part_name>BBa_I712026</part_name>
+<part_short_desc>myristoilation signal sequence; anchors protein to membrane</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>myristoila</part_nickname></subpart>
+<subpart>
+<part_id>10068</part_id>
+<part_name>BBa_I712015</part_name>
+<part_short_desc>HIV-1 protease cleavage site</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7552</part_id>
+<part_name>BBa_J52642</part_name>
+<part_short_desc>Green Flourescence Protein</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>10244</part_id>
+<part_name>BBa_I712026</part_name>
+<part_short_desc>myristoilation signal sequence; anchors protein to membrane</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>myristoila</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>10068</part_id>
+<part_name>BBa_I712015</part_name>
+<part_short_desc>HIV-1 protease cleavage site</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>7552</part_id>
+<part_name>BBa_J52642</part_name>
+<part_short_desc>Green Flourescence Protein</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>cgatgtacgggccagatatacgcgttgacattgattattgcctagttattaatagtaatcaattacggggtcattagttc
+atagcccatatatggagttccgcgttacataacttacggtaaatggcccgcctggctgaccgcccaacgacccccgccca
+ttgacgtcaataatgacgtatgttcccatagtaacgccaatagggactttccattgacgtcaatgggtggagtatttacg
+gtaaactgcccacttggcagtacatcaagtgtatcatatgccaagtacgccccctattgacgtcaatgacggtaaatggc
+ccgcctggcattatgcccagtacatgaccttatgggactttcctacttggcagtacatctacgtattagtcatcgctatt
+accatggtgatgcggttttggcagtacatcaatgggcgtggatagcggtttgactcacggggatttccaagtctccaccc
+cattgacgtcaatgggagtttgttttggcaccaaaatcaacgggactttccaaaatgtcgtaacaactccgccccattga
+cgcaaatgggcggtaggcgtgtacggtgggaggtctatataagcagagctctctggctaactagagaacccactgcttac
+tggcttatcgaaattactagatgggcatcggcaagtccaagtactagagagccaggtgagccagaactaccccatcgtgc
+agaacctccaatactagatggtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggc
+gacgtaaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcat
+ctgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccctgacctggggcgtgcagtgcttcgcccgct
+accccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttc
+aaggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaaggg
+catcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaacgccatcagcgacaacgtctatatcaccg
+ccgacaagcagaagaacggcatcaaggccaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccgac
+cactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagcacccagtccaagct
+gagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcatgg
+acgagctgtacaagtaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1953714</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>1953715</id>
+<title>BBa_I712004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>654</endpos></feature>
+<feature>
+<id>1953716</id>
+<title>BBa_I712026</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>661</startpos>
+<endpos>681</endpos></feature>
+<feature>
+<id>1953717</id>
+<title>BBa_I712015</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>690</startpos>
+<endpos>731</endpos></feature>
+<feature>
+<id>1953718</id>
+<title>start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>738</startpos>
+<endpos>740</endpos></feature>
+<feature>
+<id>1953721</id>
+<title>BBa_J52642</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>738</startpos>
+<endpos>1457</endpos></feature>
+<feature>
+<id>1953719</id>
+<title>GFP</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>741</startpos>
+<endpos>1453</endpos></feature>
+<feature>
+<id>1953720</id>
+<title>stop</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1454</startpos>
+<endpos>1457</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

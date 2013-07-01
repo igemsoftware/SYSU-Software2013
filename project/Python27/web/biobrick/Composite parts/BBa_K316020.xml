@@ -1,0 +1,408 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20423</part_id>
+<part_name>BBa_K316020</part_name>
+<part_short_name>K316020</part_short_name>
+<part_short_desc> B. subtilis genome integration vector, targets pyrD locus</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K316020</part_url>
+<part_entered>2010-10-23</part_entered>
+<part_author>IC 2010 Team</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>11814</part_id>
+<part_name>BBa_K143008</part_name>
+<part_short_desc>5� Integration Sequence for the pyrD locus of B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>pyrD 5 IS</part_nickname></subpart>
+<subpart>
+<part_id>20031</part_id>
+<part_name>BBa_K316002</part_name>
+<part_short_desc>dif excision site from B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Bs dif</part_nickname></subpart>
+<subpart>
+<part_id>11790</part_id>
+<part_name>BBa_K143012</part_name>
+<part_short_desc>Promoter veg  a constitutive promoter for B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<subpart>
+<part_id>11817</part_id>
+<part_name>BBa_K143021</part_name>
+<part_short_desc>SpoVG ribosome binding site (RBS) for B. subtilis</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname>RBS-spoVG</part_nickname></subpart>
+<subpart>
+<part_id>11810</part_id>
+<part_name>BBa_K143031</part_name>
+<part_short_desc>Aad9 Spectinomycin Resistance Gene</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>Aad9</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>20031</part_id>
+<part_name>BBa_K316002</part_name>
+<part_short_desc>dif excision site from B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Bs dif</part_nickname></subpart>
+<subpart>
+<part_id>20399</part_id>
+<part_name>BBa_K316013</part_name>
+<part_short_desc>8bp recognition sequence for PmeI restriction endonuclease</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>PmeI site</part_nickname></subpart>
+<subpart>
+<part_id>11816</part_id>
+<part_name>BBa_K143009</part_name>
+<part_short_desc>3� Integration Sequence for the pyrD locus of B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>pyrD 3 IS</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11814</part_id>
+<part_name>BBa_K143008</part_name>
+<part_short_desc>5� Integration Sequence for the pyrD locus of B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>pyrD 5 IS</part_nickname></subpart>
+<subpart>
+<part_id>20031</part_id>
+<part_name>BBa_K316002</part_name>
+<part_short_desc>dif excision site from B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Bs dif</part_nickname></subpart>
+<subpart>
+<part_id>11972</part_id>
+<part_name>BBa_K143053</part_name>
+<part_short_desc>Promoter Pveg and RBS spoVG for B. subtilis</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname>Pveg-spoVG</part_nickname></subpart>
+<subpart>
+<part_id>11997</part_id>
+<part_name>BBa_K143065</part_name>
+<part_short_desc>Spectinomycin Resistance Protein (Aad9) - Terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname>Aad9-T</part_nickname></subpart>
+<subpart>
+<part_id>20400</part_id>
+<part_name>BBa_K316014</part_name>
+<part_short_desc>Dif sequence followed by PmeI recognition site</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11816</part_id>
+<part_name>BBa_K143009</part_name>
+<part_short_desc>3� Integration Sequence for the pyrD locus of B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>pyrD 3 IS</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11814</part_id>
+<part_name>BBa_K143008</part_name>
+<part_short_desc>5� Integration Sequence for the pyrD locus of B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>pyrD 5 IS</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>20031</part_id>
+<part_name>BBa_K316002</part_name>
+<part_short_desc>dif excision site from B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Bs dif</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>11972</part_id>
+<part_name>BBa_K143053</part_name>
+<part_short_desc>Promoter Pveg and RBS spoVG for B. subtilis</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname>Pveg-spoVG</part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>11997</part_id>
+<part_name>BBa_K143065</part_name>
+<part_short_desc>Spectinomycin Resistance Protein (Aad9) - Terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname>Aad9-T</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>20400</part_id>
+<part_name>BBa_K316014</part_name>
+<part_short_desc>Dif sequence followed by PmeI recognition site</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>11816</part_id>
+<part_name>BBa_K143009</part_name>
+<part_short_desc>3� Integration Sequence for the pyrD locus of B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>pyrD 3 IS</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atgctagaggtgaaattgccgggacttgatttgaaaaacccaatcattcctgcatcaggctgcttcggttttggaaaaga
+attttcacgtttttatgatttgtcttgtcttggagctatcatgattaaggctacgacaaaggagccgcgctttgggaatc
+cgacgccgcgggtagctgagactggtgctggaatgctcaatgcgatcggtctccaaaatccggggctggatagtgtgttg
+catcatgagctgccgtggcttgagcagtttgatacaccgatcattgccaatgtcgcaggttctcaagtcgatgattatgt
+tgaagtcgcagaacatatcagcaaagcgcctaatgttcatgctcttgaattgaatatttcctgcccgaatgtgaaaacag
+gcggaatcgcttttggcacgaatcctgaaatggctgccgatttgacaaaagcggtgaaagaggtttcgtactagagatct
+cctagaatatatattatgtaaacttactagagaattttgtcaaaataattttattgacaacgtcttattaacgttgatat
+aatttaaattttatttgacaaaaatgggctcgtgttgtacaataaatgttactagagaaaggtggtgaatactagatgag
+gaggatatatttgaatacatacgaacaaattaataaagtgaaaaaaatacttcggaaacatttaaaaaataaccttattg
+gtacttacatgtttggatcaggagttgagagtggactaaaaccaaatagtgatcttgactttttagtcgtcgtatctgaa
+ccattgacagatcaaagtaaagaaatacttatacaaaaaattagacctatttcaaaaaaaataggagataaaagcaactt
+acgatatattgaattaacaattattattcagcaagaaatggtaccgtggaatcatcctcccaaacaagaatttatttatg
+gagaatggttacaagagctttatgaacaaggatacattcctcagaaggaattaaattcagatttaaccataatgctttac
+caagcaaaacgaaaaaataaaagaatatacggaaattatgacttagaggaattactacctgatattccattttctgatgt
+gagaagagccattatggattcgtcagaggaattaatagataattatcaggatgatgaaaccaactctatattaactttat
+gccgtatgattttaactatggacacgggtaaaatcataccaaaagatattgcgggaaatgcagtggctgaatcttctcca
+ttagaacatagggagagaattttgttagcagttcgtagttatcttggagagaatattgaatggactaatgaaaatgtaaa
+tttaactataaactatttaaataacagattaaaaaaattataataatactagagccaggcatcaaataaaacgaaaggct
+cagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttc
+gggtgggcctttctgcgtttatatactagagatctcctagaatatatattatgtaaacttactagaggaaatttctacta
+gaggatgtacccgtttatgtgaagctatccccgaacgtggctaatatcacagaaattgcattagcgatcgaggaagcggg
+agcggacggtcttacgatgatcaacacactaatcggcatgagactcgatttaaaaaccggcaaaccgatattagcgaata
+aaacagggggactttcgggccctgctgtgaagccggttgccattcgcatggtgtatgaagtcagccagatggtcaacatc
+ccgattatcggaatgggaggcgtgcaaacggctgaagatgccctggaatttcttctcgcgggagcaagcgcagtcgctgt
+cggaacagcaaactttgtgaatccttttgcatgtccagagattattgaacagctcccatctgttttgctccaatacggct
+atcaatcaattgaagaatgcatcggaaggagctggaatcatgaaaaacaacctgcccatcatcgcgcttg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2098314</id>
+<title>BBa_K143008</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>468</endpos></feature>
+<feature>
+<id>2098313</id>
+<title>PyrD 5&apos; Integration Sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>468</endpos></feature>
+<feature>
+<id>2098315</id>
+<title>BBa_K316002</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>477</startpos>
+<endpos>504</endpos></feature>
+<feature>
+<id>2098316</id>
+<title>BBa_K143012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>513</startpos>
+<endpos>609</endpos></feature>
+<feature>
+<id>2098321</id>
+<title>BBa_K143053</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>513</startpos>
+<endpos>629</endpos></feature>
+<feature>
+<id>2098317</id>
+<title>Sigma A-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>575</startpos>
+<endpos>580</endpos></feature>
+<feature>
+<id>2098318</id>
+<title>Sigma A -10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>598</startpos>
+<endpos>603</endpos></feature>
+<feature>
+<id>2098320</id>
+<title>BBa_K143021</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>618</startpos>
+<endpos>629</endpos></feature>
+<feature>
+<id>2098319</id>
+<title></title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>618</startpos>
+<endpos>629</endpos></feature>
+<feature>
+<id>2098322</id>
+<title>BBa_K143031</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>636</startpos>
+<endpos>1406</endpos></feature>
+<feature>
+<id>2098323</id>
+<title>Aad9 Spectinomycin Acetyltransferase</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>636</startpos>
+<endpos>1406</endpos></feature>
+<feature>
+<id>2098330</id>
+<title>BBa_K143065</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>636</startpos>
+<endpos>1543</endpos></feature>
+<feature>
+<id>2098324</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1415</startpos>
+<endpos>1494</endpos></feature>
+<feature>
+<id>2098325</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1426</startpos>
+<endpos>1469</endpos></feature>
+<feature>
+<id>2098326</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1503</startpos>
+<endpos>1543</endpos></feature>
+<feature>
+<id>2098327</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1510</startpos>
+<endpos>1529</endpos></feature>
+<feature>
+<id>2098328</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1530</startpos>
+<endpos>1543</endpos></feature>
+<feature>
+<id>2098329</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1536</startpos>
+<endpos>1536</endpos></feature>
+<feature>
+<id>2098335</id>
+<title>BBa_K316014</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1552</startpos>
+<endpos>1595</endpos></feature>
+<feature>
+<id>2098331</id>
+<title>BBa_K316002</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1552</startpos>
+<endpos>1579</endpos></feature>
+<feature>
+<id>2098332</id>
+<title>BBa_K316013</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1588</startpos>
+<endpos>1595</endpos></feature>
+<feature>
+<id>2098333</id>
+<title>5&apos; product</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1588</startpos>
+<endpos>1591</endpos></feature>
+<feature>
+<id>2098334</id>
+<title>3&apos; product</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1592</startpos>
+<endpos>1595</endpos></feature>
+<feature>
+<id>2098336</id>
+<title>PyrD 3&apos; Integration Sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1604</startpos>
+<endpos>2070</endpos></feature>
+<feature>
+<id>2098337</id>
+<title>BBa_K143009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1604</startpos>
+<endpos>2070</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

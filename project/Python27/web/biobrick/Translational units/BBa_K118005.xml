@@ -1,0 +1,143 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11502</part_id>
+<part_name>BBa_K118005</part_name>
+<part_short_name>K118005</part_short_name>
+<part_short_desc>rbs+crtI (phytoene dehydrogenase)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K118005</part_url>
+<part_entered>2008-08-08</part_entered>
+<part_author>Andrew Hall</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>9174</part_id>
+<part_name>BBa_J15001</part_name>
+<part_short_desc>strong synthetic E. coli ribosome binding site with SacI site.</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11355</part_id>
+<part_name>BBa_K118003</part_name>
+<part_short_desc>crtI coding sequence encoding phytoene dehydrogenase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>9174</part_id>
+<part_name>BBa_J15001</part_name>
+<part_short_desc>strong synthetic E. coli ribosome binding site with SacI site.</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11355</part_id>
+<part_name>BBa_K118003</part_name>
+<part_short_desc>crtI coding sequence encoding phytoene dehydrogenase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>9174</part_id>
+<part_name>BBa_J15001</part_name>
+<part_short_desc>strong synthetic E. coli ribosome binding site with SacI site.</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>11355</part_id>
+<part_name>BBa_K118003</part_name>
+<part_short_desc>crtI coding sequence encoding phytoene dehydrogenase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ctcaaggaggtactagatgaaaccaactacggtaattggtgcaggcttcggtggcctggcactggcaattcgtctacaag
+ctgcggggatccccgtcttactgcttgaacaacgtgataaacccggcggtcgggcttatgtctacgaggatcaggggttt
+acctttgatgcaggcccgacggttatcaccgatcccagtgccattgaagaactgtttgcactggcaggaaaacagttaaa
+agagtatgtcgaactgctgccggttacgccgttttaccgcctgtgttgggagtcagggaaggtctttaattacgataacg
+atcaaacccggctcgaagcgcagattcagcagtttaatccccgcgatgtcgaaggttatcgtcagtttctggactattca
+cgcgcggtgtttaaagaaggctatctaaagctcggtactgtcccttttttatcgttcagagacatgcttcgcgccgcacc
+tcaactggcgaaactgcaagcatggagaagcgtttacagtaaggttgccagttacatcgaagatgaacatctgcgccagg
+cgttttctttccactcgctgttggtgggcggcaatcccttcgccacctcatccatttatacgttgatacacgcgctggag
+cgtgagtggggcgtctggtttccgcgtggcggcaccggcgcattagttcaggggatgataaagctgtttcaggatctggg
+tggcgaagtcgtgttaaacgccagagtcagccatatggaaacgacaggaaacaagattgaagccgtgcatttagaggacg
+gtcgcaggttcctgacgcaagccgtcgcgtcaaatgcagatgtggttcatacctatcgcgacctgttaagccagcaccct
+gccgcggttaagcagtccaacaaactgcaaactaagcgcatgagtaactctctgtttgtgctctattttggtttgaatca
+ccatcatgatcagctcgcgcatcacacggtttgtttcggcccgcgttaccgcgagctgattgacgaaatttttaatcatg
+atggcctcgcagaggacttctcactttatctgcacgcgccctgtgtcacggattcgtcactggcgcctgaaggttgcggc
+agttactatgtgttggcgccggtgccgcatttaggcaccgcgaacctcgactggacggttgaggggccaaaactacgcga
+ccgtatttttgcgtaccttgagcagcattacatgcctggcttacggagtcagctggtcacgcaccggatgtttacgccgt
+ttgattttcgcgaccagcttaatgcctatcatggctcagccttttctgtggagcccgttcttacccagagcgcctggttt
+cggccgcataaccgcgataaaaccattactaatctctacctggtcggcgcaggcacgcatcccggcgcaggcattcctgg
+cgtcatcggctcggcaaaagcgacagcaggtttgatgctggaggatctgatataataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1970355</id>
+<title>SacI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>1970357</id>
+<title>BBa_J15001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>1970356</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>1970360</id>
+<title>BBa_K118003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>17</startpos>
+<endpos>1498</endpos></feature>
+<feature>
+<id>1970358</id>
+<title>PstI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>494</startpos>
+<endpos>499</endpos></feature>
+<feature>
+<id>1970359</id>
+<title>PstI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>905</startpos>
+<endpos>910</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/Edinburgh/favorite</category>
+<category>//classic/generator/rc</category>
+<category>//function/biosynthesis/isoprenoid</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

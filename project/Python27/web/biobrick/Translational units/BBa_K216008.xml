@@ -1,0 +1,119 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16204</part_id>
+<part_name>BBa_K216008</part_name>
+<part_short_name>K216008</part_short_name>
+<part_short_desc>bacterial luciferase LuxAB of Xenorhabdus luminescens</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K216008</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>Edinburgh iGEM 2009</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ctcaaatagcaatataaggactctctatgaaatttggaaactttttgcttacataccaacctccccaattttctcaaaca
+gaggtaatgaaacgtttggttaaattaggtcgcatctctgaggagtgtggttttgataccgtatggttactggagcatca
+tttcacggagtttggtttgcttggtaacccttatgtcgctgctgcatatttacttggcgcgactaaaaaattgaatgtag
+gaactgccgctattgttcttcccacagcccatccagtacgccaacttgaagatgtgaatttattggatcaaatgtcaaaa
+ggacgatttcggtttggtatttgccgagggctttacaacaaggactttcgcgtattcggcacagatatgaataacagtcg
+cgccttagcggaatgctggtacgggctgataaagaatggcatgacagagggatatatggaagctgataatgaacatatca
+agttccataaggtaaaagtaaaccccgcggcgtatagcagaggtggcgcaccggtttatgtggtggctgaatcagcttcg
+acgactgagtgggctgctcaatttggcctaccgatgatattaagttggattataaatactaacgaaaagaaagcacaact
+tgagctttataatgaagtggctcaagaatatgggcacgatattcataatatcgaccattgcttatcatatataacatctg
+tagatcatgactcaattaaagcgaaagagatttgccggaaatttctggggcattggtatgattcttatgtgaatgctacg
+actatttttgatgattcagaccaaacaagaggttatgatttcaataaagggcagtggcgtgactttgtattaaaaggaca
+taaagatactaatcgccgtattgattacagttacgaaatcaatcccgtgggaacgccgcaggaatgtattgacataattc
+aaaaagacattgatgctacaggaatatcaaatatttgttgtggatttgaagctaatggaacagtagacgaaattattgct
+tccatgaagctcttccagtctgatgtcatgccatttcttaaagaaaaacaacgttcgctattatattagctaaggagaaa
+gaaatgaaatttggattgttcttccttaacttcatcaattcaacaactgttcaagaacaaagtatagttcgcatgcagga
+aataacggagtatgttgataagttgaattttgaacagattttagtgtatgaaaatcatttttcagataatggtgttgtcg
+gcgctcctctgactgtttctggttttctgctcggtttaacagagaaaattaaaattggttcattaaatcacatcattaca
+actcatcatcctgtcgccatagcggaggaagcttgcttattggatcagttaagtgaagggagatttattttagggtttag
+tgattgcgaaaaaaaagatgaaatgcatttttttaatcgcccggttgaatatcaacagcaactatttgaagagtgttatg
+aaatcattaacgatgctttaacaacaggctattgtaatccagataacgatttttatagcttccctaaaatatctgtaaat
+ccccatgcttatacgccaggcggacctcggaaatatgtaacagcaaccagtcatcatattgttgagtgggcggccaaaaa
+aggtattcctctcatctttaagtgggatgattctaatgatgttagatatgaatatgctgaaagatataaagccgttgcgg
+ataaatatgacgttgacctatcagagatagaccatcagttaatgatattagttaactataacgaagatagtaataaagct
+aaacaagagacgcgtgcatttattagtgattatgttcttgaaatgcaccctaatgaaaatttcgaaaataaacttgaaga
+aataattgcagaaaacgctgtcggaaattatacggagtgtataactgcggctaagttggcaattgaaaagtgtggtgcga
+aaagtgtattgctgtcctttgaaccaatgaatgatttgatgagccaaaaaaatgtaatcaatattgttgatgataatatt
+aagaagtaccacatggaatatacctaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2046870</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>15</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2046871</id>
+<title>start luxA</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>27</startpos>
+<endpos>29</endpos></feature>
+<feature>
+<id>2046873</id>
+<title>luxA coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>27</startpos>
+<endpos>1109</endpos></feature>
+<feature>
+<id>2046872</id>
+<title>end luxA</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1107</startpos>
+<endpos>1109</endpos></feature>
+<feature>
+<id>2046874</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1112</startpos>
+<endpos>1117</endpos></feature>
+<feature>
+<id>2046875</id>
+<title>start luxB</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1124</startpos>
+<endpos>1126</endpos></feature>
+<feature>
+<id>2046877</id>
+<title>luxB coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1124</startpos>
+<endpos>2107</endpos></feature>
+<feature>
+<id>2046876</id>
+<title>end luxB</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2105</startpos>
+<endpos>2107</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/reporter/light</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

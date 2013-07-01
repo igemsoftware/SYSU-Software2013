@@ -1,0 +1,160 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16573</part_id>
+<part_name>BBa_K283045</part_name>
+<part_short_name>K283045</part_short_name>
+<part_short_desc>prosseA-rbs- T7 RNAP (Backbone: pSB3C5)</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K283045</part_url>
+<part_entered>2009-10-19</part_entered>
+<part_author>Shi Lei, Nelson Chu, W Ling</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>16244</part_id>
+<part_name>BBa_K283038</part_name>
+<part_short_desc>prosseA promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>8685</part_id>
+<part_name>BBa_J61134</part_name>
+<part_short_desc>Ribosome Binding Site Family Member</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15678</part_id>
+<part_name>BBa_K283047</part_name>
+<part_short_desc>T7 RNA polymerase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>15682</part_id>
+<part_name>BBa_K283013</part_name>
+<part_short_desc>prosseA-rbs </part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15678</part_id>
+<part_name>BBa_K283047</part_name>
+<part_short_desc>T7 RNA polymerase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>15682</part_id>
+<part_name>BBa_K283013</part_name>
+<part_short_desc>prosseA-rbs </part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>15678</part_id>
+<part_name>BBa_K283047</part_name>
+<part_short_desc>T7 RNA polymerase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>actttgacccggttagaagatttgctgcttcattcgcgtgaagaggccaaaggcataattttacaattaagggctgcccg
+gaaacagttagaagagaacaacggcaagttacaggatccgcagcaatatcagcaaaacaccttattgcttgaagcgatcg
+agcaggccgaaaatatcatcaacattatttattatcgttaccataacagcgcacttgtagtgagtgagcaagagtaaagt
+aaaaatatcttagagcctatcccaccaggcgttaattggcgcagccagtttggacacggatagcgcgcaaaaaccgcagc
+gtacacgtagtacgtgaggtttgactcgctacgctcgcccttcgggccgccgctagcggcgttcaaaacgctaacgcgtt
+ttggcgagcactgcccaggttcaaaatggcaagtaaaatagccctaatgggataggctcttagttagcacgttaattatc
+tatcgtgtatatggaggggatactagagaaagaccggaaatactagatgaacacgattaacatcgctaagaacgacttct
+ctgacatcgaactggctgctatcccgttcaacactctggctgaccattacggtgagcgtttagctcgcgaacagttggcc
+cttgagcatgagtcttacgagatgggtgaagcacgcttccgcaagatgtttgagcgtcaacttaaagctggtgaggttgc
+ggataacgctgccgccaagcctctcatcactaccctactccctaagatgattgcacgcatcaacgactggtttgaggaag
+tgaaagctaagcgcggcaagcgcccgacagccttccagttcctgcaagaaatcaagccggaagccgtagcgtacatcacc
+attaagaccactctggcttgcctaaccagtgctgacaatacaaccgttcaggctgtagcaagcgcaatcggtcgggccat
+tgaggacgaggctcgcttcggtcgtatccgtgaccttgaagctaagcacttcaagaaaaacgttgaggaacaactcaaca
+agcgcgtagggcacgtctacaagaaagcatttatgcaagttgtcgaggctgacatgctctctaagggtctactcggtggc
+gaggcgtggtcttcgtggcataaggaagactctattcatgtaggagtacgctgcatcgagatgctcattgagtcaaccgg
+aatggttagcttacaccgccaaaatgctggcgtagtaggtcaagactctgagactatcgaactcgcacctgaatacgctg
+aggctatcgcaacccgtgcaggtgcgctggctggcatctctccgatgttccaaccttgcgtagttcctcctaagccgtgg
+actggcattactggtggtggctattgggctaacggtcgtcgtcctctggcgctggtgcgtactcacagtaagaaagcact
+gatgcgctacgaagacgtttacatgcctgaggtgtacaaagcgattaacattgcgcaaaacaccgcatggaaaatcaaca
+agaaagtcctagcggtcgccaacgtaatcaccaagtggaagcattgtccggtcgaggacatccctgcgattgagcgtgaa
+gaactcccgatgaaaccggaagacatcgacatgaatcctgaggctctcaccgcgtggaaacgtgctgccgctgctgtgta
+ccgcaaggacagggctcgcaagtctcgccgtatcagccttgagttcatgcttgagcaagccaataagtttgctaaccata
+aggccatctggttcccttacaacatggactggcgcggtcgtgtttacgccgtgtcaatgttcaacccgcaaggtaacgat
+atgaccaaaggactgcttacgctggcgaaaggtaaaccaatcggtaaggaaggttactactggctgaaaatccacggtgc
+aaactgtgcgggtgtcgataaggttccgttccctgagcgcatcaagttcattgaggaaaaccacgagaacatcatggctt
+gcgctaagtctccactggagaacacttggtgggctgagcaagattctccgttctgcttccttgcgttctgctttgagtac
+gctggggtacagcaccacggcctgagctataactgctcccttccgctggcgtttgacgggtcttgctctggcatccagca
+cttctccgcgatgctccgagatgaggtaggtggtcgcgcggttaacttgcttcctagtgagaccgttcaggacatctacg
+ggattgttgctaagaaagtcaacgagattctacaagcagacgcaatcaatgggaccgataacgaagtagttaccgtgacc
+gatgagaacactggtgaaatctctgagaaagtcaagctgggcactaaggcactggctggtcaatggctggctcacggtgt
+tactcgcagtgtgactaagcgttcagtcatgacgctggcttacgggtccaaagagttcggcttccgtcaacaagtgctgg
+aagataccattcagccagctattgattccggcaagggtccgatgttcactcagccgaatcaggctgctggatacatggct
+aagctgatttgggaatctgtgagcgtgacggtggtagctgcggttgaagcaatgaactggcttaagtctgctgctaagct
+gctggctgctgaggtcaaagataagaagactggagagattcttcgcaagcgttgcgctgtgcattgggtaactcctgatg
+gtttccctgtgtggcaggaatacaagaagcctattcagacgcgcttgaacctgatgttcctcggtcagttccgcttacag
+cctaccattaacaccaacaaagatagcgagattgatgcacacaaacaggagtctggtatcgctcctaactttgtacacag
+ccaagacggtagccaccttcgtaagactgtagtgtgggcacacgagaagtacggaatcgaatcttttgcactgattcacg
+actccttcggtaccattccggctgacgctgcgaacctgttcaaagcagtgcgcgaaactatggttgacacatatgagtct
+tgtgatgtactggctgatttctacgaccagttcgctgaccagttgcacgagtctcaattggacaaaatgccagcacttcc
+ggctaaaggtaacttgaacctccgtgacatcttagagtcggacttcgcgttcgcgtaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2057210</id>
+<title>BBa_K283038</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>500</endpos></feature>
+<feature>
+<id>2057209</id>
+<title>prosseA </title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>500</endpos></feature>
+<feature>
+<id>2057211</id>
+<title>BBa_J61134</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>509</startpos>
+<endpos>520</endpos></feature>
+<feature>
+<id>2057213</id>
+<title>BBa_K283047</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>527</startpos>
+<endpos>3178</endpos></feature>
+<feature>
+<id>2057212</id>
+<title>T7 polymerase</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>527</startpos>
+<endpos>3178</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

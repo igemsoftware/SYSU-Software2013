@@ -1,0 +1,148 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11862</part_id>
+<part_name>BBa_K131015</part_name>
+<part_short_name>K131015</part_short_name>
+<part_short_desc>LuxPQ from Vibrio harveyi</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>LuxPQ</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K131015</part_url>
+<part_entered>2008-09-28</part_entered>
+<part_author>Thane Kubik</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgctcgataaaaactaaaagagcaatagatgaagaaagcgttactattttccctgatttctatggtcggtttttctcca
+gcgtctcaagcaacacaagttttgaatgggtactggggttatcaagagtttttggacgagtttcccgagcaacgaaatct
+gaccaatgctttatcagaagcagtacgagcacagccggtcccactgtctaaaccgacacaacgcccgattaaaatatcag
+tggtttacccaggacagcaagtttcagattactgggtaagaaatattgcatcattcgaaaaacgtttgtataagttgaat
+attaactaccaactgaaccaagtgtttactcgtccaaatgctgatatcaagcaacaaagcttgtcattaatggaagcgct
+caagagcaaatcggattacttgattttcacgcttgatacgacaagacaccgtaaatttgttgagcacgttttggactcaa
+cgaacaccaaattgatcttgcaaaatatcactacaccagtccgtgagtgggacaaacatcaaccgtttttatatgtcgga
+tttgaccacgcagaaggcagtcgtgaattagcaacagagttcggaaagttcttcccaaaacacacatattacagtgtgct
+ctacttttctgaaggttatattagcgatgtgagaggtgatacttttattcaccaagtaaaccgtgataataactttgagc
+tacaatcagcgtattacacgaaggcaaccaagcaatccggctatgatgctgcgaaagcgagtttagcaaaacatccagat
+gttgattttatctatgcatgttcgaccgacgtagcattaggtgcagtagacgcactggctgagttgggacgtgaagatat
+tatgatcaatggctggggtggaggctctgctgagttagacgctatccagaagggtgatttagacatcaccgtcatgcgta
+tgaatgatgacactggcatagccatggcagaagcgattaagtgggacttggaagataaaccagttccgaccgtatactca
+ggtgactttgaaatcgtaacaaaggcagattcaccggagagaatcgaagcgctgaaaaagcgcgcatttagatattcaga
+taattgatgacaacaacgcgatcaaacattaaaaagcgtcgctcgctggcgacgctcataacaaagatcatcattttagt
+tcttgccccaattattctggggattttcattcagagctattacttctccaagcaaatcatttggcaagaagtagaccgaa
+ccaaacagcaaacctctgcactgatccacaatatatttgatagccactttgcggcgatccagatacatcatgacagtaat
+tccaagagcgaagtcattcgtgatttctacactgatcgcgacacggatgtgctcaactttttcttcctcagtatcgacca
+aagcgatccgtcgcacacaccagagttccgttttctaacggaccacaaaggcatcatttgggacgatggaaatgcgcatt
+tctatggtgtgaacgaccttatccttgatagccttgccaatcgggtcagtttcagtaacaactggtattacattaatgtc
+atgacctccattggttcgagacacatgctcgtgcgccgtgtgccgatcctagacccttcaacaggagaggtgcttggttt
+ctcatttaatgccgtcgtcttagacaacaacttcgctttgatggaaaagctcaagagtgaaagtaacgtcgacaatgtgg
+tgctggttgctaatagcgttcctttagcaaactctttgattggtgatgagccatataacgttgctgatgtattgcagcgt
+aaaagttcagacaaaagactcgataagctgttggtaatagaaacgccaatcgtcgtaaatgcagtgactaccgagctttg
+cttgttgacggtacaagacaatcagagtgtggtgacattacaaatccaacatattctagccatgcttgcatcgatcatcg
+gtatgatcatgattgccttaatgagtagggaatggattgagagtaaagtttcggcgcagttagaatctttgatgtcttac
+acccgctctgctcgtgaggaaaaagggtttgaacgatttggcggttcggatattgaagagtttgatcacatcggttcaac
+ccttgaaagtacattcgaagagcttgaagcgcagaagaagtcgttccgagatctgtttaattttgccttatcacccatca
+tggtttggtctgaagagagtgtcctgattcagatgaaccctgccgcgcgcaaagaattagtgatcgaagacgatcatgaa
+atcatgcatccggtcttccaaggctttaaagagaaattgaccccacacctcaaaatggcggctcaaggtgcgacgttgac
+tggggtgaacgtgcctattggtaataagatctaccgatggaacttgtcgccaattcgtgttgatggcgatatcagtggca
+ttattgtgcaaggccaagacattacaacacttatcgaagccgagaagcagagtaacattgcgcgtagagaagcagaaaaa
+tcggcgcaagcacgtgcagacttccttgctaaaatgagccatgaaattcgtacgccaatcaacggcattttaggtgtcgc
+ccaattattgaaagattctgtcgatacacaagagcagaagaatcaaatcgacgtcctgtgccacagtggcgagcacttgc
+ttgcagtactgaacgatattctcgatttctcaaagatagagcagggcaagttcaatattcagaaacacccgttctccttc
+accgataccatgcgtacattggaaaatatttatcgtccgatttgcacaaataagggggtggagttggtcatcgagaatga
+gcttgacccgaatgttgaaatcttcaccgatcaagtccgcttgaatcagattctatttaacttagtgagtaatgccgtta
+agttcacgccgattggctcgattcgactgcacgcagaacttgaacaattctatggtgcggagaacagcgtgttagttgtg
+gaactgactgatactggcatcggcattgaaagcgataagctcgaccaaatgttcgaaccttttgtgcaagaagagtcgac
+aaccacacgcgaatatggcggtagcggcctaggtttgaccatcgttaagaacctagtcgatatgttagaaggtgatgttc
+aggtccgcagtagcaaggggggggggacaacatttgttataacacttccagtaaaagatcgtgagcgtgtcttaaggcct
+ctggaggtcagtcaacgtatcaagccggaagccttgtttgatgaaagtttaaaagtgctactggtggaagataaccatac
+caatgcgtttatccttcaggctttctgtaagaagtataaaatgcaggtggattgggcgaaagatgggctggacgcgatgg
+agctcctttctgataccacctacgatctgatcctcatggataaccaattaccccaccttggtggtattgagaccacgcac
+gagattcgccagaacttgaggcttggaacgccaatttacgcgtgtacagcagacaccgcgaaagaaaccagtgatgcgtt
+tatggcggcaggtgcaaactatgtcatgctgaagccaattaaagagaatgcgttacatgaggcgtttgtcgatttcaaac
+aacgtttcttggtagaaagaacctaacggtttaatggcagtgataagttaggggctgaagttaaataataaaagtaaaga
+agggagcgtaatgcactaatgccgttcacttaaggtgatcggcattgttttttctagggtatcgg
+</seq_data></sequences>
+<features>
+<feature>
+<id>1976844</id>
+<title>Start of LuxP</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>30</startpos>
+<endpos>32</endpos></feature>
+<feature>
+<id>1976850</id>
+<title>LuxP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>30</startpos>
+<endpos>1127</endpos></feature>
+<feature>
+<id>1976852</id>
+<title>Silent mutation to remove EcoRI site</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>599</startpos>
+<endpos>599</endpos></feature>
+<feature>
+<id>1976845</id>
+<title>Stop for LuxP</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1125</startpos>
+<endpos>1127</endpos></feature>
+<feature>
+<id>1976846</id>
+<title>Start of LuxQ</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1127</startpos>
+<endpos>1129</endpos></feature>
+<feature>
+<id>1976851</id>
+<title>LuxQ</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1127</startpos>
+<endpos>3706</endpos></feature>
+<feature>
+<id>1976853</id>
+<title>Silent mutation to remove EcoRI site</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>1465</startpos>
+<endpos>1465</endpos></feature>
+<feature>
+<id>1976854</id>
+<title>Silent mutation to remove XbaI site</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>1618</startpos>
+<endpos>1618</endpos></feature>
+<feature>
+<id>1976847</id>
+<title>Stop for LuxQ</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>3704</startpos>
+<endpos>3706</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/[calgary_wetware]/favorite</category>
+<category>//function/cellsignalling</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

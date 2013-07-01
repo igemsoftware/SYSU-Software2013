@@ -1,0 +1,160 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11970</part_id>
+<part_name>BBa_K117010</part_name>
+<part_short_name>K117010</part_short_name>
+<part_short_desc>pLsrA-celE7-double Terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K117010</part_url>
+<part_entered>2008-10-08</part_entered>
+<part_author>Nguyen Xuan Hung</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>11937</part_id>
+<part_name>BBa_K117002</part_name>
+<part_short_desc>LsrA promoter (indirectly activated by AI-2)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11936</part_id>
+<part_name>BBa_K117000</part_name>
+<part_short_desc>Lysis gene (promotes lysis in colicin-producing bacteria strain)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11937</part_id>
+<part_name>BBa_K117002</part_name>
+<part_short_desc>LsrA promoter (indirectly activated by AI-2)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11966</part_id>
+<part_name>BBa_K117006</part_name>
+<part_short_desc>celE7-double terminator BBa_B0015</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11937</part_id>
+<part_name>BBa_K117002</part_name>
+<part_short_desc>LsrA promoter (indirectly activated by AI-2)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>11966</part_id>
+<part_name>BBa_K117006</part_name>
+<part_short_desc>celE7-double terminator BBa_B0015</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>cacaacatcaactgagtgcatgccttatttaatcatgtaactattcttacgacttcaaacgtcaaacagtcttaacactt
+atttaattaaaaagaggagaaatactagatgaaaaaaataacagggattattttattgcttcttgcagccattattcttg
+ctgcatgtcaggcaaactatatccgtgatgttcagggcgggacagtatcaccgtcgtcaactgctgaactgaccggagtg
+gaaacgcagtaatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgtt
+gtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1979994</id>
+<title>BBa_K117002</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>102</endpos></feature>
+<feature>
+<id>1979995</id>
+<title>BBa_K117000</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>109</startpos>
+<endpos>252</endpos></feature>
+<feature>
+<id>1979993</id>
+<title>RBS BBa_B0034</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>112</startpos>
+<endpos>123</endpos></feature>
+<feature>
+<id>1979996</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>261</startpos>
+<endpos>340</endpos></feature>
+<feature>
+<id>1979997</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>272</startpos>
+<endpos>315</endpos></feature>
+<feature>
+<id>1979998</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>349</startpos>
+<endpos>389</endpos></feature>
+<feature>
+<id>1979999</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>356</startpos>
+<endpos>375</endpos></feature>
+<feature>
+<id>1980000</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>376</startpos>
+<endpos>389</endpos></feature>
+<feature>
+<id>1980001</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>382</startpos>
+<endpos>382</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/[NTU-Singapore]/favorite</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

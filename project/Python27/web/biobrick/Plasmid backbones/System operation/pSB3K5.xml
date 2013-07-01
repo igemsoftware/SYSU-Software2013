@@ -1,0 +1,764 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>8693</part_id>
+<part_name>pSB3K5</part_name>
+<part_short_name>pSB3K5</part_short_name>
+<part_short_desc>Low to medium copy BioBrick standard vector</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>pSB3K5</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:pSB3K5</part_url>
+<part_entered>2007-05-03</part_entered>
+<part_author>Reshma Shetty</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>6475</part_id>
+<part_name>BBa_G00001</part_name>
+<part_short_desc>BioBrick cloning site suffix</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Suffix</part_nickname></subpart>
+<subpart>
+<part_id>6460</part_id>
+<part_name>BBa_B0044</part_name>
+<part_short_desc>Topoisomerase I mediated cloning site (reverse)</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TOPO</part_nickname></subpart>
+<subpart>
+<part_id>6458</part_id>
+<part_name>BBa_B0042</part_name>
+<part_short_desc>Translational stop sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TSS</part_nickname></subpart>
+<subpart>
+<part_id>6305</part_id>
+<part_name>BBa_B0054</part_name>
+<part_short_desc>Transcriptional terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>6454</part_id>
+<part_name>BBa_G00102</part_name>
+<part_short_desc>Reverse BioBrick primer annealing site (VR binding site)</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>VR</part_nickname></subpart>
+<subpart>
+<part_id>4082</part_id>
+<part_name>BBa_B0062</part_name>
+<part_short_desc>Terminator (Reverse B0052)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>8153</part_id>
+<part_name>BBa_G0003</part_name>
+<part_short_desc>NheI/XbaI mixed site</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>8613</part_id>
+<part_name>BBa_I50032</part_name>
+<part_short_desc>p15A replication origin</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>p15A</part_nickname></subpart>
+<subpart>
+<part_id>8152</part_id>
+<part_name>BBa_G0002</part_name>
+<part_short_desc>SpeI/XbaI mixed site</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>SX scar</part_nickname></subpart>
+<subpart>
+<part_id>6441</part_id>
+<part_name>BBa_P1003</part_name>
+<part_short_desc>kanamycin resistance cassette</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname>kanR</part_nickname></subpart>
+<subpart>
+<part_id>8154</part_id>
+<part_name>BBa_G0004</part_name>
+<part_short_desc>SpeI/NheI mixed site</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>4079</part_id>
+<part_name>BBa_B0053</part_name>
+<part_short_desc>Terminator (His)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4646</part_id>
+<part_name>BBa_G00100</part_name>
+<part_short_desc>Forward primer for sequencing/amplifying BioBrick parts (VF2)</part_short_desc>
+<part_type>Primer</part_type>
+<part_nickname>VF2</part_nickname></subpart>
+<subpart>
+<part_id>6306</part_id>
+<part_name>BBa_B0055</part_name>
+<part_short_desc> -- No description --</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>6458</part_id>
+<part_name>BBa_B0042</part_name>
+<part_short_desc>Translational stop sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TSS</part_nickname></subpart>
+<subpart>
+<part_id>6459</part_id>
+<part_name>BBa_B0043</part_name>
+<part_short_desc>Topoisomerase I mediated cloning site (forward)</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TOPO</part_nickname></subpart>
+<subpart>
+<part_id>6474</part_id>
+<part_name>BBa_G00000</part_name>
+<part_short_desc>BioBrick cloning site prefix</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Prefix</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>6475</part_id>
+<part_name>BBa_G00001</part_name>
+<part_short_desc>BioBrick cloning site suffix</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Suffix</part_nickname></subpart>
+<subpart>
+<part_id>6460</part_id>
+<part_name>BBa_B0044</part_name>
+<part_short_desc>Topoisomerase I mediated cloning site (reverse)</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TOPO</part_nickname></subpart>
+<subpart>
+<part_id>6458</part_id>
+<part_name>BBa_B0042</part_name>
+<part_short_desc>Translational stop sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TSS</part_nickname></subpart>
+<subpart>
+<part_id>6305</part_id>
+<part_name>BBa_B0054</part_name>
+<part_short_desc>Transcriptional terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>6454</part_id>
+<part_name>BBa_G00102</part_name>
+<part_short_desc>Reverse BioBrick primer annealing site (VR binding site)</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>VR</part_nickname></subpart>
+<subpart>
+<part_id>4082</part_id>
+<part_name>BBa_B0062</part_name>
+<part_short_desc>Terminator (Reverse B0052)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>8153</part_id>
+<part_name>BBa_G0003</part_name>
+<part_short_desc>NheI/XbaI mixed site</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>8613</part_id>
+<part_name>BBa_I50032</part_name>
+<part_short_desc>p15A replication origin</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>p15A</part_nickname></subpart>
+<subpart>
+<part_id>8152</part_id>
+<part_name>BBa_G0002</part_name>
+<part_short_desc>SpeI/XbaI mixed site</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>SX scar</part_nickname></subpart>
+<subpart>
+<part_id>6441</part_id>
+<part_name>BBa_P1003</part_name>
+<part_short_desc>kanamycin resistance cassette</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname>kanR</part_nickname></subpart>
+<subpart>
+<part_id>8154</part_id>
+<part_name>BBa_G0004</part_name>
+<part_short_desc>SpeI/NheI mixed site</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>4079</part_id>
+<part_name>BBa_B0053</part_name>
+<part_short_desc>Terminator (His)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4646</part_id>
+<part_name>BBa_G00100</part_name>
+<part_short_desc>Forward primer for sequencing/amplifying BioBrick parts (VF2)</part_short_desc>
+<part_type>Primer</part_type>
+<part_nickname>VF2</part_nickname></subpart>
+<subpart>
+<part_id>6306</part_id>
+<part_name>BBa_B0055</part_name>
+<part_short_desc> -- No description --</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>6458</part_id>
+<part_name>BBa_B0042</part_name>
+<part_short_desc>Translational stop sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TSS</part_nickname></subpart>
+<subpart>
+<part_id>6459</part_id>
+<part_name>BBa_B0043</part_name>
+<part_short_desc>Topoisomerase I mediated cloning site (forward)</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TOPO</part_nickname></subpart>
+<subpart>
+<part_id>6474</part_id>
+<part_name>BBa_G00000</part_name>
+<part_short_desc>BioBrick cloning site prefix</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Prefix</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>6475</part_id>
+<part_name>BBa_G00001</part_name>
+<part_short_desc>BioBrick cloning site suffix</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Suffix</part_nickname></subpart>
+<subpart>
+<part_id>6460</part_id>
+<part_name>BBa_B0044</part_name>
+<part_short_desc>Topoisomerase I mediated cloning site (reverse)</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TOPO</part_nickname></subpart>
+<subpart>
+<part_id>6458</part_id>
+<part_name>BBa_B0042</part_name>
+<part_short_desc>Translational stop sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TSS</part_nickname></subpart>
+<subpart>
+<part_id>6305</part_id>
+<part_name>BBa_B0054</part_name>
+<part_short_desc>Transcriptional terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>6454</part_id>
+<part_name>BBa_G00102</part_name>
+<part_short_desc>Reverse BioBrick primer annealing site (VR binding site)</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>VR</part_nickname></subpart>
+<subpart>
+<part_id>4082</part_id>
+<part_name>BBa_B0062</part_name>
+<part_short_desc>Terminator (Reverse B0052)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>8153</part_id>
+<part_name>BBa_G0003</part_name>
+<part_short_desc>NheI/XbaI mixed site</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>8613</part_id>
+<part_name>BBa_I50032</part_name>
+<part_short_desc>p15A replication origin</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>p15A</part_nickname></subpart>
+<subpart>
+<part_id>8152</part_id>
+<part_name>BBa_G0002</part_name>
+<part_short_desc>SpeI/XbaI mixed site</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>SX scar</part_nickname></subpart>
+<subpart>
+<part_id>6441</part_id>
+<part_name>BBa_P1003</part_name>
+<part_short_desc>kanamycin resistance cassette</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname>kanR</part_nickname></subpart>
+<subpart>
+<part_id>8154</part_id>
+<part_name>BBa_G0004</part_name>
+<part_short_desc>SpeI/NheI mixed site</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>4079</part_id>
+<part_name>BBa_B0053</part_name>
+<part_short_desc>Terminator (His)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4646</part_id>
+<part_name>BBa_G00100</part_name>
+<part_short_desc>Forward primer for sequencing/amplifying BioBrick parts (VF2)</part_short_desc>
+<part_type>Primer</part_type>
+<part_nickname>VF2</part_nickname></subpart>
+<subpart>
+<part_id>6306</part_id>
+<part_name>BBa_B0055</part_name>
+<part_short_desc> -- No description --</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>6458</part_id>
+<part_name>BBa_B0042</part_name>
+<part_short_desc>Translational stop sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TSS</part_nickname></subpart>
+<subpart>
+<part_id>6459</part_id>
+<part_name>BBa_B0043</part_name>
+<part_short_desc>Topoisomerase I mediated cloning site (forward)</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>TOPO</part_nickname></subpart>
+<subpart>
+<part_id>6474</part_id>
+<part_name>BBa_G00000</part_name>
+<part_short_desc>BioBrick cloning site prefix</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Prefix</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tactagtagcggccgctgcaggagtcactaagggttagttagttagattagcagaaagtcaaaagcctccgaccggaggc
+ttttgactaaaacttcccttggggttatcattggggctcactcaaaggcggtaatcagataaaaaaaatccttagctttc
+gctaaggatgatttctgctagagatggaatagactggatggaggcggataaagttgcaggaccacttctgcgctcggccc
+ttccggctggctggtttattgctgataaatctggagccggtgagcgtgggtctcgcggtatcattgcagcactggggcca
+gatggtaagccctcccgtatcgtagttatctacacgacggggagtcaggcaactatggatgaacgaaatagacagatcgc
+tgagataggtgcctcactgattaagcattggtaactgtcagaccaagtttactcatatatactttagattgatttaaaac
+ttcatttttaatttaaaaggatctaggtgaagatcctttttgataatctcatgaccaaaatcccttaacgtgagttttcg
+ttccactgagcgtcagaccccttaataagatgatcttcttgagatcgttttggtctgcgcgtaatctcttgctctgaaaa
+cgaaaaaaccgccttgcagggcggtttttcgaaggttctctgagctaccaactctttgaaccgaggtaactggcttggag
+gagcgcagtcaccaaaacttgtcctttcagtttagccttaaccggcgcatgacttcaagactaactcctctaaatcaatt
+accagtggctgctgccagtggtgcttttgcatgtctttccgggttggactcaagacgatagttaccggataaggcgcagc
+ggtcggactgaacggggggttcgtgcatacagtccagcttggagcgaactgcctacccggaactgagtgtcaggcgtgga
+atgagacaaacgcggccataacagcggaatgacaccggtaaaccgaaaggcaggaacaggagagcgcacgagggagccgc
+caggggaaacgcctggtatctttatagtcctgtcgggtttcgccaccactgatttgagcgtcagatttcgtgatgcttgt
+caggggggcggagcctatggaaaaacggctttgccgcggccctctcacttccctgttaagtatcttcctggcatcttcca
+ggaaatctccgccccgttcgtaagccatttccgctcgccgcagtcgaacgaccgagcgtagcgagtcagtgagcgaggaa
+gcggaatatatcctgtatcacatattctgctgacgcaccggtgcagccttttttctcctgccacatgaagcacttcactg
+acaccctcatcagtgccaacatagtaagccagtatacactccgctagcgctgaggtctgcctcgtgaagaaggtgttgct
+gactcataccaggcctgaatcgccccatcatccagccagaaagtgagggagccacggttgatgagagctttgttgtaggt
+ggaccagttggtgattttgaacttttgctttgccacggaacggtctgcgttgtcgggaagatgcgtgatctgatccttca
+actcagcaaaagttcgatttattcaacaaagccacgttgtgtctcaaaatctctgatgttacattgcacaagataaaaat
+atatcatcatgaacaataaaactgtctgcttacataaacagtaatacaaggggtgtttactagagctgatccttcaactc
+agcaaaagttcgatttattcaacaaagccacgttgtgtctcaaaatctctgatgttacattgcacaagataaaaatatat
+catcatgaacaataaaactgtctgcttacataaacagtaatacaaggggtgttatgagccatattcaacgggaaacgtct
+tgctcccgtccgcgcttaaactccaacatggacgctgatttatatgggtataaatgggctcgcgataatgtcgggcaatc
+aggtgcgacaatctatcgcttgtatgggaagcccgatgcgccagagttgtttctgaaacatggcaaaggtagcgttgcca
+atgatgttacagatgagatggtccgtctcaactggctgacggagtttatgcctctcccgaccatcaagcattttatccgt
+actcctgatgatgcgtggttactcaccaccgcgattcctgggaaaacagccttccaggtattagaagaatatcctgattc
+aggtgaaaatattgttgatgcgctggccgtgttcctgcgccggttacattcgattcctgtttgtaattgtccttttaaca
+gcgatcgtgtatttcgtcttgctcaggcgcaatcacgcatgaataacggtttggttgatgcgagtgattttgatgacgag
+cgtaatggctggcctgttgaacaagtctggaaagaaatgcacaagctcttgccattctcaccggattcagtcgtcactca
+tggtgatttctcacttgataaccttatttttgacgaggggaaattaataggttgtattgatgttggacgggtcggaatcg
+cagaccgttaccaggaccttgccattctttggaactgcctcggtgagttttctccttcattacagaaacggctttttcaa
+aaatatggtattgataatcctgatatgaataaattgcagtttcatttgatgctcgatgagtttttctaataatactagct
+ccggcaaaaaaacgggcaaggtgtcaccaccctgccctttttctttaaaaccgaaaagattacttcgcgtttgccacctg
+acgtctaagaaaaggaatattcagcaatttgcccgtgccgaagaaaggcccacccgtgaaggtgagccagtgagttgatt
+gctacgtaattagttagttagcccttagtgactcgaattcgcggccgcttctagag
+</seq_data></sequences>
+<features>
+<feature>
+<id>1932077</id>
+<title>Suffix</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>1932078</id>
+<title>BBa_G00001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>1932083</id>
+<title>BBa_B0044</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>22</startpos>
+<endpos>34</endpos></feature>
+<feature>
+<id>1932079</id>
+<title>Nt.BstNB I recognition site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>26</endpos></feature>
+<feature>
+<id>1932080</id>
+<title>Arbitrary sequence (could be any bases)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>27</startpos>
+<endpos>29</endpos></feature>
+<feature>
+<id>1932081</id>
+<title>Generated T overhang</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>30</startpos>
+<endpos>30</endpos></feature>
+<feature>
+<id>1932082</id>
+<title>Topoisomerase I recognition site</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>30</startpos>
+<endpos>34</endpos></feature>
+<feature>
+<id>1932090</id>
+<title>BBa_B0042</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>35</startpos>
+<endpos>46</endpos></feature>
+<feature>
+<id>1932084</id>
+<title>stop codon (-1 frame)</title>
+<type>stop</type>
+<direction>reverse</direction>
+<startpos>35</startpos>
+<endpos>37</endpos></feature>
+<feature>
+<id>1932085</id>
+<title>stop codon (+2 frame)</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>36</startpos>
+<endpos>38</endpos></feature>
+<feature>
+<id>1932086</id>
+<title>stop codon (-3 frame)</title>
+<type>stop</type>
+<direction>reverse</direction>
+<startpos>39</startpos>
+<endpos>41</endpos></feature>
+<feature>
+<id>1932087</id>
+<title>stop codon (+3 frame)</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>40</startpos>
+<endpos>42</endpos></feature>
+<feature>
+<id>1932088</id>
+<title>stop codon (-2 frame)</title>
+<type>stop</type>
+<direction>reverse</direction>
+<startpos>43</startpos>
+<endpos>45</endpos></feature>
+<feature>
+<id>1932089</id>
+<title>stop codon (+1 frame)</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>44</startpos>
+<endpos>46</endpos></feature>
+<feature>
+<id>1932093</id>
+<title>BBa_B0054</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>47</startpos>
+<endpos>115</endpos></feature>
+<feature>
+<id>1932091</id>
+<title>identical to E. coli MG1655 between tonB and yciA</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>50</startpos>
+<endpos>89</endpos></feature>
+<feature>
+<id>1932092</id>
+<title>stem loop</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>57</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>1932094</id>
+<title>BBa_G00102</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>116</startpos>
+<endpos>135</endpos></feature>
+<feature>
+<id>1932096</id>
+<title>BBa_B0062</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>136</startpos>
+<endpos>176</endpos></feature>
+<feature>
+<id>1932095</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>149</startpos>
+<endpos>168</endpos></feature>
+<feature>
+<id>1932097</id>
+<title>BBa_G0003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>177</startpos>
+<endpos>183</endpos></feature>
+<feature>
+<id>1932100</id>
+<title>BBa_I50032</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>184</startpos>
+<endpos>1737</endpos></feature>
+<feature>
+<id>1932098</id>
+<title>p15A origin of replication</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>582</startpos>
+<endpos>1406</endpos></feature>
+<feature>
+<id>1932099</id>
+<title>repeat region</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1406</startpos>
+<endpos>1633</endpos></feature>
+<feature>
+<id>1932101</id>
+<title>BBa_G0002</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1738</startpos>
+<endpos>1745</endpos></feature>
+<feature>
+<id>1932103</id>
+<title>BBa_P1003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1746</startpos>
+<endpos>2712</endpos></feature>
+<feature>
+<id>1932102</id>
+<title>kanamycin resistance</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1894</startpos>
+<endpos>2712</endpos></feature>
+<feature>
+<id>1932104</id>
+<title>BBa_G0004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2713</startpos>
+<endpos>2719</endpos></feature>
+<feature>
+<id>1932106</id>
+<title>BBa_B0053</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2720</startpos>
+<endpos>2791</endpos></feature>
+<feature>
+<id>1932105</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2728</startpos>
+<endpos>2762</endpos></feature>
+<feature>
+<id>1932107</id>
+<title>BBa_G00100</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2792</startpos>
+<endpos>2811</endpos></feature>
+<feature>
+<id>1932110</id>
+<title>BBa_B0055</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2812</startpos>
+<endpos>2889</endpos></feature>
+<feature>
+<id>1932108</id>
+<title>identical to bacteriophage T3</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>2839</startpos>
+<endpos>2877</endpos></feature>
+<feature>
+<id>1932109</id>
+<title>stem loop from bacteriophage T3</title>
+<type>stem_loop</type>
+<direction>reverse</direction>
+<startpos>2847</startpos>
+<endpos>2868</endpos></feature>
+<feature>
+<id>1932111</id>
+<title>stop codon (-1 frame)</title>
+<type>stop</type>
+<direction>reverse</direction>
+<startpos>2890</startpos>
+<endpos>2892</endpos></feature>
+<feature>
+<id>1932117</id>
+<title>BBa_B0042</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2890</startpos>
+<endpos>2901</endpos></feature>
+<feature>
+<id>1932112</id>
+<title>stop codon (+2 frame)</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2891</startpos>
+<endpos>2893</endpos></feature>
+<feature>
+<id>1932113</id>
+<title>stop codon (-3 frame)</title>
+<type>stop</type>
+<direction>reverse</direction>
+<startpos>2894</startpos>
+<endpos>2896</endpos></feature>
+<feature>
+<id>1932114</id>
+<title>stop codon (+3 frame)</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2895</startpos>
+<endpos>2897</endpos></feature>
+<feature>
+<id>1932115</id>
+<title>stop codon (-2 frame)</title>
+<type>stop</type>
+<direction>reverse</direction>
+<startpos>2898</startpos>
+<endpos>2900</endpos></feature>
+<feature>
+<id>1932116</id>
+<title>stop codon (+1 frame)</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2899</startpos>
+<endpos>2901</endpos></feature>
+<feature>
+<id>1932118</id>
+<title>Topoisomerase I recognition site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2902</startpos>
+<endpos>2906</endpos></feature>
+<feature>
+<id>1932122</id>
+<title>BBa_B0043</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2902</startpos>
+<endpos>2914</endpos></feature>
+<feature>
+<id>1932119</id>
+<title>Generated T overhang</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2906</startpos>
+<endpos>2906</endpos></feature>
+<feature>
+<id>1932120</id>
+<title>Arbitrary sequence (could be any bases)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2907</startpos>
+<endpos>2909</endpos></feature>
+<feature>
+<id>1932121</id>
+<title>Nt.BstNB I recognition site</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>2910</startpos>
+<endpos>2914</endpos></feature>
+<feature>
+<id>1932123</id>
+<title>Prefix</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2915</startpos>
+<endpos>2936</endpos></feature>
+<feature>
+<id>1932124</id>
+<title>BBa_G00000</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2915</startpos>
+<endpos>2936</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>copies</name>
+<value>10-12</value>
+<units></units>
+<url></url>
+<id>4267</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>K</value>
+<units></units>
+<url></url>
+<id>4268</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>mcs</name>
+<value>BioBrick</value>
+<units></units>
+<url></url>
+<id>4269</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>p15A</value>
+<units></units>
+<url></url>
+<id>4270</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4271</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//plasmidbackbone/assembly</category>
+<category>//plasmidbackbone/copynumber/medium</category>
+<category>//plasmidbackbone/operation</category>
+<category>//plasmidbackbone/version/5</category>
+<category>//standard/10</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

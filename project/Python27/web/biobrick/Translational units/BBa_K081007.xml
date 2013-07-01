@@ -1,0 +1,146 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12109</part_id>
+<part_name>BBa_K081007</part_name>
+<part_short_name>K081007</part_short_name>
+<part_short_desc>cI repressor (TERM-)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K081007</part_url>
+<part_entered>2008-10-18</part_entered>
+<part_author>Lorenzo Pasotti, Paolo Magni</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>147</part_id>
+<part_name>BBa_B0030</part_name>
+<part_short_desc>RBS.1 (strong) -- modified from R. Weiss</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>156</part_id>
+<part_name>BBa_C0051</part_name>
+<part_short_desc>cI repressor from E. coli phage lambda (+LVA) </part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>cI lam</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>147</part_id>
+<part_name>BBa_B0030</part_name>
+<part_short_desc>RBS.1 (strong) -- modified from R. Weiss</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>156</part_id>
+<part_name>BBa_C0051</part_name>
+<part_short_desc>cI repressor from E. coli phage lambda (+LVA) </part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>cI lam</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>147</part_id>
+<part_name>BBa_B0030</part_name>
+<part_short_desc>RBS.1 (strong) -- modified from R. Weiss</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>156</part_id>
+<part_name>BBa_C0051</part_name>
+<part_short_desc>cI repressor from E. coli phage lambda (+LVA) </part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<barcode></barcode></specified_subscars>
+<sequences>
+<seq_data>attaaagaggagaaatactagatgagcacaaaaaagaaaccattaacacaagagcagcttgaggacgcacgtcgccttaa
+agcaatttatgaaaaaaagaaaaatgaacttggcttatcccaggaatctgtcgcagacaagatggggatggggcagtcag
+gcgttggtgctttatttaatggcatcaatgcattaaatgcttataacgccgcattgcttgcaaaaattctcaaagttagc
+gttgaagaatttagcccttcaatcgccagagaaatctacgagatgtatgaagcggttagtatgcagccgtcacttagaag
+tgagtatgagtaccctgttttttctcatgttcaggcagggatgttctcacctgagcttagaacctttaccaaaggtgatg
+cggagagatgggtaagcacaaccaaaaaagccagtgattctgcattctggcttgaggttgaaggtaattccatgaccgca
+ccaacaggctccaagccaagctttcctgacggaatgttaattctcgttgaccctgagcaggctgttgagccaggtgattt
+ctgcatagccagacttgggggtgatgagtttaccttcaagaaactgatcagggatagcggtcaggtgtttttacaaccac
+taaacccacagtacccaatgatcccatgcaatgagagttgttccgttgtggggaaagttatcgctagtcagtggcctgaa
+gagacgtttggcgctgcaaacgacgaaaactacgctttagtagcttaataacgctgatagtgctagtgtagatcgc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1981886</id>
+<title>RBS-1\Strong</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>15</endpos></feature>
+<feature>
+<id>1981887</id>
+<title>BBa_B0030</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>15</endpos></feature>
+<feature>
+<id>1981888</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>8</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>1981891</id>
+<title>BBa_C0051</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>22</startpos>
+<endpos>771</endpos></feature>
+<feature>
+<id>1981889</id>
+<title>cI lambda</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>25</startpos>
+<endpos>732</endpos></feature>
+<feature>
+<id>1981890</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>733</startpos>
+<endpos>765</endpos></feature>
+<feature>
+<id>1981892</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>772</startpos>
+<endpos>796</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/UNIPV-Pavia/favorite</category>
+<category>//function/regulation/transcriptional</category></categories>
+<twins>
+<twin>BBa_J09045</twin>
+<twin>BBa_S03665</twin>
+<twin>BBa_S04571</twin>
+<twin>BBa_K648032</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

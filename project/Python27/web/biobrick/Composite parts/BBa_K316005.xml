@@ -1,0 +1,258 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20309</part_id>
+<part_name>BBa_K316005</part_name>
+<part_short_name>K316005</part_short_name>
+<part_short_desc>Functional XylE under Pveg promoter, with double terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>Pveg Xyle </part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K316005</part_url>
+<part_entered>2010-10-22</part_entered>
+<part_author>IC 2010 Team</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19457</part_id>
+<part_name>BBa_K316001</part_name>
+<part_short_desc>pVeg Constitutive promoter for Veg locus from B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<subpart>
+<part_id>7577</part_id>
+<part_name>BBa_J33204</part_name>
+<part_short_desc>xylE reporter gene with rbs</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>144</part_id>
+<part_name>BBa_B0011</part_name>
+<part_short_desc>LuxICDABEG (+/-)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19457</part_id>
+<part_name>BBa_K316001</part_name>
+<part_short_desc>pVeg Constitutive promoter for Veg locus from B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<subpart>
+<part_id>20335</part_id>
+<part_name>BBa_K316003</part_name>
+<part_short_desc>XylE - catechol 2,3-dioxygenase from P.putida with terminator</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19457</part_id>
+<part_name>BBa_K316001</part_name>
+<part_short_desc>pVeg Constitutive promoter for Veg locus from B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>20335</part_id>
+<part_name>BBa_K316003</part_name>
+<part_short_desc>XylE - catechol 2,3-dioxygenase from P.putida with terminator</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aattttgtcaaaataattttattgacaacgtcttattaacgttgatataatttaaattttatttgacaaaaatgggctcg
+tgttgtacaataaatgttactagagctcatgaactatgaagaggtgacgtcatgaacaaaggtgtaatgcgaccgggcca
+tgtgcagctgcgtgtactggacatgagcaaggccctggaacactacgtcgagttgctgggcctgatcgagatggaccgtg
+acgaccagggccgtgtctatctgaaggcttggaccgaagtggataagttttccctggtgctacgcgaggctgacgagccg
+ggcatggattttatgggtttcaaggttgtggatgaggatgctctccggcaactggagcgggatctgatggcatatggctg
+tgccgttgagcagctacccgcaggtgaactgaacagttgtggccggcgcgtgcgcttccaggccccctccgggcatcact
+tcgagttgtatgcagacaaggaatatactggaaagtggggtttgaatgacgtcaatcccgaggcatggccgcgcgatctg
+aaaggtatggcggctgtgcgtttcgaccacgccctcatgtatggcgacgaattgccggcgacctatgacctgttcaccaa
+ggtgctcggtttctatctggccgaacaggtgctggacgaaaatggcacgcgcgtcgcccagtttctcagtctgtcgacca
+aggcccacgacgtggccttcattcaccatccggaaaaaggccgcctccatcatgtgtccttccacctcgaaacctgggaa
+gacttgcttcgcgccgccgacctgatctccatgaccgacacatctatcgatatcggcccaacccgccacggcctcactca
+cggcaagaccatctacttcttcgacccgtccggtaaccgcaacgaagtgttctgcgggggagattacaactacccggacc
+acaaaccggtgacctggaccaccgaccagctgggcaaggcgatcttttaccacgaccgcattctcaacgaacgattcatg
+accgtgctgacctgatggtccggtactagagtcacactggctcaccttcgggtgggcctttctgcgtttatatactagag
+agagaatataaaaagccagattattaatccggcttttttattattt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2098081</id>
+<title>BBa_K316001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>97</endpos></feature>
+<feature>
+<id>2098079</id>
+<title>Sigma A-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>63</startpos>
+<endpos>68</endpos></feature>
+<feature>
+<id>2098080</id>
+<title>Sigma A-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>86</startpos>
+<endpos>91</endpos></feature>
+<feature>
+<id>2098092</id>
+<title>BBa_K316003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>106</startpos>
+<endpos>1166</endpos></feature>
+<feature>
+<id>2098082</id>
+<title>BBa_J33204</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>106</startpos>
+<endpos>1063</endpos></feature>
+<feature>
+<id>2098083</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>119</startpos>
+<endpos>124</endpos></feature>
+<feature>
+<id>2098084</id>
+<title></title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>132</startpos>
+<endpos>1055</endpos></feature>
+<feature>
+<id>2098086</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1072</startpos>
+<endpos>1112</endpos></feature>
+<feature>
+<id>2098085</id>
+<title>BBa_B0014</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1072</startpos>
+<endpos>1166</endpos></feature>
+<feature>
+<id>2098087</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1079</startpos>
+<endpos>1098</endpos></feature>
+<feature>
+<id>2098088</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1099</startpos>
+<endpos>1112</endpos></feature>
+<feature>
+<id>2098089</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1105</startpos>
+<endpos>1105</endpos></feature>
+<feature>
+<id>2098090</id>
+<title>BBa_B0011</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1121</startpos>
+<endpos>1166</endpos></feature>
+<feature>
+<id>2098091</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1133</startpos>
+<endpos>1155</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>Functional XylE under Pveg promoter, with double terminator</value>
+<units></units>
+<url></url>
+<id>11120</id>
+<m_date>2010-10-26 11:24:52</m_date>
+<user_id>7480</user_id>
+<user_name>ks907</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Functional XylE under Pveg promoter, with double terminator</value>
+<units></units>
+<url></url>
+<id>11121</id>
+<m_date>2010-10-26 11:24:52</m_date>
+<user_id>7480</user_id>
+<user_name>ks907</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Functional XylE under Pveg promoter, with double terminator</value>
+<units></units>
+<url></url>
+<id>11122</id>
+<m_date>2010-10-26 11:24:52</m_date>
+<user_id>7480</user_id>
+<user_name>ks907</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Functional XylE under Pveg promoter, with double terminator</value>
+<units></units>
+<url></url>
+<id>11117</id>
+<m_date>2010-10-26 11:24:37</m_date>
+<user_id>7480</user_id>
+<user_name>ks907</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Functional XylE under Pveg promoter, with double terminator</value>
+<units></units>
+<url></url>
+<id>11118</id>
+<m_date>2010-10-26 11:24:37</m_date>
+<user_id>7480</user_id>
+<user_name>ks907</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Functional XylE under Pveg promoter, with double terminator</value>
+<units></units>
+<url></url>
+<id>11119</id>
+<m_date>2010-10-26 11:24:37</m_date>
+<user_id>7480</user_id>
+<user_name>ks907</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

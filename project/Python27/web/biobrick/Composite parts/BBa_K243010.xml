@@ -1,0 +1,275 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15824</part_id>
+<part_name>BBa_K243010</part_name>
+<part_short_name>K243010</part_short_name>
+<part_short_desc>His-FluA-Split Linker-Fok_i</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>His-FluA-S</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K243010</part_url>
+<part_entered>2009-10-14</part_entered>
+<part_author>Freiburg Bioware09</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>12756</part_id>
+<part_name>BBa_K157011</part_name>
+<part_short_desc>His affinity tag; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>His</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>12728</part_id>
+<part_name>BBa_K157004</part_name>
+<part_short_desc>Fluoresceine-A-binding </part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>12752</part_id>
+<part_name>BBa_K157009</part_name>
+<part_short_desc>Split fluorophore linker; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>linker</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15428</part_id>
+<part_name>BBa_K243001</part_name>
+<part_short_desc>Protein domain (inactive) of the restriction endonuclease FokI</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>Fok_i</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>12756</part_id>
+<part_name>BBa_K157011</part_name>
+<part_short_desc>His affinity tag; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>His</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>12728</part_id>
+<part_name>BBa_K157004</part_name>
+<part_short_desc>Fluoresceine-A-binding </part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>12752</part_id>
+<part_name>BBa_K157009</part_name>
+<part_short_desc>Split fluorophore linker; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>linker</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15428</part_id>
+<part_name>BBa_K243001</part_name>
+<part_short_desc>Protein domain (inactive) of the restriction endonuclease FokI</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>Fok_i</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>12756</part_id>
+<part_name>BBa_K157011</part_name>
+<part_short_desc>His affinity tag; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>His</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>12728</part_id>
+<part_name>BBa_K157004</part_name>
+<part_short_desc>Fluoresceine-A-binding </part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>12752</part_id>
+<part_name>BBa_K157009</part_name>
+<part_short_desc>Split fluorophore linker; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>linker</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15428</part_id>
+<part_name>BBa_K243001</part_name>
+<part_short_desc>Protein domain (inactive) of the restriction endonuclease FokI</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>Fok_i</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>catcatcatcatcatcataccggcgacgtgtaccacgacggcgcctgccccgaagtgaagcccgtggacaacttcgactg
+gtcccagtaccacggcaagtggtgggaggtggccaagtaccccagccccaacggcaagtatggcaagtgcggctgggccg
+agtacacccccgagggcaagagcgtgaaggtgtccagatacgacgtgatccacggcaaagaatacttcatggaaggcacc
+gcctaccccgtgggcgacagcaagatcggcaagatctaccacagccggaccgtgggcggctacaccagaaagaccgtgtt
+caacgtgctgtccaccgacaacaagaactacatcatcggctacagctgccgctacgacgaggacaagaagggccactggg
+accacgtgtgggtgctgtcccggtccatggtgctgaccggcgaggccaagaccgccgtggagaactacctgatcggcagc
+cccgtggtggacagccagaaactggtgtacagcgacttcagcgaggccgcctgcaaagtgaacaacaccggccgaccagc
+ctgtaagattccaaatgacctgaagcagaaagttatgaatcacaccggcaaatctgaactggaggagaaaaaatccgagc
+tgcgccacaaactgaaatatgtgcctcacgagtatatcgaactgatcgagatcgcccgtaatagtacccaagaccgtatc
+ctggaaatgaaagtgatggagttcttcatgaaagtctatggctatcgtggcaaacatctgggtggtagccgtaaaccagc
+aggtgccatttataccgttggttccccgatcgattatggcgttatcgtggccacaaaagcgtattctggcggttataatc
+tgccgattggtcaggctgatgagatggaacgttatgtggaagagaatcagacccgtaacaaacatctgaacccgaacgaa
+tggtggaaagtgtatccgtcaagtgtcaccgagttcaaatttctgttcgtgagcggccactttaaaggcaactataaagc
+ccagctgactcgtctgaaccatatcaccaatagcaatggggcagtgctgagtgttgaggaactgctgatcggtggagaaa
+tgatcaaagcaggcaccctgactctggaagaagttcgccgtaaattcaacaatggcgagatcaatttt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2051212</id>
+<title>His-Tag</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>18</endpos></feature>
+<feature>
+<id>2051213</id>
+<title>BBa_K157011</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>18</endpos></feature>
+<feature>
+<id>2051214</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>2051215</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>2051217</id>
+<title>BBa_K157004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>25</startpos>
+<endpos>546</endpos></feature>
+<feature>
+<id>2051216</id>
+<title>Lipocalin FluA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>25</startpos>
+<endpos>546</endpos></feature>
+<feature>
+<id>2051218</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>547</startpos>
+<endpos>552</endpos></feature>
+<feature>
+<id>2051219</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>547</startpos>
+<endpos>552</endpos></feature>
+<feature>
+<id>2051221</id>
+<title>BBa_K157009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>553</startpos>
+<endpos>603</endpos></feature>
+<feature>
+<id>2051220</id>
+<title>Split-Fluorophore Linker</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>553</startpos>
+<endpos>603</endpos></feature>
+<feature>
+<id>2051223</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>604</startpos>
+<endpos>609</endpos></feature>
+<feature>
+<id>2051222</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>604</startpos>
+<endpos>609</endpos></feature>
+<feature>
+<id>2051224</id>
+<title>Foki</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>610</startpos>
+<endpos>1188</endpos></feature>
+<feature>
+<id>2051225</id>
+<title>BBa_K243001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>610</startpos>
+<endpos>1188</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

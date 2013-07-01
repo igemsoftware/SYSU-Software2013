@@ -1,0 +1,140 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12617</part_id>
+<part_name>BBa_K136053</part_name>
+<part_short_name>K136053</part_short_name>
+<part_short_desc>flgA promoter + WT RBS (K136006) - GFP (E0040)</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K136053</part_url>
+<part_entered>2008-10-25</part_entered>
+<part_author>Kok-Phen YAN</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>12523</part_id>
+<part_name>BBa_K136006</part_name>
+<part_short_desc>flgA promoter followed by its natural RBS</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>12523</part_id>
+<part_name>BBa_K136006</part_name>
+<part_short_desc>flgA promoter followed by its natural RBS</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>12523</part_id>
+<part_name>BBa_K136006</part_name>
+<part_short_desc>flgA promoter followed by its natural RBS</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>agcatatctcctccgcaggtatcaaaattctgccatcagcttaaatgcctttacgcgcgcgttatcggcggaataaacgc
+aaaatgggtcgctatttatgccgttgatggtcattgcggacaggtacaattcacgttgtagaaatggctgggggcgaaaa
+tgctgataataaaacgtagcgtggcgatcatcgcgatactgttactagatgcgtaaaggagaagaacttttcactggagt
+tgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaa
+catacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttc
+ggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaagg
+ttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgata
+cccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaac
+tataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacat
+tgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagaca
+accattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgta
+acagctgctgggattacacatggcatggatgaactatacaaataataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1987828</id>
+<title>BBa_K136006</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>202</endpos></feature>
+<feature>
+<id>1987824</id>
+<title>flhDC binding site </title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>63</startpos>
+<endpos>78</endpos></feature>
+<feature>
+<id>1987825</id>
+<title>flhDC binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>104</endpos></feature>
+<feature>
+<id>1987826</id>
+<title>transcription initiation</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>138</startpos>
+<endpos>138</endpos></feature>
+<feature>
+<id>1987827</id>
+<title>ATG</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>160</startpos>
+<endpos>162</endpos></feature>
+<feature>
+<id>1987829</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>209</startpos>
+<endpos>928</endpos></feature>
+<feature>
+<id>1987830</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>209</startpos>
+<endpos>928</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

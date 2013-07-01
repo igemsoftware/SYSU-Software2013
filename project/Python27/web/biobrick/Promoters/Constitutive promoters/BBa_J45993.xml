@@ -1,0 +1,74 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>6908</part_id>
+<part_name>BBa_J45993</part_name>
+<part_short_name>J45993</part_short_name>
+<part_short_desc>Minimal stationary phase osmY promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_status>Planning</part_status>
+<part_results>Fails</part_results>
+<part_nickname>p(osmY)</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J45993</part_url>
+<part_entered>2006-07-11</part_entered>
+<part_author>Stephen Payne</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gcttatgttttcgctgatatcccgagcggtttcaaaattgtgatctatatttaacaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1883648</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>27</endpos></feature>
+<feature>
+<id>1883647</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>46</startpos>
+<endpos>51</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>negative_regulators</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>5470</id>
+<m_date>2008-12-09 15:47:12</m_date>
+<user_id>135</user_id>
+<user_name>bcanton</user_name></parameter>
+<parameter>
+<name>positive_regulators</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4938</id>
+<m_date>2008-12-09 15:46:49</m_date>
+<user_id>135</user_id>
+<user_name>bcanton</user_name></parameter></parameters>
+<categories>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//direction/forward</category>
+<category>//iGEM2006/MIT/favorites</category>
+<category>//promoter</category>
+<category>//regulation/constitutive</category>
+<category>//rnap/prokaryote/ecoli/sigmaS</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

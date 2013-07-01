@@ -1,0 +1,186 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16125</part_id>
+<part_name>BBa_K245066</part_name>
+<part_short_name>K245066</part_short_name>
+<part_short_desc>P1-GCN-P2</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>RFC 37</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K245066</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>�pela Miklavi&amp;#269;</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>16060</part_id>
+<part_name>BBa_K245118</part_name>
+<part_short_desc>P1</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15164</part_id>
+<part_name>BBa_K245009</part_name>
+<part_short_desc>RFC 37 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15842</part_id>
+<part_name>BBa_K245127</part_name>
+<part_short_desc>GCN</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15164</part_id>
+<part_name>BBa_K245009</part_name>
+<part_short_desc>RFC 37 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>16064</part_id>
+<part_name>BBa_K245119</part_name>
+<part_short_desc>P2</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>16060</part_id>
+<part_name>BBa_K245118</part_name>
+<part_short_desc>P1</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15164</part_id>
+<part_name>BBa_K245009</part_name>
+<part_short_desc>RFC 37 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15842</part_id>
+<part_name>BBa_K245127</part_name>
+<part_short_desc>GCN</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15164</part_id>
+<part_name>BBa_K245009</part_name>
+<part_short_desc>RFC 37 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>16064</part_id>
+<part_name>BBa_K245119</part_name>
+<part_short_desc>P2</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>16060</part_id>
+<part_name>BBa_K245118</part_name>
+<part_short_desc>P1</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15164</part_id>
+<part_name>BBa_K245009</part_name>
+<part_short_desc>RFC 37 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15842</part_id>
+<part_name>BBa_K245127</part_name>
+<part_short_desc>GCN</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15164</part_id>
+<part_name>BBa_K245009</part_name>
+<part_short_desc>RFC 37 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>16064</part_id>
+<part_name>BBa_K245119</part_name>
+<part_short_desc>P2</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>agcccagaagacgaaattcaggcactggaagaagaaaatgctcaactggaacaggaaaacgcggcgctggaagaagaaat
+cgcacagctggaatacggctccggctccccagaagatgaaatccaagcactgaaacaggaaaatgcgcaactgaaagaga
+aaatccaacaactggaacaggaaattcaggctctgaagtatggctccggctctccagaagacaaaatcgcacagctgaaa
+gaaaagaacgcggccctgaaagaaaagaatcaacagctgaaggagaaaatccaagcactgaaatatggc
+</seq_data></sequences>
+<features>
+<feature>
+<id>2045550</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>2045551</id>
+<title>BBa_K245118</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>99</endpos></feature>
+<feature>
+<id>2045552</id>
+<title>scar SG</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>100</startpos>
+<endpos>105</endpos></feature>
+<feature>
+<id>2045553</id>
+<title>BBa_K245009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>100</startpos>
+<endpos>105</endpos></feature>
+<feature>
+<id>2045554</id>
+<title>BBa_K245127</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>106</startpos>
+<endpos>204</endpos></feature>
+<feature>
+<id>2045555</id>
+<title>scar SG</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>205</startpos>
+<endpos>210</endpos></feature>
+<feature>
+<id>2045556</id>
+<title>BBa_K245009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>205</startpos>
+<endpos>210</endpos></feature>
+<feature>
+<id>2045557</id>
+<title>BBa_K245119</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>211</startpos>
+<endpos>309</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//standard/37</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

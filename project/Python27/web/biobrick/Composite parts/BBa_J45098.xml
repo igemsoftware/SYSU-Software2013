@@ -1,0 +1,172 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7172</part_id>
+<part_name>BBa_J45098</part_name>
+<part_short_name>J45098</part_short_name>
+<part_short_desc>BSMT+Terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J45098</part_url>
+<part_entered>2006-08-09</part_entered>
+<part_author>Boyuan Zhu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>6774</part_id>
+<part_name>BBa_J45004</part_name>
+<part_short_desc>SAM:benzoic acid/salicylic acid carboxyl methyltransferase I; converts salicylic acid to methyl sali</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>BSMT1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>6774</part_id>
+<part_name>BBa_J45004</part_name>
+<part_short_desc>SAM:benzoic acid/salicylic acid carboxyl methyltransferase I; converts salicylic acid to methyl sali</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>BSMT1</part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>6774</part_id>
+<part_name>BBa_J45004</part_name>
+<part_short_desc>SAM:benzoic acid/salicylic acid carboxyl methyltransferase I; converts salicylic acid to methyl sali</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>BSMT1</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atggaagttgttgaagttcttcacatgaatggaggaaatggagacagtagctatgcaaacaattctttggttcagcaaaa
+ggtgattctcatgacaaagccaataactgagcaagccatgattgatctctacagcagcctctttccagaaaccttatgca
+ttgcagatttgggttgttctttgggagctaacactttcttggtggtctcacagcttgttaaaatagtagaaaaagaacga
+aaaaagcatggttttaagtctccagagttttattttcacttcaatgatcttcctggcaatgattttaatacactttttca
+gtcactgggggcatttcaagaagatttgagaaagcatataggggaaagctttggtccatgttttttcagtggagtgcctg
+gttcattttatactagacttttcccttccaaaagtttacattttgtttactcctcctacagtctcatgtggctatctcag
+gtgcctaatgggattgaaaataacaagggaaacatttacatggcaagaacaagccctctaagtgttattaaagcatacta
+caagcaatatgaaatagatttttcaaattttctcaagtaccgttcagaggaattgatgaaaggtggaaagatggtgttaa
+cactcctaggtagagaaagtgaggatcctactagcaaagaatgctgttacatttgggagcttctagccatggccctcaat
+aagttggttgaagagggattgataaaagaagagaaagtagatgcattcaatattcctcaatacacaccatcaccagcaga
+agtaaagtacatagttgagaaggaaggatcattcaccattaatcgcttggaaacatcaagagttcattggaatgcttcta
+ataatgagaagaatggtggttacaatgtgtcaaggtgcatgagagctgtggctgagcctttgcttgtcagccactttgac
+aaggaattgatggatttagtgttccacaagtacgaagagattgtttctgattgcatgtccaaagagaatactgagtttat
+aaatgtcatcatctccttgaccaaaataaattaatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagac
+tgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggccttt
+ctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1894554</id>
+<title>Start</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>1894555</id>
+<title>CDS</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1074</endpos></feature>
+<feature>
+<id>1894557</id>
+<title>BBa_J45004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1074</endpos></feature>
+<feature>
+<id>1894556</id>
+<title>Stop</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1071</startpos>
+<endpos>1074</endpos></feature>
+<feature>
+<id>1894558</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1083</startpos>
+<endpos>1162</endpos></feature>
+<feature>
+<id>1894559</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1094</startpos>
+<endpos>1137</endpos></feature>
+<feature>
+<id>1894560</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1171</startpos>
+<endpos>1211</endpos></feature>
+<feature>
+<id>1894561</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1178</startpos>
+<endpos>1197</endpos></feature>
+<feature>
+<id>1894562</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1198</startpos>
+<endpos>1211</endpos></feature>
+<feature>
+<id>1894563</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1204</startpos>
+<endpos>1204</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/biosynthesis/odorant</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

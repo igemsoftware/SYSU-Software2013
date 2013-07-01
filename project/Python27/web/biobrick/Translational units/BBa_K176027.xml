@@ -1,0 +1,184 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>14331</part_id>
+<part_name>BBa_K176027</part_name>
+<part_short_name>K176027</part_short_name>
+<part_short_desc>PoPS-&gt;RBS+lacZalpha-ccdB-&gt;PoPS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>lacZalpha-</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K176027</part_url>
+<part_entered>2009-07-18</part_entered>
+<part_author>Zongxiao He, Hao Jiang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>14157</part_id>
+<part_name>BBa_K176003</part_name>
+<part_short_desc>lacZalpha-ccdB coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>lacZa-ccdB</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>14157</part_id>
+<part_name>BBa_K176003</part_name>
+<part_short_desc>lacZalpha-ccdB coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>lacZa-ccdB</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>14157</part_id>
+<part_name>BBa_K176003</part_name>
+<part_short_desc>lacZalpha-ccdB coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>lacZa-ccdB</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aaagaggagaaatactagatgaccatgattacggattcactggccgtcgttttacaacgtcgtgactgggaaaaccctgg
+cgttacccaacttaatcgccttgcagcacatccccctttcgccagctggcgtaatagcgaagaggcccgcaccgatcgcc
+cttcccaacagttgcgcagcctatacgtacggcagtttaaggtttacacctataaaagagagagccgttatcgtctgttt
+gtggatgtacagagtgatattattgacacgccggggcgacggatggtgatccccctggccagtgcacgtctgctgtcaga
+taaagtctcccgtgaactttacccggtggtgcatatcggggatgaaagctggcgcatgatgaccaccgatatggccagtg
+tgccggtctccgttatcggggaagaagtggctgatctcagccaccgcgaaaatgacatcaaaaacgccattaacctgatg
+ttctggggaatataataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2011627</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2011626</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>5</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>2011639</id>
+<title>BBa_K176003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>498</endpos></feature>
+<feature>
+<id>2011629</id>
+<title>Start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>2011628</id>
+<title>a part of lacZalpha(I732006)</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>183</endpos></feature>
+<feature>
+<id>2011630</id>
+<title>177bp &amp; a in J32026</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>34</startpos>
+<endpos>34</endpos></feature>
+<feature>
+<id>2011631</id>
+<title>M13 -20 primer</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>39</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>2011633</id>
+<title>M13 -40 primer</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>59</startpos>
+<endpos>75</endpos></feature>
+<feature>
+<id>2011632</id>
+<title>M13 -47 primer</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>59</startpos>
+<endpos>82</endpos></feature>
+<feature>
+<id>2011634</id>
+<title>g &amp; 69bp in I732006</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>183</startpos>
+<endpos>183</endpos></feature>
+<feature>
+<id>2011636</id>
+<title>ccdB(K145151)</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>190</startpos>
+<endpos>495</endpos></feature>
+<feature>
+<id>2011635</id>
+<title>at in K145151</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>190</startpos>
+<endpos>191</endpos></feature>
+<feature>
+<id>2011637</id>
+<title>c in K145151</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>273</startpos>
+<endpos>273</endpos></feature>
+<feature>
+<id>2011638</id>
+<title>Stop</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>493</startpos>
+<endpos>498</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

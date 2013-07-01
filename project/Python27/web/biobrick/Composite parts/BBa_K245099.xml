@@ -1,0 +1,121 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16157</part_id>
+<part_name>BBa_K245099</part_name>
+<part_short_name>K245099</part_short_name>
+<part_short_desc>APH-p53</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>RFC 37</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K245099</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>�pela Miklavi&amp;#269;</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>16083</part_id>
+<part_name>BBa_K245133</part_name>
+<part_short_desc>APH</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15164</part_id>
+<part_name>BBa_K245009</part_name>
+<part_short_desc>RFC 37 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>16077</part_id>
+<part_name>BBa_K245128</part_name>
+<part_short_desc>p53</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>16083</part_id>
+<part_name>BBa_K245133</part_name>
+<part_short_desc>APH</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15164</part_id>
+<part_name>BBa_K245009</part_name>
+<part_short_desc>RFC 37 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>16077</part_id>
+<part_name>BBa_K245128</part_name>
+<part_short_desc>p53</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>16083</part_id>
+<part_name>BBa_K245133</part_name>
+<part_short_desc>APH</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>15164</part_id>
+<part_name>BBa_K245009</part_name>
+<part_short_desc>RFC 37 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>RFC 37</part_nickname></subpart>
+<subpart>
+<part_id>16077</part_id>
+<part_name>BBa_K245128</part_name>
+<part_short_desc>p53</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>RFC 37</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atgaaacagctggaaaaagagctgaaacagttagaaaaagaactgcaagcaattgaaaaacagctggcacagctgcaatg
+gaaagcacaggcacgtaaaaaaaaactggcccagctgaaaaaaaaacttcaggcctccggcgaatactttaccctgcaaa
+tccgtggccgtgagcgtttcgagatgttccgcgaactgaatgaagccctggaactgaaagatgctcaagca
+</seq_data></sequences>
+<features>
+<feature>
+<id>2045855</id>
+<title>BBa_K245133</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>135</endpos></feature>
+<feature>
+<id>2045856</id>
+<title>scar SG</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>136</startpos>
+<endpos>141</endpos></feature>
+<feature>
+<id>2045857</id>
+<title>BBa_K245009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>136</startpos>
+<endpos>141</endpos></feature>
+<feature>
+<id>2045858</id>
+<title>BBa_K245128</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>142</startpos>
+<endpos>231</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//standard/37</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

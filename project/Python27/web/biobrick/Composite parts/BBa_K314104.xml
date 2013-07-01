@@ -1,0 +1,194 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19353</part_id>
+<part_name>BBa_K314104</part_name>
+<part_short_name>K314104</part_short_name>
+<part_short_desc>T7 expression cassette</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K314104</part_url>
+<part_entered>2010-10-08</part_entered>
+<part_author>Tomas Huber, Justin Siegel</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19355</part_id>
+<part_name>BBa_K314110</part_name>
+<part_short_desc>f1 origin</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>f1 ori</part_nickname></subpart>
+<subpart>
+<part_id>19356</part_id>
+<part_name>BBa_K314111</part_name>
+<part_short_desc>Lac I</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19357</part_id>
+<part_name>BBa_K314112</part_name>
+<part_short_desc>T7 Promoter</part_short_desc>
+<part_type>T7</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19355</part_id>
+<part_name>BBa_K314110</part_name>
+<part_short_desc>f1 origin</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>f1 ori</part_nickname></subpart>
+<subpart>
+<part_id>19356</part_id>
+<part_name>BBa_K314111</part_name>
+<part_short_desc>Lac I</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19357</part_id>
+<part_name>BBa_K314112</part_name>
+<part_short_desc>T7 Promoter</part_short_desc>
+<part_type>T7</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19355</part_id>
+<part_name>BBa_K314110</part_name>
+<part_short_desc>f1 origin</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>f1 ori</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19356</part_id>
+<part_name>BBa_K314111</part_name>
+<part_short_desc>Lac I</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19357</part_id>
+<part_name>BBa_K314112</part_name>
+<part_short_desc>T7 Promoter</part_short_desc>
+<part_type>T7</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>acgcgccctgtagcggcgcattaagcgcggcgggtgtggtggttacgcgcagcgtgaccgctacacttgccagcgcccta
+gcgcccgctcctttcgctttcttcccttcctttctcgccacgttcgccggctttccccgtcaagctctaaatcgggggct
+ccctttagggttccgatttagtgctttacggcacctcgaccccaaaaaacttgattagggtgatggttcacgtagtgggc
+catcgccctgatagacggtttttcgccctttgacgttggagtccacgttctttaatagtggactcttgttccaaactgga
+acaacactcaaccctatctcggtctattcttttgatttataagggattttgccgatttcggcctattggttaaaaaatga
+gctgatttaacaaaaatttaacgcgaattttaacaaaatattaacgtttacaatttactagaggtggtgaatgtgaaacc
+agtaacgttatacgatgtcgcagagtatgccggtgtctcttatcagaccgtttcccgcgtggtgaaccaggccagccacg
+tttctgcgaaaacgcgggaaaaagtggaagcggcgatggcggagctgaattacattcccaaccgcgtggcacaacaactg
+gcgggcaaacagtcgttgctgattggcgttgccacctccagtctggccctgcacgcgccgtcgcaaattgtcgcggcgat
+taaatctcgcgccgatcaactgggtgccagcgtggtggtgtcgatggtagaacgaagcggcgtcgaagcctgtaaagcgg
+cggtgcacaatcttctcgcgcaacgcgtcagtgggctgatcattaactatccgctggatgaccaggatgccattgctgtg
+gaagctgcctgcactaatgttccggcgttatttcttgatgtctctgaccagacacccatcaacagtattattttctccca
+tgaagacggtacgcgactgggcgtggagcatctggtcgcattgggtcaccagcaaatcgcgctgttagcgggcccattaa
+gttctgtctcggcgcgtctgcgtctggctggctggcataaatatctcactcgcaatcaaattcagccgatagcggaacgg
+gaaggcgactggagtgccatgtccggttttcaacaaaccatgcaaatgctgaatgagggcatcgttcccactgcgatgct
+ggttgccaacgatcagatggcgctgggcgcaatgcgcgccattaccgagtccgggctgcgcgttggtgcggacatctcgg
+tagtgggatacgacgataccgaagacagctcatgttatatcccgccgttaaccaccatcaaacaggattttcgcctgctg
+gggcaaaccagcgtggaccgcttgctgcaactctctcagggccaggcggtgaagggcaatcagctgttgcccgtctcact
+ggtgaaaagaaaaaccaccctggcgcccaatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctgg
+cacgacaggtttcccgactggaaagcgggcagtgatactagaggtaatacgactcactataggggaattgtgagcggata
+acaattctactagagaaagaggagaaatactagagaaagaggagaaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2091096</id>
+<title>BBa_K314110</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>455</endpos></feature>
+<feature>
+<id>2091097</id>
+<title>BBa_K314111</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>464</startpos>
+<endpos>1555</endpos></feature>
+<feature>
+<id>2091099</id>
+<title>BBa_K314112</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1564</startpos>
+<endpos>1627</endpos></feature>
+<feature>
+<id>2091098</id>
+<title>B0034</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1616</startpos>
+<endpos>1627</endpos></feature>
+<feature>
+<id>2091101</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1636</startpos>
+<endpos>1647</endpos></feature>
+<feature>
+<id>2091100</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>1640</startpos>
+<endpos>1643</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

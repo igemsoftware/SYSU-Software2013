@@ -1,0 +1,181 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13482</part_id>
+<part_name>BBa_K116632</part_name>
+<part_short_name>K116632</part_short_name>
+<part_short_desc>pRE + RBS + CII + T</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K116632</part_url>
+<part_entered>2008-10-30</part_entered>
+<part_author>Jesse Wu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>13458</part_id>
+<part_name>BBa_K116603</part_name>
+<part_short_desc>pRE promoter from &amp;#955; phage</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pRE</part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13457</part_id>
+<part_name>BBa_K116602</part_name>
+<part_short_desc>CII coding region from &amp;#955; phage</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>CII</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>13458</part_id>
+<part_name>BBa_K116603</part_name>
+<part_short_desc>pRE promoter from &amp;#955; phage</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pRE</part_nickname></subpart>
+<subpart>
+<part_id>13476</part_id>
+<part_name>BBa_K116622</part_name>
+<part_short_desc>BBa_B0032 + CII + BBa_B0015</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>13458</part_id>
+<part_name>BBa_K116603</part_name>
+<part_short_desc>pRE promoter from &amp;#955; phage</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pRE</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>13476</part_id>
+<part_name>BBa_K116622</part_name>
+<part_short_desc>BBa_B0032 + CII + BBa_B0015</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>agagcctcgttgcgtttgtttgcacgaaccatatgtaagtatttcctttactagagtcacacaggaaagtactagatggt
+tcgtgcaaacaaacgcaacgaggctctacgaatcgagagtgcgttgcttaacaaaatcgcaatgcttggaactgagaaga
+cagcggaagctgtgggcgttgataagtcgcagatcagcaggtggaagagggactggattccaaagttctcaatgctgctt
+gctgttcttgaatggggggtcgttgacgacgacatggctcgattggcgcgacaagttgctgcgattctcaccaataaaaa
+acgcccggcggcaaccgagcgttctgaacaaatccagatggagttctgatactagagccaggcatcaaataaaacgaaag
+gctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcacc
+ttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1997895</id>
+<title>BBa_K116603</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>48</endpos></feature>
+<feature>
+<id>1997896</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>57</startpos>
+<endpos>69</endpos></feature>
+<feature>
+<id>1997897</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>57</startpos>
+<endpos>69</endpos></feature>
+<feature>
+<id>1997898</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>63</startpos>
+<endpos>66</endpos></feature>
+<feature>
+<id>1997899</id>
+<title>BBa_K116602</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>76</startpos>
+<endpos>369</endpos></feature>
+<feature>
+<id>1997900</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>378</startpos>
+<endpos>457</endpos></feature>
+<feature>
+<id>1997901</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>389</startpos>
+<endpos>432</endpos></feature>
+<feature>
+<id>1997902</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>466</startpos>
+<endpos>506</endpos></feature>
+<feature>
+<id>1997903</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>473</startpos>
+<endpos>492</endpos></feature>
+<feature>
+<id>1997904</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>493</startpos>
+<endpos>506</endpos></feature>
+<feature>
+<id>1997905</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>499</startpos>
+<endpos>499</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,139 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20369</part_id>
+<part_name>BBa_K309027</part_name>
+<part_short_name>K309027</part_short_name>
+<part_short_desc>phsp3:eCFP:3&apos;UTR</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K309027</part_url>
+<part_entered>2010-10-22</part_entered>
+<part_author>Chris Palmer</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>20331</part_id>
+<part_name>BBa_K309011</part_name>
+<part_short_desc>pHsp-3 (for use in C. elegans chassis)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>20341</part_id>
+<part_name>BBa_K309020</part_name>
+<part_short_desc>eCFP (for use in C. elegans chassis)</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>20332</part_id>
+<part_name>BBa_K309012</part_name>
+<part_short_desc>Unc-54 3&apos; UTR (for use in C. elegans chassis)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>20331</part_id>
+<part_name>BBa_K309011</part_name>
+<part_short_desc>pHsp-3 (for use in C. elegans chassis)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>20341</part_id>
+<part_name>BBa_K309020</part_name>
+<part_short_desc>eCFP (for use in C. elegans chassis)</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>20332</part_id>
+<part_name>BBa_K309012</part_name>
+<part_short_desc>Unc-54 3&apos; UTR (for use in C. elegans chassis)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>20331</part_id>
+<part_name>BBa_K309011</part_name>
+<part_short_desc>pHsp-3 (for use in C. elegans chassis)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<!--Error: Sequence does not match subpart list --></specified_subscars>
+<sequences>
+<seq_data>atttcactccttgtctgcaacaaacgaataatagaatcaatagatggcaaaaatttgaaaacagcgtacagtcaagataa
+gggtaatgtatgtttttgtcgtcaacctctaaacgtcaaactgaaaacttaaagggcggcggttggttaaatggcgggcg
+tgtagtactaaaaacaaaggtttgagtaagtgcgccccattgataacaaggatctgaagaagtcttcttcggataatgga
+ggtcagttctgatgggaaaatcgagaaatcgagttttttttatttgattgcaagctaatcacatttaaaacgcttacatg
+ggaaagttggcgtttgaaaatcgaatgtaatatacatttttttgattttctgattacttttgagctagcattttaccatt
+tatatgaaaaataaaaaactaagttgcgatttggatgtggtcaattacccatttataaaactgaaaagtatgtttatttc
+agttcaaaaacattagaattttagaacccttctagctaattcgacccttctccaagccatgcaataacctttgatgaatc
+ttatctcaaccaattcacattgcagagattcttatctccagcataacgtatctccaatcgctttctcccccatcgtccaa
+cacagccgctattatcggccaaagtactacgtgtctcgagtccgatcctgacctactttttatgtgtactttagttcaat
+tgcgtctggttggatttgaatttgttgattcccaaataggagagattctggataatttcttcgaaagcgttacaaaatgc
+gcagaattttgtgtatttttaaaacagttgattttagttttttggtttaaatatctagtgtatctgcttttagcaacaaa
+aaatgattctaaaactcgtttctttctaaatcatgtcaccacttatacacttggccttttccgatttttctttctctctt
+tctatagctctttcttactctcacctgccgtttccataacagtgctctctaaatttggtataaaacacgcagcgcaaccg
+caacgcaacctagtaactgacgtgtcccacggacaccctccactcacgacactctcgcacacaaacgcgcacacagggcc
+acacgcggcgctcgccgattggccgaatgactctgcgtctctgcgcgctgcacacggtgagccttcgctgtgctgacgtt
+gccttgtcctatcgtcctaggccacgtcgacgattcggcagttcgttccttcgctctctccctctcgatgcgctcgtcga
+tccgtcagtttgctctcccttcaccactcccatcggttgacggtaccatttcggcctacagtcgaccttgagcattcggg
+cggtctatcgggagagacgacctacaaacagaagcagtcctaggttttcctgcattccatttctctcaccgactggcctt
+gtttcggttctttctttatctctttcttctcagcaattcaacaagtcgtttcatattttaggcctaataataatttttat
+ttttacaggaaaataaatcaaacacaaagttactagatggtgagcaagggcgaggagctgttcaccggggtggtgcccat
+cctggtcgagctggacggcgacgtaaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggca
+agctgaccctgaagttcatctgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccctgacctggggc
+gtgcagtgcttcagccgctaccccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtcca
+ggagcgcaccatcttcttcaaggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtga
+accgcatcgagctgaagggcatcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaactacatcagc
+cacaacgtctatatcaccgccgacaagcagaagaacggcatcaaggccaacttcaagatccgccacaacatcgaggacgg
+cagcgtgcagctcgccgaccactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacc
+tgagcacccagtccgccctgagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgcc
+gggatcactctcggcatggacgagctgtacaagtaatactagagcattcgtagatttccaactgagcgccggtcgctacc
+attaccaacttgtctggtgtcaaaaataataggggccgctgtcatcagagtaagtttaaactgagttctactaactaacg
+agtaatatttaaattttcagcatctcgcgcccgtgcctctgacttctaagtccaattactcttcaacatccctacatgct
+ctttctccctgtgctcccaccccctatttttgttattatcaaaaaaacttcttcttaatttctttgttttttagcttctt
+ttaagtcacctctaacaatgaaattgtgtagattcaaaaatagaattaattcgtaataaaaagtcgaaaaaaattgtgct
+ccctccccccattaataataattctatcccaaaatctacacaatgttctgtgtacacttcttatgttttttttacttctg
+ataaattttttttgaaacatcatagaaaaaaccgcacacaaaataccttatcatatgttacgtttcagtttatgaccgca
+atttttatttcttcgcacgtctgggcctctcatgacgtcaaatcatgctcatcgtgaaaaagttttggagtatttttgga
+atttttcaatcaagtgaaagtttatgaaattaattttcctgcttttgctttttgggggtttcccctattgtttgtcaaga
+gtttcgaggacggcgtttttcttgctaaaatcacaagtattgatgagcacgatgcaagaaagatcggaagaaggtttggg
+tttgaggctcagtggaaggtgagtagaagttgataatttgaaagtggagtagtgtctatggggtttttgccttaaatgac
+agaatacattcccaatataccaaacataactgtttcctacttgtcggccgtacggg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2108758</id>
+<title>BBa_K309011</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1550</endpos></feature>
+<feature>
+<id>2108759</id>
+<title>BBa_K309020</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1557</startpos>
+<endpos>2276</endpos></feature>
+<feature>
+<id>2108760</id>
+<title>BBa_K309012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2285</startpos>
+<endpos>3176</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

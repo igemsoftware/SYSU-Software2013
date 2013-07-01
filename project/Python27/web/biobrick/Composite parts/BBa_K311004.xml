@@ -1,0 +1,133 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19573</part_id>
+<part_name>BBa_K311004</part_name>
+<part_short_name>K311004</part_short_name>
+<part_short_desc>Complement of Ethanolamine Utilization Microcompartment proteins from Salmonella LT2</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K311004</part_url>
+<part_entered>2010-10-15</part_entered>
+<part_author>Matthew Adams, Swati Choudhary, Anthony Goering, Rachel Farr, Ethan Johnson, Annie Kathuria, Poonam Srivastava, Ian Windsor</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>cccgactggaaagcgggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactt
+tatgcttccggctcgtatgttgtgtggaattgtgagcgtctagtagaaggaggagatctatgaataaagaacgcattatt
+caggaatttgtgccgggcaaacaggtcacgctggcgcatctcattgcgcaccctggtgaagaactggcgaaaaagatcgg
+cgttcccgatgctggcgcgattggcattatgactttaacgccgggggaaacggcgatgatcgctggcgatttagcgatga
+aggctgcggatgtacacatcggttttctcgatagatttagcggcgcgctggtgatttatggcaccgtcggcgcagtagaa
+gaagcgctattacagacggtcagcgggctggggcgattattaaactttaccctgtgtgagttaacaaaaagttaagcggc
+cgcctcgagcatcaccatcaccatcactgattctccttacgcatctgtgcggtatttcacaccgcatgtactagacccga
+ctggaaagcgggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactttatgc
+ttccggctcgtatgttgtgtggaattgtgagcgtctagtagaaggaggagatctatggaagcattaggaatgattgaaac
+ccggggcctggttgcgctgattgaggcctccgatgcgatggtaaaagccgcgcgcgtgaagctggtcggcgtgaagcaga
+ttggcggtggcctgtgtactgccatggtgcgtggcgatgtggcggcgtgcaaagccgcaaccgatgctggcgccgctgcg
+gcgcagcgcattggcgagttggtctccgtacacgtgattccacgcccgcacggcgatctggaagaagtgttcccgatcag
+cttcaaaggcgacagcaacatttgatggtaggccggataagacgcgcagcgtcgccatccggcatgaatgcgcgccattg
+cctgatggtgcgcagattcaaggcctacgacccaacgggcaatccatggaggcggatatgaaactggcagtcgtcacagg
+acaaatcgtatgtaccgtccgccatcagggactggcgcatgacaaattgctgatggtggaaatgatcgatgcccagggca
+accccgacgggcagtgtgccgtcgctatcgacagtatcggggcgggaaccggagagtgggtactgctggtcagcggcagt
+tccgcacgccaggcgcatcgcagcgaattatcaccggtcgatctgtgcgtcattggcatcgtcgatgaagtggtggctgg
+cgggaaagtggttttccataaataggcggccgcctcgagcatcaccatcaccatcactgattctccttacgcatctgtgc
+ggtatttcacaccgcatgtactagacccgactggaaagcgggcagtgagcgcaacgcaattaatgtgagttagctcactc
+attaggcaccccaggctttacactttatgcttccggctcgtatgttgtgtggaattgtgagcgtctagtagaaggaggag
+atctatgcctgcattagatttaattcgaccttcagtgactgccatgcgcgtgattgcctccgtgaatgacggctttgcgc
+gggaacttaaattaccgccacatatacgtagtctcggactcatcacggcagattctgatgatgtgacctatattgccgct
+gacgaagcgacaaaacaggcgatggtggaagtggtctatggccgctccctctatgccggggcggctcacgggccgtcgcc
+taccgctggtgaggtgttgattatgctgggcggaccgaacccggcggaagtgcgcgccggtctggatgcaatggtcgcca
+gcattgaaaacggcgcggcgttccagtgggcgaacgatgcggaaaataccgcattcctggcgcatgtggtttcgcgtacc
+ggctcgtacctctcgtctaccgcaggtatcgcgctgggcgatccaatggcctacctggtggcgccgccgctggaagcgac
+attcggcattgacgcggcgatgaaatccgctgacgttcagctggtgacttacgtgccgccgccgtcggaaaccaactatt
+cggccgcgttcttaacgggaagccaggccgcgtgtaaagccgcctgcaacgcctttaccgacgccgtgctggatatcgcc
+cgtaaccctgtccagcgtgcgtaacggaggctgccaatgatcaatgccctgggattactggaagtggacggaatggtcgc
+cgccgtcgatgcggcggatgctatgctgaaagcggccaacgtgcgtttgctcagtcatcaagtgctcgaccctggcaggc
+tcacgctggtggtggagggcgatctggcggcgtgtcgtgcggcgctggatgccggaagcgctgccgcgcagcgcacaggc
+cgtgtgattagtcgcaaagaaattggtcgtccggaagaggacacccagtggctgattggcgggtttgcgcgtgcgacaac
+gccgactgagaaagcaccccaggtacccgcaacgcctgagttcgctgaggcgttattggcgctgctggcatcagtacgcc
+agggaatgacggcgggagaggttgccgcgcattttggctggccgctggagcaggccagaaacgtgctggaacaactcttt
+tctgacggagcgttgcgtaaacgcagtagtcgctatcgcatcaaaaattaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2099759</id>
+<title>modified plac</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>124</endpos></feature>
+<feature>
+<id>2099767</id>
+<title>BBa_K311004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>2771</endpos></feature>
+<feature>
+<id>2099760</id>
+<title>Eut S</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>140</startpos>
+<endpos>475</endpos></feature>
+<feature>
+<id>2099761</id>
+<title>modified plac</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>556</startpos>
+<endpos>679</endpos></feature>
+<feature>
+<id>2099762</id>
+<title>EutM</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>695</startpos>
+<endpos>985</endpos></feature>
+<feature>
+<id>2099763</id>
+<title>EutN</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1086</startpos>
+<endpos>1385</endpos></feature>
+<feature>
+<id>2099764</id>
+<title>modified plac</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1466</startpos>
+<endpos>1589</endpos></feature>
+<feature>
+<id>2099765</id>
+<title>EutL</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1605</startpos>
+<endpos>2264</endpos></feature>
+<feature>
+<id>2099766</id>
+<title>EutK</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2277</startpos>
+<endpos>2771</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

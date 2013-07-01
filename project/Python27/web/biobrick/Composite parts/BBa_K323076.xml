@@ -1,0 +1,135 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19904</part_id>
+<part_name>BBa_K323076</part_name>
+<part_short_name>K323076</part_short_name>
+<part_short_desc>ATG cYFP link Blues link His stop T7 terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K323076</part_url>
+<part_entered>2010-10-20</part_entered>
+<part_author>Jernej Turn�ek</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19862</part_id>
+<part_name>BBa_K323032</part_name>
+<part_short_desc>C-split fragment of mCitrine with ATG and link</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19937</part_id>
+<part_name>BBa_K323109</part_name>
+<part_short_desc>Blues zinc finger + linker</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19911</part_id>
+<part_name>BBa_K323083</part_name>
+<part_short_desc>His stop T7 terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19862</part_id>
+<part_name>BBa_K323032</part_name>
+<part_short_desc>C-split fragment of mCitrine with ATG and link</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19937</part_id>
+<part_name>BBa_K323109</part_name>
+<part_short_desc>Blues zinc finger + linker</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19911</part_id>
+<part_name>BBa_K323083</part_name>
+<part_short_desc>His stop T7 terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19862</part_id>
+<part_name>BBa_K323032</part_name>
+<part_short_desc>C-split fragment of mCitrine with ATG and link</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19937</part_id>
+<part_name>BBa_K323109</part_name>
+<part_short_desc>Blues zinc finger + linker</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19911</part_id>
+<part_name>BBa_K323083</part_name>
+<part_short_desc>His stop T7 terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atggccgacaagcagaagaacggcatcaaggtgaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgc
+cgaccactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagctaccagtccg
+ccctgagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggc
+atggacgagctgtacaagggtggctctggcggtgggagtgggggaagctactagaggcaagtgatgatcgtccgtatgca
+tgtccggttgaaagctgtgatcgtcgttttagccgtcgtgatgttctgatgaatcacattcgtattcacacaggtcagaa
+accgtttcagtgtcgtatttgcatgcgtaattttagccgtagcgatcatctgaccacccatattcgtacccatacaggtg
+aaaaaccgtttgcatgtgatatttgcggtcgcaaatttgcaaatcgtgataccctgacccgtcatagcaaaattcatctg
+cgtcagaatgatctggaaggtggtagcggtggtggttcaggtggtagttactagagcatcaccatcaccatcactaacta
+gcataaccccttggggcctctaaacgggtcttgaggggttttttg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2109145</id>
+<title>BBa_K323032</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>288</endpos></feature>
+<feature>
+<id>2109146</id>
+<title>BBa_K323109</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>297</startpos>
+<endpos>608</endpos></feature>
+<feature>
+<id>2109147</id>
+<title>BBa_K323083</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>617</startpos>
+<endpos>685</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

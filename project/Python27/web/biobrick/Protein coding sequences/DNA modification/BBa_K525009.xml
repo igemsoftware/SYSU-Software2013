@@ -1,0 +1,299 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>24126</part_id>
+<part_name>BBa_K525009</part_name>
+<part_short_name>K525009</part_short_name>
+<part_short_desc>Fusion Protein of S-Layer SgsE and LigA with His-Tag</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K525009</part_url>
+<part_entered>2011-10-25</part_entered>
+<part_author>Manuel Wittchen</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>taatacgactcactataggggaattgtgagcggataacaattcctactagagaaagaggagaaatactagagatggccgg
+cgctaccaagctcgacaagatgcgccaggagctgaaggcagctgttgacgcaaaggatctcaagaaggctgaggaactgt
+accacaagatctcctacgagcttaagacccgtactgttatcctcgaccgcgtctacggccagtccacccgtgagctgctc
+cgctccaccttcaaggcagacgctcaggcactgcgtgattctcttatctacgacatcaccgttgctatgaaggcacgcga
+agctcaggacgcagttaaggctggtaacctcgataaggcaaaggctgcactggaccaggtcaaccagtacgtttccaagg
+ttactgacgctttcaaggcagagctccagaaggctgcacaggatgctaaggcagcttacgaggcagctctgccaccaaag
+gtcgaatccgtgaccgcagttaacgctaagacccttgagatcaagttcaacaaggcagttgacgctgcaaccgtcatcga
+caacaagggcacttccgatacctctgacgacgttgttaaggctaccgcaatcaccctcaaggctatcgatgaccaggtcc
+ctgtttccactgttaaggcatccctgtccgacgataagaagaccctcaagctggtcgtggacggcgctcagttcttcacc
+aagcgttacgttgttgacatcaagaacgtcaagacccttgatggtaaggacgttccagcatacactaccaccatcgacac
+cactgattctgttcgcccatccgtcctctccttctcctacgctgacaacggcctgaccctcaaggttaagttctctgagc
+ctctggcatccgttggcaccgtcaagctttacgacggtaccactgaaatctccgtgtccccaaagttcaccgctggcgat
+gacgagatgaccatcaacctcgcatcttcctccgttccagttaacaaggacctgaccctcaagatcttcggcgctgtcga
+ttacaacggtaacgttatcaaccctaacccagcagagctgactgttaagaagaccaccgtcgacatcaccaagccagttg
+ttcagtccatcgaagctgtcaacactaagaccgtgaaggttaccttctctgagaagcttctctccgcacctaccatcaag
+atcggcggccagactgcttccgtttccgtcgactctactggtctggtttacaccgcaaccctcgcttccgcactgtccaa
+gggcgtttacgctgtcgaggtttccgattacaaggaccttgcaggcaactctggtgacgcttacactaaggttgtccagc
+tcaaggcagataacaccgctccaaagttcgtgtcctcccaggttgttaagatcaacggcgtcgaacacctggttctcacc
+ttcgacgaggaggttaccactggctccaacatcaccgtcgttcagtcttccgacaagtacatcgatgaaaacaacgttct
+gaaggcagtcggtgctgaccttaagaccacctccgacaacttcaagctctacctgccaactgatggcaagtccaagtctg
+tggcactcaacatctcctccctgcctaagggcacctacaccgttacccttccaaacggtctcgtttccgacctggctgac
+aacccatacgcagagcgtaagcagatcactttcgtccgcggctctgattccctcaccaccaagcctgctctggacaagga
+ctacgattccaacggcgttaaggcagacaacaacaacgagcttgttttcgctttcacccagaacctcgacgcatccgctc
+tgaacctctctaacttcaacatcaacggtctgactgtcaccaaggcagttttcgatggcgacaccaagcacatccgtgtt
+acccttgctccaggcgcaaacacttggactggtacccacgtcatcaccatctccaacatcaagaacacttccggcctcgt
+gatggacaccgttaccgttaacgaatacatgaaggagaacgtcgctccaaccttcactgcaaccctgacctccgctgatg
+ttatccgcgttgacttctctgagcctgtcgcaaacgctaccatctcccgtgcactctccgctaacaacttcatcgttaag
+gttgacggcaacgtcgtgactgtttccaacgtttacgaagataacaacgcaaccaacctggtccagggttctaagggcta
+caagaccgtttaccttaagctccagtccccagttaccgacctgtccaagccaatcactctctccgctaccgacatcgtcg
+atgttaaccagaccggcgcaatcaccgacaacaacgttgtcggtaacaacgtgtctgctactgttgttaacgtcgcaaag
+accggcgaatcaatcgaacaacaactgacagaactgcgaacgacgcttcgccatcatgaatatctttatcatgtgatgga
+tgcgccggaaattcccgacgctgaatacgacaggctgatgcgcgaactgcgcgagctggaaaccaaacatccagaactga
+ttacgcctgattcgcctactcaacgtgtaggcgctgcgccgctggcggctttcagccagatacgccatgaagtaccaatg
+ctgtcactggataacgtttttgatgaagaaagctttcttgctttcaacaaacgtgtgcaggaccgtctgaaaaacaacga
+gaaagtcacctggtgctgtgagctgaagctggatggtcttgccgtcagtattctgtatgaaaatggcgttttagtcagtg
+ccgcgacccgtggcgatggcaccaccggggaagatatcacgtctaatgtgcgtactattcgcgccattccgctgaagctg
+cacggagagaatatcccggcgcgtctggaagtgcgtggtgaagtgttcctgccgcaggcggggttcgaaaagattaacga
+agatgcgcgacgcacgggcgggaaagtgtttgctaacccacgtaatgcggcagctggttcactgcgtcagcttgatccgc
+gtattacagcgaagcgaccgctcacttttttctgctatggcgttggtgttctggaaggtggcgagctgccggatactcat
+cttggccgtttactgcaatttaaaaagtgggggttgccggtcagcgatcgggtaacgctttgtgaatcggcggaagaagt
+gctggcgttctatcacaaagtggaagaagaccgcccgacgctgggctttgatatcgacggcgtggtgattaaggtcaact
+cactggcacagcaggagcagcttggctttgtcgcgcgtgccccgcgctgggcggtagcgtttaaattcccggcgcaggag
+cagatgacctttgtgcgtgacgtcgagtttcaggttgggcgtactggcgcgattacgcctgttgcgcgtctggaacctgt
+ccatgttgcaggcgtgctggtgagtaacgcaaccttacacaatgcggatgaaatcgaacgtcttggtttacgcattggcg
+ataaagtggtgattcgccgcgctggcgacgtgatcccgcaggtggttaacgtcgtgctttctgaacgcccggaagatacc
+cgtgaggttgtattcccgacgcattgtccggtatgtggttctgacgttgagcgtgtggaaggtgaagcggttgcccgctg
+taccggcggcctgatttgcggtgcgcagcgtaaagagtcgctgaaacactttgtttcccgccgtgcgatggatgttgacg
+gaatgggcgacaaaatcatcgatcagctggttgaaaaagaatatgtccatactccggcagatctgttcaaactcaccgca
+ggcaaactgaccggactggagcgtatggggccaaaatcggcacaaaacgtggttaacgcgctggaaaaagcgaaagaaac
+cacctttgctcgcttcctctatgcacttggcatccgtgaagtcggcgaggccaccgcagcaggtctggcggcatatttcg
+gcacgctggaagcgctggaagccgcttcgattgaagagctgcaaaaggtgcctgatgttggcattgtcgttgcatcccac
+gttcacaacttctttgccgaagaaagcaaccgcaatgtcatcagcgagctgttggcggaaggtgttcactggcctgcgcc
+gatcgttatcaacgcggaagagattgacagcccgtttgctggtaaaaccgtggtgcttacgggcagcttaagccagatgt
+cgcgtgatgacgctaaagctcgactggtcgaactgggcgcgaaagtcgcgggcagcgtgtcgaagaaaaccgatctggtg
+atagcgggtgaagcggcaggatctaaactggcgaaggcgcaggaactgggcattgaagtcatcgacgaagcggaaatgct
+gcgtttgctgggtagccatcatcatcatcatcat
+</seq_data></sequences>
+<features>
+<feature>
+<id>2160508</id>
+<title>T7 promotor</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2160509</id>
+<title>K525303</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>2409</endpos></feature>
+<feature>
+<id>2160510</id>
+<title>lac operator</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>2160511</id>
+<title>B0034</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>53</startpos>
+<endpos>64</endpos></feature>
+<feature>
+<id>2160512</id>
+<title>ATG</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>75</endpos></feature>
+<feature>
+<id>2160513</id>
+<title>SgsE domain</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>2409</endpos></feature>
+<feature>
+<id>2160514</id>
+<title>NogMIV</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>82</endpos></feature>
+<feature>
+<id>2160515</id>
+<title>Freiburg scar</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2401</startpos>
+<endpos>2407</endpos></feature>
+<feature>
+<id>2160517</id>
+<title>LigA domain</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>2407</startpos>
+<endpos>4416</endpos></feature>
+<feature>
+<id>2160516</id>
+<title>K525740</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2410</startpos>
+<endpos>4434</endpos></feature>
+<feature>
+<id>2160518</id>
+<title>His-Tag</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>4417</startpos>
+<endpos>4434</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>biology</name>
+<value>S-Layer</value>
+<units></units>
+<url></url>
+<id>15603</id>
+<m_date>2011-10-28 03:07:10</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>E. coli</value>
+<units></units>
+<url></url>
+<id>15604</id>
+<m_date>2011-10-28 03:07:10</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>control</name>
+<value>PT7</value>
+<units></units>
+<url></url>
+<id>15605</id>
+<m_date>2011-10-28 03:07:10</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>Geobacillus stearothermophilus, Escherichia coli</value>
+<units></units>
+<url></url>
+<id>15606</id>
+<m_date>2011-10-28 03:07:10</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>tag</name>
+<value>His-tag</value>
+<units></units>
+<url></url>
+<id>15607</id>
+<m_date>2011-10-28 03:07:10</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>Lysinibacillus sphaericus, Escherichia coli</value>
+<units></units>
+<url></url>
+<id>15600</id>
+<m_date>2011-10-28 03:06:17</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>Geobacillus stearothermophilus, Escherichia coli</value>
+<units></units>
+<url></url>
+<id>15562</id>
+<m_date>2011-10-28 02:47:23</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>15561</id>
+<m_date>2011-10-28 02:46:50</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>S-Layer</value>
+<units></units>
+<url></url>
+<id>15556</id>
+<m_date>2011-10-28 02:42:13</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>15555</id>
+<m_date>2011-10-28 02:42:00</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>tag</name>
+<value>His-tag</value>
+<units></units>
+<url></url>
+<id>15554</id>
+<m_date>2011-10-28 02:38:09</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>E. coli</value>
+<units></units>
+<url></url>
+<id>15553</id>
+<m_date>2011-10-28 02:37:57</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>tag</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>15552</id>
+<m_date>2011-10-28 02:37:45</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>15551</id>
+<m_date>2011-10-28 02:37:33</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter></parameters>
+<categories>
+<category>//cds/enzyme/ligase</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//proteindomain/internal</category>
+<category>//rnap/bacteriophage/t7</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

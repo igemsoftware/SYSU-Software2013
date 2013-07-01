@@ -1,0 +1,66 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19392</part_id>
+<part_name>BBa_K392005</part_name>
+<part_short_name>K392005</part_short_name>
+<part_short_desc>yeast SUC2 leader sequence</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K392005</part_url>
+<part_entered>2010-10-10</part_entered>
+<part_author>Tadashi Nakamura, Shuhei Yasumoto, Takahiro Saka, Saya Kakuda</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgcttttgcaagctttccttttccttttggctggttttgcagccaaaatatctgca
+</seq_data></sequences>
+<features></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>yeast SUC2 leader sequence</value>
+<units></units>
+<url></url>
+<id>10763</id>
+<m_date>2010-10-24 22:50:17</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast SUC2 leader sequence</value>
+<units></units>
+<url></url>
+<id>10764</id>
+<m_date>2010-10-24 22:50:17</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast SUC2 leader sequence</value>
+<units></units>
+<url></url>
+<id>10765</id>
+<m_date>2010-10-24 22:50:17</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter></parameters>
+<categories>
+<category>//chassis/eukaryote/yeast</category>
+<category>//proteindomain/head</category>
+<category>//proteindomain/localization</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

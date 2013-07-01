@@ -1,0 +1,147 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22144</part_id>
+<part_name>BBa_K525740</part_name>
+<part_short_name>K525740</part_short_name>
+<part_short_desc>	DNA ligase from Escherichia coli (LigA) with His-tag</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>LigA</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K525740</part_url>
+<part_entered>2011-09-12</part_entered>
+<part_author>Anna Drong</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggccggcgaatcaatcgaacaacaactgacagaactgcgaacgacgcttcgccatcatgaatatctttatcatgtgat
+ggatgcgccggaaattcccgacgctgaatacgacaggctgatgcgcgaactgcgcgagctggaaaccaaacatccagaac
+tgattacgcctgattcgcctactcaacgtgtaggcgctgcgccgctggcggctttcagccagatacgccatgaagtacca
+atgctgtcactggataacgtttttgatgaagaaagctttcttgctttcaacaaacgtgtgcaggaccgtctgaaaaacaa
+cgagaaagtcacctggtgctgtgagctgaagctggatggtcttgccgtcagtattctgtatgaaaatggcgttttagtca
+gtgccgcgacccgtggcgatggcaccaccggggaagatatcacgtctaatgtgcgtactattcgcgccattccgctgaag
+ctgcacggagagaatatcccggcgcgtctggaagtgcgtggtgaagtgttcctgccgcaggcggggttcgaaaagattaa
+cgaagatgcgcgacgcacgggcgggaaagtgtttgctaacccacgtaatgcggcagctggttcactgcgtcagcttgatc
+cgcgtattacagcgaagcgaccgctcacttttttctgctatggcgttggtgttctggaaggtggcgagctgccggatact
+catcttggccgtttactgcaatttaaaaagtgggggttgccggtcagcgatcgggtaacgctttgtgaatcggcggaaga
+agtgctggcgttctatcacaaagtggaagaagaccgcccgacgctgggctttgatatcgacggcgtggtgattaaggtca
+actcactggcacagcaggagcagcttggctttgtcgcgcgtgccccgcgctgggcggtagcgtttaaattcccggcgcag
+gagcagatgacctttgtgcgtgacgtcgagtttcaggttgggcgtactggcgcgattacgcctgttgcgcgtctggaacc
+tgtccatgttgcaggcgtgctggtgagtaacgcaaccttacacaatgcggatgaaatcgaacgtcttggtttacgcattg
+gcgataaagtggtgattcgccgcgctggcgacgtgatcccgcaggtggttaacgtcgtgctttctgaacgcccggaagat
+acccgtgaggttgtattcccgacgcattgtccggtatgtggttctgacgttgagcgtgtggaaggtgaagcggttgcccg
+ctgtaccggcggcctgatttgcggtgcgcagcgtaaagagtcgctgaaacactttgtttcccgccgtgcgatggatgttg
+acggaatgggcgacaaaatcatcgatcagctggttgaaaaagaatatgtccatactccggcagatctgttcaaactcacc
+gcaggcaaactgaccggactggagcgtatggggccaaaatcggcacaaaacgtggttaacgcgctggaaaaagcgaaaga
+aaccacctttgctcgcttcctctatgcacttggcatccgtgaagtcggcgaggccaccgcagcaggtctggcggcatatt
+tcggcacgctggaagcgctggaagccgcttcgattgaagagctgcaaaaggtgcctgatgttggcattgtcgttgcatcc
+cacgttcacaacttctttgccgaagaaagcaaccgcaatgtcatcagcgagctgttggcggaaggtgttcactggcctgc
+gccgatcgttatcaacgcggaagagattgacagcccgtttgctggtaaaaccgtggtgcttacgggcagcttaagccaga
+tgtcgcgtgatgacgctaaagctcgactggtcgaactgggcgcgaaagtcgcgggcagcgtgtcgaagaaaaccgatctg
+gtgatagcgggtgaagcggcaggatctaaactggcgaaggcgcaggaactgggcattgaagtcatcgacgaagcggaaat
+gctgcgtttgctgggtagccatcatcatcatcatcat
+</seq_data></sequences>
+<features>
+<feature>
+<id>2137503</id>
+<title>ATG</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2137504</id>
+<title>LigA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>2018</endpos></feature>
+<feature>
+<id>2137456</id>
+<title>NgoMIV</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>9</endpos></feature>
+<feature>
+<id>2137505</id>
+<title>His-tag</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>2020</startpos>
+<endpos>2037</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>	DNA ligase from Escherichia coli with His-tag</value>
+<units></units>
+<url></url>
+<id>12680</id>
+<m_date>2011-09-20 10:39:14</m_date>
+<user_id>8543</user_id>
+<user_name>adrong</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>	DNA ligase from Escherichia coli with His-tag</value>
+<units></units>
+<url></url>
+<id>12681</id>
+<m_date>2011-09-20 10:39:14</m_date>
+<user_id>8543</user_id>
+<user_name>adrong</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>	DNA ligase from Escherichia coli with His-tag</value>
+<units></units>
+<url></url>
+<id>12682</id>
+<m_date>2011-09-20 10:39:14</m_date>
+<user_id>8543</user_id>
+<user_name>adrong</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Ligase A from Escherichia coli with His-tag</value>
+<units></units>
+<url></url>
+<id>12671</id>
+<m_date>2011-09-20 10:31:33</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Ligase A from Escherichia coli with His-tag</value>
+<units></units>
+<url></url>
+<id>12672</id>
+<m_date>2011-09-20 10:31:33</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Ligase A from Escherichia coli with His-tag</value>
+<units></units>
+<url></url>
+<id>12673</id>
+<m_date>2011-09-20 10:31:33</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter></parameters>
+<categories>
+<category>//cds/enzyme/ligase</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//proteindomain/tail</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

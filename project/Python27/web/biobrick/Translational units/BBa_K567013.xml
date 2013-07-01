@@ -1,0 +1,107 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23595</part_id>
+<part_name>BBa_K567013</part_name>
+<part_short_name>K567013</part_short_name>
+<part_short_desc>tRNA(Asp)-TAG</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K567013</part_url>
+<part_entered>2011-09-29</part_entered>
+<part_author>Bin Zhao</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ccaccatacccacgccgaaacctaaaaatagcgacttgggcgatttttgcagcaaacgattcaaaagatgagaaaaaccg
+ttgacgaaggtcgaggcaatccgtaatattcgcctcgttcccaacggaacacaacgcggagcggtagttcagtcggttag
+aatacctgcctctaacgcagggggtcgcgggttcgagtcccgtccgttccgccactattcactcatgaaaatgagttcag
+agagccgcaagatttttaattttgcggtttttttgtatttgaattccaccatttctctgttcaagggtggtgcgtaacgg
+caa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2152871</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>80</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>2152873</id>
+<title>PaspV</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>80</startpos>
+<endpos>119</endpos></feature>
+<feature>
+<id>2152874</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>104</startpos>
+<endpos>111</endpos></feature>
+<feature>
+<id>2152876</id>
+<title>tRNA-Asp</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>138</startpos>
+<endpos>214</endpos></feature>
+<feature>
+<id>2152877</id>
+<title>GTC-&gt;CTA</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>172</startpos>
+<endpos>174</endpos></feature>
+<feature>
+<id>2152878</id>
+<title>TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>245</startpos>
+<endpos>267</endpos></feature>
+<feature>
+<id>2152879</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>268</startpos>
+<endpos>274</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>chassis</name>
+<value>Escherichia coli</value>
+<units></units>
+<url></url>
+<id>15231</id>
+<m_date>2011-10-05 16:30:25</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>15230</id>
+<m_date>2011-10-05 16:30:14</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

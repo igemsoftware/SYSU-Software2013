@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7311</part_id>
+<part_name>BBa_J32015</part_name>
+<part_short_name>J32015</part_short_name>
+<part_short_desc>PelB leader sequence; directs protein to E. coli periplasmic membrane</part_short_desc>
+<part_type>Tag</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>PelB</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J32015</part_url>
+<part_entered>2006-08-25</part_entered>
+<part_author>Austen Heinz</part_author>
+<best_quality>Partially Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgaaatacctgctgccgaccgctgctgctggtctgctgctcctcgctgcccagccggcgatggcc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1898182</id>
+<title>PelB</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>66</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//igem2006/duke/favorite</category>
+<category>//proteindomain/localization</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

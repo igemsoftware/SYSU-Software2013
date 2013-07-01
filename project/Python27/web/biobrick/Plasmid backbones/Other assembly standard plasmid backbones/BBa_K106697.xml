@@ -1,0 +1,240 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13108</part_id>
+<part_name>BBa_K106697</part_name>
+<part_short_name>K106697</part_short_name>
+<part_short_desc>AarI AD acceptor vector (pRS315, Cyc1P, Adh1t-8XLexA Ops)</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K106697</part_url>
+<part_entered>2008-10-28</part_entered>
+<part_author>Andrew Horwitz</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tgcgggatcctgagtaaataagcggccgcgcgaatttcttatgatttatgatttttattattaaataagttataaaaaaa
+ataagtgtatacaaattttaaagtgactcttaggttttaaaacgaaaattcttattcttgagtaactctttcctgtaggt
+caggttgctttctcaggtatagcatgaggtcgctcttattgaccacaccgagctttcgactgctgtatataaaaccagtg
+gttatatgtacagtactgctgtatataaaaccagtggttatatgtacagtacgtcgactgctgtatataaaaccagtggt
+tatatgtacagtactgctgtatataaaaccagtggttatatgtacagtacggagctccaattcgccctatagtgagtcgt
+attacaattcactggccgtcgttttacaacgtcgtgactgggaaaaccctggcgttacccaacttaatcgccttgcagca
+catccccccttcgccagctggcgtaatagcgaagaggcccgcaccgatcgcccttcccaacagttgcgcagcctgaatgg
+cgaatggcgcgacgcgccctgtagcggcgcattaagcgcggcgggtgtggtggttacgcgcagcgtgaccgctacacttg
+ccagcgccctagcgcccgctcctttcgctttcttcccttcctttctcgccacgttcgccggctttccccgtcaagctcta
+aatcgggggctccctttagggttccgatttagtgctttacggcacctcgaccccaaaaaacttgattagggtgatggttc
+acgtagtgggccatcgccctgatagacggtttttcgccctttgacgttggagtccacgttctttaatagtggactcttgt
+tccaaactggaacaacactcaaccctatctcggtctattcttttgatttataagggattttgccgatttcggcctattgg
+ttaaaaaatgagctgatttaacaaaaatttaacgcgaattttaacaaaatattaacgtttacaatttcctgatgcggtat
+tttctccttacgcatctgtgcggtatttcacaccgcatatcgaccctcgaggagaacttctagtatatccacatacctaa
+tattattgccttattaaaaatggaatcccaacaattacatcaaaatccacattctcttcaaaatcaattgtcctgtactt
+ccttgttcatgtgtgttcaaaaacgttatatttataggataattatactctatttctcaacaagtaattggttgtttggc
+cgagcggtctaaggcgcctgattcaagaaatatcttgaccgcagttaactgtgggaatactcaggtatcgtaagatgcaa
+gagttcgaatctcttagcaaccattatttttttcctcaacataacgagaacacacaggggcgctatcgcacagaatcaaa
+ttcgatgactggaaattttttgttaatttcagaggtcgcctgacgcatatacctttttcaactgaaaaattgggagaaaa
+aggaaaggtgagaggccggaaccggcttttcatatagaatagagaagcgttcatgactaaatgcttgcatcacaatactt
+gaagttgacaatattatttaaggacctattgttttttccaataggtggttagcaatcgtcttactttctaacttttctta
+ccttttacatttcagcaatatatatatatatttcaaggatataccattctaatgtctgcccctatgtctgcccctaagaa
+gatcgtcgttttgccaggtgaccacgttggtcaagaaatcacagccgaagccattaaggttcttaaagctatttctgatg
+ttcgttccaatgtcaagttcgatttcgaaaatcatttaattggtggtgctgctatcgatgctacaggtgtcccacttcca
+gatgaggcgctggaagcctccaagaaggttgatgccgttttgttaggtgctgtgggtggtcctaaatggggtaccggtag
+tgttagacctgaacaaggtttactaaaaatccgtaaagaacttcaattgtacgccaacttaagaccatgtaactttgcat
+ccgactctcttttagacttatctccaatcaagccacaatttgctaaaggtactgacttcgttgttgtcagagaattagtg
+ggaggtatttactttggtaagagaaaggaagacgatggtgatggtgtcgcttgggatagtgaacaatacaccgttccaga
+agtgcaaagaatcacaagaatggccgctttcatggccctacaacatgagccaccattgcctatttggtccttggataaag
+ctaatgttttggcctcttcaagattatggagaaaaactgtggaggaaaccatcaagaacgaattccctacattgaaggtt
+caacatcaattgattgattctgccgccatgatcctagttaagaacccaacccacctaaatggtattataatcaccagcaa
+catgtttggtgatatcatctccgatgaagcctccgttatcccaggttccttgggtttgttgccatctgcgtccttggcct
+ctttgccagacaagaacaccgcatttggtttgtacgaaccatgccacggttctgctccagatttgccaaagaataaggtt
+gaccctatcgccactatcttgtctgctgcaatgatgttgaaattgtcattgaacttgcctgaagaaggtaaggccattga
+agatgcagttaaaaaggttttggatgcaggtatcagaactggtgatttaggtggttccaacagtaccaccgaagtcggtg
+atgctgtcgccgaagaagttaagaaaatccttgcttaaaaagattctctttttttatgatatttgtacataaactttata
+aatgaaattcataatagaaacgacacgaaattacaaaatggaatatgttcatagggtagacgaaactatatacgcaatct
+acatacatttatcaagaaggagaaaaaggaggatagtaaaggaatacaggtaagcaaattgatactaatggctcaacgtg
+ataaggaaaaagaattgcactttaacattaatattgacaaggaggagggcaccacacaaaaagttaggtgtaacagaaaa
+tcatgaaactacgattcctaatttgatattggaggattttctctaaaaaaaaaaaaatacaacaaataaaaaacactcaa
+tgacctgaccatttgatggagtttaagtcaataccttcttgaaccatttcccataatggtgaaagttccctcaagaattt
+tactctgtcagaaacggccttacgacgtagtcgatatggtgcactctcagtacaatctgctctgatgccgcatagttaag
+ccagccccgacacccgccaacacccgctgacgcgccctgacgggcttgtctgctcccggcatccgcttacagacaagctg
+tgaccgtctccgggagctgcatgtgtcagaggttttcaccgtcatcaccgaaacgcgcgagacgaaagggcctcgtgata
+cgcctatttttataggttaatgtcatgataataatggtttcttaggacggatcgcttgcctgtaacttacacgcgcctcg
+tatcttttaatgatggaataatttgggaatttactctgtgtttatttatttttatgttttgtatttggattttagaaagt
+aaataaagaaggtagaagagttacggaatgaagaaaaaaaaataaacaaaggtttaaaaaatttcaacaaaaagcgtact
+ttacatatatatttattagacaagaaaagcagattaaatagatatacattcgattaacgataagtaaaatgtaaaatcac
+aggattttcgtgtgtggtcttctacacagacaagatgaaacaattcggcattaatacctgagagcaggaagagcaagata
+aaaggtagtatttgttggcgatccccctagagtcttttacatcttcggaaaacaaaaactattttttctttaatttcttt
+ttttactttctatttttaatttatatatttatattaaaaaatttaaattataattatttttatagcacgtgatgaaaagg
+acccaggtggcacttttcggggaaatgtgcgcggaacccctatttgtttatttttctaaatacattcaaatatgtatccg
+ctcatgagacaataaccctgataaatgcttcaataatattgaaaaaggaagagtatgagtattcaacatttccgtgtcgc
+ccttattcccttttttgcggcattttgccttcctgtttttgctcacccagaaacgctggtgaaagtaaaagatgctgaag
+atcagttgggtgcacgagtgggttacatcgaactggatctcaacagcggtaagatccttgagagttttcgccccgaagaa
+cgttttccaatgatgagcacttttaaagttctgctatgtggcgcggtattatcccgtattgacgccgggcaagagcaact
+cggtcgccgcatacactattctcagaatgacttggttgagtactcaccagtcacagaaaagcatcttacggatggcatga
+cagtaagagaattatgcagtgctgccataaccatgagtgataacactgcggccaacttacttctgacaacgatcggagga
+ccgaaggagctaaccgctttttttcacaacatgggggatcatgtaactcgccttgatcgttgggaaccggagctgaatga
+agccataccaaacgacgagcgtgacaccacgatgcctgtagcaatggcaacaacgttgcgcaaactattaactggcgaac
+tacttactctagcttcccggcaacaattaatagactggatggaggcggataaagttgcaggaccacttctgcgctcggcc
+cttccggctggctggtttattgctgataaatctggagccggtgagcgtgggtctcgcggtatcattgcagcactggggcc
+agatggtaagccctcccgtatcgtagttatctacacgacgggcagtcaggcaactatggatgaacgaaatagacagatcg
+ctgagataggtgcctcactgattaagcattggtaactgtcagaccaagtttactcatatatactttagattgatttaaaa
+cttcatttttaatttaaaaggatctaggtgaagatcctttttgataatctcatgaccaaaatcccttaacgtgagttttc
+gttccactgagcgtcagaccccgtagaaaagatcaaaggatcttcttgagatcctttttttctgcgcgtaatctgctgct
+tgcaaacaaaaaaaccaccgctaccagcggtggtttgtttgccggatcaagagctaccaactctttttccgaaggtaact
+ggcttcagcagagcgcagataccaaatactgtccttctagtgtagccgtagttaggccaccacttcaagaactctgtagc
+accgcctacatacctcgctctgctaatcctgttaccagtggctgctgccagtggcgataagtcgtgtcttaccgggttgg
+actcaagacgatagttaccggataaggcgcagcggtcgggctgaacggggggttcgtgcacacagcccagcttggagcga
+acgacctacaccgaactgagatacctacagcgtgagcattgagaaagcgccacgcttcccgaagggagaaaggcggacag
+gtatccggtaagcggcagggtcggaacaggagagcgcacgagggagcttccaggggggaacgcctggtatctttatagtc
+ctgtcgggtttcgccacctctgacttgagcgtcgatttttgtgatgctcgtcaggggggccgagcctatggaaaaacgcc
+agcaacgcggcctttttacggttcctggccttttgctggccttttgctcacatgttctttcctgcgttatcccctgattc
+tgtggataaccgtattaccgcctttgagtgagctgataccgctcgccgcagccgaacgaccgagcgcagcgagtcagtga
+gcgaggaagcggaagagcgcccaatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgac
+aggtttcccgactggaaagcgggcagtgagcgcaacgcaattaatgtgagttacctcactcattaggcaccccaggcttt
+acactttatgcttccggctcctatgttgtgtggaattgtgagcggataacaatttcacacaggaaacagctatgaccatg
+attacgccaagctcggaattaaccctcactaaagggaacaaaagctgggtaccgggcccgagcagatccgccaggcgtgt
+atatatagcgtggatggccaggcaactttagtgctgacacatacaggcatatatatatgtgtgcgacgacacatgatcat
+atggcatgcatgtgctctgtatgtatataaaactcttgttttcttcttttctctaaatattctttccttatacattagga
+cctttgcagcataaattactatacttctatagacacacaaacacaaatacacacactaaattaataatgctcgagggag
+</seq_data></sequences>
+<features>
+<feature>
+<id>1995020</id>
+<title>D overhang</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>4</endpos></feature>
+<feature>
+<id>1999735</id>
+<title>Stop codons in all 3 frames</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>11</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>1995021</id>
+<title>Adh1 terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>30</startpos>
+<endpos>209</endpos></feature>
+<feature>
+<id>1995079</id>
+<title>8X LexA Operators</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>210</startpos>
+<endpos>377</endpos></feature>
+<feature>
+<id>1999728</id>
+<title>T7 promoter</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>386</startpos>
+<endpos>404</endpos></feature>
+<feature>
+<id>1999729</id>
+<title>lacZalpha reporter</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>408</startpos>
+<endpos>567</endpos></feature>
+<feature>
+<id>1999730</id>
+<title>f1 origin</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>589</startpos>
+<endpos>895</endpos></feature>
+<feature>
+<id>1995101</id>
+<title>LEU2 marker</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1732</startpos>
+<endpos>2838</endpos></feature>
+<feature>
+<id>1995017</id>
+<title>CEN ARS</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>3565</startpos>
+<endpos>4083</endpos></feature>
+<feature>
+<id>1999731</id>
+<title>ampicillin resistance promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>4145</startpos>
+<endpos>4173</endpos></feature>
+<feature>
+<id>1995018</id>
+<title>ampicillin resistance marker</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>4215</startpos>
+<endpos>5075</endpos></feature>
+<feature>
+<id>1999732</id>
+<title>pBR322 origin</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>5230</startpos>
+<endpos>5849</endpos></feature>
+<feature>
+<id>1999733</id>
+<title>lac promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>6158</startpos>
+<endpos>6187</endpos></feature>
+<feature>
+<id>1999734</id>
+<title>T3 promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>6257</startpos>
+<endpos>6276</endpos></feature>
+<feature>
+<id>1995019</id>
+<title>Cyc1 Promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>6294</startpos>
+<endpos>6556</endpos></feature>
+<feature>
+<id>1999736</id>
+<title>Start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>6547</startpos>
+<endpos>6549</endpos></feature>
+<feature>
+<id>1999737</id>
+<title>A overhang</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>6556</startpos>
+<endpos>6559</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/[team_name]/favorite</category>
+<category>//chassis/eukaryote/yeast</category>
+<category>//plasmidbackbone/operation</category>
+<category>//standard/28</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

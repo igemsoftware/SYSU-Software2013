@@ -1,0 +1,231 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12844</part_id>
+<part_name>BBa_K102111</part_name>
+<part_short_name>K102111</part_short_name>
+<part_short_desc>TA11 gate in output test harness</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K102111</part_url>
+<part_entered>2008-10-27</part_entered>
+<part_author>Wayne Materi</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>12677</part_id>
+<part_name>BBa_K102909</part_name>
+<part_short_desc>TA11 gate from synthetic algorithm v1.1 </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>9122</part_id>
+<part_name>BBa_I732006</part_name>
+<part_short_desc>lacZ alpha fragment</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>lacZ-alpha</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>12677</part_id>
+<part_name>BBa_K102909</part_name>
+<part_short_desc>TA11 gate from synthetic algorithm v1.1 </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>9197</part_id>
+<part_name>BBa_I732018</part_name>
+<part_short_desc>lacZ alpha fragment (RBS+ TERM-)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>12677</part_id>
+<part_name>BBa_K102909</part_name>
+<part_short_desc>TA11 gate from synthetic algorithm v1.1 </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>9197</part_id>
+<part_name>BBa_I732018</part_name>
+<part_short_desc>lacZ alpha fragment (RBS+ TERM-)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>caatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcg
+ggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactttatgcttccggctcg
+tatgttgtgtggaattgtgagcggataacaatttcacacatactagagcaatagatcattgggatccgaccagggccgga
+cctagggatgtgtgctatgatcacagcacacatcccctaggtccggccctggtacataatcatgactgtacctatggatg
+tgtgctgtttttttttccatggtactagagaaagaggagaaatactagatgaccatgattacggattcactggccgtcgt
+tttacaacgtcgtgactgggaaaaccctggcgttacccaacttaatcgccttgcagcacatccccctttcgccagctggc
+gtaatagcgaagaggcccgcaccgatcgcccttcccaacagttgcgcagcctgaatggcgaatggcgctttgcctggttt
+ccggcaccagaagcggtgccggaaagctggctggagtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1992064</id>
+<title>BBa_R0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>1992065</id>
+<title>end of LacI coding region (inactive)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>1992066</id>
+<title>CAP binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>126</endpos></feature>
+<feature>
+<id>1992067</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>137</startpos>
+<endpos>142</endpos></feature>
+<feature>
+<id>1992068</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>161</startpos>
+<endpos>166</endpos></feature>
+<feature>
+<id>1992069</id>
+<title>LacI binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>166</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>1992070</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>173</startpos>
+<endpos>173</endpos></feature>
+<feature>
+<id>1992073</id>
+<title>BBa_K102909</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>209</startpos>
+<endpos>342</endpos></feature>
+<feature>
+<id>1992071</id>
+<title>TA11 anti-terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>230</startpos>
+<endpos>291</endpos></feature>
+<feature>
+<id>1992072</id>
+<title>TA11 cryptic terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>266</startpos>
+<endpos>327</endpos></feature>
+<feature>
+<id>1992075</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>351</startpos>
+<endpos>362</endpos></feature>
+<feature>
+<id>1992074</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>355</startpos>
+<endpos>358</endpos></feature>
+<feature>
+<id>1992076</id>
+<title>START</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>369</startpos>
+<endpos>371</endpos></feature>
+<feature>
+<id>1992077</id>
+<title>lacZ</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>369</startpos>
+<endpos>602</endpos></feature>
+<feature>
+<id>1992079</id>
+<title>BBa_I732006</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>369</startpos>
+<endpos>602</endpos></feature>
+<feature>
+<id>1992078</id>
+<title>STOP</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>597</startpos>
+<endpos>602</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

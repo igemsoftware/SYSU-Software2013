@@ -1,0 +1,156 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20348</part_id>
+<part_name>BBa_K316010</part_name>
+<part_short_name>K316010</part_short_name>
+<part_short_desc>Reverse strand coding XylE under LacI activation</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>3</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K316010</part_url>
+<part_entered>2010-10-22</part_entered>
+<part_author>IC 2010 Team</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>20804</part_id>
+<part_name>BBa_K316011</part_name>
+<part_short_desc>Reverse strand coding XylE</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>20029</part_id>
+<part_name>BBa_K316000</part_name>
+<part_short_desc>Reverse strand coding Enhanced LacI-hyperspank promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>sRBS Pehs</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>20804</part_id>
+<part_name>BBa_K316011</part_name>
+<part_short_desc>Reverse strand coding XylE</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>20029</part_id>
+<part_name>BBa_K316000</part_name>
+<part_short_desc>Reverse strand coding Enhanced LacI-hyperspank promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>sRBS Pehs</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>20804</part_id>
+<part_name>BBa_K316011</part_name>
+<part_short_desc>Reverse strand coding XylE</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>20029</part_id>
+<part_name>BBa_K316000</part_name>
+<part_short_desc>Reverse strand coding Enhanced LacI-hyperspank promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>sRBS Pehs</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tcaggtcagcacggtcatgaatcgttcgttgagaatgcggtcgtggtaaaagatcgccttgcccagctggtcggtggtcc
+aggtcaccggtttgtggtccgggtagttgtaatctcccccgcagaacacttcgttgcggttaccggacgggtcgaagaag
+tagatggtcttgccgtgagtgaggccgtggcgggttgggccgatatcgatagatgtgtcggtcatggagatcaggtcggc
+ggcgcgaagcaagtcttcccaggtttcgaggtggaaggacacatgatggaggcggcctttttccggatggtgaatgaagg
+ccacgtcgtgggccttggtcgacagactgagaaactgggcgacgcgcgtgccattttcgtccagcacctgttcggccaga
+tagaaaccgagcaccttggtgaacaggtcataggtcgccggcaattcgtcgccatacatgagggcgtggtcgaaacgcac
+agccgccatacctttcagatcgcgcggccatgcctcgggattgacgtcattcaaaccccactttccagtatattccttgt
+ctgcatacaactcgaagtgatgcccggagggggcctggaagcgcacgcgccggccacaactgttcagttcacctgcgggt
+agctgctcaacggcacagccatatgccatcagatcccgctccagttgccggagagcatcctcatccacaaccttgaaacc
+cataaaatccatgcccggctcgtcagcctcgcgtagcaccagggaaaacttatccacttcggtccaagccttcagataga
+cacggccctggtcgtcacggtccatctcgatcaggcccagcaactcgacgtagtgttccagggccttgctcatgtccagt
+acacgcagctgcacatggcccggtcgcattacacctttgttcattactagagttcacctcctttctctagtatgtgaatt
+gttatccgctcacaattccacacacacattatgccacaccttgtagataaagtcaacaacttttgcaactttctcggcaa
+aatgtggaattgtgagcgctcacaattccacaaccctcgag
+</seq_data></sequences>
+<features>
+<feature>
+<id>2107337</id>
+<title>BBa_K316011</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>924</endpos></feature>
+<feature>
+<id>2107334</id>
+<title>Stop Codon</title>
+<type>stop</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2107335</id>
+<title>XylE Gene</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>4</startpos>
+<endpos>924</endpos></feature>
+<feature>
+<id>2107336</id>
+<title>Start Codon</title>
+<type>start</type>
+<direction>reverse</direction>
+<startpos>922</startpos>
+<endpos>924</endpos></feature>
+<feature>
+<id>2107338</id>
+<title>sRBS</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>933</startpos>
+<endpos>944</endpos></feature>
+<feature>
+<id>2107342</id>
+<title>BBa_K316000</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>933</startpos>
+<endpos>1081</endpos></feature>
+<feature>
+<id>2107339</id>
+<title>scar</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>945</startpos>
+<endpos>952</endpos></feature>
+<feature>
+<id>2107340</id>
+<title>LacI binding</title>
+<type>binding</type>
+<direction>reverse</direction>
+<startpos>953</startpos>
+<endpos>983</endpos></feature>
+<feature>
+<id>2107341</id>
+<title>LacI binding</title>
+<type>binding</type>
+<direction>reverse</direction>
+<startpos>1043</startpos>
+<endpos>1072</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

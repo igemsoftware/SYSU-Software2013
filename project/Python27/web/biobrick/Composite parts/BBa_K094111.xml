@@ -1,0 +1,246 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12040</part_id>
+<part_name>BBa_K094111</part_name>
+<part_short_name>K094111</part_short_name>
+<part_short_desc>pTetR-rbs-cheY*</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K094111</part_url>
+<part_entered>2008-10-13</part_entered>
+<part_author>Li Xinran</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>7021</part_id>
+<part_name>BBa_J61003</part_name>
+<part_short_desc>EN-Ptet-rbs-X-[GFP]-SNP &quot;ORF Expresser&quot;</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12028</part_id>
+<part_name>BBa_K094110</part_name>
+<part_short_desc>cheY* gene</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>7021</part_id>
+<part_name>BBa_J61003</part_name>
+<part_short_desc>EN-Ptet-rbs-X-[GFP]-SNP &quot;ORF Expresser&quot;</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12028</part_id>
+<part_name>BBa_K094110</part_name>
+<part_short_desc>cheY* gene</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>7021</part_id>
+<part_name>BBa_J61003</part_name>
+<part_short_desc>EN-Ptet-rbs-X-[GFP]-SNP &quot;ORF Expresser&quot;</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>12028</part_id>
+<part_name>BBa_K094110</part_name>
+<part_short_desc>cheY* gene</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tactagtagcggccgctgcaggcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagc
+tcactcaaaggcggtaatacggttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaa
+aggccaggaaccgtaaaaaggccgcgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcga
+cgctcaagtcagaggtggcgaaacccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctc
+tcctgttccgaccctgccgcttaccggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcac
+gctgtaggtatctcagttcggtgtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgc
+tgcgccttatccggtaactatcgtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaa
+caggattagcagagcgaggtatgtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaagga
+cagtatttggtatctgcgctctgctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaacc
+accgctggtagcggtggtttttttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgat
+cttttctacggggtctgacgctcagtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatct
+tcacctagatccttttaaattaaaaatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttac
+caatgcttaatcagtgaggcacctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgta
+gataactacgatacgggagggcttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccag
+atttatcagcaataaaccagccagccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtct
+attaattgttgccgggaagctagagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcat
+cgtggtgtcacgctcgtcgtttggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatccccca
+tgttgtgcaaaaaagcggttagctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatg
+gttatggcagcactgcataattctcttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaa
+gtcattctgagaatagtgtatgcggcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagca
+gaactttaaaagtgctcatcattggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagt
+tcgatgtaacccactcgtgcacccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacagg
+aaggcaaaatgccgcaaaaaagggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattatt
+gaagcatttatcagggttattgtctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccg
+cgcacatttccccgaaaagtgccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtat
+cacgaggcagaatttcagataaaaaaaatccttagctttcgctaaggatgatttctggaattcgcggccgcaactagagc
+caggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctct
+actagagtcacactggctcaccttcgggtgggcctttctgcgtttatatactagagtccctatcagtgatagagattgac
+atccctatcagtgatagagatactgagcactactagagaaagaggagaaattctagagtactagatggcggataaagaac
+ttaaatttttggttgtggataaattttccaccatgcgacgcatagtgcgtaacctgctgaaagagctgggattcaataat
+gttgaggaagcggaagatggcgtcgacgctctcaataagttgcaggcaggcggttatggatttgttatctccgactggaa
+catgcccaatatggatggcctggaattgctgaaaacaattcgtgcggatggcgcgatgtcggcattgccagtgttaatgg
+tgactgcagaagcgaagaaagagaacatcattgctgcggcgcaagcgggggccagtggctgggtggtgaagccatttacc
+gccgcgacgctggaggaaaaactcaacaaaatctttgagaaactgggcatgtga
+</seq_data></sequences>
+<features>
+<feature>
+<id>1980969</id>
+<title>BioBrick suffix</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>1980985</id>
+<title>BBa_J61003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>2298</endpos></feature>
+<feature>
+<id>1980970</id>
+<title>Verification reverse (VR) primer binding site </title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>79</startpos>
+<endpos>98</endpos></feature>
+<feature>
+<id>1980971</id>
+<title>ColE1 origin</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>180</startpos>
+<endpos>862</endpos></feature>
+<feature>
+<id>1980972</id>
+<title>pBR322</title>
+<type>dna</type>
+<direction>reverse</direction>
+<startpos>183</startpos>
+<endpos>802</endpos></feature>
+<feature>
+<id>1980973</id>
+<title>beta-lactamase (ampicillin resistance marker)</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>957</startpos>
+<endpos>1817</endpos></feature>
+<feature>
+<id>1980974</id>
+<title>beta-lactamase (ampR) promoter</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>1859</startpos>
+<endpos>1887</endpos></feature>
+<feature>
+<id>1980975</id>
+<title>Verification forward (VF2) primer binding site</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>1940</startpos>
+<endpos>1959</endpos></feature>
+<feature>
+<id>1980976</id>
+<title>EcoRI</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>2058</startpos>
+<endpos>2063</endpos></feature>
+<feature>
+<id>1980977</id>
+<title>NotI</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>2064</startpos>
+<endpos>2071</endpos></feature>
+<feature>
+<id>1980978</id>
+<title>BBa_B0015 (terminator)</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2080</startpos>
+<endpos>2208</endpos></feature>
+<feature>
+<id>1980979</id>
+<title>rrnB T1 terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2091</startpos>
+<endpos>2134</endpos></feature>
+<feature>
+<id>1980980</id>
+<title>BBa_R0040 (Ptet)</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2217</startpos>
+<endpos>2270</endpos></feature>
+<feature>
+<id>1980981</id>
+<title>Ptet promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2217</startpos>
+<endpos>2270</endpos></feature>
+<feature>
+<id>1980982</id>
+<title>BBa_B0034 RBS</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2279</startpos>
+<endpos>2290</endpos></feature>
+<feature>
+<id>1980983</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>2279</startpos>
+<endpos>2290</endpos></feature>
+<feature>
+<id>1980984</id>
+<title>XbaI</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>2292</startpos>
+<endpos>2297</endpos></feature>
+<feature>
+<id>1980986</id>
+<title>cheY*</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>2305</startpos>
+<endpos>2694</endpos></feature>
+<feature>
+<id>1980987</id>
+<title>BBa_K094110</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2305</startpos>
+<endpos>2694</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

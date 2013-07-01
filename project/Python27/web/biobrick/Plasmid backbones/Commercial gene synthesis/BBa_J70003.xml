@@ -1,0 +1,161 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10802</part_id>
+<part_name>BBa_J70003</part_name>
+<part_short_name>J70003</part_short_name>
+<part_short_desc>Geneart Cloning Plasmid pGA4</part_short_desc>
+<part_type>Plasmid</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>GeneArt pG</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J70003</part_url>
+<part_entered>2008-01-16</part_entered>
+<part_author>Randy Rettberg</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ctaaattgtaagcgttaatattttgttaaaattcgcgttaaatttttgttaaatcagctcattttttaaccaataggccg
+aaatcggcaaaatcccttataaatcaaaagaatagaccgagatagggttgagtgttgttccagtttggaacaagagtcca
+ctattaaagaacgtggactccaacgtcaaagggcgaaaaaccgtctatcagggctatggcccactacgtgaaccatcacc
+ctaatcaagttttttggggtcgaggtgccgtaaagcactaaatcggaaccctaaagggagcccccgatttagagcttgac
+ggggaaagccggcgaacgtggcgagaaaggaagggaagaaagcgaaaggagcgggcgctagggcgctggcaagtgtagcg
+gtcacgctgcgcgtaaccaccacacccgccgcgcttaatgcgccgctacagggcgcgtcccattcgccattcaggctgcg
+caactgttgggaagggcgatcggtgcgggcctcttcgctattacgccagctggcgaaagggggatgtgctgcaaggcgat
+taagttgggtaacgccagggttttcccagtcacgacgttgtaaaacgacggccagtgagcgcgcgtaatacgactcacta
+tagggcgaattgggtaccgggccccccctcgaggtcgacggtatcgataagcttgatatcgaattcctgcagcccggggg
+atccgcccgggctagagcggccgccaccgcggtggagctccagcttttgttccctttagtgagggttaattgcgcgcttg
+gcgtaatcatggtcatagctgtttcctgtgtgaaattgttatccgctcacaattccacacaacatacgagccggaagcat
+aaagtgtaaagcctggggtgcctaatgagtgagctaactcacattaattgcgttgcgctcactgcccgctttccagtcgg
+gaaacctgtcgtgccagctgcattaatgaatcggccaacgcgcggggagaggcggtttgcgtattgggcgctcttccgct
+tcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctcactcaaaggcggtaatacggtt
+atccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggccaggaaccgtaaaaaggccg
+cgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacgctcaagtcagaggtggcgaaac
+ccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcctgttccgaccctgccgcttac
+cggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcacgctgtaggtatctcagttcggtgt
+aggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcgccttatccggtaactatcgt
+cttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacaggattagcagagcgaggtatgt
+aggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaagaacagtatttggtatctgcgctctgc
+tgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccgctggtagcggtggttttttt
+gtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatcttttctacggggtctgacgctca
+gtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttcacctagatccttttaaattaaa
+aatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttaccaatgcttaatcagtgaggcacct
+atctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagataactacgatacgggagggctt
+accatctggccccagtgctgcaatgataccgcgagaaccacgctcaccggctccagatttatcagcaataaaccagccag
+ccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctattaattgttgccgggaagctaga
+gtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcgtggtgtcacgctcgtcgtttgg
+tatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgttgtgcaaaaaagcggttagct
+ccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggttatggcagcactgcataattct
+cttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtcattctgagaatagtgtatgcg
+gcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcagaactttaaaagtgctcatcattg
+gaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcgatgtaacccactcgtgcaccc
+aactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgccgcaaaaaaggg
+aataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaagcatttatcagggttattgtc
+tcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgcacatttccccgaaaagtgcca
+c
+</seq_data></sequences>
+<features>
+<feature>
+<id>1959609</id>
+<title>f1 (+) Origin</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>3</startpos>
+<endpos>459</endpos></feature>
+<feature>
+<id>1959608</id>
+<title>D_Segment</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>500</startpos>
+<endpos>658</endpos></feature>
+<feature>
+<id>1959605</id>
+<title>T7 Promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>624</startpos>
+<endpos>646</endpos></feature>
+<feature>
+<id>1959606</id>
+<title>T3 Promoter</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>772</startpos>
+<endpos>789</endpos></feature>
+<feature>
+<id>1959610</id>
+<title>ColE1 Origin</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1232</startpos>
+<endpos>1672</endpos></feature>
+<feature>
+<id>1959607</id>
+<title>AmpR</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>1975</startpos>
+<endpos>2832</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>copies</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4387</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>A</value>
+<units></units>
+<url></url>
+<id>4388</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>mcs</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4389</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4390</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4391</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//plasmidbackbone/synthesis</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

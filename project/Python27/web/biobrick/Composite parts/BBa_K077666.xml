@@ -1,0 +1,328 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11485</part_id>
+<part_name>BBa_K077666</part_name>
+<part_short_name>K077666</part_short_name>
+<part_short_desc>part 2 for interval switch</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K077666</part_url>
+<part_entered>2008-08-05</part_entered>
+<part_author>Floor Hugenholtz</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>156</part_id>
+<part_name>BBa_C0051</part_name>
+<part_short_desc>cI repressor from E. coli phage lambda (+LVA) </part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>159</part_id>
+<part_name>BBa_C0060</part_name>
+<part_short_desc>autoinducer inactivation enzyme from Bacillus; hydrolyzes acetyl homoserine lactone</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>aiiA</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>156</part_id>
+<part_name>BBa_C0051</part_name>
+<part_short_desc>cI repressor from E. coli phage lambda (+LVA) </part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>159</part_id>
+<part_name>BBa_C0060</part_name>
+<part_short_desc>autoinducer inactivation enzyme from Bacillus; hydrolyzes acetyl homoserine lactone</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>aiiA</part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>156</part_id>
+<part_name>BBa_C0051</part_name>
+<part_short_desc>cI repressor from E. coli phage lambda (+LVA) </part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>159</part_id>
+<part_name>BBa_C0060</part_name>
+<part_short_desc>autoinducer inactivation enzyme from Bacillus; hydrolyzes acetyl homoserine lactone</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>aiiA</part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aaagaggagaaatactagatgagcacaaaaaagaaaccattaacacaagagcagcttgaggacgcacgtcgccttaaagc
+aatttatgaaaaaaagaaaaatgaacttggcttatcccaggaatctgtcgcagacaagatggggatggggcagtcaggcg
+ttggtgctttatttaatggcatcaatgcattaaatgcttataacgccgcattgcttgcaaaaattctcaaagttagcgtt
+gaagaatttagcccttcaatcgccagagaaatctacgagatgtatgaagcggttagtatgcagccgtcacttagaagtga
+gtatgagtaccctgttttttctcatgttcaggcagggatgttctcacctgagcttagaacctttaccaaaggtgatgcgg
+agagatgggtaagcacaaccaaaaaagccagtgattctgcattctggcttgaggttgaaggtaattccatgaccgcacca
+acaggctccaagccaagctttcctgacggaatgttaattctcgttgaccctgagcaggctgttgagccaggtgatttctg
+catagccagacttgggggtgatgagtttaccttcaagaaactgatcagggatagcggtcaggtgtttttacaaccactaa
+acccacagtacccaatgatcccatgcaatgagagttgttccgttgtggggaaagttatcgctagtcagtggcctgaagag
+acgtttggcgctgcaaacgacgaaaactacgctttagtagcttaataacgctgatagtgctagtgtagatcgctactaga
+gaaagaggagaaatactagatgacagtaaagaagctttatttcgtcccagcaggtcgttgtatgttggatcattcgtctg
+ttaatagtacattaacaccaggagaattattagacttaccggtttggtgttatcttttggagactgaagaaggacctatt
+ttagtagatacaggtatgccagaaagtgcagttaataatgaaggtctttttaacggtacatttgtcgaagggcaggtttt
+accgaaaatgactgaagaagatagaatcgtgaatattttaaaacgggttggttatgagccggaagaccttctttatatta
+ttagttctcacttgcattttgatcatgcaggaggaaatggcgcttttataaatacaccaatcattgtacagcgtgctgaa
+tatgaggcggcgcagcatagcgaagaatatttgaaagaatgtatattgccgaatttaaactacaaaatcattgaaggtga
+ttatgaagtcgtaccaggagttcaattattgcatacaccaggccatactccagggcatcaatcgctattaattgagacag
+aaaaatccggtcctgtattattaacgattgatgcatcgtatacgaaagagaattttgaaaatgaagtgccatttgcggga
+tttgattcagaattagctttatcttcaattaaacgtttaaaagaagtggtgatgaaagagaagccgattgttttctttgg
+acatgatatagagcaggaaaggggatgtaaagtgttccctgaatatatagctgcaaacgacgaaaactacgctttagtag
+cttaataacgctgatagtgctagtgtagatcgctactagagccaggcatcaaataaaacgaaaggctcagtcgaaagact
+gggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttc
+tgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1969979</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>1969978</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>5</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>1969982</id>
+<title>BBa_C0051</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>768</endpos></feature>
+<feature>
+<id>1969980</id>
+<title>cI lambda</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>729</endpos></feature>
+<feature>
+<id>1969981</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>730</startpos>
+<endpos>762</endpos></feature>
+<feature>
+<id>1969983</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>769</startpos>
+<endpos>793</endpos></feature>
+<feature>
+<id>1969985</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>802</startpos>
+<endpos>813</endpos></feature>
+<feature>
+<id>1969984</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>806</startpos>
+<endpos>809</endpos></feature>
+<feature>
+<id>1969988</id>
+<title>BBa_C0060</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>820</startpos>
+<endpos>1608</endpos></feature>
+<feature>
+<id>1969987</id>
+<title>aiiA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>820</startpos>
+<endpos>1569</endpos></feature>
+<feature>
+<id>1969986</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>820</startpos>
+<endpos>822</endpos></feature>
+<feature>
+<id>1969989</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>1570</startpos>
+<endpos>1602</endpos></feature>
+<feature>
+<id>1969990</id>
+<title>2</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1603</startpos>
+<endpos>1608</endpos></feature>
+<feature>
+<id>1969991</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1609</startpos>
+<endpos>1633</endpos></feature>
+<feature>
+<id>1969992</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1642</startpos>
+<endpos>1721</endpos></feature>
+<feature>
+<id>1969993</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1653</startpos>
+<endpos>1696</endpos></feature>
+<feature>
+<id>1969994</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1730</startpos>
+<endpos>1770</endpos></feature>
+<feature>
+<id>1969995</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1737</startpos>
+<endpos>1756</endpos></feature>
+<feature>
+<id>1969996</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1757</startpos>
+<endpos>1770</endpos></feature>
+<feature>
+<id>1969997</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1763</startpos>
+<endpos>1763</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

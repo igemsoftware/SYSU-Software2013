@@ -1,0 +1,186 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13205</part_id>
+<part_name>BBa_K086016</part_name>
+<part_short_name>K086016</part_short_name>
+<part_short_desc>modified Lutz-Bujard LacO promoter,with alternative sigma factor  &amp;#963;38  followed by YFP reporter</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K086016</part_url>
+<part_entered>2008-10-29</part_entered>
+<part_author>Gairik Sachdeva</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>13182</part_id>
+<part_name>BBa_K086033</part_name>
+<part_short_desc>modified Lutz-Bujard LacO promoter,with alternative sigma factor  &amp;#963;38 </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4460</part_id>
+<part_name>BBa_E0030</part_name>
+<part_short_desc>enhanced yellow fluorescent protein derived from A. victoria GFP</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>eyfp</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>13182</part_id>
+<part_name>BBa_K086033</part_name>
+<part_short_desc>modified Lutz-Bujard LacO promoter,with alternative sigma factor  &amp;#963;38 </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4462</part_id>
+<part_name>BBa_E0430</part_name>
+<part_short_desc>EYFP (RBS+ LVA- TERM) (B0034.E0030.B0015)</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>13182</part_id>
+<part_name>BBa_K086033</part_name>
+<part_short_desc>modified Lutz-Bujard LacO promoter,with alternative sigma factor  &amp;#963;38 </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>4462</part_id>
+<part_name>BBa_E0430</part_name>
+<part_short_desc>EYFP (RBS+ LVA- TERM) (B0034.E0030.B0015)</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aattgtgagcggataacaacttcaaatgtgagcggataacactataattaatagatactagagaaagaggagaaatacta
+gatggtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggcgacgtaaacggccaca
+agttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcatctgcaccaccggcaag
+ctgcccgtgccctggcccaccctcgtgaccaccttcggctacggcctgcaatgcttcgcccgctaccccgaccacatgaa
+gctgcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacggcaact
+acaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttcaaggag
+gacggcaacatcctggggcacaagctggagtacaactacaacagccacaacgtctatatcatggccgacaagcagaagaa
+cggcatcaaggtgaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccgaccactaccagcagaaca
+cccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagctaccagtccgccctgagcaaagaccccaac
+gagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcatggacgagctgtacaagta
+ataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcg
+gtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1995988</id>
+<title>P38_4</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>1995989</id>
+<title>BBa_K086033</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>1995991</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>64</startpos>
+<endpos>75</endpos></feature>
+<feature>
+<id>1995990</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>68</startpos>
+<endpos>71</endpos></feature>
+<feature>
+<id>1995992</id>
+<title>BBa_E0030</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>82</startpos>
+<endpos>804</endpos></feature>
+<feature>
+<id>1995993</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>813</startpos>
+<endpos>892</endpos></feature>
+<feature>
+<id>1995994</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>824</startpos>
+<endpos>867</endpos></feature>
+<feature>
+<id>1995995</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>901</startpos>
+<endpos>941</endpos></feature>
+<feature>
+<id>1995996</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>908</startpos>
+<endpos>927</endpos></feature>
+<feature>
+<id>1995997</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>928</startpos>
+<endpos>941</endpos></feature>
+<feature>
+<id>1995998</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>934</startpos>
+<endpos>934</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

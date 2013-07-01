@@ -1,0 +1,86 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10973</part_id>
+<part_name>BBa_J70012</part_name>
+<part_short_name>J70012</part_short_name>
+<part_short_desc>A BioScaffold Part (Uses PsrI), Protein Head Remover see Part Design page</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Missing</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J70012</part_url>
+<part_entered>2008-05-09</part_entered>
+<part_author>Julie Norville</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>aacacctggtacagcaggtggcgcgccggcgcgccagctggtgaacaccagg
+</seq_data></sequences>
+<features>
+<feature>
+<id>1963015</id>
+<title>PsrI 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>1963018</id>
+<title>Mab 1</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>1963016</id>
+<title>PsrI 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>10</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>1963021</id>
+<title>AscI 1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>27</endpos></feature>
+<feature>
+<id>1963022</id>
+<title>AscI 2 </title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>28</startpos>
+<endpos>34</endpos></feature>
+<feature>
+<id>1963017</id>
+<title>PsrI 2</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>43</startpos>
+<endpos>46</endpos></feature>
+<feature>
+<id>1963020</id>
+<title>Mab 2</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>47</startpos>
+<endpos>52</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//DNA/bioscaffold</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,347 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>5998</part_id>
+<part_name>BBa_I13543</part_name>
+<part_short_name>I13543</part_short_name>
+<part_short_desc>Intermediate in two promoter screening plasmid</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I13543</part_url>
+<part_entered>2005-08-22</part_entered>
+<part_author>Josh Michener</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>5843</part_id>
+<part_name>BBa_I13457</part_name>
+<part_short_desc>Improved insertion site with two RNAse  E cut sites</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>5843</part_id>
+<part_name>BBa_I13457</part_name>
+<part_short_desc>Improved insertion site with two RNAse  E cut sites</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5843</part_id>
+<part_name>BBa_I13457</part_name>
+<part_short_desc>Improved insertion site with two RNAse  E cut sites</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttatgacaacttgacggctacatcattcactttttcttcacaaccggcacggaactcgctcgggctggccccggtgcatt
+ttttaaatacccgcgagaaatagagttgatcgtcaaaaccaacattgcgaccgacggtggcgataggcatccgggtggtg
+ctcaaaagcagcttcgcctggctgatacgttggtcctcgcgccagcttaagacgctaatccctaactgctggcggaaaag
+atgtgacagacgcgacggcgacaagcaaacatgctgtgcgacgctggcgatatcaaaattgctgtctgccaggtgatcgc
+tgatgtactgacaagcctcgcgtacccgattatccatcggtggatggagcgactcgttaatcgcttccatgcgccgcagt
+aacaattgctcaagcagatttatcgccagcagctccgaatagcgcccttccccttgcccggcgttaatgatttgcccaaa
+caggtcgctgaaatgcggctggtgcgcttcatccgggcgaaagaaccccgtattggcaaatattgacggccagttaagcc
+attcatgccagtaggcgcgcggacgaaagtaaacccactggtgataccattcgcgagcctccggatgacgaccgtagtga
+tgaatctctcctggcgggaacagcaaaatatcacccggtcggcaaacaaattctcgtccctgatttttcaccaccccctg
+accgcgaatggtgagattgagaatataacctttcattcccagcggtcggtcgataaaaaaatcgagataaccgttggcct
+caatcggcgttaaacccgccaccagatgggcattaaacgagtatcccggcagcaggggatcattttgcgcttcagccata
+cttttcatactcccgccattcagagaagaaaccaattgtccatattgcatcagacattgccgtcactgcgtcttttactg
+gctcttctcgctaaccaaaccggtaaccccgcttattaaaagcattctgtaacaaagcgggaccaaagccatgacaaaaa
+cgcgtaacaaaagtgtctataatcacggcagaaaagtccacattgattatttgcacggcgtcacactttgctatgccata
+gcatttttatccataagattagcggatcctacctgacgctttttatcgcaactctctactgtttctccatacccgttttt
+ttgggctagctactagagtattatttgtattgatctggtgaattaggtcttcgaatccgatccattgcagtggtattatt
+tgtattgatctccttactatctctcgagagattagtacctttggagatctactagagaaagaggagaaatactagatggc
+ttcctccgaagacgttatcaaagagttcatgcgtttcaaagttcgtatggaaggttccgttaacggtcacgagttcgaaa
+tcgaaggtgaaggtgaaggtcgtccgtacgaaggtacccagaccgctaaactgaaagttaccaaaggtggtccgctgccg
+ttcgcttgggacatcctgtccccgcagttccagtacggttccaaagcttacgttaaacacccggctgacatcccggacta
+cctgaaactgtccttcccggaaggtttcaaatgggaacgtgttatgaacttcgaagacggtggtgttgttaccgttaccc
+aggactcctccctgcaagacggtgagttcatctacaaagttaaactgcgtggtaccaacttcccgtccgacggtccggtt
+atgcagaaaaaaaccatgggttgggaagcttccaccgaacgtatgtacccggaagacggtgctctgaaaggtgaaatcaa
+aatgcgtctgaaactgaaagacggtggtcactacgacgctgaagttaaaaccacctacatggctaaaaaaccggttcagc
+tgccgggtgcttacaaaaccgacatcaaactggacatcacctcccacaacgaagactacaccatcgttgaacagtacgaa
+cgtgctgaaggtcgtcactccaccggtgcttaataacgctgatagtgctagtgtagatcgctactagagccaggcatcaa
+ataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtca
+cactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1663956</id>
+<title>AraC</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1079</endpos></feature>
+<feature>
+<id>1663959</id>
+<title>BBa_I0500</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>1663957</id>
+<title>PC</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1043</startpos>
+<endpos>1114</endpos></feature>
+<feature>
+<id>1663958</id>
+<title>Pbad</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1080</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>1663973</id>
+<title>RNAse E site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1219</startpos>
+<endpos>1239</endpos></feature>
+<feature>
+<id>1663979</id>
+<title>BBa_I13457</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1219</startpos>
+<endpos>1329</endpos></feature>
+<feature>
+<id>1663974</id>
+<title>RNAse E cut site (between the bases)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1227</startpos>
+<endpos>1228</endpos></feature>
+<feature>
+<id>1663975</id>
+<title>Insertion site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1240</startpos>
+<endpos>1273</endpos></feature>
+<feature>
+<id>1663976</id>
+<title>RNAse E site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1274</startpos>
+<endpos>1294</endpos></feature>
+<feature>
+<id>1663977</id>
+<title>RNAse E cut site (between the bases)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1282</startpos>
+<endpos>1283</endpos></feature>
+<feature>
+<id>1663978</id>
+<title>Hairpin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1295</startpos>
+<endpos>1329</endpos></feature>
+<feature>
+<id>1663984</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1338</startpos>
+<endpos>1349</endpos></feature>
+<feature>
+<id>1663983</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>1342</startpos>
+<endpos>1345</endpos></feature>
+<feature>
+<id>1663990</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1356</startpos>
+<endpos>2030</endpos></feature>
+<feature>
+<id>1663991</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1356</startpos>
+<endpos>2036</endpos></feature>
+<feature>
+<id>1663992</id>
+<title></title>
+<type>barcode</type>
+<direction>forward</direction>
+<startpos>2037</startpos>
+<endpos>2061</endpos></feature>
+<feature>
+<id>1663997</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2070</startpos>
+<endpos>2149</endpos></feature>
+<feature>
+<id>1663998</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2081</startpos>
+<endpos>2124</endpos></feature>
+<feature>
+<id>1664007</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2158</startpos>
+<endpos>2198</endpos></feature>
+<feature>
+<id>1664008</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2165</startpos>
+<endpos>2184</endpos></feature>
+<feature>
+<id>1664009</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>2185</startpos>
+<endpos>2198</endpos></feature>
+<feature>
+<id>1664010</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2191</startpos>
+<endpos>2191</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/composite/uncategorized</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

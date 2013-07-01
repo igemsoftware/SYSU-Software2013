@@ -1,0 +1,166 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>14845</part_id>
+<part_name>BBa_K228809</part_name>
+<part_short_name>K228809</part_short_name>
+<part_short_desc>RBS(B0034)+tetR(C0040)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>Issues</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K228809</part_url>
+<part_entered>2009-09-07</part_entered>
+<part_author>Shuke Wu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>154</part_id>
+<part_name>BBa_C0040</part_name>
+<part_short_desc>tetracycline repressor from transposon Tn10 (+LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetR</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>154</part_id>
+<part_name>BBa_C0040</part_name>
+<part_short_desc>tetracycline repressor from transposon Tn10 (+LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetR</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>154</part_id>
+<part_name>BBa_C0040</part_name>
+<part_short_desc>tetracycline repressor from transposon Tn10 (+LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetR</part_nickname></subpart>
+<barcode></barcode></specified_subscars>
+<sequences>
+<seq_data>aaagaggagaaatactagatgtccagattagataaaagtaaagtgattaacagcgcattagagctgcttaatgaggtcgg
+aatcgaaggtttaacaacccgtaaactcgcccagaagctaggtgtagagcagcctacattgtattggcatgtaaaaaata
+agcgggctttgctcgacgccttagccattgagatgttagataggcaccatactcacttttgccctttagaaggggaaagc
+tggcaagattttttacgtaataacgctaaaagttttagatgtgctttactaagtcatcgcgatggagcaaaagtacattt
+aggtacacggcctacagaaaaacagtatgaaactctcgaaaatcaattagcctttttatgccaacaaggtttttcactag
+agaatgcattatatgcactcagcgctgtggggcattttactttaggttgcgtattggaagatcaagagcatcaagtcgct
+aaagaagaaagggaaacacctactactgatagtatgccgccattattacgacaagctatcgaattatttgatcaccaagg
+tgcagagccagccttcttattcggccttgaattgatcatatgcggattagaaaaacaacttaaatgtgaaagtgggtccg
+ctgcaaacgacgaaaactacgctttagtagcttaataacactgatagtgctagtgtagatcac
+</seq_data></sequences>
+<features>
+<feature>
+<id>2019233</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2019232</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>5</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>2019236</id>
+<title>BBa_C0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>678</endpos></feature>
+<feature>
+<id>2019234</id>
+<title>tetR</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>638</endpos></feature>
+<feature>
+<id>2019235</id>
+<title>SsrA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>639</startpos>
+<endpos>672</endpos></feature>
+<feature>
+<id>2019237</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>679</startpos>
+<endpos>703</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>RBS(B0034)+tetR(C0040)</value>
+<units></units>
+<url></url>
+<id>9040</id>
+<m_date>2009-10-21 14:15:08</m_date>
+<user_id>4411</user_id>
+<user_name>Spring_zhq</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RBS(B0034)+tetR(C0040)</value>
+<units></units>
+<url></url>
+<id>9041</id>
+<m_date>2009-10-21 14:15:08</m_date>
+<user_id>4411</user_id>
+<user_name>Spring_zhq</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RBS(B0034)+tetR(C0040)</value>
+<units></units>
+<url></url>
+<id>9042</id>
+<m_date>2009-10-21 14:15:08</m_date>
+<user_id>4411</user_id>
+<user_name>Spring_zhq</user_name></parameter></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_S0101</twin>
+<twin>BBa_I10013</twin>
+<twin>BBa_S03518</twin>
+<twin>BBa_J09041</twin>
+<twin>BBa_J24688</twin>
+<twin>BBa_S03879</twin>
+<twin>BBa_S04603</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

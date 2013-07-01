@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20414</part_id>
+<part_name>BBa_K325202</part_name>
+<part_short_name>K325202</part_short_name>
+<part_short_desc>Luciferin Regenerating Enzyme (LRE)&lt;BR&gt;&lt;i&gt;L. Cruciata&lt;BR&gt;(E. coli optimised)&lt;/i&gt;</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K325202</part_url>
+<part_entered>2010-10-23</part_entered>
+<part_author>Paul Masset and Theo Sanderson</part_author>
+<best_quality>Partially Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ttaaggaggtaaaaaaaatggccccgaccgtggaacaaattgtggagctgggtacgtatctgctggccgaaagcccgcac
+tgggacgatgaaacgcaaagcctgtatttcgtcgatatcgttggtcgcagcgtgaacaaatacgttccgacgaccaagac
+gcatacccaactgaaattcgacaagaatccgagcttcatcatcccggtgaagggttgttccgaccgttttatcgtcagcc
+tggaacgcgagatcaacctgctgacctgggacggcgcatcctctgcaccatccaagattgagaagatcgcggttttcgat
+aatacgccagagaagagcgaaaaccgtctgaacgatggtaaggcagatccgctgggcaacctgtgggcgggtaccatgaa
+tatgggttctgaccataccaccggcacgccggtgcgcggtaccctgagcagcctgagcaacaagcaagtcaaagagcacg
+tcagcgaggtctgcatcagcaatggcctggcatggagcaaggacctgaagaaattctattacattgatagcgctgttcgt
+caagttgaccagttcgatttcgatgcgaaaaacctgagcttgagcaatcgtcaaccgctgttcacctttgacaaacacgg
+catcatgggtagcccggatggtcagaccatcgatgcggagggtaacctgtgggttgccacctgtcagggcgataaagtcc
+tgaagattgatacttctaccccggaaaccctgctgggtattgtggagattccggaacatcaggtgacgagcgtttgcatc
+ggcggtgcagaactgaacgttttgtatgtgacgaccgcgtccattaaactgcctggtgcggatgaaaccaagccgatgaa
+aggcgccatctataaagtcaccggtctgggtgtcaaaggtctgccgggtgaccgtgttaagctgtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2102597</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>17</endpos></feature>
+<feature>
+<id>2102599</id>
+<title>Luciferin Regenerating Enzyme (L. cruciata)</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>18</startpos>
+<endpos>944</endpos></feature>
+<feature>
+<id>2102611</id>
+<title>double stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>945</startpos>
+<endpos>950</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

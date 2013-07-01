@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>6009</part_id>
+<part_name>BBa_T9150</part_name>
+<part_short_name>T9150</part_short_name>
+<part_short_desc>orotidine 5</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>PyrF</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_T9150</part_url>
+<part_entered>2005-08-23</part_entered>
+<part_author>Jessica Harpole</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgacgttaactgcttcatcttcttcccgcgctgttacaaattctcctgtggttgttgcccttgattatcataatcgtga
+tgacgcgctggcctttgtcgacaagatcgacccacgcgattgtcgtctgaaggtcggcaaagagatgtttacattgtttg
+ggccacagtttgtgcgcgaacttcaacagcgtggttttgatatctttcttgacctgaaattccacgatatccccaacacc
+gcagcgcacgctgtcgctgcggcagctgacttaggcgtgtggatggtgaatgttcatgcctctggtggggcgcgtatgat
+gaccgcagcgcgtgaggcactggttccgtttggcaaagatgcaccgcttttgattgctgtgacagtgttgaccagcatgg
+aagccagcgacctggtcgatcttggcatgacactgtcacccgcagattatgcagaacgtctggcggcactgacgcaaaaa
+tgtggccttgatggtgtggtgtgttctgctcaggaagctgtgcgctttaaacaggtattcggtcaggagttcaaactggt
+tacgccgggcattcgtccgcaggggagtgaagctggtgaccagcgccgcattatgacgccagaacaggcgttgtcggctg
+gtgttgattatatggtgattggtcgcccggtaacgcaatcggtagatccagcgcagacgctgaaagcgatcaacgcctct
+ttacagcggagtgcataataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1892252</id>
+<title>PyrF</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>741</endpos></feature>
+<feature>
+<id>1666362</id>
+<title>G</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>39</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>1666363</id>
+<title>T</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>240</startpos>
+<endpos>245</endpos></feature>
+<feature>
+<id>1666364</id>
+<title>T</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>261</startpos>
+<endpos>266</endpos></feature>
+<feature>
+<id>1666373</id>
+<title>T</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>441</startpos>
+<endpos>446</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>ec_num</name>
+<value>4.1.1.23</value>
+<units></units>
+<url></url>
+<id>2639</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>swisspro</name>
+<value>P08244</value>
+<units></units>
+<url></url>
+<id>2640</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>kegg</name>
+<value>eco:b1281;</value>
+<units></units>
+<url></url>
+<id>2641</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>protein</name>
+<value>PyrF</value>
+<units></units>
+<url></url>
+<id>3953</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>direction</name>
+<value>Forward</value>
+<units></units>
+<url></url>
+<id>3954</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>tag</name>
+<value>None</value>
+<units></units>
+<url></url>
+<id>3955</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//cds</category>
+<category>//cds/enzyme</category>
+<category>//cds/selectionmarker</category>
+<category>//function/biosynthesis</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

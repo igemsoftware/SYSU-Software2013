@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23409</part_id>
+<part_name>BBa_K581021</part_name>
+<part_short_name>K581021</part_short_name>
+<part_short_desc>RBS+afsA</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K581021</part_url>
+<part_entered>2011-09-28</part_entered>
+<part_author>Wenhan Luo, Yanrong Ma</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>aaagaggagaaatactagatggacgcggaggccgaggtggtgcatcccgtggggatcgagatggtgcaccggaccaggcc
+ggaggacgcctttccgcgcaactgggtacgcctggggcgcgaccggttcgcggtggaagcggtccttccgcacgaccatc
+ccttcttcgctccggtgggtgacgacctgcacgatccgctgctggtcgcggaggccatgcggcaggcggccatgctcgcc
+ttccacgccgggtacgggatcccgctcggctaccacttcctcctgacggagctggactacgtctgccatcccgagcacct
+cggcgtggggggcgagcccaccgagatcggcctggaggtgttctgctccgacctgaagtggcgggccgggctcccggcgc
+aggggcgcgtcggctgggcggtgcaccggggcgaccggctcgccgcgacgggggtggcggcgacccggttcagcacgccc
+aaggcctaccggcggatgcgcggcgacgtcccggtcgagggcatatccctaccggagaccgcgccggtcccggcctcgcc
+ggcgggccgcgcccgcgtcgaggacgtggtgctctcggggacggggcgggagggagtctgggaactgcgcgtggacaccc
+ggcatccgaccctcttccagcgccccaacgaccacgtcccgggcatgctcctgctggaggcggcccgtcaggccgcgtgc
+ctggtggcggggcccgccggaatcgttccggtggaggcgcgcacccggttccaccggtactccgagttcggcagcccgtg
+ctggataggggcggtggtccagccgggggcggacgaggatacggtgaccgtccgggtgacaggccatcaggacggcgaga
+cggtcttctccacggtcctgtccggcccccgggcccacggctga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2154936</id>
+<title>B0034</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2154937</id>
+<title>afsA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>924</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>RBS+afsA</value>
+<units></units>
+<url></url>
+<id>15176</id>
+<m_date>2011-10-05 13:09:01</m_date>
+<user_id>8617</user_id>
+<user_name>nuanuan128</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RBS+afsA</value>
+<units></units>
+<url></url>
+<id>15177</id>
+<m_date>2011-10-05 13:09:01</m_date>
+<user_id>8617</user_id>
+<user_name>nuanuan128</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RBS+afsA</value>
+<units></units>
+<url></url>
+<id>15178</id>
+<m_date>2011-10-05 13:09:01</m_date>
+<user_id>8617</user_id>
+<user_name>nuanuan128</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

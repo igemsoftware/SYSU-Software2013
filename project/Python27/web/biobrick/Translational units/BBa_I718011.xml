@@ -1,0 +1,142 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10571</part_id>
+<part_name>BBa_I718011</part_name>
+<part_short_name>I718011</part_short_name>
+<part_short_desc>rbs-dapA coli</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I718011</part_url>
+<part_entered>2007-10-26</part_entered>
+<part_author>David Bikard</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>147</part_id>
+<part_name>BBa_B0030</part_name>
+<part_short_desc>RBS.1 (strong) -- modified from R. Weiss</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>9249</part_id>
+<part_name>BBa_I718004</part_name>
+<part_short_desc>DapA Coli MG1655</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>147</part_id>
+<part_name>BBa_B0030</part_name>
+<part_short_desc>RBS.1 (strong) -- modified from R. Weiss</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>9249</part_id>
+<part_name>BBa_I718004</part_name>
+<part_short_desc>DapA Coli MG1655</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>147</part_id>
+<part_name>BBa_B0030</part_name>
+<part_short_desc>RBS.1 (strong) -- modified from R. Weiss</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>9249</part_id>
+<part_name>BBa_I718004</part_name>
+<part_short_desc>DapA Coli MG1655</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>attaaagaggagaaatactagatgttcacgggaagtattgtcgcgattgttactccgatggatgaaaaaggtaatgtctg
+tcgggctagcttgaaaaaactgattgattatcatgtcgccagcggtacttcggcgatcgtttctgttggcaccactggcg
+agtccgctaccttaaatcatgacgaacatgctgatgtggtgatgatgacgctggatctggctgatgggcgcattccggta
+attgccgggaccggcgctaacgctactgcggaagccattagcctgacgcagcgcttcaatgacagtggtatcgtcggctg
+cctgacggtaaccccttactacaatcgtccgtcgcaagaaggtttgtatcagcatttcaaagccatcgctgagcatactg
+acctgccgcaaattctgtataatgtgccgtcccgtactggctgcgatctgctcccggaaacggtgggccgtctggcgaaa
+gtaaaaaatattatcggaatcaaagaggcaacagggaacttaacgcgtgtaaaccagatcaaagagctggtttcagatga
+ttttgttctgctgagcggcgatgatgcgagcgcgctggacttcatgcaattgggcggtcatggggttatttccgttacgg
+ctaacgtcgcagcgcgtgatatggcccagatgtgcaaactggcagcagaagggcattttgccgaggcacgcgttattaat
+cagcgtctgatgccattacacaacaaactatttgtcgaacccaatccaatcccggtgaaatgggcatgtaaggaactggg
+tcttgtggcgaccgatacgctgcgcctgccaatgacaccaatcaccgacagtggtcgtgagacggtcagagcggcgctta
+agcatgccggtttgctgtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1956156</id>
+<title>RBS-1\Strong</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>15</endpos></feature>
+<feature>
+<id>1956157</id>
+<title>BBa_B0030</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>15</endpos></feature>
+<feature>
+<id>1956158</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>8</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>1956159</id>
+<title>start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>1956160</id>
+<title>DapA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>903</endpos></feature>
+<feature>
+<id>1956162</id>
+<title>BBa_I718004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>22</startpos>
+<endpos>903</endpos></feature>
+<feature>
+<id>1956161</id>
+<title>stop</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>898</startpos>
+<endpos>903</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_S03754</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,180 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12785</part_id>
+<part_name>BBa_K157041</part_name>
+<part_short_name>K157041</part_short_name>
+<part_short_desc>Transfection vector (similar to pSB1AK8)</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>Transfecti</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K157041</part_url>
+<part_entered>2008-10-26</part_entered>
+<part_author>iGEM Team Freiburg 2008 </part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tactagtagcggccgctgcagctagagctcgctgatcagcctcgactgtgccttctagttgccagccatctgttgtttgc
+ccctcccccgtgccttccttgaccctggaaggtgccactcccactgtcctttcctaataaaatgaggaaattgcatcgca
+ttgtctgagtaggtgtcattctattctggggggtggggtggggcaggacagcaagggggaggattgggaagacaatagca
+ggcatgctggggatatgcaccggcaaaaaaacgggcaaggtgtcaccaccctgccctttttctttaaaaccgaaaagatt
+acttcgcgttatgcaggcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctcact
+caaaggcggtaatacggttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggcc
+aggaaccgtaaaaaggccgcgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacgctc
+aagtcagaggtggcgaaacccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcctg
+ttccgaccctgccgcttaccggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcacgctgt
+aggtatctcagttcggtgtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcgc
+cttatccggtaactatcgtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacagga
+ttagcagagcgaggtatgtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaaggacagta
+tttggtatctgcgctctgctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccgc
+tggtagcggtggtttttttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatctttt
+ctacggggtctgacgctcagtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttcacc
+tagatccttttaaattaaaaatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagctcgagtcc
+cgtcaagtcagcgtaatgctctgccagtgttacaaccaattaaccaattctgattagaaaaactcatcgagcatcaaatg
+aaactgcaatttattcatatcaggattatcaataccatatttttgaaaaagccgtttctgtaatgaaggagaaaactcac
+cgaggcagttccataggatggcaagatcctggtatcggtctgcgattccgactcgtccaacatcaatacaacctattaat
+ttcccctcgtcaaaaataaggttatcaagtgagaaatcaccatgagtgacgactgaatccggtgagaatggcaaaagctt
+atgcatttctttccagacttgttcaacaggccagccattacgctcgtcatcaaaatcactcgcatcaaccaaaccgttat
+tcattcgtgattgcgcctgagcgagacgaaatacgcgatcgctgttaaaaggacaattacaaacaggaatcgaatgcaac
+cggcgcaggaacactgccagcgcatcaacaatattttcacctgaatcaggatattcttctaatacctggaatgctgtttt
+cccggggatcgcagtggtgagtaaccatgcatcatcaggagtacggataaaatgcttgatggtcggaagaggcataaatt
+ccgtcagccagtttagtctgaccatctcatctgtaacatcattggcaacgctacctttgccatgtttcagaaacaactct
+ggcgcatcgggcttcccatacaatcgatagattgtcgcacctgattgcccgacattatcgcgagcccatttatacccata
+taaatcagcatccatgttggaatttaatcgcggcctggagcaagacgtttcccgttgaatatggctcataacaccccttg
+tattactgtttatgtaagcagacagttttattgttcatgatgatatatttttatcttgtgcaatgtaacatcagagattt
+tgagacacaacgtggctttgttgaataaatcgaacttttgctgagttgaaggatcagctcgagttaccaatgcttaatca
+gtgaggcacctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagataactacgata
+cgggagggcttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagatttatcagcaat
+aaaccagccagccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctattaattgttgcc
+gggaagctagagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcgtggtgtcacgc
+tcgtcgtttggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgttgtgcaaaaa
+agcggttagctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggttatggcagcac
+tgcataattctcttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtcattctgagaa
+tagtgtatgcggcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcagaactttaaaagt
+gctcatcattggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcgatgtaaccca
+ctcgtgcacccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgcc
+gcaaaaaagggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaagcatttatca
+gggttattgtctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgcacatttcccc
+gaaaagtgccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggcagaat
+ttcagataaaaaaaatccttagctttcgctaaggatgatttctggaattcgcggccgcttctaga
+</seq_data></sequences>
+<features>
+<feature>
+<id>1992678</id>
+<title>BioBrick suffix (missing a C)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>1992677</id>
+<title>Eukaryotic terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>257</endpos></feature>
+<feature>
+<id>1992679</id>
+<title>Stem loop</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>267</startpos>
+<endpos>301</endpos></feature>
+<feature>
+<id>1992680</id>
+<title>VR</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>394</startpos>
+<endpos>413</endpos></feature>
+<feature>
+<id>1992681</id>
+<title>rep (pMB1)</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>498</startpos>
+<endpos>1196</endpos></feature>
+<feature>
+<id>2064656</id>
+<title>kanamycin resistance marker</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>1334</startpos>
+<endpos>2149</endpos></feature>
+<feature>
+<id>2064657</id>
+<title>ampicillin resistance marker</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>2304</startpos>
+<endpos>3164</endpos></feature>
+<feature>
+<id>2064658</id>
+<title>VF2</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>3207</startpos>
+<endpos>3226</endpos></feature>
+<feature>
+<id>2064659</id>
+<title>BioBrick prefix (missing a 3&apos; G)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>3405</startpos>
+<endpos>3425</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>resistance</name>
+<value>AK</value>
+<units></units>
+<url></url>
+<id>9938</id>
+<m_date>2009-12-09 16:52:30</m_date>
+<user_id>126</user_id>
+<user_name>rshetty</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>pMB1</value>
+<units></units>
+<url></url>
+<id>9939</id>
+<m_date>2009-12-09 16:52:30</m_date>
+<user_id>126</user_id>
+<user_name>rshetty</user_name></parameter>
+<parameter>
+<name>copies</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>9940</id>
+<m_date>2009-12-09 16:52:30</m_date>
+<user_id>126</user_id>
+<user_name>rshetty</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>9941</id>
+<m_date>2009-12-09 16:52:30</m_date>
+<user_id>126</user_id>
+<user_name>rshetty</user_name></parameter></parameters>
+<categories>
+<category>//chassis/eukaryote</category>
+<category>//plasmidbackbone/operation</category>
+<category>//standard/10</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,175 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>8506</part_id>
+<part_name>BBa_J64100</part_name>
+<part_short_name>J64100</part_short_name>
+<part_short_desc>Medium copy ColE1 BioBrick vector</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Missing</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J64100</part_url>
+<part_entered>2007-04-03</part_entered>
+<part_author>Jeffrey J Tabor</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tcgagtgccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggcagaatt
+tcagataaaaaaaatccttagctttcgctaaggatgatttctggaattcgcggccgcttctagagactggctgtgtataa
+gggagcctgacatttatattccccagaacatcaggttaatggcgtttttgatgtcattttcgcggtggctgagatcagcc
+acttcttccccgataacggagaccggcacactggccatatcggtggtcatcatgcgccagctttcatccccgatatgcac
+caccgggtaaagttcacgggagactttatctgacagcagacgtgcactggccagggggatcaccatccgtcgcccgggcg
+tgtcaataatatcactctgtacatccacaaacagacgataacggctctctcttttataggtgtaaaccttaaactgcatt
+tcaccagcccctgttctcgtcagcaaaagagccgttcatttcaataaaccgggcgacctcagccatcccttcctgatttt
+ccgctttccagcgttcggcacgcagacgacgggcttcattctgcatggttgtgcttaccagaccggagatattgacatca
+tatatgccttgagcaactgatagctgtcgctgtcaactgtcactgtaatacgctgcttcatagcatacctctttttgaca
+tacttcgggtatacatatcagtatatattcttataccgcaaaaatcagcgcgcaaatacgcatactgttatctggctttt
+agtaagccggatccacgcgttactagtagcggccgctgcagtccggcaaaaaaacgggcaaggtgtcaccaccctgccct
+ttttctttaaaaccgaaaagattacttcgcgttatgcaggcttcctcgctcactgactcgctgcgctcggtcgttcggct
+gcggcgagcggtatcagctcactcaaaggcggtaatcctagggcgttcggctgcggcgagcggtatcagctcactcaaag
+gcggtaatacggttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggccaggaa
+ccgtaaaaaggccgcgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacgctcaagtc
+agaggtggcgaaacccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcctgttccg
+accctgccgcttaccggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcaatgctcacgctgtaggta
+tctcagttcggtgtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcgccttat
+ccggtaactatcgtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacaggattagc
+agagcgaggtatgtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaaggacagtatttgg
+tatctgcgctctgctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccgctggta
+gcggtggtttttttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatcttttctacg
+gggtctgacgctcagtggaacgaaaactcacgttaagggattttggtcatgacttgtgcttggattctcaccaataaaaa
+acgcccggcggcaaccgagcgttctgaacaaatccagatggagttctgaggtcattactggatctatcaacaggagtcca
+agcgagctcgatatcaaattacgccccgccctgccactcatcgcagtactgttgtaattcattaagcattctgccgacat
+ggaagccatcacagacggcatgatgaacctgaatcgccagcggcatcagcaccttgtcgccttgcgtataatatttgccc
+atggtgaaaacgggggcgaagaagttgtccatattggccacgtttaaatcaaaactggtgaaactcacccagggattggc
+tgagacgaaaaacatattctcaataaaccctttagggaaataggccaggttttcaccgtaacacgccacatcttgcgaat
+atatgtgtagaaactgccggaaatcgtcgtggtattcactccagagcgatgaaaacgtttcagtttgctcatggaaaacg
+gtgtaacaagggtgaacactatcccatatcaccagctcaccgtctttcattgccatacgaaattccggatgagcattcat
+caggcgggcaagaatgtgaataaaggccggataaaacttgtgcttatttttctttacggtctttaaaaaggccgtaatat
+ccagctgaacggtctggttataggtacattgagcaactgactgaaatgcctcaaaatgttctttacgatgccattgggat
+atatcaacggtggtatatccagtgatttttttctccattttagcttccttagctcctgaaaatctcgataactcaaaaaa
+tacgcccggtagtgatcttatttcattatggtgaaagttggaacctcttacgtgccgatcaacgtctcattttcgccaga
+tatcgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggccctttcgtcttcacc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1923840</id>
+<title>G00100</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>6</startpos>
+<endpos>25</endpos></feature>
+<feature>
+<id>1923841</id>
+<title>prefix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>124</startpos>
+<endpos>145</endpos></feature>
+<feature>
+<id>1923842</id>
+<title>P1010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>146</startpos>
+<endpos>820</endpos></feature>
+<feature>
+<id>1923843</id>
+<title>suffix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>821</startpos>
+<endpos>841</endpos></feature>
+<feature>
+<id>1923844</id>
+<title>G00101</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>977</startpos>
+<endpos>996</endpos></feature>
+<feature>
+<id>1931328</id>
+<title>G00101</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>1029</startpos>
+<endpos>1048</endpos></feature>
+<feature>
+<id>1923845</id>
+<title>ColE1 origin</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1130</startpos>
+<endpos>1812</endpos></feature>
+<feature>
+<id>1923846</id>
+<title>chloramphenicol resistance marker</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1939</startpos>
+<endpos>2598</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>copies</name>
+<value>15-20</value>
+<units></units>
+<url></url>
+<id>4601</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>C</value>
+<units></units>
+<url></url>
+<id>4602</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>mcs</name>
+<value>BioBrick</value>
+<units></units>
+<url></url>
+<id>4603</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>ColE1</value>
+<units></units>
+<url></url>
+<id>4604</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4605</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//plasmidbackbone/assembly</category>
+<category>//plasmidbackbone/copynumber/medium</category>
+<category>//plasmidbackbone/operation</category>
+<category>//standard/10</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

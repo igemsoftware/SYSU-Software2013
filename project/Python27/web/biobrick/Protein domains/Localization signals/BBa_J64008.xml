@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10799</part_id>
+<part_name>BBa_J64008</part_name>
+<part_short_name>J64008</part_short_name>
+<part_short_desc>SicP-SptP chaperone-secretion tag pair from Salmonella type III secretion system</part_short_desc>
+<part_type>Tag</part_type>
+<part_status>Unavailable</part_status>
+<part_results>Works</part_results>
+<part_nickname>SicP-SptP</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J64008</part_url>
+<part_entered>2008-01-15</part_entered>
+<part_author>Dan Widmaier</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgcaagcacaccaggatattatcgctaatattggtgagaaattgggtttaccgctcacttttgacgacaacaatcagtg
+cttattattactcgatagcgatatttttacgtctattgaagctaaagatgatatctggttattgaacggtatgattatac
+cgttatcgcctgtttgtggcgattctatctggcggcagattatggtgattaatggtgaactggctgcgaataatgaaggt
+acgttagcgtatattgatgccgcagagacgttgttgcttatacatgcaattaccgatctgacaaatacttaccatattat
+atcgcagcttgagtcatttgtgaatcagcaggaagcgctcaaaaacatactgcaggaatatgctaaagtatgaggagaga
+aaattgaataatttaacgttgtcttcgttttcaaaagttggtgtgtcgaatgatgcccgactttatattgctaaggaaaa
+tactgataaggcatatgttgcgcctgaaaaattttcgtcaaaagtattaacctggcttggaaaaatgccgttatttaaaa
+acactgaagtggtgcaaaaacatacggaaaatatcagagtacaggaccaaaagattttacagacatttctccatgcacta
+acggaaaaatatggggaaacagcggttaatgacgcactgttaatgtcccgtataaatatgaacaaaccccttacccaacg
+tttagcagtgcagatcacggagtgtgtaaaagctgctgacgaagggtttataaaccttattaagagcaaggataatgttg
+gtgtcaggaatgccgctttagtcataaaaggcggcgatacaaaagtggcagaaaaaaataacgatgttggagcagaaagt
+</seq_data></sequences>
+<features>
+<feature>
+<id>1959600</id>
+<title>sicP</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>393</endpos></feature>
+<feature>
+<id>1959602</id>
+<title>sptP RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>359</startpos>
+<endpos>379</endpos></feature>
+<feature>
+<id>1959601</id>
+<title>sptP167</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>380</startpos>
+<endpos>880</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//proteindomain/localization</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

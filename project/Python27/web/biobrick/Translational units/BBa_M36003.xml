@@ -1,0 +1,133 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>21474</part_id>
+<part_name>BBa_M36003</part_name>
+<part_short_name>M36003</part_short_name>
+<part_short_desc>glycogen synthase (w/UTR&amp;term)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_M36003</part_url>
+<part_entered>2011-04-28</part_entered>
+<part_author>Elliott Lui and Jesse Palmer</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>21453</part_id>
+<part_name>BBa_M36009</part_name>
+<part_short_desc>5&apos; Bicistronic UTR (strong), does not include ATG start 		</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21452</part_id>
+<part_name>BBa_M36007</part_name>
+<part_short_desc>glycogen synthase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21455</part_id>
+<part_name>BBa_M36010</part_name>
+<part_short_desc>Transcription Terminator (Strong)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>21453</part_id>
+<part_name>BBa_M36009</part_name>
+<part_short_desc>5&apos; Bicistronic UTR (strong), does not include ATG start 		</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21452</part_id>
+<part_name>BBa_M36007</part_name>
+<part_short_desc>glycogen synthase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21455</part_id>
+<part_name>BBa_M36010</part_name>
+<part_short_desc>Transcription Terminator (Strong)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>21453</part_id>
+<part_name>BBa_M36009</part_name>
+<part_short_desc>5&apos; Bicistronic UTR (strong), does not include ATG start 		</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21452</part_id>
+<part_name>BBa_M36007</part_name>
+<part_short_desc>glycogen synthase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>21455</part_id>
+<part_name>BBa_M36010</part_name>
+<part_short_desc>Transcription Terminator (Strong)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tatagagggtattaataatgtatggattaaaaggggaggtataacaaatgcaggttttacatgtatgttcagagatgttc
+ccgctgcttaaaaccggcggtctggctgatgttattggggcattacccgcagcacaaatcgcagacggcgttgacgctcg
+cgtactgttgcctgcatttcccgatattcgccgtggcgtgaccgatgcgcaggtagtatcccgtcgtgataccttcgccg
+gacatatcacgctgttgttcggtcattacaacggggttggcatttacctgattgacgcgccgcatctctatgatcgtccg
+ggaagcccgtatcacgataccaacttatttgcctataccgacaacgtattgcgttttgcgctgctggggtgggttggggc
+agaaatggccagcgggcttgacccattctggcgtcctgatgtggtgcatgcgcacgactggcatgcaggccttgcgcctg
+cgtatctggcggcgcgcgggcgtccggcgaagtcggtgtttactgtgcacaacctggcctatcaaggcatgttttatgca
+catcacatgaatgacatccaattgccatggtcattctttaatattcatgggctggaattcaacggacaaatctctttcct
+gaaggccggtctgtactatgccgatcacattacggcggtcagtccaacctacgctcgcgagatcaccgaaccgcagtttg
+cctacggtatggaaggtctgttgcaacagcgtcaccgtgaagggcgtctttccggcgtactgaacggcgtggacgagaaa
+atctggagtccagagacggacttactgttggcctcgcgttacacccgcgatacgttggaagataaagcggaaaataagcg
+ccagttacaaatcgcaatggggcttaaggttgacgataaagtgccgctttttgcagtggtgagccgtctgaccagccaga
+aaggtctcgacctggtgctggaagccttaccgggtcttctggagcagggcgggcagctggcgctactcggcgcgggcgat
+ccggtgctgcaggaaggtttccttgcggcggcagcggaataccccggtcaggtgggcgttcagattggctatcacgaagc
+attttcgcatcgcattatgggcggcgcggacgtcattctggtgcccagccgttttgaaccgtgcggcttaacgcaacttt
+atggattgaagtacggtacgctgccgttagtgcggcgcaccggtgggcttgctgatacggtttctgactgttctcttgag
+aaccttgcagatggcgtcgccagtgggtttgtctttgaagatagtaatgcctggtcgctgttacgggctattcgacgtgc
+ttttgtactgtggtcccgtccttcactgtggcggtttgtgcaacgtcaggctatggcaatggattttagctggcaggtcg
+cggcgaagtcgtaccgtgagctttactatcgcttgaaatagtcggtcagtttcacctgatttacgtaaaaacccgcttcg
+gcgggtttttgcttttggaggggcagaaagatgaatgactgtc
+</seq_data></sequences>
+<features>
+<feature>
+<id>2117840</id>
+<title>BBa_M36009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>47</endpos></feature>
+<feature>
+<id>2117841</id>
+<title>BBa_M36007</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>48</startpos>
+<endpos>1481</endpos></feature>
+<feature>
+<id>2117842</id>
+<title>BBa_M36010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1482</startpos>
+<endpos>1563</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//cds/biosynthesis</category>
+<category>//cds/enzyme</category>
+<category>//chassis/prokaryote/ecoli</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

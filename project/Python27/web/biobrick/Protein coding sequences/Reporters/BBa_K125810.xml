@@ -1,0 +1,118 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12886</part_id>
+<part_name>BBa_K125810</part_name>
+<part_short_name>K125810</part_short_name>
+<part_short_desc>slr2016 signal sequence + GFP fusion for secretion of GFP</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K125810</part_url>
+<part_entered>2008-10-27</part_entered>
+<part_author>Grace Kwan</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>11361</part_id>
+<part_name>BBa_K125310</part_name>
+<part_short_desc>slr2016 signal sequence from cyanobacterium Synechocystis; secretes protein</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>slr2016 SS</part_nickname></subpart>
+<subpart>
+<part_id>11362</part_id>
+<part_name>BBa_K125500</part_name>
+<part_short_desc>GFP fusion brick</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11361</part_id>
+<part_name>BBa_K125310</part_name>
+<part_short_desc>slr2016 signal sequence from cyanobacterium Synechocystis; secretes protein</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>slr2016 SS</part_nickname></subpart>
+<subpart>
+<part_id>11362</part_id>
+<part_name>BBa_K125500</part_name>
+<part_short_desc>GFP fusion brick</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11361</part_id>
+<part_name>BBa_K125310</part_name>
+<part_short_desc>slr2016 signal sequence from cyanobacterium Synechocystis; secretes protein</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>slr2016 SS</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>11362</part_id>
+<part_name>BBa_K125500</part_name>
+<part_short_desc>GFP fusion brick</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tggcagcaaaacaactatggaaaattttcaatcctagaccgatgaagggtggatactagagcgtaaaggagaagaacttt
+tcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaa
+ggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgt
+cactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgcca
+tgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagttt
+gaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaatt
+ggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaatta
+gacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtcctt
+ttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttct
+tgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataat
+</seq_data></sequences>
+<features>
+<feature>
+<id>1992519</id>
+<title>slr2016 signal sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>53</endpos></feature>
+<feature>
+<id>1992520</id>
+<title>BBa_K125310</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>53</endpos></feature>
+<feature>
+<id>1992521</id>
+<title>GFP fusion brick</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>62</startpos>
+<endpos>779</endpos></feature>
+<feature>
+<id>1992522</id>
+<title>BBa_K125500</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>62</startpos>
+<endpos>779</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/reporter/fluorescence</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

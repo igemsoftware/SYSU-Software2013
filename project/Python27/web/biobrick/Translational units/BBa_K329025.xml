@@ -1,0 +1,155 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20502</part_id>
+<part_name>BBa_K329025</part_name>
+<part_short_name>K329025</part_short_name>
+<part_short_desc>Medium RBS (B0032) - LuxR (C0062)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K329025</part_url>
+<part_entered>2010-10-24</part_entered>
+<part_author>Raphael Pantier</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>161</part_id>
+<part_name>BBa_C0062</part_name>
+<part_short_desc>luxR repressor/activator,  (no LVA?)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>luxr</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>161</part_id>
+<part_name>BBa_C0062</part_name>
+<part_short_desc>luxR repressor/activator,  (no LVA?)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>luxr</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>161</part_id>
+<part_name>BBa_C0062</part_name>
+<part_short_desc>luxR repressor/activator,  (no LVA?)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>luxr</part_nickname></subpart>
+<barcode></barcode></specified_subscars>
+<sequences>
+<seq_data>tcacacaggaaagtactagatgaaaaacataaatgccgacgacacatacagaataattaataaaattaaagcttgtagaa
+gcaataatgatattaatcaatgcttatctgatatgactaaaatggtacattgtgaatattatttactcgcgatcatttat
+cctcattctatggttaaatctgatatttcaatcctagataattaccctaaaaaatggaggcaatattatgatgacgctaa
+tttaataaaatatgatcctatagtagattattctaactccaatcattcaccaattaattggaatatatttgaaaacaatg
+ctgtaaataaaaaatctccaaatgtaattaaagaagcgaaaacatcaggtcttatcactgggtttagtttccctattcat
+acggctaacaatggcttcggaatgcttagttttgcacattcagaaaaagacaactatatagatagtttatttttacatgc
+gtgtatgaacataccattaattgttccttctctagttgataattatcgaaaaataaatatagcaaataataaatcaaaca
+acgatttaaccaaaagagaaaaagaatgtttagcgtgggcatgcgaaggaaaaagctcttgggatatttcaaaaatatta
+ggttgcagtgagcgtactgtcactttccatttaaccaatgcgcaaatgaaactcaatacaacaaaccgctgccaaagtat
+ttctaaagcaattttaacaggagcaattgattgcccatactttaaaaattaataacactgatagtgctagtgtagatcac
+</seq_data></sequences>
+<features>
+<feature>
+<id>2094968</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>13</endpos></feature>
+<feature>
+<id>2094969</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>13</endpos></feature>
+<feature>
+<id>2094970</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>7</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2094971</id>
+<title>prefix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>2094972</id>
+<title>luxR</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>769</endpos></feature>
+<feature>
+<id>2094973</id>
+<title>BBa_C0062</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>775</endpos></feature>
+<feature>
+<id>2094974</id>
+<title>T</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>193</startpos>
+<endpos>193</endpos></feature>
+<feature>
+<id>2094975</id>
+<title>A</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>511</startpos>
+<endpos>511</endpos></feature>
+<feature>
+<id>2094976</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>776</startpos>
+<endpos>800</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_K116616</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

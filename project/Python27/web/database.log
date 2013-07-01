@@ -1,0 +1,43 @@
+2013-06-03 14:18:57  DEBUG - database file exist: igem.db
+2013-06-03 14:18:57  DEBUG - connect to database: igem.db
+2013-06-03 14:18:57  DEBUG - database close
+2013-06-03 14:18:57  DEBUG - 
+2013-06-03 14:32:57  DEBUG - database file exist: igem.db
+2013-06-03 14:32:57  DEBUG - connect to database: igem.db
+2013-06-03 14:32:57  DEBUG - user login now: name:kitty,password:1212
+2013-06-03 14:32:57  DEBUG - Password correct!
+2013-06-03 14:32:57  DEBUG - selectAllOfTable: select * from user_save
+2013-06-03 14:32:57  DEBUG - database close
+2013-06-03 14:32:57  DEBUG - 
+2013-06-03 14:34:40  DEBUG - database file exist: igem.db
+2013-06-03 14:34:40  DEBUG - connect to database: igem.db
+2013-06-03 14:34:40  DEBUG - user login now: name:kitty,password:1212
+2013-06-03 14:34:40  DEBUG - Password correct!
+2013-06-03 14:34:40  DEBUG - selectAllOfTable: select * from user_save
+2013-06-03 14:34:40  DEBUG - table:user_save with no record
+2013-06-03 14:34:40  DEBUG - get user name by id: 1
+2013-06-03 14:34:40  DEBUG - update user: kitty
+2013-06-03 14:34:40  DEBUG - database close
+2013-06-03 14:34:40  DEBUG - 
+2013-06-03 14:35:02  DEBUG - database file exist: igem.db
+2013-06-03 14:35:02  DEBUG - connect to database: igem.db
+2013-06-03 14:35:02  DEBUG - user login now: name:kitty,password:1212
+2013-06-03 14:35:02  DEBUG - Password correct!
+2013-06-03 14:35:02  DEBUG - selectAllOfTable: select * from user_save
+2013-06-03 14:35:02  DEBUG - selectAllOfTable: select * from user_save
+2013-06-03 14:35:02  DEBUG - {u'data': u'sdfsdafasdasfas', u'user_id': 1}
+2013-06-03 14:35:02  DEBUG - select * from user_save where data = 'sdfsdafasdasfas'  and user_id = '1'  ;
+2013-06-03 14:35:02  DEBUG - database close
+2013-06-03 14:35:02  DEBUG - 
+2013-06-03 14:35:22  DEBUG - database file exist: igem.db
+2013-06-03 14:35:22  DEBUG - connect to database: igem.db
+2013-06-03 14:35:22  DEBUG - user login now: name:kitty,password:1212
+2013-06-03 14:35:22  DEBUG - Password correct!
+2013-06-03 14:35:22  DEBUG - selectAllOfTable: select * from user_save
+2013-06-03 14:35:22  DEBUG - selectAllOfTable: select * from user_save
+2013-06-03 14:35:22  DEBUG - {u'data': u'sdfsdafasdasfas', u'user_id': 1}
+2013-06-03 14:35:22  DEBUG - select * from user_save where data = 'sdfsdafasdasfas'  and user_id = '1'  ;
+2013-06-03 14:35:22  DEBUG - get user name by id: 1
+2013-06-03 14:35:22  DEBUG - update user: kitty
+2013-06-03 14:35:22  DEBUG - database close
+2013-06-03 14:35:22  DEBUG - 

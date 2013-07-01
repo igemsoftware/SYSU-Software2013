@@ -1,0 +1,76 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11927</part_id>
+<part_name>BBa_K118016</part_name>
+<part_short_name>K118016</part_short_name>
+<part_short_desc>glgC16 (glgC with G336D substitution)</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K118016</part_url>
+<part_entered>2008-10-06</part_entered>
+<part_author>Andrew Hall</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggttagtttagagaagaacgatcacttaatgttggcgcgccagctgccattgaaatctgttgccctgatactggcggg
+aggacgtggtacccgcctgaaggatttaaccaataagcgagcaaaaccggccgtacacttcggcggtaagttccgcatta
+tcgactttgcgctgtctaactgcatcaactccgggatccgtcgtatgggcgtgatcacccagtaccagtcccacactctg
+gtgcagcacattcagcgcggctggtcattcttcaatgaagaaatgaacgagtttgtcgatctgctgccagcacagcagag
+aatgaaaggggaaaactggtatcgcggcaccgcagatgcggtcacccaaaacctcgacattatccgccgttataaagcgg
+aatacgtggtgatcctggcgggcgaccatatctacaagcaagactactcgcgtatgcttatcgatcacgtcgaaaaaggc
+gcacgttgcaccgttgcttgtatgccagtaccgattgaagaagcctccgcatttggcgttatggcggttgatgagaacga
+taaaattatcgaatttgttgaaaaacctgctaacccgccgtcaatgccgaacgatccgagcaaatctctggcgagtatgg
+gtatctacgtctttgacgccgactatctgtatgaactgctggaagaagacgatcgcgatgagaactccagccacgacttt
+ggcaaagatttgattcccaagatcaccgaagccggtctggcctatgcgcacccgttcccgctctcttgcgtacaatccga
+cccggatgccgagccgtactggcgcgatgtgggtacgctggaagcttactggaaagcgaacctcgatctggcctctgtgg
+tgccggaactggatatgtacgatcgcaattggccaattcgcacctacaatgaatcattaccgccagcgaaattcgtgcag
+gatcgctccggtagccacgggatgacccttaactcactggtttccgacggttgtgtgatctccggttcggtggtggtgca
+gtccgttctgttctcgcgcgttcgcgtgaactcattctgcaacattgattccgccgtattgttaccggaagtatgggtag
+gtcgctcgtgccgtctgcgccgctgcgtcatcgatcgtgcttgtgttattccggaaggcatggtgattggtgaaaacgca
+gaggaagatgcacgtcgtttctatcgttcagaagaaggcatcgtgctggtaacgcgcgaaatgctacggaagttagggca
+taaacaggagcgataataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1978558</id>
+<title>EcoRI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>571</startpos>
+<endpos>576</endpos></feature>
+<feature>
+<id>1978557</id>
+<title>G336D</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>1006</startpos>
+<endpos>1008</endpos></feature>
+<feature>
+<id>1978559</id>
+<title>EcoRI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>1068</startpos>
+<endpos>1073</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/edinburgh/favorite</category>
+<category>//cds/enzyme/phosphorylation</category>
+<category>//function/biosynthesis</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

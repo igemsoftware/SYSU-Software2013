@@ -1,0 +1,159 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13896</part_id>
+<part_name>BBa_J70314</part_name>
+<part_short_name>J70314</part_short_name>
+<part_short_desc>J70029 (RBS+mcherry), B0014 (terminator) </part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J70314</part_url>
+<part_entered>2009-06-17</part_entered>
+<part_author>Julie Norville</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>13676</part_id>
+<part_name>BBa_J70029</part_name>
+<part_short_desc>RBS + mCherry gene, optimized for expression in Me. florum and E. coli</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>144</part_id>
+<part_name>BBa_B0011</part_name>
+<part_short_desc>LuxICDABEG (+/-)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>13676</part_id>
+<part_name>BBa_J70029</part_name>
+<part_short_desc>RBS + mCherry gene, optimized for expression in Me. florum and E. coli</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>13676</part_id>
+<part_name>BBa_J70029</part_name>
+<part_short_desc>RBS + mCherry gene, optimized for expression in Me. florum and E. coli</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tcacacaggaaagactagatggctagtagtgaggatataatcaaagagtttatgcgttttaaagttcacatggaaggttc
+agtaaacggacatgaatttgaaattgagggagaaggagagggtcgtccgtacgaaggtacacaaacagcaaagttaaaag
+taacaaaaggaggacctttaccatttgcatgggatattctttctccacaatttatgtatggtagtaaagcgtatgttaaa
+cacccggcagatataccagactatttaaagttgagttttccggaaggattcaaatgggaacgtgttatgaattttgaaga
+tggtggtgttgttacagttactcaagatagtagcttacaggatggtgaatttatttacaaagtaaaattacgtggtacta
+acttcccgagcgatggtccagtaatgcaaaagaaaactatgggatgggaggctagttctgaacgtatgtatcctgaagac
+ggtgctttaaaaggagaaattaaacaacgtttgaaacttaaagatggtggacactacgatgcagaagttaaaactacata
+taaagctaaaaagcctgttcagcttccgggtgcttataatgtgaatataaaattagatatcacaagtcataacgaagatt
+atactattgttgaacagtatgaaagagcagaaggaagacattctacaggagcataataatactagagtcacactggctca
+ccttcgggtgggcctttctgcgtttatatactagagagagaatataaaaagccagattattaatccggcttttttattat
+tt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2005595</id>
+<title>BBa_J70029</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>699</endpos></feature>
+<feature>
+<id>2005593</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>7</startpos>
+<endpos>13</endpos></feature>
+<feature>
+<id>2005594</id>
+<title>MF-RED</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>699</endpos></feature>
+<feature>
+<id>2005596</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>708</startpos>
+<endpos>748</endpos></feature>
+<feature>
+<id>2005597</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>715</startpos>
+<endpos>734</endpos></feature>
+<feature>
+<id>2005598</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>735</startpos>
+<endpos>748</endpos></feature>
+<feature>
+<id>2005599</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>741</startpos>
+<endpos>741</endpos></feature>
+<feature>
+<id>2005600</id>
+<title>BBa_B0011</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>757</startpos>
+<endpos>802</endpos></feature>
+<feature>
+<id>2005601</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>769</startpos>
+<endpos>791</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

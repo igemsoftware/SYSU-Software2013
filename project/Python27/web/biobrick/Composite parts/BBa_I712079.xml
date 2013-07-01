@@ -1,0 +1,154 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10193</part_id>
+<part_name>BBa_I712079</part_name>
+<part_short_name>I712079</part_short_name>
+<part_short_desc>CMV promoter - Myc tag - CCR5  (shortened) - TEV N</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I712079</part_url>
+<part_entered>2007-10-22</part_entered>
+<part_author>Rok Gaber</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10180</part_id>
+<part_name>BBa_I712076</part_name>
+<part_short_desc>CMV promoter - Myc tag - CCR5  (shortened)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10182</part_id>
+<part_name>BBa_I712077</part_name>
+<part_short_desc>TEV protease (N-terminal half) - entered sequence may be wrong</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>TEV</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10180</part_id>
+<part_name>BBa_I712076</part_name>
+<part_short_desc>CMV promoter - Myc tag - CCR5  (shortened)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10182</part_id>
+<part_name>BBa_I712077</part_name>
+<part_short_desc>TEV protease (N-terminal half) - entered sequence may be wrong</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>TEV</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>10180</part_id>
+<part_name>BBa_I712076</part_name>
+<part_short_desc>CMV promoter - Myc tag - CCR5  (shortened)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>10182</part_id>
+<part_name>BBa_I712077</part_name>
+<part_short_desc>TEV protease (N-terminal half) - entered sequence may be wrong</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>TEV</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>cgatgtacgggccagatatacgcgttgacattgattattgcctagttattaatagtaatcaattacggggtcattagttc
+atagcccatatatggagttccgcgttacataacttacggtaaatggcccgcctggctgaccgcccaacgacccccgccca
+ttgacgtcaataatgacgtatgttcccatagtaacgccaatagggactttccattgacgtcaatgggtggagtatttacg
+gtaaactgcccacttggcagtacatcaagtgtatcatatgccaagtacgccccctattgacgtcaatgacggtaaatggc
+ccgcctggcattatgcccagtacatgaccttatgggactttcctacttggcagtacatctacgtattagtcatcgctatt
+accatggtgatgcggttttggcagtacatcaatgggcgtggatagcggtttgactcacggggatttccaagtctccaccc
+cattgacgtcaatgggagtttgttttggcaccaaaatcaacgggactttccaaaatgtcgtaacaactccgccccattga
+cgcaaatgggcggtaggcgtgtacggtgggaggtctatataagcagagctctctggctaactagagaacccactgcttac
+tggcttatcgaaatactagaatggagcagaagctgatcagcgaggaggacactagaatggattatcaagtgtcaagtcca
+atctatgacatcaattattatacatcggagccctgccaaaaaatcaatgtgaagcaaatcgcagcccgcctcctgcctcc
+gctctactcactggtgttcatctttggttttgtgggcaacatgctggtcatcctcatcctgataaactgcaaaaggctga
+agagcatgactgacatctacctgctcaacctggccatctctgacctgtttttccttcttactgtccccttctgggctcac
+tatgctgccgcccagtgggactttggaaatacaatgtgtcaactcttgacagggctctattttataggcttcttctctgg
+aatcttcttcatcatcctcctgacaatcgataggtacctggctgtcgtccatgctgtgtttgctttaaaagccaggacgg
+tcacctttggggtggtgacaagtgtgatcacttgggtggtggctgtgtttgcgtctctcccaggaatcatctttaccaga
+tctcaaaaagaaggtcttcattacacttgcagctctcattttccatacagtcagtatcaattctggaagaatttccagac
+attaaagatagtcatcttggggctggtcctgccgctgcttgtcatggtcatctgctactcgggaatcctaaaaactctgc
+ttcggtgtcgaaatgagaagaagaggcacagggctgtgaggcttatcttcaccatcatgattgtttattttctcttctgg
+gctccctacaacattgtccttctcctgaacaccttccaggagttctttggcctgaataattgcagtagctctaacaggtt
+ggaccaagctatgcaggtgacagagactcttgggatgacgcactgctgcatcaaccccatcatctatgcctttgtcgggg
+agaagttctactagagggagaaagcttgtttaagggaccacgtgattacaacccgatatcgagcaccatttgtcacttga
+cgaatgaatctgatgggcacacaacatcgttgtatggtattggatttggtcccttcatcattacaaacaagcacttgttt
+agaagaaataatggaacactgttggtccaatcactacatggtgtattcaaggtcaagaacaccacgactttgcaacaaca
+cctcattgatgggagggacatgataattattcgcatgcctaaggatttcccaccatttcctcaaaagctgaaatttagag
+agccacaaagggaagagcgcatatgtcttgtgacaaccaacttccaaacttaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1952482</id>
+<title>BBa_I712076</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1608</endpos></feature>
+<feature>
+<id>1952479</id>
+<title>CMV promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>655</endpos></feature>
+<feature>
+<id>1952480</id>
+<title>Myc tag</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>656</startpos>
+<endpos>685</endpos></feature>
+<feature>
+<id>1952481</id>
+<title>CCR5 (shortened)</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>685</startpos>
+<endpos>1608</endpos></feature>
+<feature>
+<id>1952485</id>
+<title>BBa_I712077</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1617</startpos>
+<endpos>1973</endpos></feature>
+<feature>
+<id>1952483</id>
+<title>Coding</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1617</startpos>
+<endpos>1970</endpos></feature>
+<feature>
+<id>1952484</id>
+<title>STOP</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1971</startpos>
+<endpos>1973</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//igem[2007]/ljubljana/favorite</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

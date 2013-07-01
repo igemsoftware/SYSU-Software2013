@@ -1,0 +1,261 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22106</part_id>
+<part_name>BBa_K525405</part_name>
+<part_short_name>K525405</part_short_name>
+<part_short_desc> Fusion Protein of S-Layer SbpA and mCitrine </part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>SbpA | YFP</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K525405</part_url>
+<part_entered>2011-09-10</part_entered>
+<part_author>Timo Wolf</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>taatacgactcactataggggaattgtgagcggataacaattcctactagagaaagaggagaaatactagagatggccgg
+cgctcaggttaacgactacaacaagatctccggctacgcaaaggaggctgttcagtccctcgtcgaccagggtgttatcc
+agggcgataccaacggcaacttcaacccactgaacaccgttactcgcgcacaggctgctgagatcttcaccaaggctctc
+gaactggaggcagacggtgacgtcaacttctccgatgttaagaagggcgcttggtactacaactctatcgcagctgttgt
+cgcaaacggcatcttcgagggtgtgtccgctaacgagttcgcaccaaacaagtcccttacccgttccgaggctgcaaagg
+ttctcgttgacgctttcggcctggagggctctgaatccctctcccagttcgcagacgcttcccaggtcaagggttgggca
+aagtctgctctggagaccgcagttgctaacggcatcttcactggctccgaggaaaacggtaagcttaacctcaagcctaa
+cgcagctatcacccgccaggatttcgcagttgtcttcgctcgtaccctggacctcgcagttgagaccgttgacgcttccg
+tcaaggcaatcaacaacactaccgtggaggttaccttcgatgaagaggttgacaacgtcgaggctctgaagttcaagatc
+gaaggccttgaggttaagaacgcagctgttaagcagaccaacaagaaggtcgttgttctcactaccgaggcacagaccgc
+tgacaaggaatacgtcgtgaccctggatggcgaggagatcggtaagttcaagggcatcgaagcagttgttccaaagtcca
+tcgtcctcaagactaccaacacccagggcaaggttggtaaccaggttaccctgactgctgacgtcggcgttaaggcagct
+ggcatcccagttaccttcaacgtcgacgcacctaccggctctcttaacaaggatgctgtggttgaggtttacaccaacgc
+agagggcatcgcttcctactcctacactcagtacgcaccagacgctgacgatgtcaccgtttacccaaccggcgcacctc
+agctccgcgctttcggtccagtttactggggcgtcgacaacatcctgaccatcgaagaggttactaccggcaacaccctc
+gcaaacggtgttaagaagacctacaaggtcactttcaaggacccaaagaccggcgctgcactgaccaacaagaagcttaa
+cgtgtccttcgttgagaacaccaacgttgctttcaacgcaatctctaaggctactgtcaccaacccttcctccggcctca
+ccgttaccccataccagactaccaccggcctccaggaagagatccaggttaccactgattccaacggccaggcaaccttc
+gtcgtttctggcaccaacaccgctgttactccatacgtcttcgtggacggttcctcctccgttctcggcgtttctaccgt
+caccggcaccaacaacgttactcaggcaaccaccgctaacaagaagtgggaggcaaccgaactgactgctaccgcagctc
+aggttaagttcgagggtgcacagcttaaccaccagatcaccgtcgagcgtgacggcgaagaggaggcagcagctcagtac
+ggctccaagctcaacggtcgcgaatacaaggttaaggttctggataaggacggcaagccttacgcaaacggcctcgtcaa
+catcggtctggacgaggtgcttgatcgtaacctcaacaccaactccaaggctcagttcgcaaacgttactgacggcaccg
+ctctgaccctcaacccaggcacctcccagcagggtaagatcaagctgaactctaagggcgaggcaactgttgtcctttac
+ggcgctaagggtgaagttggcaccccagttgtctggatcgaccagaacacctcccagaacaaccagtccggcgttctcga
+ggatggtgagcctttcttcaaggcaccagtttccaacttccagtacgaacgcgtcatgggcgctgagttcaccgtggagg
+gcaagacttctaaccagaacgttggtaccgacggcatcgcaaactacgctttcgcactgaccaaccagtccggcaagacc
+ctcactaacctgatcggtaagatgacctacgaaatccgtaacacctccggccagccaatcgaggttaagacccctatctc
+ctaccgcgaccagaacaacgtctcttccactcttttcaagatcgaggaatacggctccatcaccatctccgctgatgtta
+tctctacctccaacgcagctttcaccatcgagactgcaccaaacggtaaggctgcaaccgttgtcgttaccccatccttc
+gttaccgctaacaacttcgacgcatccgctgacaacaacctcaacggcgtcgtgactgatgcacgtgacttcaacaagca
+cgttaccgctcctgcactgaccgctaccttcggcaacaacaaggaggttggtactaactacaccggcaccgtccagtact
+tcaacaaggacaagaagaccatcactttcaacggcaagaacgcagttaagtacgctggtgaatctggcaagacctacaag
+tacttcggcctcggttccaccccaatctccaccgcagatgacttcatcactcagctccagaacaacgctgcaaacggctc
+cgttaccgtcacctacaaggttgttgacaacgaggtccagttctacatcgtgtctttcaacaacgatggcgctgcaaacg
+ctgttaagccagagcctaccgcagttgctccaactgacggtaccgtcgcattcaccaacacctccttcaacgcttccgca
+aaccagactatcaccgttaccgacgctgatcttaacgcagacgctaccgttgcagaaactaccaccgtcaaggttacctc
+cggcactgttgtctacaccctcaccgctaccgagactggcgtgaacaccggcgttttcaccgcaaccctgactgctgcac
+agctcgctgttctgtctgacggcgtcatcaccgcaacctacgaggatgttaagaacaccactggctcctccgttacccgc
+accgctaccgcaactcttaacaccgtcgttggtcaggttaactacaacgcagcagctaccaccgcatactccaccggcgt
+gagcaaaggcgaagaactgtttaccggcgtggtgccgattctggtggaactggatggtgatgtgaacggccataaattta
+gcgtgagcggcgaaggcgaaggtgatgcgacctatggcaaactgaccctgaaatttatttgcaccacgggtaaactgccg
+gttccgtggccgaccctggtgaccacctttggctatggcctgatgtgctttgcgcgttatccggatcatatgaaacagca
+cgatttctttaaaagcgccatgccggaaggctatgtgcaggaacgcaccatcttttttaaagatgatggcaactataaaa
+cccgtgcggaagtgaaatttgaaggcgataccctggtgaaccgtattgaactgaaaggcatcgatttcaaagaagatggc
+aacattctgggccataaactggaatataactacaacagccataacgtgtatatcatggcggataaacagaaaaacggcat
+caaagtgaactttaaaatccgccacaacattgaagatggcagcgtgcagctggccgatcattatcagcagaacaccccga
+ttggtgatggcccggtgctgctgccggataaccattatctgagctaccagagcaaactgagcaaagatccgaacgaaaaa
+cgtgatcacatggtgctgctggaatttgtgaccgcagccggtattaccctgggcatggatgaactgtacaaaaccggtta
+a
+</seq_data></sequences>
+<features>
+<feature>
+<id>2127654</id>
+<title>T7 promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2127655</id>
+<title>lac operator</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>2127656</id>
+<title>B0034</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>53</startpos>
+<endpos>64</endpos></feature>
+<feature>
+<id>2127657</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>56</startpos>
+<endpos>59</endpos></feature>
+<feature>
+<id>2127663</id>
+<title>K525401</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>3192</endpos></feature>
+<feature>
+<id>2127664</id>
+<title>SbpA domain</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>3192</endpos></feature>
+<feature>
+<id>2127658</id>
+<title>ATG</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>75</endpos></feature>
+<feature>
+<id>2127660</id>
+<title>NgoMIV</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>81</endpos></feature>
+<feature>
+<id>2127665</id>
+<title>Freiburg scar</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>3193</startpos>
+<endpos>3198</endpos></feature>
+<feature>
+<id>2127666</id>
+<title>mCitrine (YFP)</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>3199</startpos>
+<endpos>3921</endpos></feature>
+<feature>
+<id>2127667</id>
+<title>J18931</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>3199</startpos>
+<endpos>3921</endpos></feature>
+<feature>
+<id>2127662</id>
+<title>AgeI</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>3913</startpos>
+<endpos>3918</endpos></feature>
+<feature>
+<id>2127661</id>
+<title>TAA</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>3919</startpos>
+<endpos>3921</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>emission</name>
+<value>529 nm</value>
+<units></units>
+<url></url>
+<id>12652</id>
+<m_date>2011-09-20 10:23:44</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>S-layer</value>
+<units></units>
+<url></url>
+<id>12466</id>
+<m_date>2011-09-13 10:52:35</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12465</id>
+<m_date>2011-09-13 10:52:24</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>E. coli</value>
+<units></units>
+<url></url>
+<id>12464</id>
+<m_date>2011-09-13 10:52:12</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12463</id>
+<m_date>2011-09-13 10:51:56</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>515 nm</value>
+<units></units>
+<url></url>
+<id>12462</id>
+<m_date>2011-09-13 10:51:13</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12461</id>
+<m_date>2011-09-13 10:51:03</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>emission</name>
+<value>530 nm</value>
+<units></units>
+<url></url>
+<id>12460</id>
+<m_date>2011-09-13 10:50:51</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter>
+<parameter>
+<name>emission</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12459</id>
+<m_date>2011-09-13 10:49:55</m_date>
+<user_id>6670</user_id>
+<user_name>jaretz</user_name></parameter></parameters>
+<categories>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//function/reporter/fluorescence</category>
+<category>//proteindomain/internal</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

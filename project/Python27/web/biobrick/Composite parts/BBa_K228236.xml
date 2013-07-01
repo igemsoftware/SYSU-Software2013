@@ -1,0 +1,204 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15004</part_id>
+<part_name>BBa_K228236</part_name>
+<part_short_name>K228236</part_short_name>
+<part_short_desc>cI-&gt;Terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K228236</part_url>
+<part_entered>2009-09-20</part_entered>
+<part_author>Guosheng Zhang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>156</part_id>
+<part_name>BBa_C0051</part_name>
+<part_short_desc>cI repressor from E. coli phage lambda (+LVA) </part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>156</part_id>
+<part_name>BBa_C0051</part_name>
+<part_short_desc>cI repressor from E. coli phage lambda (+LVA) </part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>156</part_id>
+<part_name>BBa_C0051</part_name>
+<part_short_desc>cI repressor from E. coli phage lambda (+LVA) </part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atgagcacaaaaaagaaaccattaacacaagagcagcttgaggacgcacgtcgccttaaagcaatttatgaaaaaaagaa
+aaatgaacttggcttatcccaggaatctgtcgcagacaagatggggatggggcagtcaggcgttggtgctttatttaatg
+gcatcaatgcattaaatgcttataacgccgcattgcttgcaaaaattctcaaagttagcgttgaagaatttagcccttca
+atcgccagagaaatctacgagatgtatgaagcggttagtatgcagccgtcacttagaagtgagtatgagtaccctgtttt
+ttctcatgttcaggcagggatgttctcacctgagcttagaacctttaccaaaggtgatgcggagagatgggtaagcacaa
+ccaaaaaagccagtgattctgcattctggcttgaggttgaaggtaattccatgaccgcaccaacaggctccaagccaagc
+tttcctgacggaatgttaattctcgttgaccctgagcaggctgttgagccaggtgatttctgcatagccagacttggggg
+tgatgagtttaccttcaagaaactgatcagggatagcggtcaggtgtttttacaaccactaaacccacagtacccaatga
+tcccatgcaatgagagttgttccgttgtggggaaagttatcgctagtcagtggcctgaagagacgtttggcgctgcaaac
+gacgaaaactacgctttagtagcttaataacgctgatagtgctagtgtagatcgctactagagccaggcatcaaataaaa
+cgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactgg
+ctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2022513</id>
+<title>BBa_C0051</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>750</endpos></feature>
+<feature>
+<id>2022511</id>
+<title>cI lambda</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>711</endpos></feature>
+<feature>
+<id>2022512</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>712</startpos>
+<endpos>744</endpos></feature>
+<feature>
+<id>2022514</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>751</startpos>
+<endpos>775</endpos></feature>
+<feature>
+<id>2022515</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>784</startpos>
+<endpos>863</endpos></feature>
+<feature>
+<id>2022516</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>795</startpos>
+<endpos>838</endpos></feature>
+<feature>
+<id>2022517</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>872</startpos>
+<endpos>912</endpos></feature>
+<feature>
+<id>2022518</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>879</startpos>
+<endpos>898</endpos></feature>
+<feature>
+<id>2022519</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>899</startpos>
+<endpos>912</endpos></feature>
+<feature>
+<id>2022520</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>905</startpos>
+<endpos>905</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>cI-&gt;Terminator</value>
+<units></units>
+<url></url>
+<id>8447</id>
+<m_date>2009-10-21 06:03:24</m_date>
+<user_id>4411</user_id>
+<user_name>Spring_zhq</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>cI-&gt;Terminator</value>
+<units></units>
+<url></url>
+<id>8448</id>
+<m_date>2009-10-21 06:03:24</m_date>
+<user_id>4411</user_id>
+<user_name>Spring_zhq</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>cI-&gt;Terminator</value>
+<units></units>
+<url></url>
+<id>8449</id>
+<m_date>2009-10-21 06:03:24</m_date>
+<user_id>4411</user_id>
+<user_name>Spring_zhq</user_name></parameter></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_J06499</twin>
+<twin>BBa_J01058</twin>
+<twin>BBa_K079008</twin>
+<twin>BBa_K175019</twin>
+<twin>BBa_S04212</twin>
+<twin>BBa_S04275</twin>
+<twin>BBa_K235003</twin>
+<twin>BBa_K195629</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

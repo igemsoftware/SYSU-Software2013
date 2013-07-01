@@ -1,0 +1,312 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>5997</part_id>
+<part_name>BBa_I13542</part_name>
+<part_short_name>I13542</part_short_name>
+<part_short_desc>Intermediate in two promoter screening plasmid</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I13542</part_url>
+<part_entered>2005-08-22</part_entered>
+<part_author>Josh Michener</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>5452</part_id>
+<part_name>BBa_I13453</part_name>
+<part_short_desc>Pbad promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5843</part_id>
+<part_name>BBa_I13457</part_name>
+<part_short_desc>Improved insertion site with two RNAse  E cut sites</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>5452</part_id>
+<part_name>BBa_I13453</part_name>
+<part_short_desc>Pbad promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5843</part_id>
+<part_name>BBa_I13457</part_name>
+<part_short_desc>Improved insertion site with two RNAse  E cut sites</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>5452</part_id>
+<part_name>BBa_I13453</part_name>
+<part_short_desc>Pbad promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5843</part_id>
+<part_name>BBa_I13457</part_name>
+<part_short_desc>Improved insertion site with two RNAse  E cut sites</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>acattgattatttgcacggcgtcacactttgctatgccatagcatttttatccataagattagcggatcctacctgacgc
+tttttatcgcaactctctactgtttctccataccgtttttttgggctagctactagagtattatttgtattgatctggtg
+aattaggtcttcgaatccgatccattgcagtggtattatttgtattgatctccttactatctctcgagagattagtacct
+ttggagatctactagagaaagaggagaaatactagatggcttcctccgaagacgttatcaaagagttcatgcgtttcaaa
+gttcgtatggaaggttccgttaacggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacgaaggtaccca
+gaccgctaaactgaaagttaccaaaggtggtccgctgccgttcgcttgggacatcctgtccccgcagttccagtacggtt
+ccaaagcttacgttaaacacccggctgacatcccggactacctgaaactgtccttcccggaaggtttcaaatgggaacgt
+gttatgaacttcgaagacggtggtgttgttaccgttacccaggactcctccctgcaagacggtgagttcatctacaaagt
+taaactgcgtggtaccaacttcccgtccgacggtccggttatgcagaaaaaaaccatgggttgggaagcttccaccgaac
+gtatgtacccggaagacggtgctctgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcactacgacgct
+gaagttaaaaccacctacatggctaaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaactggacatcac
+ctcccacaacgaagactacaccatcgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgcttaataacgct
+gatagtgctagtgtagatcgctactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgtt
+ttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1663901</id>
+<title>BBa_I13453</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>130</endpos></feature>
+<feature>
+<id>1663915</id>
+<title>RNAse E site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>139</startpos>
+<endpos>159</endpos></feature>
+<feature>
+<id>1663921</id>
+<title>BBa_I13457</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>139</startpos>
+<endpos>249</endpos></feature>
+<feature>
+<id>1663916</id>
+<title>RNAse E cut site (between the bases)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>147</startpos>
+<endpos>148</endpos></feature>
+<feature>
+<id>1663917</id>
+<title>Insertion site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>160</startpos>
+<endpos>193</endpos></feature>
+<feature>
+<id>1663918</id>
+<title>RNAse E site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>194</startpos>
+<endpos>214</endpos></feature>
+<feature>
+<id>1663919</id>
+<title>RNAse E cut site (between the bases)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>202</startpos>
+<endpos>203</endpos></feature>
+<feature>
+<id>1663920</id>
+<title>Hairpin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>215</startpos>
+<endpos>249</endpos></feature>
+<feature>
+<id>1663926</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>258</startpos>
+<endpos>269</endpos></feature>
+<feature>
+<id>1663925</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>262</startpos>
+<endpos>265</endpos></feature>
+<feature>
+<id>1663932</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>276</startpos>
+<endpos>950</endpos></feature>
+<feature>
+<id>1663933</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>276</startpos>
+<endpos>956</endpos></feature>
+<feature>
+<id>1663934</id>
+<title></title>
+<type>barcode</type>
+<direction>forward</direction>
+<startpos>957</startpos>
+<endpos>981</endpos></feature>
+<feature>
+<id>1663939</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>990</startpos>
+<endpos>1069</endpos></feature>
+<feature>
+<id>1663940</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1001</startpos>
+<endpos>1044</endpos></feature>
+<feature>
+<id>1663949</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1078</startpos>
+<endpos>1118</endpos></feature>
+<feature>
+<id>1663950</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1085</startpos>
+<endpos>1104</endpos></feature>
+<feature>
+<id>1663951</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1105</startpos>
+<endpos>1118</endpos></feature>
+<feature>
+<id>1663952</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1111</startpos>
+<endpos>1111</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/composite/uncategorized</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,114 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18902</part_id>
+<part_name>BBa_K371001</part_name>
+<part_short_name>K371001</part_short_name>
+<part_short_desc>pduAB(Propanediol utilization gene A+B)[RBS+pduA+RBS+pduB]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K371001</part_url>
+<part_entered>2010-08-27</part_entered>
+<part_author>Yang Zhang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>aacccaggcgaggtctttatgcaacaagaagcgttaggaatggtagaaaccaaaggcttgacagcagccatagaggccgc
+agatgcaatggtgaagtcagccaatgtaatgctggtcggctacgaaaaaattggttcggggctggtaacagttattgtcc
+gcggcgatgtcggcgcagtcaaagcagcaacagatgccggtgccgccgcagcccgtaatgtgggagaagtgaaagccgta
+cacgttatcccacgcccgcataccgatgtagaaaaaatcttaccgaagggaattagctaatgagcagcaatgaactggtt
+gaacagatcatggcgcaggtgattgctcgcgtggcaacgccggaacagcaggctatcccagaaaataatcacccaacacg
+agaaacggctatggcagagaaaagctgtagtttaacggagtttgtcggtaccgcgattggcgacaccgtcggtctggtaa
+tcgccaacgtagacagtgccctactggacgcaatgaaacttgaaaaacgctatcgctccattggcatccttggcgcccgt
+actggtgcgggtccacacatcatggccgctgatgaagcggtgaaagccaccaatactgaagtcgtcagtattgagttacc
+acgtgataccaaaggcggcgcaggtcatggctcgctgattattcttggcggcaacgatgtttccgacgtgaaacgcggca
+ttgaagtcgcactgaaagagctggatcgcacctttggcgacgtttatgccaacgaagccggtcacatcgaaatgcaatac
+accgcacgcgccagctacgcacttgaaaaagcctttggcgcaccgattggtcgtgcctgtggcgtcatcgtcggcgcacc
+agcatccgttggtgtcctgatggctgatactgccctgaaatccgccaacgtggaagttgtggcttacagctcccctgctc
+atggcaccagcttcagtaacgaagccattctggttatttcgggtgactctggcgctgttcgtcaggctgttatctctgcc
+cgtgaaatcggtaaaaccgtactcgggaccctcggctcagagccgaaaaacgatcgtccgtcctacatctga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2078678</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>6</startpos>
+<endpos>11</endpos></feature>
+<feature>
+<id>2078679</id>
+<title>pduA coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>300</endpos></feature>
+<feature>
+<id>2078685</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>2078683</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>285</startpos>
+<endpos>292</endpos></feature>
+<feature>
+<id>2078681</id>
+<title>stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>298</startpos>
+<endpos>300</endpos></feature>
+<feature>
+<id>2078680</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>300</startpos>
+<endpos>302</endpos></feature>
+<feature>
+<id>2078682</id>
+<title>pduB coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>300</startpos>
+<endpos>1112</endpos></feature>
+<feature>
+<id>2078684</id>
+<title>stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1110</startpos>
+<endpos>1112</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>origin</name>
+<value>Citrobacter Freundii</value>
+<units></units>
+<url></url>
+<id>11481</id>
+<m_date>2010-10-26 23:59:37</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,155 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16403</part_id>
+<part_name>BBa_K273046</part_name>
+<part_short_name>K273046</part_short_name>
+<part_short_desc>pPetE - E1A3 - Ter</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K273046</part_url>
+<part_entered>2009-10-18</part_entered>
+<part_author>Karl Brune</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>16397</part_id>
+<part_name>BBa_K273019</part_name>
+<part_short_desc>PpetE</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>PpetE</part_nickname></subpart>
+<subpart>
+<part_id>16324</part_id>
+<part_name>BBa_K273022</part_name>
+<part_short_desc>E1A3</part_short_desc>
+<part_type>RNA</part_type>
+<part_nickname>E1A3</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>16397</part_id>
+<part_name>BBa_K273019</part_name>
+<part_short_desc>PpetE</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>PpetE</part_nickname></subpart>
+<subpart>
+<part_id>16387</part_id>
+<part_name>BBa_K273034</part_name>
+<part_short_desc>E1A3 - Ter</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname>E1A3 - Ter</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>16397</part_id>
+<part_name>BBa_K273019</part_name>
+<part_short_desc>PpetE</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>PpetE</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>16387</part_id>
+<part_name>BBa_K273034</part_name>
+<part_short_desc>E1A3 - Ter</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname>E1A3 - Ter</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tcatagcggttgcccaatctaactcagggagcgacttcagcccacaaaaaacaccactgggcctactgggctattcccat
+tatcatctacattgaagggatagcaagctaatttttatgacggcgatcgccaaaaacaaagaaaattcagcaattaccgt
+gggtagcaaaaaatccccatctaaagttcagtaaatatagctagaacaaccaagcattttcggcaaagtactattcagat
+agaacgagaaatgagcttgttctatccgcccggggctgaggctgtataatctacgacgggctgtcaaacattgtgatacc
+atgggcagaagaaaggaaaaacgtccctgatcgcctttttgggcacggagtagggcgttaccccggcccgttcaaccaca
+agtccctatagatacaatcgccaagaagttactagagtctgaaaccatagtacaatttgcagtagataaaggggaagggg
+ttttatatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttg
+tcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2050058</id>
+<title>BBa_K273019</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>429</endpos></feature>
+<feature>
+<id>2050059</id>
+<title>BBa_K273022</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>438</startpos>
+<endpos>487</endpos></feature>
+<feature>
+<id>2050060</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>496</startpos>
+<endpos>575</endpos></feature>
+<feature>
+<id>2050061</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>507</startpos>
+<endpos>550</endpos></feature>
+<feature>
+<id>2050062</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>584</startpos>
+<endpos>624</endpos></feature>
+<feature>
+<id>2050063</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>591</startpos>
+<endpos>610</endpos></feature>
+<feature>
+<id>2050064</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>611</startpos>
+<endpos>624</endpos></feature>
+<feature>
+<id>2050065</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>617</startpos>
+<endpos>617</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

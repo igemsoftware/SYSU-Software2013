@@ -1,0 +1,135 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12918</part_id>
+<part_name>BBa_K082010</part_name>
+<part_short_name>K082010</part_short_name>
+<part_short_desc>B0034-C0070 </part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K082010</part_url>
+<part_entered>2008-10-27</part_entered>
+<part_author>Zhen Xu , Binjie Xu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>3892</part_id>
+<part_name>BBa_C0070</part_name>
+<part_short_desc>autoinducer synthetase for N-butyryl-HSL (BHL) and HHL</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>rhII</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>3892</part_id>
+<part_name>BBa_C0070</part_name>
+<part_short_desc>autoinducer synthetase for N-butyryl-HSL (BHL) and HHL</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>rhII</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>3892</part_id>
+<part_name>BBa_C0070</part_name>
+<part_short_desc>autoinducer synthetase for N-butyryl-HSL (BHL) and HHL</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>rhII</part_nickname></subpart>
+<barcode></barcode></specified_subscars>
+<sequences>
+<seq_data>aaagaggagaaatactagatgatcgaactgctgtccgaatccctggaaggtctgtccgctgctatgatcgctgaactggg
+tcgttaccgtcaccaggttttcatcgaaaaactgggttgggacgttgtttccacctcccgtgttcgtgaccaggagttcg
+accagttcgaccacccgcagacccgttacatcgttgctatgtcccgtcagggtatctgcggttgcgctcgtctgctgccg
+accaccgacgcttacctgctgaaagacgttttcgcttacctgtgctccgaaaccccgccgtccgacccgtccgtttggga
+actgtcccgttacgctgcttccgctgctgacgacccgcagctggctatgaaaatcttctggtcctccctccagtgcgctt
+ggtacctgggtgcttcctccgttgttgctgttaccaccaccgctatggaacgttacttcgttcgtaacggtgttatcctc
+cagcgtctgggtccgccgcagaaagttaaaggtgaaaccctggttgctatctccttcccggcttaccaggaacgtggtct
+ggaaatgctgctgcgttaccacccggaatggctccagggtgttccgctgtccatggctgttgctgcaaacgacgaaaact
+acgctttagtagcttaataactctgatagtgctagtgtagatctc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1993196</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>1993195</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>5</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>1993199</id>
+<title>BBa_C0070</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>660</endpos></feature>
+<feature>
+<id>1993197</id>
+<title>rhlL</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>621</endpos></feature>
+<feature>
+<id>1993198</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>622</startpos>
+<endpos>654</endpos></feature>
+<feature>
+<id>1993200</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>661</startpos>
+<endpos>685</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/biosynthesis/ahl</category>
+<category>//function/cellsignalling</category></categories>
+<twins>
+<twin>BBa_I9026</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12198</part_id>
+<part_name>BBa_K112234</part_name>
+<part_short_name>K112234</part_short_name>
+<part_short_desc>{rbs.xis.int!} The bacteriophage lambda xis/integrase gene with native rbs and stop codon; assembly </part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>xis/int</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K112234</part_url>
+<part_entered>2008-10-21</part_entered>
+<part_author>Molly Allen</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>taattgcggagactttgcgatgtacttgacacttcaggagtggaacgcacgccagcgacgtccaagaagccttgaaacag
+ttcgtcgatgggttcgggaatgcaggatattcccacctccggttaaggatggaagagagtatctgttccacgaatcagcg
+gtaaaggttgacttaaatcgaccagtaacaggtggccttttgaagaggatcagaaatgggaagaaggcgaagtcatgagc
+gccgggatttaccccctaacctttatataagaaacaatggatattactgctacagggacccaaggacgggtaaagagttt
+ggattaggcagagacaggcgaatcgcaatcactgaagctatacaggccaacattgagttattttcaggacacaaacacaa
+gcctctgacagcgagaatcaacagtgataattccgttacgttacattcatggcttgatcgctacgaaaaaatcctggcca
+gcagaggaatcaagcagaagacactcataaattacatgagcaaaattaaagcaataaggaggggtctgcctgatgctcca
+cttgaagacatcaccacaaaagaaattgcggcaatgctcaatggatacatagacgagggcaaggcggcgtcagccaagtt
+aatcagatcaacactgagcgatgcattccgagaggcaatagctgaaggccatataacaacaaaccatgtcgctgccactc
+gcgcagcaaaatcagaggtaaggagatcaagacttacggctgacgaatacctgaaaatttatcaagcagcagaatcatca
+ccatgttggctcagacttgcaatggaactggctgttgttaccgggcaacgagttggtgatttatgcgaaatgaagtggtc
+tgatatcgtagatggatatctttatgtcgagcaaagcaaaacaggcgtaaaaattgccatcccaacagcattgcatattg
+atgctctcggaatatcaatgaaggaaacacttgataaatgcaaagagattcttggcggagaaaccataattgcatctact
+cgtcgcgaaccgctttcatccggcacagtatcaaggtattttatgcgcgcacgaaaagcatcaggtctttccttcgaagg
+agatccgcctacctttcacgagttgcgcagtttgtctgcaagactctatgagaagcagataagcgataagtttgctcaac
+atcttctcgggcataagtcggacaccatggcatcacagtatcgtgatgacagaggcagggagtgggacaaaattgaaatc
+aaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1983025</id>
+<title></title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>16</endpos></feature>
+<feature>
+<id>1983026</id>
+<title>xis</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>237</endpos></feature>
+<feature>
+<id>1983028</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>22</endpos></feature>
+<feature>
+<id>1983027</id>
+<title>int</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>216</startpos>
+<endpos>1286</endpos></feature>
+<feature>
+<id>1983029</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1284</startpos>
+<endpos>1286</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/recombination/lambda</category>
+<category>//standard/21</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

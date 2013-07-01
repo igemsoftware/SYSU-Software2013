@@ -1,0 +1,172 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16211</part_id>
+<part_name>BBa_K233313</part_name>
+<part_short_name>K233313</part_short_name>
+<part_short_desc>ahl induced ahl producer</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K233313</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>swetha srinivasan</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>199</part_id>
+<part_name>BBa_R1062</part_name>
+<part_short_desc>Promoter, Standard (luxR and HSL regulated -- lux pR)&lt;br&gt;</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lux pR</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>160</part_id>
+<part_name>BBa_C0061</part_name>
+<part_short_desc>autoinducer synthetase for AHL</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>luxI</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>199</part_id>
+<part_name>BBa_R1062</part_name>
+<part_short_desc>Promoter, Standard (luxR and HSL regulated -- lux pR)&lt;br&gt;</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lux pR</part_nickname></subpart>
+<subpart>
+<part_id>5227</part_id>
+<part_name>BBa_C0261</part_name>
+<part_short_desc>AHL-making Enzyme, luxI (+RBS)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>199</part_id>
+<part_name>BBa_R1062</part_name>
+<part_short_desc>Promoter, Standard (luxR and HSL regulated -- lux pR)&lt;br&gt;</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lux pR</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5227</part_id>
+<part_name>BBa_C0261</part_name>
+<part_short_desc>AHL-making Enzyme, luxI (+RBS)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>acctgtaggatcgtacaggttgacacaagaaaatggtttgttgatactcgaataaatactagagaaagaggagaaatact
+agatgactataatgataaaaaaatcggattttttggcaattccatcggaggagtataaaggtattctaagtcttcgttat
+caagtgtttaagcaaagacttgagtgggacttagttgtagaaaataaccttgaatcagatgagtatgataactcaaatgc
+agaatatatttatgcttgtgatgatactgaaaatgtaagtggatgctggcgtttattacctacaacaggtgattatatgc
+tgaaaagtgtttttcctgaattgcttggtcaacagagtgctcccaaagatcctaatatagtcgaattaagtcgttttgct
+gtaggtaaaaatagctcaaagataaataactctgctagtgaaattacaatgaaactatttgaagctatatataaacacgc
+tgttagtcaaggtattacagaatatgtaacagtaacatcaacagcaatagagcgatttttaaagcgtattaaagttcctt
+gtcatcgtattggagacaaagaaattcatgtattaggtgatactaaatcggttgtattgtctatgcctattaatgaacag
+tttaaaaaagcagtcttaaatgctgcaaacgacgaaaactacgctttagtagcttaataactctgatagtgctagtgtag
+atctc
+</seq_data></sequences>
+<features>
+<feature>
+<id>2046964</id>
+<title>LuxR/HSL</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2046965</id>
+<title>BBa_R1062</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>56</endpos></feature>
+<feature>
+<id>2046966</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>25</endpos></feature>
+<feature>
+<id>2046967</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>42</startpos>
+<endpos>48</endpos></feature>
+<feature>
+<id>2046968</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>54</startpos>
+<endpos>54</endpos></feature>
+<feature>
+<id>2046970</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>65</startpos>
+<endpos>76</endpos></feature>
+<feature>
+<id>2046969</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>69</startpos>
+<endpos>72</endpos></feature>
+<feature>
+<id>2046971</id>
+<title>luxI</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>83</startpos>
+<endpos>661</endpos></feature>
+<feature>
+<id>2046972</id>
+<title>BBa_C0061</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>83</startpos>
+<endpos>700</endpos></feature>
+<feature>
+<id>2046973</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>662</startpos>
+<endpos>693</endpos></feature>
+<feature>
+<id>2046974</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>701</startpos>
+<endpos>725</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

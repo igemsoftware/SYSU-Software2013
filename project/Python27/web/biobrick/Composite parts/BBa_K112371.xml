@@ -1,0 +1,215 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13100</part_id>
+<part_name>BBa_K112371</part_name>
+<part_short_name>K112371</part_short_name>
+<part_short_desc>{Pbad}{rbs_lamB&gt;} {&lt; r.BglII&gt;}{&lt; S-Tag!}{&lt; b1006&gt;}</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K112371</part_url>
+<part_entered>2008-10-28</part_entered>
+<part_author>Aron Lau</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>12267</part_id>
+<part_name>BBa_K112900</part_name>
+<part_short_desc>Pbad</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>12312</part_id>
+<part_name>BBa_K112615</part_name>
+<part_short_desc>rbs.LamB pp&gt; in BBb</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>12221</part_id>
+<part_name>BBa_K112108</part_name>
+<part_short_desc>BglII endonuclease without start or stop codons</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>12259</part_id>
+<part_name>BBa_K112704</part_name>
+<part_short_desc>&lt;S tag!</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>S tag</part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>12264</part_id>
+<part_name>BBa_K112709</part_name>
+<part_short_desc>b1006</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>12267</part_id>
+<part_name>BBa_K112900</part_name>
+<part_short_desc>Pbad</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>13084</part_id>
+<part_name>BBa_K112351</part_name>
+<part_short_desc>{rbs_lamB&gt;} {&lt; r.BglII&gt;}{&lt; S-Tag!}{&lt; b1006&gt;}</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>12267</part_id>
+<part_name>BBa_K112900</part_name>
+<part_short_desc>Pbad</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>13084</part_id>
+<part_name>BBa_K112351</part_name>
+<part_short_desc>{rbs_lamB&gt;} {&lt; r.BglII&gt;}{&lt; S-Tag!}{&lt; b1006&gt;}</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aggattcttagctttcgctaggatgatttctggaattcatgagatctctatgctactccatcgagccgtcaattgtctga
+ttcgttaccaattatgacaacttgacggctacatcattcactttttcttcacaaccggcacggaactcgctcgggctggc
+cccggtgcattttttaaatacccgcgagaaatagagttgatcgtcaaaaccaacattgcgaccgacggtggcgataggca
+tccgggtggtgctcaaaagcagcttcgcctggctgatacgttggtcctcgcgccagcttaagacgctaatccctaactgc
+tggcggaaaagacgtgacagacgcgacggcgacaagcaaacatgctgtgcgacgctggcgatatcaaaattgctgtctgc
+caggtgatcgctgatgtactgacaagcctcgcgtacccgattatccatcggtggatggagcgactcgttaatcgcttcca
+tgcgccgcagcaacaattgctcaagcagatttatcgccagcagctccgaatagcgcccttccccttgcccggcgttaatg
+atttgcccaaacaggtcgctgaaatgcggctggtgcgcttcatccgggcgaaagaaccccgtattggcaaatattgacgg
+ccagttaagccattcatgccagtaggcgcgcggacgaaagtaaacccactggtgataccattcgcgagcctccggatgac
+gaccgtagtgatgaatctctcctggcgggaacagcaaaatatcacccggtcggcaaacaaattctcgtccctgatttttc
+accaccccctgaccgcgaatggtgagattgagaatataacctttcattcccagcggtcggtcgataaaaaaatcgagata
+accgttggcctcaatcggcgttaaacccgccaccagatgggcattaaacgagtatcccggcagcagggatcattttgcgc
+ttcagccatacttttcatactcccgccattcagagaagaaaccaattgtccatattgcatcagacattgccgtcactgcg
+tctttactggctcttctcgctaccaacggtaaccccgcttattaaaagcattctgtacaagcgggacaaagcatgacaaa
+aacgcgtaacaagtgtcttatatcacggcgaaagttcaatggatatttgcacgctcactgcatgctagcattttatcgat
+aagattaccgatcttacctgaagctggatctcaatgactcaggagatagaatgatgattactctgcgcaaacttcctctg
+gcggttgccgtcgcagcgggcgtaatgtctgctcaggcaatggctggatctaagattgatataacggactataaccatgc
+tgatgaaatactaaatcctcaattatggaaagaaattgaagaaacgctattaaaaatgccattacacgttaaagcatcag
+atcaagccagcaaagttggcagtttaatttttgatcctgtcggtacaaatcaatacataaaagatgagttggtaccaaaa
+cattggaaaaataatatccctatacctaaacgatttgacttcctaggtactgacatagattttggtaaaagagatacgct
+agttgaagttcagttttctaattacccatttctgctcaataatacggtacgttcagaactgtttcataaaagtaacatgg
+acattgatgaagaaggaatgaaagtagcgatcattattactaaagggcatatgtttcccgcttctaacagttcattatat
+tatgaacaagctcaaaatcaacttaactccttagctgaatataacgtttttgatgtacctataagattagtagggttaat
+agaagactttgaaactgatattgatattgtttcaactacatatgcggacaaacgctattcaaggacaataacaaaaagag
+ataccgttaaaggtaaagtgattgataccaacacgccgaataccagacgtcggaaaagaggaacaatcgtgacatatgga
+tctaaagaaaccgctgctgctaaattcgaacgccagcacatggacagctaaggatctaaaaaaaaaccccgcccctgaca
+gggcggggtttttttta
+</seq_data></sequences>
+<features>
+<feature>
+<id>1994796</id>
+<title>BBa_K112900</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1225</endpos></feature>
+<feature>
+<id>1994797</id>
+<title>BBa_K112999</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1226</startpos>
+<endpos>1231</endpos></feature>
+<feature>
+<id>1994798</id>
+<title>BBa_K112615</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1232</startpos>
+<endpos>1325</endpos></feature>
+<feature>
+<id>1994799</id>
+<title>BBa_K112999</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1326</startpos>
+<endpos>1331</endpos></feature>
+<feature>
+<id>1994800</id>
+<title>BBa_K112108</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1332</startpos>
+<endpos>1997</endpos></feature>
+<feature>
+<id>1994801</id>
+<title>BBa_K112999</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1998</startpos>
+<endpos>2003</endpos></feature>
+<feature>
+<id>1994802</id>
+<title>BBa_K112704</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2004</startpos>
+<endpos>2051</endpos></feature>
+<feature>
+<id>1994803</id>
+<title>BBa_K112999</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2052</startpos>
+<endpos>2057</endpos></feature>
+<feature>
+<id>1994804</id>
+<title>BBa_K112709</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2058</startpos>
+<endpos>2097</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

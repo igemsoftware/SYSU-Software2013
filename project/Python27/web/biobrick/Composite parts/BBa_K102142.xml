@@ -1,0 +1,132 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12866</part_id>
+<part_name>BBa_K102142</part_name>
+<part_short_name>K102142</part_short_name>
+<part_short_desc>TA14In anti-sense input in test harness</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Issues</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K102142</part_url>
+<part_entered>2008-10-27</part_entered>
+<part_author>Wayne Materi</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>12801</part_id>
+<part_name>BBa_K102962</part_name>
+<part_short_desc>TA14In anti-sense input to BBa_K102912</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>12801</part_id>
+<part_name>BBa_K102962</part_name>
+<part_short_desc>TA14In anti-sense input to BBa_K102912</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>12801</part_id>
+<part_name>BBa_K102962</part_name>
+<part_short_desc>TA14In anti-sense input to BBa_K102912</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttatgacaacttgacggctacatcattcactttttcttcacaaccggcacggaactcgctcgggctggccccggtgcatt
+ttttaaatacccgcgagaaatagagttgatcgtcaaaaccaacattgcgaccgacggtggcgataggcatccgggtggtg
+ctcaaaagcagcttcgcctggctgatacgttggtcctcgcgccagcttaagacgctaatccctaactgctggcggaaaag
+atgtgacagacgcgacggcgacaagcaaacatgctgtgcgacgctggcgatatcaaaattgctgtctgccaggtgatcgc
+tgatgtactgacaagcctcgcgtacccgattatccatcggtggatggagcgactcgttaatcgcttccatgcgccgcagt
+aacaattgctcaagcagatttatcgccagcagctccgaatagcgcccttccccttgcccggcgttaatgatttgcccaaa
+caggtcgctgaaatgcggctggtgcgcttcatccgggcgaaagaaccccgtattggcaaatattgacggccagttaagcc
+attcatgccagtaggcgcgcggacgaaagtaaacccactggtgataccattcgcgagcctccggatgacgaccgtagtga
+tgaatctctcctggcgggaacagcaaaatatcacccggtcggcaaacaaattctcgtccctgatttttcaccaccccctg
+accgcgaatggtgagattgagaatataacctttcattcccagcggtcggtcgataaaaaaatcgagataaccgttggcct
+caatcggcgttaaacccgccaccagatgggcattaaacgagtatcccggcagcaggggatcattttgcgcttcagccata
+cttttcatactcccgccattcagagaagaaaccaattgtccatattgcatcagacattgccgtcactgcgtcttttactg
+gctcttctcgctaaccaaaccggtaaccccgcttattaaaagcattctgtaacaaagcgggaccaaagccatgacaaaaa
+cgcgtaacaaaagtgtctataatcacggcagaaaagtccacattgattatttgcacggcgtcacactttgctatgccata
+gcatttttatccataagattagcggatcctacctgacgctttttatcgcaactctctactgtttctccatacccgttttt
+ttgggctagctactagagggagggatcattgtcgagctctgatgagtccgtgaggacgaaacggtagacagtaccgtcag
+ctcgacaagctttcgaaccaatgcgacgcgacgaaggtggcgtatgtctgctaactactcgagatccgtcgaccagtcat
+gcctggtcctgatgagtccgtgaggacgaaacggatca
+</seq_data></sequences>
+<features>
+<feature>
+<id>1992253</id>
+<title>AraC</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1079</endpos></feature>
+<feature>
+<id>1992256</id>
+<title>BBa_I0500</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>1992254</id>
+<title>PC</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1043</startpos>
+<endpos>1114</endpos></feature>
+<feature>
+<id>1992255</id>
+<title>Pbad</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1080</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>1992257</id>
+<title>BBa_K102962</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1219</startpos>
+<endpos>1398</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

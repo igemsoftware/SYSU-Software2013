@@ -1,0 +1,66 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>6842</part_id>
+<part_name>BBa_Y00073</part_name>
+<part_short_name>Y00073</part_short_name>
+<part_short_desc>S. pombe gene SPCC126.04c, coded for S. cerevisiae expression</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_Y00073</part_url>
+<part_entered>2006-06-22</part_entered>
+<part_author>Natalie Kuldell</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gtttcttcgaattcgcggccgcttctagagatgctaaccgaacaacaaactttggaattatttcctgagaactgggaaag
+aaatgaacaggttttgttgaaatatccagatggtttaccaaaagatgtgttggcagatcaaagagttgacaataccgaat
+cacaggtgaaagatgaaatcacttctaatatcactaaccaaactcagatacttctgccagcagattcttttccgcagtat
+ggctcatatccaaacaatagtgaattggattacgttgtttgtacgaagtgtgatagaccattcttgtccgaatatattga
+agaccatcactcatcctgtaatggtatcaaacctcccaaacctcaatttgaaccggtagctaattcacaggtcttaaaca
+aagatgtcaataacggcaataatgctcccattaaaaacggagtcaaatcgacagcaaagggctctgctggaaatcatgag
+aaaaattctgtgaatggtcagaagaaccccgagatgccccctaaaaggcgtaaaactgaggagaacaagaaacccactaa
+atccgcgttgccaaagaaagaggcttcgaaaaagaagaatccaaaggtgaagggcccggttgacgtggagaaacagtgtg
+gggtcttattaccaaatggccagatgtgtgctcgttctctaacgtgtaaaacacactcaatgtcaagtaaaagggcagtt
+ccgggacgttcacaaccctatgatgtgcttttggcggcatgtcaaaagaagaaccaggtcaagatccaaaggcaaatctt
+ggaaactgccaaggagtccgaagacaatcaacatcaagctccggttgacagtgacgaagaggtgtcctttattatgaatg
+ttttacaaaaatctggcaatcaaccattggaacaaaaagtcttcttgccagttaaacgtagacatagttattttaggact
+agagaattaattgcggcagctttccgtcatggtgagcaagggatgcaggtaactggtacgattctgggccgtgtgatacc
+tttctcagcccgtcaacctctgtaatactagtagcggccgctgcaggaagaaac
+</seq_data></sequences>
+<features>
+<feature>
+<id>1881734</id>
+<title>prefix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>30</endpos></feature>
+<feature>
+<id>1881735</id>
+<title>suffix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1066</startpos>
+<endpos>1094</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//chassis/eukaryote/yeast</category>
+<category>//cds/chromatinremodeling</category>
+<category>//chassis/eukaryote/yeast</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

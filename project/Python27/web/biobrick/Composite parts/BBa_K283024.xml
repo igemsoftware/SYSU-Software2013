@@ -1,0 +1,102 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15694</part_id>
+<part_name>BBa_K283024</part_name>
+<part_short_name>K283024</part_short_name>
+<part_short_desc>pTet-rbs-SsrB</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K283024</part_url>
+<part_entered>2009-10-13</part_entered>
+<part_author>Shi Lei, W Ling , Nelson Chu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tccctatcagtgatagagattgacatccctatcagtgatagagatactgagcactactagagaaagaggagaaaatgaaa
+gaatataagatcttattagtagacgatcatgaaatcatcattaacggcattatgaatgccttattaccctggcctcattt
+taaaattgtagagcatgttaaaaatggtcttgaggtttataatgcctgttgtgcatacgagcctgacatacttatccttg
+atcttagtctacctggcatcaatggcctggatatcattcctcaattacatcagcgttggccagcaatgaatattctggtt
+tacacagcataccaacaagagtatatgaccattaaaactttagccgcaggtgctaatggctatgttttaaaaagcagtag
+tcagcaagttctgttagcggcattgcaaacagtagcagtaaacaagcgttacattgacccaacgttgaatcgggaagcta
+tcctggctgaattaaacgctgacacgaccaatcatcaactgcttactttgcgcgagcgtcaggttcttaaacttattgac
+gaggggtataccaatcatgggatcagcgaaaagctacatatcagtataaaaaccgtcgaaacacaccggatgaatatgat
+gagaaagctacaggttcataaagtgacagagttacttaactgtgcccgaagaatgaggttaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2035710</id>
+<title>BBa_R0040</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>54</endpos></feature>
+<feature>
+<id>2035711</id>
+<title>TetR 1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>19</endpos></feature>
+<feature>
+<id>2035712</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>25</endpos></feature>
+<feature>
+<id>2035713</id>
+<title>TetR 2</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>26</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>2035714</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>43</startpos>
+<endpos>48</endpos></feature>
+<feature>
+<id>2035716</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>63</startpos>
+<endpos>74</endpos></feature>
+<feature>
+<id>2035715</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>67</startpos>
+<endpos>70</endpos></feature>
+<feature>
+<id>2040403</id>
+<title>ssrB</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>75</startpos>
+<endpos>702</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/generator/prc</category>
+<category>//function/regulation/transcriptional</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

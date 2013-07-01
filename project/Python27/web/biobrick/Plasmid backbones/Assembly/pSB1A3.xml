@@ -1,0 +1,203 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>4586</part_id>
+<part_name>pSB1A3</part_name>
+<part_short_name>pSB1A3</part_short_name>
+<part_short_desc>High copy BioBrick assembly plasmid</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>pSB1A3</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:pSB1A3</part_url>
+<part_entered>2004-05-04</part_entered>
+<part_author>Reshma Shetty &amp; Tom Knight</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tactagtagcggccgctgcagtccggcaaaaaagggcaaggtgtcaccaccctgccctttttctttaaaaccgaaaagat
+tacttcgcgttatgcaggcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctcac
+tcaaaggcggtaatacggttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggc
+caggaaccgtaaaaaggccgcgttgctggcgtttttccacaggctccgcccccctgacgagcatcacaaaaatcgacgct
+caagtcagaggtggcgaaacccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcct
+gttccgaccctgccgcttaccggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcacgctg
+taggtatctcagttcggtgtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcg
+ccttatccggtaactatcgtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacagg
+attagcagagcgaggtatgtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaagaacagt
+atttggtatctgcgctctgctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccg
+ctggtagcggtggtttttttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatcttt
+tctacggggtctgacgctcagtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttcac
+ctagatccttttaaattaaaaatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttaccaat
+gcttaatcagtgaggcacctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagata
+actacgatacgggagggcttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagattt
+atcagcaataaaccagccagccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctatta
+attgttgccgggaagctagagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcgtg
+gtgtcacgctcgtcgtttggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgtt
+gtgcaaaaaagcggttagctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggtta
+tggcagcactgcataattctcttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtca
+ttctgagaatagtgtatgcggcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcagaac
+tttaaaagtgctcatcattggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcga
+tataacccactcgtgcacccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaagg
+caaaatgccgcaaaaaagggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaag
+catttatcagggttattgtctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgca
+catttccccgaaaagtgccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacg
+aggcagaatttcagataaaaaaaatccttagctttcgctaaggatgatttctggaattcgcggccgcttctagag
+</seq_data></sequences>
+<features>
+<feature>
+<id>2119968</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>2119969</id>
+<title>suffix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>2119970</id>
+<title>E. coli his operon terminator</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>93</endpos></feature>
+<feature>
+<id>2119971</id>
+<title>terminator stem loop</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>30</startpos>
+<endpos>64</endpos></feature>
+<feature>
+<id>2119972</id>
+<title>VR</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>157</startpos>
+<endpos>176</endpos></feature>
+<feature>
+<id>2119973</id>
+<title>rep(pMB1) (rev)</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>261</startpos>
+<endpos>875</endpos></feature>
+<feature>
+<id>2119974</id>
+<title>ORI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>276</startpos>
+<endpos>276</endpos></feature>
+<feature>
+<id>2119975</id>
+<title>ampR (rev)</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>1035</startpos>
+<endpos>1895</endpos></feature>
+<feature>
+<id>2119976</id>
+<title>VF2</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>2018</startpos>
+<endpos>2037</endpos></feature>
+<feature>
+<id>2119977</id>
+<title>end of terminator</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>2094</startpos>
+<endpos>2097</endpos></feature>
+<feature>
+<id>2119978</id>
+<title>terminator stem loop</title>
+<type>stem_loop</type>
+<direction>reverse</direction>
+<startpos>2107</startpos>
+<endpos>2126</endpos></feature>
+<feature>
+<id>2119979</id>
+<title>prefix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2136</startpos>
+<endpos>2157</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>copies</name>
+<value>100-300</value>
+<units></units>
+<url></url>
+<id>3011</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>A</value>
+<units></units>
+<url></url>
+<id>3012</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>mcs</name>
+<value>BioBrick</value>
+<units></units>
+<url></url>
+<id>3013</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>pMB1</value>
+<units></units>
+<url></url>
+<id>3014</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>3015</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>insert</name>
+<value>None</value>
+<units></units>
+<url></url>
+<id>3317</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//plasmidbackbone/assembly</category>
+<category>//plasmidbackbone/copynumber/high</category>
+<category>//standard/10</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

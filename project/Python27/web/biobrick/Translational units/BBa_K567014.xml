@@ -1,0 +1,154 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23596</part_id>
+<part_name>BBa_K567014</part_name>
+<part_short_name>K567014</part_short_name>
+<part_short_desc>PT7-metGM</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K567014</part_url>
+<part_entered>2011-09-29</part_entered>
+<part_author>You Wang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ttaatacgactcactataggggaattgtgagcggataacaattcccctctagaaataattttgtttaactttaagaagga
+gatataccatgactcaagtcgcgaagaaaattctggtgacgtgcgcactgccgtacgctaacggctcaatccacctcggc
+catatgctggagcacatccaggctgatgtctgggtccgttaccagcgaatgcgcggccacgaggtcaacttcatctgcgc
+cgacgatgcccacggtacaccgatcatgctgaaagctcagcagcttggtatcaccccggagcagatgattggcgaaatga
+gtcaggagcatcagactgatttcgcaggctttaacatcagctatgacaactatcactcgacgcacagcgaagagaaccgc
+cagttgtcagaacttatctactctcgcctgaaagaaaacggttttattaaaaaccgcaccatctctcagctgtacgatcc
+ggaaaaaggcatgttcctgccggaccgttttgtgaaaggcacctgcccgaaatgtaaatccccggatcaatacggcgata
+actgcgaagtctgcggcgcgacctacagcccgactgaactgatcgagccgaaatcggtggtttctggcgctacgccggta
+atgcgtgattctgaacacttcttctttgatctgccctctttcagcgaaatgttgcaggcatggacccgcagcggtgcgtt
+gcaggagcaggtggcaaataaaatgcaggagtggtttgaatctggcctgcaacagtgggatatctcccgcgacgcccctt
+acttcggttttgaaattccgaacgcgccgggcaaatatttctacgtctggctggacgcaccgattggctacatgggttct
+ttcaagaatctgtgcgacaagcgcggcgacagcgtaagcttcgatgaatactggaagaaagactccaccgccgagctgta
+ccacttcatcggtaaagatattgtttacttccacagcctgttctggcctgccatgctggaaggcagcaacttccgcaagc
+cgtccaacctgtttgttcatggctatgtgacggtgaacggcgcaaagatgtccaagtctcgcggcacctttattaaagcc
+agcacctggctgaatcattttgacgcagacagcctgcgttactactacactgcgaaactctcttcgcgcattgatgatat
+cgatctcaacctggaagatttcgttcagcgtgtgaatgccgatatcgttaacaaagtggttaacctggcctcccgtaatg
+cgggctttatcaacaagcgttttgacggcgtgctggcaagcgaactggctgacccgcagttgtacaaaaccttcactgat
+gccgctgaagtgattggtgaagcgtgggaaagccgtgaatttggtaaagccgtgcgcgaaatcatggcgctggctgatct
+ggctaaccgctatgtcgatgaacaggctccgtgggtggtggcgaaacaggaaggccgcgatgccgacctgcaggcaattt
+gctcaatgggcatcaacctgttccgcgtgctgatgacttacctgaagccggtactgccgaaactgaccgagcgtgcagaa
+gcattcctcaatacggaactgacctgggatggtatccagcaaccgctgctgggccacaaagtgaatccgttcaaggcgct
+gtataaccgcatcgatatgaggcaggttgaagcactggtggaagcctctaaagaagaagtaaaagccgctgccgcgccgg
+taactggcccgctggcagatgatccgattcaggaaaccatcacctttgacgacttcgctaaagttgacctgcgcgtggcg
+ctgattgaaaacgcagagtttgttgaaggttctgacaaactgctgcgcctgacgctggatctcggcggtgaaaaacgcaa
+tgtcttctccggtattcgttctgcttacccggatccgcaggcactgattggtcgtcacaccattatggtggctaacctgg
+caccacgtaaaatgcgcttcggtatctctgaaggcatggtgatggctgccggtcctggcgggaaagatattttcctgcta
+agcccggatgccggtgctaaaccgggtcatcaggtgaaataaggcaccaccaccaccaccactgagatccggctgctaac
+aaagcccgaaaggaagctgagttggctgctgccaccgctgagcaataactagcataaccccttggggcctctaaacgggt
+cttgaggggttttttggaattccgg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2150826</id>
+<title>T7 promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2</startpos>
+<endpos>18</endpos></feature>
+<feature>
+<id>2150827</id>
+<title>lac operator</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>2150828</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>75</startpos>
+<endpos>81</endpos></feature>
+<feature>
+<id>2152910</id>
+<title>MetRS(mutated)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>2122</endpos></feature>
+<feature>
+<id>2152915</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2209</startpos>
+<endpos>2256</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>ligands</name>
+<value>Isopropyl &amp;#946;-D-1-Thiogalactopyranoside (IPTG)</value>
+<units></units>
+<url></url>
+<id>15243</id>
+<m_date>2011-10-05 16:32:24</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter>
+<parameter>
+<name>ligands</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>15242</id>
+<m_date>2011-10-05 16:32:14</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter>
+<parameter>
+<name>function</name>
+<value>animo acylate tRNA(Met)</value>
+<units></units>
+<url></url>
+<id>15241</id>
+<m_date>2011-10-05 16:31:49</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter>
+<parameter>
+<name>function</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>15234</id>
+<m_date>2011-10-05 16:31:32</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>ER2566</value>
+<units></units>
+<url></url>
+<id>15233</id>
+<m_date>2011-10-05 16:31:08</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>15232</id>
+<m_date>2011-10-05 16:30:58</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter></parameters>
+<categories>
+<category>//cds/enzyme</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

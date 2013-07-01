@@ -1,0 +1,144 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16107</part_id>
+<part_name>BBa_K204068</part_name>
+<part_short_name>K204068</part_short_name>
+<part_short_desc>RBS+crtZ+terminater</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K204068</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>Uno Keisuke</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10362</part_id>
+<part_name>BBa_I742156</part_name>
+<part_short_desc>crtZ native rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10364</part_id>
+<part_name>BBa_I742157</part_name>
+<part_short_desc>crtZ (beta-carotene hydroxylase) coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10365</part_id>
+<part_name>BBa_I742158</part_name>
+<part_short_desc>crtZ (beta-carotene hydroxylase) with native rbs</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>rbs+crtZ</part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<!--Error: Sequence does not match subpart list --></specified_subscars>
+<sequences>
+<seq_data>ctctaccggagaaatttactagatgttgtggatttggaatgccctgatcgttttcgttaccgtgattggcatggaagtga
+ttgctgcactggcacacaaatacatcatgcacggctggggttggggatggcatctttcacatcatgaaccgcgtaaaggt
+gcgtttgaagttaacgatctttatgccgtggtttttgctgcattatcgatcctgctgatttatctgggcagtacaggaat
+gtggccgctccagtggattggcgcaggtatgacggcgtatggattactctattttatggtgcacgacgggctggtgcatc
+aacgttggccattccgctatattccacgcaagggctacctcaaacggttgtatatggcgcaccgtatgcatcacgccgtc
+aggggcaaagaaggttgtgtttcttttggcttcctctatgcgccgcccctgtcaaaacttcaggcgacgctccgggaaag
+acatggcgctagagcgggcgctgccagagatgcgcagggcggggaggatgagcccgcatccgggaagtaataatactaga
+gccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctct
+ctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2045371</id>
+<title>BBa_I742156</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>16</endpos></feature>
+<feature>
+<id>2045372</id>
+<title>crtZ</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>23</startpos>
+<endpos>550</endpos></feature>
+<feature>
+<id>2045373</id>
+<title>BBa_I742157</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>23</startpos>
+<endpos>553</endpos></feature>
+<feature>
+<id>2045374</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>562</startpos>
+<endpos>641</endpos></feature>
+<feature>
+<id>2045375</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>573</startpos>
+<endpos>616</endpos></feature>
+<feature>
+<id>2045376</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>650</startpos>
+<endpos>690</endpos></feature>
+<feature>
+<id>2045377</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>657</startpos>
+<endpos>676</endpos></feature>
+<feature>
+<id>2045378</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>677</startpos>
+<endpos>690</endpos></feature>
+<feature>
+<id>2045379</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>683</startpos>
+<endpos>683</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

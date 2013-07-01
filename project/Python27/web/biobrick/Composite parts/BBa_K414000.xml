@@ -1,0 +1,97 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18991</part_id>
+<part_name>BBa_K414000</part_name>
+<part_short_name>K414000</part_short_name>
+<part_short_desc>RD29A Promoter + Strong Plant Kozak (RBS) + RFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>RD29A + Ko</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K414000</part_url>
+<part_entered>2010-09-01</part_entered>
+<part_author>Elaine Bersaba</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>aggtagaacttatatacattatattgtaattttttgtaacaaaatgtttttattattattatagaattttactggttaaa
+ttaaaaatgaatagaaaaggtgaattaagaggagagaggaggtaaacattttcttctattttttcatattttcaggataa
+attattgtaaaagtttacaagatttccatttgactagggtaaatgaggaatattctctagtaagatcattatttcatcta
+cttcttttatcttctaccagtagaggaataaacaatatttagctcctttgtaaatacaaattaattttccttcttgacat
+cattcaattttaattttacgtataaaataaaagatcatacctattagaacgattaaggagaaatacaattcgaatgagaa
+ggatgtgccgtttgttataataaacagccacacgacgtaaacgtaaaatgaccacatgatgggccaatagacatggaccg
+actactaataatagtaagttacattttaggatggaataaatatcataccgacatcagttttgaaagaaaagggaaaaaaa
+gaaaaaataaataaaagatatactaccgacatgagttccaaaaagcaaaaaaaaagatcaagccgacacagacacgcgta
+gagagcaaaatgactttgacgtcacaccacgaaaacagacgcttcatacgtgtccctttatctctctcagtctctctata
+aacttagtgagaccctcctctgttttactcacaaatatgcaaactagaaaacaatcatcaggaataaagggtttgattac
+ttctattggaaagaaaaaaatctttggaaaatggatggtaccaaaaaaaaaacaatggcctcctccgaggacgtcatcaa
+ggagttcatgcgcttcaaggtgcgcatggagggctccgtgaacggccacgagttcgagatcgagggcgagggcgagggcc
+gcccctacgagggcacccagaccgccaagctgaaggtgaccaagggcggccccctgcccttcgcctgggacatcctgtcc
+cctcagttccagtacggctccaaggcctacgtgaagcaccccgccgacatccccgactacttgaagctgtccttccccga
+gggcttcaagtgggagcgcgtgatgaacttcgaggacggcggcgtggtgaccgtgacccaggactcctccctccaggacg
+gcgagttcatctacaaggtgaagctgcgcggcaccaacttcccctccgacggccccgtaatgcagaagaagaccatgggc
+tgggaggcctccaccgagcggatgtaccccgaggacggcgccctgaagggcgagatcaagatgaggctgaagctgaagga
+cggcggccactacgacgccgaggtcaagaccacctacatggccaagaagcccgtgcagctgcccggcgcctacaagaccg
+acatcaagctggacatcacctcccacaacgaggactacaccatcgtggaacagtacgagcgcgccgagggccgccactcc
+accggcgcctaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2086059</id>
+<title>RD29A</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>836</endpos></feature>
+<feature>
+<id>2086058</id>
+<title>Kpn I</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>837</startpos>
+<endpos>842</endpos></feature>
+<feature>
+<id>2086057</id>
+<title>Kozak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>843</startpos>
+<endpos>854</endpos></feature>
+<feature>
+<id>2086056</id>
+<title>RFP start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>855</startpos>
+<endpos>857</endpos></feature>
+<feature>
+<id>2086060</id>
+<title>RFP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>855</startpos>
+<endpos>1529</endpos></feature>
+<feature>
+<id>2087834</id>
+<title>Translational Stop 2x</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1530</startpos>
+<endpos>1535</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

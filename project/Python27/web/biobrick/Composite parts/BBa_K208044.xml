@@ -1,0 +1,309 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16959</part_id>
+<part_name>BBa_K208044</part_name>
+<part_short_name>K208044</part_short_name>
+<part_short_desc>Lac Promoter/RBS/OmpA/PhaP/Terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K208044</part_url>
+<part_entered>2009-10-20</part_entered>
+<part_author>USU iGEM 2009</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15548</part_id>
+<part_name>BBa_K208003</part_name>
+<part_short_desc>OmpA Signal Peptide - Silver Fusion Compatible</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15433</part_id>
+<part_name>BBa_K208001</part_name>
+<part_short_desc>Phasin (PhaP)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15548</part_id>
+<part_name>BBa_K208003</part_name>
+<part_short_desc>OmpA Signal Peptide - Silver Fusion Compatible</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15433</part_id>
+<part_name>BBa_K208001</part_name>
+<part_short_desc>Phasin (PhaP)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>15548</part_id>
+<part_name>BBa_K208003</part_name>
+<part_short_desc>OmpA Signal Peptide - Silver Fusion Compatible</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>15433</part_id>
+<part_name>BBa_K208001</part_name>
+<part_short_desc>Phasin (PhaP)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>caatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcg
+ggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactttatgcttccggctcg
+tatgttgtgtggaattgtgagcggataacaatttcacacatactagagaaagaggagaaatactagatgaaaaagacagc
+tatcgcgattgcagtggcactggctggtttcgctaccgtagcgcaggcctactagatgatcctcaccccggaacaagttg
+cagcagcgcaaaaggccaacctcgaaacgctgttcggcctgaccaccaaggcgtttgaaggcgtcgaaaagctcgtcgag
+ctgaaccttcaggtcgtcaagacttcgttcgcagaaggcgttgacaacgccaagaaggcgctgtcggccaaggacgcaca
+ggaactgctggccatccaggccgcagccgtgcagccggttgccgaaaagaccctggcctacacccgccacctgtatgaaa
+tcgcttcggaaacccagagcgagttcaccaaggtagccgaggctcaactggccgaaggctcgaagaacgtgcaagcgctg
+gtcgagaacctcgccaagaacgccccggccggttcggaatcgaccgtggccatcgtgaagtcggcgatctccgctgccaa
+caacgcctacgagtcggtgcagaaggcgaccaagcaagcggtcgaaatcgctgaaaccaacttccaggctgcggctacgg
+ctgccaccaaggctgcccagcaagccagcgccacggcccgtacggccacggcaaagaagacgacggctgcctgatactag
+agccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctc
+tctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2056175</id>
+<title>BBa_R0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>2056176</id>
+<title>end of LacI coding region (inactive)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>2056177</id>
+<title>CAP binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>126</endpos></feature>
+<feature>
+<id>2056178</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>137</startpos>
+<endpos>142</endpos></feature>
+<feature>
+<id>2056179</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>161</startpos>
+<endpos>166</endpos></feature>
+<feature>
+<id>2056180</id>
+<title>LacI binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>166</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>2056181</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>173</startpos>
+<endpos>173</endpos></feature>
+<feature>
+<id>2056183</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>209</startpos>
+<endpos>220</endpos></feature>
+<feature>
+<id>2056182</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>213</startpos>
+<endpos>216</endpos></feature>
+<feature>
+<id>2056186</id>
+<title>BBa_K208003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>227</startpos>
+<endpos>289</endpos></feature>
+<feature>
+<id>2056185</id>
+<title>Start Codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>227</startpos>
+<endpos>229</endpos></feature>
+<feature>
+<id>2056184</id>
+<title>OmpA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>227</startpos>
+<endpos>289</endpos></feature>
+<feature>
+<id>2056187</id>
+<title>BBa_K208001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>296</startpos>
+<endpos>874</endpos></feature>
+<feature>
+<id>2056188</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>883</startpos>
+<endpos>962</endpos></feature>
+<feature>
+<id>2056189</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>894</startpos>
+<endpos>937</endpos></feature>
+<feature>
+<id>2056190</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>971</startpos>
+<endpos>1011</endpos></feature>
+<feature>
+<id>2056191</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>978</startpos>
+<endpos>997</endpos></feature>
+<feature>
+<id>2056192</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>998</startpos>
+<endpos>1011</endpos></feature>
+<feature>
+<id>2056193</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1004</startpos>
+<endpos>1004</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

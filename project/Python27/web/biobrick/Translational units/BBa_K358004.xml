@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19050</part_id>
+<part_name>BBa_K358004</part_name>
+<part_short_name>K358004</part_short_name>
+<part_short_desc>lambda lysis cassette[SRRz/Rz1]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K358004</part_url>
+<part_entered>2010-09-19</part_entered>
+<part_author>Ken Kajita</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gagcaaatccccttattgggggtaagacatgaagatgccagaaaaacatgacctgttggccgccattctcgcggcaaagg
+aacaaggcatcggggcaatccttgcgtttgcaatggcgtaccttcgcggcagatataatggcggtgcgtttacaaaaaca
+gtaatcgacgcaacgatgtgcgccattatcgcctggttcattcgtgaccttctcgacttcgccggactaagtagcaatct
+cgcttatataacgagcgtgtttatcggctacatcggtactgactcgattggttcgcttatcaaacgcttcgctgctaaaa
+aagccggagtagaagatggtagaaatcaataatcaacgtaaggcgttcctcgatatgctggcgtggtcggagggaactga
+taacggacgtcagaaaaccagaaatcatggttatgacgtcattgtaggcggagagctatttactgattactccgatcacc
+ctcgcaaacttgtcacgctaaacccaaaactcaaatcaacaggcgccggacgctaccagcttctttcccgttggtgggat
+gcctaccgcaagcagcttggcctgaaagacttctctccgaaaagtcaggacgctgtggcattgcagcagattaaggagcg
+tggcgctttacctatgattgatcgtggtgatatccgtcaggcaatcgaccgttgcagcaatatctgggcttcactgccgg
+gcgctggttatggtcagttcgagcataaggctgacagcctgattgcaaaattcaaagaagcgggcggaacggtcagagag
+attgatgtatgagcagagtcaccgcgattatctccgctctggttatctgcatcatcgtctgcctgtcatgggctgttaat
+cattaccgtgataacgccattacctacaaagcccagcgcgacaaaaatgccagagaactgaagctggcgaacgcggcaat
+tactgacatgcagatgcgtcagcgtgatgttgctgcgctcgatgcaaaatacacgaaggagttagctgatgctaaagctg
+aaaatgatgctctgcgtgatgatgttgccgctggtcgtcgtcggttgcacatcaaagcagtctgtcagtcagtgcgtgaa
+gccaccaccgcctccggcgtggataatgcagcctccccccgactggcagacaccgctgaacgggattatttcaccctcag
+agagaggctgatcactatgcaaaaacaactggaaggaacccagaagtatattaatgagcagtgcagatagagt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2080446</id>
+<title>wt-RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>2</startpos>
+<endpos>26</endpos></feature>
+<feature>
+<id>2080447</id>
+<title>antiholin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>29</startpos>
+<endpos>352</endpos></feature>
+<feature>
+<id>2080448</id>
+<title>holin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>35</startpos>
+<endpos>352</endpos></feature>
+<feature>
+<id>2080449</id>
+<title>endolysin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>336</startpos>
+<endpos>812</endpos></feature>
+<feature>
+<id>2080450</id>
+<title>Rz</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>809</startpos>
+<endpos>1270</endpos></feature>
+<feature>
+<id>2080451</id>
+<title>Rz1</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1029</startpos>
+<endpos>1211</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//cds/enzyme/lysis</category>
+<category>//cds/lysis</category>
+<category>//cds/membrane/lysis</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

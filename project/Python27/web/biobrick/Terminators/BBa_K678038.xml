@@ -1,0 +1,65 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>21984</part_id>
+<part_name>BBa_K678038</part_name>
+<part_short_name>K678038</part_short_name>
+<part_short_desc>T2-motni, terminator for Aspergillus niger</part_short_desc>
+<part_type>Terminator</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K678038</part_url>
+<part_entered>2011-09-04</part_entered>
+<part_author>DTU-Denmark-2</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>attccgatgcggttttcaaggataacagatggcaaaattgggatatcgtcccacgggctggtgaaaaccagcatcgtgag
+gattaatggtggacaattctctttatccctctacccggtgtaatctagagtgtccataccagttgtcaataagtttccaa
+caagccagtgccgttgtagttgagtatttgcagtatagtcaaccatagtcgtagccagtaatgtttacgtacaatatcta
+cagaaaaatgaaataatttccacctcgtaaattagcacaccgtgacgaaatcccaagaacgtggcaacctagacaggcac
+taaaacccgtactacattacaattcaaccccgctccaacaacttcttctccctcttttctccggtgggggagggaaagag
+aggagggaggggggaaagttcgagatctggcaattcgaccctcggattggtttcccggttccgaatacggccggctttcc
+cattccactttgctttccttgcttgctgcgtgctgcgtgctgctgtgttgcatgcagctagccttaatgagactacctat
+ctttaatgtagagtagtatgagcagggaaagcctttatttcaactttctttcttccttgattttggttgataatatagat
+ctgcaccatgatatagtattatagaatggatagatgaatgaatggatgaatggtatgtatacgtaagtacctcgaaagtt
+agttaagtaaaaagtgaggggtaagttgagagccagccaaggctggggggctaaaatatgatgtgatcggatcacgagta
+tatgtcgtagttgttgtgtgtttttgtgtaggattggattggattggattgggttgagttagtggcattgccgacatagc
+cattcaatgagtcgaggaatgaactggtttcccgcgccagtaaataacttactttagctgtggtggtagtaagtaagata
+taaccggttttaaagttatccggggtcatg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2127407</id>
+<title>Linker 4</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>2127408</id>
+<title>T2-motni terminator</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>9</startpos>
+<endpos>990</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//chassis/eukaryote</category>
+<category>//direction/forward</category>
+<category>//terminator/single</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,163 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12612</part_id>
+<part_name>BBa_K136051</part_name>
+<part_short_name>K136051</part_short_name>
+<part_short_desc>flhB promoter + WT RBS - envZ*</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K136051</part_url>
+<part_entered>2008-10-25</part_entered>
+<part_author>alexandra bouaziz</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>12525</part_id>
+<part_name>BBa_K136008</part_name>
+<part_short_desc>flhB promoter followed by its natural RBS</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12606</part_id>
+<part_name>BBa_K136046</part_name>
+<part_short_desc>envZ*</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>12525</part_id>
+<part_name>BBa_K136008</part_name>
+<part_short_desc>flhB promoter followed by its natural RBS</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12606</part_id>
+<part_name>BBa_K136046</part_name>
+<part_short_desc>envZ*</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>12525</part_id>
+<part_name>BBa_K136008</part_name>
+<part_short_desc>flhB promoter followed by its natural RBS</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>0</scar_id>
+<scar_standard>0</scar_standard>
+<scar_type>Custom</scar_type>
+<scar_name>[tactagaggcgttacattcagaccgtctggggtctgggctacgtctttgtaccggacggctctaaagc]</scar_name>
+<scar_nickname>[tactagaggcgttacattcagaccgtctggggtctgggctacgtctttgtaccggacggctctaaagc]</scar_nickname>
+<scar_comments>Custom sequence</scar_comments>
+<scar_sequence>tactagaggcgttacattcagaccgtctggggtctgggctacgtctttgtaccggacggctctaaagc</scar_sequence></scar>
+<subpart>
+<part_id>12606</part_id>
+<part_name>BBa_K136046</part_name>
+<part_short_desc>envZ*</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ccacgtcatatcaggcggtctgataaggcgatgacgccgcatccgacaaacgcacactatgcttgatgtgtggcagcaaa
+agccctaaatcccgcctgttttgccccttactcaaaccattgaacgctttgcgctctggcatcattcacgcttaatactc
+tttccaggattggcgacgtgtctgacgagagcgacgacaaaactactagaggcgttacattcagaccgtctggggtctgg
+gctacgtctttgtaccggacggctctaaagcatgaggcgattgcgcttctcgccacgaagttcatttgcccgtacgttat
+tgctcatcgtcaccttgctgttcgccagcctggtgacgacttatctggtggtgctgaacttcgcgattttgccgagcctc
+cagcagtttaataaagtcctcgcgtacgaagtgcgtatgttgatgaccgacaaactgcaactggaggacggcacgcagtt
+ggttgtgcctcccgctttccgtcgggagatctaccgtgagctggggatctctctctactccaacgaggctgccgaagagg
+caggtctgcgttgggcgcaacactatgaattcttaagccatcagatggcgcagcaactgggcggcccgacggaagtgcgc
+gttgaggtcaacaaaagttcgcctgtcgtctggctgaaaacctggctgtcgcccaatatctgggtacgcgtgccgctgac
+cgaaattcatcagggcgatttctctccgctgttccgctatacgctggcgattatgctattggcgataggcggggcgtggc
+tgtttattcgtatccagaaccgaccgttggtcgatctcgaacacgcagccttgcaggttggtaaagggattattccgccg
+ccgctgcgtgagtatggcgcttcggaggtgcgttccgttacccgtgcctttaaccatatggcggctggtgttaagcaact
+ggcggatgaccgcacgctgctgatggcgggggtaagtcacgacttgcgcacgccgctgacgcgtattcgcctggcgactg
+agatgatgagcgagcaggatggctatctggcagaatcgatcaataaagatatcgaagagtgcaacgccatcagtgagcag
+tttatcgactacctgcgcaccgggcaggagatgccgatggaaatggcggatcttaatgcagtactcggtgaggtgattgc
+tgccgaaagtggctatgagcgggaaattgaaaccgcgctttaccccggcagcattgaagtgaaaatgcacccgctgtcga
+tcaaacgcgcggtggcgaatatggtggtcaacgccgcccgttatggcaatggctggatcaaagtcagcagcggaacggag
+ccgaatcgcgcctggttccaggtggaagatgacggtccgggaattgcgccggaacaacgtaagcacctgttccagccgtt
+tgtccgcggcgacagtgcgcgcaccattagcggcacgggattagggctggcaattgtgcagcgtatcgtggataaccata
+acgggatgctggagcttggcaccagcgagcggggcgggctttccattcgcgcctggctgccagtgccggtaacgcgggcg
+cagggcacgacaaaagaagggtaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1987782</id>
+<title>BBa_K136008</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>203</endpos></feature>
+<feature>
+<id>1987779</id>
+<title>flhDC binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>79</startpos>
+<endpos>94</endpos></feature>
+<feature>
+<id>1987780</id>
+<title>flhDC binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>106</startpos>
+<endpos>121</endpos></feature>
+<feature>
+<id>1987781</id>
+<title>transcription initiation site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>153</startpos>
+<endpos>153</endpos></feature>
+<feature>
+<id>1987783</id>
+<title></title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>212</startpos>
+<endpos>271</endpos></feature>
+<feature>
+<id>1987787</id>
+<title>BBa_K136046</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>212</startpos>
+<endpos>1624</endpos></feature>
+<feature>
+<id>1987784</id>
+<title>atg</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>272</startpos>
+<endpos>274</endpos></feature>
+<feature>
+<id>1987785</id>
+<title>T -&gt;G</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>1113</startpos>
+<endpos>1113</endpos></feature>
+<feature>
+<id>1987786</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1622</startpos>
+<endpos>1624</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

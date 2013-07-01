@@ -1,0 +1,199 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23746</part_id>
+<part_name>BBa_K629005</part_name>
+<part_short_name>K629005</part_short_name>
+<part_short_desc>trkD, a functional Kup (formerly TrkD) system took up Cs+ with a moderate rate and affinity</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>trkD</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K629005</part_url>
+<part_entered>2011-10-04</part_entered>
+<part_author>Zilong WANG, Yi ZHENG</part_author>
+<best_quality>Questionable</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgagcactgataataagcaatcattgcccgcgattaccctcgcggcgattggagttgtctacggcgatattggtaccag
+cccgttatatacacttcgtgaatgtttgtccggccagtttggttttggcgttgaacgcgatgccgtgtttggctttttat
+cgctgatcttctggctgctaatctttgtggtttccattaaatatctcaccttcgtgatgcgggcagataacgccggtgag
+ggggggatcctgacgttgatgtcgcttgccgggcgtaatacgtcggcgcgaaccacatcaatgctggtgattatggggct
+aatcggcggcagctttttctatggtgaagtcgtcataacacccgctatttcggtgatgtcagccattgaaggtctggaaa
+tcgtcgccccgcagctggatacctggatagttcccctctcaattatcgttctcactttattatttatgattcaaaagcat
+ggcacggctatggtcggtaagctgtttgcgccgatcatgctgacctggtttttgattctggcaggactggggttacgtag
+cattattgctaacccggaagtgctgcatgcgctgaatccgatgtgggcggtgcatttcttccttgaatacaaaacggttt
+cttttattgcattaggggcagtggtgctgtcgattacgggggtcgaggcgctgtatgctgatatgggacactttggtaag
+ttccctattcgtctggcgtggttcactgtcgtattaccttccttaactcttaattacttcggccagggagcgctgttgtt
+aaagaacccggaagcgattaagaacccgttcttccttttggcaccggactgggcgctgatcccgctgctgatcatcgccg
+cactggcgacggtaatcgcctcgcaggcggttatctctggcgtcttttcattgacgcgtcaggcggtacgtctgggatat
+ttgtcgccgatgcgcattattcacacctccgaaatggagtcagggcaaatctatattccgtttgtgaactggatgctcta
+tgtcgcggtcgtgattgtgattgtcagctttgagcactccagcaacctggcggcggcgtacgggattgcggtgaccggaa
+ccatggtgctgacgtctattctctcgactaccgtggcacgtcagaactggcactggaataagtattttgttgcgctgatc
+ctgattgctttcctttgtgtcgatattccattgttcaccgctaacctcgataaactgctctccggcggctggttgccatt
+gagcctcggtactgtgatgtttatcgtgatgaccacctggaagagcgagcgtttccgcttgctgcggcggatgcatgaac
+atggtaactctctggaagcgatgattgcttcgctggagaaatcaccgcctgttcgcgtgcccgggaccgcggtgtatatg
+tcgcgtgcaatcaacgtcattccctttgcgctgatgcataaccttaaacataacaaggtattgcatgagcgggtgattct
+gttaactctgcgcaccgaagacgctccatatgtccataacgtccgtcgggtacagattgaacaactgtcgcccactttct
+ggcgcgtggtggcaagttatggttggcgagaaacgccaaacgtagaagaagttttccaccgctgcggtctggaaggatta
+agttgccggatgatggaaacctccttctttatgtcgcatgagtcgttgatcctcggcaaacgcccgtggtatttgcgtct
+gcgcggcaagctgtacttgctgctgcaacgtaatgcgctgcgtgcaccagatcaatttgaaatcccgccaaacagggtta
+tcgaactgggtactcaggtcgaaatctaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2157756</id>
+<title>TrkD</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1869</endpos></feature>
+<feature>
+<id>2157755</id>
+<title>fwd primer</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>2157754</id>
+<title>start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2157757</id>
+<title>rev primer</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>1849</startpos>
+<endpos>1869</endpos></feature>
+<feature>
+<id>2157758</id>
+<title>terminator</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1867</startpos>
+<endpos>1869</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>origin</name>
+<value>genome of E. Coli BL21 Plys</value>
+<units></units>
+<url></url>
+<id>14969</id>
+<m_date>2011-10-05 09:04:06</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>genome of E. Coli BL21 Plys strain</value>
+<units></units>
+<url></url>
+<id>14968</id>
+<m_date>2011-10-05 09:03:52</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>14967</id>
+<m_date>2011-10-05 09:02:57</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>function</name>
+<value>cesium absorption</value>
+<units></units>
+<url></url>
+<id>14482</id>
+<m_date>2011-10-04 09:50:54</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>function</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>14481</id>
+<m_date>2011-10-04 09:49:46</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>efficiency</name>
+<value>143.478% relative absorption of cesium-137 to control</value>
+<units></units>
+<url></url>
+<id>14480</id>
+<m_date>2011-10-04 09:48:58</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>efficiency</name>
+<value>43.478% relative absorption of cesium-137 to control</value>
+<units></units>
+<url></url>
+<id>14479</id>
+<m_date>2011-10-04 09:48:40</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>efficiency</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>14478</id>
+<m_date>2011-10-04 09:30:51</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>trkD, a functional Kup (formerly TrkD) system took up Cs+ with a moderate rate and affinity</value>
+<units></units>
+<url></url>
+<id>14399</id>
+<m_date>2011-10-04 05:52:41</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>trkD, a functional Kup (formerly TrkD) system took up Cs+ with a moderate rate and affinity</value>
+<units></units>
+<url></url>
+<id>14400</id>
+<m_date>2011-10-04 05:52:41</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>trkD, a functional Kup (formerly TrkD) system took up Cs+ with a moderate rate and affinity</value>
+<units></units>
+<url></url>
+<id>14401</id>
+<m_date>2011-10-04 05:52:41</m_date>
+<user_id>9022</user_id>
+<user_name>Skybird</user_name></parameter></parameters>
+<categories>
+<category>//cds/membrane/transporter</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//classic/other/uncategorized</category>
+<category>//proteindomain/transmembrane</category>
+<category>//ribosome/prokaryote/ecoli</category>
+<category>//terminator/single</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

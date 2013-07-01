@@ -1,0 +1,245 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18551</part_id>
+<part_name>BBa_K318506</part_name>
+<part_short_name>K318506</part_short_name>
+<part_short_desc>Pir + RBS + RFP + TT</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K318506</part_url>
+<part_entered>2010-07-22</part_entered>
+<part_author>Sarah R. Sandock</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>194</part_id>
+<part_name>BBa_R0065</part_name>
+<part_short_desc>Promoter (lambda cI and luxR regulated -- hybrid)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>cI+luxR</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>194</part_id>
+<part_name>BBa_R0065</part_name>
+<part_short_desc>Promoter (lambda cI and luxR regulated -- hybrid)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>cI+luxR</part_nickname></subpart>
+<subpart>
+<part_id>5461</part_id>
+<part_name>BBa_I13507</part_name>
+<part_short_desc>Screening plasmid intermediate</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>194</part_id>
+<part_name>BBa_R0065</part_name>
+<part_short_desc>Promoter (lambda cI and luxR regulated -- hybrid)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>cI+luxR</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5461</part_id>
+<part_name>BBa_I13507</part_name>
+<part_short_desc>Screening plasmid intermediate</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>taagcacctgtaggatcgtacaggtttacgcaagaaaatggtttgttatagtcgaataacaccgtgcgtgttgactattt
+tacctctggcggtgatatactagagaaagaggagaaatactagatggcttcctccgaagacgttatcaaagagttcatgc
+gtttcaaagttcgtatggaaggttccgttaacggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacgaa
+ggtacccagaccgctaaactgaaagttaccaaaggtggtccgctgccgttcgcttgggacatcctgtccccgcagttcca
+gtacggttccaaagcttacgttaaacacccggctgacatcccggactacctgaaactgtccttcccggaaggtttcaaat
+gggaacgtgttatgaacttcgaagacggtggtgttgttaccgttacccaggactcctccctgcaagacggtgagttcatc
+tacaaagttaaactgcgtggtaccaacttcccgtccgacggtccggttatgcagaaaaaaaccatgggttgggaagcttc
+caccgaacgtatgtacccggaagacggtgctctgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcact
+acgacgctgaagttaaaaccacctacatggctaaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaactg
+gacatcacctcccacaacgaagactacaccatcgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgctta
+ataacgctgatagtgctagtgtagatcgctactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggc
+ctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcg
+tttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2075485</id>
+<title>BBa_R0065</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>97</endpos></feature>
+<feature>
+<id>2075486</id>
+<title>Lux Box</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>6</startpos>
+<endpos>25</endpos></feature>
+<feature>
+<id>2075487</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>47</startpos>
+<endpos>52</endpos></feature>
+<feature>
+<id>2075488</id>
+<title>OR2 cI</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>57</startpos>
+<endpos>73</endpos></feature>
+<feature>
+<id>2075489</id>
+<title>lux p(R) start</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>58</startpos>
+<endpos>58</endpos></feature>
+<feature>
+<id>2075490</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>71</startpos>
+<endpos>76</endpos></feature>
+<feature>
+<id>2075491</id>
+<title>OR1 cI</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>81</startpos>
+<endpos>97</endpos></feature>
+<feature>
+<id>2075492</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>94</startpos>
+<endpos>97</endpos></feature>
+<feature>
+<id>2075494</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>106</startpos>
+<endpos>117</endpos></feature>
+<feature>
+<id>2075493</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>110</startpos>
+<endpos>113</endpos></feature>
+<feature>
+<id>2075495</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>124</startpos>
+<endpos>798</endpos></feature>
+<feature>
+<id>2075496</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>124</startpos>
+<endpos>804</endpos></feature>
+<feature>
+<id>2075497</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>805</startpos>
+<endpos>829</endpos></feature>
+<feature>
+<id>2075498</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>838</startpos>
+<endpos>917</endpos></feature>
+<feature>
+<id>2075499</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>849</startpos>
+<endpos>892</endpos></feature>
+<feature>
+<id>2075500</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>926</startpos>
+<endpos>966</endpos></feature>
+<feature>
+<id>2075501</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>933</startpos>
+<endpos>952</endpos></feature>
+<feature>
+<id>2075502</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>953</startpos>
+<endpos>966</endpos></feature>
+<feature>
+<id>2075503</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>959</startpos>
+<endpos>959</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_J13025</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11696</part_id>
+<part_name>BBa_K143001</part_name>
+<part_short_name>K143001</part_short_name>
+<part_short_desc>5� Integration Sequence for the amyE locus of B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>amyE 5 IS</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K143001</part_url>
+<part_entered>2008-08-27</part_entered>
+<part_author>Chris Hirst</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgtttgcaaaacgattcaaaacctctttactgccgttattcgctggatttttattgctgtttcatttggttctggcagg
+accggcggctgcgagtgctgaaacggcgaacaaatcgaatgagcttacagcaccgtcgatcaaaagcggaaccattcttc
+atgcatggaattggtcgttcaatacgttaaaacacaatatgaaggatattcatgatgcaggatatacagccattcagaca
+tctccgattaaccaagtaaaggaagggaatcaaggagataaaagcatgtcgaactggtactggctgtatcagccgacatc
+gtatcaaattggcaaccgttacttaggtactgaacaagaatttaaagaaatgtgtgcagccgctgaagaatatggcataa
+aggtcattgttgacgcggtcatcaatcataccaccagtgattatgccgcgatttccaatgaggttaagagtattccaaac
+tggacacatggaaacacacaaattaaaaactggtctgatcga
+</seq_data></sequences>
+<features>
+<feature>
+<id>1974145</id>
+<title>5&apos; AmyE homologous sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>522</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//chassis/prokaryote/bsubtilis</category>
+<category>//igem2008/Imperial_College/favorite</category>
+<category>//DNA/chromosomalintegration</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

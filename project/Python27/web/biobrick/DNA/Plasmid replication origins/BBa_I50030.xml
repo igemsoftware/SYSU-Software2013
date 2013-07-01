@@ -1,0 +1,188 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>6450</part_id>
+<part_name>BBa_I50030</part_name>
+<part_short_name>I50030</part_short_name>
+<part_short_desc>pBR322 replication origin</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I50030</part_url>
+<part_entered>2006-02-03</part_entered>
+<part_author>Reshma Shetty</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ctgtcagaccaagtttactcatatatactttagattgatttaaaacttcatttttaatttaaaaggatctaggtgaagat
+cctttttgataatctcatgaccaaaatcccttaacgtgagttttcgttccactgagcgtcagaccccgtagaaaagatca
+aaggatcttcttgagatcctttttttctgcgcgtaatctgctgcttgcaaacaaaaaaaccaccgctaccagcggtggtt
+tgtttgccggatcaagagctaccaactctttttccgaaggtaactggcttcagcagagcgcagataccaaatactgtcct
+tctagtgtagccgtagttaggccaccacttcaagaactctgtagcaccgcctacatacctcgctctgctaatcctgttac
+cagtggctgctgccagtggcgataagtcgtgtcttaccgggttggactcaagacgatagttaccggataaggcgcagcgg
+tcgggctgaacggggggttcgtgcacacagcccagcttggagcgaacgacctacaccgaactgagatacctacagcgtga
+gctatgagaaagcgccacgcttcccgaagggagaaaggcggacaggtatccggtaagcggcagggtcggaacaggagagc
+gcacgagggagcttccagggggaaacgcctggtatctttatagtcctgtcgggtttcgccacctctgacttgagcgtcga
+tttttgtgatgctcgtcaggggggcggagcctatggaaaaacgccagcaacgcggcctttttacggttcctggccttttg
+ctggccttttgctcacatgttctttcctgcgttatcccctgattctgtggataaccgtattaccgcctttgagtgagctg
+ataccgctcgccgcagccgaacgaccgagcgcagcgagtcagtgagcgaggaagcggaagagcgcctgatgcggtatttt
+ctccttacgcatctgtgcggtatttcacaccgcatatggtgcactctcagtacaatctgctctgatgccgcatagttaag
+ccagtatacactccgctatcgctacgtgactgggtcatggctgcgccccgacacccgccaacacccgctgacgcgccctg
+acgggcttgtctgctcccggcatccgcttacagacaagctgtgaccgtctccgggagctgcatgtgtcagaggttttcac
+cgtcatcaccgaaacgcgcgaggcagctgcggtaaagctcatcagcgtggtcgtgaagcgattcacagatgtctgcctgt
+tcatccgcgtccagctcgttgagtttctccagaagcgttaatgtctggcttctgataaagcgggccatgttaagggcggt
+tttttcctgtttggtcactgatgcctccgtgtaagggggatttctgttcatgggggtaatgataccgatgaaacgagaga
+ggatgctcacgatacgggttactgatgatgaacatgcccggttactggaacgttgtgagggtaaacaactggcggtatgg
+atgcggcgggaccagagaaaaatcactcagggtcaatgccagcgcttcgttaatacagatgtaggtgttccacagggtag
+ccagcagcatcctgcgatgcagatccggaacataatggtgcagggcgctgacttccgcgtttccagactttacgaaacac
+ggaaaccgaagaccattcatgttgttgctcaggtcgcagacgttttgcagcagcagtcgcttcacgttcgctcgcgtatc
+ggtgattcattctgctaaccagtaaggcaaccccgccagcctagccgggtcctcaacgacaggagcacgatcatgcgcac
+ccgtggccaggacccaacgctgcccgagatgcgccgcgtgcggctgctggagatggcggacgcgatggatatgttctgcc
+aagggttggtttgcgcattcacagttctccgcaagaattgattggctccaattcttggagtggtgaatccgttagcgagg
+tgccgccggcttccat
+</seq_data></sequences>
+<features>
+<feature>
+<id>1796195</id>
+<title>repeat region found in Tn3</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>108</startpos>
+<endpos>145</endpos></feature>
+<feature>
+<id>1796201</id>
+<title>rep pMB1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>160</startpos>
+<endpos>774</endpos></feature>
+<feature>
+<id>1796194</id>
+<title>pMB1 origin of replication</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>171</startpos>
+<endpos>759</endpos></feature>
+<feature>
+<id>1796196</id>
+<title>RNAII transcript promoter -35 sequence</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>171</startpos>
+<endpos>176</endpos></feature>
+<feature>
+<id>1796197</id>
+<title>RNAII transcript promoter -10 sequence</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>192</startpos>
+<endpos>197</endpos></feature>
+<feature>
+<id>1796202</id>
+<title>RNAII transcript</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>207</startpos>
+<endpos>759</endpos></feature>
+<feature>
+<id>1796198</id>
+<title>RNAI transcript</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>210</startpos>
+<endpos>317</endpos></feature>
+<feature>
+<id>1796199</id>
+<title>RNAI transcript promoter -10 sequence</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>326</startpos>
+<endpos>331</endpos></feature>
+<feature>
+<id>1796200</id>
+<title>RNAI transcript promoter -35 sequence</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>348</startpos>
+<endpos>353</endpos></feature>
+<feature>
+<id>1796203</id>
+<title>replication origin</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>758</startpos>
+<endpos>758</endpos></feature>
+<feature>
+<id>1796204</id>
+<title>L-strand Y effector site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>879</startpos>
+<endpos>942</endpos></feature>
+<feature>
+<id>1796205</id>
+<title>gamma-delta insertion target sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1044</startpos>
+<endpos>1048</endpos></feature>
+<feature>
+<id>1796206</id>
+<title>H-strand Y effector site</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1126</startpos>
+<endpos>1282</endpos></feature>
+<feature>
+<id>1796207</id>
+<title>RBS 1</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>1383</startpos>
+<endpos>1388</endpos></feature>
+<feature>
+<id>1796208</id>
+<title>RBS 2</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>1384</startpos>
+<endpos>1388</endpos></feature>
+<feature>
+<id>1796209</id>
+<title>gamma-delta insertion target sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1501</startpos>
+<endpos>1505</endpos></feature>
+<feature>
+<id>1796210</id>
+<title>from pSC101</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1531</startpos>
+<endpos>1657</endpos></feature>
+<feature>
+<id>1796211</id>
+<title>gamma-delta insertion target sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1774</startpos>
+<endpos>1778</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//plasmid/component/origin</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

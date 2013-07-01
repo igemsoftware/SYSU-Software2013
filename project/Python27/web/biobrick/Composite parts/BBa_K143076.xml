@@ -1,0 +1,180 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12857</part_id>
+<part_name>BBa_K143076</part_name>
+<part_short_name>K143076</part_short_name>
+<part_short_desc>B. subtilis AmyE locus RFP output promoter and RBS tester</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K143076</part_url>
+<part_entered>2008-10-27</part_entered>
+<part_author>Chris Hirst</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11697</part_id>
+<part_name>BBa_K143002</part_name>
+<part_short_desc>3� Integration Sequence for the amyE locus of B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>amyE 3 IS</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>6050</part_id>
+<part_name>BBa_J04650</part_name>
+<part_short_desc>E1010.B0015</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>11697</part_id>
+<part_name>BBa_K143002</part_name>
+<part_short_desc>3� Integration Sequence for the amyE locus of B. subtilis</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>amyE 3 IS</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>6050</part_id>
+<part_name>BBa_J04650</part_name>
+<part_short_desc>E1010.B0015</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<!--Error: Sequence does not match subpart list --></specified_subscars>
+<sequences>
+<seq_data>atggcttcctccgaagacgttatcaaagagttcatgcgtttcaaagttcgtatggaaggttccgttaacggtcacgagtt
+cgaaatcgaaggtgaaggtgaaggtcgtccgtacgaaggtacccagaccgctaaactgaaagttaccaaaggtggtccgc
+tgccgttcgcttgggacatcctgtccccgcagttccagtacggttccaaagcttacgttaaacacccggctgacatcccg
+gactacctgaaactgtccttcccggaaggtttcaaatgggaacgtgttatgaacttcgaagacggtggtgttgttaccgt
+tacccaggactcctccctgcaagacggtgagttcatctacaaagttaaactgcgtggtaccaacttcccgtccgacggtc
+cggttatgcagaaaaaaaccatgggttgggaagcttccaccgaacgtatgtacccggaagacggtgctctgaaaggtgaa
+atcaaaatgcgtctgaaactgaaagacggtggtcactacgacgctgaagttaaaaccacctacatggctaaaaaaccggt
+tcagctgccgggtgcttacaaaaccgacatcaaactggacatcacctcccacaacgaagactacaccatcgttgaacagt
+acgaacgtgctgaaggtcgtcactccaccggtgcttaataacgctgatagtgctagtgtagatcgctactagagccaggc
+atcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactag
+agtcacactggctcaccttcgggtgggcctttctgcgtttatatactagagatccgtttaggctgggcggtgatagcttc
+tcgttcaggcagtacgcctcttttcttttccagacctgagggaggcggaaatggtgtgaggttcccggggaaaagccaaa
+taggcgatcgcgggagtgctttatttgaagatcaggctatcactgcggtcaatagatttcacaatgtgatggctggacag
+cctgaggaactctcgaacccgaatggaaacaaccagatatttatgaatcagcgcggctcacatggcgttgtgctggcaaa
+tgcaggttcatcctctgtctctatcaatacggcaacaaaattgcctgatggcaggtatgacaataaagctggagcgggtt
+catttcaagtgaacgatggtaaactgacaggcacgatcaatgccaggtctgtagctgtgctttatcctgatgatattgca
+aaagcgcctcatgttttccttgagaattacaaaacaggtgtaacacattctttcaatgatcaactgacgattaccttgcg
+tgcagatgcgaatacaacaaaagccgtttatcaaatcaataatggaccagacgacaggcgtttaaggatggagatcaatt
+cacaatcggaaaaggagatccaatttggcaaaacatacaccatcatgttaaaaggaacgaacagtgatggtgtaacgagg
+accgagaaatacagttttgttaaaagagatccagcgtcggccaaaaccatcggctatcaaaatccgaatcattggagcca
+ggtaaatgcttatatctataaacatgatgggagccgagtaattgaattgaccggatcttggcctggaaaaccaatgacta
+aaaatgcagacggaatttacacgctgacgctgcctgcggacacggatacaaccaacgcaaaagtgatttttaataatggc
+agcgcccaagtgcccggtcagaatcagcctggctttgattacgtgctaaatggtttatataatgactcgggcttaagcgg
+ttctcttccccattga
+</seq_data></sequences>
+<features>
+<feature>
+<id>1992195</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>675</endpos></feature>
+<feature>
+<id>1992196</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>681</endpos></feature>
+<feature>
+<id>1992197</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>682</startpos>
+<endpos>706</endpos></feature>
+<feature>
+<id>1992198</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>715</startpos>
+<endpos>794</endpos></feature>
+<feature>
+<id>1992199</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>726</startpos>
+<endpos>769</endpos></feature>
+<feature>
+<id>1992200</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>803</startpos>
+<endpos>843</endpos></feature>
+<feature>
+<id>1992201</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>810</startpos>
+<endpos>829</endpos></feature>
+<feature>
+<id>1992202</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>830</startpos>
+<endpos>843</endpos></feature>
+<feature>
+<id>1992203</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>836</startpos>
+<endpos>836</endpos></feature>
+<feature>
+<id>1992204</id>
+<title>3&apos; AmyE homologous sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>852</startpos>
+<endpos>1856</endpos></feature>
+<feature>
+<id>1992205</id>
+<title>BBa_K143002</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>852</startpos>
+<endpos>1856</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//chassis/prokaryote/Bsubtilis</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

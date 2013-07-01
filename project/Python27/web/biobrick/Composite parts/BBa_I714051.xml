@@ -1,0 +1,207 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10030</part_id>
+<part_name>BBa_I714051</part_name>
+<part_short_name>I714051</part_short_name>
+<part_short_desc>[I714030][J23066][I714030]</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I714051</part_url>
+<part_entered>2007-10-20</part_entered>
+<part_author>Mingzhi Qu</part_author>
+<best_quality>Questionable</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10028</part_id>
+<part_name>BBa_I714030</part_name>
+<part_short_desc>OriT-F (Origin of Transfer for the F-plasmid nic region)</part_short_desc>
+<part_type>Conjugation</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>6903</part_id>
+<part_name>BBa_J23008</part_name>
+<part_short_desc>[key3c] riboregulator for lock3 variants</part_short_desc>
+<part_type>RNA</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7075</part_id>
+<part_name>BBa_J23009</part_name>
+<part_short_desc>[key3d] riboregulator for lock3 variants</part_short_desc>
+<part_type>RNA</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10028</part_id>
+<part_name>BBa_I714030</part_name>
+<part_short_desc>OriT-F (Origin of Transfer for the F-plasmid nic region)</part_short_desc>
+<part_type>Conjugation</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10028</part_id>
+<part_name>BBa_I714030</part_name>
+<part_short_desc>OriT-F (Origin of Transfer for the F-plasmid nic region)</part_short_desc>
+<part_type>Conjugation</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7202</part_id>
+<part_name>BBa_J23066</part_name>
+<part_short_desc>[key3c][key3d][B0015]</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10028</part_id>
+<part_name>BBa_I714030</part_name>
+<part_short_desc>OriT-F (Origin of Transfer for the F-plasmid nic region)</part_short_desc>
+<part_type>Conjugation</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>10028</part_id>
+<part_name>BBa_I714030</part_name>
+<part_short_desc>OriT-F (Origin of Transfer for the F-plasmid nic region)</part_short_desc>
+<part_type>Conjugation</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>7202</part_id>
+<part_name>BBa_J23066</part_name>
+<part_short_desc>[key3c][key3d][B0015]</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>10028</part_id>
+<part_name>BBa_I714030</part_name>
+<part_short_desc>OriT-F (Origin of Transfer for the F-plasmid nic region)</part_short_desc>
+<part_type>Conjugation</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>cctctggtgactttatccgtaaataatttaacccactccacaaaaaggctcaacaggttggtggttctcaccaccaaaag
+caccacaccccacgcaaaaacaagtttttgctgatttttctttataaatagagtgttatgaaaaattagtttctcttact
+ctctttatgatatttaaaaaagcggtgtcggcgcggctacaacaacgcgccgacaccgttttgtaggggtggtactgact
+atttttataaaaaacattattttatattaggggtgctgctagcggcgcggtgtgtttttttataggataccgctaggggc
+gctgctagcggtgcgtccctgtttgcattatgaattactagagacccaaaagcaagaggtgattctagttggtggttaat
+gaaaattaacttacttactagaaatatctctaaaaagccagattattaatccggctttactagagcgggcgggcgggcgg
+gcgggatccataaaaaaaaaacccaaaagcaagaggtgattctagttaaaaaaaaaaagcttcccgcccgcccgcccgcc
+cgtactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggt
+gaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttatatactagagcctctggtgactt
+tatccgtaaataatttaacccactccacaaaaaggctcaacaggttggtggttctcaccaccaaaagcaccacaccccac
+gcaaaaacaagtttttgctgatttttctttataaatagagtgttatgaaaaattagtttctcttactctctttatgatat
+ttaaaaaagcggtgtcggcgcggctacaacaacgcgccgacaccgttttgtaggggtggtactgactatttttataaaaa
+acattattttatattaggggtgctgctagcggcgcggtgtgtttttttataggataccgctaggggcgctgctagcggtg
+cgtccctgtttgcattatgaat
+</seq_data></sequences>
+<features>
+<feature>
+<id>1951274</id>
+<title>BBa_I714030</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>355</endpos></feature>
+<feature>
+<id>1951275</id>
+<title>BBa_J23008</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>364</startpos>
+<endpos>457</endpos></feature>
+<feature>
+<id>1951276</id>
+<title>BBa_J23009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>466</startpos>
+<endpos>562</endpos></feature>
+<feature>
+<id>1951277</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>571</startpos>
+<endpos>650</endpos></feature>
+<feature>
+<id>1951278</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>582</startpos>
+<endpos>625</endpos></feature>
+<feature>
+<id>1951279</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>659</startpos>
+<endpos>699</endpos></feature>
+<feature>
+<id>1951280</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>666</startpos>
+<endpos>685</endpos></feature>
+<feature>
+<id>1951281</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>686</startpos>
+<endpos>699</endpos></feature>
+<feature>
+<id>1951282</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>692</startpos>
+<endpos>692</endpos></feature>
+<feature>
+<id>1951283</id>
+<title>BBa_I714030</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>708</startpos>
+<endpos>1062</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>
