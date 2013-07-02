@@ -14,22 +14,24 @@ def format_to_json(content):
   while i != -1:
     content = content[:i] + '{' + content[i:]
     pos = i + 22
-    stack = []
-    stack.append(content[pos])
-    while stack != []:
+    stack = 1
+    while stack != 0:
       pos += 1
       if content[pos] == '{':
-        stack.append(content[pos])
+        stack += 1
       elif content[pos] == '}':
-        stack.pop()
+        stack -= 1
     i = content.find("\"SequenceAnnotation", pos)
     pos += 1
     if i != -1:
       content = content[:pos] + '},' + content[pos:]
+      i += 2
     else:
       content = content[:pos] + '}' + content[pos:]
 
   # TODO: hard coding, transfer "annotation" to an array
+  pos += 1
+  pos = content.find("}", pos)
   content = content[:pos] + '],' + content[(pos+1):]
   content = json.loads('{'+content+'}')
   return content
@@ -37,4 +39,4 @@ def format_to_json(content):
 if __name__ == "__main__":
   fp = open(sys.argv[1])
   content = fp.read()
-  print format_to_json(content)
+  print json.dumps(format_to_json(content))
