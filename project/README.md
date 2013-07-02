@@ -14,11 +14,11 @@ SYSU iGEM software
 2. Open the "IGEM-Browser"
 	> See "Hello world" in browser
 
-Following jobs:
-	1. Chromium CEF, optimize ( C++ & C# )
-	2. Web client ( HTML, CSS, JAVASCRIPT )
-	3. Server, GPU Computing ( Python & C++ )
-	4. Database ( Sqlite | MySQL )
+Following jobs:<br>
+	1. Chromium CEF, optimize ( C++ & C# )<br>
+	2. Web client ( HTML, CSS, JAVASCRIPT )<br>
+	3. Server, GPU Computing ( Python & C++ )<br>
+	4. Database ( Sqlite | MySQL )<br>
 	
 A important thing:
 	The data transfer between Client, Server and GPU
