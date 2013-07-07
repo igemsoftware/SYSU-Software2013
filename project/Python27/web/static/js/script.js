@@ -300,11 +300,17 @@ $().ready(function() {
     ws.onmessage = function(msg) {
       var message = JSON.parse(msg.data);
       if (message.request == "getDirList") {
-        if (catalogHandler.istreeInit === true) {
-          catalogHandler.addExtraJSONdata(message.result);
-        } else {
-          catalogHandler.handleJSONdata(message.result.files);
-        }
+		console.log(message.result);
+		if(message.result.files=='true')
+		{
+			
+		}else{
+			if (catalogHandler.istreeInit === true) {
+			  catalogHandler.addExtraJSONdata(message.result);
+			} else {
+			  catalogHandler.handleJSONdata(message.result.files);
+			}
+		}
       } else if (message.request == "getBiobrick") {
         var configBar = $("div.span2#configBar");
         configBar.css("display", "none");

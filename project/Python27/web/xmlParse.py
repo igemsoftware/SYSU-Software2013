@@ -26,10 +26,13 @@ def list_all_fileanddir(path):
     return l    
 
 def get_allfiledirs(path="biobrick"):
+    if os.path.isfile(path):
+        return {'path':path,'files':'','pathIsAFile':'true'}
     res = []
     dict={}
     dict['path']=path
     dict['files']=getAllInPath(path,res)
+    dict['pathIsAFile']='false'
     return dict
     
 def getAllInPath(path,result):

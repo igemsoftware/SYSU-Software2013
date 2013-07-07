@@ -392,6 +392,10 @@ dTree.prototype.s = function(id) {
 	configBar.css("display", "none");
 	configBar = $("div.span2#configBar");
 	configBar.css("display", "block");
+	/*console.log(JSON.stringify({
+		'request': 'getDirList',
+      	'dir': this.aNodes[id].path
+	}));*/
 	ws.send(JSON.stringify({
 		'request': 'getDirList',
       	'dir': this.aNodes[id].path

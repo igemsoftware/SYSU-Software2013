@@ -16,7 +16,8 @@ class apis():
   def userLogin(self,message):
     #return self.db.isUserNameAndPasswordCorrect(name=message['name'],password=message['password'])
     return user.userLogin(self.db,name=message['name'],password=message['password'])
-  def getDirList(self,message={'dir':'biobrick'}):    
+  def getDirList(self,message={'dir':'biobrick'}): 
+    #print xmlParse.get_allfiledirs(message['dir'])
     return xmlParse.get_allfiledirs(message['dir'])
   def getBiobrick(self,message={'path':'biobrick/Terminators/BBa_B0010.xml'}):
     return xmlParse.xmlBiobrick(message['path']).getJsonString()
