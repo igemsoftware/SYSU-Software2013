@@ -1,6 +1,6 @@
 iGEM-SOFTWARE-2013
 ==================
-This is the project of igem 2013 by SYSU-Software.Not finish yet..
+<img src="http://ww4.sinaimg.cn/mw690/b8700d2fgw1e6eiyimidwj202s02smx2.jpg" width="100" height="100" />
 
 SYSU iGEM software
 
