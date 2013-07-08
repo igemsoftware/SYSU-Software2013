@@ -5,9 +5,9 @@ iGEM-SOFTWARE-2013
 SYSU iGEM software
 
 1. Use command line to open python server:
-	1) win+r => cmd
-	2) cd into Python
-	3) run: "python.exe web/app.py"
+	<br>1) win+r => cmd
+	<br>2) cd into Python
+	<br>3) run: "python.exe web/app.py"
 			
 	> like browser.bat
 		
