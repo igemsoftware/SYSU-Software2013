@@ -20,5 +20,5 @@ Following jobs:<br>
 	3. Server, GPU Computing ( Python & C++ )<br>
 	4. Database ( Sqlite | MySQL )<br>
 	
-A important thing:
+An important thing:
 	The data transfer between Client, Server and GPU
