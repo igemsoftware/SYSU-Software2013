@@ -162,25 +162,22 @@
   <!-- Custom js -->  
 
   <!-- <script src="static/js/libs/bootstrap/bootstrap.min.js"></script>-->
-<div style="position:relative;left:60px;">
+<div style="position:absolute;left:60px;">
   <style>
     ul{margin:0;padding:0;
         width: 600px;
         height: 407px;
         background-color: #FFFFFF;
       }table{border-collapse:collapse;border-spacing:0}
-  .category{width:800px;height:411px;border:1px solid #8A0E00;}
-.category h3 {height:30px;line-height:30px;text-indent:15px;background:#A91319;color:#fff;width: 200px;}
+.category{width:800px;height:411px;border:1px solid #8A0E00;}
 .category ul li{height:36px;line-height:30px;text-indent:35px;background:#66CCFF;
                 border-bottom:1px solid #ECECEC;border-top:1px solid #fff;
                 cursor:pointer;color:#A71F37;width: 200px;} 
 .category ul li:hover{background-color:#ECECEC;color:#fff;}
 .pop-category{width:592px;border:2px solid #8A0E00;background:#FDF5F5;
               position:relative;left:203px;top:-407px;z-index:1000;}
-.pop-category .sub-item{width:592px;height:407px;}
+.sub-item{width:592px;height:407px;}
 
-span.15{
-font-size:10.0000pt; font-family:'Times New Roman'; }
     .auto-style {
         background-color: #00CCFF;
     }
@@ -330,50 +327,6 @@ table, td, th{border:2px solid black;width:350px;height:20px;background-color: #
   </div>
  </div>
  </div>
- <script type="text/javascript">
-//get element's id with '$(id)' method
-function $(){
-    var elements = new Array();
-    for (var i = 0; i < arguments.length; i++) {
-        var element = arguments[i];
-        if (typeof element == 'string') 
-            element = document.getElementById(element);
-        if (arguments.length == 1) 
-            return element;
-        elements.push(element);
-    }
-    return elements;
-}
-//get ele's className
-function getElementsByClassName(className, tagName){
-    var ele = [], all = document.getElementsByTagName(tagName || '*');
-    for (var i = 0; i < all.length; i++) {
-        if (all[i].className == className) {
-            ele[ele.length] = all[i];
-        }
-    }
-    return ele;
-}
-</script>
- <script type='text/javascript'>
-  var category=$('J_category'),popCategory=$('J_popCategory'),
- cateLi=category.getElementsByTagName('li'),subItems=getElementsByClassName('sub-item','div');
-
- category.onclick=function(){
-   popCategory.style.display='block';
- };
-
- for(var i=0; i<cateLi.length; i++){
-  cateLi[i].index=i;
-  cateLi[i].onclick=function(){
-   for(var j=0; j<subItems.length; j++){
-     subItems[j].style.display='none';
-     cateLi[j].style.background='#66CCFF';
-   }
-   cateLi[this.index].style.background='#ECECEC';
-   subItems[this.index].style.display='block';
-  };
- }
- </script>
+<script src="../static/js/protocol.js"></script>
 </div>
 </html>
