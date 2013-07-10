@@ -10,7 +10,7 @@ def parse_data():
   content = graph.run()
   length = graph.get_length()
   content = list(content[:length])
-  return ret
+  return content
 
 if __name__=="__main__":
   parse_data()
