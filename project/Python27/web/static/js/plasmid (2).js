@@ -139,18 +139,19 @@ $(function(){
 	getData();
 	data=turnRawDatatoData(raw_data);
 	console.log(data);
+	//$('#sequence').text('大家好，我是text');	
 	var chart = new iChart.Donut2D({
 		animation:true,
 		render : 'canvasDiv',//图表渲染的HTML DOM的id
-		/*center:{
-			text:'CORE\nSKILLS',
+		center:{
+			text:raw_data["DnaComponent"]['name']+'\n'+seq.length+'bp',
 			shadow:true,
 			shadow_offsetx:0,
 			shadow_offsety:2,
 			shadow_blur:2,
 			shadow_color:'#b7b7b7',
 			color:'#6f6f6f'
-		},*/
+		},
 		//offset_angle: 270,
 		data: data,//图表的数据源
 		offsetx:-60,
@@ -172,7 +173,7 @@ $(function(){
 					for(i=0;i<data.length;i++){
 						if(data[i]["name"]==name){
 							str=str+"<br\/>"+data[i]["start"]+" to "+data[i]["end"];
-							str=str+"<br\/>"+seq.substring(data[i]["start"],data[i]["end"]);
+							str=str+"<br\/>"+seq.substring(data[i]["start"]-1,data[i]["end"]-1);
 							break;
 						}
 					}
@@ -193,25 +194,43 @@ $(function(){
 			fontsize:30//文本大小
 		},*/
 		sub_option:{
-			label:false,
+			/*mini_label_threshold_angle : 40,//迷你label的阀值,单位:角度
+			mini_label:{//迷你label配置项
+				fontsize:20,
+				fontweight:600,
+				color : '#ffffff'				
+			},*/
+			label : {
+				background_color:null,
+				sign:false,//设置禁用label的小图标
+				padding:'0 4',
+				border:{
+					enable:false,
+					color:'#666666'
+				},
+				fontsize:11,
+				fontweight:600,
+				color : '#4572a7'
+			},
+			/*listeners:{
+				parseText:function(d, t){
+					if(typeof(d.get('name'))!="number")
+					{
+						console.log(d.get('name'));
+						return d.get('name')+'here';//自定义label文本
+					}
+					return null;
+				}				
+			},*/
 			color_factor : 0.3,
 			listeners:{
-				/*beforedraw:function(l){
-					if(l.bcd){
-						return false;
-					}
-					return true;
-				},*/
 				click:function(l,e,m){
-					//console.log(typeof(l.get('name')));
 					if(e["event"]["button"]==0&&typeof(l.get('name'))!="number")
 					{
 						for(i=0;i<data.length;i++){
 							if(data[i]["name"]==l.get('name')){
-								//copy(seq.substring(data[i]["start"],data[i]["end"]));
-								window.clipboardData.setData("Text",seq.substring(data[i]["start"],data[i]["end"])); 
-								//CopyToClipBoard(seq.substring(data[i]["start"],data[i]["end"]));
-								alert(seq.substring(data[i]["start"],data[i]["end"]));
+								window.clipboardData.setData("Text",seq.substring(data[i]["start"]-1,data[i]["end"]-1)); 
+								alert(seq.substring(data[i]["start"]-1,data[i]["end"]-1));
 								break;
 							}
 						}
@@ -224,9 +243,12 @@ $(function(){
 		},
 		showpercent:true,
 		decimalsnum:2,
-		width : 800,
+		width : 700,
 		height : 400,
 		radius:140
 	});
 	chart.draw();
+	//console.log($("#sequenceTxt").val());	
+	console.log(document.getElementById('sequenceTxt').value);
+	document.getElementById('sequenceTxt').value=seq;
 });
