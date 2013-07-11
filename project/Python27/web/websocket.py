@@ -4,6 +4,7 @@ from database import SqliteDatabase
 import user
 import mlog
 import xmlParse
+import make_graph
 
 logging = mlog.logging
 
@@ -21,9 +22,12 @@ class apis():
     return xmlParse.get_allfiledirs(message['dir'])
   def getBiobrick(self,message={'path':'biobrick/Terminators/BBa_B0010.xml'}):
     return xmlParse.xmlBiobrick(message['path']).getJsonString()
-  def saveUserData(self,message): 
+  def getSimulationData(self,message):
+    content = make_graph.parse_data()
+    return content
+  def saveUserData(self,message):
     print message
-    message['data']=message['data'].replace('"','\'')    
+    message['data']=message['data'].replace('"','\'')
     print user.saveUserData(self.db,message['data'])
 
 def handle_websocket(ws):
