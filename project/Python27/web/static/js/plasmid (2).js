@@ -1,6 +1,6 @@
 var data =  [];
 var size=0;
-var colors=['#82d8ef','#80bd91'];
+var colors=['#afcc22','#82d8ef','#80bd91'];
 var raw_data={
     "DnaComponent": {
         "description": "undefined",
@@ -49,26 +49,6 @@ var seq=raw_data["DnaComponent"]["DnaSequence"]["nucleotides"];
 function sortNumber(a, b)
 {
 	return a["start"] - b["start"];
-}
-/*
-* 长字符串换行
-* @ bigString 长字符串
-* @ m   换行长度
-* @ b   分隔符
-* @ c   是否强制换行
-*
-*/
-function divBigString(bigString, m, b, c){
-	var i, j, s, r = bigString.split("\n");
-	if(m > 0) for(i in r){
-		for(s = r[i], r[i] = ""; s.length > m;
-			j = c ? m : (j = s.substr(0, m).match(/\S*$/)).input.length - j[0].length
-			|| m,
-			r[i] += s.substr(0, j) + ((s = s.substr(j)).length ? b : "")
-		);
-		r[i] += s;
-	}
-	return r.join("\n");
 }
 function turnRawDatatoData(raw)
 {
@@ -124,22 +104,13 @@ function copy(text2copy)
 	var divinfo = '<embed src="http://files.jb51.net/demoimg/200910/_clipboard.swf" FlashVars="clipboard='+text2copy+'" width="0" height="0" type="application/x-shockwave-flash"></embed>';//这里是关键 
 	document.getElementById(flashcopier).innerHTML = divinfo;     
 } 
-function getData()//to get the real data of plasmid
+function getRawData()//to get the raw data of plasmid
 {
-	data = [
-		{name : 'HTML5&CSS3',value : 6,color:'#f4f4f4',rna:'0 to 48'},
-		{name : 'JavaScript',value : 83,color:'#82d8ef',rna:'49 to 730'},
-		{name : 'Java',value : 1,color:'#f4f4f4',rna:'731 to 735'},
-		{name : 'XML',value : 6,color:'#80bd91',rna:'736 to 782'},
-		{name : 'PhotoShop',value : 4,color:'#f4f4f4',rna:'783 to 812'}
-	];
-	
+		
 }
 $(function(){
-	getData();
+	getRawData();
 	data=turnRawDatatoData(raw_data);
-	console.log(data);
-	//$('#sequence').text('大家好，我是text');	
 	var chart = new iChart.Donut2D({
 		animation:true,
 		render : 'canvasDiv',//图表渲染的HTML DOM的id
@@ -154,25 +125,24 @@ $(function(){
 		},
 		//offset_angle: 270,
 		data: data,//图表的数据源
-		offsetx:-60,
-		shadow:true,
+		offsetx:0,
+		shadow:false,
 		background_color:'#f4f4f4',
-		separate_angle:10,//分离角度
+		separate_angle:0,//分离角度
 		tip:{
 			enable:true,
 			showType:'fixed',
 			animation:true,
-			//fade_duration:700,
 			listeners:{
 				parseText:function(tip,name,value,text){
 					if(typeof(name)=="number"){
 						var str= "";
 					}else{
-						var str=name;
+						var str=name+"<br\/>";
 					}						
 					for(i=0;i<data.length;i++){
 						if(data[i]["name"]==name){
-							str=str+"<br\/>"+data[i]["start"]+" to "+data[i]["end"];
+							str=str+data[i]["start"]+" to "+data[i]["end"];
 							str=str+"<br\/>"+seq.substring(data[i]["start"]-1,data[i]["end"]-1);
 							break;
 						}
@@ -181,18 +151,6 @@ $(function(){
 				}
 			}
 		},
-		/*legend : {
-			enable : true,
-			shadow:true,
-			background_color:null,
-			border:false,
-			legend_space:30,//图例间距
-			line_height:34,//设置行高
-			sign_space:10,//小图标与文本间距
-			sign_size:30,//小图标大小
-			color:'#6f6f6f',
-			fontsize:30//文本大小
-		},*/
 		sub_option:{
 			/*mini_label_threshold_angle : 40,//迷你label的阀值,单位:角度
 			mini_label:{//迷你label配置项
@@ -202,7 +160,7 @@ $(function(){
 			},*/
 			label : {
 				background_color:null,
-				sign:false,//设置禁用label的小图标
+				sign:true,//设置禁用label的小图标
 				padding:'0 4',
 				border:{
 					enable:false,
@@ -210,18 +168,8 @@ $(function(){
 				},
 				fontsize:11,
 				fontweight:600,
-				color : '#4572a7'
+				color : '#4572a7',		
 			},
-			/*listeners:{
-				parseText:function(d, t){
-					if(typeof(d.get('name'))!="number")
-					{
-						console.log(d.get('name'));
-						return d.get('name')+'here';//自定义label文本
-					}
-					return null;
-				}				
-			},*/
 			color_factor : 0.3,
 			listeners:{
 				click:function(l,e,m){
@@ -242,7 +190,7 @@ $(function(){
 			}
 		},
 		showpercent:true,
-		decimalsnum:2,
+		decimalsnum:0,
 		width : 700,
 		height : 400,
 		radius:140
