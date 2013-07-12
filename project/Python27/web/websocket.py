@@ -4,7 +4,7 @@ from database import SqliteDatabase
 import user
 import mlog
 import xmlParse
-import make_graph
+#import make_graph
 
 logging = mlog.logging
 
