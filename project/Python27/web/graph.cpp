@@ -48,9 +48,14 @@ extern "C" {
     return Py_BuildValue("i", total);
   }
 
+  static PyObject* get_size(PyObject *self, PyObject *args) {
+    return Py_BuildValue("i", total / MaxLength);
+  }
+
   static PyMethodDef graphMethods[] = {
     {"run", run_wrapper, METH_VARARGS, "run the program to get required data"},
     {"get_length", get_length, METH_VARARGS, "get max length"},
+    {"get_size", get_size, METH_VARARGS, "get how many function to draw"},
     {NULL, NULL, 0, NULL}
   };
 
