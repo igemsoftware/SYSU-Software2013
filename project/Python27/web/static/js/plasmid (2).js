@@ -87,7 +87,7 @@ function turnRawDatatoData(raw)
 			real_data[index]["value"]=parseInt((real_data[real_data.length-1]["end"]-real_data[real_data.length-1]["start"])/size*100);
 		}
 	}	
-	console.log(real_data);
+	//console.log(real_data);
 	tempArray=null;
 	return real_data;
 }
@@ -95,7 +95,7 @@ function getRawData()//to get the raw data of plasmid
 {
 		
 }
-$(function(){
+function initDrawChart(){
 	getRawData();
 	data=turnRawDatatoData(raw_data);	
 	var chart = new iChart.Donut2D({
@@ -186,4 +186,19 @@ $(function(){
 	//console.log($("#sequenceTxt").val());	
 	//console.log(document.getElementById('sequenceTxt').value);
 	document.getElementById('sequenceTxt').value=seq;
+}
+var left=1;
+var textLen=60;
+function seqTextOnClickHandler(obj){	
+	left=parseInt((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size)+1;
+	console.log((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size);
+	console.log(document.getElementById('x1').value);
+	updateSeqPosText();
+}
+function updateSeqPosText(){
+	document.getElementById('x1').innerText=left;
+}
+$(function(){
+	initDrawChart();
+	document.getElementById('seqCurrentText').value=seq;
 });

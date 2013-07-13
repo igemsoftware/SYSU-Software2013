@@ -32,11 +32,16 @@
       <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
       <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
     </div>
-    <div id='seqPanel' style="width:700px;height:30px;float:left;">
-      <label style="width:10%;height:10px;float:left;">1</label>    
-      <label style="width:10%;height:10px;float:left;">50</label>
-    	<label style="width:10%;height:10px;float:left;">100</label>
+    <div id='seqPanel' style="width:700px;height:50px;float:left;">
+		<label id='x1' style="width:25%;height:15px;float:left;">1</label>    
+		<label id='x2' style="width:25%;height:15px;float:left;">20</label>
+		<label id='x3' style="width:25%;height:15px;float:left;">40</label>
+        <label id='x4' style="width:25%;height:15px;float:left;">60</label>
+        <textarea cols="60" rows="1" readonly wrap="off" id="seqCurrentText" style="resize: none;width:100%;height:15px;overflow:hidden;" onClick="seqTextOnClickHandler(this);" ></textarea>
         
+        <svg id="svgPanel" onload="" style="width:100%;height:20px;float:left;">
+  			<rect x="0" y="0" width="20" height="20" stroke="black" fill="black" stroke-width="5"/>
+		</svg>
     </div>
     <div id='canvasDiv' style="width:700px;height:400px;float:left;">    	
     </div>  
@@ -167,7 +172,7 @@
         <input id="copy-botton" style="cursor:pointer;height:100%;float:right;" type="submit" value="copy" />
         <!--<div id="d_clip_button" style="cursor:pointer;height:100%;float:right;" onClick="clip.setText("1234" );"><b>Copy To Clipboard...</b></div>-->
         </div>    	
-        <textarea style="width:100%;height:60%;overflow:scroll;" id="sequenceTxt" name="sequence" cols="" rows="">test1</textarea>
+        <textarea style="width: 100%; height: 60%; overflow: scroll; overflow-x: hidden;" id="sequenceTxt" name="sequence" cols="" rows="">test1</textarea>
 </div>  
   </div> <!-- /container -->
 <!--
