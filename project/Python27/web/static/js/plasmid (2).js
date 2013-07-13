@@ -91,26 +91,13 @@ function turnRawDatatoData(raw)
 	tempArray=null;
 	return real_data;
 }
-function copy(text2copy) 
-{ 
-    var flashcopier = 'flashcopier'; 
-	if(!document.getElementById(flashcopier)) 
-    { 
-        var divholder = document.createElement('div'); 
-        divholder.id = flashcopier; 
-        document.body.appendChild(divholder); 
-    } 
-	document.getElementById(flashcopier).innerHTML = ''; 
-	var divinfo = '<embed src="http://files.jb51.net/demoimg/200910/_clipboard.swf" FlashVars="clipboard='+text2copy+'" width="0" height="0" type="application/x-shockwave-flash"></embed>';//这里是关键 
-	document.getElementById(flashcopier).innerHTML = divinfo;     
-} 
 function getRawData()//to get the raw data of plasmid
 {
 		
 }
 $(function(){
 	getRawData();
-	data=turnRawDatatoData(raw_data);
+	data=turnRawDatatoData(raw_data);	
 	var chart = new iChart.Donut2D({
 		animation:true,
 		render : 'canvasDiv',//图表渲染的HTML DOM的id
@@ -197,6 +184,6 @@ $(function(){
 	});
 	chart.draw();
 	//console.log($("#sequenceTxt").val());	
-	console.log(document.getElementById('sequenceTxt').value);
+	//console.log(document.getElementById('sequenceTxt').value);
 	document.getElementById('sequenceTxt').value=seq;
 });

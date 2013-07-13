@@ -17,6 +17,20 @@ def list_dir(path, res):
             res['files'].append(i)
     return res
 
+def test(path):
+    res=[]
+    str=getAllInPathDemo(path,res)
+    return str
+
+def getAllInPathDemo(path,result):
+    for item in os.listdir(path):
+        dirpath=os.path.join(path,item)
+        if os.path.isdir(dirpath):
+            result.append(os.path.basename(dirpath))
+        else:
+            result.append(os.path.basename(dirpath))
+    return result   
+
 def list_all_fileanddir(path):
     l=[]    
     for p,d,f in os.walk(path):
@@ -43,6 +57,13 @@ def getAllInPath(path,result):
         else:
             result.append(dirpath)
     return result   
+
+def outputPathsToFile(res):
+	f=open('out.txt','w')
+	for item in res:
+		str='<option value="%s">%s</option>\n' %(item,item)
+		f.write(str)
+	f.close()
 
 class xmlBiobrick:
     data=None
@@ -78,7 +99,8 @@ class xmlBiobrick:
 #        print dict    
  
 if __name__ == '__main__':  
-	print get_allfiledirs(path="biobrick")
+	#print get_allfiledirs(path="web/biobrick/Plasmid backbones/Assembly")
+	outputPathsToFile(test(path="web/biobrick/Plasmid backbones/System operation"))
     #getAllFilesInPath("biobrick")
     #getAllDirsInPath("biobrick")
     #print get_allfiledirs("biobrick")  
