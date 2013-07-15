@@ -64,7 +64,7 @@ function turnRawDatatoData(raw)
 	}		
 	tempArray=tempArray.sort(sortNumber);
 	var real_data=[];
-	var start=1;
+	var start=0;
 	var index=0;
 	for(i=0;i<tempArray.length;i++)
 	{
@@ -126,11 +126,24 @@ function initDrawChart(){
 						var str= "";
 					}else{
 						var str=name+"<br\/>";
-					}						
+					}
 					for(i=0;i<data.length;i++){
 						if(data[i]["name"]==name){
-							str=str+data[i]["start"]+" to "+data[i]["end"];
-							str=str+"<br\/>"+seq.substring(data[i]["start"]-1,data[i]["end"]-1);
+							if(typeof(data[i]['name'])=="number")
+							{
+								str=str+data[i]["start"]+" to "+data[i]["end"];
+								if(i!=0){
+									str=str+"<br\/>"+seq.substring(data[i]["start"]-1,data[i]["end"]+1);
+								}
+								else
+								{
+									str=str+"<br\/>"+seq.substring(data[i]["start"],data[i]["end"]+1);
+								}
+							}else
+							{
+								str=str+data[i]["start"]+" to "+data[i]["end"];
+								str=str+"<br\/>"+seq.substring(data[i]["start"],data[i]["end"]);
+							}							
 							break;
 						}
 					}
@@ -164,8 +177,8 @@ function initDrawChart(){
 					{
 						for(i=0;i<data.length;i++){
 							if(data[i]["name"]==l.get('name')){
-								window.clipboardData.setData("Text",seq.substring(data[i]["start"]-1,data[i]["end"]-1)); 
-								alert(seq.substring(data[i]["start"]-1,data[i]["end"]-1));
+								window.clipboardData.setData("Text",seq.substring(data[0]["start"]-1,data[i]["end"]+1)); 
+								//alert(seq.substring(data[i]["start"]-1,data[i]["end"]+1));
 								break;
 							}
 						}
@@ -178,27 +191,48 @@ function initDrawChart(){
 		},
 		showpercent:true,
 		decimalsnum:0,
-		width : 700,
+		width : 783,
 		height : 400,
 		radius:140
 	});
 	chart.draw();
-	//console.log($("#sequenceTxt").val());	
-	//console.log(document.getElementById('sequenceTxt').value);
-	document.getElementById('sequenceTxt').value=seq;
+	
+	document.getElementById('seqCurrentText').value=seq;
 }
 var left=1;
 var textLen=60;
 function seqTextOnClickHandler(obj){	
 	left=parseInt((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size)+1;
-	console.log((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size);
-	console.log(document.getElementById('x1').value);
 	updateSeqPosText();
+}
+function createDivStrByData()
+{
+	var str=''
+	var temp=0;
+	for(i=0;i<data.length;i++){
+		if(typeof(data[i]['name'])=="number")
+		{
+			if(i==0)
+			{
+				str=str+'<span style="color:black;">'+seq.substring(data[i]["start"],data[i]["end"]+1)+"</span>";
+			}else
+			{
+				str=str+'<span style="color:black;">'+seq.substring(data[i-1]["end"],data[i]["end"]+1)+"</span>";
+			}
+		}else{			
+			str=str+'<span style="color:'+colors[temp%2]+';">'+seq.substring(data[i]["start"],data[i]["end"])+"</span>";
+			temp=temp+1;
+		}
+	}
+	return str;
 }
 function updateSeqPosText(){
 	document.getElementById('x1').innerText=left;
+	document.getElementById('x2').innerText=left+45;
+	document.getElementById('x3').innerText=left+90;
+	document.getElementById('x4').innerText=left+135;
 }
 $(function(){
-	initDrawChart();
-	document.getElementById('seqCurrentText').value=seq;
+	initDrawChart();	
+	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();	
 });
