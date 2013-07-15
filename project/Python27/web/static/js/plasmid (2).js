@@ -141,7 +141,7 @@ function initDrawChart(){
 								}
 							}else
 							{
-								str=str+data.i.start+" to "+data.i.end;
+								str=str+data[i]['start']+" to "+data[i]['end'];
 								str=str+"<br\/>"+seq.substring(data[i]["start"],data[i]["end"]);
 							}							
 							break;
