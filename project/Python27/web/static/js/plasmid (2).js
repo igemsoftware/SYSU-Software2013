@@ -1,6 +1,6 @@
 var data =  [];
-var size=0;
-var colors=['#afcc22','#82d8ef','#80bd91'];
+var size=0;//整个序列的长度
+var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色
 var raw_data={
     "DnaComponent": {
         "description": "undefined",
@@ -46,12 +46,13 @@ var raw_data={
     }
 };
 var seq=raw_data["DnaComponent"]["DnaSequence"]["nucleotides"];
-function sortNumber(a, b)
+function sortNumber(a, b)//用于数组排序的函数
 {
 	return a["start"] - b["start"];
 }
-function turnRawDatatoData(raw)
-{
+
+function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形图的数组的函数
+{                               //The function that can turn raw json data to array that can generate donut
 	var tempArray=[];
 	size=raw["DnaComponent"]["DnaSequence"]["nucleotides"].length;
 	for(i=0;i<raw["DnaComponent"]["annotaions"].length;i++)
@@ -72,7 +73,7 @@ function turnRawDatatoData(raw)
 		real_data[index]["start"]=start;
 		real_data[index]["end"]=tempArray[i]["start"]-1;		
 		real_data[index]["value"]=parseInt((real_data[real_data.length-1]["end"]-real_data[real_data.length-1]["start"])/size*100);
-		if(real_data[index]["value"]==0)
+		if(real_data[index]["value"]===0)
 			real_data[index]["value"]=1;
 		index=index+1;
 		real_data[index]=tempArray[i];
@@ -100,7 +101,7 @@ function initDrawChart(){
 	data=turnRawDatatoData(raw_data);	
 	var chart = new iChart.Donut2D({
 		animation:true,
-		render : 'canvasDiv',//图表渲染的HTML DOM的id
+		render : 'canvasDiv',//图表渲染的HTML DOM的id //Chart rendering the HTML DOM id
 		center:{
 			text:raw_data["DnaComponent"]['name']+'\n'+seq.length+'bp',
 			shadow:true,
@@ -111,28 +112,27 @@ function initDrawChart(){
 			color:'#6f6f6f'
 		},
 		//offset_angle: 270,
-		data: data,//图表的数据源
+		data: data,//图表的数据源 //Chart data source
 		offsetx:0,
 		shadow:false,
 		background_color:'#f4f4f4',
-		separate_angle:0,//分离角度
+		separate_angle:0,//分离角度 //Separation angle
 		tip:{
 			enable:true,
 			showType:'fixed',
 			animation:true,
 			listeners:{
 				parseText:function(tip,name,value,text){
-					if(typeof(name)=="number"){
-						var str= "";
-					}else{
-						var str=name+"<br\/>";
+                    var str= "";
+					if(typeof(name)!="number"){						
+						str2=name+"<br\/>";
 					}
 					for(i=0;i<data.length;i++){
 						if(data[i]["name"]==name){
 							if(typeof(data[i]['name'])=="number")
 							{
 								str=str+data[i]["start"]+" to "+data[i]["end"];
-								if(i!=0){
+								if(i!==0){
 									str=str+"<br\/>"+seq.substring(data[i]["start"]-1,data[i]["end"]+1);
 								}
 								else
@@ -141,7 +141,7 @@ function initDrawChart(){
 								}
 							}else
 							{
-								str=str+data[i]["start"]+" to "+data[i]["end"];
+								str=str+data.i.start+" to "+data.i.end;
 								str=str+"<br\/>"+seq.substring(data[i]["start"],data[i]["end"]);
 							}							
 							break;
@@ -173,7 +173,7 @@ function initDrawChart(){
 			color_factor : 0.3,
 			listeners:{
 				click:function(l,e,m){
-					if(e["event"]["button"]==0&&typeof(l.get('name'))!="number")
+					if(e["event"]["button"]===0&&typeof(l.get('name'))!="number")
 					{
 						for(i=0;i<data.length;i++){
 							if(data[i]["name"]==l.get('name')){
@@ -212,7 +212,7 @@ function createDivStrByData()
 	for(i=0;i<data.length;i++){
 		if(typeof(data[i]['name'])=="number")
 		{
-			if(i==0)
+			if(i===0)
 			{
 				str=str+'<span style="color:black;">'+seq.substring(data[i]["start"],data[i]["end"]+1)+"</span>";
 			}else
