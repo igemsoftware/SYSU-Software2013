@@ -59,9 +59,9 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 	{
 		tempArray[i]={};
 		tempArray[i].start=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioStart,10);
-		tempArray[i]["name"]=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.name;
-		tempArray[i]["end"]=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioEnd,10);
-		tempArray[i]["value"]=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
+		tempArray[i].name=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.name;
+		tempArray[i].end=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioEnd,10);
+		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
 	}		
 	tempArray=tempArray.sort(sortNumber);
 	var real_data=[];
@@ -71,7 +71,7 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 	{
 		real_data[index]={name:index,color:"#f4f4f4"};
 		real_data[index].start=start;
-		real_data[index].end=tempArray[i]["start"]-1;		
+		real_data[index].end=tempArray[i].start-1;		
 		real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
 		if(real_data[index].value===0)
 			real_data[index].value=1;
@@ -128,7 +128,7 @@ function initDrawChart(){
 						str=name+"<br\/>";
 					}
 					for(i=0;i<data.length;i++){
-						if(data[i]["name"]==name){
+						if(data[i].name==name){
 							if(typeof(data[i].name)=="number")
 							{
 								str=str+data[i].start+" to "+data[i].end;
@@ -202,12 +202,12 @@ function initDrawChart(){
 var left=1;
 var textLen=60;
 function seqTextOnClickHandler(obj){	
-	left=parseInt((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size)+1;
+	left=parseInt((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size,10)+1;
 	updateSeqPosText();
 }
 function createDivStrByData()
 {
-	var str=''
+	var str='';
 	var temp=0;
 	for(i=0;i<data.length;i++){
 		if(typeof(data[i].name)=="number")
