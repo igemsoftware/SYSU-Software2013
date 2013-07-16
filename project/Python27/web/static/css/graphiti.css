@@ -4,20 +4,37 @@
    Author: Rathinho
    ========================================================================== */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin: 0;
   background-color: #222; 
+  overflow: hidden;
 }
 
+#content {
+
+  width: 1349px;
+  min-width: 1349px;
+  height: 530px;
+  margin: 20px auto;
+}
 
 #catalog {
   position: absolute;
-  padding: 10px;
-  height: 250px;
-  width: 250px;
   overflow: auto;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 621px;
+  padding: 10px;  
 	border-radius: 2px;
+  box-shadow: -1px 1px 5px #fff;
 	background-color: #333;
+  z-index: 1055;
+  transition: left 0.5s;
+  -webkit-transition: left 0.5s;   /* Safari 和 Chrome */
+}
+
+#catalog:hover {
+  left: 0;
 }
 
 #catalog .dtree, #catalog a {
@@ -25,11 +42,33 @@ body {
 }
 
 #canvas {	
-  margin-left: 250px;
-  background-color: #FFF;
+  margin: 0 auto;
+  width: 1225px;
+  min-height: 520px;
   border-radius: 6px;
   border: 1px solid #ddd;
-  min-height: 500px;
+  background-color: #FFF;
+  
+}
+
+#toolbar {
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 621px;
+  padding: 10px;  
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px #fff;
+  background-color: #333;
+  z-index: 1055;
+  transition: right 0.5s;
+  -webkit-transition: right 0.5s;   /* Safari 和 Chrome */
+}
+
+#toolbar:hover {
+  right: 0;
 }
 
 .toolbar_icon {
@@ -59,7 +98,8 @@ body {
 }
 
 .footer {
-  width: 500px;
+  width: 470px;
+  height: 30px;
   margin: 10px auto;
 }
 

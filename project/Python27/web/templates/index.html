@@ -30,22 +30,10 @@
 
 
   <div class="regulation-container">
-    <div class="row">
-        <div class="header">
-            <h1 style="color:#fff;">iGEM</h1>
-        </div>
-    </div>
-
     <!-- catalog -->
-    <div id="catalog">
-    </div>
-
-    <!-- canvas -->
-    <div id="canvas" class="span8">        
-    </div>
-
+    <div id="catalog"></div>
     <!-- toolbar -->
-    <div id="toolbar" class="span2">
+    <div id="toolbar">
       <div class="well sidebar-nav" style="background-color:#FFF;">
         <ul class="nav nav-list">
           <li class="nav-header">工具栏</li>
@@ -70,27 +58,33 @@
         </ul>
       </div><!--/.well -->
     </div><!--/span-->
+    <div id="content"> 
+      <!-- canvas -->
+      <div id="canvas">    </div>
 
-    <!-- config bar -->
-    <div id="configBar" class="span2" style="display: none">
-      <div class="well sidebar-nav" id="optionpanel">
-        <h3>Config Bar</h3>          
-      </div>        
+      
+     
+
+      <!-- config bar -->
+      <div id="configBar" class="span2" style="display: none">
+        <div class="well sidebar-nav" id="optionpanel">
+          <h3>Config Bar</h3>          
+        </div>        
+      </div>
+
+      <div id="toggleBar">
+        <button class="btn-toolbar" id="btn-add">ADD</button>
+        <button class="btn-danger" id="btn-delete">DEL</button>
+        <button class="btn-success" id="btn-link">LINK</button>
+      </div>      
     </div>
-
-    <div id="toggleBar">
-      <button class="btn-toolbar" id="btn-add">ADD</button>
-      <button class="btn-danger" id="btn-delete">DEL</button>
-      <button class="btn-success" id="btn-link">LINK</button>
-    </div>  
-
-    <div class="footer">
-      <button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
-      <button class="btn" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
-      <button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
-      <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
-      <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
-    </div>
+     <div class="footer">
+        <button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
+        <button class="btn" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
+        <button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
+        <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
+        <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
+      </div>
   </div> <!-- /container -->
 
 

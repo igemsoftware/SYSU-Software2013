@@ -366,7 +366,7 @@ var catalogHandler = {
   },
 
   showTree: function(tree) {
-    this.parentNode.html("<h3>Catalog</h3>");   //清空目录树
+    this.parentNode.html("");   //清空目录树
     this.parentNode.append(tree.toString());
 
     $("#catalog").mCustomScrollbar({
@@ -524,6 +524,41 @@ $().ready(function() {
   document.ontouchmove = function(e) {
     e.preventDefault();
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // save or load by WebSocket
   if ("WebSocket" in window) {
