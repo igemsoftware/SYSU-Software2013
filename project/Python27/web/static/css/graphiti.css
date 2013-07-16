@@ -52,6 +52,7 @@ body {
 }
 
 #toolbar {
+  display: none;
   position: absolute;
   overflow: auto;
   top: 0;
@@ -82,6 +83,26 @@ body {
   display: none;
   width: 137px;
   height: 25px;
+}
+
+#configBar {
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 621px;
+  padding: 10px;  
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px #fff;
+  background-color: #333;
+  z-index: 1055;
+  transition: right 0.5s;
+  -webkit-transition: right 0.5s;   /* Safari 和 Chrome */
+}
+
+#configBar:hover {
+  right: 0;
 }
 
 #configBar p {
