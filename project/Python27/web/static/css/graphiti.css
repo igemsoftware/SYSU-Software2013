@@ -1,18 +1,31 @@
 
 
 /* ===== Primary Styles ========================================================
-   Author:
+   Author: Rathinho
    ========================================================================== */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #222; 
+}
+
 
 #catalog {
-	border-radius: 6px;
-  border: 1px solid #ddd;
-	margin-left: 0;
-	min-height: 500px;
-	background-color: #FFF;
+  position: absolute;
+  padding: 10px;
+  height: 250px;
+  width: 250px;
+  overflow: auto;
+	border-radius: 2px;
+	background-color: #333;
+}
+
+#catalog .dtree, #catalog a {
+  color: #fff;
 }
 
 #canvas {	
+  margin-left: 250px;
   background-color: #FFF;
   border-radius: 6px;
   border: 1px solid #ddd;
