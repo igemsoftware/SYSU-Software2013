@@ -15,31 +15,30 @@
   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
   <!--<link rel="stylesheet" href="../static/css/dtree.css">-->
   <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="../static/css/graphiti.css">
+  <!--<link rel="stylesheet" href="../static/css/graphiti.css">-->
   <script type="text/javascript" src="../static/js/lib/ZeroClipboard.js"></script>
   <script type="text/javascript" src="../static/js/ichartjs.v1.2/ichart.1.2.min.js"></script>  
   <link rel="stylesheet" href="../static/css/demo.css" type="text/css"/>	
 
 </head>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
-  <div class="container">
+<body bgcolor="#FFFFFF">
+  <div class="container" style="background-color:white;">
     <h1>Plasmid</h1>
     <div class="footer">
-      <button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
-      <button class="btn" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
-      <button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
-      <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
-      <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
+    	<button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
+    	<button class="btn" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
+    	<button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
+    	<button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
+   		<button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
     </div>
     <div id='seqPanel' style="width:100%;height:100px;float:left;">
 		<label id='x1' style="width:25%;height:15px;float:left;">1</label>    
 		<label id='x2' style="width:25%;height:15px;float:left;">46</label>
 		<label id='x3' style="width:25%;height:15px;float:left;">91</label>
         <label id='x4' style="width:25%;height:15px;float:left;">136</label>
-        <textarea name="" cols="180" rows="1" readonly="readonly" wrap="off" id="seqCurrentText" style="resize: none;width:100%;height:15px;overflow:hidden;font-size:12px;" onClick="seqTextOnClickHandler(this);" onSelect="seqTextOnClickHandler(this);"></textarea>        
-        <svg id="svgPanel" onload="" style="width:100%;height:20px;float:left;">
-  			<!--<rect x="0" y="0" width="20" height="20" stroke="black" fill="black" stroke-width="5"/>-->
+        <textarea name="" cols="180" rows="1" readonly wrap="off" id="seqCurrentText" style="resize: none;width:100%;height:15px;overflow:hidden;font-size:12px;" onClick="seqTextOnClickHandler(this);" onSelect="seqTextOnClickHandler(this);"></textarea>        
+        <svg id="svgPanel" onload="" style="width:100%;height:20px;float:left;">  			
 		</svg>
     </div>
     <div id='canvasDiv' style="width:67%;height:400px;float:left;">    	
@@ -167,14 +166,11 @@
         </select>
         <input name="saveplasmidgraphBtn" style="width:100%;height:10%;" type="submit" value="Save Plasmid Graph"/>
         <div style="width:100%;height:10%;">
-        <label style="height:100%;float:left;">Sequence</label>
-        <input id="copy-botton" style="cursor:pointer;height:100%;float:right;" type="submit" value="copy" />
-        <!--<div id="d_clip_button" style="cursor:pointer;height:100%;float:right;" onClick="clip.setText("1234" );"><b>Copy To Clipboard...</b></div>-->
-        </div>    	
-        <!--<textarea style="width: 100%; height: 60%; overflow: scroll; overflow-x: hidden;" id="sequenceTxt" name="sequence" cols="" rows="">test1<span style=" font-size:36px; color:#F00">jdfkgjdfkgjk</span><span style=" font-size:36px; color:#green">jdfkgjdfkgjk</span></textarea>-->
+            <label style="height:100%;float:left;">Sequence</label>
+            <input id="copy-botton" style="cursor:pointer;height:100%;float:right;" type="submit" value="copy" />        </div>    	        
         <div style="width:100%;height: 60%; overflow: scroll; overflow-x: hidden;border-color:#FF0000;border-style:solid;border-width:2px;word-break:break-all;" id="sequenceDiv">
         </div>
-</div>  
+	</div>  
   </div> <!-- /container -->
 <!--
 <script src="../static/js/underscore-min.js"></script>
@@ -196,4 +192,5 @@
 <!-- <script src="static/js/libs/bootstrap/bootstrap.min.js"></script> -->
   <script src="../static/js/plasmid (2).js"></script>
   </div>
+  </body>
 </html>
