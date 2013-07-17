@@ -100,6 +100,7 @@ function initDrawChart(){
 	getRawData();
 	data=turnRawDatatoData(raw_data);	
 	var chart = new iChart.Donut2D({
+		id:'ichartjs2013',
 		animation:true,
 		render : 'canvasDiv',//图表渲染的HTML DOM的id //Chart rendering the HTML DOM id
 		center:{
@@ -151,13 +152,7 @@ function initDrawChart(){
 				}
 			}
 		},
-		sub_option:{
-			/*mini_label_threshold_angle : 40,//迷你label的阀值,单位:角度
-			mini_label:{//迷你label配置项
-				fontsize:20,
-				fontweight:600,
-				color : '#ffffff'				
-			},*/
+		sub_option:{			
 			label : {
 				background_color:null,
 				sign:true,//设置禁用label的小图标
@@ -173,19 +168,21 @@ function initDrawChart(){
 			color_factor : 0.3,
 			listeners:{
 				click:function(l,e,m){
-					if(e["event"]["button"]===0&&typeof(l.get('name'))!="number")
+					if(e["event"]["button"]===0)//&&typeof(l.get('name'))!="number")
 					{
 						for(i=0;i<data.length;i++){
 							if(data[i].name==l.get('name')){
-								window.clipboardData.setData("Text",seq.substring(data[0].start-1,data[i].end+1)); 
-								//alert(seq.substring(data[i]["start"]-1,data[i]["end"]+1));
+								//window.clipboardData.setData("Text",seq.substring(data[0].start-1,data[i].end+1)); 
+								if(i==0)
+									break;
+								turnTheData(i);
+								var chart2 = $.get('ichartjs2013');//根据ID获取图表对象
+								chart2.load(data);//载入新数据
 								break;
 							}
 						}
-					}
-					//console.log(e);
-					//手动调用重绘
-					//chart.draw();
+					}					
+
 				}
 			}
 		},
@@ -194,17 +191,85 @@ function initDrawChart(){
 		width : 783,
 		height : 400,
 		radius:140
-	});
-	chart.draw();
-	
-	document.getElementById('seqCurrentText').value=seq;
+		
+	});	
+	chart.plugin(create0BP(chart));
+	chart.plugin(create14sBP(chart));
+	chart.plugin(createhalfBP(chart));
+	chart.plugin(create34BP(chart));
+	chart.draw();	
 }
-var left=1;
-var textLen=60;
+function create0BP(chart){
+	return new iChart.Custom({
+		drawFn:function(){	
+			var radius=140;
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2+radius;
+			var y=  chart.getDrawingArea().height/2;
+			//console.log(chart.radius);
+			//在左侧的位置，设置竖排模式渲染文字			
+			chart.target.textAlign('left')
+			.textBaseline('top')
+			.textFont('600 12px 微软雅黑')
+			.fillText('0bp',x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+		}		
+	});
+}
+function create14sBP(chart){
+	return new iChart.Custom({
+		drawFn:function(){	
+			var radius=140;
+			var str=parseInt(size/4,10)+"bp";
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-20;
+			var y=  chart.getDrawingArea().height/2+radius;
+			//console.log(chart.radius);
+			//在左侧的位置，设置竖排模式渲染文字			
+			chart.target.textAlign('left')
+			.textBaseline('top')
+			.textFont('600 12px 微软雅黑')
+			.fillText(str,x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+		}		
+	});
+}
+function createhalfBP(chart){
+	return new iChart.Custom({
+		drawFn:function(){	
+			var radius=140;
+			var str=parseInt(size/2,10)+"bp";
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-radius-35;
+			var y=  chart.getDrawingArea().height/2;
+			//console.log(chart.radius);
+			//在左侧的位置，设置竖排模式渲染文字			
+			chart.target.textAlign('left')
+			.textBaseline('top')
+			.textFont('600 12px 微软雅黑')
+			.fillText(str,x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+		}		
+	});
+}
+function create34BP(chart){
+	return new iChart.Custom({
+		drawFn:function(){	
+			var radius=140;
+			var str=parseInt(size*3/4,10)+"bp";
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-15;
+			var y=  chart.getDrawingArea().height/2-radius;
+			chart.target.textAlign('left')
+			.textBaseline('top')
+			.textFont('600 12px 微软雅黑')
+			.fillText(str,x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+		}		
+	});
+}
+var left=1;//the int to record seq's left position
 function seqTextOnClickHandler(obj){	
 	left=parseInt((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size,10)+1;
 	updateSeqPosText();
 }
+function copyBtnOnClick(obj)
+{
+	
+}
+//accrording to the data array 's colors to add the color to the seq
 function createDivStrByData()
 {
 	var str='';
@@ -231,6 +296,24 @@ function updateSeqPosText(){
 	document.getElementById('x2').innerText=left+45;
 	document.getElementById('x3').innerText=left+90;
 	document.getElementById('x4').innerText=left+135;
+}
+//turn the data array to another index at the first place
+function turnTheData(indexToBeFirst)
+{
+	newData=[];
+	newDataSize=0;
+	for(i=indexToBeFirst;i<data.length;i++)
+	{
+		newData[newDataSize]=data[i];
+		newDataSize++;
+	}
+	for(j=0;j<indexToBeFirst;j++)
+	{
+		newData[newDataSize]=data[j];
+		newDataSize++;
+	}
+	data=newData;
+	newData=null;
 }
 function InitAjax()
 {
@@ -264,7 +347,8 @@ function testWebSocket(){
 }
 $(function(){
 	initDrawChart();	
+	document.getElementById('seqCurrentText').value=seq;
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();	
 	//InitAjax();
-	testWebSocket();
+	//testWebSocket();
 });
