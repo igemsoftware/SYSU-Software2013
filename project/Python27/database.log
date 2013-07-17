@@ -1,0 +1,7 @@
+2013-07-17 16:54:06  DEBUG - database file exist: igem.db
+2013-07-17 16:54:06  DEBUG - connect to database: igem.db
+2013-07-17 16:54:06  DEBUG - user login now: name:kitty,password:1212
+2013-07-17 16:54:06  DEBUG - Password correct!
+2013-07-17 16:54:06  DEBUG - get user name by id: 1
+2013-07-17 16:54:06  DEBUG - database close
+2013-07-17 16:54:06  DEBUG - 

@@ -59,10 +59,18 @@ def registAUser(database,name,password,email,group_id):
         database.logger.debug('you have not logined in!')        
         return 'you have not logined in yet!' 
     
+"get the name of who has been logined"
+def getLoginedUserName(database):
+	if(isUserLogined(database)):
+		return database.getUserNameById(database.userId)
+	else:
+		return "NULL"
+	
 if __name__=="__main__":
     sql=SqliteDatabase()
     print userLogin(sql,'kitty','1212')
-    saveUserData(sql,'23542357642756')
+    #saveUserData(sql,'23542357642756')
+    print getLoginedUserName(sql)
     #changeUserPassword(sql,'1212')    
     #userLogout(sql)
     #sql.getMaxUserId()

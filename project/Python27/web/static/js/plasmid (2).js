@@ -232,7 +232,60 @@ function updateSeqPosText(){
 	document.getElementById('x3').innerText=left+90;
 	document.getElementById('x4').innerText=left+135;
 }
+function InitAjax()
+{
+var ajax=false;
+try {
+   ajax = new ActiveXObject("Msxml2.XMLHTTP");
+} catch (e) {
+   try {
+    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+   } catch (E) {
+    ajax = false;
+   }
+}
+if (!ajax && typeof XMLHttpRequest!='undefined') {
+   ajax = new XMLHttpRequest();
+}
+         return ajax;
+     }
+
+function getUserName()
+{　	
+	var url = "/show.php?id="+ newsID;
+	//获取新闻显示层的位置
+	var show = document.getElementById("show_news"); 
+	show.style.visibility = "visible";
+	//实例化Ajax对象
+	var ajax = InitAjax();
+	//使用Get方式进行请求
+	ajax.open("GET", url, true); 
+	//获取执行状态
+	ajax.onreadystatechange = function() { 
+	//如果执行是状态正常，那么就把返回的内容赋值给上面指定的层
+    if (ajax.readyState == 4 && ajax.status == 200) { 
+　　 	show.innerHTML = ajax.responseText; 
+　   } else {
+         // 显示loading效果
+         document.getElementById("show").innerHTML = img;
+     }
+   }
+　	//发送空
+　	ajax.send(null); 
+}
 $(function(){
 	initDrawChart();	
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();	
+	InitAjax();
+	// save or load by WebSocket
+	  if ("WebSocket" in window) {
+		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
+		ws.onmessage = function(msg) {
+		   var message = JSON.parse(msg.data);
+		 	console.log(message);
+		};
+	  }
+	  ws.onopen = function() {
+		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+	  }
 });
