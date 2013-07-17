@@ -150,14 +150,14 @@ body {
 }
 
 #right-container #user-view {
-  width: 198px;
+  width: 221px;
   height: 110px;
   margin-bottom: 5px;
 }
 
 #right-container #user-view-left {
   float: left;
-  width: 68px;
+  width: 80px;
   height: 70px;
   padding: 20px 20px 20px 0;
   text-align: center;
@@ -174,11 +174,11 @@ body {
 
 #right-container #user-view-right {
   float: left;
-  width: 110px;
+  width: 120px;
 }
 
 #right-container #commandmenu {
-  width: 198px;
+  width: 221px;
   margin-bottom: 5px;
 }
 
@@ -192,7 +192,7 @@ body {
 }
 
 #right-container #filemenu input {
-  width: 188px;
+  width: 213px;
 }
 
 #right-container #filemenu a {
