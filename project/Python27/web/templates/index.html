@@ -122,14 +122,14 @@
                       <img src="../static/img/db.png">
                     </div>
                   </div>
-                </div>
+                </div> <!-- userview end -->
 
                 <div id="commandmenu" class="well well-small">
                   <div id="button-group">
                     <button class="btn btn-success" id="myfile" style="width: 117px; margin-bottom: 10px;">My Files</button>
                     <button class="btn" id="create-part">Create New Part</button>
                   </div>
-                </div>
+                </div>  <!-- commandmenu end -->
 
                 <div id="filemenu" class="well well-small">
                   <label for="filename">FileName:</label>
@@ -142,24 +142,11 @@
                   <a class="btn" id="clear" role="button">
                     <i class="icon-remove"></i>
                     Clear
-                  </a>
-
-                  <div id="save-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                      <h6 id="myModalLabel">Info</h6>
-                    </div>
-                    <div class="modal-body" style="text-align: center;">                      
-                      <h4>File Saved!</h4>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </a>                  
+                </div> <!-- filemenu end -->
+              </div>  <!-- menu end -->
+            </div>  <!-- accordion-inner -->
+          </div>  <!-- accordion-body -->
         </div>  <!-- accordion-group end -->
 
         <div class="accordion-group">
@@ -252,6 +239,19 @@
         </div>  <!-- accordion-group end -->
       </div>   <!-- accordion end -->  
     </div>  <!-- right-container end -->
+
+    <div id="save-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h6 id="myModalLabel">Info</h6>
+      </div>
+      <div class="modal-body" style="text-align: center;">                      
+        <h4>File Saved!</h4>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
 
     <div class="footer">
       <button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
