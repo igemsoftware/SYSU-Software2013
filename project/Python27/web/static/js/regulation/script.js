@@ -511,166 +511,129 @@ $().ready(function() {
 
   // slide in right-container
   $("#right-container").mouseover(function() {
-    $("#right-container").css({right: '0px'});
+    $("#right-container").css({
+      right: '0px'
+    });
   });
 
   // slide out right-container
   $("#right-container").mouseout(function() {
-    $("#right-container").css({right: '-261px'});
+    $("#right-container").css({
+      right: '-261px'
+    });
   });
 
   // save file
   $("#save").click(function() {
     var fnInput = $("#fn-input");
     var filename = fnInput.attr('value');
-    if(!filename) {
+    if (!filename) {
       fnInput.focus();
       fnInput.tooltip('show');
 
       var tid = setInterval(function() {
         var newFilename = fnInput.attr('value');
 
-        if(newFilename) {
+        if (newFilename) {
           console.log("change");
           fnInput.tooltip('destroy');
           clearInterval(tid);
         }
-      },500);
+      }, 500);
     } else {
       $("#save-trigger").click();
     }
   });
 
   $("#protein-config").ready(function() {
-      E.config({
-        baseUrl : 'static/js/regulation/slider/js/'
+    E.config({
+      baseUrl: 'static/js/regulation/slider/js/'
+    });
+
+    E.use('slider', function() {
+      // Slider 1
+      var slider = new E.ui.Slider('#slider-1', {
+        min: 0,
+        max: 10,
+        value: 5,
+        axis: 'x',
+        size: '198px'
       });
 
-      E.use( 'slider', function(){
-        // Slider 1
-        var slider = new E.ui.Slider( '#slider-1', {
-            min : 0,
-            max : 10,
-            value : 5,
-            axis : 'x',
-            size : '198px'
-        });
-        
-        var demoText = E( '#slider-text-1' );        
-        slider.on( 'slide', function( e ){
-                demoText.text( this.value / 10);
-            });
+      var demoText = E('#slider-text-1');
+      slider.on('slide', function(e) {
+        demoText.text(this.value / 10);
+      });
 
-        demoText.on( 'click', function(){
-            slider.setValue( 5 );
-        });
+      demoText.on('click', function() {
+        slider.setValue(5);
+      });
 
-        // Slider 2
-        var slider = new E.ui.Slider( '#slider-2', {
-            min : -1,
-            max : 10,
-            value : 0,
-            axis : 'x',
-            size : '198px'
-        });
-        
-        var demoText = E( '#slider-text-2' );        
-        slider.on( 'slide', function( e ){
-                demoText.text( this.value);
-            });
-            
-        demoText.on( 'click', function(){
-            slider.setValue( 0 );
-        });
+      // Slider 2
+      var slider = new E.ui.Slider('#slider-2', {
+        min: -1,
+        max: 10,
+        value: 0,
+        axis: 'x',
+        size: '198px'
+      });
 
-        // Slider 3
-        var slider = new E.ui.Slider( '#slider-3', {
-            min : -10,
-            max : 10,
-            value : 0,
-            axis : 'x',
-            size : '198px'
-        });
-        
-        var demoText = E( '#slider-text-3' );        
-        slider.on( 'slide', function( e ){
-                demoText.text( this.value);
-            });
-            
-        demoText.on( 'click', function(){
-            slider.setValue( 0 );
-        });
+      var demoText = E('#slider-text-2');
+      slider.on('slide', function(e) {
+        demoText.text(this.value);
+      });
 
-        // Slider 4
-        var slider = new E.ui.Slider( '#slider-4', {
-            min : -10,
-            max : 10,
-            value : 0,
-            axis : 'x',
-            size : '198px'
-        });
-        
-        var demoText = E( '#slider-text-4' );        
-        slider.on( 'slide', function( e ){
-                demoText.text( this.value);
-            });
-            
-        demoText.on( 'click', function(){
-            slider.setValue( 0 );
-        });
-  });
+      demoText.on('click', function() {
+        slider.setValue(0);
+      });
 
-  $("#component-config").ready(function() {
-    $("#component-form").mCustomScrollbar({
-      autoHideScrollbar: true,
-      theme: "dark-thin",
-      advanced: {
-        autoExpandVerticalScroll: true
-      }
+      // Slider 3
+      var slider = new E.ui.Slider('#slider-3', {
+        min: -10,
+        max: 10,
+        value: 0,
+        axis: 'x',
+        size: '198px'
+      });
+
+      var demoText = E('#slider-text-3');
+      slider.on('slide', function(e) {
+        demoText.text(this.value);
+      });
+
+      demoText.on('click', function() {
+        slider.setValue(0);
+      });
+
+      // Slider 4
+      var slider = new E.ui.Slider('#slider-4', {
+        min: -10,
+        max: 10,
+        value: 0,
+        axis: 'x',
+        size: '198px'
+      });
+
+      var demoText = E('#slider-text-4');
+      slider.on('slide', function(e) {
+        demoText.text(this.value);
+      });
+
+      demoText.on('click', function() {
+        slider.setValue(0);
+      });
+    });
+
+    $("#component-config").ready(function() {
+      $("#component-form").mCustomScrollbar({
+        autoHideScrollbar: true,
+        theme: "dark-thin",
+        advanced: {
+          autoExpandVerticalScroll: true
+        }
+      });
     });
   });
-});
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -679,8 +642,8 @@ $().ready(function() {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function(msg) {
       var message = JSON.parse(msg.data);
-      if (message.request == "getDirList") {
-        // console.log(message.result);
+
+      if (message.request == "getDirList") { // 获取目录
         if (message.result.files == 'true') {
 
         } else {
@@ -690,40 +653,56 @@ $().ready(function() {
             catalogHandler.handleJSONdata(message.result.files);
           }
         }
-      } else if (message.request == "getBiobrick") {
-        var configBar = $("div.span2#configBar");
-        configBar.css("display", "none");
-        configBar = $("div.span2#configBar");
-        configBar.css("display", "block");
-        configbar.showAttributes(eval('(' + message.result + ')'));
-      } else if (message.request == "getXmlJson") {
-        var part = eval('('+message.result+')').rsbpml.part_list.part;
+      } else if (message.request == "getXmlJson") { // 获取单个元件的配置数据
+        var part = eval('(' + message.result + ')').rsbpml.part_list.part;
 
-        $("input[name=part_id]").attr({'value': part.part_id});
-        $("input[name=part_name]").attr({'value': part.part_name});
-        $("input[name=part_short_name]").attr({'value': part.part_short_name});
-        $("input[name=part_short_desc]").attr({'value': part.part_short_desc});
-        $("input[name=part_type]").attr({'value': part.part_type});
-        $("input[name=part_status]").attr({'value': part.part_status});
-        $("input[name=part_results]").attr({'value': part.part_results});
-        $("input[name=part_nickname]").attr({'value': part.part_nickname});
-        $("input[name=part_rating]").attr({'value': part.part_rating});
-        $("input[name=part_author]").attr({'value': part.part_author});
-        $("input[name=part_entered]").attr({'value': part.part_entered});
-        $("input[name=part_quality]").attr({'value': part.best_quality});
+        $("input[name=part_id]").attr({
+          'value': part.part_id
+        });
+        $("input[name=part_name]").attr({
+          'value': part.part_name
+        });
+        $("input[name=part_short_name]").attr({
+          'value': part.part_short_name
+        });
+        $("input[name=part_short_desc]").attr({
+          'value': part.part_short_desc
+        });
+        $("input[name=part_type]").attr({
+          'value': part.part_type
+        });
+        $("input[name=part_status]").attr({
+          'value': part.part_status
+        });
+        $("input[name=part_results]").attr({
+          'value': part.part_results
+        });
+        $("input[name=part_nickname]").attr({
+          'value': part.part_nickname
+        });
+        $("input[name=part_rating]").attr({
+          'value': part.part_rating
+        });
+        $("input[name=part_author]").attr({
+          'value': part.part_author
+        });
+        $("input[name=part_entered]").attr({
+          'value': part.part_entered
+        });
+        $("input[name=part_quality]").attr({
+          'value': part.best_quality
+        });
 
         var twinsHtml = "";
         if (part.twins) {
-          for(var i = 0 ; i < part.twins.twin.length ; i++) {
+          for (var i = 0; i < part.twins.twin.length; i++) {
             var li = "<li>" + part.twins.twin[i] + "</li>"
             twinsHtml += li;
           }
         }
-
         $("#twins").html(twinsHtml);
-      } else {
-        $("p#log").html(JSON.stringify(message));
-        console.log(message);
+      } else if (message.request == "getLoginedUserName") { // 获取用户名
+        $("#user-view-left > p").text(message.result);
       }
     };
   }
@@ -732,6 +711,10 @@ $().ready(function() {
     ws.send(JSON.stringify({
       'request': 'getDirList',
       'dir': 'web\\biobrick'
+    }));
+
+    ws.send(JSON.stringify({
+      'request': 'getLoginedUserName'
     }));
   }
 
@@ -765,9 +748,6 @@ $().ready(function() {
 
   // Bind load button to localstorage
   $("#btn-load").live("click", function() {
-    //ws.send(JSON.stringify({'request': 'get_part', 'table_name': 'part_list'}));
-
-    // render every element of message from server    
     var loadItem = storage.getItem('view');
     var getObj = eval('(' + loadItem + ')');
     for (var i = 0; i < getObj.length; i++) {
