@@ -369,7 +369,7 @@ var catalogHandler = {
     this.parentNode.html("");   //清空目录树
     this.parentNode.append(tree.toString());
 
-    $("#catalog").mCustomScrollbar({
+    $("#left-container").mCustomScrollbar({
             autoHideScrollbar:true,
             theme:"light-thin",
             advanced:{

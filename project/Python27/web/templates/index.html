@@ -17,7 +17,6 @@
 <body>
   <script>
   function mOver(obj) {
-    //alert("get")
     obj.style.background = "gray"
     obj.style.display = "block";
   }
@@ -30,10 +29,11 @@
 
 
   <div class="regulation-container">
-    <!-- catalog -->
-    <div id="catalog"></div>
-    <!-- toolbar -->
-    <div id="toolbar">
+    <div id="left-container">
+      <div id="catalog"></div>
+    </div>
+
+    <!-- <div id="toolbar">
       <div class="well sidebar-nav" style="background-color:#FFF;">
         <ul class="nav nav-list">
           <li class="nav-header">工具栏</li>
@@ -56,36 +56,93 @@
             <button id="btn-save">保存</button>
           </li>
         </ul>
-      </div><!--/.well -->
-    </div><!--/span-->
+      </div>
+    </div> -->
+
     <div id="content"> 
       <!-- canvas -->
-      <div id="canvas">    </div>
-
-      
-     
-
-      <!-- config bar -->
-      <div id="configBar" class="span2">
-        <div class="well sidebar-nav" id="optionpanel">
-          <h3>Config Bar</h3>          
-        </div>        
-      </div>
-
+      <div id="canvas"></div>
+  
       <div id="toggleBar">
         <button class="btn-toolbar" id="btn-add">ADD</button>
         <button class="btn-danger" id="btn-delete">DEL</button>
         <button class="btn-success" id="btn-link">LINK</button>
       </div>      
     </div>
-     <div class="footer">
-        <button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
-        <button class="btn" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
-        <button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
-        <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
-        <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
-      </div>
-  </div> <!-- /container -->
+
+    <div id="right-container">
+      <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+              Menu
+              <i class="icon-chevron-down" style="display: block; float: right"></i>
+            </a>
+          </div>
+          <div id="collapseOne" class="accordion-body collapse">
+            <div class="accordion-inner">
+              <div id="menu">
+                <div id="user-view" class="well well-small">
+                  <div id="user-view-left">
+                    <p>Rathinho</p>
+                    <br />
+                    <a id="logout" href="javascript:void(0);">Logout</a>
+                  </div>
+                  <div id="user-view-right">
+                    <div class="thumbnail">
+                      <img src="../static/img/db.png">
+                    </div>
+                  </div>
+                </div>
+
+                <div id="commandmenu" class="well well-small">
+                  <div id="button-group">
+                    <button class="btn btn-success" id="myfile" style="width: 117px; margin-bottom: 10px;">My Files</button>
+                    <button class="btn" id="create-part">Create New Part</button>
+                  </div>
+                </div>
+
+                <div id="filemenu" class="well well-small">
+                  <label for="filename">FileName:</label>
+                  <input type="text" name="filename">
+                  <button class="btn btn-primary" id="save">
+                    <i class="icon-ok"></i>
+                    Save
+                  </button>
+                  <button class="btn" id="clear">
+                    <i class="icon-remove"></i>
+                    Clear
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+              Configuration
+              <i class="icon-chevron-down" style="display: block; float: right"></i>
+            </a>
+          </div>
+          <div id="collapseTwo" class="accordion-body collapse in">
+            <div class="accordion-inner">
+              Anim pariatur cliche...
+            </div>
+          </div>
+        </div>
+      </div>     
+    </div>
+
+
+    <div class="footer">
+      <button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
+      <button class="btn" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
+      <button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
+      <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
+      <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
+    </div>
+  </div>
 
 
   <script src="../static/js/underscore-min.js"></script>
@@ -217,6 +274,7 @@
 
 
   <!-- Custom js -->
+  <script src="../static/js/bootstrap.min.js"></script>
   <script src="../static/js/regulation/dtree.js"></script> 
   <script src="../static/js/regulation/script.js"></script>
   <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>
