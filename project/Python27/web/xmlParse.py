@@ -99,8 +99,10 @@ class xmlBiobrick:
 #        print dict    
  
 if __name__ == '__main__':  
+    xml=xmlBiobrick(path="web/biobrick/Terminators/BBa_B0010.xml")
+    print xml.getJsonString()
 	#print get_allfiledirs(path="web/biobrick/Plasmid backbones/Assembly")
-	outputPathsToFile(test(path="web/biobrick/Plasmid backbones/System operation"))
+	#outputPathsToFile(test(path="web/biobrick/Plasmid backbones/System operation"))
     #getAllFilesInPath("biobrick")
     #getAllDirsInPath("biobrick")
     #print get_allfiledirs("biobrick")  
@@ -108,6 +110,7 @@ if __name__ == '__main__':
     #print get_allfiledirs("biobrick")['child_dirs'][0]
     #print get_config_dirs()
     #print get_config_dirs(path="biobrick")
+    
 #    for item in getAllFilesInPath("biobrick"):
 #        xml= xmlBiobrick(item)
 #        print xml.getJsonString()

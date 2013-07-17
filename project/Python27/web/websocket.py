@@ -4,6 +4,7 @@ from database import SqliteDatabase
 import user
 import mlog
 import xmlParse
+import os
 #import make_graph
 
 logging = mlog.logging
@@ -29,6 +30,10 @@ class apis():
     print user.saveUserData(self.db,message['data'])
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
+  "ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));"
+  def getXmlJson(self,message):
+	xml=xmlParse.xmlBiobrick(path=message['path'])
+	return xml.getJsonString()
 
 def handle_websocket(ws):
   logging.info("start handling websocket...")

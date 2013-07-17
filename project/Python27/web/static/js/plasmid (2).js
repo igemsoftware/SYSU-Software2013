@@ -258,7 +258,8 @@ function testWebSocket(){
 		};
 	}
 	ws.onopen = function() {
-		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+		//ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+		ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 	}
 }
 $(function(){
