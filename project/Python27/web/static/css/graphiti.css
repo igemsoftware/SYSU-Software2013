@@ -5,8 +5,17 @@
    ========================================================================== */
 body {
   margin: 0;
-  background-color: #222; 
+  background-color: #333; 
   overflow: hidden;
+}
+
+.modal {
+  left: 60%;
+  width: 200px;
+}
+
+.modal.fade.in {
+  top: 75%;
 }
 
 #content {
@@ -19,9 +28,8 @@ body {
 
 #left-container {
   position: absolute;
-  overflow: auto;
   top: 0;
-  left: -250px;
+  left: -261px;
   width: 250px;
   height: 621px;
   padding: 10px;  
@@ -31,6 +39,32 @@ body {
   z-index: 1055;
   transition: left 0.5s;
   -webkit-transition: left 0.5s;   /* Safari 和 Chrome */
+}
+
+#left-container #catalog {
+  height: 530px;
+  overflow: auto;
+}
+
+#left-container .accordion-group {
+  background-color: #444;
+}
+
+#left-container .accordion-heading:hover {
+  background-color: #ccc;
+}
+
+#left-container .accordion-heading a {
+  text-decoration: none;
+}
+
+#left-container .accordion-heading a:hover {
+  color: #33496B;
+}
+
+
+#left-container .accordion-inner {
+  padding: 9px 0 9px 15px;
 }
 
 #left-container:hover {
@@ -89,7 +123,7 @@ body {
   position: absolute;
   overflow: auto;
   top: 0;
-  right: 0px;
+  right: -261px;
   width: 250px;
   height: 621px;
   padding: 10px;  
@@ -163,8 +197,9 @@ body {
   width: 188px;
 }
 
-#right-container #filemenu button {
+#right-container #filemenu a {
   display: block;
+  width: 100px;
   margin: 15px auto;
 }
 

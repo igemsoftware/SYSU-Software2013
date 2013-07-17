@@ -1,4 +1,3 @@
-
 /******************************************************* 画图区  ***************************************************/
 // Create namespace
 var g = {};
@@ -135,19 +134,19 @@ g.Shapes.Process = graphiti.shape.basic.Circle.extend({
 
   // 添加 onclick事件 显示工具栏
   onClick: function() {
-      // 显示菜单栏
-      var toggleBar = $("#toggleBar");
-      toggleBar.css("left", (this.x + 250) + "px");
-      toggleBar.css("top", this.y + "px");
-      toggleBar.css("display", "block");
+    // 显示菜单栏
+    var toggleBar = $("#toggleBar");
+    toggleBar.css("left", (this.x + 250) + "px");
+    toggleBar.css("top", this.y + "px");
+    toggleBar.css("display", "block");
 
-       // 显示配置栏
-      var configBar = $("div.span2#configBar");
-      configBar.css("display", "none");
-      configBar = $("div.span2#configBar");
-      configBar.css("display", "block");
-      configbar.setAttributes(this.id);
-  }  
+    // 显示配置栏
+    var configBar = $("div.span2#configBar");
+    configBar.css("display", "none");
+    configBar = $("div.span2#configBar");
+    configBar.css("display", "block");
+    configbar.setAttributes(this.id);
+  }
 });
 
 g.Shapes.Rectangle = graphiti.shape.basic.Rectangle.extend({
@@ -189,13 +188,13 @@ g.Shapes.Rectangle = graphiti.shape.basic.Rectangle.extend({
 
   // 添加 onclick事件 显示工具栏
   onClick: function() {
-      // 显示菜单栏
-      var toggleBar = $("#toggleBar");
-      toggleBar.css("left", (this.x + 250) + "px");
-      toggleBar.css("top", this.y + "px");
-      toggleBar.css("display", "block");
-      
-  }  
+    // 显示菜单栏
+    var toggleBar = $("#toggleBar");
+    toggleBar.css("left", (this.x + 250) + "px");
+    toggleBar.css("top", this.y + "px");
+    toggleBar.css("display", "block");
+
+  }
 });
 
 g.Shapes.Diamond = graphiti.shape.basic.Diamond.extend({
@@ -237,13 +236,13 @@ g.Shapes.Diamond = graphiti.shape.basic.Diamond.extend({
 
   // 添加 onclick事件 显示工具栏
   onClick: function() {
-      // 显示菜单栏
-      var toggleBar = $("#toggleBar");
-      toggleBar.css("left", (this.x + 250) + "px");
-      toggleBar.css("top", this.y + "px");
-      toggleBar.css("display", "block");
+    // 显示菜单栏
+    var toggleBar = $("#toggleBar");
+    toggleBar.css("left", (this.x + 250) + "px");
+    toggleBar.css("top", this.y + "px");
+    toggleBar.css("display", "block");
 
-  }  
+  }
 });
 
 g.Shapes.Arrow = graphiti.shape.icon.ProteinArrow.extend({
@@ -277,21 +276,6 @@ g.Shapes.Arrow = graphiti.shape.icon.ProteinArrow.extend({
   }
 });
 
-
-
-
-function hide() {
-  var windNode = $("#win");
-  //2 将窗口隐藏起来  
-  //方法1.修改节点的css,让窗口显示出来  
-  //windNode.css("display","none");  
-  //方法2：利用Jquery的show方法  
-  //windNode.hide("slow");  
-  //方法3: 利用Jquery的fadeIn方法  
-  windNode.fadeOut("slow");
-}
-
-
 /******************************************************* 目录树  ***************************************************/
 var catalogHandler = {
   istreeInit: false,
@@ -303,9 +287,9 @@ var catalogHandler = {
 
     if (parentNode.children("#" + data).length === 0) {
       parentNode.append("<div class='treelevel-" + index + "' id=" + data + ">" + data + "</div>");
-    }   
-  },  
-  
+    }
+  },
+
   // 判断目录树中是否有当前节点
   hasTreeNode: function(name, tree) {
     var aNodes = tree.aNodes;
@@ -342,17 +326,17 @@ var catalogHandler = {
 
   // 向目录树插入节点
   insertCatalogItem: function(parentName, data, tree, path) {
-      if (!this.hasTreeNode(data, tree)) {
-        var parentId = this.getParentId(parentName, tree);
-        parentId = parentId === -2 ? 0 : parentId;
-        var name = data.length > 15 ? data.substr(0, 15) + ".." : data;
+    if (!this.hasTreeNode(data, tree)) {
+      var parentId = this.getParentId(parentName, tree);
+      parentId = parentId === -2 ? 0 : parentId;
+      var name = data.length > 15 ? data.substr(0, 15) + ".." : data;
 
       if (this.isFolder(data)) {
         tree.add(tree.aNodes.length, parentId, data, "#", data, "", "../static/img/folder.gif", "", "", path);
       } else {
         tree.add(tree.aNodes.length, parentId, data, "#", data, "", "", "", "", path);
       }
-    }   
+    }
   },
 
   // 删除当前节点的所有子节点
@@ -366,18 +350,18 @@ var catalogHandler = {
   },
 
   showTree: function(tree) {
-    this.parentNode.html("");   //清空目录树
+    this.parentNode.html(""); //清空目录树
     this.parentNode.append(tree.toString());
 
-    $("#left-container").mCustomScrollbar({
-            autoHideScrollbar:true,
-            theme:"light-thin",
-            advanced:{
-        autoExpandVerticalScroll:true
+    $("#catalog").mCustomScrollbar({
+      autoHideScrollbar: true,
+      theme: "light",
+      advanced: {
+        autoExpandVerticalScroll: true
       }
-        });
+    });
   },
-  
+
   addExtraJSONdata: function(JSONdata) {
     data = JSONdata.files;
     //console.log(JSONdata);
@@ -395,7 +379,7 @@ var catalogHandler = {
     }
     this.showTree(d);
   },
-  
+
   // 解析JSON数据并生成目录树
   handleJSONdata: function(JSONdata) {
     data = JSONdata;
@@ -421,8 +405,6 @@ var catalogHandler = {
 };
 
 
-
-
 /******************************************************* 配置栏  ***************************************************/
 var configbar = {
   createInput: function(attr, defaultValue) {
@@ -445,10 +427,13 @@ var configbar = {
   saveData: function(id, JSONdata) {
     storage.setItem(id, JSON.stringify(JSONdata));
     ws.onopen = function() {
-      dataToSend=JSON.stringify({'request': 'saveUserData','data':JSON.stringify(JSONdata)});
+      dataToSend = JSON.stringify({
+        'request': 'saveUserData',
+        'data': JSON.stringify(JSONdata)
+      });
       ws.send(dataToSend);
       console.log(dataToSend);
-    }       
+    }
     //storage.clear();
   },
 
@@ -481,7 +466,7 @@ var configbar = {
       for (var i = 0; i < inputList.length; i++) {
         elem[inputList[i].id] = inputList[i].value;
       };
-      
+
       thisObj.saveData(id, elem);
 
       //alert("saved. ^_^! ");
@@ -495,13 +480,12 @@ var configbar = {
     var id = JSONdata["rsbpml"]["part_list"]["part"]["part_id"];
     var seq = JSONdata["rsbpml"]["part_list"]["part"]["sequences"]["seq_data"];
     var attrs = [{
-        attrName: "id",
-        attrValue: id
-      }, {
-        attrName: "seq",
-        attrValue: seq
-      }
-    ];
+      attrName: "id",
+      attrValue: id
+    }, {
+      attrName: "seq",
+      attrValue: seq
+    }];
     // 生成config bar并添加标题 
     var configBar = document.getElementById("optionpanel");
     configBar.innerHTML = "";
@@ -524,6 +508,37 @@ $().ready(function() {
   document.ontouchmove = function(e) {
     e.preventDefault();
   };
+
+  $("#save").click(function() {
+    var fnInput = $("#fn-input");
+    var filename = fnInput.attr('value');
+    if(!filename) {
+      fnInput.focus();
+      fnInput.tooltip('show');
+
+      var tid = setInterval(function() {
+        var newFilename = fnInput.attr('value');
+
+        if(newFilename) {
+          console.log("change");
+          fnInput.tooltip('destroy');
+          clearInterval(tid);
+        }
+      },500);
+    } else {
+      $("#save-trigger").click();
+    }
+  });
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -566,17 +581,16 @@ $().ready(function() {
     ws.onmessage = function(msg) {
       var message = JSON.parse(msg.data);
       if (message.request == "getDirList") {
-		console.log(message.result);
-		if(message.result.files=='true')
-		{
-			
-		}else{
-			if (catalogHandler.istreeInit === true) {
-			  catalogHandler.addExtraJSONdata(message.result);
-			} else {
-			  catalogHandler.handleJSONdata(message.result.files);
-			}
-		}
+        console.log(message.result);
+        if (message.result.files == 'true') {
+
+        } else {
+          if (catalogHandler.istreeInit === true) {
+            catalogHandler.addExtraJSONdata(message.result);
+          } else {
+            catalogHandler.handleJSONdata(message.result.files);
+          }
+        }
       } else if (message.request == "getBiobrick") {
         var configBar = $("div.span2#configBar");
         configBar.css("display", "none");
@@ -626,7 +640,7 @@ $().ready(function() {
     app.toggleSnapToGrid();
   });
 
-  
+
 
   // Bind load button to localstorage
   $("#btn-load").live("click", function() {

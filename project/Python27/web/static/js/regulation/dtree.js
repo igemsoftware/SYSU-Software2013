@@ -418,7 +418,7 @@ dTree.prototype.o = function(id) {
 
 	if (this.config.useCookies) this.updateCookie();
 
-	$("#left-container").mCustomScrollbar("update");
+	$("#catalog").mCustomScrollbar("update");
 };
 
 

@@ -30,7 +30,34 @@
 
   <div class="regulation-container">
     <div id="left-container">
-      <div id="catalog"></div>
+      <div class="accordion" id="accordion1">
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1One">
+              Exogenous Factors
+              <i class="icon-chevron-down" style="display: block; float: right"></i>
+            </a>
+          </div>
+          <div id="collapse1One" class="accordion-body collapse">
+            <div class="accordion-inner">
+          
+            </div>
+          </div>
+        </div>
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1Two">
+              Protein
+              <i class="icon-chevron-down" style="display: block; float: right"></i>
+            </a>
+          </div>
+          <div id="collapse1Two" class="accordion-body collapse in">
+            <div class="accordion-inner">
+              <div id="catalog"></div>
+            </div>
+          </div>
+        </div>
+      </div>      
     </div>
 
     <!-- <div id="toolbar">
@@ -104,15 +131,29 @@
 
                 <div id="filemenu" class="well well-small">
                   <label for="filename">FileName:</label>
-                  <input type="text" name="filename">
-                  <button class="btn btn-primary" id="save">
+                  <input id="fn-input" type="text" name="filename" data-toggle="tooltip" title="filename can not be empty">
+                  <a class="btn btn-primary" id="save">
                     <i class="icon-ok"></i>
                     Save
-                  </button>
-                  <button class="btn" id="clear">
+                  </a>
+                  <a class="btn btn-primary" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
+                  <a class="btn" id="clear" role="button">
                     <i class="icon-remove"></i>
                     Clear
-                  </button>
+                  </a>
+
+                  <div id="save-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h6 id="myModalLabel">Info</h6>
+                    </div>
+                    <div class="modal-body" style="text-align: center;">                      
+                      <h4>File Saved!</h4>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -127,7 +168,7 @@
           </div>
           <div id="collapseTwo" class="accordion-body collapse in">
             <div class="accordion-inner">
-              Anim pariatur cliche...
+              Under Construction...
             </div>
           </div>
         </div>

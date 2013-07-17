@@ -421,8 +421,8 @@
 }
 /*light-thin*/
 .mCS-light-thin>.mCSB_scrollTools .mCSB_draggerRail{
-	background:#fff; /* rgba fallback */
-	background:rgba(255,255,255,0.1);
+	background:#000; /* rgba fallback */
+	background:rgba(0,0,0,0.5);
 }
 .mCS-light-thin>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 	width:2px;
