@@ -22,7 +22,7 @@ body {
 
   width: 1349px;
   min-width: 1349px;
-  height: 530px;
+  height: 554px;
   margin: 20px auto;
 }
 
@@ -78,11 +78,9 @@ body {
 #canvas {	
   margin: 0 auto;
   width: 1225px;
-  min-height: 520px;
+  min-height: 554px;
   border-radius: 6px;
-  border: 1px solid #ddd;
-  background-color: #FFF;
-  
+  background-color: #FFF;  
 }
 
 #toolbar {
@@ -123,7 +121,7 @@ body {
   position: absolute;
   overflow: auto;
   top: 0;
-  right: -261px;
+  right: 0px;
   width: 250px;
   height: 621px;
   padding: 10px;  
@@ -203,18 +201,56 @@ body {
   margin: 15px auto;
 }
 
-/*#right-container p {
-  word-break: break-all;
-  width: 130px;
+#right-container .slider-div {
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-#right-container label {
-  margin-bottom: 0px;
+#right-container #exogenous-factors-config {
+  display: none;
+  width: 198px;
+  margin-bottom: 10px;
 }
 
-#right-container input {
-  width: 80px;
-}*/
+#right-container #protein-config {
+  display: none;
+  width: 198px;
+  margin-bottom: 10px;
+}
+
+#right-container #component-config {
+  display: none;
+  width: 228px;
+  margin-bottom: 10px;
+  padding: 9px;
+  padding-right: 0;
+}
+
+#right-container #component-form {
+  margin-top: 20px;
+  height: 440px;
+  overflow: auto;
+}
+
+#right-container .accordion-inner {
+  padding: 9px 2px 9px 5px;
+}
+
+#right-container #component-form input {
+  width: 187px;
+  margin-bottom: 10px;
+}
+
+#right-container #arrow-config {
+  display: none;
+  width: 198px;
+  margin-bottom: 10px;
+}
+
+#right-container .config-active {
+  display: block;
+}
 
 .footer {
   width: 470px;

@@ -509,6 +509,7 @@ $().ready(function() {
     e.preventDefault();
   };
 
+  // save file
   $("#save").click(function() {
     var fnInput = $("#fn-input");
     var filename = fnInput.attr('value');
@@ -530,9 +531,97 @@ $().ready(function() {
     }
   });
 
+  $("#protein-config").ready(function() {
+      E.config({
+        baseUrl : 'static/js/regulation/slider/js/'
+      });
 
+      E.use( 'slider', function(){
+        // Slider 1
+        var slider = new E.ui.Slider( '#slider-1', {
+            min : 0,
+            max : 10,
+            value : 5,
+            axis : 'x',
+            size : '198px'
+        });
+        
+        var demoText = E( '#slider-text-1' );        
+        slider.on( 'slide', function( e ){
+                demoText.text( this.value / 10);
+            });
 
+        demoText.on( 'click', function(){
+            slider.setValue( 5 );
+        });
 
+        // Slider 2
+        var slider = new E.ui.Slider( '#slider-2', {
+            min : -1,
+            max : 10,
+            value : 0,
+            axis : 'x',
+            size : '198px'
+        });
+        
+        var demoText = E( '#slider-text-2' );        
+        slider.on( 'slide', function( e ){
+                demoText.text( this.value);
+            });
+            
+        demoText.on( 'click', function(){
+            slider.setValue( 0 );
+        });
+
+        // Slider 3
+        var slider = new E.ui.Slider( '#slider-3', {
+            min : -10,
+            max : 10,
+            value : 0,
+            axis : 'x',
+            size : '198px'
+        });
+        
+        var demoText = E( '#slider-text-3' );        
+        slider.on( 'slide', function( e ){
+                demoText.text( this.value);
+            });
+            
+        demoText.on( 'click', function(){
+            slider.setValue( 0 );
+        });
+
+        // Slider 4
+        var slider = new E.ui.Slider( '#slider-4', {
+            min : -10,
+            max : 10,
+            value : 0,
+            axis : 'x',
+            size : '198px'
+        });
+        
+        var demoText = E( '#slider-text-4' );        
+        slider.on( 'slide', function( e ){
+                demoText.text( this.value);
+            });
+            
+        demoText.on( 'click', function(){
+            slider.setValue( 0 );
+        });
+  });
+
+  $("#component-config").ready(function() {
+    $("#component-form").mCustomScrollbar({
+      autoHideScrollbar: true,
+      theme: "dark-thin",
+      advanced: {
+        autoExpandVerticalScroll: true
+      }
+    });
+  });
+});
+
+  
 
 
 
@@ -581,7 +670,7 @@ $().ready(function() {
     ws.onmessage = function(msg) {
       var message = JSON.parse(msg.data);
       if (message.request == "getDirList") {
-        console.log(message.result);
+        // console.log(message.result);
         if (message.result.files == 'true') {
 
         } else {
