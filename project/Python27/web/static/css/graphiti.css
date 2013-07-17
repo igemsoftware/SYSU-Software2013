@@ -133,9 +133,9 @@ body {
   -webkit-transition: right 0.5s;   /* Safari 和 Chrome */
 }
 
-#right-container:hover {
+/*#right-container:hover {
   right: 0;
-}
+}*/
 
 #right-container .accordion-group {
   background-color: #fff;

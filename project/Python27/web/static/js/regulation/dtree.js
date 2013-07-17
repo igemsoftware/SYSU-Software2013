@@ -386,16 +386,17 @@ dTree.prototype.s = function(id) {
 
 	}
 
-	//console.log(this.aNodes[id].path);
 	// 显示配置栏
-	var configBar = $("div.span2#configBar");
-	configBar.css("display", "none");
-	configBar = $("div.span2#configBar");
-	configBar.css("display", "block");
-	/*console.log(JSON.stringify({
-		'request': 'getDirList',
-      	'dir': this.aNodes[id].path
-	}));*/
+	$("#right-container").css({right: '0px'});
+	var hasClassIn = $("#collapseTwo").hasClass('in');
+	if(!hasClassIn) {
+		$("#collapseOne").toggleClass('in');
+		$("#collapseOne").css({height: '0'});
+		$("#collapseTwo").toggleClass('in');
+		$("#collapseTwo").css({height: "auto"});
+	}
+
+
 	ws.send(JSON.stringify({
 		'request': 'getDirList',
       	'dir': this.aNodes[id].path

@@ -509,6 +509,16 @@ $().ready(function() {
     e.preventDefault();
   };
 
+  // slide in right-container
+  $("#right-container").mouseover(function() {
+    $("#right-container").css({right: '0px'});
+  });
+
+  // slide out right-container
+  $("#right-container").mouseout(function() {
+    $("#right-container").css({right: '-261px'});
+  });
+
   // save file
   $("#save").click(function() {
     var fnInput = $("#fn-input");
