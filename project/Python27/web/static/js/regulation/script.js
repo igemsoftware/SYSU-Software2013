@@ -696,6 +696,31 @@ $().ready(function() {
         configBar = $("div.span2#configBar");
         configBar.css("display", "block");
         configbar.showAttributes(eval('(' + message.result + ')'));
+      } else if (message.request == "getXmlJson") {
+        var part = eval('('+message.result+')').rsbpml.part_list.part;
+
+        $("input[name=part_id]").attr({'value': part.part_id});
+        $("input[name=part_name]").attr({'value': part.part_name});
+        $("input[name=part_short_name]").attr({'value': part.part_short_name});
+        $("input[name=part_short_desc]").attr({'value': part.part_short_desc});
+        $("input[name=part_type]").attr({'value': part.part_type});
+        $("input[name=part_status]").attr({'value': part.part_status});
+        $("input[name=part_results]").attr({'value': part.part_results});
+        $("input[name=part_nickname]").attr({'value': part.part_nickname});
+        $("input[name=part_rating]").attr({'value': part.part_rating});
+        $("input[name=part_author]").attr({'value': part.part_author});
+        $("input[name=part_entered]").attr({'value': part.part_entered});
+        $("input[name=part_quality]").attr({'value': part.best_quality});
+
+        var twinsHtml = "";
+        if (part.twins) {
+          for(var i = 0 ; i < part.twins.twin.length ; i++) {
+            var li = "<li>" + part.twins.twin[i] + "</li>"
+            twinsHtml += li;
+          }
+        }
+
+        $("#twins").html(twinsHtml);
       } else {
         $("p#log").html(JSON.stringify(message));
         console.log(message);
@@ -709,9 +734,6 @@ $().ready(function() {
       'dir': 'web\\biobrick'
     }));
   }
-  //ws.send(JSON.stringify({'request': 'getDirList','dir':'web\\biobrick'}));
-  //htmlobj=$.ajax({url:"http://127.0.0.1:5000/getdir/biobrick",async:false});
-  //handleCatalog(htmlobj.responseText);
 
   var app = new g.Application();
 
