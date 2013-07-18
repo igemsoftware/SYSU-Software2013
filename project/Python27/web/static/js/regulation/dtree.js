@@ -565,7 +565,6 @@ dTree.prototype.nodeStatus = function(status, id, bottom) {
 	((status)?this.icon.nlMinus:this.icon.nlPlus);
 
 	eDiv.style.display = (status) ? 'block': 'none';
-
 };
 
 
