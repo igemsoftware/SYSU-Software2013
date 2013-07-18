@@ -436,7 +436,8 @@ var catalogHandler = {
   },
 
   renderNode: function(data) {
-    var div = "<div class=\"factorNode\" id=\"" + data + "\">" + data + "</div>";
+    var inner = "<img src=\"../static/img/lock.png\">"
+    var div = "<div class=\"factorNode\" id=\"" + data + "\">" + data + inner + "</div>";
     $("#eFactors").append(div);
     $("#eFactors").mCustomScrollbar('update');
   }
