@@ -84,7 +84,7 @@ function dTree(objName) {
 
 		joinBottom	: '../static/img/joinbottom.gif',
 
-		plus				: '../static/img/plus.gid',
+		plus				: '../static/img/plus.gif',
 
 		plusBottom	: '../static/img/plusbottom.gif',
 
