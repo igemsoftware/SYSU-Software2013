@@ -34,6 +34,8 @@ class apis():
   def getXmlJson(self,message):
 	xml=xmlParse.xmlBiobrick(path=message['path'])
 	return xml.getJsonString()
+  def loginOut(self,message):
+	return user.userLogout(self.db)
 
 def handle_websocket(ws):
   logging.info("start handling websocket...")
