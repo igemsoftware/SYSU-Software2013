@@ -68,13 +68,13 @@ function dTree(objName) {
 
 	this.icon = {
 
-		root				: '../static/img/base.gif',
+		root				: '../static/img/base.png',
 
-		folder			: '../static/img/folder.gif',
+		folder			: '../static/img/folder.png',
 
-		folderOpen	: '../static/img/folderopen.gif',
+		folderOpen	: '../static/img/folderopen.png',
 
-		node				: '../static/img/page.gif',
+		node				: '../static/img/node.png',
 
 		empty				: '../static/img/empty.gif',
 
@@ -84,7 +84,7 @@ function dTree(objName) {
 
 		joinBottom	: '../static/img/joinbottom.gif',
 
-		plus				: '../static/img/plus.gif',
+		plus				: '../static/img/plus.gid',
 
 		plusBottom	: '../static/img/plusbottom.gif',
 

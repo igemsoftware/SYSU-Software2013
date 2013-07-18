@@ -332,7 +332,7 @@ var catalogHandler = {
       var name = data.length > 15 ? data.substr(0, 15) + ".." : data;
 
       if (this.isFolder(data)) {
-        tree.add(tree.aNodes.length, parentId, data, "#", data, "", "../static/img/folder.gif", "", "", path);
+        tree.add(tree.aNodes.length, parentId, data, "#", data, "", "../static/img/folder.png", "../static/img/folderopen.png", "", path);
       } else {
         tree.add(tree.aNodes.length, parentId, data, "#", data, "", "", "", "", path);
       }
