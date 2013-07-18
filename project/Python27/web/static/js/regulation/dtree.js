@@ -68,13 +68,13 @@ function dTree(objName) {
 
 	this.icon = {
 
-		root				: '../static/img/base.gif',
+		root				: '../static/img/base.png',
 
-		folder			: '../static/img/folder.gif',
+		folder			: '../static/img/folder.png',
 
-		folderOpen	: '../static/img/folderopen.gif',
+		folderOpen	: '../static/img/folderopen.png',
 
-		node				: '../static/img/page.gif',
+		node				: '../static/img/node.png',
 
 		empty				: '../static/img/empty.gif',
 
@@ -430,6 +430,8 @@ dTree.prototype.o = function(id) {
 	if (this.config.useCookies) this.updateCookie();
 
 	$("#catalog").mCustomScrollbar("update");
+
+
 };
 
 
@@ -563,7 +565,6 @@ dTree.prototype.nodeStatus = function(status, id, bottom) {
 	((status)?this.icon.nlMinus:this.icon.nlPlus);
 
 	eDiv.style.display = (status) ? 'block': 'none';
-
 };
 
 

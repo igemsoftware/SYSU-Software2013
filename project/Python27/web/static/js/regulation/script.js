@@ -332,7 +332,7 @@ var catalogHandler = {
       var name = data.length > 15 ? data.substr(0, 15) + ".." : data;
 
       if (this.isFolder(data)) {
-        tree.add(tree.aNodes.length, parentId, data, "#", data, "", "../static/img/folder.gif", "", "", path);
+        tree.add(tree.aNodes.length, parentId, data, "#", data, "", "../static/img/folder.png", "../static/img/folderopen.png", "", path);
       } else {
         tree.add(tree.aNodes.length, parentId, data, "#", data, "", "", "", "", path);
       }
@@ -362,22 +362,32 @@ var catalogHandler = {
     });
   },
 
-  addExtraJSONdata: function(JSONdata) {
+  addExtraJSONdata: function(JSONdata, nodeName) {
     data = JSONdata.files;
-    //console.log(JSONdata);
+
+    console.log(JSONdata);
+    
+    // 获取子节点数据并插入到dtree中
     for (var i = 0; i < data.length; i++) {
       var levels = data[i].split("\\");
       var path = "web";
       for (var j = 1; j < levels.length; j++) {
         // 设置路径
         path = path.concat("\\", levels[j]);
-        var parentName = "Biobricks Database";
+        var parentName = "Proteins";
         if (j !== 1)
           parentName = levels[j - 1];
-        this.insertCatalogItem(parentName, levels[j], d, path);
+
+        // 不显示web\biobrick前缀
+        if (j >= 3) 
+          this.insertCatalogItem(parentName, levels[j], d, path);
       }
     }
     this.showTree(d);
+
+    // 默认打开当前节点
+    var cur_id = this.getParentId(nodeName, d);
+    d.o(cur_id);
   },
 
   // 解析JSON数据并生成目录树
@@ -385,7 +395,7 @@ var catalogHandler = {
     data = JSONdata;
     this.istreeInit = true;
     d = new dTree('d');
-    d.add(0, -1, 'Biobricks Database');
+    d.add(0, -1, 'Proteins');
     for (var i = 0; i < data.length; i++) {
       var levels = data[i].split("\\");
       var path = "web";
@@ -393,13 +403,17 @@ var catalogHandler = {
         // 设置路径
         path = path.concat("\\", levels[j]);
 
-        var parentName = "Biobricks Database";
+        var parentName = "Proteins";
         if (j !== 1)
           parentName = levels[j - 1];
-        this.insertCatalogItem(parentName, levels[j], d, path);
+
+        // 不显示web\biobrick前缀
+        if(j >= 3) {
+          this.insertCatalogItem(parentName, levels[j], d, path);
+        } 
       }
     }
-    this.showTree(d);
+    this.showTree(d); // 显示目录树
     d.openAll(); // 默认打开所有目录
   }
 };
@@ -648,7 +662,8 @@ $().ready(function() {
 
         } else {
           if (catalogHandler.istreeInit === true) {
-            catalogHandler.addExtraJSONdata(message.result);
+            var path = message.result.path.split("\\");
+            catalogHandler.addExtraJSONdata(message.result, path[path.length - 1]);
           } else {
             catalogHandler.handleJSONdata(message.result.files);
           }
@@ -710,7 +725,7 @@ $().ready(function() {
   ws.onopen = function() {
     ws.send(JSON.stringify({
       'request': 'getDirList',
-      'dir': 'web\\biobrick'
+      'dir': 'web\\biobrick\\Protein coding sequences'
     }));
 
     ws.send(JSON.stringify({
