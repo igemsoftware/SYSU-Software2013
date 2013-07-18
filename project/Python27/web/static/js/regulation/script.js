@@ -362,9 +362,10 @@ var catalogHandler = {
     });
   },
 
-  addExtraJSONdata: function(JSONdata) {
+  addExtraJSONdata: function(JSONdata, nodeName) {
     data = JSONdata.files;
-    //console.log(JSONdata);
+    
+    // 获取子节点数据并插入到dtree中
     for (var i = 0; i < data.length; i++) {
       var levels = data[i].split("\\");
       var path = "web";
@@ -378,6 +379,10 @@ var catalogHandler = {
       }
     }
     this.showTree(d);
+
+    // 默认打开当前节点
+    var cur_id = this.getParentId(nodeName, d);
+    d.o(cur_id);
   },
 
   // 解析JSON数据并生成目录树
@@ -648,7 +653,8 @@ $().ready(function() {
 
         } else {
           if (catalogHandler.istreeInit === true) {
-            catalogHandler.addExtraJSONdata(message.result);
+            var path = message.result.path.split("\\");
+            catalogHandler.addExtraJSONdata(message.result, path[path.length - 1]);
           } else {
             catalogHandler.handleJSONdata(message.result.files);
           }
