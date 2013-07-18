@@ -436,10 +436,35 @@ var catalogHandler = {
   },
 
   renderNode: function(data) {
-    var inner = "<img src=\"../static/img/lock.png\">"
-    var div = "<div class=\"factorNode\" id=\"" + data + "\">" + data + inner + "</div>";
-    $("#eFactors").append(div);
+    var split = data.split(" ");
+    console.log(split);
+
+    var id = "";
+    if (split.length > 1) {
+      for (var i = 0; i < split.length - 1; i++) {
+        id += split[i] + "-";
+      }
+      id += split[i];
+    } else {
+      id = data;
+    }
+
+    var shortname = data.length > 12 ? data.substr(0, 9) + ".." : data,
+        img = "<img src=\"../static/img/lock.png\">",
+        iconDiv = "<div class=\"factorIcon\">" + img + "</div>",
+        nameDiv = "<div class=\"factorName\"><span class=\"label label-info\">" + shortname + "</span></div>",
+        outerDiv = "<div class=\"factorNode\" id=\"factor-" + id + "\">" + iconDiv + nameDiv + "</div>";
+
+    
+
+    $("#eFactors").append(outerDiv);
     $("#eFactors").mCustomScrollbar('update');
+
+    $("#factor-" + id + " .label").tooltip({
+      animation: true,
+      title : data,
+      placement : 'top',
+    });
   }
 };
 
