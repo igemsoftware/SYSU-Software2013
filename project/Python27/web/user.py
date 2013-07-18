@@ -38,6 +38,7 @@ def changeUserPassword(database,password):
 def userLogout(database):
     database.logger.debug(database.getUserNameById(database.userId)+' log out')
     database.userId=-1
+	return 'success'
 
 def saveUserData(database,datastr):   
     if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId})):
