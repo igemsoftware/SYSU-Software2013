@@ -1,3 +1,81 @@
+var plasmidPainter = {
+	canvas: null,
+	canvasId: null,
+	data: null,
+	text: null,
+	init: function(JSONdata) {
+		data = JSONdata;
+	},
+	bindCanvas: function(canvasId) {
+		var canvas = document.getElementById(canvasId);
+		if (canvas == null) {
+			console.log("canvas not found!");
+			return false;
+		}
+		this.canvas = canvas;
+		this.canvasId = canvasId;
+	},
+	drawSegment: function(bioStart, bioEnd, name, type, seq) {
+		var color;
+		switch (type) {
+			case 'type1':
+				color = "#9e33cc";
+				break;
+			case 'type2':
+				color = "#00FF00";
+				break;
+		}
+		var marginLeft = 0, 
+			marginTop = 12.5;
+		jc.start(this.canvasId, true);
+		jc.rect((marginLeft + bioStart), marginTop, (bioEnd - bioStart), 25, color, true).id(name);
+		// add shadow
+		jc('#'+name).shadow({
+            x:3,
+            y:3,
+            blur:5,
+            color:'rgba(100, 100, 100, 0.5)'
+        });
+		// bind mouseover event
+		jc("#"+name).mouseover(function() {
+			this.color("#FF0000");
+			jc("#seq").string("seq: " + seq);
+		});
+		// bind mouseout event
+		jc("#"+name).mouseout(function() {
+			this.color(color);
+			jc("#seq").string("seq: select a segment to show its sequence");
+		});
+		//jc.start(this.canvasId, true);
+	},
+	drawAll: function() {
+		jc.start(this.canvasId);
+		jc.rect(0, 0, 1100, 50, "#EEEEFF", true);
+		jc.text("seq: select a segment to show its sequence", 400, 60).id("seq");
+		this.text = jc("#seq");
+		jc.start(this.canvasId);		
+		// 把JSONdata里的每一个元素画出来
+		var temp=0;
+		for(i=0;i<data.length;i++)
+		{			
+			if(typeof(data[i].name)!=="number")
+			{
+				this.drawSegment(data[i].start/size*1100,data[i].end/size*1100,parseInt(temp,10),(temp%2==0)?"type1":"type2",seq.substring(data[i].start,data[i].end));	
+				temp++;
+			}
+		}
+		//this.drawSegment(0, 40, '1','type1', 'AAATTACGA');
+		//this.drawSegment(60, 200, '2', 'type2', 'TAGCAGTA');
+		//this.drawSegment(280, 500, '3', 'type2', 'CGATATGATC');
+		//this.drawSegment(700, 800, '4', 'type1', 'GACTAACT');
+		//this.drawSegment(850, 870, '5', 'type2', 'ATTACGATACGA');
+	}
+};
+function show(id) {
+	plasmidPainter.bindCanvas(id);
+	plasmidPainter.init(data);
+	plasmidPainter.drawAll();
+}
 var data =  [];
 var size=0;//整个序列的长度
 var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色
@@ -64,6 +142,7 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
 	}		
 	tempArray=tempArray.sort(sortNumber);
+	
 	var real_data=[];
 	var start=0;
 	var index=0;
@@ -87,10 +166,10 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 			real_data[index].end=size-1;
 			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
 		}
-	}	
+	}		
 	//console.log(real_data);
 	tempArray=null;
-	return real_data;
+	return real_data;	
 }
 function getRawData()//to get the raw data of plasmid
 {
@@ -98,7 +177,7 @@ function getRawData()//to get the raw data of plasmid
 }
 function initDrawChart(){
 	getRawData();
-	data=turnRawDatatoData(raw_data);	
+	data=turnRawDatatoData(raw_data);		
 	var chart = new iChart.Donut2D({
 		id:'ichartjs2013',
 		animation:true,
@@ -221,7 +300,6 @@ function create14sBP(chart){
 			var str=parseInt(size/4,10)+"bp";
 			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-20;
 			var y=  chart.getDrawingArea().height/2+radius;
-			//console.log(chart.radius);
 			//在左侧的位置，设置竖排模式渲染文字			
 			chart.target.textAlign('left')
 			.textBaseline('top')
@@ -349,6 +427,7 @@ $(function(){
 	initDrawChart();	
 	document.getElementById('seqCurrentText').value=seq;
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();	
+	show('plasmid-canvas');
 	//InitAjax();
 	//testWebSocket();
 });

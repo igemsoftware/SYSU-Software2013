@@ -22,7 +22,7 @@
 
 </head>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-<body bgcolor="#FFFFFF">
+<body bgcolor="#FFFFFF" >
   <div class="container" style="background-color:white;">
     <h1>Plasmid</h1>
     <div class="footer">
@@ -32,13 +32,14 @@
     	<button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
    		<button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
     </div>
-    <div id='seqPanel' style="width:100%;height:100px;float:left;">
+    <div id='seqPanel' style="width:100%;height:130px;float:left;">
 		<label id='x1' style="width:25%;height:15px;float:left;">1</label>    
 		<label id='x2' style="width:25%;height:15px;float:left;">46</label>
 		<label id='x3' style="width:25%;height:15px;float:left;">91</label>
         <label id='x4' style="width:25%;height:15px;float:left;">136</label>
         <textarea name="" cols="180" rows="1" readonly wrap="off" id="seqCurrentText" style="resize: none;width:100%;height:15px;overflow:hidden;font-size:12px;" onClick="seqTextOnClickHandler(this);" onSelect="seqTextOnClickHandler(this);"></textarea>        
-        
+        <canvas id="plasmid-canvas" width="1100" height="80">
+      	</canvas>
     </div>
     <div id='canvasDiv' style="width:67%;height:400px;float:left;">
     </div>  
@@ -189,7 +190,8 @@
 
 
 <!-- <script src="static/js/libs/bootstrap/bootstrap.min.js"></script> -->
-  <script src="../static/js/plasmid (2).js"></script>
+	<script src="../static/js/plasmid (2).js"></script>
+    <script src="../static/js/jCanvaScript.1.5.18.js"></script>
   </div>
   </body>
 </html>
