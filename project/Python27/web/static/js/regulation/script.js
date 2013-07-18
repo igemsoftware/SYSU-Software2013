@@ -276,19 +276,26 @@ g.Shapes.Arrow = graphiti.shape.icon.ProteinArrow.extend({
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /******************************************************* 目录树  ***************************************************/
 var catalogHandler = {
   istreeInit: false,
+
   parentNode: $("#catalog"),
-
-  // 插入目录项到html中
-  appendCatalogItem: function(parent, index, data) {
-    var parentNode = $("#" + parent);
-
-    if (parentNode.children("#" + data).length === 0) {
-      parentNode.append("<div class='treelevel-" + index + "' id=" + data + ">" + data + "</div>");
-    }
-  },
 
   // 判断目录树中是否有当前节点
   hasTreeNode: function(name, tree) {
@@ -410,13 +417,40 @@ var catalogHandler = {
         // 不显示web\biobrick前缀
         if(j >= 3) {
           this.insertCatalogItem(parentName, levels[j], d, path);
+
+          this.renderNode(levels[j]);          
         } 
       }
     }
+
+    $("#eFactors").mCustomScrollbar({
+      autoHideScrollbar: true,
+      theme: "light",
+      advanced: {
+        autoExpandVerticalScroll: true
+      }
+    });
+
     this.showTree(d); // 显示目录树
     d.openAll(); // 默认打开所有目录
+  },
+
+  renderNode: function(data) {
+    var div = "<div class=\"factorNode\" id=\"" + data + "\">" + data + "</div>";
+    $("#eFactors").append(div);
+    $("#eFactors").mCustomScrollbar('update');
   }
 };
+
+
+
+
+
+
+
+
+
+
 
 
 /******************************************************* 配置栏  ***************************************************/
@@ -537,6 +571,13 @@ $().ready(function() {
     });
   });
 
+  // logout
+  $("#logout").click(function() {
+    ws.send(JSON.stringify({
+      'request' : 'loginOut'
+    }));
+  });
+
   // save file
   $("#save").click(function() {
     var fnInput = $("#fn-input");
@@ -651,12 +692,73 @@ $().ready(function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // save or load by WebSocket
   if ("WebSocket" in window) {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function(msg) {
       var message = JSON.parse(msg.data);
-
       if (message.request == "getDirList") { // 获取目录
         if (message.result.files == 'true') {
 
@@ -718,10 +820,17 @@ $().ready(function() {
         $("#twins").html(twinsHtml);
       } else if (message.request == "getLoginedUserName") { // 获取用户名
         $("#user-view-left > p").text(message.result);
+      } else if (message.request == "loginOut") {
+        window.location = "..";
       }
     };
   }
 
+
+
+
+
+  // 登录后自动获取Proteins列表和用户名
   ws.onopen = function() {
     ws.send(JSON.stringify({
       'request': 'getDirList',
@@ -733,6 +842,15 @@ $().ready(function() {
     }));
   }
 
+  // Cleanly close websocket when unload window
+  window.onbeforeunload = function() {
+    ws.onclose = function() {}; // disable onclose handler first
+    ws.close();
+  };
+
+
+
+  // 创建工作区应用
   var app = new g.Application();
 
   $('#cmd_undo').click(function(ev) {
@@ -759,6 +877,10 @@ $().ready(function() {
     app.toggleSnapToGrid();
   });
 
+  
+
+
+
 
 
   // Bind load button to localstorage
@@ -780,10 +902,4 @@ $().ready(function() {
     var jsonStr = JSON.stringify(g.Storage);
     storage.setItem("view", jsonStr);
   });
-
-  // Cleanly close websocket when unload window
-  window.onbeforeunload = function() {
-    ws.onclose = function() {}; // disable onclose handler first
-    ws.close();
-  };
 });

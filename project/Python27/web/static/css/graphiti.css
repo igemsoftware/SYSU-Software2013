@@ -41,6 +41,24 @@ body {
   -webkit-transition: left 0.5s;   /* Safari 和 Chrome */
 }
 
+#left-container .mCSB_container {
+  margin-right: 16px;
+}
+
+#left-container #eFactors {
+  height: 530px;
+  overflow: auto;
+}
+
+#left-container .factorNode {
+  float: left;
+  width: 90px;
+  height: 80px;
+  border: 1px solid #fff;
+  margin: 10px 5px 10px 10px;
+  background-color: #ccc;
+}
+
 #left-container #catalog {
   height: 530px;
   overflow: auto;
