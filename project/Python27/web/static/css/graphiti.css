@@ -29,7 +29,7 @@ body {
 #left-container {
   position: absolute;
   top: 0;
-  left: 0px;
+  left: -261px;
   width: 250px;
   height: 621px;
   padding: 10px;  
@@ -68,7 +68,6 @@ body {
   width: 88px;
   height: 60px;
   margin: 0 auto;
-  /*border: 1px solid #fff;*/
   background-color: #fff;
 }
 
