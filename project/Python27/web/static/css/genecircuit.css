@@ -1,0 +1,16 @@
+
+.component:hover {
+	opacity: 0.8;
+}
+
+.edit {
+	opacity:0.8;
+}
+
+.edit:hover {
+	opacity:0.5;
+}
+
+.edit.inactive {
+	opacity:0.3;
+}

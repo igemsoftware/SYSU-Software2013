@@ -844,6 +844,9 @@ $().ready(function() {
           }
         }
         $("#twins").html(twinsHtml);
+
+				game.addComponent(part);
+
       } else if (message.request == "getLoginedUserName") { // 获取用户名
         $("#user-view-left > p").text(message.result);
       } else if (message.request == "loginOut") {
