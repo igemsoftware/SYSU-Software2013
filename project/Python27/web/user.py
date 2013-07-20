@@ -40,13 +40,17 @@ def userLogout(database):
     database.userId=-1
     return 'success'
 
-def saveUserData(database,datastr):   
-    if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId})):
+def getUserFileList(database):
+	return database.getUserFileNameList()
+
+def saveUserData(database,datastr,fileName):
+    datastr=jsonUtil.turnStringDoubleQuoteToSingleQuote(datastr)
+    if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName})):
         print 'updateUserData'
-        return database.updateUserData(datastr)
+        return database.updateUserData(datastr,fileName)
     else:
-        print 'insertUserDat'
-        return database.insertUserData(datastr)
+        print 'insertUserData'
+        return database.insertUserData(datastr,fileName)
     
 "create a new user whose name cannot be the same as those in the database"
 def registAUser(database,name,password,email,group_id):
@@ -70,8 +74,9 @@ def getLoginedUserName(database):
 if __name__=="__main__":
     sql=SqliteDatabase()
     print userLogin(sql,'kitty','1212')
-    #saveUserData(sql,'23542357642756')
-    print getLoginedUserName(sql)
+    #saveUserData(sql,'{"name":"ffff"}','default1')
+    print getUserFileList(sql)
+    #print getLoginedUserName(sql)
     #changeUserPassword(sql,'1212')    
     #userLogout(sql)
     #sql.getMaxUserId()
