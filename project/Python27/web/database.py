@@ -84,24 +84,35 @@ class SqliteDatabase:
 		self.logger.debug('update user password: %s'%sql_cmd)
 		self.__cx.commit()
 		return 'updateUserPassword succeed'
-	
-	def updateUserData(self,data):
-		print data
+
+	def getUserFileNameList(self):
+		if self.userId==-1:
+			self.logger.error('not login but want to get the user fileList')
+			return 'getUserFileNameList failed'
+		sql_cmd='select fileName from user_save WHERE user_id=%d'%(self.userId)
+		self.__cursor.execute(sql_cmd)
+		self.logger.debug('select fileName from user_save: %s'%sql_cmd)
+		rec=[]
+		for item in self.__cursor.fetchall():
+			rec.append(item[0])
+		return rec
+
+	def updateUserData(self,data,fileName):
 		if self.userId==-1:
 			self.logger.error('not login but want to save the user data')
 			return 'updateUserData failed'
-		sql_cmd='UPDATE user_save SET data="%s" WHERE user_id=%d'%(data,self.userId)
+		sql_cmd='UPDATE user_save SET data="%s" WHERE user_id=%d AND fileName="%s"'%(data,self.userId,fileName)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
 		self.__cx.commit()
 		return 'updateUserData succeed'		
 	
-	def insertUserData(self,data):
+	def insertUserData(self,data,fileName):
 		if self.userId==-1:
 			self.logger.error('not login but want to save the user data')
 			return 'updateUserData failed'
-		sql_cmd='INSERT INTO user_save (user_id,data) VALUES (%d,"%s")'%(self.userId,data)
+		sql_cmd='INSERT INTO user_save (user_id,data,fileName) VALUES (%d,"%s","%s")'%(self.userId,data,fileName)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
@@ -187,13 +198,13 @@ class SqliteDatabase:
 		if(len(self.selectAllOfTable(tableName))==0):
 			self.logger.debug('table:%s with no record'%tableName)
 			return False
-		recs=self.selectAllOfTable(tableName)[0]
-		self.logger.debug(recs)	
-		whereCommand=jsonUtil.changeADictToStringThatCanUseBySql(recs)
+		self.logger.debug(recs)
+		whereCommand=jsonUtil.changeADictToStringThatCanUseBySql(recs)		
 		sql_cmd="select * from %s where %s ;"%(tableName,whereCommand)
+		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug(sql_cmd)
-		res = self.__cursor.fetchall()
+		res = self.__cursor.fetchall()		
 		if len(res) > 0:
 			return True
 		else:

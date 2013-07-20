@@ -25,9 +25,11 @@ class apis():
     content = make_graph.parse_data()
     return content
   def saveUserData(self,message):
-    print message
     message['data']=message['data'].replace('"','\'')
-    print user.saveUserData(self.db,message['data'])
+    if message.has_key("fileName"):
+		user.saveUserData(self.db,message['data'],message['fileName'])
+    else:
+		user.saveUserData(self.db,message['data'],"default")
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
   "ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));"
@@ -36,6 +38,8 @@ class apis():
 	return xml.getJsonString()
   def loginOut(self,message):
 	return user.userLogout(self.db)
+  def getUserFileList(self,message):
+	return user.getUserFileList(self.db)
 
 def handle_websocket(ws):
   logging.info("start handling websocket...")
