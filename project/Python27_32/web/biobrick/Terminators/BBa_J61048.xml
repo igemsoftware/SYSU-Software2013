@@ -1,0 +1,84 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>8113</part_id>
+<part_name>BBa_J61048</part_name>
+<part_short_name>J61048</part_short_name>
+<part_short_desc>[rnpB-T1] Terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J61048</part_url>
+<part_entered>2007-02-20</part_entered>
+<part_author>John Anderson</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ccggcttatcggtcagtttcacctgatttacgtaaaaacccgcttcggcgggtttttgcttttggaggggcagaaagatg
+aatgactgtccacgacgctatacccaaaagaaa
+</seq_data></sequences>
+<features></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>forward_efficiency</name>
+<value>0.98[JCA]</value>
+<units></units>
+<url></url>
+<id>2846</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>reverse_efficiency</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>2847</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>direction</name>
+<value>Forward</value>
+<units></units>
+<url></url>
+<id>4627</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>reversed_version</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4628</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>E. coli rnpB</value>
+<units></units>
+<url></url>
+<id>4629</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//terminator/single</category>
+<category>//direction/forward</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

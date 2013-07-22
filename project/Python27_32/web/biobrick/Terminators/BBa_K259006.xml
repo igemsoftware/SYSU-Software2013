@@ -1,0 +1,266 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>14895</part_id>
+<part_name>BBa_K259006</part_name>
+<part_short_name>K259006</part_short_name>
+<part_short_desc>GFP-Terminator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K259006</part_url>
+<part_entered>2009-09-09</part_entered>
+<part_author>Petros Mina</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>144</part_id>
+<part_name>BBa_B0011</part_name>
+<part_short_desc>LuxICDABEG (+/-)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaatt
+ttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactac
+ctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacag
+catgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaa
+gacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatg
+gaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatgga
+atcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactcc
+aattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaa
+agagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataa
+tactagagtcacactggctcaccttcgggtgggcctttctgcgtttatatactagagagagaatataaaaagccagatta
+ttaatccggcttttttattattt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2020528</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>720</endpos></feature>
+<feature>
+<id>2020529</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>720</endpos></feature>
+<feature>
+<id>2020530</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>729</startpos>
+<endpos>769</endpos></feature>
+<feature>
+<id>2020531</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>736</startpos>
+<endpos>755</endpos></feature>
+<feature>
+<id>2020532</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>756</startpos>
+<endpos>769</endpos></feature>
+<feature>
+<id>2020533</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>762</startpos>
+<endpos>762</endpos></feature>
+<feature>
+<id>2020534</id>
+<title>BBa_B0011</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>778</startpos>
+<endpos>823</endpos></feature>
+<feature>
+<id>2020535</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>790</startpos>
+<endpos>812</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>excitation</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>6393</id>
+<m_date>2009-09-09 13:40:23</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>excite</name>
+<value>501</value>
+<units></units>
+<url></url>
+<id>6394</id>
+<m_date>2009-09-09 13:40:23</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>lum</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>6395</id>
+<m_date>2009-09-09 13:40:23</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>protein</name>
+<value>GFPmut3b</value>
+<units></units>
+<url></url>
+<id>6396</id>
+<m_date>2009-09-09 13:40:23</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>tag</name>
+<value>None</value>
+<units></units>
+<url></url>
+<id>6397</id>
+<m_date>2009-09-09 13:40:23</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>emission</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>6391</id>
+<m_date>2009-09-09 13:40:22</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>emit</name>
+<value>511</value>
+<units></units>
+<url></url>
+<id>6392</id>
+<m_date>2009-09-09 13:40:22</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>T7TE-LuxIA</value>
+<units></units>
+<url></url>
+<id>6386</id>
+<m_date>2009-09-09 13:40:10</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>direction</name>
+<value>Bidirectional</value>
+<units></units>
+<url></url>
+<id>6387</id>
+<m_date>2009-09-09 13:40:10</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>forward_efficiency</name>
+<value>0.604[CC]/0.96[JK]</value>
+<units></units>
+<url></url>
+<id>6388</id>
+<m_date>2009-09-09 13:40:10</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>reversed_version</name>
+<value>2145</value>
+<units></units>
+<url></url>
+<id>6389</id>
+<m_date>2009-09-09 13:40:10</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter>
+<parameter>
+<name>reverse_efficiency</name>
+<value>0.86[JK]</value>
+<units></units>
+<url></url>
+<id>6390</id>
+<m_date>2009-09-09 13:40:10</m_date>
+<user_id>5318</user_id>
+<user_name>pm5527</user_name></parameter></parameters>
+<categories>
+<category>//chassis/prokaryote/bsubtilis</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//direction/bidirectional</category>
+<category>//function/reporter</category>
+<category>//function/reporter/fluorescence</category>
+<category>//terminator/double</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

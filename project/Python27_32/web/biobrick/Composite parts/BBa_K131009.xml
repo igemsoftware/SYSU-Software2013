@@ -1,0 +1,87 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11414</part_id>
+<part_name>BBa_K131009</part_name>
+<part_short_name>K131009</part_short_name>
+<part_short_desc>Colicin E2 Operon Without SOS Promoter</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>ColE2 - SO</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K131009</part_url>
+<part_entered>2008-07-28</part_entered>
+<part_author>Kevin McLeod</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>aacgcttaaaagagggaatttttatgagcggtggcgatggacgcggccataacacgggcgcgcatagcacaagtggtaac
+attaatggtggcccgaccgggcttggtgtaggtggtggtgcttctgatggctccggatggagttcggaaaataacccgtg
+gggtggtggttccggtagcggcattcactggggtggtggttccggtcatggtaatggcggggggaatggtaattccggtg
+gtggttcgggaacaggcggtaatctgtcagcagtagctgcgccagtggcatttggttttccggcactttccactccagga
+gctggcggtctggcggtcagtatttcagcgggagcattatcggcagctattgctgatattatggctgccctgaaaggacc
+gtttaaatttggtctttggggggtggctttatatggtgtattgccatcacaaatagcgaaagatgaccccaatatgatgt
+caaagattgtgacgtcattacccgcagatgatattactgaatcacctgtcagttcattacctctcgataaggcaacagta
+aacgtaaatgttcgtgttgttgatgatgtaaaagacgaacgacagaatatttcggttgtttcaggtgttccgatgagtgt
+tccggtggttgatgcaaaacctaccgaacgtccaggtgtttttacggcatcaattccaggtgcacctgttctgaatattt
+cagttaataacagtacgccagaagtacagacattaagcccaggtgttacaaataatactgataaggatgttcgcccggca
+ggatttactcagggtggtaataccagggatgcagttattcgattcccgaaggacagcggtcataatgccgtatatgtttc
+agtgagtgatgttcttagtcctgaccaggtaaaacaacgtcaggatgaagaaaatcgccgtcagcaggaatgggatgcta
+cgcatccggttgaagcggctgagcgaaattatgaacgcgcgcgtgcagagctgaatcaggcaaatgaagatgttgccaga
+aatcaggagcgacaggctaaagctgttcaggtttataattcgcgtaaaagcgaacttgatgcagcgaataaaactcttgc
+tgatgcaatagctgaaataaaacaatttaatcgatttgcccatgacccaatggctggcggtcacagaatgtggcaaatgg
+ccggacttaaagctcagcgggcgcagacggatgtaaataataagcaggctgcatttgatgctgctgcaaaagagaagtca
+gatgctgatgctgcattaagtgccgcgcaggagcgccgcaaacagaaggaaaataaagaaaaggacgctaaggataaatt
+agataaggagagtaaacggaataagccagggaaggcgacaggtaaaggtaaaccagttggtgataaatggctggatgatg
+caggtaaagattcaggagcgccaattccagatcgcattgctgataagttgcgtgataaagaatttaaaaactttgacgat
+ttccggaagaaattctgggaagaagtgtcaaaagatcccgatcttagtaagcaatttaaaggcagtaataagacgaacat
+tcaaaagggaaaagcaccttttgcaaggaagaaagaccaagtaggtggtagggaacgctttgaattacatcatgataaac
+caatcagtcaggatggtggtgtctatgatatgaataatatcagagtgaccacacctaagcgacatattgatattcatcgg
+ggtaagtaaaaatggaactgaaacatagtattagtgattataccgaggctgaatttctggagtttgtaaaaaaaatatgt
+agagctgaaggtgctactgaagaggatgacaataaattagtgagagagtttgagcgattaactgagcacccagatggttc
+agatctgatttattatcctcgcgatgacagggaagatagtcctgaagggattgtcaaggaaattaaagaatggcgagctg
+ctaacggtaagtcaggatttaaacagggctgaaatatgaatgccggttgtttatggatgaatggctggcattctttcaca
+acaaggagtcgttatgaaaaaaataacagggattattttattgcttcttgcagtcattattctgtctgcatgtcaggcaa
+actatatccgggatgttcagggcgggaccgtatctccgtcatcaacagctgaagtgaccggattagcaacgcagtaaccc
+gaaatcctctttgacaaaaacaaagcgtgtcaggctgattctgatgcgcttttttttgaaatgtcacaaaaattccatgt
+gggagatgg
+</seq_data></sequences>
+<features>
+<feature>
+<id>1995073</id>
+<title>CeaB</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>24</startpos>
+<endpos>1769</endpos></feature>
+<feature>
+<id>1995074</id>
+<title>CeiB</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1772</startpos>
+<endpos>2032</endpos></feature>
+<feature>
+<id>1995075</id>
+<title>CelB</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>2094</startpos>
+<endpos>2237</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/[calgary_wetware]/favorite</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,146 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7885</part_id>
+<part_name>BBa_J36845</part_name>
+<part_short_name>J36845</part_short_name>
+<part_short_desc>Lpp-OmpA(46-66)-Streptavidin single-chain dimeric + His6</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J36845</part_url>
+<part_entered>2006-10-30</part_entered>
+<part_author>Perry Tsai</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>7833</part_id>
+<part_name>BBa_J36835</part_name>
+<part_short_desc>Lipoprotein signal peptide</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7834</part_id>
+<part_name>BBa_J36836</part_name>
+<part_short_desc>Outer membrane protein A, aa 46-66</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7845</part_id>
+<part_name>BBa_J36843</part_name>
+<part_short_desc>Streptavidin, single-chain dimer + His6 tag (no start codon)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>7833</part_id>
+<part_name>BBa_J36835</part_name>
+<part_short_desc>Lipoprotein signal peptide</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7834</part_id>
+<part_name>BBa_J36836</part_name>
+<part_short_desc>Outer membrane protein A, aa 46-66</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7845</part_id>
+<part_name>BBa_J36843</part_name>
+<part_short_desc>Streptavidin, single-chain dimer + His6 tag (no start codon)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>7833</part_id>
+<part_name>BBa_J36835</part_name>
+<part_short_desc>Lipoprotein signal peptide</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>7834</part_id>
+<part_name>BBa_J36836</part_name>
+<part_short_desc>Outer membrane protein A, aa 46-66</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>7845</part_id>
+<part_name>BBa_J36843</part_name>
+<part_short_desc>Streptavidin, single-chain dimer + His6 tag (no start codon)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atgaaagctactaaactggtactgggcgcggtaatcctgggttctactctgctggcaggttgctccagcaacgctaaaat
+cgatcagtactagagaacccgtatgttggctttgaaatgggttacgactggttaggtcgtatgccgtacaaaggcagcta
+ctagaggaggccaacgccaagaagtccacgctggtcggccacgacaccttcaccaaggtgaagccgtccgccgcctccgg
+tggtggatctgcggaggtcggcatcaccggcacctggtacaaccagctcggctcgaccttcatcgtgaccgcgggcgccg
+acggcgccctgaccggaacctacgagtcggccgtcggcaacgccgagagccgctacgtcctgaccggtcgttacgacagc
+gccccggccaccgacggcagcggcaccgccctcggttggacggtggcctggaagaataactaccgcaacgcccactccgc
+gaccacgtggagcggccagtacgtcggcggcgccgaggcgaggatcaacacccagtggctgctgacctccggcaccggct
+ccggaaccgccctcggttggacggtggcctggaagaataactaccgcaacgcccactccgcgaccacgtggagcggccag
+tacgtcggcggcgccgaggcgaggatcaacacccagtggctgctgacctccggcaccaccgaggccaacgcctggaagtc
+cacgctggtcggccacgacaccttcaccaaggtgaagccgtccgccgcctccggtggtggatctgcggaggtcggcatca
+ccggcacctggtacaaccagctcggctcgaccttcatcgtgaccgcgggcgccgacggcgccctgaccggaacctacgag
+tcggccgtcggcaacgccgagagccgctacgtcctgaccggtcgttacgacagcgccccggccaccgacggcgcggccgc
+actcgagcaccaccaccaccactga
+</seq_data></sequences>
+<features>
+<feature>
+<id>1909018</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>1909019</id>
+<title>BBa_J36835</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>87</endpos></feature>
+<feature>
+<id>1909020</id>
+<title>BBa_J36836</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>96</startpos>
+<endpos>158</endpos></feature>
+<feature>
+<id>1909021</id>
+<title>BBa_J36843</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>167</startpos>
+<endpos>985</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

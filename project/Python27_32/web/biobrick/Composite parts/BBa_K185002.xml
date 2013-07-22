@@ -1,0 +1,187 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16018</part_id>
+<part_name>BBa_K185002</part_name>
+<part_short_name>K185002</part_short_name>
+<part_short_desc>Lon Protease+double terminater</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K185002</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>Alex Jiang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>16203</part_id>
+<part_name>BBa_K185049</part_name>
+<part_short_desc>Lon protease</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>16203</part_id>
+<part_name>BBa_K185049</part_name>
+<part_short_desc>Lon protease</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>16203</part_id>
+<part_name>BBa_K185049</part_name>
+<part_short_desc>Lon protease</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atgaatcctgagcgttctgaacgcattgaaatccccgtattgccgctgcgcgatgtggtggtttatccgcacatggtcat
+ccccttatttgtcgggcgggaaaaatctatccgttgtctggaagcggcgatggaccatgataaaaaaattatgctggtcg
+cgcagaaagaagcttcaacggatgagccgggtgtaaacgatcttttcaccgtcgggaccgtggcctctatattgcagatg
+ctgaaactgcctgacggcaccgtcaaagtgctggtcgaggggttacagcgcgcgcgtatttctgcgctctctgacaatgg
+cgaacacttttctgcgaaggcggagtatctggagtcgccgaccattgatgagcgggaacaggaagtgctggtgcgtactg
+caatcagccagttcgaaggctacatcaagctgaacaaaaaaatcccaccagaagtgctgacgtcgctgaatagcatcgac
+gatccggcgcgtctggcggataccattgctgcacatatgccgctgaaactggctgacaaacagtctgttctggagatgtc
+cgacgttaacgaacgtctggaatatctgatggcaatgatggaatcggaaatcgatctgctgcaggttgagaaacgcattc
+gcaaccgcgttaaaaagcagatggagaaatcccagcgtgagtactatctgaacgagcaaatgaaagctattcagaaagaa
+ctcggtgaaatggacgacgcgccggacgaaaacgaagccctgaagcgcaaaatcgacgcggcgaagatgccgaaagaggc
+aaaagagaaagcggaagcagagttgcagaagctgaaaatgatgtctccgatgtcggcagaagcgaccgtagtgcgtggtt
+atatcgactggatggtacaggtgccgtggaatgcgcgtagcaaggtcaaaaaagacctgcgtcaggcgcaggaaatcctt
+gataccgaccattatggtctggagcgcgtgaaagatcgaatccttgagtatcttgcggttcaaagccgtgtcaacaaaat
+caagggaccgatcctctgcctggtagggccgccgggggtaggtaaaacctctcttggtcagtccattgccaaagccaccg
+ggcgtaaatatgtccgtatggcgctgggcggcgtgcgtgatgaagcggaaatccgtggtcaccgccgtacttacatcggt
+tctatgccgggtaaactgatccagaaaatggcgaaagtgggcgtgaaaaacccgctgttcctgctcgatgagatcgacaa
+aatgtcttctgacatgcgtggcgatccggcctctgcactgcttgaagtgctggatccagagcagaacgtagcgttcagcg
+accactacctggaagtggattacgatctcagcgacgtgatgtttgtcgcgacgtcgaactccatgaacattccggcaccg
+ctgctggatcgtatggaagtgattcgcctctccggttataccgaagatgaaaaactgaacatcgccaaacgtcacctgct
+gccgaagcagattgaacgtaatgcactgaaaaaaggtgagctgaccgtcgacgatagcgccattatcggcattattcgtt
+actacacccgtgaggcgggcgtgcgtggtctggagcgtgaaatctccaaactgtgtcgcaaagcggttaagcagttactg
+ctcgataagtcattaaaacatatcgaaattaacggcgataacctgcatgactatctcggtgttcagcgtttcgactatgg
+tcgcgcggataacgaaaaccgtgtcggtcaggtaaccggtctggcgtggacggaagtgggcggtgacttgctgaccattg
+aaaccgcatgtgttccgggtaaaggcaaactgacctataccggttcgctcggcgaagtgatgcaggagtccattcaggcg
+gcgttaacggtggttcgtgcgcgtgcggaaaaactggggatcaaccctgatttttacgaaaaacgtgacatccacgtcca
+cgtaccggaaggtgcgacgccgaaagatggtccgagtgccggtattgctatgtgcaccgcgctggtttcttgcctgaccg
+gtaacccggttcgtgccgatgtggcaatgaccggtgagatcactctgcgtggtcaggtactgccgatcggtggtttgaaa
+gaaaaactcctggcagcgcatcgcggcgggattaaaacagtgctaattccgttcgaaaataaacgcgatctggaagagat
+tcctgacaacgtaattgccgatctggacattcatcctgtgaagcgcattgaggaagttctgactctggcgctgcaaaatg
+aaccgtctggtatgcaggttgtgactgcaaaatagtactagagccaggcatcaaataaaacgaaaggctcagtcgaaaga
+ctgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctt
+tctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2048291</id>
+<title>BBa_K185049</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>2355</endpos></feature>
+<feature>
+<id>2048289</id>
+<title></title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>2355</endpos></feature>
+<feature>
+<id>2048288</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2048290</id>
+<title>2353</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2353</startpos>
+<endpos>2355</endpos></feature>
+<feature>
+<id>2048292</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2364</startpos>
+<endpos>2443</endpos></feature>
+<feature>
+<id>2048293</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2375</startpos>
+<endpos>2418</endpos></feature>
+<feature>
+<id>2048294</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2452</startpos>
+<endpos>2492</endpos></feature>
+<feature>
+<id>2048295</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2459</startpos>
+<endpos>2478</endpos></feature>
+<feature>
+<id>2048296</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>2479</startpos>
+<endpos>2492</endpos></feature>
+<feature>
+<id>2048297</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2485</startpos>
+<endpos>2485</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

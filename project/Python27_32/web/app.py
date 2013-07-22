@@ -7,6 +7,7 @@ import json
 from websocket import handle_websocket
 from gevent.pywsgi import WSGIServer
 from geventwebsocket.handler import WebSocketHandler
+import xmlParse
 
 app = Flask(__name__)
 	
@@ -14,24 +15,33 @@ app = Flask(__name__)
 def login():
 	return render_template('login.html')
 
+@app.route("/demo")
+def demo():
+  return render_template('demo.html')
+
 @app.route("/index")
 def index():
 	return render_template('index.html')
-#@app.route("/create_table")
-#def create_table():
-#	cx = sqlite.connect("web/test.db")
-#	cu = cx.cursor()
-#	#cu.execute("""create table tab_day( id integer primary key)""")
 
-@app.route("/getdatademo")
-def getDataDemo():	
-	print request.method
-	if request.method=='GET':
-		sql=db.SqliteDatabase()	
-		print sql.selectAllOfTable()
-		return json.dumps(sql.selectAllOfTable())
-	else:
-		return "No"	
+@app.route("/getdir/<pathname>")
+def getDir(pathname):	
+	return json.dumps(xmlParse.get_allfiledirs('web\\'+pathname))
+
+@app.route("/genecircuit")
+def goToGeneCircuit():
+	return render_template('genecircuit.html')
+
+@app.route("/plasmid")
+def goToPlasmid():
+	return render_template('plasmid.html')
+
+@app.route("/protocol")
+def goToProtocol():
+	return render_template('protocol.html')
+
+@app.route("/simulation")
+def goToSimulation():
+	return render_template('simulation.html')
 
 @app.route("/ws")
 def webSocket():

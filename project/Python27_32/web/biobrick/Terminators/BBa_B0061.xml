@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>4081</part_id>
+<part_name>BBa_B0061</part_name>
+<part_short_name>B0061</part_short_name>
+<part_short_desc>Terminator (Reverse B0051)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_status>Planning</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_B0061</part_url>
+<part_entered>2004-01-29</part_entered>
+<part_author>Caitlin Conboy</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>aagtcaaaagcctccggtcggaggcttttgacttt
+</seq_data></sequences>
+<features>
+<feature>
+<id>318635</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>10</startpos>
+<endpos>25</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>direction</name>
+<value>Bidirectional</value>
+<units></units>
+<url></url>
+<id>3048</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>reversed_version</name>
+<value>4077</value>
+<units></units>
+<url></url>
+<id>3049</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>yciA/tonA (reversed)</value>
+<units></units>
+<url></url>
+<id>3050</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//direction/reverse</category>
+<category>//terminator/single</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

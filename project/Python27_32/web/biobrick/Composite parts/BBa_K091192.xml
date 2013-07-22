@@ -1,0 +1,185 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11509</part_id>
+<part_name>BBa_K091192</part_name>
+<part_short_name>K091192</part_short_name>
+<part_short_desc>pBAD+RBS+lasI+TT</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K091192</part_url>
+<part_entered>2008-08-08</part_entered>
+<part_author>Xiao Zhu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>7142</part_id>
+<part_name>BBa_J23100</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4676</part_id>
+<part_name>BBa_C0178</part_name>
+<part_short_desc>autoinducer synthetase for PAI from Pseudomonas aeruginosa (no LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>lasI</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11202</part_id>
+<part_name>BBa_K091136</part_name>
+<part_short_desc>Las Sender Testing Device</part_short_desc>
+<part_type>Signalling</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11202</part_id>
+<part_name>BBa_K091136</part_name>
+<part_short_desc>Las Sender Testing Device</part_short_desc>
+<part_type>Signalling</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttgacggctagctcagtcctaggtacagtgctagctactagagaaagaggagaaatactagatgatcgttcagatcggtc
+gtcgtgaagagttcgacaaaaaactgctgggtgaaatgcacaaactgcgtgctcaggttttcaaagaacgtaaaggttgg
+gacgtttccgttatcgacgaaatggaaatcgacggttacgacgctctgtccccgtactacatgctgatccaggaagacac
+cccggaagctcaggttttcggttgctggcgtatcttcgacaccaccggtccgtacatgctgaaaaacaccttcccggaac
+tgctgcacggtaaagaagctccgtgctccccgcacatctgggaactgtcccgtttcgctatcaactccggtcagaaaggt
+tccctgggtttctccgactgcaccctggaagctatgcgtgctctggctcgttactccttgcagaacgacatccagaccct
+ggttaccgttaccaccgttggtgttgaaaaaatgatgatccgtgctggtctggacgtttcccgtttcggtccgcacctga
+aaatcggtatcgaacgtgctgttgctctgcgtatcgaactgaacgctaaaacccagatcgctctgtacggtggtgttctg
+gttgaacagcgtctggctgtttcctaataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactggg
+cctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgc
+gtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1970672</id>
+<title>BBa_J23100</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>1970674</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>44</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>1970673</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>48</startpos>
+<endpos>51</endpos></feature>
+<feature>
+<id>1970675</id>
+<title>lasI</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>62</startpos>
+<endpos>670</endpos></feature>
+<feature>
+<id>1970676</id>
+<title>BBa_C0178</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>62</startpos>
+<endpos>670</endpos></feature>
+<feature>
+<id>1970677</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>679</startpos>
+<endpos>758</endpos></feature>
+<feature>
+<id>1970678</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>690</startpos>
+<endpos>733</endpos></feature>
+<feature>
+<id>1970679</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>767</startpos>
+<endpos>807</endpos></feature>
+<feature>
+<id>1970680</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>774</startpos>
+<endpos>793</endpos></feature>
+<feature>
+<id>1970681</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>794</startpos>
+<endpos>807</endpos></feature>
+<feature>
+<id>1970682</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>800</startpos>
+<endpos>800</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

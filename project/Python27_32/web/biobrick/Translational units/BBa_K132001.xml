@@ -1,0 +1,79 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12352</part_id>
+<part_name>BBa_K132001</part_name>
+<part_short_name>K132001</part_short_name>
+<part_short_desc>RBS+cmR+LVA</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K132001</part_url>
+<part_entered>2008-10-22</part_entered>
+<part_author>Du Jin,Hou Nan,Liu Duo,Zhang Weiran,Yuan Fang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>aaagaggagaaatactagagatggagaaaaaaatcactggatataccaccgttgatatatcccaatggcatcgtaaagaa
+cattttgaggcatttcagtcagttgctcaatgtacctataaccagaccgttcagctggatattacggcctttttaaagac
+cgtaaagaaaaataagcacaagttttatccggcctttattcacattcttgcccgcctgatgaatgctcatccggaatttc
+gtatggcaatgaaagacggtgagctggtgatatgggatagtgttcacccttgttacaccgttttccatgagcaaactgaa
+acgttttcatcgctctggagtgaataccacgacgatttccggcagtttctacacatatattcgcaagatgtggcgtgtta
+cggtgaaaacctggcctatttccctaaagggtttattgagaatatgtttttcgtctcagccaatccctgggtgagtttca
+ccagttttgatttaaacgtggccaatatggacaacttcttcgcccccgttttcaccatgggcaaatattatacgcaaggc
+gacaaggtgctgatgccgctggcgattcaggttcatcatgccgtttgtgatggcttccatgtcggcagaatgcttaatga
+attacaacagtactgcgatgagtggcagggcggggcggctgcaaacgacgaaaactacgctttagtagcttaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1988057</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>1988058</id>
+<title>scar</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>13</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>1988212</id>
+<title>cmR gene</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>677</endpos></feature>
+<feature>
+<id>1988213</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>677</startpos>
+<endpos>710</endpos></feature>
+<feature>
+<id>1988214</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>710</startpos>
+<endpos>716</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

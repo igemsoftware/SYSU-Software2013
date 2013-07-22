@@ -1,0 +1,187 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>9933</part_id>
+<part_name>BBa_I732086</part_name>
+<part_short_name>I732086</part_short_name>
+<part_short_desc>[aTc] -&gt; PoPS (version1)</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I732086</part_url>
+<part_entered>2007-10-17</part_entered>
+<part_author>Zhan Jian</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>9931</part_id>
+<part_name>BBa_I732084</part_name>
+<part_short_desc>Tet repressor generator (version1, TERM-)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname>TetR</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>187</part_id>
+<part_name>BBa_R0040</part_name>
+<part_short_desc>TetR repressible promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>p(tetR)</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>9932</part_id>
+<part_name>BBa_I732085</part_name>
+<part_short_desc>Tet repressor generator (version1, TERM+)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>187</part_id>
+<part_name>BBa_R0040</part_name>
+<part_short_desc>TetR repressible promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>p(tetR)</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>9932</part_id>
+<part_name>BBa_I732085</part_name>
+<part_short_desc>Tet repressor generator (version1, TERM+)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>187</part_id>
+<part_name>BBa_R0040</part_name>
+<part_short_desc>TetR repressible promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>p(tetR)</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tggtgcaaaacctttgcggtatggcatgatagcgcctactagagaaagaggagaaatactagatgtccagattagataaa
+agtaaagtgattaacagcgcattagagctgcttaatgaggtcggaatcgaaggtttaacaacccgtaaactcgcccagaa
+gctaggtgtagagcagcctacattgtattggcatgtaaaaaataagcgggctttgctcgacgccttagccattgagatgt
+tagataggcaccatactcacttttgccctttagaaggggaaagctggcaagattttttacgtaataacgctaaaagtttt
+agatgtgctttactaagtcatcgcgatggagcaaaagtacatttaggtacacggcctacagaaaaacagtatgaaactct
+cgaaaatcaattagcctttttatgccaacaaggtttttcactagagaatgcattatatgcactcagcgctgtggggcatt
+ttactttaggttgcgtattggaagatcaagagcatcaagtcgctaaagaagaaagggaaacacctactactgatagtatg
+ccgccattattacgacaagctatcgaattatttgatcaccaaggtgcagagccagccttcttattcggccttgaattgat
+catatgcggattagaaaaacaacttaaatgtgaaagtgggtcctaataatactagagccaggcatcaaataaaacgaaag
+gctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcacc
+ttcgggtgggcctttctgcgtttatatactagagtccctatcagtgatagagattgacatccctatcagtgatagagata
+ctgagcac
+</seq_data></sequences>
+<features>
+<feature>
+<id>1948634</id>
+<title>BBa_I732084</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>689</endpos></feature>
+<feature>
+<id>1948635</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>698</startpos>
+<endpos>777</endpos></feature>
+<feature>
+<id>1948636</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>709</startpos>
+<endpos>752</endpos></feature>
+<feature>
+<id>1948637</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>786</startpos>
+<endpos>826</endpos></feature>
+<feature>
+<id>1948638</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>793</startpos>
+<endpos>812</endpos></feature>
+<feature>
+<id>1948639</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>813</startpos>
+<endpos>826</endpos></feature>
+<feature>
+<id>1948640</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>819</startpos>
+<endpos>819</endpos></feature>
+<feature>
+<id>1948641</id>
+<title>TetR 1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>835</startpos>
+<endpos>853</endpos></feature>
+<feature>
+<id>1948642</id>
+<title>BBa_R0040</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>835</startpos>
+<endpos>888</endpos></feature>
+<feature>
+<id>1948643</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>854</startpos>
+<endpos>859</endpos></feature>
+<feature>
+<id>1948644</id>
+<title>TetR 2</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>860</startpos>
+<endpos>878</endpos></feature>
+<feature>
+<id>1948645</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>877</startpos>
+<endpos>882</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

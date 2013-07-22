@@ -389,9 +389,9 @@ graphiti.Port = graphiti.shape.basic.Circle.extend({
         request.target = this;
 
         // get line decorator
-        var a = prompt("choose line decorator (input 'T' or 'Arrow')");
+        /*var a = prompt("choose line decorator (input 'T' or 'Arrow')");
         this.decorator = a;
-        request.decorator = this.decorator;
+        request.decorator = this.decorator;*/
 
         var command = this.createCommand(request);
         if(command!==null){
@@ -560,6 +560,10 @@ graphiti.Port = graphiti.shape.basic.Circle.extend({
         }
       }
       return null;
+    },
+
+    onClick: function () {
+        // 重载onclick函数，使点击链接点时不出现菜单栏和配置栏
     }
 });
 
@@ -598,5 +602,9 @@ graphiti.Corona = graphiti.shape.basic.Circle.extend({
         this.setDraggable(false);
         this.setResizeable(false);
         this.setSelectable(false);
+    },
+
+    onClick: function () {
+        // 重载onclick函数，使点击链接点时不出现菜单栏和配置栏
     }
 });

@@ -1,0 +1,77 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12812</part_id>
+<part_name>BBa_K131022</part_name>
+<part_short_name>K131022</part_short_name>
+<part_short_desc>LuxO D47E, Vibrio harveyi</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>LuxO D47E</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K131022</part_url>
+<part_entered>2008-10-27</part_entered>
+<part_author>Thane Kubik</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggtagaagacaccgcatccgttgcggcactttaccgctcttacctcacgccacttggcatcgatatcaatattgttgg
+aacaggcagagacgccattgaaagcctgaaccatcgcattcctgatcttattctgctcgagctccgtctacctgatatga
+cggggatggacgtattgcacgcggtgaagaaaagccacccagacgtgccaatcatcttcatgacagcccatggttctatc
+gatactgcggtagaggcgatgcgccacggttctcaagacttcctaatcaaaccatgtgaagcagaccgtttacgtgtcac
+ggtgaacaatgcgatccgtaaagcaaccaaattaaagaatgaagctgacaaccccggtaaccaaaattaccaaggcttca
+tcggcagtagccaaacgatgcagcaggtttaccgcaccattgactcggcagcgagcagtaaagcgagtattttcatcacg
+ggtgaaagtggtacgggtaaagaagtgtgtgccgaagcgattcacgcagcaagcaaacgcggtgataagccgtttatcgc
+catcaactgtgcggcaatcccgaaagaccttattgaaagtgagctgtttggtcacgtaaaaggtgcgtttactggtgctg
+cgaatgaccgacaaggtgcggcagagcttgctgatggcggcaccttgttccttgatgaactctgtgaaatggacttggat
+cttcaaactaagctattgcgctttatccaaacgggtacattccaaaaagtcggttcttctaaaatgaagagcgtggatgt
+gcgctttgtgtgtgcaactaaccgagacccttggaaagaagtgcaagaaggccgtttccgtgaagacttgtattaccgtt
+tgtacgtgattcctttgcaccttccgccgctgcgtgagcgtggtaaagacgttattgaaattgcatactcgttgcttggt
+tatatgtctcatgaggaaggtaagagtttcgtccgtttcgcacaagacgtgattgaaagattcaacagctacgaatggcc
+gggtaacgttcgccagttgcaaaacgtattgcgtaatatcgtggtactgaacaatggcaaagagatcacgctggatatgt
+taccgccaccactgaatcagcctgttgtgcgccaatcggtagcaaaattcattgaacctgacattatgacggtgtcagat
+attatgccgctttggatgacagagaaaatggctattgagcaggcaattcaagcgtgtgaaggcaacattccacgcgctgc
+tggctatttggatgttagtccatcaacgatttatcgcaagttgcaagcttggaatagcaaggacgaaaaacaaaacgtat
+ga
+</seq_data></sequences>
+<features>
+<feature>
+<id>1990655</id>
+<title>Start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>1990654</id>
+<title>D47E</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>139</startpos>
+<endpos>141</endpos></feature>
+<feature>
+<id>1990656</id>
+<title>Stop</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1360</startpos>
+<endpos>1362</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/[calgary_wetware]/favorite</category>
+<category>//cds/transcriptionalregulator/activator</category>
+<category>//function/cellsignalling</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

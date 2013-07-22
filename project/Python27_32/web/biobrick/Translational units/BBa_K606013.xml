@@ -1,0 +1,193 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>21707</part_id>
+<part_name>BBa_K606013</part_name>
+<part_short_name>K606013</part_short_name>
+<part_short_desc>SpoVG RFPmCherry double terminator. Translational unit for B. Subtilis</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K606013</part_url>
+<part_entered>2011-07-07</part_entered>
+<part_author>Cyrille Pauthenier</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>11817</part_id>
+<part_name>BBa_K143021</part_name>
+<part_short_desc>SpoVG ribosome binding site (RBS) for B. subtilis</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname>RBS-spoVG</part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11817</part_id>
+<part_name>BBa_K143021</part_name>
+<part_short_desc>SpoVG ribosome binding site (RBS) for B. subtilis</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname>RBS-spoVG</part_nickname></subpart>
+<subpart>
+<part_id>21704</part_id>
+<part_name>BBa_K606012</part_name>
+<part_short_desc>RFP mCherry with double terminator</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11817</part_id>
+<part_name>BBa_K143021</part_name>
+<part_short_desc>SpoVG ribosome binding site (RBS) for B. subtilis</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname>RBS-spoVG</part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>21704</part_id>
+<part_name>BBa_K606012</part_name>
+<part_short_desc>RFP mCherry with double terminator</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aaaggtggtgaatactagatggcttcctccgaagacgttatcaaagagttcatgcgtttcaaagttcgtatggaaggttc
+cgttaacggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacgaaggtacccagaccgctaaactgaaag
+ttaccaaaggtggtccgctgccgttcgcttgggacatcctgtccccgcagttccagtacggttccaaagcttacgttaaa
+cacccggctgacatcccggactacctgaaactgtccttcccggaaggtttcaaatgggaacgtgttatgaacttcgaaga
+cggtggtgttgttaccgttacccaggactcctccctgcaagacggtgagttcatctacaaagttaaactgcgtggtacca
+acttcccgtccgacggtccggttatgcagaaaaaaaccatgggttgggaagcttccaccgaacgtatgtacccggaagac
+ggtgctctgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcactacgacgctgaagttaaaaccaccta
+catggctaaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaactggacatcacctcccacaacgaagact
+acaccatcgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgcttaataacgctgatagtgctagtgtaga
+tcgctactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcg
+gtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2123171</id>
+<title></title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2123172</id>
+<title>BBa_K143021</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2123183</id>
+<title>BBa_K606012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>861</endpos></feature>
+<feature>
+<id>2123174</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>699</endpos></feature>
+<feature>
+<id>2123173</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>693</endpos></feature>
+<feature>
+<id>2123175</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>700</startpos>
+<endpos>724</endpos></feature>
+<feature>
+<id>2123176</id>
+<title>BBa_B0015</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>733</startpos>
+<endpos>861</endpos></feature>
+<feature>
+<id>2123177</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>733</startpos>
+<endpos>812</endpos></feature>
+<feature>
+<id>2123178</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>744</startpos>
+<endpos>787</endpos></feature>
+<feature>
+<id>2123179</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>821</startpos>
+<endpos>861</endpos></feature>
+<feature>
+<id>2123180</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>828</startpos>
+<endpos>847</endpos></feature>
+<feature>
+<id>2123181</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>848</startpos>
+<endpos>861</endpos></feature>
+<feature>
+<id>2123182</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>854</startpos>
+<endpos>854</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

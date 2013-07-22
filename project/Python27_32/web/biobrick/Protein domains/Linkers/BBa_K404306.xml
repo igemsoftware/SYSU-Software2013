@@ -1,0 +1,64 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18951</part_id>
+<part_name>BBa_K404306</part_name>
+<part_short_name>K404306</part_short_name>
+<part_short_desc>Z-EGFR-1907_SEG-Linker  </part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K404306</part_url>
+<part_entered>2010-08-28</part_entered>
+<part_author>Freiburg Bioware 2010</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gtggataacaaatttaacaaagaaatgtgggcggcgtgggaagaaattcgtaacctgccgaacctgaacggctggcagat
+gaccgcgtttattgcgagcctggtggatgatccgagccagagcgcgaacctgctggcggaagcgaaaaaactgaacgatg
+cgcaggcgccgaaaaccggcggtggttctggcggcggttctgaaggtggcggctccgaaggcggcggcagcgagggcggt
+ggtagcgaaggtggtggctccgagggtggcggttccggcggcggtagc
+</seq_data></sequences>
+<features>
+<feature>
+<id>2078924</id>
+<title>BBa_K404306</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>2094759</id>
+<title>Z-EGFR-1907</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>175</endpos></feature>
+<feature>
+<id>2094758</id>
+<title>SEG-linker</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>181</startpos>
+<endpos>288</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//proteindomain/binding</category>
+<category>//proteindomain/linker</category>
+<category>//standard/25</category>
+<category>//viral_vectors/aav/miscellaneous</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

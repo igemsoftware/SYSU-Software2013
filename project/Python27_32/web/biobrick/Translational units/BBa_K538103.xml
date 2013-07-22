@@ -1,0 +1,145 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22062</part_id>
+<part_name>BBa_K538103</part_name>
+<part_short_name>K538103</part_short_name>
+<part_short_desc>RBS + CspA</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K538103</part_url>
+<part_entered>2011-09-08</part_entered>
+<part_author>Bas Stringer</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>22057</part_id>
+<part_name>BBa_K538003</part_name>
+<part_short_desc>CspA (P. irgensii)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>CspA</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>22057</part_id>
+<part_name>BBa_K538003</part_name>
+<part_short_desc>CspA (P. irgensii)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>CspA</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>22057</part_id>
+<part_name>BBa_K538003</part_name>
+<part_short_desc>CspA (P. irgensii)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>CspA</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aaagaggagaaatactagatgagtaaaggtacagtaaagtttttcaatgaatctaagggatttggatttattacagaaga
+aggagttgataaagatcatttcgtacacatttctggattagtagatgaaatcagagaaggtgaccaagttgaatttgact
+tacaagaaggaaacaaaggattaaatgcagttaacgtaaaagttatctaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2133897</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2133896</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>5</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>2133898</id>
+<title>Start Codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>2133902</id>
+<title>BBa_K538003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>213</endpos></feature>
+<feature>
+<id>2133899</id>
+<title>RNA binding motif (RPN1)</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>55</startpos>
+<endpos>72</endpos></feature>
+<feature>
+<id>2133900</id>
+<title>RNA binding motif (RPN2)</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>97</startpos>
+<endpos>111</endpos></feature>
+<feature>
+<id>2133901</id>
+<title>Double Stop Codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>208</startpos>
+<endpos>213</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>function</name>
+<value>Construction intermediate</value>
+<units></units>
+<url></url>
+<id>12550</id>
+<m_date>2011-09-19 07:01:46</m_date>
+<user_id>9985</user_id>
+<user_name>B.Stringer</user_name></parameter></parameters>
+<categories>
+<category>//classic/generator/rc</category>
+<category>//standard/10</category>
+<category>//standard/21</category>
+<category>//standard/23</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

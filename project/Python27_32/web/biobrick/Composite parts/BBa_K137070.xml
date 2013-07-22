@@ -1,0 +1,122 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11498</part_id>
+<part_name>BBa_K137070</part_name>
+<part_short_name>K137070</part_short_name>
+<part_short_desc>fimE Junction (IRL + IRR)</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K137070</part_url>
+<part_entered>2008-08-08</part_entered>
+<part_author>Allen Lin</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>11084</part_id>
+<part_name>BBa_K137010</part_name>
+<part_short_desc>fimE IRL</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>fimE IRL</part_nickname></subpart>
+<subpart>
+<part_id>11082</part_id>
+<part_name>BBa_K137008</part_name>
+<part_short_desc>fimE IRR</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>IRR</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11084</part_id>
+<part_name>BBa_K137010</part_name>
+<part_short_desc>fimE IRL</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>fimE IRL</part_nickname></subpart>
+<subpart>
+<part_id>11082</part_id>
+<part_name>BBa_K137008</part_name>
+<part_short_desc>fimE IRR</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>IRR</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11084</part_id>
+<part_name>BBa_K137010</part_name>
+<part_short_desc>fimE IRL</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>fimE IRL</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>11082</part_id>
+<part_name>BBa_K137008</part_name>
+<part_short_desc>fimE IRR</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>IRR</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tctatgagtcaaaatggccccaattgtcttgtatttactagagaagatgaaacatttggggccaaactgtccatatta
+</seq_data></sequences>
+<features>
+<feature>
+<id>1970327</id>
+<title>IRL in</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>17</endpos></feature>
+<feature>
+<id>1970329</id>
+<title>BBa_K137010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>1970328</id>
+<title>IRL out</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>1970330</id>
+<title>IRR out</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>44</startpos>
+<endpos>60</endpos></feature>
+<feature>
+<id>1970332</id>
+<title>BBa_K137008</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>44</startpos>
+<endpos>78</endpos></feature>
+<feature>
+<id>1970331</id>
+<title>IRR in</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>62</startpos>
+<endpos>78</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

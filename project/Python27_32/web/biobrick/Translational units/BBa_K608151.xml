@@ -1,0 +1,221 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22232</part_id>
+<part_name>BBa_K608151</part_name>
+<part_short_name>K608151</part_short_name>
+<part_short_desc>translational unit of pcyA</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K608151</part_url>
+<part_entered>2011-09-14</part_entered>
+<part_author>Julia M�ller</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>7146</part_id>
+<part_name>BBa_J23104</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5301</part_id>
+<part_name>BBa_I15009</part_name>
+<part_short_desc>phycocyanobilin:ferredoxin oxidoreductase (PcyA) from synechocystis</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7333</part_id>
+<part_name>BBa_B1006</part_name>
+<part_short_desc>Terminator (artificial, large, %T~&gt;90)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>7146</part_id>
+<part_name>BBa_J23104</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5301</part_id>
+<part_name>BBa_I15009</part_name>
+<part_short_desc>phycocyanobilin:ferredoxin oxidoreductase (PcyA) from synechocystis</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7333</part_id>
+<part_name>BBa_B1006</part_name>
+<part_short_desc>Terminator (artificial, large, %T~&gt;90)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>7146</part_id>
+<part_name>BBa_J23104</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>5301</part_id>
+<part_name>BBa_I15009</part_name>
+<part_short_desc>phycocyanobilin:ferredoxin oxidoreductase (PcyA) from synechocystis</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>7333</part_id>
+<part_name>BBa_B1006</part_name>
+<part_short_desc>Terminator (artificial, large, %T~&gt;90)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttgacagctagctcagtcctaggtattgtgctagctactagagaaagaggagaaatactagatggccgtcactgatttaa
+gtttgaccaattcttccctgatgcctacgttgaacccgatgattcaacagttggccctggcgatcgccgctagttggcaa
+agtttacccctcaagccctatcaattgccggaggatttgggctacgtagaaggccgcctggaaggggaaaagttagtgat
+tgaaaatcggtgctaccaaacgccccagtttcgcaaaatgcatttggagttggccaaggtgggcaaagggttggatattc
+tccactgtgtaatgtttcctgagcctttatacggtctacctttgtttggctgtgacattgtggccggccccggtggagta
+agtgcggctattgcggatctatcccccacccaaagcgatcgccaattgcccgcagcgtaccaaaaatcattggcagagct
+aggccagccagaatttgagcaacaacgggaattgcccccctggggagaaatattttctgaatattgtttattcatccgtc
+ccagcaatgtcactgaagaagaaagatttgtacaaagggtagtggactttttgcaaattcattgtcaccaatccatcgtt
+gccgaacccttgtctgaagctcaaactttggagcaccgtcaggggcaaattcattactgccaacaacaacagaaaaatga
+taaaacccgtcgggtactggaaaaagcttttggggaagcttgggcggaacggtatatgagccaagtcttatttgatgtta
+tccaataataactctgatagtgctagtgtagatctctactagagaaaaaaaaaccccgcccctgacagggcggggttttt
+ttt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2128123</id>
+<title>BBa_J23104</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>2128125</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>44</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>2128124</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>48</startpos>
+<endpos>51</endpos></feature>
+<feature>
+<id>2128126</id>
+<title>PcyA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>62</startpos>
+<endpos>811</endpos></feature>
+<feature>
+<id>2128127</id>
+<title>BBa_I15009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>62</startpos>
+<endpos>811</endpos></feature>
+<feature>
+<id>2128128</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>812</startpos>
+<endpos>836</endpos></feature>
+<feature>
+<id>2128129</id>
+<title>B1006</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>845</startpos>
+<endpos>883</endpos></feature>
+<feature>
+<id>2128130</id>
+<title>PolyA</title>
+<type>polya</type>
+<direction>reverse</direction>
+<startpos>845</startpos>
+<endpos>853</endpos></feature>
+<feature>
+<id>2128133</id>
+<title>BBa_B1006</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>845</startpos>
+<endpos>883</endpos></feature>
+<feature>
+<id>2128131</id>
+<title>modified thr terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>854</startpos>
+<endpos>875</endpos></feature>
+<feature>
+<id>2128132</id>
+<title>PolyA</title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>876</startpos>
+<endpos>883</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

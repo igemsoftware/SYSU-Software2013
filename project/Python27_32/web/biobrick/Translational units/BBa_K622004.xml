@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23671</part_id>
+<part_name>BBa_K622004</part_name>
+<part_short_name>K622004</part_short_name>
+<part_short_desc>glnLG: coding both nitrogen regulatory protein NtrB and NtrC</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K622004</part_url>
+<part_entered>2011-10-01</part_entered>
+<part_author>Fumitaka Hashiya</part_author>
+<best_quality>Questionable</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ggagactgctttatggcaacaggcacgcagcccgatgctgggcagatcctcaactcgctgattaacagtattttgttaat
+cgatgacaacctggcgatccattacgccaaccccgccgcgcaacaactgctcgcccaaagctcccgcaaattgtttggta
+caccgttaccggaactgttgagctacttctcattaaatatcgagctgatgcaagaaagtctggaggcggggcaaggtttt
+accgataacgaagtgacgctggtcatcgacgggcgctcgcatatcctttctgtgacggcccagcgtatgccggacggcat
+gatcctgctggagatggctccgatggataaccagcgccgcttaagtcaggaacagctacagcacgcccagcaggttgctg
+cccgtgatttagtgcgcggcctggcacatgagattaaaaatccgcttggcggtttacgtggcgcggcgcagctgctcagc
+aaagcgttacctgacccatcactactcgaatataccaaagtgattatcgaacaggcggaccggctgcgaaatctggtcga
+ccgtctgttggggccgcagctgcccggtacgcgcgttaccgaaagtattcacaaagtggctgaacgcgtggtaacgctgg
+tgtcgatggaactgccggacaacgtgcggttgattcgtgattacgatcccagcctgccggaactggcgcacgacccggat
+caaattgaacaggtcttgctgaatattgtgcgcaatgcgctacaggcgctggggccggaaggcggtgaaatcattctgcg
+tacccgcaccgcgtttcaactgaccttacacggcgagcgctaccggctggcggcgcggattgatgtggaagataacgggc
+cgggcattccgcctcatttgcaggatacgctgttttacccgatggtcagcggccgcgaaggtggcaccgggcttggctta
+tccatcgctcgtaatttgattgatcagcattcaggcaaaattgaatttaccagttggccagggcataccgagttctcggt
+ttacctgcctatcaggaaataaaggtgacgtttatgcaacgagggatagtctgggtagtcgatgacgatagttccatccg
+ttgggtgcttgaacgtgcgctcgctggagcgggtttaacctgtacgacatttgagaacggcgcggaagtactggaggcgc
+tggcgagcaaaacgccggatgtgctgctttcagatatccgtatgccgggaatggacgggctggcgctgctcaagcagatt
+aaacagcgccatccaatgcttccggtcatcattatgaccgcacattccgatctggatgctgccgtcagcgcctatcaaca
+aggggcgtttgattatctgcccaaaccgtttgatatcgacgaagcagtggcgctggttgagcgcgctatcagtcattacc
+aggaacagcagcagccgcgtaatattcagcttaacggcccaacgaccgatatcatcggcgaagcgccagccatgcaggac
+gtgttccgtattatcggtcggctttcgcgttcttctattagcgtgctgattaacggcgaatccggcaccggtaaagaact
+ggtcgctcatgccctgcatcgccacagtccgcgcgccaaagcgccgtttatcgcgctgaatatggcagctatcccaaaag
+atttgatcgaatcagaactgtttggccacgagaaaggcgcgtttactggcgcgaataccattcgtcaggggcgttttgaa
+caggccgatggcggtacattattcctcgacgaaattggtgatatgccgctggatgtgcagacgcgtttgctgcgcgtgct
+ggcagacggtcagttttaccgcgttggcggctatgcgccggtgaaagtggatgtgcggattatcgctgccactcaccaga
+atctcgaacagcgagtgcaggaaggtaagttccgtgaggatctgttccaccgcctgaacgttatccgcgttcatctgccg
+ccgctgcgcgaacgtcgggaagatattccccgtctggcgcgccattttttacaggttgccgcgcgcgaactgggcgtaga
+agcgaagttgctgcatccggaaaccgaagctgctctgacgcatctggcgtggccaggcaacgtacgccagctggaaaaca
+cctgccgctggctaacggtgatggccgccgggcaggaagtgttgattcaggatttgcccggcgaactgtttgaatcaacg
+gttgcggagagtacttcgcaaatgcaaccggacagttgggcgacacttttagcgcagtgggcagacagagcgctgcgttc
+cggtcatcaaaatctgctttccgaagcgcagccagagctggagcggacgttactgacgaccgcgttgcgacatacgcagg
+ggcataaacaggaagcggcgcggctactcggctggggccgcaacaccctgacgcgtaagttaaaagagctggggatggag
+tgattcacagcttgtgt
+</seq_data></sequences>
+<features></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

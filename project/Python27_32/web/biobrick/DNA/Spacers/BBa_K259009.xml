@@ -1,0 +1,107 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15726</part_id>
+<part_name>BBa_K259009</part_name>
+<part_short_name>K259009</part_short_name>
+<part_short_desc>BioScaffold Linker - Removes Stop Codons &amp; scars &amp; replaces with a Gly-Ser linker</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K259009</part_url>
+<part_entered>2009-10-13</part_entered>
+<part_author>Petros Mina</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atctcaagagtggcagcggtcttgagtggcagcggcggtatacggcagcggtatgtaagtagtaacaagtagcgtggggc
+ag
+</seq_data></sequences>
+<features>
+<feature>
+<id>2037400</id>
+<title>BpuEI (rev. complement)</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>3</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>2037401</id>
+<title>BpuEI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>26</endpos></feature>
+<feature>
+<id>2037402</id>
+<title>Tyr involved in restriction/ligation</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>41</startpos>
+<endpos>43</endpos></feature>
+<feature>
+<id>2037403</id>
+<title>Gly-Ser-Gly linker</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>44</startpos>
+<endpos>52</endpos></feature>
+<feature>
+<id>2037404</id>
+<title>Met involved in restriction/ligation</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>53</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>2037405</id>
+<title>Translational Buffer</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>56</startpos>
+<endpos>65</endpos></feature>
+<feature>
+<id>2037437</id>
+<title>5&apos; CspCI Recognition sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>66</startpos>
+<endpos>68</endpos></feature>
+<feature>
+<id>2037439</id>
+<title>Translational Buffer</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>69</startpos>
+<endpos>73</endpos></feature>
+<feature>
+<id>2037438</id>
+<title>3&apos; CspCI recognition sequence</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>74</startpos>
+<endpos>77</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//chassis/multihost</category>
+<category>//direction/forward</category>
+<category>//dna/bioscaffold</category>
+<category>//dna/restrictionsite</category>
+<category>//dna/spacer</category>
+<category>//standard/10</category>
+<category>//standard/biobrickfriendly</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

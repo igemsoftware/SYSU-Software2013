@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18199</part_id>
+<part_name>BBa_K398006</part_name>
+<part_short_name>K398006</part_short_name>
+<part_short_desc>Medium-Chain Aldehyde Dehydrogenase</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>Bt-ALDH</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K398006</part_url>
+<part_entered>2010-06-13</part_entered>
+<part_author>Mathias Voges</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgaccatgatctctgctcagaccaccgaagctgacctgtggatcgacggtgaatggcgtccggctgcttctggtgaacg
+tttcgacgttatcgacccggctaccggcgaagttaccgctcgtgttgctaacgctggtgaagacgacgttgacgctgctg
+ttgctatcgctgaagaagctttctctgttcgtcgttggctggctatctctccgctggaacgtggtcgtatcctgcgtcgt
+atcgctgaactgatccgtcagcaccactgcgaactggctcagctgatgacccgtgaaaacggtatgccgatcaacctggc
+tctgttcatcgaaatcccgctggctgactgcttcgacttcttcgcttctctggttgttaaaccgcagggtgaagttctgc
+cgttctctgttgctggttctgctccggactacatggcttggaccatgaaagaaccgatcggtgttgctggtctgatcacc
+ccgtggaacttcccgctgctgatgccgacctggaaaatcgctccggctctggctgctggttgcaccatggttgttaaacc
+ggctccggaaaccccgctgaccgctctgaaactggctgaaatctgccacgaagctggtgttccggaaggtgttatcaacg
+ttctgccgggtctggacgaagctggtaaagctctggttcgtcacccgcgtgttccgaaaatcgctttcaccggcgaaacc
+gaaaccggccgtcacatcctgcaagctgctgctccgcacatcaaacgtgttaccctggaactgggtggtaaatctccgaa
+catcatcttcgctgacgctgacctggaacaggctgctaaatctgctctgttcggtgttttctacaactctggtcaggttt
+gccaggctggttctcgtatcctggttgaacgtaccgtttacgaaccgttcgttgaacgtctggctgaacgtgctaaaaaa
+ctgaaagttggtccgggtaccaacccgcgttctgacctgggtccggttatctctcgtgaacagtacgaaaaagttctgcg
+ttacatcgaaatcggtaaacaggaaggtgctcgtctggctgctggtggtcgtgctctggacggtggtggtggtggttact
+tcatcgaaccgaccgttttcgctgacgtttctccgtctatgcgtatcgcttgcgaagaaatcttcggtccggttgctgct
+gttatcccgttcgctgacgaagaagaagctgttcgtatcgctaacggtaccatgtacggtctggctgctgctgtttggac
+caacgacatcaaacgtgctctgcgtctggctcgtcgtgttaaatctggtaccgtttggctgaacacctaccaggttctgt
+ctccgaccgttccgttcggtggttacaaacagtctggtctgggtcgtgaactgggtatgcaggctctggacgcttacctg
+gaaaccaaaaccgttatctgcgacctgaacgaccgtccgatgaccctgttctaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2070755</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2070757</id>
+<title>Bt-ALDH</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1494</endpos></feature>
+<feature>
+<id>2070756</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1492</startpos>
+<endpos>1494</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>protein</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>11158</id>
+<m_date>2010-10-26 16:40:49</m_date>
+<user_id>6321</user_id>
+<user_name>Hugo_87</user_name></parameter></parameters>
+<categories>
+<category>//function/degradation</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

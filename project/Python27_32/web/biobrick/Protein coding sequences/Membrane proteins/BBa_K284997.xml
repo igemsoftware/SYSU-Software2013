@@ -1,0 +1,361 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13838</part_id>
+<part_name>BBa_K284997</part_name>
+<part_short_name>K284997</part_short_name>
+<part_short_desc>Deletar este</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K284997</part_url>
+<part_entered>2009-05-17</part_entered>
+<part_author>Ra�ssa Curado</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>caatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcg
+ggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactttatgcttccggctcg
+tatgttgtgtggaattgtgagcggataacaatttcacacatactagagaaagaggagaaatactagatggcttcctccga
+agacgttatcaaagagttcatgcgtttcaaagttcgtatggaaggttccgttaacggtcacgagttcgaaatcgaaggtg
+aaggtgaaggtcgtccgtacgaaggtacccagaccgctaaactgaaagttaccaaaggtggtccgctgccgttcgcttgg
+gacatcctgtccccgcagttccagtacggttccaaagcttacgttaaacacccggctgacatcccggactacctgaaact
+gtccttcccggaaggtttcaaatgggaacgtgttatgaacttcgaagacggtggtgttgttaccgttacccaggactcct
+ccctgcaagacggtgagttcatctacaaagttaaactgcgtggtaccaacttcccgtccgacggtccggttatgcagaaa
+aaaaccatgggttgggaagcttccaccgaacgtatgtacccggaagacggtgctctgaaaggtgaaatcaaaatgcgtct
+gaaactgaaagacggtggtcactacgacgctgaagttaaaaccacctacatggctaaaaaaccggttcagctgccgggtg
+cttacaaaaccgacatcaaactggacatcacctcccacaacgaagactacaccatcgttgaacagtacgaacgtgctgaa
+ggtcgtcactccaccggtgcttaataacgctgatagtgctagtgtagatcgctactagagccaggcatcaaataaaacga
+aaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctc
+accttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2003249</id>
+<title>BBa_R0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>2003250</id>
+<title>end of LacI coding region (inactive)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>2003251</id>
+<title>CAP binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>126</endpos></feature>
+<feature>
+<id>2003252</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>137</startpos>
+<endpos>142</endpos></feature>
+<feature>
+<id>2003253</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>161</startpos>
+<endpos>166</endpos></feature>
+<feature>
+<id>2003254</id>
+<title>LacI binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>166</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>2003255</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>173</startpos>
+<endpos>173</endpos></feature>
+<feature>
+<id>2003257</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>209</startpos>
+<endpos>220</endpos></feature>
+<feature>
+<id>2003256</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>213</startpos>
+<endpos>216</endpos></feature>
+<feature>
+<id>2003259</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>227</startpos>
+<endpos>907</endpos></feature>
+<feature>
+<id>2003258</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>227</startpos>
+<endpos>901</endpos></feature>
+<feature>
+<id>2003260</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>908</startpos>
+<endpos>932</endpos></feature>
+<feature>
+<id>2003261</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>941</startpos>
+<endpos>1020</endpos></feature>
+<feature>
+<id>2003262</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>952</startpos>
+<endpos>995</endpos></feature>
+<feature>
+<id>2003263</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1029</startpos>
+<endpos>1069</endpos></feature>
+<feature>
+<id>2003264</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1036</startpos>
+<endpos>1055</endpos></feature>
+<feature>
+<id>2003265</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1056</startpos>
+<endpos>1069</endpos></feature>
+<feature>
+<id>2003266</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1062</startpos>
+<endpos>1062</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>Deletar este</value>
+<units></units>
+<url></url>
+<id>6896</id>
+<m_date>2009-10-13 11:30:09</m_date>
+<user_id>5140</user_id>
+<user_name>Raissa</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Deletar este</value>
+<units></units>
+<url></url>
+<id>6897</id>
+<m_date>2009-10-13 11:30:09</m_date>
+<user_id>5140</user_id>
+<user_name>Raissa</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Deletar este</value>
+<units></units>
+<url></url>
+<id>6898</id>
+<m_date>2009-10-13 11:30:09</m_date>
+<user_id>5140</user_id>
+<user_name>Raissa</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Deletar este</value>
+<units></units>
+<url></url>
+<id>6773</id>
+<m_date>2009-10-12 19:00:48</m_date>
+<user_id>4968</user_id>
+<user_name>gleidson</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Deletar este</value>
+<units></units>
+<url></url>
+<id>6774</id>
+<m_date>2009-10-12 19:00:48</m_date>
+<user_id>4968</user_id>
+<user_name>gleidson</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Deletar este</value>
+<units></units>
+<url></url>
+<id>6775</id>
+<m_date>2009-10-12 19:00:48</m_date>
+<user_id>4968</user_id>
+<user_name>gleidson</user_name></parameter></parameters>
+<categories>
+<category>//cds/membrane/channel</category>
+<category>//chassis/eukaryote/yeast</category>
+<category>//standard/23</category></categories>
+<twins>
+<twin>BBa_J04450</twin>
+<twin>BBa_S03495</twin>
+<twin>BBa_J14450</twin>
+<twin>BBa_J14460</twin>
+<twin>BBa_K075998</twin>
+<twin>BBa_K075171</twin>
+<twin>BBa_K075102</twin>
+<twin>BBa_K075212</twin>
+<twin>BBa_K075221</twin>
+<twin>BBa_K075181</twin>
+<twin>BBa_K075161</twin>
+<twin>BBa_K075187</twin>
+<twin>BBa_K075555</twin>
+<twin>BBa_K075130</twin>
+<twin>BBa_K075391</twin>
+<twin>BBa_K075198</twin>
+<twin>BBa_K075822</twin>
+<twin>BBa_K075031</twin>
+<twin>BBa_K075464</twin>
+<twin>BBa_K075460</twin>
+<twin>BBa_K075388</twin>
+<twin>BBa_K084000</twin>
+<twin>BBa_K075009</twin>
+<twin>BBa_K075012</twin>
+<twin>BBa_K075444</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

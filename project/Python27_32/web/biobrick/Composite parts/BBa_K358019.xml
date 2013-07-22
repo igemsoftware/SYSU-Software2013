@@ -1,0 +1,406 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19779</part_id>
+<part_name>BBa_K358019</part_name>
+<part_short_name>K358019</part_short_name>
+<part_short_desc>Lysis cassette regulated by lacP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K358019</part_url>
+<part_entered>2010-10-19</part_entered>
+<part_author>Ken Kajita</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>186</part_id>
+<part_name>BBa_R0011</part_name>
+<part_short_desc>Promoter (lacI regulated, lambda pL hybrid)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lacI+pL</part_nickname></subpart>
+<subpart>
+<part_id>19050</part_id>
+<part_name>BBa_K358004</part_name>
+<part_short_desc>lambda lysis cassette[SRRz/Rz1]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>186</part_id>
+<part_name>BBa_R0011</part_name>
+<part_short_desc>Promoter (lacI regulated, lambda pL hybrid)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lacI+pL</part_nickname></subpart>
+<subpart>
+<part_id>19051</part_id>
+<part_name>BBa_K358006</part_name>
+<part_short_desc>lambda lysis cassette with terminator</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>186</part_id>
+<part_name>BBa_R0011</part_name>
+<part_short_desc>Promoter (lacI regulated, lambda pL hybrid)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lacI+pL</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19051</part_id>
+<part_name>BBa_K358006</part_name>
+<part_short_desc>lambda lysis cassette with terminator</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aattgtgagcggataacaattgacattgtgagcggataacaagatactgagcacatactagaggagcaaatccccttatt
+gggggtaagacatgaagatgccagaaaaacatgacctgttggccgccattctcgcggcaaaggaacaaggcatcggggca
+atccttgcgtttgcaatggcgtaccttcgcggcagatataatggcggtgcgtttacaaaaacagtaatcgacgcaacgat
+gtgcgccattatcgcctggttcattcgtgaccttctcgacttcgccggactaagtagcaatctcgcttatataacgagcg
+tgtttatcggctacatcggtactgactcgattggttcgcttatcaaacgcttcgctgctaaaaaagccggagtagaagat
+ggtagaaatcaataatcaacgtaaggcgttcctcgatatgctggcgtggtcggagggaactgataacggacgtcagaaaa
+ccagaaatcatggttatgacgtcattgtaggcggagagctatttactgattactccgatcaccctcgcaaacttgtcacg
+ctaaacccaaaactcaaatcaacaggcgccggacgctaccagcttctttcccgttggtgggatgcctaccgcaagcagct
+tggcctgaaagacttctctccgaaaagtcaggacgctgtggcattgcagcagattaaggagcgtggcgctttacctatga
+ttgatcgtggtgatatccgtcaggcaatcgaccgttgcagcaatatctgggcttcactgccgggcgctggttatggtcag
+ttcgagcataaggctgacagcctgattgcaaaattcaaagaagcgggcggaacggtcagagagattgatgtatgagcaga
+gtcaccgcgattatctccgctctggttatctgcatcatcgtctgcctgtcatgggctgttaatcattaccgtgataacgc
+cattacctacaaagcccagcgcgacaaaaatgccagagaactgaagctggcgaacgcggcaattactgacatgcagatgc
+gtcagcgtgatgttgctgcgctcgatgcaaaatacacgaaggagttagctgatgctaaagctgaaaatgatgctctgcgt
+gatgatgttgccgctggtcgtcgtcggttgcacatcaaagcagtctgtcagtcagtgcgtgaagccaccaccgcctccgg
+cgtggataatgcagcctccccccgactggcagacaccgctgaacgggattatttcaccctcagagagaggctgatcacta
+tgcaaaaacaactggaaggaacccagaagtatattaatgagcagtgcagatagagttactagagccaggcatcaaataaa
+acgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactg
+gctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2090039</id>
+<title>BBa_R0011</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>54</endpos></feature>
+<feature>
+<id>2090040</id>
+<title>lac O1</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>3</startpos>
+<endpos>19</endpos></feature>
+<feature>
+<id>2090041</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>25</endpos></feature>
+<feature>
+<id>2090042</id>
+<title>lac O1</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>26</startpos>
+<endpos>42</endpos></feature>
+<feature>
+<id>2090043</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>43</startpos>
+<endpos>48</endpos></feature>
+<feature>
+<id>2090057</id>
+<title>BBa_K358006</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>64</startpos>
+<endpos>1473</endpos></feature>
+<feature>
+<id>2090044</id>
+<title>BBa_K358004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>64</startpos>
+<endpos>1336</endpos></feature>
+<feature>
+<id>2090045</id>
+<title>wt-RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>65</startpos>
+<endpos>89</endpos></feature>
+<feature>
+<id>2090046</id>
+<title>antiholin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>92</startpos>
+<endpos>415</endpos></feature>
+<feature>
+<id>2090047</id>
+<title>holin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>98</startpos>
+<endpos>415</endpos></feature>
+<feature>
+<id>2090048</id>
+<title>endolysin</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>399</startpos>
+<endpos>875</endpos></feature>
+<feature>
+<id>2090049</id>
+<title>Rz</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>872</startpos>
+<endpos>1333</endpos></feature>
+<feature>
+<id>2090050</id>
+<title>Rz1</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1092</startpos>
+<endpos>1274</endpos></feature>
+<feature>
+<id>2090051</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1345</startpos>
+<endpos>1424</endpos></feature>
+<feature>
+<id>2090052</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1356</startpos>
+<endpos>1399</endpos></feature>
+<feature>
+<id>2090053</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1433</startpos>
+<endpos>1473</endpos></feature>
+<feature>
+<id>2090054</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1440</startpos>
+<endpos>1459</endpos></feature>
+<feature>
+<id>2090055</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1460</startpos>
+<endpos>1473</endpos></feature>
+<feature>
+<id>2090056</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1466</startpos>
+<endpos>1466</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10804</id>
+<m_date>2010-10-25 08:10:38</m_date>
+<user_id>6182</user_id>
+<user_name>Naoi</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10805</id>
+<m_date>2010-10-25 08:10:38</m_date>
+<user_id>6182</user_id>
+<user_name>Naoi</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10806</id>
+<m_date>2010-10-25 08:10:38</m_date>
+<user_id>6182</user_id>
+<user_name>Naoi</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10686</id>
+<m_date>2010-10-24 00:32:49</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10687</id>
+<m_date>2010-10-24 00:32:49</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10688</id>
+<m_date>2010-10-24 00:32:49</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10683</id>
+<m_date>2010-10-24 00:32:32</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10684</id>
+<m_date>2010-10-24 00:32:32</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10685</id>
+<m_date>2010-10-24 00:32:32</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10680</id>
+<m_date>2010-10-24 00:31:54</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10681</id>
+<m_date>2010-10-24 00:31:54</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10682</id>
+<m_date>2010-10-24 00:31:54</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10677</id>
+<m_date>2010-10-24 00:30:08</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10678</id>
+<m_date>2010-10-24 00:30:08</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10679</id>
+<m_date>2010-10-24 00:30:08</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10674</id>
+<m_date>2010-10-24 00:30:04</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10675</id>
+<m_date>2010-10-24 00:30:04</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Lysis cassette regulated by lacP</value>
+<units></units>
+<url></url>
+<id>10676</id>
+<m_date>2010-10-24 00:30:04</m_date>
+<user_id>7170</user_id>
+<user_name>v08ken</user_name></parameter></parameters>
+<categories>
+<category>//function/celldeath</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

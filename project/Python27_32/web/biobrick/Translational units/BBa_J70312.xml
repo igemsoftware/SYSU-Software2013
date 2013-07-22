@@ -1,0 +1,166 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13894</part_id>
+<part_name>BBa_J70312</part_name>
+<part_short_name>J70312</part_short_name>
+<part_short_desc>E0031 (RBS+EYFP), B0014 (terminator) </part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J70312</part_url>
+<part_entered>2009-06-17</part_entered>
+<part_author>Julie Norville</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>4549</part_id>
+<part_name>BBa_E0031</part_name>
+<part_short_desc>EYFP (RBS+ LVA-)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>eyfp</part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>144</part_id>
+<part_name>BBa_B0011</part_name>
+<part_short_desc>LuxICDABEG (+/-)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>4549</part_id>
+<part_name>BBa_E0031</part_name>
+<part_short_desc>EYFP (RBS+ LVA-)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>eyfp</part_nickname></subpart>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>4549</part_id>
+<part_name>BBa_E0031</part_name>
+<part_short_desc>EYFP (RBS+ LVA-)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>eyfp</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>gaaagaggagaaattaagcatggtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacg
+gcgacgtaaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttc
+atctgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccttcggctacggcctgcaatgcttcgcccg
+ctaccccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttct
+tcaaggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaag
+ggcatcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaactacaacagccacaacgtctatatcat
+ggccgacaagcagaagaacggcatcaaggtgaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccg
+accactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagctaccagtccgcc
+ctgagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcat
+ggacgagctgtacaagtaattactagagtcacactggctcaccttcgggtgggcctttctgcgtttatatactagagaga
+gaatataaaaagccagattattaatccggcttttttattattt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2005578</id>
+<title>BBa_E0031</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>740</endpos></feature>
+<feature>
+<id>2005575</id>
+<title>Clontech RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>2</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2005576</id>
+<title>EYFP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>736</endpos></feature>
+<feature>
+<id>2005577</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>737</startpos>
+<endpos>739</endpos></feature>
+<feature>
+<id>2005579</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>749</startpos>
+<endpos>789</endpos></feature>
+<feature>
+<id>2005580</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>756</startpos>
+<endpos>775</endpos></feature>
+<feature>
+<id>2005581</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>776</startpos>
+<endpos>789</endpos></feature>
+<feature>
+<id>2005582</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>782</startpos>
+<endpos>782</endpos></feature>
+<feature>
+<id>2005583</id>
+<title>BBa_B0011</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>798</startpos>
+<endpos>843</endpos></feature>
+<feature>
+<id>2005584</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>810</startpos>
+<endpos>832</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

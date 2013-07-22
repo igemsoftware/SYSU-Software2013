@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23694</part_id>
+<part_name>BBa_K557001</part_name>
+<part_short_name>K557001</part_short_name>
+<part_short_desc>Aptamer-CheZ: theophylline-sensitive synthetic riboswitch+phosphatase which dephosphorylates CheY-P</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K557001</part_url>
+<part_entered>2011-10-02</part_entered>
+<part_author>Yinghong Lan</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ggtgataccagcatcgtcttgatgcccttggcagcaccccgctgcaagacaacaagatgcaaccatcaatcaaacctgct
+gacgagcattcagctggcgatatcattgcgcgcatcggcagcctgacgcgtatgctgcgcgacagtttgcgggaactggg
+gctggatcaggccattgccgaagcggcggaagccatccccgatgcgcgcgatcgtttgtactatgttgtgcagatgaccg
+cccaggctgcggagcgggcgctgaacagtgttgaggcgtcacaaccgcatcaggatcaaatggagaaatcagcaaaagcg
+ttaacccaacgttgggatgactggtttgccgatccgattgaccttgccgacgcccgtgaactggtaacagatacacgaca
+atttctggcagatgtacccgcgcataccagctttactaacgcgcaactgctggaaatcatgatggcgcaggattttcagg
+atctcaccgggcaggtcattaagcggatgatggatgtcattcaggagatcgaacgccagttgctgatggtgctgttggaa
+aacatcccggaacaggagtcgcgtccaaaacgtgaaaaccagagtttgcttaatggacctcaggtcgataccagcaaagc
+cggtgtggtagccagtcaggatcaggtggacgatttgttggatagacttggattttga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2149326</id>
+<title>aptamer</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>46</endpos></feature>
+<feature>
+<id>2149327</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>47</startpos>
+<endpos>57</endpos></feature>
+<feature>
+<id>2149328</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>58</startpos>
+<endpos>60</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>ligands</name>
+<value>Theophylline</value>
+<units></units>
+<url></url>
+<id>14279</id>
+<m_date>2011-10-02 12:53:09</m_date>
+<user_id>8574</user_id>
+<user_name>pythonwawa</user_name></parameter>
+<parameter>
+<name>ligands</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>14278</id>
+<m_date>2011-10-02 12:52:12</m_date>
+<user_id>8574</user_id>
+<user_name>pythonwawa</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

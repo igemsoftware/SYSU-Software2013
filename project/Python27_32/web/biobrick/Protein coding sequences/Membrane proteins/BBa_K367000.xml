@@ -1,0 +1,221 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18317</part_id>
+<part_name>BBa_K367000</part_name>
+<part_short_name>K367000</part_short_name>
+<part_short_desc>prhA coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>prhA</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K367000</part_url>
+<part_entered>2010-06-29</part_entered>
+<part_author>Fernando Govantes</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgccagcactgagttcaaccacctctgcccgttcgtctgccccttgtcgtacacgtctgctggctctgctgattgctgt
+tagcgctgtccgtcaagcacatgccctggctgatgaaacacctcgtgccttccatattgagcgtgccccactggaacatg
+ttctgctggaaattgcccgtgttagtggtctgcacgtgagctttgcttcaggcgttgtgaaagaacgttgggctggtccg
+attgatggtaaaatgagtgcccaggaagctgctcgtcgtgcgctgcaaggttcaggtctgacactggcttcactgccaga
+tgggactctgactgttgttgcctcagatcaggccgaagcaccgccaaatgttggtacactggctgctaccgaagttcatg
+gcgaagctggtgatggttttgccgtctttagcactggtgccattagccgtgtggagatggctgtctcgaatgtccctcat
+gccgtttcgatgctgagtggtggactgctggcctcacgtcaatctcctaccctgtcggaggcggtttcccaagctggagt
+tgtgccggttctggtggatcaagctgccccgccacagtatgctattcgtgggttcatgaccgatacgatctctgtcgatg
+gactgccggatcgcctggctagcatgcgtccaatggaggctctggatgaaatcgctgtgatcaaagggccaaatgccgat
+gttgccggcgttacgatggccggtggaacgattaatgcctcgctgaaagcccctggagccgccccaatgcgttcaattgc
+cgttgagactggttctcatgccgagcgtaaagtgattgccgatctgggtggagcgatcggtacaaatggtctgatttatc
+gtgtggtgggtgttcaagatgcttccgctaatagtgatgctggtcataccggtcgtcgtacctcttatggccacggagca
+ctgggttggtccgatgccaataccgaggctatcattggtgttgaaactctggccagtcgccaacctgttcagcctagcac
+ctttgtcctgaatggcggcgtcgttcgcctgccttctctgtctcctctgggtaatgctgacgatgatgtccaaggtcgtg
+ccgagcgtttctattataccctgagccactctctgacagatgactgggccgttcattctcgtggttcctatgaaaatctg
+cgcctgcaatctgcccaatggcatctgatgccttcagcagatggttcagctcctatgccgactgtaggaatgggttatcg
+tagcgacaatcgtgtttgggccctgtctagcgatctgacgggtacaattcgtcaaggtccgctgacacattctctggtcg
+ttggttgggacgaaattcaagaccgtctggacttccattatcctggcgctactgttctgggtcaacagaacccgtatgtt
+ccgacaccactgcctagtgccgaatttgtgcctggactgagcctgtcacaaacagttcgtcaaagcgtgttccgtctgcg
+tgaccgtattgctattggagaacgctgggaactgagcgcttcaatccgtgctaacgattatgtggccaaactgccacatg
+ctcgtctgcaaggactggcatggacacctgcctttggcgttgtctataaactggatgctcgtacaagctggtttgccgat
+tattctcatggattccagattaataccgggtatttctataacggtgccaccatgcaacctgagcgtagtcaacaagtgga
+aacaggactgcgttgggaggatcgccagcgtaaactgacagcacagctggcactgtatcatatcgacgctaatcatgtcg
+gcgttggtgatactgctcacccgggctattatacggagatcaccgaacagagtagtgacggtatcgagctgtccctgcaa
+ggctctattgctcgtgggtgggagacatctctgtggctgtctggtgctcatgttaaacgtcgtctgccgggtaatccgag
+ctttacagcacctggtctgggaggcgccatgtggacaacctataccgttcagagcggtacactggctggagcaggagccg
+gtctgggcgttacagctcaacgctggattccgtgctatgacactgcccctttccgtgttccgggatttgttcagctggat
+ggctcgctgttctggcgttcaaaacaatggcgtattgacctgatcgcccgtaacctgtttaatgttcgtgcctatggtaa
+cacagtgagttcgagttttgtccctattctgcctggccgtacactgacactgcgtctggctcgtaatttctaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2072031</id>
+<title>prhA coding region</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>2310</endpos></feature>
+<feature>
+<id>2072035</id>
+<title>prhA start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2072036</id>
+<title>prhA standard biobrick double stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2311</startpos>
+<endpos>2316</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10802</id>
+<m_date>2010-10-25 04:22:30</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10803</id>
+<m_date>2010-10-25 04:22:30</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10801</id>
+<m_date>2010-10-25 04:22:29</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10798</id>
+<m_date>2010-10-25 04:22:16</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10799</id>
+<m_date>2010-10-25 04:22:16</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10800</id>
+<m_date>2010-10-25 04:22:16</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10786</id>
+<m_date>2010-10-25 03:57:22</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10787</id>
+<m_date>2010-10-25 03:57:22</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10788</id>
+<m_date>2010-10-25 03:57:22</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10783</id>
+<m_date>2010-10-25 03:54:36</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10784</id>
+<m_date>2010-10-25 03:54:36</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10785</id>
+<m_date>2010-10-25 03:54:36</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10780</id>
+<m_date>2010-10-25 03:54:14</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10781</id>
+<m_date>2010-10-25 03:54:14</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>prhA coding sequence</value>
+<units></units>
+<url></url>
+<id>10782</id>
+<m_date>2010-10-25 03:54:14</m_date>
+<user_id>6157</user_id>
+<user_name>fgovrom</user_name></parameter></parameters>
+<categories>
+<category>//cds/membrane/extracellular</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

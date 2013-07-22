@@ -1,0 +1,164 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16562</part_id>
+<part_name>BBa_K274111</part_name>
+<part_short_name>K274111</part_short_name>
+<part_short_desc>CrtY under Pbad promoter (I0500)</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K274111</part_url>
+<part_entered>2009-10-19</part_entered>
+<part_author>Siming Ma</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>11605</part_id>
+<part_name>BBa_K118012</part_name>
+<part_short_desc>Synthetic ribosome binding site added by Son of Babel procedure</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11596</part_id>
+<part_name>BBa_K118008</part_name>
+<part_short_desc>crtY coding sequence encoding lycopene B-cyclase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<subpart>
+<part_id>11606</part_id>
+<part_name>BBa_K118013</part_name>
+<part_short_desc>rbs+crtY (lycopene B-cyclase)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>2916</part_id>
+<part_name>BBa_I0500</part_name>
+<part_short_desc>Inducible pBad/araC promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>pBad/araC</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>11606</part_id>
+<part_name>BBa_K118013</part_name>
+<part_short_desc>rbs+crtY (lycopene B-cyclase)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttatgacaacttgacggctacatcattcactttttcttcacaaccggcacggaactcgctcgggctggccccggtgcatt
+ttttaaatacccgcgagaaatagagttgatcgtcaaaaccaacattgcgaccgacggtggcgataggcatccgggtggtg
+ctcaaaagcagcttcgcctggctgatacgttggtcctcgcgccagcttaagacgctaatccctaactgctggcggaaaag
+atgtgacagacgcgacggcgacaagcaaacatgctgtgcgacgctggcgatatcaaaattgctgtctgccaggtgatcgc
+tgatgtactgacaagcctcgcgtacccgattatccatcggtggatggagcgactcgttaatcgcttccatgcgccgcagt
+aacaattgctcaagcagatttatcgccagcagctccgaatagcgcccttccccttgcccggcgttaatgatttgcccaaa
+caggtcgctgaaatgcggctggtgcgcttcatccgggcgaaagaaccccgtattggcaaatattgacggccagttaagcc
+attcatgccagtaggcgcgcggacgaaagtaaacccactggtgataccattcgcgagcctccggatgacgaccgtagtga
+tgaatctctcctggcgggaacagcaaaatatcacccggtcggcaaacaaattctcgtccctgatttttcaccaccccctg
+accgcgaatggtgagattgagaatataacctttcattcccagcggtcggtcgataaaaaaatcgagataaccgttggcct
+caatcggcgttaaacccgccaccagatgggcattaaacgagtatcccggcagcaggggatcattttgcgcttcagccata
+cttttcatactcccgccattcagagaagaaaccaattgtccatattgcatcagacattgccgtcactgcgtcttttactg
+gctcttctcgctaaccaaaccggtaaccccgcttattaaaagcattctgtaacaaagcgggaccaaagccatgacaaaaa
+cgcgtaacaaaagtgtctataatcacggcagaaaagtccacattgattatttgcacggcgtcacactttgctatgccata
+gcatttttatccataagattagcggatcctacctgacgctttttatcgcaactctctactgtttctccatacccgttttt
+ttgggctagctactagaggaggtactagatgcaaccgcattatgatctgattctcgtgggggctggactcgcgaatggcc
+ttatcgccctgcgtcttcagcagcagcaacctgatatgcgtattttgcttatcgacgccgcaccccaggcgggcgggaat
+catacgtggtcatttcaccacgatgatttgactgagagccaacatcgttggatagctccgctggtggttcatcactggcc
+cgactatcaggtacgctttcccacacgccgtcgtaagctgaacagcggctacttttgtattacttctcagcgtttcgctg
+aggttttacagcgacagtttggcccgcacttgtggatggataccgcggtcgcagaggttaatgcggaatctgttcggttg
+aaaaagggtcaggttatcggtgcccgcgcggtgattgacgggcggggttatgcggcaaattcagcactgagcgtgggctt
+ccaggcgtttattggccaggaatggcgattgagccacccgcatggtttatcgtctcccattatcatggatgccacggtcg
+atcagcaaaatggttatcgcttcgtgtacagcctgccgctctcgccgaccagattgttaattgaagacacgcactatatt
+gataatgcgacattagatcctgaatgcgcgcggcaaaatatttgcgactatgccgcgcaacagggttggcagcttcagac
+actgctgcgagaagaacagggcgccttacccattactctgtcgggcaatgccgacgcattctggcagcagcgccccctgg
+cctgtagtggattacgtgccggtctgttccatcctaccaccggctattcactgccgctggcggttgccgtggccgaccgc
+ctgagtgcacttgatgtctttacgtcggcctcaattcaccatgccattacgcattttgcccgcgagcgctggcagcagca
+gggctttttccgcatgctgaatcgcatgctgtttttagccggacccgccgattcacgctggcgggttatgcagcgttttt
+atggtttacctgaagatttaattgcccgtttttatgcgggaaaactcacgctgaccgatcggctacgtattctgagcggc
+aagccgcctgttccggtattagcagcattgcaagccattatgacgactcatcgttaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2053123</id>
+<title>AraC</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1079</endpos></feature>
+<feature>
+<id>2053126</id>
+<title>BBa_I0500</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>2053124</id>
+<title>PC</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1043</startpos>
+<endpos>1114</endpos></feature>
+<feature>
+<id>2053125</id>
+<title>Pbad</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1080</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>2053127</id>
+<title>BBa_K118012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1219</startpos>
+<endpos>1222</endpos></feature>
+<feature>
+<id>2053128</id>
+<title>crtY coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1229</startpos>
+<endpos>2377</endpos></feature>
+<feature>
+<id>2053129</id>
+<title>BBa_K118008</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1229</startpos>
+<endpos>2380</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

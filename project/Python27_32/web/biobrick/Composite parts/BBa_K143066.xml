@@ -1,0 +1,154 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12662</part_id>
+<part_name>BBa_K143066</part_name>
+<part_short_name>K143066</part_short_name>
+<part_short_desc>YtvA light receptor Protein - Terminator </part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>YtvA-T</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K143066</part_url>
+<part_entered>2008-10-26</part_entered>
+<part_author>Chris Hirst</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>11804</part_id>
+<part_name>BBa_K143037</part_name>
+<part_short_desc>YtvA Blue Light Receptor for B.subtilis</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>YtvA</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11804</part_id>
+<part_name>BBa_K143037</part_name>
+<part_short_desc>YtvA Blue Light Receptor for B.subtilis</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>YtvA</part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11804</part_id>
+<part_name>BBa_K143037</part_name>
+<part_short_desc>YtvA Blue Light Receptor for B.subtilis</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>YtvA</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atggctagttttcaatcatttgggataccaggacagctggaagtcatcaaaaaagcacttgatcacgtgcgagtcggtgt
+ggtaattacagatcccgcacttgaagataatcctattgtctacgtaaatcaaggctttgttcaaatgaccggctacgaga
+ccgaggaaattttaggaaagaactgtcgcttcttacaggggaaacacacagatccggcagaagtggacaacatcagaacc
+gctttacaaaataaagaaccggtcaccgttcagatccaaaactacaaaaaagacggaacgatgttctggaatgaattaaa
+tattgatccaatggaaatagaggataaaacgtattttgtcggcattcagaatgatatcaccaagcaaaaagaatatgaaa
+agcttctcgaggattccctcacggaaattactgcactttcaactcctattgtcccgattcgcaatggcatttcggctctt
+ccgctagtcggaaacctgacagaggagcgatttaattccatcgtttgcacattgacgaatatcttatcaacatccaaaga
+tgattatttgatcattgatttatccggattggcccaagtgaacgaacaaacggccgaccaaattttcaagctgagccatt
+tgctgaaattgaccggaactgagttaatcattactggcattaagcctgaattggctatgaaaatgaataaactggatgcc
+aatttttcgtcgctgaaaacatattcaaatgtaaaggatgccgttaaagtgcttccgattatgtaataatactagagcca
+ggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctac
+tagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1988418</id>
+<title>YtvA Blue Light Receptor for B.subtilis</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>789</endpos></feature>
+<feature>
+<id>1988419</id>
+<title>BBa_K143037</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>789</endpos></feature>
+<feature>
+<id>1988420</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>798</startpos>
+<endpos>877</endpos></feature>
+<feature>
+<id>1988421</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>809</startpos>
+<endpos>852</endpos></feature>
+<feature>
+<id>1988422</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>886</startpos>
+<endpos>926</endpos></feature>
+<feature>
+<id>1988423</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>893</startpos>
+<endpos>912</endpos></feature>
+<feature>
+<id>1988424</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>913</startpos>
+<endpos>926</endpos></feature>
+<feature>
+<id>1988425</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>919</startpos>
+<endpos>919</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//chassis/prokaryote/bsubtilis</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

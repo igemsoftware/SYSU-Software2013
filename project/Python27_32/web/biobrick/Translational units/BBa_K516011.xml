@@ -1,0 +1,131 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22026</part_id>
+<part_name>BBa_K516011</part_name>
+<part_short_name>K516011</part_short_name>
+<part_short_desc>luxI protein generator TERM- RBS+(B0031)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K516011</part_url>
+<part_entered>2011-09-07</part_entered>
+<part_author>Nicolo&apos; Politi, Tommaso Goggia, Paolo Magni</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>148</part_id>
+<part_name>BBa_B0031</part_name>
+<part_short_desc>RBS.2 (weak) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>160</part_id>
+<part_name>BBa_C0061</part_name>
+<part_short_desc>autoinducer synthetase for AHL</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>luxI</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>148</part_id>
+<part_name>BBa_B0031</part_name>
+<part_short_desc>RBS.2 (weak) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>160</part_id>
+<part_name>BBa_C0061</part_name>
+<part_short_desc>autoinducer synthetase for AHL</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>luxI</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>148</part_id>
+<part_name>BBa_B0031</part_name>
+<part_short_desc>RBS.2 (weak) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>160</part_id>
+<part_name>BBa_C0061</part_name>
+<part_short_desc>autoinducer synthetase for AHL</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>luxI</part_nickname></subpart>
+<barcode></barcode></specified_subscars>
+<sequences>
+<seq_data>tcacacaggaaacctactagatgactataatgataaaaaaatcggattttttggcaattccatcggaggagtataaaggt
+attctaagtcttcgttatcaagtgtttaagcaaagacttgagtgggacttagttgtagaaaataaccttgaatcagatga
+gtatgataactcaaatgcagaatatatttatgcttgtgatgatactgaaaatgtaagtggatgctggcgtttattaccta
+caacaggtgattatatgctgaaaagtgtttttcctgaattgcttggtcaacagagtgctcccaaagatcctaatatagtc
+gaattaagtcgttttgctgtaggtaaaaatagctcaaagataaataactctgctagtgaaattacaatgaaactatttga
+agctatatataaacacgctgttagtcaaggtattacagaatatgtaacagtaacatcaacagcaatagagcgatttttaa
+agcgtattaaagttccttgtcatcgtattggagacaaagaaattcatgtattaggtgatactaaatcggttgtattgtct
+atgcctattaatgaacagtttaaaaaagcagtcttaaatgctgcaaacgacgaaaactacgctttagtagcttaataact
+ctgatagtgctagtgtagatctc
+</seq_data></sequences>
+<features>
+<feature>
+<id>2126173</id>
+<title>BBa_B0031</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>14</endpos></feature>
+<feature>
+<id>2126172</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>7</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2126174</id>
+<title>luxI</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>599</endpos></feature>
+<feature>
+<id>2126175</id>
+<title>BBa_C0061</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>638</endpos></feature>
+<feature>
+<id>2126176</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>600</startpos>
+<endpos>631</endpos></feature>
+<feature>
+<id>2126177</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>639</startpos>
+<endpos>663</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

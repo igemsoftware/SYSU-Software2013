@@ -1,0 +1,152 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16246</part_id>
+<part_name>BBa_K283040</part_name>
+<part_short_name>K283040</part_short_name>
+<part_short_desc>invasin (1-625aa)_RFP-terminators</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K283040</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>Shi Lei, Nelson Chu, W Ling</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgatggttttccagccaatcagtgagtttctcttgataaggaatgcgggaatgtctatgtattttaataaaataatttc
+atttaatattatttcacgaatagttatttgtatctttttgatatgtggaatgttcatggctggggcttcagaaaaatatg
+atgctaacgcaccgcaacaggtccagccttattctgtctcttcatctgcatttgaaaatctccatcctaataatgaaatg
+gagagttcaatcaatcccttttccgcatcggatacagaaagaaatgctgcaataatagatcgcgccaataaggagcagga
+gactgaagcggtgaataagatgataagcaccggggccaggttagctgcatcaggcagggcatctgatgttgctcactcaa
+tggtgggcgatgcggttaatcaagaaatcaaacagtggttaaatcgattcggtacggctcaagttaatctgaattttgac
+aaaaatttttcgctaaaagaaagctctcttgattggctggctccttggtatgactctgcttcattcctcttttttagtca
+gttaggtattcgcaataaagacagccgcaacacacttaaccttggcgtcgggatacgtacattggagaacggttggctgt
+acggacttaatactttttatgataatgatttgaccggccacaaccaccgtatcggtcttggtgccgaggcctggaccgat
+tatttacagttggctgccaatgggtattttcgcctcaatggatggcactcgtcgcgtgatttctccgactataaagagcg
+cccagccactgggggggatttgcgcgcgaatgcttatttacctgcactcccacaactgggggggaagttgatgtatgagc
+aatacaccggtgagcgtgttgctttatttggtaaagataatctgcaacgcaacccttatgccgtgactgccgggatcaat
+tacacccccgtgcctctactcactgtcggggtagatcagcgtatggggaaaagcagtaagcatgaaacacagtggaacct
+ccaaatgaactatcgcctgggcgagagttttcagtcgcaacttagcccttcagcggtggcaggaacacgtctactggcgg
+agagccgctataaccttgtcgatcgtaacaataatatcgtgttggagtatcagaaacagcaggtggttaaactgacatta
+tcgccagcaactatctccggcctgccgggtcaggtttatcaggtgaacgcacaagtacaaggggcatctgctgtaaggga
+aattgtctggagtgatgccgaactgattgccgctggcggcacattaacaccactgagtaccacacaattcaacttggttt
+taccgccttataaacgcacagcacaagtgagtcgggtaacggacgacctgacagccaacttttattcgcttagtgcgctc
+gcggttgatcaccaaggaaaccgatctaactcattcacattgagcgtcaccgttcagcagcctcagttgacattaacggc
+ggccgtcattggtgatggcgcaccggctaatgggaaaactgcaatcaccgttgagttcaccgttgctgattttgagggga
+aacccttagccgggcaggaggtggtgataaccaccaataatggtgcgctaccgaataaaatcacggaaaagacagatgca
+aatggcgtcgcgcgcattgcattaaccaatacgacagatggcgtgacggtagtcacagcagaagtggaggggcaacggca
+aagtgttgatacccactttgttaagggtactatcgcggcggataaatccactctggctgcggtaccgacatctatcatcg
+ctgatggtctaatggcttcaaccatcacgttggagttgaaggatacctatggggacccgcaggctggcgcgaatgtggct
+tttgacacaaccttaggcaatatgggcgttatcacggatcacaatgacggcacttatagcgcaccattgaccagtaccac
+gttgggggtagcaacagtaacggtgaaagtggatggggctgcgttcagtgtgccgagtgtgacggttaatttcacggcag
+atcctattccagatgctggccgctccagtttcaccgtctccacaccggatatcttggctgatggcacgatgagttccaca
+ttatcctttgtccctgtcgataagaatggccattttatcagtgggatgcagggcttgagttttactcaaaacggtgtgcc
+ggtgagtattagccccattaccgagcagccagatagctataccgcgacggtggttgggaatagtgtcggtgatgtcacaa
+tcacgccgcaggttgataccctgatactgagtacattgcagaaaaaaatatccctattcccggtacctacgctgaccggt
+attctggttaacgggcaaaatttcgctacggataaagggttcccgaaaacgatctttaaaaacgccacattccagttaca
+gatggataacgatgttgctaataatactcagtatgagtggtcgtcgtcattcacacccaatgtatcggttaacgatcagg
+gtcaggtgacgattacctaccaaacctatagcgaagtggctgtgacggcgaaaagtaaaaaattcccaagttattcggtg
+agttatcggttctacccaaatcggtggatatacgatggcggcagatcgctggtatccagtctcgaggccagcagacaatg
+ccaaggttcagatatgtctgcggttcttgaatcctcacgtgcaaccaacggaacgcgtgcgcctgacgggacattgtggg
+gcgagtgggggagcttgaccgcgtatagttctgattggcaatctggtgaatattgggtcaaaaagaccagcacggatttt
+gaaaccatgaatatggacacaggcgcactgcaaccagggcctgcatacttggcgttcccgctctgtgcgctgtcaatata
+tactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtga
+acgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2047995</id>
+<title>invasin(1-625)_ RFP</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>2960</endpos></feature>
+<feature>
+<id>2047996</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2969</startpos>
+<endpos>3048</endpos></feature>
+<feature>
+<id>2047997</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2980</startpos>
+<endpos>3023</endpos></feature>
+<feature>
+<id>2047998</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>3057</startpos>
+<endpos>3097</endpos></feature>
+<feature>
+<id>2047999</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>3064</startpos>
+<endpos>3083</endpos></feature>
+<feature>
+<id>2048000</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>3084</startpos>
+<endpos>3097</endpos></feature>
+<feature>
+<id>2048001</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>3090</startpos>
+<endpos>3090</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>invasin (1-625aa)_RFP-terminators</value>
+<units></units>
+<url></url>
+<id>8644</id>
+<m_date>2009-10-21 09:18:52</m_date>
+<user_id>5494</user_id>
+<user_name>NelsonChu</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>invasin (1-625aa)_RFP-terminators</value>
+<units></units>
+<url></url>
+<id>8645</id>
+<m_date>2009-10-21 09:18:52</m_date>
+<user_id>5494</user_id>
+<user_name>NelsonChu</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>invasin (1-625aa)_RFP-terminators</value>
+<units></units>
+<url></url>
+<id>8646</id>
+<m_date>2009-10-21 09:18:52</m_date>
+<user_id>5494</user_id>
+<user_name>NelsonChu</user_name></parameter></parameters>
+<categories>
+<category>//classic/composite/uncategorized</category>
+<category>//function/reporter</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

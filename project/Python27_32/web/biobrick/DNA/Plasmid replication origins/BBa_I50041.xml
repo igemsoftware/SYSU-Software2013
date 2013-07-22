@@ -1,0 +1,237 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>6471</part_id>
+<part_name>BBa_I50041</part_name>
+<part_short_name>I50041</part_short_name>
+<part_short_desc>pSC101 origin of replication, reverse</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname>pSC101</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I50041</part_url>
+<part_entered>2006-03-13</part_entered>
+<part_author>Reshma Shetty</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gttacattgtcgatctgttcatggtgaacagctttgaatgcaccaaaaactcgtaaaagctctgatgtatctatcttttt
+tacaccgttttcatctgtgcatatggacagttttccctttgatatgtaacggtgaacagttgttctacttttgtttgtta
+gtcttgatgcttcactgatagatacaagagccataagaacctcagatccttccgtatttagccagtatgttctctagtgt
+ggttcgttgtttttgcgtgagccatgagaacgaaccattgagatcatacttactttgcatgtcactcaaaaattttgcct
+caaaactggtgagctgaatttttgcagttaaagcatcgtgtagtgtttttcttagtccgttatgtaggtaggaatctgat
+gtaatggttgttggtattttgtcaccattcatttttatctggttgttctcaagttcggttacgagatccatttgtctatc
+tagttcaacttggaaaatcaacgtatcagtcgggcggcctcgcttatcaaccaccaatttcatattgctgtaagtgttta
+aatctttacttattggtttcaaaacccattggttaagccttttaaactcatggtagttattttcaagcattaacatgaac
+ttaaattcatcaaggctaatctctatatttgccttgtgagttttcttttgtgttagttcttttaataaccactcataaat
+cctcatagagtatttgttttcaaaagacttaacatgttccagattatattttatgaatttttttaactggaaaagataag
+gcaatatctcttcactaaaaactaattctaatttttcgcttgagaacttggcatagtttgtccactggaaaatctcaaag
+cctttaaccaaaggattcctgatttccacagttctcgtcatcagctctctggttgctttagctaatacaccataagcatt
+ttccctactgatgttcatcatctgagcgtattggttataagtgaacgataccgtccgttctttccttgtagggttttcaa
+tcgtggggttgagtagtgccacacagcataaaattagcttggtttcatgctccgttaagtcatagcgactaatcgctagt
+tcatttgctttgaaaacaactaattcagacatacatctcaattggtctaggtgattttaatcactataccaattgagatg
+ggctagtcaatgataattacatgtccttttcctttgagttgtgggtatctgtaaattctgctagacctttgctggaaaac
+ttgtaaattctgctagaccctctgtaaattccgctagacctttgtgtgttttttttgtttatattcaagtggttataatt
+tatagaataaagaaagaataaaaaaagataaaaagaatagatcccagccctgtgtataactcactactttagtcagttcc
+gcagtattacaaaaggatgtcgcaaacgctgtttgctcctctacaaaacagaccttaaaaccctaaaggcttaagtagca
+ccctcgcaagctcgggcaaatcgctgaatattccttttgtctccgaccatcaggcacctgagtcgctgtctttttcgtga
+cattcagttcgctgcgctcacggctctggcagtgaatgggggtaaatggcactacaggcgccttttatggattcatgcaa
+ggaaactacccataatacaagaaaagcccgtcacgggcttctcagggcgttttatggcgggtctgctatgtggtgctatc
+tgactttttgctgttcagcagttcctgccctctgattttccagtctgaccacttcggattatcccgtgacaggtcattca
+gactggctaatgcacccagtaaggcagcggtatcatcaacaggcttacccgtcttactgtccctagtgcttggattctca
+ccaataaaaaacgcccggcggcaaccgagcgttctgaacaaatccagatggagttctgaggtcattactggatctatcaa
+caggagtccaagcgagctcgtaaacttggtctgacag
+</seq_data></sequences>
+<features>
+<feature>
+<id>2080856</id>
+<title>difference from canonical pSC101 sequence in Genbank</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>36</startpos>
+<endpos>36</endpos></feature>
+<feature>
+<id>1932215</id>
+<title>putative polyA</title>
+<type>polya</type>
+<direction>reverse</direction>
+<startpos>76</startpos>
+<endpos>91</endpos></feature>
+<feature>
+<id>2080857</id>
+<title>difference from canonical pSC101 sequence in Genbank</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>126</startpos>
+<endpos>126</endpos></feature>
+<feature>
+<id>1932216</id>
+<title>repA</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>202</startpos>
+<endpos>1152</endpos></feature>
+<feature>
+<id>2080858</id>
+<title>difference from canonical pSC101 sequence in Genbank</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>288</startpos>
+<endpos>288</endpos></feature>
+<feature>
+<id>2080859</id>
+<title>difference from canonical pSC101 sequence in Genbank</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>383</startpos>
+<endpos>383</endpos></feature>
+<feature>
+<id>1932218</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>1154</startpos>
+<endpos>1159</endpos></feature>
+<feature>
+<id>1932217</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1154</startpos>
+<endpos>1176</endpos></feature>
+<feature>
+<id>1932219</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>1156</startpos>
+<endpos>1168</endpos></feature>
+<feature>
+<id>1932220</id>
+<title>promoter region</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>1173</startpos>
+<endpos>1192</endpos></feature>
+<feature>
+<id>1932221</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1179</startpos>
+<endpos>1200</endpos></feature>
+<feature>
+<id>1932222</id>
+<title>rep promoter -10</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>1183</startpos>
+<endpos>1188</endpos></feature>
+<feature>
+<id>1932223</id>
+<title>rep promoter -35</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>1205</startpos>
+<endpos>1210</endpos></feature>
+<feature>
+<id>1932224</id>
+<title>Mutated SpeI site</title>
+<type>mutation</type>
+<direction>reverse</direction>
+<startpos>1219</startpos>
+<endpos>1224</endpos></feature>
+<feature>
+<id>1932225</id>
+<title>direct repeat</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1250</startpos>
+<endpos>1269</endpos></feature>
+<feature>
+<id>1932226</id>
+<title>direct repeat</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1282</startpos>
+<endpos>1301</endpos></feature>
+<feature>
+<id>1932227</id>
+<title>direct repeat</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1303</startpos>
+<endpos>1322</endpos></feature>
+<feature>
+<id>1932228</id>
+<title>AT rich region</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1321</startpos>
+<endpos>1403</endpos></feature>
+<feature>
+<id>1932229</id>
+<title>par region</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1534</startpos>
+<endpos>1901</endpos></feature>
+<feature>
+<id>1932230</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1800</startpos>
+<endpos>1817</endpos></feature>
+<feature>
+<id>1932231</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1823</startpos>
+<endpos>1846</endpos></feature>
+<feature>
+<id>1932232</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1857</startpos>
+<endpos>1873</endpos></feature>
+<feature>
+<id>1932233</id>
+<title>Tn3 integration site</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1876</startpos>
+<endpos>1880</endpos></feature>
+<feature>
+<id>1932234</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1886</startpos>
+<endpos>1899</endpos></feature>
+<feature>
+<id>1932235</id>
+<title>terminator</title>
+<type>stem_loop</type>
+<direction>reverse</direction>
+<startpos>1963</startpos>
+<endpos>1992</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//plasmid/component/origin</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

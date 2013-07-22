@@ -1,0 +1,165 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11854</part_id>
+<part_name>BBa_J70022</part_name>
+<part_short_name>J70022</part_short_name>
+<part_short_desc>GENEART pGA4 plasmid</part_short_desc>
+<part_type>Plasmid</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>GENEART pG</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J70022</part_url>
+<part_entered>2008-09-25</part_entered>
+<part_author>Reshma Shetty</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>actagtagcggccgctgcaggctaagcttgatatcgaattcctgcagcccgggggatccgcccgggctagagcggccgcc
+accgcggtggagctccagcttttgttccctttagtgagggttaattgcgcgcttggcgtaatcatggtcatagctgtttc
+ctgtgtgaaattgttatccgctcacaattccacacaacatacgagccggaagcataaagtgtaaagcctggggtgcctaa
+tgagtgagctaactcacattaattgcgttgcgctcactgcccgctttccagtcgggaaacctgtcgtgccagctgcatta
+atgaatcggccaacgcgcggggagaggcggtttgcgtattgggcgctcttccgcttcctcgctcactgactcgctgcgct
+cggtcgttcggctgcggcgagcggtatcagctcactcaaaggcggtaatacggttatccacagaatcaggggataacgca
+ggaaagaacatgtgagcaaaaggccagcaaaaggccaggaaccgtaaaaaggccgcgttgctggcgtttttccataggct
+ccgcccccctgacgagcatcacaaaaatcgacgctcaagtcagaggtggcgaaacccgacaggactataaagataccagg
+cgtttccccctggaagctccctcgtgcgctctcctgttccgaccctgccgcttaccggatacctgtccgcctttctccct
+tcgggaagcgtggcgctttctcatagctcacgctgtaggtatctcagttcggtgtaggtcgttcgctccaagctgggctg
+tgtgcacgaaccccccgttcagcccgaccgctgcgccttatccggtaactatcgtcttgagtccaacccggtaagacacg
+acttatcgccactggcagcagccactggtaacaggattagcagagcgaggtatgtaggcggtgctacagagttcttgaag
+tggtggcctaactacggctacactagaagaacagtatttggtatctgcgctctgctgaagccagttaccttcggaaaaag
+agttggtagctcttgatccggcaaacaaaccaccgctggtagcggtggtttttttgtttgcaagcagcagattacgcgca
+gaaaaaaaggatctcaagaagatcctttgatcttttctacggggtctgacgctcagtggaacgaaaactcacgttaaggg
+attttggtcatgagattatcaaaaaggatcttcacctagatccttttaaattaaaaatgaagttttaaatcaatctaaag
+tatatatgagtaaacttggtctgacagttaccaatgcttaatcagtgaggcacctatctcagcgatctgtctatttcgtt
+catccatagttgcctgactccccgtcgtgtagataactacgatacgggagggcttaccatctggccccagtgctgcaatg
+ataccgcgagaaccacgctcaccggctccagatttatcagcaataaaccagccagccggaagggccgagcgcagaagtgg
+tcctgcaactttatccgcctccatccagtctattaattgttgccgggaagctagagtaagtagttcgccagttaatagtt
+tgcgcaacgttgttgccattgctacaggcatcgtggtgtcacgctcgtcgtttggtatggcttcattcagctccggttcc
+caacgatcaaggcgagttacatgatcccccatgttgtgcaaaaaagcggttagctccttcggtcctccgatcgttgtcag
+aagtaagttggccgcagtgttatcactcatggttatggcagcactgcataattctcttactgtcatgccatccgtaagat
+gcttttctgtgactggtgagtactcaaccaagtcattctgagaatagtgtatgcggcgaccgagttgctcttgcccggcg
+tcaatacgggataataccgcgccacatagcagaactttaaaagtgctcatcattggaaaacgttcttcggggcgaaaact
+ctcaaggatcttaccgctgttgagatccagttcgatgtaacccactcgtgcacccaactgatcttcagcatcttttactt
+tcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgccgcaaaaaagggaataagggcgacacggaaatgttga
+atactcatactcttcctttttcaatattattgaagcatttatcagggttattgtctcatgagcggatacatatttgaatg
+tatttagaaaaataaacaaataggggttccgcgcacatttccccgaaaagtgccacctaaattgtaagcgttaatatttt
+gttaaaattcgcgttaaatttttgttaaatcagctcattttttaaccaataggccgaaatcggcaaaatcccttataaat
+caaaagaatagaccgagatagggttgagtgttgttccagtttggaacaagagtccactattaaagaacgtggactccaac
+gtcaaagggcgaaaaaccgtctatcagggctatggcccactacgtgaaccatcaccctaatcaagttttttggggtcgag
+gtgccgtaaagcactaaatcggaaccctaaagggagcccccgatttagagcttgacggggaaagccggcgaacgtggcga
+gaaaggaagggaagaaagcgaaaggagcgggcgctagggcgctggcaagtgtagcggtcacgctgcgcgtaaccaccaca
+cccgccgcgcttaatgcgccgctacagggcgcgtcccattcgccattcaggctgcgcaactgttgggaagggcgatcggt
+gcgggcctcttcgctattacgccagctggcgaaagggggatgtgctgcaaggcgattaagttgggtaacgccagggtttt
+cccagtcacgacgttgtaaaacgacggccagtgagcgcgcgtaatacgactcactatagggcgaattgggtaccgcagaa
+ttcgcggccgcttctaga
+</seq_data></sequences>
+<features>
+<feature>
+<id>1976829</id>
+<title>BioBrick suffix</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>1976831</id>
+<title>T3 promoter</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>107</startpos>
+<endpos>126</endpos></feature>
+<feature>
+<id>1976832</id>
+<title>lac promoter</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>196</startpos>
+<endpos>225</endpos></feature>
+<feature>
+<id>1976833</id>
+<title>pBR322 origin</title>
+<type>dna</type>
+<direction>reverse</direction>
+<startpos>534</startpos>
+<endpos>1153</endpos></feature>
+<feature>
+<id>1976839</id>
+<title>ColE1 origin</title>
+<type>dna</type>
+<direction>reverse</direction>
+<startpos>567</startpos>
+<endpos>1007</endpos></feature>
+<feature>
+<id>1976834</id>
+<title>beta-lactamase ampicillin resistance marker</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>1308</startpos>
+<endpos>2168</endpos></feature>
+<feature>
+<id>1976835</id>
+<title>beta-lactamase (ampR) promoter</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>2210</startpos>
+<endpos>2238</endpos></feature>
+<feature>
+<id>1976840</id>
+<title>f1 (+) origin</title>
+<type>dna</type>
+<direction>reverse</direction>
+<startpos>2299</startpos>
+<endpos>2755</endpos></feature>
+<feature>
+<id>1976836</id>
+<title>f1 origin</title>
+<type>dna</type>
+<direction>reverse</direction>
+<startpos>2431</startpos>
+<endpos>2737</endpos></feature>
+<feature>
+<id>1976837</id>
+<title>lacZalpha reporter</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>2755</startpos>
+<endpos>2914</endpos></feature>
+<feature>
+<id>1976841</id>
+<title>D segment</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>2796</startpos>
+<endpos>2954</endpos></feature>
+<feature>
+<id>1976838</id>
+<title>T7 promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2922</startpos>
+<endpos>2940</endpos></feature>
+<feature>
+<id>1976830</id>
+<title>BioBrick prefix</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>2958</startpos>
+<endpos>2978</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//plasmidbackbone/synthesis</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,125 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>21791</part_id>
+<part_name>BBa_K606026</part_name>
+<part_short_name>K606026</part_short_name>
+<part_short_desc>tetO Array</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>tetO array</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K606026</part_url>
+<part_entered>2011-07-27</part_entered>
+<part_author>K�vin Yauy</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>cgtgctagaggggcggtgcttctctatcactgatagggactttcactcttctctatcactgatagggatgatcaacgttc
+tctatcactgatagggatccccactcttgctagagtggtctcacctctctatcactgacagggacctctcttcctctcta
+tcactgatagggacccttccctctctctatcactgatagggaccccacccactgctagagtttggctccgtctctatcac
+tgatagggatctttcgtcatctctatcactgatagggagcctcgcctttctctatcactgatagggataatatgcattgc
+tagagcacctgcgtttctctatcactgatagggaaccgcgactctctctatcactgatagggatcgtccccagtctctat
+cactgatagggactgcctccgctgctagagacccccttgctctctatcacagatagggatttcgtgttctctctatcact
+gatagggaccgctcaccttctctataactgatagggaacccgggccttgctagagccacttcttctcctttcactgatag
+ggaggcgctgcattctccgtgctgtctctatcactgatagggatcccggcctttgctagagttggtatatctctctatca
+ctgatagggacttctattcttctctatcactgatagggatggttccgcttctctatcactgatagggacaactgcttctg
+ctagagcttcttgcggtctctatcactgatagggagatgcacagctctctatcactgatagggacgaccttgggtctcta
+tcactgatagggacctgtcattctgctagagctccctgcattctctatcactgatagggacagcgctgagtctctatcac
+tgatagggatctcaccttttctctatcactgatagggattgatcttcttgctagaggacccgtgtttctctatcactgat
+agggacctctgattctctctatcactgatagggaggctcggggttctctatcactgatagggacttgtcacgatgctaga
+gtcgggacctgtctctatcactgatagggacccctgcctctctctatcactgatagggtctgcgtgctctctatcactga
+tagggataccatgacgtgctagagccctgcgcgctctctatcactgatagggatccatgctcttctctatcactgatagg
+gattacgatccctctctatcactgatagggaccagggtttgtgctagagtgctgtagcgtctctatcactgatagggatt
+ttcctgtctctctatcactgatagggaatctcccccctctctatcactgatagggagcttctgctatgctagagtttaga
+cccatctctatcactgatagggaacgatcgatttctctatcactgatagggacttccttgcctctctatcactgataggg
+agcccgcggagtgctagaggcaccccctctctctatcactgatagggagcgtgacggctctctatcactgatagggacct
+atattctctctatcactgataaggaccctcccagtgctagagttcctttttctctctatcactgatagggatggccccta
+ctctctatcactgatagggagcccgtccgctctctatcactgatagggagcctcatgcttgctagagattgtctgtatct
+ctatcactgatagggagtgttacgcctctctatcactgatagggatggcctgtgttctctatcactgatagggatccatc
+ccactgctagagcgatgtcccctctctaccactgatagggactcatatcgtctctatcactgatagggacttatctcgtc
+tctatcactcatagggattcccctcgatgctagaggcgcccacactctctatcactgatagggaacgtgaatgttctcta
+tcactgatagggaaattctttagtctctatcactgatagggatccgcacttctgctagagttcaaacgtgtctctatcac
+tgatagggaccgtgatgcgtctctatcactgatagggagtcttaactctctctatcactgatagggactctcccgtttgc
+tagagccctctgagatctctatcactgatagggagctctgtagctctctatcactgatagggattttcccgcttctctat
+cactgatagggagcactttacgtgctagagtcctgcgtgctctctatcactgatagggagcccctctcctctctatcact
+gatagggaacccgtattttctctatcaagggagcccattgactgctagagatttcgtccttctctatcactgagtcgctt
+ttctctctatcactgatagggaagtcctttcttctctatcactgatagggagtaaacctctgctagagcatgtttgcctc
+tctatcactgatagggaacgctggctttctctatcactgatagggattcacgcacctctctatcactgatagggaggttc
+gcttttgctagagcctctatgtatctctatcactgataggaggccctcccgtctctatcactgatagggatattcaccga
+tctctatcactgatagggatccttacgcgtgctagagctgccctgtctctctatcactgatagggacttgcgctctctct
+atcactgttaggtatgctttcttgtctctatcactgataggaactcttagtctgctagagttccgatcgctctctatcac
+tgatagggatccatccttttctctatcactgatagggacctccccttctctctatcactgatagggatggacctgcttgc
+tagagctggacctcgtctctatcactgatagggatgcgccccactctctatcactgatagggatcctctcctttctctat
+cactgatagggaatcgcttcgctgctagagtccaacgctttctctatcactgatagggatgtatccccctctctatcact
+gatagggagtgcctctgatctctatcactgatagggactcctctctttgctagagccgctcctcactgatagggagtcat
+tcgcctctctatcactgatagggacttttcagcttctctaccactgatagggaacttttccggtgctagagttgaatcca
+tctctatcactatagggatcatgctttggctctatcactgatagggatacttattcttctctatcactgatagggacgac
+ttaccctgctagagactctatttttctctatcactgatagggactgataaccctctctatcactgatagggagctcctca
+cctctctatcactgatagggacttgattttctgctagagcatgccattttctctatcactgatagggatttgcccagttc
+tctatactgatagggactggctatcctctctatcactgatagggacctgtatcgttgctagagtgagtccccttctctat
+cactgatagggattctcctcgctctctatcactgatagggacctccccctatctctatcactgatagggacgtaccccct
+tgctagagctcttctccctctctatcactgatagggattcctctctatctctatcactgatagggatactacatactctc
+tatcactgatagggacccccaactctgt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2124086</id>
+<title>tetO array</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3628</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>receiver</name>
+<value>YFP-TetR binding</value>
+<units></units>
+<url></url>
+<id>13212</id>
+<m_date>2011-09-22 10:19:04</m_date>
+<user_id>8998</user_id>
+<user_name>cyrpaut</user_name></parameter>
+<parameter>
+<name>negative_regulators</name>
+<value>TetR</value>
+<units></units>
+<url></url>
+<id>13211</id>
+<m_date>2011-09-22 10:18:45</m_date>
+<user_id>8998</user_id>
+<user_name>cyrpaut</user_name></parameter>
+<parameter>
+<name>negative_regulators</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>13210</id>
+<m_date>2011-09-22 10:18:25</m_date>
+<user_id>8998</user_id>
+<user_name>cyrpaut</user_name></parameter>
+<parameter>
+<name>receiver</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>13209</id>
+<m_date>2011-09-22 10:17:41</m_date>
+<user_id>8998</user_id>
+<user_name>cyrpaut</user_name></parameter></parameters>
+<categories>
+<category>//dna/bioscaffold</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

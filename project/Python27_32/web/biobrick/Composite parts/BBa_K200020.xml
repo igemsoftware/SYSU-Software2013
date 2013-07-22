@@ -1,0 +1,116 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15919</part_id>
+<part_name>BBa_K200020</part_name>
+<part_short_name>K200020</part_short_name>
+<part_short_desc>pCstA+RBS</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K200020</part_url>
+<part_entered>2009-10-15</part_entered>
+<part_author>Royah Vaezi</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>11604</part_id>
+<part_name>BBa_K118011</part_name>
+<part_short_desc>PcstA (glucose-repressible promoter)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11604</part_id>
+<part_name>BBa_K118011</part_name>
+<part_short_desc>PcstA (glucose-repressible promoter)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11604</part_id>
+<part_name>BBa_K118011</part_name>
+<part_short_desc>PcstA (glucose-repressible promoter)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>actcggttaacggagtgatcgagttaacattgttaagttaaatattggtttcaactccgatttacatggttgctgtgttg
+ttaaattgtacaaagatgttatagaaacaaaatgtaacatctctatggacatactagagaaagaggagaaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2041365</id>
+<title>cAMP receptor protein binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>42</endpos></feature>
+<feature>
+<id>2041367</id>
+<title>BBa_K118011</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>131</endpos></feature>
+<feature>
+<id>2041366</id>
+<title>RNA polymerase binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>101</startpos>
+<endpos>131</endpos></feature>
+<feature>
+<id>2041369</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>140</startpos>
+<endpos>151</endpos></feature>
+<feature>
+<id>2041368</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>144</startpos>
+<endpos>147</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

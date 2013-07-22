@@ -1,0 +1,93 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20453</part_id>
+<part_name>BBa_K497006</part_name>
+<part_short_name>K497006</part_short_name>
+<part_short_desc>Synechocystis heme oxygenase 1 with Agrobacterium tumefaciens bacteriophytochrome &amp; RBS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K497006</part_url>
+<part_entered>2010-10-24</part_entered>
+<part_author>Joanna Hare</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgagtgtcaacttagcttcccagttgcgggaagggacgaaaaaatcccactccatggcggagaacgtcggctttgtcaa
+atgcttcctcaagggcgttgtcgagaaaaattcctaccgtaagctggttggcaatctctactttgtctacagtgccatgg
+aagaggaaatggcaaaatttaaggaccatcccatcctcagccacatttacttccccgaactcaaccgcaaacaaagccta
+gagcaagacctgcaattctattacggctccaactggcggcaagaagtgaaaatttctgccgctggccaagcctatgtgga
+ccgagtccggcaagtggccgctacggcccctgaattgttggtggcccattcctacacccgttacctgggggatctttccg
+gcggtcaaattctcaagaaaattgcccaaaatgccatgaatctccacgatggtggcacagctttctatgaatttgccgac
+attgatgacgaaaaggcttttaaaaatacctaccgtcaagctatgaatgatctgcccattgaccaagccaccgccgaacg
+gattgtggatgaagccaatgacgcctttgccatgaacatgaaaatgttcaacgaacttgaaggcaacctgatcaaggcga
+tcggcattatggtgttcaacagcctcacccgtcgccgcagtcaaggcagcaccgaagttggcctcgccacctccgaaggc
+tagaggagggctgctatgagttcacatacgccgaaactggatagttgcggcgcagagcccatccacattcccggtgctat
+tcaggaacatggagcccttctggttctgtccgcgcgggaattttccgtggtgcaggcgagcgataatctcgccaactata
+ttggtgtggacctgccaatcggggccgttgccaccgaagcaaacttgccgttcatctccgtactgtccgcctggtattcc
+ggcgaggagagcaatttccgatatgcctgggccgaaaagaaactcgatgtttcggcgcatcgatccgggaccttggttat
+tcttgaggtggaaaaggcaggagtgggcgaatccgctgaaaagctgatgggcgaactcaccagtctggcgaaatatctga
+acagcgcgccgtcgctggaggacgcgctttttcggacggcgcaactggtgtcctcgatcagcggtcatgaccgtaccctg
+atctatgatttcggactggactggagcggccatgtcgtggcggaagcgggaagcggggctttgccgtcttatctcggcct
+tcgctttccggcgggcgacatcccgccgcaggcgcggcagctctataccatcaatcgcctgcggatgattcccgatgtcg
+attataagcccgtgccgatcagaccggaggtgaatgcggaaacgggagcggtgctcgatatgagcttttcacagcttcgc
+agcgtatcgccggttcatctcgaatatatgcgcaatatgggcactgccgcttcgatgtcggtgtccatcgtcgtcaatgg
+cgctctctggggcttgattgcctgccaccacgcgacaccgcattcggtatcccttgccgtacgtgaagcctgtgattttg
+cagcgcagctcctgtcgatgcggatcgcgatggagcagagttcccaggatgcatcccgccgggtggagcttggccacatt
+caggcgcggctcttgaaaggcatggccgccgccgaaaaatgggttgatggcctgctgggaggcgaaggtgaaagagaaga
+cctgctgaaacaggtgggcgcggatggcgcagcacttgtcctgggcgacgactatgagctggtcggcaacacgccctcac
+gcgagcaggttgaagaattgattctgtggcttggcgagcgggagatcgccgatgtcttcgcgaccgacaatcttgccggc
+aactaccccaccgccgcggcttatgcttccgttgcgagcggcattatcgcgatgcgggtttcggagttgcacggcagctg
+gctcatctggtttcggccggaagtcataaaaacggtgcgctggggcggcgatccgcacaagacggtgcaggagagcgggc
+gcattcatccgcgcaagtcctttgaaatctggaaggaacaattgcgcaacacctcctttccctggtcagagcccgaactt
+gcggcagcgagggagcttcgcggcgcgatcatcggcattgtcctgcgcaagaccgaggaaatggcggatctgacacggga
+gttgcagcgcaccaataaggagctggaggctttttcctattccgtttcgcatgacctgcgcgcgccgttccgtcatattg
+tcgggtttgcgcagttgttgcgggagcgcagcgatgccctggacgagaagtccctgcattatctgcagatgatatcagag
+gcggcgctgggtgccggcaggttggtggatgatctcctgaatttttcacagcttggccgaacgcaactcaccctgaaacc
+ggtggatatgcagaaggtggtgagcgaagttcgccgctctctttcacacgcggtttccgatcgccagatcgagtggcgca
+tcggagcgttgccggtgatattcggggatccgaccctgctgcggcaggtctggtacaatctcattgaaaacgccatcaaa
+tattcgtcccgggagccggtgtcgatcatcaccatttctgcggttgaaaccgaggatgacgtcacttattcggtcgaaga
+caatggtgtcggctttgacatggcctattacaacaaactttttggcgtgtttcagaggctgcagcgggtggaggatttcg
+agggaactggcattggacttgcgctggtgcgacgaattgtcgaacgccatcacggtttggttggtgccgagggaactgtc
+ggtgagggagccacgttctccttcacattgccggttacgaaagttgaagaggaaaaaattgcctga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2093882</id>
+<title>heme oxygenase 1</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>723</endpos></feature>
+<feature>
+<id>2093883</id>
+<title>ribosome binding site</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>724</startpos>
+<endpos>730</endpos></feature>
+<feature>
+<id>2093884</id>
+<title>bacteriophytochrome</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>731</startpos>
+<endpos>2946</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

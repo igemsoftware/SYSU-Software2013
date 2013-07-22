@@ -1,0 +1,137 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>24167</part_id>
+<part_name>BBa_K567025</part_name>
+<part_short_name>K567025</part_short_name>
+<part_short_desc>PT7-Luc-8AGG-tRNA(Arg)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K567025</part_url>
+<part_entered>2011-10-28</part_entered>
+<part_author>You Wang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ttaatacgactcactataggggaattgtgagcggataacaattcccctctagaaataattttgtttaactttaagaagga
+gatataccatggcgaggaggaggaggaggaggaggagggcggcggaagacgccaaaaacataaagaaaggcccggcgcca
+ttctatccgctggaagatggaaccgctggagagcaactgcataaggctatgaagagatacgccctggttcctggaacaat
+tgcttttacagatgcacatatcgaggtggacatcacttacgctgagtacttcgaaatgtccgttcggttggcagaagcta
+tgaaacgatatgggctgaatacaaatcacagaatcgtcgtatgcagtgaaaactctcttcaattctttatgccggtgttg
+ggcgcgttatttatcggagttgcagttgcgcccgcgaacgacatttataatgaacgtgaattgctcaacagtatgggcat
+ttcgcagcctaccgtggtgttcgtttccaaaaaggggttgcaaaaaattttgaacgtgcaaaaaaagctcccaatcatcc
+aaaaaattattatcatggattctaaaacggattaccagggatttcagtcgatgtacacgttcgtcacatctcatctacct
+cccggttttaatgaatacgattttgtgccagagtccttcgatagggacaagacaattgcactgatcatgaactcctctgg
+atctactggtctgcctaaaggtgtcgctctgcctcatagaactgcctgcgtgagattctcgcatgccagagatcctattt
+ttggcaatcaaatcattccggatactgcgattttaagtgttgttccattccatcacggttttggaatgtttactacactc
+ggatatttgatatgtggatttcgagtcgtcttaatgtatagatttgaagaagagctgtttctgaggagccttcaggatta
+caagattcaaagtgcgctgctggtgccaaccctattctccttcttcgccaaaagcactctgattgacaaatacgatttat
+ctaatttacacgaaattgcttctggtggcgctcccctctctaaggaagtcggggaagcggttgccaagaggttccatctg
+ccaggtatcaggcaaggatatgggctcactgagactacatcagctattctgattacacccgagggggatgataaaccggg
+cgcggtcggtaaagttgttccattttttgaagcgaaggttgtggatctggataccgggaaaacgctgggcgttaatcaaa
+gaggcgaactgtgtgtgagaggtcctatgattatgtccggttatgtaaacaatccggaagcgaccaacgccttgattgac
+aaggatggatggctacattctggagacatagcttactgggacgaagacgaacacttcttcatcgttgaccgcctgaagtc
+tctgattaagtacaaaggctatcaggtggctcccgctgaattggaatccatcttgctccaacaccccaacatcttcgacg
+caggtgtcgcaggtcttcccgacgatgacgccggtgaacttcccgccgccgttgttgttttggagcacggaaagacgatg
+acggaaaaagagatcgtggattacgtcgccagtcaagtaacaaccgcgaaaaagttgcgcggaggagttgtgtttgtgga
+cgaagtaccgaaaggtcttaccggaaaactcgacgcaagaaaaatcagagagatcctcataaaggccaagaagggcggaa
+agatcgccgtgtaacatatggaaaaattataaaaacccggcataaatggcgagggtttaagcaatcgagcggcagcgtac
+ttaccccgcactccattagcgggtatactcatgccgcattgtcctcttagttaaatggatataacgagcccctcctaagg
+gctaattgcaggttcgattcctgcaggggacaccatttatcagttcgctcccatccgtaccagtccgcaaaatcccctga
+atatcaagcattccgtagatttacagttcgtcatggttcgcttcagatcgttgac
+</seq_data></sequences>
+<features>
+<feature>
+<id>2161093</id>
+<title>PT7</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2</startpos>
+<endpos>18</endpos></feature>
+<feature>
+<id>2161094</id>
+<title>lac operator</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>2161095</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>75</startpos>
+<endpos>81</endpos></feature>
+<feature>
+<id>2161096</id>
+<title>ATG</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>91</endpos></feature>
+<feature>
+<id>2161097</id>
+<title>luciferase</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>1774</endpos></feature>
+<feature>
+<id>2161098</id>
+<title>8AGG</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>95</startpos>
+<endpos>118</endpos></feature>
+<feature>
+<id>2161099</id>
+<title>tRNA(Arg)</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1881</startpos>
+<endpos>1955</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>PT7-Luc-8AGG-tRNA(Arg)</value>
+<units></units>
+<url></url>
+<id>15672</id>
+<m_date>2011-10-28 22:23:59</m_date>
+<user_id>8478</user_id>
+<user_name>Alfred</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>PT7-Luc-8AGG-tRNA(Arg)</value>
+<units></units>
+<url></url>
+<id>15673</id>
+<m_date>2011-10-28 22:23:59</m_date>
+<user_id>8478</user_id>
+<user_name>Alfred</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>PT7-Luc-8AGG-tRNA(Arg)</value>
+<units></units>
+<url></url>
+<id>15671</id>
+<m_date>2011-10-28 22:23:58</m_date>
+<user_id>8478</user_id>
+<user_name>Alfred</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>21182</part_id>
+<part_name>BBa_K410000</part_name>
+<part_short_name>K410000</part_short_name>
+<part_short_desc>Periplasmic Heat Generation </part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K410000</part_url>
+<part_entered>2010-10-27</part_entered>
+<part_author>Christina Graves, Scott Holmes</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>cgccgctatggactggataaagagatggtaatggatttctttcgtgagaataattcctgttctacgttgcgcttttttat
+ggccggttatcgcctcgaaaattgatcaaacatacgtattatcttgctttaattaattacactaatgcttcttcccttcg
+ttttagcgccccgccgcagtatcatgatatcgataaccataataaatgtgtggtaaatggcgcatcgatcgcattattga
+ttttgcgattgaggcaaaatatatgccaggtcttcgcaacggaataactataaatgactggagataacaccctcatccat
+tctcacggcattaaccgtcgtgatttcatgaagctttgtgcagcattagccgccaccatggggttaagtagcagcggccg
+caggagatatcatatgaaaaagacagctatcgcgattgcagtggcactggctggtttcgctaccgttgcgcaagctcccg
+ggatgatgaacagcaaactggcagctctgctgctgaaacaactgggttctgctaccgttcgtaccgtgacaatgggtcct
+ctgaatgggattaccactgagtcctcgtgctttctgcatgcatctggtccggtcgttccaggtcgccgtacttggattcg
+cttttcttgtctgggagtccgtaatggttctaccagtgccctgaataacaaagagaaagaggagaaaggcgtccgtacaa
+gttctactgttggtggcgccaatcgccctgaggataaaatgatcgtgtcctattggggtatgcctccggcaaatctgact
+aaaaaagacggctccgagtggaaatggaactcattccgtccatgggaaacctataaagccgatctgtcgatcgatctgaa
+aaaacaccatagcccggtgacgtttatggataaactggcctattggaccgttaaagccctgcgctatccgactgatattc
+tgttccaaaaccgttatggctgtcgtgccatgatgctggagactgtggcggcagtaccagggatggttggggggatgctg
+ctgcacctgaaatctctgcgtcgcttcgaacattctggtgggtggatcaaaacactgctggaagaagccgaaaacgagcg
+tatgcacctgatgaccttcatggaagtgtctcagccaaaatggtatgaacgtgccctggttgtagcagttcagggtgtgt
+tcttcaacacgtattttctgggttatctgatcagccctcgcttcgctcatcgtgtggttggatatctggaggaggaagca
+attcactcctataccgagtttctgaaagaactggacaaaggcaacatccagaacgtcccagcaccagcaattgccgtgga
+ttattggcaactgccaccggattctacgctgcgtgatgtggtgatggtcgtccgtgctgatgaagcacatcatcgtgacg
+tgaaccactttgccagcgacattcacgaccaaggctatgagctgaaagagtctcctgctcctctgggatatcattaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2111504</id>
+<title>HybB Cold Shock Promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>393</endpos></feature>
+<feature>
+<id>2111710</id>
+<title>NotI Site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>394</startpos>
+<endpos>401</endpos></feature>
+<feature>
+<id>2111580</id>
+<title>Ribosome Binding Site</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>402</startpos>
+<endpos>407</endpos></feature>
+<feature>
+<id>2111563</id>
+<title>OmpA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>414</startpos>
+<endpos>476</endpos></feature>
+<feature>
+<id>2111736</id>
+<title>XmaI Site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>477</startpos>
+<endpos>482</endpos></feature>
+<feature>
+<id>2111604</id>
+<title>AoxA (Alternative Oxidase)</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>483</startpos>
+<endpos>1517</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

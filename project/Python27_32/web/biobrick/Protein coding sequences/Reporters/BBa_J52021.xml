@@ -1,0 +1,86 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7519</part_id>
+<part_name>BBa_J52021</part_name>
+<part_short_name>J52021</part_short_name>
+<part_short_desc>dnTraf6-linker-GFP</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J52021</part_url>
+<part_entered>2006-10-14</part_entered>
+<part_author>Matej Skocaj</part_author>
+<best_quality>Partially Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggggtatatctcagaggtccggaatttccaggaaactattcaccagttagagggtcgccttgtaagacaagaccatca
+aatccgggagctgactgctaaaatggaaactcagagtatgtatgtaagtgagctcaaacgaaccattcgaacccttgagg
+acaaagttgctgaaatcgaagcacagcagtgcaatggaatttatatttggaagattggcaactttggaatgcatttgaaa
+tgtcaagaagaggagaaacctgttgtgattcatagccctggattctacactggcaaacccgggtacaaactgtgcatgcg
+cttgcaccttcagttaccgactgctcagcgctgtgcaaactatatatccctttttgtccacacaatgcaaggagaatatg
+acagccacctcccttggcccttccagggtacaatacgccttacaattcttgatcagtctgaagcacctgtaaggcaaaac
+cacgaagagataatggatgccaaaccagagctgcttgctttccagcgacccacaatcccacggaacccaaaaggttttgg
+ctatgtaacttttatgcatctggaagccctaagacaaagaactttcattaaggatgacacattattagtgcgctgtgagg
+tctccacccgctttgacatgggtagccttcggagggagggttttcagccacgaagtactgatgcaggggtaggtggttct
+ggtggtactgtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggcgacgtaaacgg
+ccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcatctgcaccaccg
+gcaagctgcccgtgccctggcccaccctcgtgaccaccctgacctggggcgtgcagtgcttcgcccgctaccccgaccac
+atgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacgg
+caactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttca
+aggaggacggcaacatcctggggcacaagctggagtacaacgccatcagcgacaacgtctatatcaccgccgacaagcag
+aagaacggcatcaaggccaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccgaccactaccagca
+gaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagcacccagtccaagctgagcaaagacc
+ccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcatggacgagctgtac
+aagtaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1903259</id>
+<title>dnTraf6</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>714</endpos></feature>
+<feature>
+<id>1903262</id>
+<title>dnTraf6-linker-GFP</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1446</endpos></feature>
+<feature>
+<id>1903260</id>
+<title>linker</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>715</startpos>
+<endpos>732</endpos></feature>
+<feature>
+<id>1903261</id>
+<title>GFP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>733</startpos>
+<endpos>1446</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//chassis/eukaryote/human</category>
+<category>//function/immunology</category>
+<category>//function/reporter</category>
+<category>//function/reporter/fluorescence</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

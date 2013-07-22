@@ -1,0 +1,73 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11534</part_id>
+<part_name>BBa_K125501</part_name>
+<part_short_name>K125501</part_short_name>
+<part_short_desc>phaA BioPlastic polyhydroxybutyrate synthesis pathway (origin PCC6803 slr1994)</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K125501</part_url>
+<part_entered>2008-08-10</part_entered>
+<part_author>Norman Wang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggccgcccatcccaacccatggcattggaaaacaattatgcgtgatgtttttattgttgccgctaaacgaactcccct
+gggacgttttggtggctccctgaccaatttttcggcggcggatttgggagcccatgtgatgaaaagcgtcctagcccagg
+ccggggtggggggagaccagcttgacctgtacattatgggcaacgtgttaagggctggccatgggcaattgattccccgg
+caagcggccttgaaggcggagattcccgatacggtggacggttatgcagtggatatggtctgctcttccgccatgatgag
+tgtgattaatgcagctttaaccatccgggctggggagggggatttaattttagctggagggacggaatccatgtcccaaa
+ctggtttttacctttcccaccgggcccgctggggctacaagttcctcatgggagcaccggaaaatttaaccgatctcctg
+ctccatgatggtttgacggacagcaccaatggggagggcatgggggaacagacggaaaaattggccgcagagcatggttt
+cagccggatagaattggacgaagtggcctgcttatcgcaacaaagggcggcccacgccacggaatctggttattttgact
+cagaaattgccccgattgaaatcaccagtcggaaaggaacccaggtgttagccagtgatgaaggtattcgcagtgacacc
+accgtggaaagtctaggcaaattgcgctcggcctttgccaaggacggagtgttaacagcgggcaactgtagtcagattac
+cgatggggcggcagctttgctcctggccagtggggaagcggtggaaaaatatcaactcaaacccttggcaaaaattttgg
+gaggcagttgggcggcgggtactcccagtcgttttcctgagttgcctattaccgctagccagaaactgttagcaaagcta
+gataaaaccctggcagattttgacttgtttgaaaataatgaagccttctccgtcagcaatcttttatttgagcggcggtt
+gggggtggatcgggacaagttgaatgtgaacggtggggcgatcgccctggggcatcccattggagcgtcgggggccagga
+tcatggttaccctactctatgccttgcaacaacgggataaaactctggggttagcagccctttgccatggcacggggggc
+ggtacggcgatcgccttagagcgggtgtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1971707</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>1971705</id>
+<title>mt tGa to tAa</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1228</startpos>
+<endpos>1230</endpos></feature>
+<feature>
+<id>1971706</id>
+<title>inserted second stop</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1231</startpos>
+<endpos>1233</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/biosynthesis/plastic</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

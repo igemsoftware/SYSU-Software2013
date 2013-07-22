@@ -1,0 +1,101 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22094</part_id>
+<part_name>BBa_K678034</part_name>
+<part_short_name>K678034</part_short_name>
+<part_short_desc>mRFP1-NLS, targeted to the nucleus</part_short_desc>
+<part_type>Reporter</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>mRFP1-NLS</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K678034</part_url>
+<part_entered>2011-09-10</part_entered>
+<part_author>DTU-Denmark-2</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>agtgcgatatggcctcctccgaggacgtcatcaaggagttcatgcgcttcaaggtgcgcatggagggctccgtgaacggc
+cacgagttcgagatcgagggcgagggcgagggccgcccctacgagggcacccagaccgccaagctgaaggtgaccaaggg
+cggccccctgcccttcgcctgggacatcctgtcccctcagttccagtacggctccaaggcctacgtgaagcaccccgccg
+acatccccgactacttgaagctgtccttccccgagggcttcaagtgggagcgcgtgatgaacttcgaggacggcggcgtg
+gtgaccgtgacccaggactcctccctgcaggacggcgagttcatctacaaggtgaagctgcgcggcaccaacttcccctc
+cgacggccccgtaatgcagaagaagaccatgggctgggaggcctccaccgagcggatgtaccccgaggacggcgccctga
+agggcgagatcaagatgaggctgaagctgaaggacggcggccactacgacgccgaggtcaagaccacctacatggccaag
+aagcccgtgcagctgcccggcgcctacaagaccgacatcaagctggacatcacctcccacaacgaggactacaccatcgt
+ggaacagtacgagcgcgccgagggccgccactccaccggcgcccccaagaaaaagcgcaaggtctaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2126904</id>
+<title>Linker 2</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>2126906</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>9</startpos>
+<endpos>11</endpos></feature>
+<feature>
+<id>2127400</id>
+<title>RFP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>9</startpos>
+<endpos>683</endpos></feature>
+<feature>
+<id>2126903</id>
+<title>NLS</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>684</startpos>
+<endpos>704</endpos></feature>
+<feature>
+<id>2126905</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>705</startpos>
+<endpos>707</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>chassis</name>
+<value>Aspergillus nidulans</value>
+<units></units>
+<url></url>
+<id>12373</id>
+<m_date>2011-09-10 05:19:16</m_date>
+<user_id>8341</user_id>
+<user_name>Jaide</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12372</id>
+<m_date>2011-09-10 05:18:58</m_date>
+<user_id>8341</user_id>
+<user_name>Jaide</user_name></parameter></parameters>
+<categories>
+<category>//chassis/eukaryote</category>
+<category>//direction/forward</category>
+<category>//function/reporter/fluorescence</category>
+<category>//proteindomain/localization</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

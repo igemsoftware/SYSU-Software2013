@@ -1,0 +1,188 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11215</part_id>
+<part_name>BBa_K077001</part_name>
+<part_short_name>K077001</part_short_name>
+<part_short_desc>cI (lambda) promoter with normal RBS and AiiA </part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K077001</part_url>
+<part_entered>2008-07-15</part_entered>
+<part_author>Floor Hugenholtz</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>196</part_id>
+<part_name>BBa_R1051</part_name>
+<part_short_desc>Promoter, Standard (lambda cI regulated)&lt;br&gt;</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>159</part_id>
+<part_name>BBa_C0060</part_name>
+<part_short_desc>autoinducer inactivation enzyme from Bacillus; hydrolyzes acetyl homoserine lactone</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>aiiA</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>196</part_id>
+<part_name>BBa_R1051</part_name>
+<part_short_desc>Promoter, Standard (lambda cI regulated)&lt;br&gt;</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<subpart>
+<part_id>5226</part_id>
+<part_name>BBa_C0260</part_name>
+<part_short_desc>autoinducer inactivation enzyme, AaiiA (+RBS)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>196</part_id>
+<part_name>BBa_R1051</part_name>
+<part_short_desc>Promoter, Standard (lambda cI regulated)&lt;br&gt;</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>cI lam</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5226</part_id>
+<part_name>BBa_C0260</part_name>
+<part_short_desc>autoinducer inactivation enzyme, AaiiA (+RBS)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>taacaccgtgcgtgttgacaattttacctctggcggtgatactggttgctactagagaaagaggagaaatactagatgac
+agtaaagaagctttatttcgtcccagcaggtcgttgtatgttggatcattcgtctgttaatagtacattaacaccaggag
+aattattagacttaccggtttggtgttatcttttggagactgaagaaggacctattttagtagatacaggtatgccagaa
+agtgcagttaataatgaaggtctttttaacggtacatttgtcgaagggcaggttttaccgaaaatgactgaagaagatag
+aatcgtgaatattttaaaacgggttggttatgagccggaagaccttctttatattattagttctcacttgcattttgatc
+atgcaggaggaaatggcgcttttataaatacaccaatcattgtacagcgtgctgaatatgaggcggcgcagcatagcgaa
+gaatatttgaaagaatgtatattgccgaatttaaactacaaaatcattgaaggtgattatgaagtcgtaccaggagttca
+attattgcatacaccaggccatactccagggcatcaatcgctattaattgagacagaaaaatccggtcctgtattattaa
+cgattgatgcatcgtatacgaaagagaattttgaaaatgaagtgccatttgcgggatttgattcagaattagctttatct
+tcaattaaacgtttaaaagaagtggtgatgaaagagaagccgattgttttctttggacatgatatagagcaggaaagggg
+atgtaaagtgttccctgaatatatagctgcaaacgacgaaaactacgctttagtagcttaataacgctgatagtgctagt
+gtagatcgc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1966717</id>
+<title>OR2</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>17</endpos></feature>
+<feature>
+<id>1966718</id>
+<title>BBa_R1051</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>49</endpos></feature>
+<feature>
+<id>1966719</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>15</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>1966720</id>
+<title>OR1</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>25</startpos>
+<endpos>41</endpos></feature>
+<feature>
+<id>1966721</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>38</startpos>
+<endpos>43</endpos></feature>
+<feature>
+<id>1966723</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>58</startpos>
+<endpos>69</endpos></feature>
+<feature>
+<id>1966722</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>62</startpos>
+<endpos>65</endpos></feature>
+<feature>
+<id>1966724</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>78</endpos></feature>
+<feature>
+<id>1966725</id>
+<title>aiiA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>825</endpos></feature>
+<feature>
+<id>1966726</id>
+<title>BBa_C0060</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>864</endpos></feature>
+<feature>
+<id>1966727</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>826</startpos>
+<endpos>858</endpos></feature>
+<feature>
+<id>1966728</id>
+<title>2</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>859</startpos>
+<endpos>864</endpos></feature>
+<feature>
+<id>1966729</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>865</startpos>
+<endpos>889</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

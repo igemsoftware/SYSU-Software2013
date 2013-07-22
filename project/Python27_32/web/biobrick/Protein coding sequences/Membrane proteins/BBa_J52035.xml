@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7531</part_id>
+<part_name>BBa_J52035</part_name>
+<part_short_name>J52035</part_short_name>
+<part_short_desc>dnMyD88</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J52035</part_url>
+<part_entered>2006-10-15</part_entered>
+<part_author>Ota Fekonja</part_author>
+<best_quality>Partially Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggcacgtttcgatgccttcatctgctattgccccagcgacatccagtttgtgcaggagatgatccggcaactggaaca
+gacaaactatcgactgaagttgtgtgtgtctgaccgcgatgtcctgcctggcacctgtgtctggtctattgctagtgagc
+tcatcgaaaagaggtgccgccggatggtggtggttgtctctgatgattacctccagagcaaggaatgtgacttccagacc
+aaatttgcactcagcctctctccaggtgcccatcagaagcgactgatccccatcaagtacaaggcaatgaagaaagagtt
+ccccagcatcctgaggttcatcactgtctgcgactacaccaacccctgcaccaaatcttggttctggactcgccttgcca
+aggccttgtccctgccctga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2114917</id>
+<title>dnMyD88</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>420</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//igem2006/slovenia/favorite</category>
+<category>//cds/membrane/receptor</category>
+<category>//function/immunology</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

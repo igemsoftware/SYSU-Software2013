@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12742</part_id>
+<part_name>BBa_K157015</part_name>
+<part_short_name>K157015</part_short_name>
+<part_short_desc>Tm-nYFP</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>Tm-nYFP</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K157015</part_url>
+<part_entered>2008-10-26</part_entered>
+<part_author>iGEM Team Freiburg 2008</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggccggcatagctaccggaatggtgggtgcacttttgctccttttggtcgttgccctggggataggactctttatgac
+cggcatggtgtccaagggcgaggaactgttcaccggcgtggtgcccatcctggtggagctggacggcgacgtgaacggcc
+acaagttcagcgtgtccggcgagggcgaaggcgacgccacctacggcaagctgaccctgaagctgatctgcaccaccggc
+aagctgcccgtgccctggcccaccctggtgaccaccctgtacctccagtgcttcgccagataccccgaccacatgaagca
+gcacgatttcttcaagagcgccatgcccgagggctacgtgcaggaacggaccatcttcttcaaggacgacggcaactaca
+agaccagagccgaagtgaagttcgagggcgacacactggtgaaccggatcgagctgaagggcatcgacttcaaagaggac
+ggcaatatcctgggccacaagctggaatacaactacaacagccacaacgtgtacatcaccgccgacaagcagaccggtta
+a
+</seq_data></sequences>
+<features>
+<feature>
+<id>1989844</id>
+<title>Tm-nYFP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>558</endpos></feature>
+<feature>
+<id>1989841</id>
+<title>NgoMI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>9</endpos></feature>
+<feature>
+<id>1991277</id>
+<title>Tm </title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>10</startpos>
+<endpos>78</endpos></feature>
+<feature>
+<id>1991278</id>
+<title>Scar (Thr, Gly)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>79</startpos>
+<endpos>84</endpos></feature>
+<feature>
+<id>1991279</id>
+<title>N-Term_YFP</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>84</startpos>
+<endpos>552</endpos></feature>
+<feature>
+<id>1989842</id>
+<title>AgeI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>553</startpos>
+<endpos>558</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/reporter/fluorescence</category>
+<category>//proteindomain/internal</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -38,5 +38,8 @@ def changeADictToStringThatCanUseBySql(dict={}):
             toReturn+=command[item]
     return toReturn
 
-   
+def turnStringDoubleQuoteToSingleQuote(oldStr):
+	return oldStr.replace("\"", "\'")
+
+
                 

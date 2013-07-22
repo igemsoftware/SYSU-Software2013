@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>9644</part_id>
+<part_name>BBa_I732412</part_name>
+<part_short_name>I732412</part_short_name>
+<part_short_desc>Promoter Family Member (U097NUL+D062O22)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname>U097NUL+D0</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I732412</part_url>
+<part_entered>2007-09-23</part_entered>
+<part_author>Zhan Jian</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tacccacaacccaattcgagaccggaactcgattgtatctgtagtgctttagtagtggagtttacactttatgcttccgg
+ctcgtataatgtgtggaacatcccctttatctatcgcctgtgcccactacatcaagccaaattaaacaggattaacaaat
+tgtaagcgcttacaattggatccgg
+</seq_data></sequences>
+<features>
+<feature>
+<id>1944564</id>
+<title>consensus elements</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>61</startpos>
+<endpos>137</endpos></feature>
+<feature>
+<id>1944566</id>
+<title>+1</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>137</startpos>
+<endpos>137</endpos></feature>
+<feature>
+<id>1944565</id>
+<title>O2</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>158</startpos>
+<endpos>177</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>negative_regulators</name>
+<value>2</value>
+<units></units>
+<url></url>
+<id>5649</id>
+<m_date>2008-12-09 15:47:12</m_date>
+<user_id>135</user_id>
+<user_name>bcanton</user_name></parameter>
+<parameter>
+<name>positive_regulators</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>5117</id>
+<m_date>2008-12-09 15:46:49</m_date>
+<user_id>135</user_id>
+<user_name>bcanton</user_name></parameter></parameters>
+<categories>
+<category>//rnap/prokaryote/ecoli/sigma70</category>
+<category>//direction/forward</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//promoter/logic/ustc</category>
+<category>//regulation/negative</category>
+<category>//regulation/multiple</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

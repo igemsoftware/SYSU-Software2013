@@ -197,7 +197,7 @@ function initDrawChart(){
 		shadow:false,
 		background_color:'#f4f4f4',
 		separate_angle:0,//分离角度 //Separation angle
-		tip:{
+		/*tip:{
 			enable:true,
 			showType:'fixed',
 			animation:true,
@@ -230,7 +230,7 @@ function initDrawChart(){
 					return str;
 				}
 			}
-		},
+		},*/
 		sub_option:{			
 			label : {
 				background_color:null,
@@ -419,10 +419,14 @@ function testWebSocket(){
 		};
 	}
 	ws.onopen = function() {
-		//ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
 		//ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
-		ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
+		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 	}
+}
+function setUpDrag(){
+	//bindDrag(document.getElementById('divBody')); 
+	$("#divBody").draggable({containment: "parent" });
 }
 $(function(){
 	initDrawChart();	
@@ -431,4 +435,5 @@ $(function(){
 	show('plasmid-canvas');
 	//InitAjax();
 	testWebSocket();
+	setUpDrag();
 });

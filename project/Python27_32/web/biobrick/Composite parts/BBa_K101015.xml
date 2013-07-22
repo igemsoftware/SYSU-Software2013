@@ -1,0 +1,197 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12152</part_id>
+<part_name>BBa_K101015</part_name>
+<part_short_name>K101015</part_short_name>
+<part_short_desc>Standard Promoter with RBS, GFP and terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K101015</part_url>
+<part_entered>2008-10-20</part_entered>
+<part_author>Yiannis Kaznessis</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>7155</part_id>
+<part_name>BBa_J23101</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>7155</part_id>
+<part_name>BBa_J23101</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5339</part_id>
+<part_name>BBa_E0240</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP report</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>7155</part_id>
+<part_name>BBa_J23101</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5339</part_id>
+<part_name>BBa_E0240</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP report</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tttacagctagctcagtcctaggtattatgctagctactagagtcacacaggaaagtactagatgcgtaaaggagaagaa
+cttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagaggg
+tgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacac
+ttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagt
+gccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaa
+gtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacaca
+aattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaa
+attagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgt
+ccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtcc
+ttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagccaggcatca
+aataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtc
+acactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1991144</id>
+<title>BBa_J23101</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>1991145</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>44</startpos>
+<endpos>56</endpos></feature>
+<feature>
+<id>1991146</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>44</startpos>
+<endpos>56</endpos></feature>
+<feature>
+<id>1991147</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>50</startpos>
+<endpos>53</endpos></feature>
+<feature>
+<id>1991148</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>63</startpos>
+<endpos>782</endpos></feature>
+<feature>
+<id>1991149</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>63</startpos>
+<endpos>782</endpos></feature>
+<feature>
+<id>1991150</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>791</startpos>
+<endpos>870</endpos></feature>
+<feature>
+<id>1991151</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>802</startpos>
+<endpos>845</endpos></feature>
+<feature>
+<id>1991152</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>879</startpos>
+<endpos>919</endpos></feature>
+<feature>
+<id>1991153</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>886</startpos>
+<endpos>905</endpos></feature>
+<feature>
+<id>1991154</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>906</startpos>
+<endpos>919</endpos></feature>
+<feature>
+<id>1991155</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>912</startpos>
+<endpos>912</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_I20260</twin>
+<twin>BBa_K173001</twin>
+<twin>BBa_K358001</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

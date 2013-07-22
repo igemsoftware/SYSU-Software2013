@@ -1,0 +1,208 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15153</part_id>
+<part_name>BBa_K199087</part_name>
+<part_short_name>K199087</part_short_name>
+<part_short_desc>pLac-RBS-CUAGC-RFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K199087</part_url>
+<part_entered>2009-09-25</part_entered>
+<part_author>William Vernon</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15036</part_id>
+<part_name>BBa_K199077</part_name>
+<part_short_desc>RBS RFP with CUAGC Addition</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15036</part_id>
+<part_name>BBa_K199077</part_name>
+<part_short_desc>RBS RFP with CUAGC Addition</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>15036</part_id>
+<part_name>BBa_K199077</part_name>
+<part_short_desc>RBS RFP with CUAGC Addition</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>caatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcg
+ggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactttatgcttccggctcg
+tatgttgtgtggaattgtgagcggataacaatttcacacatactagagaaagaggagaaatactagagaaagaggagaaa
+tactagatgctagcgcttcctccgaagacgttatcaaagagttcatgcgtttcaaagttcgtatggaaggttccgttaac
+ggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacgaaggtacccagaccgctaaactgaaagttaccaa
+aggtggtccgctgccgttcgcttgggacatcctgtccccgcagttccagtacggttccaaagcttacgttaaacacccgg
+ctgacatcccggactacctgaaactgtccttcccggaaggtttcaaatgggaacgtgttatgaacttcgaagacggtggt
+gttgttaccgttacccaggactcctccctgcaagacggtgagttcatctacaaagttaaactgcgtggtaccaacttccc
+gtccgacggtccggttatgcagaaaaaaaccatgggttgggaagcttccaccgaacgtatgtacccggaagacggtgctc
+tgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcactacgacgctgaagttaaaaccacctacatggct
+aaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaactggacatcacctcccacaacgaagactacaccat
+cgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgcttaataacgctgatagtgctagtgtagatcgc
+</seq_data></sequences>
+<features>
+<feature>
+<id>2046535</id>
+<title>end of LacI coding region (inactive)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>2046534</id>
+<title>BBa_R0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>2046536</id>
+<title>CAP binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>126</endpos></feature>
+<feature>
+<id>2046537</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>137</startpos>
+<endpos>142</endpos></feature>
+<feature>
+<id>2046538</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>161</startpos>
+<endpos>166</endpos></feature>
+<feature>
+<id>2046539</id>
+<title>LacI binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>166</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>2046540</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>173</startpos>
+<endpos>173</endpos></feature>
+<feature>
+<id>2046542</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>209</startpos>
+<endpos>220</endpos></feature>
+<feature>
+<id>2046541</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>213</startpos>
+<endpos>216</endpos></feature>
+<feature>
+<id>2046546</id>
+<title>BBa_K199077</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>229</startpos>
+<endpos>957</endpos></feature>
+<feature>
+<id>2046543</id>
+<title>5-bp CUAGC Addition</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>250</startpos>
+<endpos>254</endpos></feature>
+<feature>
+<id>2046544</id>
+<title>NcoI Restriction Site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>670</startpos>
+<endpos>670</endpos></feature>
+<feature>
+<id>2046545</id>
+<title>25-bp Addition</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>933</startpos>
+<endpos>957</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

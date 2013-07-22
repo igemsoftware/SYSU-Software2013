@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11982</part_id>
+<part_name>BBa_K103009</part_name>
+<part_short_name>K103009</part_short_name>
+<part_short_desc>linker fused to alpha fragment of TEM beta-lactamase</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K103009</part_url>
+<part_entered>2008-10-09</part_entered>
+<part_author>Michael Lower</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ggagctctggtggaagcggtggcggaggatctggaggaggtggttctggaggtggaggtcacccagaaacgctggtgaaa
+gtaaaagatgctgaagatcagttgggtgcacgagtgggttacatcgaactggatctcaacagcggtaagatccttgagag
+ttttcgccccgaagaacgttttccaatgatgagcacttttaaagttctgctatgtggcgcggtattatcccgtattgacg
+ccgggcaagagcaactcggtcgccgcatacactattctcagaatgacttggttgagtactcaccagtcacagaaaagcat
+cttacggatggcatgacagtaagagaattatgcagtgctgccataaccatgagtgataacactgcggccaacttacttct
+gacaacgatcggaggaccgaaggagctaaccgcttttttgcacaacatgggggatcatgtaactcgccttgatcgttggg
+aaccggagctgaatgaagccataccaaacgacgagcgtgacaccacgatgcctgtagcaatggcaacaacgttgcgcaaa
+ctattaactggcgaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1986311</id>
+<title>linker</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>59</endpos></feature>
+<feature>
+<id>1986312</id>
+<title>SacI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2</startpos>
+<endpos>7</endpos></feature>
+<feature>
+<id>1986313</id>
+<title>alpha</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>60</startpos>
+<endpos>578</endpos></feature>
+<feature>
+<id>1986314</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>576</startpos>
+<endpos>578</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>protein</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>5873</id>
+<m_date>2009-01-05 20:35:50</m_date>
+<user_id>126</user_id>
+<user_name>rshetty</user_name></parameter></parameters>
+<categories>
+<category>///igem2008/[warsaw]/favorite</category>
+<category>//cds/enzyme</category>
+<category>//function/reporter</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,102 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10365</part_id>
+<part_name>BBa_I742158</part_name>
+<part_short_name>I742158</part_short_name>
+<part_short_desc>crtZ (beta-carotene hydroxylase) with native rbs</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>rbs+crtZ</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I742158</part_url>
+<part_entered>2007-10-24</part_entered>
+<part_author>Chris French</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10362</part_id>
+<part_name>BBa_I742156</part_name>
+<part_short_desc>crtZ native rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10364</part_id>
+<part_name>BBa_I742157</part_name>
+<part_short_desc>crtZ (beta-carotene hydroxylase) coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10362</part_id>
+<part_name>BBa_I742156</part_name>
+<part_short_desc>crtZ native rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10364</part_id>
+<part_name>BBa_I742157</part_name>
+<part_short_desc>crtZ (beta-carotene hydroxylase) coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>10362</part_id>
+<part_name>BBa_I742156</part_name>
+<part_short_desc>crtZ native rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10364</part_id>
+<part_name>BBa_I742157</part_name>
+<part_short_desc>crtZ (beta-carotene hydroxylase) coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ctctaccggagaaattatgttgtggatttggaatgccctgatcgttttcgttaccgtgattggcatggaagtgattgctg
+cactggcacacaaatacatcatgcacggctggggttggggatggcatctttcacatcatgaaccgcgtaaaggtgcgttt
+gaagttaacgatctttatgccgtggtttttgctgcattatcgatcctgctgatttatctgggcagtacaggaatgtggcc
+gctccagtggattggcgcaggtatgacggcgtatggattactctattttatggtgcacgacgggctggtgcatcaacgtt
+ggccattccgctatattccacgcaagggctacctcaaacggttgtatatggcgcaccgtatgcatcacgccgtcaggggc
+aaagaaggttgtgtttcttttggcttcctctatgcgccgcccctgtcaaaacttcaggcgacgctccgggaaagacatgg
+cgctagagcgggcgctgccagagatgcgcagggcggggaggatgagcccgcatccgggaagtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1953813</id>
+<title>BBa_I742156</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>16</endpos></feature>
+<feature>
+<id>1953814</id>
+<title>crtZ</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>17</startpos>
+<endpos>544</endpos></feature>
+<feature>
+<id>1953815</id>
+<title>BBa_I742157</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>17</startpos>
+<endpos>547</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/generator/RC</category>
+<category>//function/biosynthesis/isoprenoid</category>
+<category>//igem2007/edinburgh/favorite</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

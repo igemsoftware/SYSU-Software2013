@@ -1,0 +1,457 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13508</part_id>
+<part_name>BBa_K152007</part_name>
+<part_short_name>K152007</part_short_name>
+<part_short_desc>Synthetic operon of CrtEBIY and FrdBCD and GFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K152007</part_url>
+<part_entered>2008-10-30</part_entered>
+<part_author>David Johnston Monje</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>13315</part_id>
+<part_name>BBa_K152001</part_name>
+<part_short_desc>rbs + crtE</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13328</part_id>
+<part_name>BBa_K152002</part_name>
+<part_short_desc>RBS + crtB</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>9174</part_id>
+<part_name>BBa_J15001</part_name>
+<part_short_desc>strong synthetic E. coli ribosome binding site with SacI site.</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11355</part_id>
+<part_name>BBa_K118003</part_name>
+<part_short_desc>crtI coding sequence encoding phytoene dehydrogenase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13507</part_id>
+<part_name>BBa_K152006</part_name>
+<part_short_desc>frdBCD operon from E. coli (missing the first gene fumarate oxidase)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13478</part_id>
+<part_name>BBa_K152003</part_name>
+<part_short_desc>CrtY + RBS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>13315</part_id>
+<part_name>BBa_K152001</part_name>
+<part_short_desc>rbs + crtE</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13328</part_id>
+<part_name>BBa_K152002</part_name>
+<part_short_desc>RBS + crtB</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11502</part_id>
+<part_name>BBa_K118005</part_name>
+<part_short_desc>rbs+crtI (phytoene dehydrogenase)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13507</part_id>
+<part_name>BBa_K152006</part_name>
+<part_short_desc>frdBCD operon from E. coli (missing the first gene fumarate oxidase)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13478</part_id>
+<part_name>BBa_K152003</part_name>
+<part_short_desc>CrtY + RBS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5339</part_id>
+<part_name>BBa_E0240</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP report</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<scar>
+<scar_id>0</scar_id>
+<scar_standard>0</scar_standard>
+<scar_type>Custom</scar_type>
+<scar_name>[gtct]</scar_name>
+<scar_nickname>[gtct]</scar_nickname>
+<scar_comments>Custom sequence</scar_comments>
+<scar_sequence>gtct</scar_sequence></scar>
+<subpart>
+<part_id>13315</part_id>
+<part_name>BBa_K152001</part_name>
+<part_short_desc>rbs + crtE</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>0</scar_id>
+<scar_standard>0</scar_standard>
+<scar_type>Custom</scar_type>
+<scar_name>[agtcctactagagaaatct]</scar_name>
+<scar_nickname>[agtcctactagagaaatct]</scar_nickname>
+<scar_comments>Custom sequence</scar_comments>
+<scar_sequence>agtcctactagagaaatct</scar_sequence></scar>
+<subpart>
+<part_id>13328</part_id>
+<part_name>BBa_K152002</part_name>
+<part_short_desc>RBS + crtB</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>0</scar_id>
+<scar_standard>0</scar_standard>
+<scar_type>Custom</scar_type>
+<scar_name>[agtccctactagag]</scar_name>
+<scar_nickname>[agtccctactagag]</scar_nickname>
+<scar_comments>Custom sequence</scar_comments>
+<scar_sequence>agtccctactagag</scar_sequence></scar>
+<subpart>
+<part_id>11502</part_id>
+<part_name>BBa_K118005</part_name>
+<part_short_desc>rbs+crtI (phytoene dehydrogenase)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>0</scar_id>
+<scar_standard>0</scar_standard>
+<scar_type>Custom</scar_type>
+<scar_name>[tactagagatct]</scar_name>
+<scar_nickname>[tactagagatct]</scar_nickname>
+<scar_comments>Custom sequence</scar_comments>
+<scar_sequence>tactagagatct</scar_sequence></scar>
+<subpart>
+<part_id>13507</part_id>
+<part_name>BBa_K152006</part_name>
+<part_short_desc>frdBCD operon from E. coli (missing the first gene fumarate oxidase)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>0</scar_id>
+<scar_standard>0</scar_standard>
+<scar_type>Custom</scar_type>
+<scar_name>[agtatactagagatct]</scar_name>
+<scar_nickname>[agtatactagagatct]</scar_nickname>
+<scar_comments>Custom sequence</scar_comments>
+<scar_sequence>agtatactagagatct</scar_sequence></scar>
+<subpart>
+<part_id>13478</part_id>
+<part_name>BBa_K152003</part_name>
+<part_short_desc>CrtY + RBS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>0</scar_id>
+<scar_standard>0</scar_standard>
+<scar_type>Custom</scar_type>
+<scar_name>[agtggtactagag]</scar_name>
+<scar_nickname>[agtggtactagag]</scar_nickname>
+<scar_comments>Custom sequence</scar_comments>
+<scar_sequence>agtggtactagag</scar_sequence></scar>
+<subpart>
+<part_id>5339</part_id>
+<part_name>BBa_E0240</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP report</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>gtctagaaggaggattaccatatgacggtctgcgcaaaaaaacacgttcatctcactcgcgatgctgcggagcagttact
+ggctgatattgatcgacgccttgatcagttattgcccgtggagggagaacgggatgttgtgggtgccgcgatgcgtgaag
+gtgcgctggcaccgggaaaacgtattcgccccatgttgctgttgctgaccgcccgcgatctgggttgcgctgtcagccat
+gacggattactggatttggcctgtgcggtggaaatggtccacgcggcttcgctgatccttgacgatatgccctgcatgga
+cgatgcgaagctgcggcgcggacgccctaccattcattctcattacggagagcatgtggcaatactggcggcggttgcct
+tgctgagtaaagcctttggcgtaattgccgatgcagatggcctcacgccgctggcaaaaaatcgggcggtttctgaactg
+tcaaacgccatcggcatgcaaggattggttcagggtcagttcaaggatctgtctgaaggggataagccgcgcagcgctga
+agctattttgatgacgaatcactttaaaaccagcacgctgttctgtgcctccatgcagatggcctcgattgttgcgaatg
+cctccagcgaagcgcgtgattgcctgcatcgtttttcacttgatcttggtcaggcatttcaactgctggacgatttgacc
+gatggcatgaccgacaccggtaaggatagcaatcaggacgccggtaaatcgacgctggtcaatctgttaggcccgagggc
+ggttgaagaacgtctgagacaacatcttcagcttgccagtgagcatctctctgcggcctgccaacacgggcacgccaccc
+aacattttattcaggcgtggtttgacaaaaaactcgctgccgtcagttaactagtcctactagagaaatctagaaggagg
+attacaaaatggcagttggctcgaaaagttttgcgacagcctcaaagttatttgatgcaaaaacccggcgcagcgtactg
+atgctctacgcctggtgccgccattgtgacgatgttattgacgatcagacgctgggctttcaggcccggcagcctgcctt
+acaaacgcccgaacaacgtctgatgcaacttgagatgaaaacgcgccaggcctatgcaggatcgcagatgcacgaaccgg
+cgtttgcggcttttcaggaagtggctatggctcatgatatcgccccggcttacgcgtttgatcatctggaaggcttcgcc
+atggatgtacgcgaagcgcaatacagccaactggatgatacgctgcgctattgctatcacgttgcaggcgttgtcggctt
+gatgatggcgcaaatcatgggcgtacgggataacgccacgctggaccgcgcctgtgaccttgggctggcatttcagttga
+ccaatattgctcgcgatattgtggacgatgcgcatgcgggccgctgttatctgccggcaagctggctggagcatgaaggt
+ctgaacaaagagaattatgcggcacctgaaaaccgtcaggcgctgagccgtatcgcccgtcgtttggtgcaggaagcaga
+accttactatttgtctgccacagccggcctggcagggttgcccctgcgttccgcctgggcaatcgctacggcgaagcagg
+tttaccggaaaataggtgtcaaagttgaacaggccggtcagcaagcctgggatcagcggcagtcaacgaccacgcccgaa
+aaattaacgctgctgctggccgcctctggtcaggcccttacttcccggatgcgggctcatcctccccgccctgcgcatct
+ctggcagcgcccgctctaactagtccctactagagctcaaggaggtactagatgaaaccaactacggtaattggtgcagg
+cttcggtggcctggcactggcaattcgtctacaagctgcggggatccccgtcttactgcttgaacaacgtgataaacccg
+gcggtcgggcttatgtctacgaggatcaggggtttacctttgatgcaggcccgacggttatcaccgatcccagtgccatt
+gaagaactgtttgcactggcaggaaaacagttaaaagagtatgtcgaactgctgccggttacgccgttttaccgcctgtg
+ttgggagtcagggaaggtctttaattacgataacgatcaaacccggctcgaagcgcagattcagcagtttaatccccgcg
+atgtcgaaggttatcgtcagtttctggactattcacgcgcggtgtttaaagaaggctatctaaagctcggtactgtccct
+tttttatcgttcagagacatgcttcgcgccgcacctcaactggcgaaactgcaagcatggagaagcgtttacagtaaggt
+tgccagttacatcgaagatgaacatctgcgccaggcgttttctttccactcgctgttggtgggcggcaatcccttcgcca
+cctcatccatttatacgttgatacacgcgctggagcgtgagtggggcgtctggtttccgcgtggcggcaccggcgcatta
+gttcaggggatgataaagctgtttcaggatctgggtggcgaagtcgtgttaaacgccagagtcagccatatggaaacgac
+aggaaacaagattgaagccgtgcatttagaggacggtcgcaggttcctgacgcaagccgtcgcgtcaaatgcagatgtgg
+ttcatacctatcgcgacctgttaagccagcaccctgccgcggttaagcagtccaacaaactgcaaactaagcgcatgagt
+aactctctgtttgtgctctattttggtttgaatcaccatcatgatcagctcgcgcatcacacggtttgtttcggcccgcg
+ttaccgcgagctgattgacgaaatttttaatcatgatggcctcgcagaggacttctcactttatctgcacgcgccctgtg
+tcacggattcgtcactggcgcctgaaggttgcggcagttactatgtgttggcgccggtgccgcatttaggcaccgcgaac
+ctcgactggacggttgaggggccaaaactacgcgaccgtatttttgcgtaccttgagcagcattacatgcctggcttacg
+gagtcagctggtcacgcaccggatgtttacgccgtttgattttcgcgaccagcttaatgcctatcatggctcagcctttt
+ctgtggagcccgttcttacccagagcgcctggtttcggccgcataaccgcgataaaaccattactaatctctacctggtc
+ggcgcaggcacgcatcccggcgcaggcattcctggcgtcatcggctcggcaaaagcgacagcaggtttgatgctggagga
+tctgatataataatactagagatctagacaataagaaggagaaggcgaatggctgagatgaaaaacctgaaaattgaggt
+ggtgcgctataacccgaaagtcgataccgcaccgcatagcgcattctatgaagtgccttatgacgcaactacctcattac
+tggatgcgctgggctacatcaaagacaacctggcaccggacctgagctaccgctggtcctgccgtatggcgatttgtggt
+tcctgcggcatgatggttaacaacgtgccaaaactggcatgtaaaaccttcctgcgtgattacaccgacggtatgaaggt
+tgaagcgttagctaacttcccgattgaacgcgatctggtggtcgatatgacccacttcatcgaaagtctggaagcgatca
+aaccgtacatcatcggcaactcccgcaccgcggatcagggtactaacatccagaccccggcgcagatggcgaagtatcac
+cagttctccggttgcatcaactgtggtttgtgctacgccgcgtgcccgcagtttggcctgaacccagagttcatcggtcc
+ggctgccattacgctggcgcatcgttataacgaagatagccgcgaccacggtaagaaggagcgtatggcgcagttgaaca
+gccagaacggcgtatggagctgtactttcgtgggctactgctccgaagtctgcccgaaacacgtcgatccggctgcggcc
+attcagcagggcaaagtagaaagttcgaaagactttcttatcgcgaccctgaaaccacgctaaggagtgcaacatgacga
+ctaaacgtaaaccgtatgtacggccaatgacgtccacctggtggaaaaaattgccgttttatcgcttttacatgctgcgc
+gaaggcacggcggttccggctgtgtggttcagcattgaactgattttcgggctgtttgccctgaaaaatggcccggaagc
+ctgggcgggattcgtcgactttttacaaaacccggttatcgtgatcattaacctgatcactctggcggcagctctgctgc
+acaccaaaacctggtttgaactggcaccgaaagcggccaatatcattgtaaaagacgaaaaaatgggaccagagccaatt
+atcaaaagtctctgggcggtaactgtggttgccaccatcgtaatcctgtttgttgccctgtactggtaaggagcctgaga
+tgattaatccaaatccaaagcgttctgacgaaccggtattctggggcctcttcggggccggtggtatgtggagcgccatc
+attgcgccggtgatgatcctgctggtgggtattctgctgccactggggttgtttccgggtgatgcgctgagctacgagcg
+cgttctggcgttcgcgcagagcttcattggtcgcgtattcctgttcctgatgatcgttctgccgctgtggtgtggtttac
+accgtatgcaccacgcgatgcacgatctgaaaatccacgtacctgcgggcaaatgggttttctacggtctggctgctatc
+ctgacagttgtcacgctgattggtgtcgttacaatctaacgcatcgcactagtatactagagatctagaaggaggattac
+aaaatgcaaccgcattatgatctgattctcgtgggggctggactcgcgaatggccttatcgccctgcgtcttcagcagca
+gcaacctgatatgcgtattttgcttatcgacgccgcaccccaggcgggcgggaatcatacgtggtcatttcaccacgatg
+atttgactgagagccaacatcgttggatagctccgctggtggttcatcactggcccgactatcaggtacgctttcccaca
+cgccgtcgtaagctgaacagcggctacttttgtattacttctcagcgtttcgctgaggttttacagcgacagtttggccc
+gcacttgtggatggataccgcggtcgcagaggttaatgcggaatctgttcggttgaaaaagggtcaggttatcggtgccc
+gcgcggtgattgacgggcggggttatgcggcaaattcagcactgagcgtgggcttccaggcgtttattggccaggaatgg
+cgattgagccacccgcatggtttatcgtctcccattatcatggatgccacggtcgatcagcaaaatggttatcgcttcgt
+gtacagcctgccgctctcgccgaccagattgttaattgaagacacgcactatattgataatgcgacattagatcctgaat
+gcgcgcggcaaaatatttgcgactatgccgcgcaacagggttggcagcttcagacactgctgcgagaagaacagggcgcc
+ttacccattactctgtcgggcaatgccgacgcattctggcagcagcgccccctggcctgtagtggattacgtgccggtct
+gttccatcctaccaccggctattcactgccgctggcggttgccgtggccgaccgcctgagtgcacttgatgtctttacgt
+cggcctcaattcaccatgccattacgcattttgcccgcgagcgctggcagcagcagggctttttccgcatgctgaatcgc
+atgctgtttttagccggacccgccgattcacgctggcgggttatgcagcgtttttatggtttacctgaagatttaattgc
+ccgtttttatgcgggaaaactcacgctgaccgatcggctacgtattctgagcggcaagccgcctgttccggtattagcag
+cattgcaagccattatgacgactcatcgttaactagtggtactagagtcacacaggaaagtactagatgcgtaaaggaga
+agaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggag
+agggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggcca
+acacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaa
+gagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaag
+tcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttgga
+cacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaactt
+caaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggcc
+ctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatg
+gtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagccaggc
+atcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactag
+agtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1998837</id>
+<title>BBa_K152001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>937</endpos></feature>
+<feature>
+<id>1998838</id>
+<title>BBa_K152002</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>946</startpos>
+<endpos>1867</endpos></feature>
+<feature>
+<id>1998839</id>
+<title>SacI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1876</startpos>
+<endpos>1878</endpos></feature>
+<feature>
+<id>1998841</id>
+<title>BBa_J15001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1876</startpos>
+<endpos>1885</endpos></feature>
+<feature>
+<id>1998840</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1879</startpos>
+<endpos>1885</endpos></feature>
+<feature>
+<id>1998845</id>
+<title>BBa_K118003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1892</startpos>
+<endpos>3373</endpos></feature>
+<feature>
+<id>1998842</id>
+<title>crtI coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1892</startpos>
+<endpos>3370</endpos></feature>
+<feature>
+<id>1998843</id>
+<title>PstI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>2369</startpos>
+<endpos>2374</endpos></feature>
+<feature>
+<id>1998844</id>
+<title>PstI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>2780</startpos>
+<endpos>2785</endpos></feature>
+<feature>
+<id>1998846</id>
+<title>BBa_K152006</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>3382</startpos>
+<endpos>4934</endpos></feature>
+<feature>
+<id>1998847</id>
+<title>BBa_K152003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>4943</startpos>
+<endpos>6119</endpos></feature>
+<feature>
+<id>1998848</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>6128</startpos>
+<endpos>6140</endpos></feature>
+<feature>
+<id>1998849</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>6128</startpos>
+<endpos>6140</endpos></feature>
+<feature>
+<id>1998850</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>6134</startpos>
+<endpos>6137</endpos></feature>
+<feature>
+<id>1998851</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>6147</startpos>
+<endpos>6866</endpos></feature>
+<feature>
+<id>1998852</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>6147</startpos>
+<endpos>6866</endpos></feature>
+<feature>
+<id>1998853</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>6875</startpos>
+<endpos>6954</endpos></feature>
+<feature>
+<id>1998854</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>6886</startpos>
+<endpos>6929</endpos></feature>
+<feature>
+<id>1998855</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>6963</startpos>
+<endpos>7003</endpos></feature>
+<feature>
+<id>1998856</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>6970</startpos>
+<endpos>6989</endpos></feature>
+<feature>
+<id>1998857</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>6990</startpos>
+<endpos>7003</endpos></feature>
+<feature>
+<id>1998858</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>6996</startpos>
+<endpos>6996</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

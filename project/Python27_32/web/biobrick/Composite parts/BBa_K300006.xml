@@ -1,0 +1,135 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19229</part_id>
+<part_name>BBa_K300006</part_name>
+<part_short_name>K300006</part_short_name>
+<part_short_desc>mOrange with ADH1 transcriptional terminator for yeast</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K300006</part_url>
+<part_entered>2010-10-04</part_entered>
+<part_author>Susanna Zucca, Federica Sampietro, Paolo Magni</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>5356</part_id>
+<part_name>BBa_E2050</part_name>
+<part_short_desc>derivative of mRFP1, yeast-optimized</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>12652</part_id>
+<part_name>BBa_K165018</part_name>
+<part_short_desc>SV40 nuclear localization sequence + ADH1 transcription terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname>NLS+Term</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>5356</part_id>
+<part_name>BBa_E2050</part_name>
+<part_short_desc>derivative of mRFP1, yeast-optimized</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>12652</part_id>
+<part_name>BBa_K165018</part_name>
+<part_short_desc>SV40 nuclear localization sequence + ADH1 transcription terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname>NLS+Term</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>5356</part_id>
+<part_name>BBa_E2050</part_name>
+<part_short_desc>derivative of mRFP1, yeast-optimized</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>12652</part_id>
+<part_name>BBa_K165018</part_name>
+<part_short_desc>SV40 nuclear localization sequence + ADH1 transcription terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname>NLS+Term</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atggcaactagcggcatggttagtaaaggagaagaaaacaatatggcaatcataaaagaatttatgagattcaaagtcag
+aatggaaggttctgtaaatggtcacgagttcgaaatagaaggggaaggtgaaggtagaccctatgaaggctttcaaacgg
+ctaaattaaaagttaccaagggtggaccattgccctttgcttgggatatcctgtctcctcagttcacttatggtagtaaa
+gcctatgttaagcatcctgctgatattcctgattacttcaagttgagttttccagaaggtttcaaatgggagagagttat
+gaattttgaagatggcggagttgtgacagtgacacaagactcctcacttcaagacggtgagtttatttacaaggtaaaac
+tacgtggcactaactttccgtcggatggaccagtcatgcaaaaaaagacgatgggttgggaggcttcatctgagcgaatg
+tatccagaagatggggcactaaagggcgaaattaagatgaggctcaaattaaaggatggtggacattatacctcggaagt
+gaaaactacctataaagccaaaaagccagttcaattacctggtgcatacattgttggcattaagttggacatcacaagcc
+acaatgaagattatacaatagtagagcagtacgaacgcgcggaaggtaggcattctactggaggcatggatgaactatac
+aaaggttctggtaccgcataataactctgatagtgctagtgtagatctctactagagcccaagaaaaagcgcaaggtaac
+tagataataagcgaatttcttatgatttatgatttttattattaaataagttataaaaaaaataagtgtatacaaatttt
+aaagtgactcttaggttttaaaacgaaaattcttattcttgagtaactctttcctgtaggtcaggttgctttctcaggta
+tagcatgaggtcgctcttattgaccacacctctaccggcatgccgagcaaatgcctgcaaatcgctccct
+</seq_data></sequences>
+<features>
+<feature>
+<id>2082162</id>
+<title>MATSG linker</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>15</endpos></feature>
+<feature>
+<id>2082163</id>
+<title>mOrange</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>738</endpos></feature>
+<feature>
+<id>2082165</id>
+<title>BBa_E2050</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>744</endpos></feature>
+<feature>
+<id>2082164</id>
+<title>GSGTA linker</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>724</startpos>
+<endpos>738</endpos></feature>
+<feature>
+<id>2082166</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>745</startpos>
+<endpos>769</endpos></feature>
+<feature>
+<id>2082167</id>
+<title>BBa_K165018</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>778</startpos>
+<endpos>1030</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

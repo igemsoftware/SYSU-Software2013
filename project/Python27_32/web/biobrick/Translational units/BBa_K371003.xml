@@ -1,0 +1,283 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18904</part_id>
+<part_name>BBa_K371003</part_name>
+<part_short_name>K371003</part_short_name>
+<part_short_desc>pduAB+pduJK</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K371003</part_url>
+<part_entered>2010-08-27</part_entered>
+<part_author>Yang Zhang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>18902</part_id>
+<part_name>BBa_K371001</part_name>
+<part_short_desc>pduAB(Propanediol utilization gene A+B)[RBS+pduA+RBS+pduB]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>18901</part_id>
+<part_name>BBa_K371000</part_name>
+<part_short_desc>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>18902</part_id>
+<part_name>BBa_K371001</part_name>
+<part_short_desc>pduAB(Propanediol utilization gene A+B)[RBS+pduA+RBS+pduB]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>18901</part_id>
+<part_name>BBa_K371000</part_name>
+<part_short_desc>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>18902</part_id>
+<part_name>BBa_K371001</part_name>
+<part_short_desc>pduAB(Propanediol utilization gene A+B)[RBS+pduA+RBS+pduB]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>18901</part_id>
+<part_name>BBa_K371000</part_name>
+<part_short_desc>pduJK(Propanediol utilization gene J+K)[RBS+pduJ+RBS+pduK]</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aacccaggcgaggtctttatgcaacaagaagcgttaggaatggtagaaaccaaaggcttgacagcagccatagaggccgc
+agatgcaatggtgaagtcagccaatgtaatgctggtcggctacgaaaaaattggttcggggctggtaacagttattgtcc
+gcggcgatgtcggcgcagtcaaagcagcaacagatgccggtgccgccgcagcccgtaatgtgggagaagtgaaagccgta
+cacgttatcccacgcccgcataccgatgtagaaaaaatcttaccgaagggaattagctaatgagcagcaatgaactggtt
+gaacagatcatggcgcaggtgattgctcgcgtggcaacgccggaacagcaggctatcccagaaaataatcacccaacacg
+agaaacggctatggcagagaaaagctgtagtttaacggagtttgtcggtaccgcgattggcgacaccgtcggtctggtaa
+tcgccaacgtagacagtgccctactggacgcaatgaaacttgaaaaacgctatcgctccattggcatccttggcgcccgt
+actggtgcgggtccacacatcatggccgctgatgaagcggtgaaagccaccaatactgaagtcgtcagtattgagttacc
+acgtgataccaaaggcggcgcaggtcatggctcgctgattattcttggcggcaacgatgtttccgacgtgaaacgcggca
+ttgaagtcgcactgaaagagctggatcgcacctttggcgacgtttatgccaacgaagccggtcacatcgaaatgcaatac
+accgcacgcgccagctacgcacttgaaaaagcctttggcgcaccgattggtcgtgcctgtggcgtcatcgtcggcgcacc
+agcatccgttggtgtcctgatggctgatactgccctgaaatccgccaacgtggaagttgtggcttacagctcccctgctc
+atggcaccagcttcagtaacgaagccattctggttatttcgggtgactctggcgctgttcgtcaggctgttatctctgcc
+cgtgaaatcggtaaaaccgtactcgggaccctcggctcagagccgaaaaacgatcgtccgtcctacatctgatactagag
+ccacaggagaaaagcagtatgaataacgcactgggactggttgaaacaaaagggcttgtcggcgctattgaagccgctga
+tgccatggtgaaatccgcaaacgtgcagttggttggttacgaaaaaatcggctctggcctgatcaacgttatggttcgcg
+gtgatgtcggcgcggtgaaagcagccgtagatgctggaagcgcagcagcaagcgccgttggtgaggtgaaatcctgccac
+gttatcccgcgtccgcacagcgacgttgaagccattttacctaaatccgcataagtcgttgcaaccaaggagcacagcgt
+gaagcaatcactgggattacttgaagttagtggtctggcattagccatcagttgcgcggacgtcatggcgaaagccgcct
+ccatcacgctggtgggcctcgaaaaaaccaacggctcaggctggacggtgatcaagataatcggggatgtggcctccgtc
+caggcggccatttccactggtgtcagtttcgctgaccagcgagatggactggtggctcacaaagtcatttccagacccgg
+ggacgggatcctgtcgcatagcgttgtcctggagcctgaaccaacgcccgaccccataccagccataccacatgaagaaa
+tccctgaggaccatgcggcacccgaagcaccgcaagatgcagaattgattagctgcaatttgtgtcttgatcctgcctgc
+cctcgccaaaaaggtgagccgcgcacactttgtcttcactccggcaaacgaggtgaagcgtga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2083934</id>
+<title>BBa_K371001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1112</endpos></feature>
+<feature>
+<id>2083926</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>6</startpos>
+<endpos>11</endpos></feature>
+<feature>
+<id>2083927</id>
+<title>pduA coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>300</endpos></feature>
+<feature>
+<id>2083928</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>2083929</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>285</startpos>
+<endpos>292</endpos></feature>
+<feature>
+<id>2083930</id>
+<title>stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>298</startpos>
+<endpos>300</endpos></feature>
+<feature>
+<id>2083932</id>
+<title>pduB coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>300</startpos>
+<endpos>1112</endpos></feature>
+<feature>
+<id>2083931</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>300</startpos>
+<endpos>302</endpos></feature>
+<feature>
+<id>2083933</id>
+<title>stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1110</startpos>
+<endpos>1112</endpos></feature>
+<feature>
+<id>2083943</id>
+<title>BBa_K371000</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1121</startpos>
+<endpos>1903</endpos></feature>
+<feature>
+<id>2083935</id>
+<title>pduJ RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1125</startpos>
+<endpos>1132</endpos></feature>
+<feature>
+<id>2083936</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1139</startpos>
+<endpos>1141</endpos></feature>
+<feature>
+<id>2083937</id>
+<title>pduJ coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1139</startpos>
+<endpos>1414</endpos></feature>
+<feature>
+<id>2083938</id>
+<title>stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1412</startpos>
+<endpos>1414</endpos></feature>
+<feature>
+<id>2083939</id>
+<title>pduK RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1427</startpos>
+<endpos>1432</endpos></feature>
+<feature>
+<id>2083940</id>
+<title>pduK coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1439</startpos>
+<endpos>1903</endpos></feature>
+<feature>
+<id>2083941</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1439</startpos>
+<endpos>1441</endpos></feature>
+<feature>
+<id>2083942</id>
+<title>stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1901</startpos>
+<endpos>1903</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>pduAB+pduJK</value>
+<units></units>
+<url></url>
+<id>11407</id>
+<m_date>2010-10-26 21:27:16</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduAB+pduJK</value>
+<units></units>
+<url></url>
+<id>11408</id>
+<m_date>2010-10-26 21:27:16</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduAB+pduJK</value>
+<units></units>
+<url></url>
+<id>11409</id>
+<m_date>2010-10-26 21:27:16</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduAB+pduJK</value>
+<units></units>
+<url></url>
+<id>11404</id>
+<m_date>2010-10-26 21:26:59</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduAB+pduJK</value>
+<units></units>
+<url></url>
+<id>11405</id>
+<m_date>2010-10-26 21:26:59</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pduAB+pduJK</value>
+<units></units>
+<url></url>
+<id>11406</id>
+<m_date>2010-10-26 21:26:59</m_date>
+<user_id>3984</user_id>
+<user_name>Zocean</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

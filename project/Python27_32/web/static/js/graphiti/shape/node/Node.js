@@ -392,5 +392,4 @@ graphiti.shape.node.Node = graphiti.Figure.extend({
     onPortValueChanged: function(relatedPort){
     
     }
-    
 });

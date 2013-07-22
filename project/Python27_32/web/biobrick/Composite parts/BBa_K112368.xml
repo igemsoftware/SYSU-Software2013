@@ -1,0 +1,220 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13096</part_id>
+<part_name>BBa_K112368</part_name>
+<part_short_name>K112368</part_short_name>
+<part_short_desc>{Pbad}{rbs_ompT&gt;} {&lt; Cre&gt;}{&lt; S-Tag!}{&lt; b1006&gt;}</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K112368</part_url>
+<part_entered>2008-10-28</part_entered>
+<part_author>Aron Lau</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>12267</part_id>
+<part_name>BBa_K112900</part_name>
+<part_short_desc>Pbad</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>12194</part_id>
+<part_name>BBa_K112227</part_name>
+<part_short_desc>{rbs.ompT} The ompT gene with native rbs, BBb format</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>ompT</part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>12215</part_id>
+<part_name>BBa_K112102</part_name>
+<part_short_desc>Cre enzyme without start or stop codons</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>cre</part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>12259</part_id>
+<part_name>BBa_K112704</part_name>
+<part_short_desc>&lt;S tag!</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>S tag</part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>12264</part_id>
+<part_name>BBa_K112709</part_name>
+<part_short_desc>b1006</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>12267</part_id>
+<part_name>BBa_K112900</part_name>
+<part_short_desc>Pbad</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>13079</part_id>
+<part_name>BBa_K112348</part_name>
+<part_short_desc>{rbs_ompT&gt;} {&lt; Cre&gt;}{&lt; S-Tag!}{&lt; b1006&gt;}</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>12267</part_id>
+<part_name>BBa_K112900</part_name>
+<part_short_desc>Pbad</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>12233</part_id>
+<part_name>BBa_K112999</part_name>
+<part_short_desc>BBb1 scar sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>scar</part_nickname></subpart>
+<subpart>
+<part_id>13079</part_id>
+<part_name>BBa_K112348</part_name>
+<part_short_desc>{rbs_ompT&gt;} {&lt; Cre&gt;}{&lt; S-Tag!}{&lt; b1006&gt;}</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aggattcttagctttcgctaggatgatttctggaattcatgagatctctatgctactccatcgagccgtcaattgtctga
+ttcgttaccaattatgacaacttgacggctacatcattcactttttcttcacaaccggcacggaactcgctcgggctggc
+cccggtgcattttttaaatacccgcgagaaatagagttgatcgtcaaaaccaacattgcgaccgacggtggcgataggca
+tccgggtggtgctcaaaagcagcttcgcctggctgatacgttggtcctcgcgccagcttaagacgctaatccctaactgc
+tggcggaaaagacgtgacagacgcgacggcgacaagcaaacatgctgtgcgacgctggcgatatcaaaattgctgtctgc
+caggtgatcgctgatgtactgacaagcctcgcgtacccgattatccatcggtggatggagcgactcgttaatcgcttcca
+tgcgccgcagcaacaattgctcaagcagatttatcgccagcagctccgaatagcgcccttccccttgcccggcgttaatg
+atttgcccaaacaggtcgctgaaatgcggctggtgcgcttcatccgggcgaaagaaccccgtattggcaaatattgacgg
+ccagttaagccattcatgccagtaggcgcgcggacgaaagtaaacccactggtgataccattcgcgagcctccggatgac
+gaccgtagtgatgaatctctcctggcgggaacagcaaaatatcacccggtcggcaaacaaattctcgtccctgatttttc
+accaccccctgaccgcgaatggtgagattgagaatataacctttcattcccagcggtcggtcgataaaaaaatcgagata
+accgttggcctcaatcggcgttaaacccgccaccagatgggcattaaacgagtatcccggcagcagggatcattttgcgc
+ttcagccatacttttcatactcccgccattcagagaagaaaccaattgtccatattgcatcagacattgccgtcactgcg
+tctttactggctcttctcgctaccaacggtaaccccgcttattaaaagcattctgtacaagcgggacaaagcatgacaaa
+aacgcgtaacaagtgtcttatatcacggcgaaagttcaatggatatttgcacgctcactgcatgctagcattttatcgat
+aagattaccgatcttacctgaagctggatctaagaaggagatatacatatgcgggcgaaactcctaggaatagtcctgac
+aacccctatcgcgatcagctcttttgcgtcgacgggatcttccaatttactgaccgtacaccaaaatttgcctgcattac
+cggtcgatgcaacgagtgatgaggttcgcaagaacctgatggacatgttcagggatcgccaggcgttttctgagcatacc
+tggaaaatgcttctgtccgtttgccggtcgtgggcggcatggtgcaagttgaataaccggaaatggtttcccgcagaacc
+tgaagatgttcgcgattatcttctatatcttcaggcgcgcggtctggcagtaaaaactatccagcaacatttgggccagc
+taaacatgcttcatcgtcggtccgggctgccacgaccaagtgacagcaatgctgtttcactggttatgcggcggattcga
+aaagaaaacgttgatgccggtgaacgtgcaaaacaggctctagcgttcgaacgcactgatttcgaccaggttcgttcact
+catggaaaatagcgatcgctgccaggatatacgtaatctggcatttctggggattgcttataacaccctgttacgtatag
+ccgaaattgccaggatcagggttaaagatatctcacgtactgacggtgggagaatgttaatccatattggcagaacgaaa
+acgctggttagcaccgcaggtgtagagaaggcacttagcctgggggtaactaaactggtcgagcgatggatttccgtctc
+tggtgtagctgatgatccgaataactacctgttttgccgggtcagaaaaaatggtgttgccgcgccatctgccaccagcc
+agctatcaactcgcgccctggaagggatttttgaagcaactcatcgattgatttacggcgctaaggatgactctggtcag
+agatacctggcctggtctggacacagtgcccgtgtcggagccgcgcgagatatggcccgcgctggagtttcaataccgga
+gatcatgcaagctggtggctggaccaatgtaaatattgtcatgaactatatccgtaacctggatagtgaaacaggggcaa
+tggtgcgcctgctggaagatggcgatggatctaaagaaaccgctgctgctaaattcgaacgccagcacatggacagctaa
+ggatctaaaaaaaaaccccgcccctgacagggcggggtttttttta
+</seq_data></sequences>
+<features>
+<feature>
+<id>1994765</id>
+<title>BBa_K112900</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1225</endpos></feature>
+<feature>
+<id>1994766</id>
+<title>BBa_K112999</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1226</startpos>
+<endpos>1231</endpos></feature>
+<feature>
+<id>1994767</id>
+<title>BBa_K112227</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1232</startpos>
+<endpos>1314</endpos></feature>
+<feature>
+<id>1994768</id>
+<title>BBa_K112999</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1315</startpos>
+<endpos>1320</endpos></feature>
+<feature>
+<id>1994769</id>
+<title>BBa_K112102</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1321</startpos>
+<endpos>2346</endpos></feature>
+<feature>
+<id>1994770</id>
+<title>BBa_K112999</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2347</startpos>
+<endpos>2352</endpos></feature>
+<feature>
+<id>1994771</id>
+<title>BBa_K112704</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2353</startpos>
+<endpos>2400</endpos></feature>
+<feature>
+<id>1994772</id>
+<title>BBa_K112999</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2401</startpos>
+<endpos>2406</endpos></feature>
+<feature>
+<id>1994773</id>
+<title>BBa_K112709</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2407</startpos>
+<endpos>2446</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//standard/21</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

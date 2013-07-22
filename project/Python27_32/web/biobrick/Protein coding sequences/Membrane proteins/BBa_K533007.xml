@@ -1,0 +1,82 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23522</part_id>
+<part_name>BBa_K533007</part_name>
+<part_short_name>K533007</part_short_name>
+<part_short_desc>Tar receptor</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K533007</part_url>
+<part_entered>2011-09-29</part_entered>
+<part_author>ZHANG Yunxiao</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgattaaccgtatccgcgtagtcacgctgttggtaatggtgctgggggtattcgcactgttacagcttatttccggcag
+tctgtttttttcttcccttcaccatagccagaagagctttgtggtttccaatcaattacgggaacagcagggcgagctga
+cgtcaacctgggatttaatgctgcaaacgcgcattaacctgagtcgttcagcggtacggatgatgatggattcctccaat
+caacaaagtaacgccaaagttgaattgctcgatagcgccaggaaaacattggcgcaggcagcgacgcattataaaaaatt
+caaaagcatggcaccgttacctgaaatggtcgctaccagtcgtaatattgatgaaaaatataaaaactattacacagcgt
+taactgaactgattgattatctagattatggcaatactggagcttatttcgctcagccaacccagggaatgcaaaatgca
+atgggcgaagcgtttgctcagtacgccctcagcagtgaaaaactgtatcgcgatatcgtcactgacaacgcagatgatta
+ccgatttgcccagtggcaactggcggttatcgcgctggtggtggtattgattctgctggtggcgtggtacggcattcgcc
+gtatgttgcttactccgctggcaaaaattattgctcacattcgcgaaatcgccggtggtaacctggcgaataccctgacc
+attgacgggcgcagtgaaatgggcgacctggcgcagagcgtttcacatatgcaacgctctttgactgacaccgtcactca
+tgtccgcgaaggttcagatgccatctatgccggtacccgtgaaattgcggcgggcaacaccgatctttcctcccgtactg
+aacagcaggcatccgcgctggaagaaactgccgccagcatggagcagctcaccgcgacagtgaagcaaaacgccgataac
+gcccgccaggcctcgcaactggcgcaaagtgcctccgacaccgcccagcacggcggcaaagtggtggatggcgtagtgaa
+aacgatgcatgagatcgccgatagttcgaagaaaattgccgacattatcagcgttatcgacggtattgccttccagacta
+atatcctcgcgctgaatgccgcggttgaagccgcgcgtgcgggtgaacagggccgtggttttgccgtggtggcgggtgaa
+gtgcgtaatcttgccagtcgcagcgcccaggcggcaaaagagatcaaagccctcattgaagactccgtctcacgcgttga
+taccggttcggtgctggtcgaaagcgccggggaaacaatgaacaatatcgtcaatgctgtcactcgcgtgactgacatta
+tgggcgagattgcatcggcatcggatgaacagagccgtggcatcgatcaagtcgcattggcggtttcggaaatggatcgc
+gtcacgcaacagaacgcatcgctggtgcaggaatcagctgccgccgccgctgcgctggaagaacaggcgagtcgtttaac
+gcaagcagtttccgcgttccgtctggcagccagcccactcaccaataaaccgcaaacaccatcccgtcctgccagtgagc
+aaccaccggctcagccacgactgcgaattgctgaacaagatccaaactgggaaacattttga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2151977</id>
+<title>Tar Receptor</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1662</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>ligands</name>
+<value>aspartate</value>
+<units></units>
+<url></url>
+<id>14365</id>
+<m_date>2011-10-04 05:40:24</m_date>
+<user_id>6884</user_id>
+<user_name>wishyx</user_name></parameter>
+<parameter>
+<name>ligands</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>14364</id>
+<m_date>2011-10-04 05:40:00</m_date>
+<user_id>6884</user_id>
+<user_name>wishyx</user_name></parameter></parameters>
+<categories>
+<category>//cds/membrane/receptor</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

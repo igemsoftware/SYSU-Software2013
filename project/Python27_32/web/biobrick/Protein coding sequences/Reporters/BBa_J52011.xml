@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7514</part_id>
+<part_name>BBa_J52011</part_name>
+<part_short_name>J52011</part_short_name>
+<part_short_desc>dnMyD88-linker-Rluc</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J52011</part_url>
+<part_entered>2006-10-14</part_entered>
+<part_author>Monika Ciglic</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggcacgtttcgatgccttcatctgctattgccccagcgacatccagtttgtgcaggagatgatccggcaactggaaca
+gacaaactatcgactgaagttgtgtgtgtctgaccgcgatgtcctgcctggcacctgtgtctggtctattgctagtgagc
+tcatcgaaaagaggtgccgccggatggtggtggttgtctctgatgattacctccagagcaaggaatgtgacttccagacc
+aaatttgcactcagcctctctccaggtgcccatcagaagcgactgatccccatcaagtacaaggcaatgaagaaagagtt
+ccccagcatcctgaggttcatcactgtctgcgactacaccaacccctgcaccaaatcttggttctggactcgccttgcca
+aggccttgtccctgcccggcggatccggcggtaccatggcttccaaggtgtacgaccccgagcaacgcaaacgcatgatc
+actgggcctcagtggtgggctcgctgcaagcaaatgaacgtgctggactccttcatcaactactatgattccgagaagca
+cgccgagaacgccgtgatttttctgcatggtaacgctgcctccagctacctgtggaggcacgtcgtgcctcacatcgagc
+ccgtggctagatgcatcatccctgatctgatcggaatgggtaagtccggcaagagcgggaatggctcatatcgcctcctg
+gatcactacaagtacctcaccgcttggttcgagctgctgaaccttccaaagaaaatcatctttgtgggccacgactgggg
+ggcttgtctggcctttcactactcctacgagcaccaagacaagatcaaggccatcgtccatgctgagagtgtcgtggacg
+tgatcgagtcctgggacgagtggcctgacatcgaggaggatatcgccctgatcaagagcgaagagggcgagaaaatggtg
+cttgagaataacttcttcgtcgagaccatgctcccaagcaagatcatgcggaaactggagcctgaggagttcgctgccta
+cctggagccattcaaggagaagggcgaggttagacggcctaccctctcctggcctcgcgagatccctctcgttaagggag
+gcaagcccgacgtcgtccagattgtccgcaactacaacgcctaccttcgggccagcgacgatctgcctaagatgttcatc
+gagtccgaccctgggttcttttccaacgctattgtcgagggagctaagaagttccctaacaccgagttcgtgaaggtgaa
+gggcctccacttcagccaggaggacgctccagatgaaatgggtaagtacatcaagagcttcgtggagcgcgtgctgaaga
+acgagcagtaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1902834</id>
+<title>dnMyD88</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>417</endpos></feature>
+<feature>
+<id>1902846</id>
+<title>dnMyD88-linker-Rluc</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1371</endpos></feature>
+<feature>
+<id>1902835</id>
+<title>linker</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>418</startpos>
+<endpos>435</endpos></feature>
+<feature>
+<id>1902836</id>
+<title>Rluc</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>436</startpos>
+<endpos>1371</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//cds/enzyme</category>
+<category>//chassis/eukaryote/human</category>
+<category>//function/immunology</category>
+<category>//function/reporter/light</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

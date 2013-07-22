@@ -1,0 +1,73 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23513</part_id>
+<part_name>BBa_K533000</part_name>
+<part_short_name>K533000</part_short_name>
+<part_short_desc>p15A replication origin</part_short_desc>
+<part_type>Other</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K533000</part_url>
+<part_entered>2011-09-29</part_entered>
+<part_author>ZHANG Yunxiao</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gcgctagcggagtgtatactggcttactatgttggcactgatgagggtgtcagtgaagtgcttcatgtggcaggagaaaa
+aaggctgcaccggtgcgtcagcagaatatgtgatacaggatatattccgcttcctcgctcactgactcgctacgctcggt
+cgttcgactgcggcgagcggaaatggcttacgaacggggcggagatttcctggaagatgccaggaagatacttaacaggg
+aagtgagagggccgcggcaaagccgtttttccataggctccgcccccctgacaagcatcacgaaatctgacgctcaaatc
+agtggtggcgaaacccgacaggactataaagataccaggcgtttccccctggcggctccctcgtgcgctctcctgttcct
+gcctttcggtttaccggtgtcattccgctgttatggccgcgtttgtctcattccacgcctgacactcagttccgggtagg
+cagttcgctccaagctggactgtatgcacgaaccccccgttcagtccgaccgctgcgccttatccggtaactatcgtctt
+gagtccaacccggaaagacatgcaaaagcaccactggcagcagccactggtaattgatttagaggagttagtcttgaagt
+catgcgccggttaaggctaaactgaaaggacaagttttggtgactgcgctcctccaagccagttacctcggttcaaagag
+ttggtagctcagagaaccttcgaaaaaccgccctgcaaggcggttttttcgttttcagagcaagagattacgcgcagacc
+aaaacgatctcaagaagatcatcttattaatcagataaaatatttctagttttcagtgcaatttatctcttcaaatgtag
+cacctgaagtcagccccatacgatataagttgta
+</seq_data></sequences>
+<features>
+<feature>
+<id>2150403</id>
+<title>p15A replication origin</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>914</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>copies</name>
+<value>relaxed, high copy number</value>
+<units></units>
+<url></url>
+<id>14315</id>
+<m_date>2011-10-03 07:56:32</m_date>
+<user_id>6884</user_id>
+<user_name>wishyx</user_name></parameter>
+<parameter>
+<name>copies</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>14314</id>
+<m_date>2011-10-03 07:56:08</m_date>
+<user_id>6884</user_id>
+<user_name>wishyx</user_name></parameter></parameters>
+<categories>
+<category>//plasmid/component/origin</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

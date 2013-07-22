@@ -1,0 +1,147 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19390</part_id>
+<part_name>BBa_K392003</part_name>
+<part_short_name>K392003</part_short_name>
+<part_short_desc>yeast ADH1 terminator</part_short_desc>
+<part_type>Terminator</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K392003</part_url>
+<part_entered>2010-10-10</part_entered>
+<part_author>Tadashi Nakamura, Shuhei Yasumoto, Takahiro Saka, Saya Kakuda </part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gcatgtgctctgtatgtatataaaactcttgttttcttcttttctctaaatattctttccttatacattaggacctttgc
+agcataaattactatacttctattactagagcccgccgccaccatggag
+</seq_data></sequences>
+<features></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>12192</id>
+<m_date>2010-11-07 15:19:43</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>12193</id>
+<m_date>2010-11-07 15:19:43</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>12194</id>
+<m_date>2010-11-07 15:19:43</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>11098</id>
+<m_date>2010-10-25 21:48:10</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>11099</id>
+<m_date>2010-10-25 21:48:10</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>11100</id>
+<m_date>2010-10-25 21:48:10</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>11095</id>
+<m_date>2010-10-25 21:48:00</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>11096</id>
+<m_date>2010-10-25 21:48:00</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>11097</id>
+<m_date>2010-10-25 21:48:00</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>10754</id>
+<m_date>2010-10-24 22:46:44</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>10755</id>
+<m_date>2010-10-24 22:46:44</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>yeast ADH1 terminator</value>
+<units></units>
+<url></url>
+<id>10756</id>
+<m_date>2010-10-24 22:46:44</m_date>
+<user_id>6220</user_id>
+<user_name>shaothing</user_name></parameter></parameters>
+<categories>
+<category>//chassis/eukaryote/yeast</category>
+<category>//terminator/single</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

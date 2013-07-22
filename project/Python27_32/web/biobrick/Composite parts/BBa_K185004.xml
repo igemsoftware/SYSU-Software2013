@@ -1,0 +1,175 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16020</part_id>
+<part_name>BBa_K185004</part_name>
+<part_short_name>K185004</part_short_name>
+<part_short_desc>RelE toxin+Double terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K185004</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>Alex Jiang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>16193</part_id>
+<part_name>BBa_K185047</part_name>
+<part_short_desc>RelE toxin</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>16193</part_id>
+<part_name>BBa_K185047</part_name>
+<part_short_desc>RelE toxin</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>16193</part_id>
+<part_name>BBa_K185047</part_name>
+<part_short_desc>RelE toxin</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>atggcgtattttctggattttgacgagcgggcactaaaggaatggcgaaagctgggctcgacggtacgtgaacagttgaa
+aaagaagctggttgaagtacttgagtcaccccggattgaagcaaacaagctccgtggtatgcctgattgttacaagatta
+agctccggtcttcaggctatcgccttgtataccaggttatagacgagaaagttgtcgttttcgtgatttctgttgggaaa
+agagaacgctcggaagtatatagcgaggcggtcaaacgcattctccatcatcatcatcatcactaatactagagccaggc
+atcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactag
+agtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2048328</id>
+<title>BBa_K185047</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>306</endpos></feature>
+<feature>
+<id>2048323</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2048324</id>
+<title></title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>285</endpos></feature>
+<feature>
+<id>2048325</id>
+<title>His tag</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>286</startpos>
+<endpos>303</endpos></feature>
+<feature>
+<id>2048326</id>
+<title></title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>305</startpos>
+<endpos>306</endpos></feature>
+<feature>
+<id>2048327</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>306</startpos>
+<endpos>306</endpos></feature>
+<feature>
+<id>2048329</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>315</startpos>
+<endpos>394</endpos></feature>
+<feature>
+<id>2048330</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>326</startpos>
+<endpos>369</endpos></feature>
+<feature>
+<id>2048331</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>403</startpos>
+<endpos>443</endpos></feature>
+<feature>
+<id>2048332</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>410</startpos>
+<endpos>429</endpos></feature>
+<feature>
+<id>2048333</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>430</startpos>
+<endpos>443</endpos></feature>
+<feature>
+<id>2048334</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>436</startpos>
+<endpos>436</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,142 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20040</part_id>
+<part_name>BBa_K316031</part_name>
+<part_short_name>K316031</part_short_name>
+<part_short_desc>LytC cell wall binding domain with Pveg promoter</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K316031</part_url>
+<part_entered>2010-10-20</part_entered>
+<part_author>IC 2010 Team</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19457</part_id>
+<part_name>BBa_K316001</part_name>
+<part_short_desc>pVeg Constitutive promoter for Veg locus from B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<subpart>
+<part_id>20037</part_id>
+<part_name>BBa_K316030</part_name>
+<part_short_desc>LytC cell wall anchoring protein for B. subtilis</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19457</part_id>
+<part_name>BBa_K316001</part_name>
+<part_short_desc>pVeg Constitutive promoter for Veg locus from B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<subpart>
+<part_id>20037</part_id>
+<part_name>BBa_K316030</part_name>
+<part_short_desc>LytC cell wall anchoring protein for B. subtilis</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19457</part_id>
+<part_name>BBa_K316001</part_name>
+<part_short_desc>pVeg Constitutive promoter for Veg locus from B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>20037</part_id>
+<part_name>BBa_K316030</part_name>
+<part_short_desc>LytC cell wall anchoring protein for B. subtilis</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aattttgtcaaaataattttattgacaacgtcttattaacgttgatataatttaaattttatttgacaaaaatgggctcg
+tgttgtacaataaatgttactagagtcttcagaaaggagttactagatgcgttcttatataaaagtcctaacaatgtgtt
+ttctggggctcatactttttgtgccaacagctttggccgataactcagtgaaaagagttgggggaagcaatagatacggc
+actgctgtacaaatatcaaagcaaatgtattcaacagcaagtacagctgtaattgttggtgggagttcctatgcagatgc
+tatttcagcagcacctcttgcttaccagaagaatgcgccattgctttacactaattctgataagctttcatatgaaacga
+aaacaagattgaaagagatgcagactaaaaatgtaattattgtaggcggaacacctgctgtttcttctaacactgctaac
+cagattaaaagcttggggataagtattaaacgaattgcaggaagcaaccgttatgatacggctgcacgggtggcaaaagc
+gatgggtgcgacttcaaaagctgttattttgaacggcttcttatatgcagacgctccggccgtcatcccttatgcagcga
+aaaacgggtatccaattctttttacaaataaaacatctataaatagtgcgactacgtctgtgataaaagataagggaatt
+tcgagtaccgttgttgtaggaggcactggaagtatcagcaatacggtatacaacaagttaccttctcctacaagaattag
+cggttcaaacagatatgagcttgctgcaaatatcgtacaaaaacttaatttatcaacaagcaccgtatatgtaagcaatg
+gattcagctaccctgactctattgcaggagctacactggcagctaagaagaagcaatctcttattcttacaaatggtgaa
+aatttatctacaggagcccgtaaaattattggaagtaaaacatgtcaaactttatgattatcggaaacactcctgccgta
+agcacaaaggttgctaatcagctaaagaatccagttgta
+</seq_data></sequences>
+<features>
+<feature>
+<id>2101520</id>
+<title>BBa_K316001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>97</endpos></feature>
+<feature>
+<id>2101518</id>
+<title>Sigma A-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>63</startpos>
+<endpos>68</endpos></feature>
+<feature>
+<id>2101519</id>
+<title>Sigma A-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>86</startpos>
+<endpos>91</endpos></feature>
+<feature>
+<id>2101524</id>
+<title>BBa_K316030</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>106</startpos>
+<endpos>1079</endpos></feature>
+<feature>
+<id>2101521</id>
+<title>Synthetic RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>106</startpos>
+<endpos>120</endpos></feature>
+<feature>
+<id>2101522</id>
+<title>coding scar</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>121</startpos>
+<endpos>126</endpos></feature>
+<feature>
+<id>2101523</id>
+<title>LytC 2-953 of 1491</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>227</startpos>
+<endpos>1079</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,102 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22093</part_id>
+<part_name>BBa_K525499</part_name>
+<part_short_name>K525499</part_short_name>
+<part_short_desc>NADP+ Oxidoreductase from Escherichia coli</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname>Red</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K525499</part_url>
+<part_entered>2011-09-10</part_entered>
+<part_author>Anna Drong</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggccggcgctgattgggtaacaggcaaagtcactaaagtgcagaactggaccgacgccctgtttagtctcaccgttca
+cgcccccgtgcttccgtttaccgccgggcaatttaccaagcttggccttgaaatcgacggcgaacgcgtccagcgcgcct
+actcctatgtaaactcgcccgataatcccgatctggagttttacctggtcaccgtccccgatggcaaattaagcccacga
+ctggcggcactgaaaccaggcgatgaagtgcaggtggttagcgaagcggcaggattctttgtgctcgatgaagtgccgca
+ctgcgaaacgctatggatgctggcaacgggcacagcgattggcccttatttatcgattctgcaactaggtaaagatttag
+atcgcttcaaaaatctggtcctggtgcacgccgcacgttatgccgccgacttaagctatttgccactgatgcaggaactg
+gaaaaacgctacgaaggaaaactgcgcattcagacggtggtcagtcgggaaacggcagcggggtcgctcaccggacggat
+accggcattaattgaaagtggggaactggaaagcacgattggcctgccgatgaataaagaaaccagccatgtgatgctgt
+gcggcaatccacagatggtgcgcgatacacaacagttgctgaaagagacccggcagatgacgaaacatttacgtcgccga
+ccgggccatatgacagcggagcattactggaccggttaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2130006</id>
+<title>ATG</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2130005</id>
+<title>Reductase</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>759</endpos></feature>
+<feature>
+<id>2130007</id>
+<title>NgoMIV</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>9</endpos></feature>
+<feature>
+<id>2130008</id>
+<title>AgeI</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>751</startpos>
+<endpos>756</endpos></feature>
+<feature>
+<id>2130009</id>
+<title>TAA</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>757</startpos>
+<endpos>759</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>chassis</name>
+<value>E. coli</value>
+<units></units>
+<url></url>
+<id>15627</id>
+<m_date>2011-10-28 03:54:06</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>Escherichia coli</value>
+<units></units>
+<url></url>
+<id>15628</id>
+<m_date>2011-10-28 03:54:06</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter></parameters>
+<categories>
+<category>//cds/enzyme</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//proteindomain/internal</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

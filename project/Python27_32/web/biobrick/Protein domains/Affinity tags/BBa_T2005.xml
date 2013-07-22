@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>14557</part_id>
+<part_name>BBa_T2005</part_name>
+<part_short_name>T2005</part_short_name>
+<part_short_desc>FLAG octapeptide special internal domain (DYKDDDDK)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname>FLAG</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_T2005</part_url>
+<part_entered>2009-08-11</part_entered>
+<part_author>Reshma Shetty</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gactataaggatgacgatgacaaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2017176</id>
+<title>FLAG octapeptide</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>24</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//proteindomain/affinity</category>
+<category>//proteindomain/internal/special</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

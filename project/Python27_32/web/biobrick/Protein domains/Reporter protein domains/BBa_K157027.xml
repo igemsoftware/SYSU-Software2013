@@ -1,0 +1,141 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12765</part_id>
+<part_name>BBa_K157027</part_name>
+<part_short_name>K157027</part_short_name>
+<part_short_desc>SP-AntiNIP-GGGSlinker-Tm-nYFP </part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>SP-AntiNIP</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K157027</part_url>
+<part_entered>2008-10-26</part_entered>
+<part_author>iGEM Team Freiburg 2008 </part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggccggcatgagaccatctggtactgctggagccgcattgctggcacttttggctgcgctgtgccctgcaagcagagc
+aaccggccaggtgcagctccagcagcccggagccgaactggtgaagccaggcgccagcgtgaagctgtcctgcaaggcca
+gcggctacaccttcaccagctactggatgcactgggtgaaacagaggcccggcagaggcctggaatggatcggccggatc
+gaccccaacagcggcggcaccaagtacaacgagaagttcaagagcaaggccaccctgaccgtggacaagcccagcagcac
+cgcctacatgcagctgtccagcctgaccagcgaggacagcgccgtgtactactgcgccagatacgactactacggcggca
+gctacttcgactactggggccagggcaccaccgtgaccgtgtcctctgggggagggggctcaggaggaggaggaagcggg
+ggagggggcagccaggccgtggtgacccaggaaagcgccctgaccacctcccctggcgagacagtgaccctgacctgccg
+gtcctctacaggcgccgtgaccacaagcaactacgccaactgggtgcaggaaaagcccgaccacctgttcaccggcctga
+tcggcggcacaaacaacagagcccctggcgtgcccgctagattcagcggcagcctgatcggggacaaggccgccctgaca
+atcacaggcgcccagaccgaggacgaggccatctacttttgcgccctgtggtacagcaaccactgggtgttcggcggagg
+gaccaagctgaccgtgctgggcaccggcggaggaggtggttcaggtggtggtggtagtggaggaggaggatccaccggca
+tagctaccggaatggtgggtgcacttttgctccttttggtcgttgccctggggataggactctttatgaccggcatggtg
+tccaagggcgaggaactgttcaccggcgtggtgcccatcctggtggagctggacggcgacgtgaacggccacaagttcag
+cgtgtccggcgagggcgaaggcgacgccacctacggcaagctgaccctgaagctgatctgcaccaccggcaagctgcccg
+tgccctggcccaccctggtgaccaccctgtacctccagtgcttcgccagataccccgaccacatgaagcagcacgatttc
+ttcaagagcgccatgcccgagggctacgtgcaggaacggaccatcttcttcaaggacgacggcaactacaagaccagagc
+cgaagtgaagttcgagggcgacacactggtgaaccggatcgagctgaagggcatcgacttcaaagaggacggcaatatcc
+tgggccacaagctggaatacaactacaacagccacaacgtgtacatcaccgccgacaagcagaccggttaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1990179</id>
+<title>SP-AntiNIP-GGGSlinker-Tm-nYFP </title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1428</endpos></feature>
+<feature>
+<id>1990177</id>
+<title>NgoMI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>9</endpos></feature>
+<feature>
+<id>1992649</id>
+<title>SP</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>10</startpos>
+<endpos>81</endpos></feature>
+<feature>
+<id>1992650</id>
+<title>Scar (Thr, Gly)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>82</startpos>
+<endpos>87</endpos></feature>
+<feature>
+<id>1992651</id>
+<title>Sc-Fv_anti-NIP</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>88</startpos>
+<endpos>822</endpos></feature>
+<feature>
+<id>1992652</id>
+<title>Scar (Thr, Gly)		</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>823</startpos>
+<endpos>828</endpos></feature>
+<feature>
+<id>1992653</id>
+<title>GGGS-Linker		</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>829</startpos>
+<endpos>873</endpos></feature>
+<feature>
+<id>1992658</id>
+<title>Scar (Thr, Gly)	</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>874</startpos>
+<endpos>879</endpos></feature>
+<feature>
+<id>1992655</id>
+<title>Tm</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>880</startpos>
+<endpos>948</endpos></feature>
+<feature>
+<id>1992659</id>
+<title>Scar (Thr, Gly)		</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>949</startpos>
+<endpos>954</endpos></feature>
+<feature>
+<id>1992660</id>
+<title>N-Term_YFP    </title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>955</startpos>
+<endpos>1422</endpos></feature>
+<feature>
+<id>1990178</id>
+<title>AgeI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1423</startpos>
+<endpos>1428</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/reporter/color</category>
+<category>//proteindomain/binding</category>
+<category>//proteindomain/internal</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

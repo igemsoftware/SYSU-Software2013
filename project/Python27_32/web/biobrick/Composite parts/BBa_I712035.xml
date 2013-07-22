@@ -1,0 +1,161 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10300</part_id>
+<part_name>BBa_I712035</part_name>
+<part_short_name>I712035</part_short_name>
+<part_short_desc>CMVp-CD4-CUb</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I712035</part_url>
+<part_entered>2007-10-23</part_entered>
+<part_author>peter cimermancic</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10248</part_id>
+<part_name>BBa_I712024</part_name>
+<part_short_desc>CD4</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10243</part_id>
+<part_name>BBa_I712011</part_name>
+<part_short_desc>CUb (split ubiquitin system)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10248</part_id>
+<part_name>BBa_I712024</part_name>
+<part_short_desc>CD4</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10243</part_id>
+<part_name>BBa_I712011</part_name>
+<part_short_desc>CUb (split ubiquitin system)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>10248</part_id>
+<part_name>BBa_I712024</part_name>
+<part_short_desc>CD4</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>10243</part_id>
+<part_name>BBa_I712011</part_name>
+<part_short_desc>CUb (split ubiquitin system)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>cgatgtacgggccagatatacgcgttgacattgattattgcctagttattaatagtaatcaattacggggtcattagttc
+atagcccatatatggagttccgcgttacataacttacggtaaatggcccgcctggctgaccgcccaacgacccccgccca
+ttgacgtcaataatgacgtatgttcccatagtaacgccaatagggactttccattgacgtcaatgggtggagtatttacg
+gtaaactgcccacttggcagtacatcaagtgtatcatatgccaagtacgccccctattgacgtcaatgacggtaaatggc
+ccgcctggcattatgcccagtacatgaccttatgggactttcctacttggcagtacatctacgtattagtcatcgctatt
+accatggtgatgcggttttggcagtacatcaatgggcgtggatagcggtttgactcacggggatttccaagtctccaccc
+cattgacgtcaatgggagtttgttttggcaccaaaatcaacgggactttccaaaatgtcgtaacaactccgccccattga
+cgcaaatgggcggtaggcgtgtacggtgggaggtctatataagcagagctctctggctaactagagaacccactgcttac
+tggcttatcgaaattactagatgaaccggggagtcccttttaggcacttgcttctggtgctgcaactggcgctcctccca
+gcagccactcagggaaagaaagtggtgctgggcaaaaaaggggatacagtggaactgacctgtacagcttcccagaagaa
+gagcatacaattccactggaaaaactccaaccagataaagattctgggaaatcagggctccttcttaactaaaggtccat
+ccaagctgaatgatcgcgctgactcaagaagaagcctttgggaccaaggaaactttcccctgatcatcaagaatcttaag
+atagaagactcagatacttacatctgtgaagtggaggaccagaaggaggaggtgcaattgctagtgttcggattgactgc
+caactctgacacccacctgcttcaggggcagagcctgaccctgaccttggagagcccccctggtagtagcccctcagtgc
+aatgtaggagtccaaggggtaaaaacatacagggggggaagaccctctccgtgtctcagctggagctccaggatagtggc
+acctggacatgcactgtcttgcagaaccagaagaaggtggagttcaaaatagacatcgtggtgctagctttccagaaggc
+ctccagcatagtctataagaaagagggggaacaggtggagttctccttcccactcgcctttacagttgaaaagctgacgg
+gcagtggcgagctgtggtggcaggcggagagggcttcctcctccaagtcttggatcacctttgacctgaagaacaaggaa
+gtgtctgtaaaacgggttacccaggaccctaagctccagatgggcaagaagctcccgctccacctcaccctgccccaggc
+cttgcctcagtatgctggctctggaaacctcaccctggcccttgaagcgaaaacaggaaagttgcatcaggaagtgaacc
+tggtggtgatgagagccactcagctccagaaaaatttgacctgtgaggtgtggggacccacctcccctaagctgatgctg
+agtttgaaactggagaacaaggaggcaaaggtctcgaagcgggagaaggcggtgtgggtgctgaaccctgaggcggggat
+gtggcagtgtctgctgagtgactcgggacaggtcctgctggaatccaacatcaaggttctgcccacatggtccaccccgg
+tgcagccaatggccctgattgtgctggggggcgtcgccggcctcctgcttttcattgggctaggcatcttcttctgtgtc
+aggtgccggcaccgaaggcgccaagcagagcggatgtctcagatcaagagactcctcagtgagaagaagacctgccagtg
+tcctcaccggtttcagaagacatgtagccccatttactagatgtcgggggggatccctccagatcaacaaagattgatct
+ttgccggtaagcagctagaagacggtagaacgctgtctgattacaacattcagaaggagtccaccttacatcttgtgcta
+aggctaagaggtggt
+</seq_data></sequences>
+<features>
+<feature>
+<id>1953322</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>1953323</id>
+<title>BBa_I712004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>654</endpos></feature>
+<feature>
+<id>1953324</id>
+<title>BBa_I712024</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>661</startpos>
+<endpos>2034</endpos></feature>
+<feature>
+<id>1953325</id>
+<title>BBa_I712011</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2041</startpos>
+<endpos>2175</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

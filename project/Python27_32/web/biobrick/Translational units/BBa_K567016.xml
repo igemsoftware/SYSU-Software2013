@@ -1,0 +1,124 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23599</part_id>
+<part_name>BBa_K567016</part_name>
+<part_short_name>K567016</part_short_name>
+<part_short_desc>metY-CGA</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K567016</part_url>
+<part_entered>2011-09-29</part_entered>
+<part_author>You Wang</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ccaccatacccacgccgaaacttatcggagacaggaagagtttagtgtgttttttgtaaaataatgcgcttaagggagag
+caggagaaggcaaaagtattcaacaaatgaaagtgaactggatattcattcacatgattagcaataaacgttgacaaaat
+gtggcgtggatcactataatgcctgcagattttacgtcccgtctcggtacaccaaatcccagcagtatttgcatttttta
+cccaaaacgagtagaatttgccacgtttcaggcgcggggtggagcagcctggtagctcgtcgggcttcgaacccgaagat
+cgtcggttcaaatccggcccccgcaaccactttcccttagagtcctttttcaaatatactgtgaagacttcggccttcgt
+agtgggatttgaaaaaatccttctggaaagtgctccagaccgcagttgcggttatagggttcagttatataaagccccga
+tttatcggggttttttgttatctgactacagaataactgggctttaggccctttttttatgtcttgggggtgggcgggtg
+gtgcgtaacggcaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2153197</id>
+<title>PmetY</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>151</startpos>
+<endpos>186</endpos></feature>
+<feature>
+<id>2153187</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>151</startpos>
+<endpos>156</endpos></feature>
+<feature>
+<id>2153186</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>175</startpos>
+<endpos>181</endpos></feature>
+<feature>
+<id>2153170</id>
+<title>tRNA-Met</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>273</startpos>
+<endpos>349</endpos></feature>
+<feature>
+<id>2153173</id>
+<title>CAT-&gt;TCG</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>307</startpos>
+<endpos>309</endpos></feature>
+<feature>
+<id>2153214</id>
+<title>TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>475</startpos>
+<endpos>490</endpos></feature>
+<feature>
+<id>2153280</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>491</startpos>
+<endpos>496</endpos></feature>
+<feature>
+<id>2153244</id>
+<title>TE</title>
+<type>stem_loop</type>
+<direction>reverse</direction>
+<startpos>519</startpos>
+<endpos>531</endpos></feature>
+<feature>
+<id>2153293</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>532</startpos>
+<endpos>538</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>chassis</name>
+<value>Escherichia coli</value>
+<units></units>
+<url></url>
+<id>15258</id>
+<m_date>2011-10-05 16:35:13</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>15257</id>
+<m_date>2011-10-05 16:35:05</m_date>
+<user_id>8781</user_id>
+<user_name>ChobitParrot</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

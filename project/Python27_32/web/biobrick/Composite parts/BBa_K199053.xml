@@ -1,0 +1,185 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>14379</part_id>
+<part_name>BBa_K199053</part_name>
+<part_short_name>K199053</part_short_name>
+<part_short_desc>RFPrev-RBSrev-pOmpC-pLuxrev</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K199053</part_url>
+<part_entered>2009-07-22</part_entered>
+<part_author>Kin Lau</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>8106</part_id>
+<part_name>BBa_J31008</part_name>
+<part_short_desc>RFP reverse</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>mRFPr</part_nickname></subpart>
+<subpart>
+<part_id>7061</part_id>
+<part_name>BBa_J44001</part_name>
+<part_short_desc>Reverse RBS (RBS&lt;sub&gt;rev&lt;/sub&gt;)  -- corresponds to BBa_B0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>14226</part_id>
+<part_name>BBa_K199017</part_name>
+<part_short_desc>pOmpC</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>14378</part_id>
+<part_name>BBa_K199052</part_name>
+<part_short_desc>pLux in reverse</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>14231</part_id>
+<part_name>BBa_K199022</part_name>
+<part_short_desc>RFPrev-RBSrev-pOmpC</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>14378</part_id>
+<part_name>BBa_K199052</part_name>
+<part_short_desc>pLux in reverse</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>14231</part_id>
+<part_name>BBa_K199022</part_name>
+<part_short_desc>RFPrev-RBSrev-pOmpC</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>14378</part_id>
+<part_name>BBa_K199052</part_name>
+<part_short_desc>pLux in reverse</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttaagcaccggtggagtgacgaccttcagcacgttcgtactgttcaacgatggtgtagtcttcgttgtgggaggtgatgt
+ccagtttgatgtcggttttgtaagcacccggcagctgaaccggttttttagccatgtaggtggttttaacttcagcgtcg
+tagtgaccaccgtctttcagtttcagacgcattttgatttcacctttcagagcaccgtcttccgggtacatacgttcggt
+ggaagcttcccaacccatggtttttttctgcataaccggaccgtcggacgggaagttggtaccacgcagtttaactttgt
+agatgaactcaccgtcttgcagggaggagtcctgggtaacggtaacaacaccaccgtcttcgaagttcataacacgttcc
+catttgaaaccttccgggaaggacagtttcaggtagtccgggatgtcagccgggtgtttaacgtaagctttggaaccgta
+ctggaactgcggggacaggatgtcccaagcgaacggcagcggaccacctttggtaactttcagtttagcggtctgggtac
+cttcgtacggacgaccttcaccttcaccttcgatttcgaactcgtgaccgttaacggaaccttccatacgaactttgaaa
+cgcatgaactctttgataacgtcttcggaggaagccattactagagtttctcctctttaattactagagtttacattttg
+aaacatctatagcgataaatgaaacatcttaaaagttttagtatcatattcgtgttggattattctgcatttttggggag
+aatggacttactagagtttattcgactataacaaaccattttcttgcgtaaacctgtacgatcctacaggt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2012137</id>
+<title>Xba mRFP R</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2012138</id>
+<title>mRFP reverse</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>678</endpos></feature>
+<feature>
+<id>2012140</id>
+<title>BBa_J31008</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>678</endpos></feature>
+<feature>
+<id>2012139</id>
+<title>Spe mRFP F</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>659</startpos>
+<endpos>678</endpos></feature>
+<feature>
+<id>2012141</id>
+<title>Reverse RBS</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>687</startpos>
+<endpos>701</endpos></feature>
+<feature>
+<id>2012142</id>
+<title>BBa_J44001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>687</startpos>
+<endpos>701</endpos></feature>
+<feature>
+<id>2012143</id>
+<title>BBa_K199017</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>710</startpos>
+<endpos>808</endpos></feature>
+<feature>
+<id>2012144</id>
+<title>BBa_K199052</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>817</startpos>
+<endpos>871</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>RFPrev-RBSrev-pOmpC-pLuxrev</value>
+<units></units>
+<url></url>
+<id>7938</id>
+<m_date>2009-10-20 09:49:53</m_date>
+<user_id>201</user_id>
+<user_name>macampbell</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RFPrev-RBSrev-pOmpC-pLuxrev</value>
+<units></units>
+<url></url>
+<id>7939</id>
+<m_date>2009-10-20 09:49:53</m_date>
+<user_id>201</user_id>
+<user_name>macampbell</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>RFPrev-RBSrev-pOmpC-pLuxrev</value>
+<units></units>
+<url></url>
+<id>7940</id>
+<m_date>2009-10-20 09:49:53</m_date>
+<user_id>201</user_id>
+<user_name>macampbell</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,90 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19570</part_id>
+<part_name>BBa_K311002</part_name>
+<part_short_name>K311002</part_short_name>
+<part_short_desc>Constitutive lac promoter with downstream EGFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K311002</part_url>
+<part_entered>2010-10-15</part_entered>
+<part_author>Ethan Johnson, Claudia Schmidt-Dannert, Poonam Srivastava, Ian Windsor</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tgacattaacctataaaaataggcgtatcacgaggcagaatttcagataaaaaaaatccttagctttcgctaaggatgat
+ttctggaattcatcctgaacttatctagacccgactggaaagcgggcagtgagcgcaacgcaattaatgtgagttagctc
+actcattaggcaccccaggctttacactttatgcttccggctcgtatgttgtgtggaattgtgagcgtctagtagaagga
+ggagatctggatccatatggtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggcg
+acgtaaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcatc
+tgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccctgacctacggcgtgcagtgcttcagccgcta
+ccccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttca
+aggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaagggc
+atcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaactacaacagccacaacgtctatatcatggc
+cgacaagcagaagaacggcatcaaggtgaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccgacc
+actaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagcacccagtccgccctg
+agcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcatgga
+cgagctgtacaagtaaatgcatccatggcggccgc
+</seq_data></sequences>
+<features>
+<feature>
+<id>2086646</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>13</endpos></feature>
+<feature>
+<id>2086647</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>13</endpos></feature>
+<feature>
+<id>2086648</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>7</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2086649</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>739</endpos></feature>
+<feature>
+<id>2086650</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>20</startpos>
+<endpos>739</endpos></feature>
+<feature>
+<id>2086651</id>
+<title>BBa_B0016</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>748</startpos>
+<endpos>795</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,80 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>5843</part_id>
+<part_name>BBa_I13457</part_name>
+<part_short_name>I13457</part_short_name>
+<part_short_desc>Improved insertion site with two RNAse  E cut sites</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I13457</part_url>
+<part_entered>2005-07-19</part_entered>
+<part_author>jkm</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tattatttgtattgatctggtgaattaggtcttcgaatccgatccattgcagtggtattatttgtattgatctccttact
+atctctcgagagattagtacctttggagatc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1588510</id>
+<title>RNAse E site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>1588511</id>
+<title>RNAse E cut site (between the bases)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>9</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>1588512</id>
+<title>Insertion site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>1588513</id>
+<title>RNAse E site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>56</startpos>
+<endpos>76</endpos></feature>
+<feature>
+<id>1588514</id>
+<title>RNAse E cut site (between the bases)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>64</startpos>
+<endpos>65</endpos></feature>
+<feature>
+<id>1588515</id>
+<title>Hairpin</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>77</startpos>
+<endpos>111</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//dna/cloningsite</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

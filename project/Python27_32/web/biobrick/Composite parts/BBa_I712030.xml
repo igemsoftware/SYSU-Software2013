@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10110</part_id>
+<part_name>BBa_I712030</part_name>
+<part_short_name>I712030</part_short_name>
+<part_short_desc>CMV-CXCR4-NUb</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I712030</part_url>
+<part_entered>2007-10-21</part_entered>
+<part_author>Anja Koren&amp;#269;i&amp;#269;</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10050</part_id>
+<part_name>BBa_I712017</part_name>
+<part_short_desc>Chemokine (CXC motif) receptor 4, fused to N-terminal half of ubiquitin.</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10050</part_id>
+<part_name>BBa_I712017</part_name>
+<part_short_desc>Chemokine (CXC motif) receptor 4, fused to N-terminal half of ubiquitin.</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>10050</part_id>
+<part_name>BBa_I712017</part_name>
+<part_short_desc>Chemokine (CXC motif) receptor 4, fused to N-terminal half of ubiquitin.</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>cgatgtacgggccagatatacgcgttgacattgattattgcctagttattaatagtaatcaattacggggtcattagttc
+atagcccatatatggagttccgcgttacataacttacggtaaatggcccgcctggctgaccgcccaacgacccccgccca
+ttgacgtcaataatgacgtatgttcccatagtaacgccaatagggactttccattgacgtcaatgggtggagtatttacg
+gtaaactgcccacttggcagtacatcaagtgtatcatatgccaagtacgccccctattgacgtcaatgacggtaaatggc
+ccgcctggcattatgcccagtacatgaccttatgggactttcctacttggcagtacatctacgtattagtcatcgctatt
+accatggtgatgcggttttggcagtacatcaatgggcgtggatagcggtttgactcacggggatttccaagtctccaccc
+cattgacgtcaatgggagtttgttttggcaccaaaatcaacgggactttccaaaatgtcgtaacaactccgccccattga
+cgcaaatgggcggtaggcgtgtacggtgggaggtctatataagcagagctctctggctaactagagaacccactgcttac
+tggcttatcgaaattactagatggaggggatcagtatatacacttcagataactacaccgaggaaatgggctcaggggac
+tatgactccatgaaggaaccctgtttccgtgaagaaaatgctaatttcaataaaatcttcctgcccaccatctactccat
+catcttcttaactggcattgtgggcaatggattggtcatcctggtcatgggttaccagaagaaactgagaagcatgacgg
+acaagtacaggctgcacctgtcagtggccgacctcctctttgtcatcacgcttcccttctgggcagttgatgccgtggca
+aactggtactttgggaacttcctatgcaaggcagtccatgtcatctacacagtcaacctctacagcagtgtcctcatcct
+ggccttcatcagtctggaccgctacctggccatcgtccacgccaccaacagtcagaggccaaggaagctgttggctgaaa
+aggtggtctatgttggcgtctggatccctgccctcctgctgactattcccgacttcatctttgccaacgtcagtgaggca
+gatgacagatatatctgtgaccgcttctaccccaatgacttgtgggtggttgtgttccagtttcagcacatcatggttgg
+ccttatcctgcctggtattgtcatcctgtcctgctattgcattatcatctccaagctgtcacactccaagggccaccaga
+agcgcaaggccctcaagaccacagtcatcctcatcctggctttcttcgcctgttggctgccttactacattgggatcagc
+atcgactccttcatcctcctggaaatcatcaagcaagggtgtgagtttgagaacactgtgcacaagtggatttccatcac
+cgaggccctagctttcttccactgttgtctgaaccccatcctctatgctttccttggagccaaatttaaaacctctgccc
+agcacgcactcacctctgtgagcagagggtccagcctcaagatcctctccaaaggaaagcgaggtggacattcatctgtt
+tccactgagtctgagtcttcaagttttcactccagccagattttcgtcaagactttgaccggtaaaaccggaacattgga
+agttgaatcttccgataccatcgacaacgttaagtcgaaaattcaagacaaggaaggaatccctggtggatgtcgacctc
+gagtcatgtaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1951896</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>1951897</id>
+<title>BBa_I712004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>654</endpos></feature>
+<feature>
+<id>1951898</id>
+<title>CXCR4</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>661</startpos>
+<endpos>1716</endpos></feature>
+<feature>
+<id>1951900</id>
+<title>BBa_I712017</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>661</startpos>
+<endpos>1851</endpos></feature>
+<feature>
+<id>1951899</id>
+<title>NUb</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1717</startpos>
+<endpos>1851</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

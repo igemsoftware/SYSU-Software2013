@@ -1,0 +1,159 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10430</part_id>
+<part_name>BBa_I742164</part_name>
+<part_short_name>I742164</part_short_name>
+<part_short_desc>ftsK (cell division protein) of E. coli with native rbs</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>rbs+ftsK</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I742164</part_url>
+<part_entered>2007-10-25</part_entered>
+<part_author>Caroline Dahl and Xiaonan Wang</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10428</part_id>
+<part_name>BBa_I742163</part_name>
+<part_short_desc>native ftsK rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10195</part_id>
+<part_name>BBa_I742137</part_name>
+<part_short_desc>DNA motor protein FtsK</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10428</part_id>
+<part_name>BBa_I742163</part_name>
+<part_short_desc>native ftsK rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10195</part_id>
+<part_name>BBa_I742137</part_name>
+<part_short_desc>DNA motor protein FtsK</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>10428</part_id>
+<part_name>BBa_I742163</part_name>
+<part_short_desc>native ftsK rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10195</part_id>
+<part_name>BBa_I742137</part_name>
+<part_short_desc>DNA motor protein FtsK</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ctcagcctgtacctggagagcctttcttgagccaggaatacattgaagacaaagaagtcacattgacaaagttaagtagc
+ggccgccgccttctggaggcgttgctgatccttattgtcctgtttgccgtctggttgatggctgccttactaagctttaa
+cccttcggaccccagctggtcgcaaacggcctggcatgaacctatccataatttaggtgggatgcccggtgcgtggttgg
+cagatacgctgttctttatttttggcgtgatggcttacaccattcccgtcattattgtcggcggttgttggtttgcctgg
+cgtcatcagtccagcgacgaatacattgattattttgccgtttcgctacgcatcattggcgttttggcgctcatccttac
+ctcctgtggtctggcggcaatcaacgctgacgatatctggtattttgcctccggtggcgtcattggcagcttactaagca
+ctacgctacaaccactgctacacagtagcgggggaactattgcgctgctctgcgtttgggcagcgggcctgacgttgttc
+accggttggtcatgggtgaccattgctgaaaaactcggcggctggattttaaacattctcaccttcgccagtaatcgtac
+ccgtcgcgatgatacctgggtcgatgaagatgagtatgaagacgacgaagagtatgaagatgaaaatcacggcaaacagc
+atgaatcacgccgtgcccgtattcttcgcggcgcgctagcgcgtcgtaaacggttggcggaaaaattcattaatccgatg
+gggcggcaaacagacgctgcgttgttctccggtaagcggatggatgatgacgaagagattacctacactgcacgcggtgt
+ggctgccgacccggacgacgtcctattttcgggcaatcgtgcaacgcagccagaatatgacgaatacgatccattattaa
+acggtgcgccaattaccgaacctgtcgctgtagcagctgctgctaccacggcgacacaaagctgcgtggcgccggttgaa
+cctgtgactcagacgccgcctgttgcctctgttgatgttccacctgcgcaacctacagtagcctggcagcctgtaccggg
+tccacaaacgggagagccggttattgctcctgcaccggaaggttacccacagcagtcacaatatgcgcacgctgcagtgc
+aatataatgagccgctgcaacaaccagtacagccgcagcagccgtattatgcacctgcagctgaacaacctgcgcaacag
+ccgtattatgcccctgcgccagaacaaccggtggcaggtaacgcctggcaagccgaagagcagcaatccacttttgctcc
+acagtctacataccagactgagcaaacttatcagcagccagccgctcaggagccgttgtaccaacagccgcaacccgttg
+aacagcagcctgttgtggagcctgaacccgttgtagaagagacaaaacccgcgcgtccgccgctttactactttgaagaa
+gttgaagagaagcgagcccgtgaacgtgaacaacttgcggcctggtatcaaccgattccagaaccggttaaagaaccaga
+accgatcaaatcttcgctgaaagcaccttctgttgcagcagtacctccagtagaagccgctgccgctgtttccccgctgg
+catctggcgtgaaaaaagcgacactggcgacgggggctgccgcaaccgttgccgcgccagtcttcagtctggcaaatagc
+ggtggaccgcgtcctcaggtcaaagaggggattggtccgcagttgccacgaccgaaacgtatccgcgtgccaactcgtcg
+tgaactggcgtcttacggtattaagctgccctcacagcgtgcggcggaagaaaaagcccgtgaagcccagcgcaatcagt
+acgattctggcgatcagtacaacgatgatgaaatcgatgcgatgcagcaggatgaactggcacgtcagttcgcccagaca
+cagcagcaacgctatggcgaacagtatcaacatgatgtgcccgtaaacgcagaagatgcagatgctgcggcagaggctga
+actggctcgtcagtttgcgcaaactcaacaacaacgttattccggcgaacaaccggctggggcgaatccgttctcgctgg
+atgattttgaattttcgccaatgaaagcgttgctggatgatggtccacacgaaccgttgtttacgccaattgttgaacct
+gtacagcagccgcaacaaccggttgcaccgcagcagcaatatcagcagccgcaacaaccagttccgccgcagccgcagta
+tcagcagccacaacagccggttgcgccgcagccacaatatcagcagccgcaacaaccggttgcgccacagcagcaatatc
+agcagccgcaacaaccggttgcgccgcagcagcagtatcagcagccacaacagccagttgcgccacaaccgcaggatacc
+ctgcttcatccgctgttgatgcgtaatggcgacagccgtccgttgcataaaccgacgacgccgctgccttctctggattt
+gctgacaccgccgccgagcgaagtggagccggtagatacctttgcgcttgaacaaatggctcgcctggtggaagcgcgtc
+tggctgatttccgtattaaagccgatgtcgtcaattactctccggggccggttatcactcgctttgaattgaacctggca
+ccgggcgtaaaagcggcgcgcatttctaacttgtcacgggaccttgcccgttcactttcgacggtggcggtgcgtgtcgt
+tgaagttattcctggcaaaccctatgtaggtctggagttaccgaataaaaaacgacaaaccgtttatctgcgcgaagttt
+tggataacgccaaattccgcgataatccgtcgccattaaccgtggtgctgggtaaagatatcgccggtgagccggtggtt
+gccgatctggcgaaaatgccgcacttgttggttgcggggactaccggttccggtaaatctgtcggtgtgaacgcgatgat
+cctgagcatgctttataaagcacagccagaagatgtgcgtttcatcatgatcgacccgaaaatgctggagctttcggttt
+atgaaggcattccgcatctgttaacggaagtcgttactgatatgaaagatgccgccaacgcgctgcgctggtgtgttaac
+gagatggagcgtcggtataaactgatgtctgcgctgggtgtgcgtaatctggcgggttataacgaaaaaattgctgaagc
+cgatcgcatgatgcgtccgattccagacccgtactggaagccgggtggacagtatgatgcccagcatccggtgctgaaaa
+aagaaccatacattgtggtgttggttgacgaatttgccgacctgatgatgacggtaggtaaaaaagtggaagagctgata
+gcacgtctggcgcaaaaagcccgtgccgcgggtatccacctcgtactggcaactcagcgtccatcggttgatgttattac
+tggtctgattaaagcgaatattccgacccgtatcgcctttaccgtatccagtaagattgactcacgtaccattcttgatc
+agcgtggcgcggaatcactgctgggtatgggggatatgctctactctgggccgaactccacgttgccggtacgtgtccat
+ggtgcttttgttcgcgatcaggaagttcatgccgtggtgcaggactggaaagcgcgtggtcgcccacagtatgttgatgg
+catcacctccgacagcgaaagcgaaggtggtgcgggtggtttcgatggcgctgaagaactggatccgttgttcgatcagg
+cggtgcagtttgtcactgaaaaacgcaaagcgtcaatttctggcgtacagcgtcagttccgcattggttataaccgtgca
+gcgcgtattatcgaacagatggaagcgcaggggattgtcagcgaacaggggcacaacggtaatcgtgaagtgctggcccc
+accgccgtttgactaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1954642</id>
+<title>SacI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>1954644</id>
+<title>BBa_I742163</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>26</endpos></feature>
+<feature>
+<id>1954643</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>15</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>1954645</id>
+<title>ftsK</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>27</startpos>
+<endpos>4016</endpos></feature>
+<feature>
+<id>1954646</id>
+<title>BBa_I742137</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>27</startpos>
+<endpos>4016</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//igem2007/edinburgh/favorite</category>
+<category>//classic/generator/RC</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

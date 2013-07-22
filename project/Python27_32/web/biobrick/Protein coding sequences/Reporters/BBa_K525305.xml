@@ -1,0 +1,278 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22102</part_id>
+<part_name>BBa_K525305</part_name>
+<part_short_name>K525305</part_short_name>
+<part_short_desc>Fusion Protein of S-Layer SgsE and mCitrine</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>SgsE | YFP</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K525305</part_url>
+<part_entered>2011-09-10</part_entered>
+<part_author>Timo Wolf</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>taatacgactcactataggggaattgtgagcggataacaattcctactagagaaagaggagaaatactagagatggccgg
+cgctaccaagctcgacaagatgcgccaggagctgaaggcagctgttgacgcaaaggatctcaagaaggctgaggaactgt
+accacaagatctcctacgagcttaagacccgtactgttatcctcgaccgcgtctacggccagtccacccgtgagctgctc
+cgctccaccttcaaggcagacgctcaggcactgcgtgattctcttatctacgacatcaccgttgctatgaaggcacgcga
+agctcaggacgcagttaaggctggtaacctcgataaggcaaaggctgcactggaccaggtcaaccagtacgtttccaagg
+ttactgacgctttcaaggcagagctccagaaggctgcacaggatgctaaggcagcttacgaggcagctctgccaccaaag
+gtcgaatccgtgaccgcagttaacgctaagacccttgagatcaagttcaacaaggcagttgacgctgcaaccgtcatcga
+caacaagggcacttccgatacctctgacgacgttgttaaggctaccgcaatcaccctcaaggctatcgatgaccaggtcc
+ctgtttccactgttaaggcatccctgtccgacgataagaagaccctcaagctggtcgtggacggcgctcagttcttcacc
+aagcgttacgttgttgacatcaagaacgtcaagacccttgatggtaaggacgttccagcatacactaccaccatcgacac
+cactgattctgttcgcccatccgtcctctccttctcctacgctgacaacggcctgaccctcaaggttaagttctctgagc
+ctctggcatccgttggcaccgtcaagctttacgacggtaccactgaaatctccgtgtccccaaagttcaccgctggcgat
+gacgagatgaccatcaacctcgcatcttcctccgttccagttaacaaggacctgaccctcaagatcttcggcgctgtcga
+ttacaacggtaacgttatcaaccctaacccagcagagctgactgttaagaagaccaccgtcgacatcaccaagccagttg
+ttcagtccatcgaagctgtcaacactaagaccgtgaaggttaccttctctgagaagcttctctccgcacctaccatcaag
+atcggcggccagactgcttccgtttccgtcgactctactggtctggtttacaccgcaaccctcgcttccgcactgtccaa
+gggcgtttacgctgtcgaggtttccgattacaaggaccttgcaggcaactctggtgacgcttacactaaggttgtccagc
+tcaaggcagataacaccgctccaaagttcgtgtcctcccaggttgttaagatcaacggcgtcgaacacctggttctcacc
+ttcgacgaggaggttaccactggctccaacatcaccgtcgttcagtcttccgacaagtacatcgatgaaaacaacgttct
+gaaggcagtcggtgctgaccttaagaccacctccgacaacttcaagctctacctgccaactgatggcaagtccaagtctg
+tggcactcaacatctcctccctgcctaagggcacctacaccgttacccttccaaacggtctcgtttccgacctggctgac
+aacccatacgcagagcgtaagcagatcactttcgtccgcggctctgattccctcaccaccaagcctgctctggacaagga
+ctacgattccaacggcgttaaggcagacaacaacaacgagcttgttttcgctttcacccagaacctcgacgcatccgctc
+tgaacctctctaacttcaacatcaacggtctgactgtcaccaaggcagttttcgatggcgacaccaagcacatccgtgtt
+acccttgctccaggcgcaaacacttggactggtacccacgtcatcaccatctccaacatcaagaacacttccggcctcgt
+gatggacaccgttaccgttaacgaatacatgaaggagaacgtcgctccaaccttcactgcaaccctgacctccgctgatg
+ttatccgcgttgacttctctgagcctgtcgcaaacgctaccatctcccgtgcactctccgctaacaacttcatcgttaag
+gttgacggcaacgtcgtgactgtttccaacgtttacgaagataacaacgcaaccaacctggtccagggttctaagggcta
+caagaccgtttaccttaagctccagtccccagttaccgacctgtccaagccaatcactctctccgctaccgacatcgtcg
+atgttaaccagaccggcgcaatcaccgacaacaacgttgtcggtaacaacgtgtctgctactgttgttaacgtcgcaaag
+accggcgtgagcaaaggcgaagaactgtttaccggcgtggtgccgattctggtggaactggatggtgatgtgaacggcca
+taaatttagcgtgagcggcgaaggcgaaggtgatgcgacctatggcaaactgaccctgaaatttatttgcaccacgggta
+aactgccggttccgtggccgaccctggtgaccacctttggctatggcctgatgtgctttgcgcgttatccggatcatatg
+aaacagcacgatttctttaaaagcgccatgccggaaggctatgtgcaggaacgcaccatcttttttaaagatgatggcaa
+ctataaaacccgtgcggaagtgaaatttgaaggcgataccctggtgaaccgtattgaactgaaaggcatcgatttcaaag
+aagatggcaacattctgggccataaactggaatataactacaacagccataacgtgtatatcatggcggataaacagaaa
+aacggcatcaaagtgaactttaaaatccgccacaacattgaagatggcagcgtgcagctggccgatcattatcagcagaa
+caccccgattggtgatggcccggtgctgctgccggataaccattatctgagctaccagagcaaactgagcaaagatccga
+acgaaaaacgtgatcacatggtgctgctggaatttgtgaccgcagccggtattaccctgggcatggatgaactgtacaaa
+accggttaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2127327</id>
+<title>T7 promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2127328</id>
+<title>lac operator</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>2127331</id>
+<title>B0034</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>53</startpos>
+<endpos>64</endpos></feature>
+<feature>
+<id>2127330</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>56</startpos>
+<endpos>59</endpos></feature>
+<feature>
+<id>2127339</id>
+<title>K525301</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>2400</endpos></feature>
+<feature>
+<id>2127334</id>
+<title>SgsE domain</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>2400</endpos></feature>
+<feature>
+<id>2127333</id>
+<title>ATG</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>75</endpos></feature>
+<feature>
+<id>2127332</id>
+<title>NgoMIV</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>76</startpos>
+<endpos>81</endpos></feature>
+<feature>
+<id>2127335</id>
+<title>Freiburg scar</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2401</startpos>
+<endpos>2406</endpos></feature>
+<feature>
+<id>2127336</id>
+<title>mCitrine (YFP)</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>2407</startpos>
+<endpos>3129</endpos></feature>
+<feature>
+<id>2127341</id>
+<title>J18931</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2407</startpos>
+<endpos>3129</endpos></feature>
+<feature>
+<id>2127338</id>
+<title>AgeI</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>3121</startpos>
+<endpos>3126</endpos></feature>
+<feature>
+<id>2127337</id>
+<title>TAA</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>3127</startpos>
+<endpos>3129</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>origin</name>
+<value>Geobacillus stearothermophilus</value>
+<units></units>
+<url></url>
+<id>13182</id>
+<m_date>2011-09-21 21:57:40</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>Geobacillus stearothermophilus</value>
+<units></units>
+<url></url>
+<id>13173</id>
+<m_date>2011-09-21 21:54:10</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>13172</id>
+<m_date>2011-09-21 21:54:01</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>	515 nm</value>
+<units></units>
+<url></url>
+<id>13126</id>
+<m_date>2011-09-21 20:40:23</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>13125</id>
+<m_date>2011-09-21 20:40:12</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>13124</id>
+<m_date>2011-09-21 20:39:15</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>emission</name>
+<value>	529 nm</value>
+<units></units>
+<url></url>
+<id>13123</id>
+<m_date>2011-09-21 20:38:53</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>emission</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>13122</id>
+<m_date>2011-09-21 20:38:46</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>E. coli</value>
+<units></units>
+<url></url>
+<id>13121</id>
+<m_date>2011-09-21 20:38:24</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>13120</id>
+<m_date>2011-09-21 20:38:10</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>S-Layer</value>
+<units></units>
+<url></url>
+<id>13119</id>
+<m_date>2011-09-21 20:37:55</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>13118</id>
+<m_date>2011-09-21 20:37:41</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter></parameters>
+<categories>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//function/reporter/fluorescence</category>
+<category>//proteindomain/internal</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,220 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11402</part_id>
+<part_name>BBa_K101005</part_name>
+<part_short_name>K101005</part_short_name>
+<part_short_desc>Construct with LacI/LAMBDAcI promoter, RBS, GFP, Terminator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K101005</part_url>
+<part_entered>2008-07-28</part_entered>
+<part_author>Ellen Martin</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>11397</part_id>
+<part_name>BBa_K101001</part_name>
+<part_short_desc>Dual-Repressed Promoter for LacI and LambdacI</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>7333</part_id>
+<part_name>BBa_B1006</part_name>
+<part_short_desc>Terminator (artificial, large, %T~&gt;90)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11397</part_id>
+<part_name>BBa_K101001</part_name>
+<part_short_desc>Dual-Repressed Promoter for LacI and LambdacI</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>7333</part_id>
+<part_name>BBa_B1006</part_name>
+<part_short_desc>Terminator (artificial, large, %T~&gt;90)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11397</part_id>
+<part_name>BBa_K101001</part_name>
+<part_short_desc>Dual-Repressed Promoter for LacI and LambdacI</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>7333</part_id>
+<part_name>BBa_B1006</part_name>
+<part_short_desc>Terminator (artificial, large, %T~&gt;90)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>gcgcaacgcaattaatgtgagttagctcactcattaggcataacaccgtgcgtgttgactattttacctctggcggtgat
+aatgtgtggaattgtgagcggataaaatttcacacatactagagtcacacaggaaagtactagatgcgtaaaggagaaga
+acttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagg
+gtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaaca
+cttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagag
+tgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtca
+agtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacac
+aaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaa
+aattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctg
+tccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtc
+cttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagaaaaaaaaa
+ccccgcccctgacagggcggggtttttttt
+</seq_data></sequences>
+<features>
+<feature>
+<id>1968788</id>
+<title>BBa_K101001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>116</endpos></feature>
+<feature>
+<id>1968789</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>125</startpos>
+<endpos>137</endpos></feature>
+<feature>
+<id>1968790</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>125</startpos>
+<endpos>137</endpos></feature>
+<feature>
+<id>1968791</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>131</startpos>
+<endpos>134</endpos></feature>
+<feature>
+<id>1968793</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>144</startpos>
+<endpos>863</endpos></feature>
+<feature>
+<id>1968792</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>144</startpos>
+<endpos>863</endpos></feature>
+<feature>
+<id>1968794</id>
+<title>B1006</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>872</startpos>
+<endpos>910</endpos></feature>
+<feature>
+<id>1968795</id>
+<title>PolyA</title>
+<type>polya</type>
+<direction>reverse</direction>
+<startpos>872</startpos>
+<endpos>880</endpos></feature>
+<feature>
+<id>1968798</id>
+<title>BBa_B1006</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>872</startpos>
+<endpos>910</endpos></feature>
+<feature>
+<id>1968796</id>
+<title>modified thr terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>881</startpos>
+<endpos>902</endpos></feature>
+<feature>
+<id>1968797</id>
+<title>PolyA</title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>903</startpos>
+<endpos>910</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

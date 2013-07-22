@@ -1,0 +1,175 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16104</part_id>
+<part_name>BBa_K204065</part_name>
+<part_short_name>K204065</part_short_name>
+<part_short_desc>crtI + crtY</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K204065</part_url>
+<part_entered>2009-10-16</part_entered>
+<part_author>Uno Keisuke</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>9174</part_id>
+<part_name>BBa_J15001</part_name>
+<part_short_desc>strong synthetic E. coli ribosome binding site with SacI site.</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11355</part_id>
+<part_name>BBa_K118003</part_name>
+<part_short_desc>crtI coding sequence encoding phytoene dehydrogenase</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10359</part_id>
+<part_name>BBa_I742153</part_name>
+<part_short_desc>crtY native rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10360</part_id>
+<part_name>BBa_I742154</part_name>
+<part_short_desc>crtY (lycopene cyclase) coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11502</part_id>
+<part_name>BBa_K118005</part_name>
+<part_short_desc>rbs+crtI (phytoene dehydrogenase)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10361</part_id>
+<part_name>BBa_I742155</part_name>
+<part_short_desc>crtY (lycopene cyclase) with native rbs</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>rbs+crtY</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11502</part_id>
+<part_name>BBa_K118005</part_name>
+<part_short_desc>rbs+crtI (phytoene dehydrogenase)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<!--Error: Sequence does not match subpart list --></specified_subscars>
+<sequences>
+<seq_data>ctcaaggaggtactagatgaaaccaactacggtaattggtgcaggcttcggtggcctggcactggcaattcgtctacaag
+ctgcggggatccccgtcttactgcttgaacaacgtgataaacccggcggtcgggcttatgtctacgaggatcaggggttt
+acctttgatgcaggcccgacggttatcaccgatcccagtgccattgaagaactgtttgcactggcaggaaaacagttaaa
+agagtatgtcgaactgctgccggttacgccgttttaccgcctgtgttgggagtcagggaaggtctttaattacgataacg
+atcaaacccggctcgaagcgcagattcagcagtttaatccccgcgatgtcgaaggttatcgtcagtttctggactattca
+cgcgcggtgtttaaagaaggctatctaaagctcggtactgtcccttttttatcgttcagagacatgcttcgcgccgcacc
+tcaactggcgaaactgcaagcatggagaagcgtttacagtaaggttgccagttacatcgaagatgaacatctgcgccagg
+cgttttctttccactcgctgttggtgggcggcaatcccttcgccacctcatccatttatacgttgatacacgcgctggag
+cgtgagtggggcgtctggtttccgcgtggcggcaccggcgcattagttcaggggatgataaagctgtttcaggatctggg
+tggcgaagtcgtgttaaacgccagagtcagccatatggaaacgacaggaaacaagattgaagccgtgcatttagaggacg
+gtcgcaggttcctgacgcaagccgtcgcgtcaaatgcagatgtggttcatacctatcgcgacctgttaagccagcaccct
+gccgcggttaagcagtccaacaaactgcaaactaagcgcatgagtaactctctgtttgtgctctattttggtttgaatca
+ccatcatgatcagctcgcgcatcacacggtttgtttcggcccgcgttaccgcgagctgattgacgaaatttttaatcatg
+atggcctcgcagaggacttctcactttatctgcacgcgccctgtgtcacggattcgtcactggcgcctgaaggttgcggc
+agttactatgtgttggcgccggtgccgcatttaggcaccgcgaacctcgactggacggttgaggggccaaaactacgcga
+ccgtatttttgcgtaccttgagcagcattacatgcctggcttacggagtcagctggtcacgcaccggatgtttacgccgt
+ttgattttcgcgaccagcttaatgcctatcatggctcagccttttctgtggagcccgttcttacccagagcgcctggttt
+cggccgcataaccgcgataaaaccattactaatctctacctggtcggcgcaggcacgcatcccggcgcaggcattcctgg
+cgtcatcggctcggcaaaagcgacagcaggtttgatgctggaggatctgatataataatactagagctcttaagtgggag
+cggcttactagatgcaaccgcattatgatctgattctcgtgggggctggactcgcgaatggccttatcgccctgcgtctt
+cagcagcagcaacctgatatgcgtattttgcttatcgacgccgcaccccaggcgggcgggaatcatacgtggtcatttca
+ccacgatgatttgactgagagccaacatcgttggatagctccgctggtggttcatcactggcccgactatcaggtacgct
+ttcccacacgccgtcgtaagctgaacagcggctacttttgtattacttctcagcgtttcgctgaggttttacagcgacag
+tttggcccgcacttgtggatggataccgcggtcgcagaggttaatgcggaatctgttcggttgaaaaagggtcaggttat
+cggtgcccgcgcggtgattgacgggcggggttatgcggcaaattcagcactgagcgtgggcttccaggcgtttattggcc
+aggaatggcgattgagccacccgcatggtttatcgtctcccattatcatggatgccacggtcgatcagcaaaatggttat
+cgcttcgtgtacagcctgccgctctcgccgaccagattgttaattgaagacacgcactatattgataatgcgacattaga
+tcctgaatgcgcgcggcaaaatatttgcgactatgccgcgcaacagggttggcagcttcagacactgctgcgagaagaac
+agggcgccttacccattactctgtcgggcaatgccgacgcattctggcagcagcgccccctggcctgtagtggattacgt
+gccggtctgttccatcctaccaccggctattcactgccgctggcggttgccgtggccgaccgcctgagtgcacttgatgt
+ctttacgtcggcctcaattcaccatgccattacgcattttgcccgcgagcgctggcagcagcagggctttttccgcatgc
+tgaatcgcatgctgtttttagccggacccgccgattcacgctggcgggttatgcagcgtttttatggtttacctgaagat
+ttaattgcccgtttttatgcgggaaaactcacgctgaccgatcggctacgtattctgagcggcaagccgcctgttccggt
+attagcagcattgcaagccattatgacgactcatcgttaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2045354</id>
+<title>SacI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2045356</id>
+<title>BBa_J15001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2045355</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2045357</id>
+<title>crtI coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>17</startpos>
+<endpos>1495</endpos></feature>
+<feature>
+<id>2045360</id>
+<title>BBa_K118003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>17</startpos>
+<endpos>1498</endpos></feature>
+<feature>
+<id>2045358</id>
+<title>PstI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>494</startpos>
+<endpos>499</endpos></feature>
+<feature>
+<id>2045359</id>
+<title>PstI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>905</startpos>
+<endpos>910</endpos></feature>
+<feature>
+<id>2045361</id>
+<title>BBa_I742153</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1507</startpos>
+<endpos>1525</endpos></feature>
+<feature>
+<id>2045362</id>
+<title>BBa_I742154</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1532</startpos>
+<endpos>2683</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

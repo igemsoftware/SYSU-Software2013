@@ -1,0 +1,167 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15814</part_id>
+<part_name>BBa_K243007</part_name>
+<part_short_name>K243007</part_short_name>
+<part_short_desc>Short Linker-Fok_a</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>SL-Fok_A</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K243007</part_url>
+<part_entered>2009-10-14</part_entered>
+<part_author>Freiburg Bioware09</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>15562</part_id>
+<part_name>BBa_K243004</part_name>
+<part_short_desc>Short Linker (Gly-Gly-Ser-Gly)</part_short_desc>
+<part_type>Other</part_type>
+<part_nickname>ShortLinke</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15426</part_id>
+<part_name>BBa_K243000</part_name>
+<part_short_desc>Protein domain (active) of the restriction endonuclease FokI</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>Fok_a</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>15562</part_id>
+<part_name>BBa_K243004</part_name>
+<part_short_desc>Short Linker (Gly-Gly-Ser-Gly)</part_short_desc>
+<part_type>Other</part_type>
+<part_nickname>ShortLinke</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15426</part_id>
+<part_name>BBa_K243000</part_name>
+<part_short_desc>Protein domain (active) of the restriction endonuclease FokI</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>Fok_a</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>15562</part_id>
+<part_name>BBa_K243004</part_name>
+<part_short_desc>Short Linker (Gly-Gly-Ser-Gly)</part_short_desc>
+<part_type>Other</part_type>
+<part_nickname>ShortLinke</part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15426</part_id>
+<part_name>BBa_K243000</part_name>
+<part_short_desc>Protein domain (active) of the restriction endonuclease FokI</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>Fok_a</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ggtggttctggtaccggcaaatctgaactggaggagaaaaaatccgagctgcgccacaaactgaaatatgtgcctcacga
+gtatatcgaactgatcgagatcgcccgtaatagtacccaagaccgtatcctggaaatgaaagtgatggagttcttcatga
+aagtctatggctatcgtggcaaacatctgggtggtagccgtaaacctgatggtgccatttataccgttggttccccgatc
+gattatggcgttatcgttgataccaaagcctatagcgggggttataacctgccaattggtcaggctgatgagatgcagcg
+ttatgtgaaagagaaccagactcgtaacaaacacatcaacccgaacgaatggtggaaagtgtatccgtcaagcgttacag
+agttcaaattcctgttcgtgagcggccattttaaaggcaactataaagcacagctgacccgtctgaaccataaaaccaat
+agcaatggcgccgttctgtcagtagaagagctgctgattggcggtgaaatgatcaaagccgggaccctgacactggaaga
+agttcgccgtaaattcaacaatggggagatcaatttt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2042068</id>
+<title>BBa_K243004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2042067</id>
+<title>Short Linker</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2042070</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>13</startpos>
+<endpos>18</endpos></feature>
+<feature>
+<id>2042069</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>13</startpos>
+<endpos>18</endpos></feature>
+<feature>
+<id>2042072</id>
+<title>BBa_K243000</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>597</endpos></feature>
+<feature>
+<id>2042071</id>
+<title>Foka</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>597</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>Short Linker-Fok_a</value>
+<units></units>
+<url></url>
+<id>8034</id>
+<m_date>2009-10-20 13:23:03</m_date>
+<user_id>4656</user_id>
+<user_name>Sarah</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Short Linker-Fok_a</value>
+<units></units>
+<url></url>
+<id>8035</id>
+<m_date>2009-10-20 13:23:03</m_date>
+<user_id>4656</user_id>
+<user_name>Sarah</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Short Linker-Fok_a</value>
+<units></units>
+<url></url>
+<id>8036</id>
+<m_date>2009-10-20 13:23:03</m_date>
+<user_id>4656</user_id>
+<user_name>Sarah</user_name></parameter></parameters>
+<categories>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

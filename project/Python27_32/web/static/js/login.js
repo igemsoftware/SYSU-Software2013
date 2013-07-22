@@ -20,6 +20,6 @@ $(document).ready(function () {
     	var password = $("#password").attr('value');
 
     	//ws.send(JSON.stringify({'request': 'get_part', 'table_name': 'part_list'}));
-      	ws.send(JSON.stringify({'request': 'getUserName_PasswordCorrect','name': username, 'password': password}));
+      	ws.send(JSON.stringify({'request': 'userLogin','name': username, 'password': password}));
     });    
 });

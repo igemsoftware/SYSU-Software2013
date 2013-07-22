@@ -1,0 +1,242 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7361</part_id>
+<part_name>BBa_J22090</part_name>
+<part_short_name>J22090</part_short_name>
+<part_short_desc>Unbound DnaA fraction regulatory module</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>J22076 J22</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J22090</part_url>
+<part_entered>2006-09-04</part_entered>
+<part_author>Sugat Dabholkar</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>186</part_id>
+<part_name>BBa_R0011</part_name>
+<part_short_desc>Promoter (lacI regulated, lambda pL hybrid)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lacI+pL</part_nickname></subpart>
+<subpart>
+<part_id>192</part_id>
+<part_name>BBa_R0062</part_name>
+<part_short_desc>Promoter (luxR &amp; HSL regulated -- lux pR)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lux pR</part_nickname></subpart>
+<subpart>
+<part_id>7360</part_id>
+<part_name>BBa_J22086</part_name>
+<part_short_desc>pX (DnaA binding site) </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>7358</part_id>
+<part_name>BBa_J22076</part_name>
+<part_short_desc>R0011 R0062</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>7360</part_id>
+<part_name>BBa_J22086</part_name>
+<part_short_desc>pX (DnaA binding site) </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>7358</part_id>
+<part_name>BBa_J22076</part_name>
+<part_short_desc>R0011 R0062</part_short_desc>
+<part_type>Composite</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>7360</part_id>
+<part_name>BBa_J22086</part_name>
+<part_short_desc>pX (DnaA binding site) </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aattgtgagcggataacaattgacattgtgagcggataacaagatactgagcacatactagagacctgtaggatcgtaca
+ggtttacgcaagaaaatggtttgttatagtcgaataaatactagagtcgagtctcgtttcccgctccaaattcttctctc
+aataaaatatccacagcgacgcgatgcgttattgctggtttttgttgtctctgacaaactcttgtaaacagagttatcca
+cagcctcaggctactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttg
+tttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1899922</id>
+<title>BBa_R0011</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>54</endpos></feature>
+<feature>
+<id>1899923</id>
+<title>lac O1</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>3</startpos>
+<endpos>19</endpos></feature>
+<feature>
+<id>1899924</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>25</endpos></feature>
+<feature>
+<id>1899925</id>
+<title>lac O1</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>26</startpos>
+<endpos>42</endpos></feature>
+<feature>
+<id>1899926</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>43</startpos>
+<endpos>48</endpos></feature>
+<feature>
+<id>1899927</id>
+<title>LuxR/HSL</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>64</startpos>
+<endpos>83</endpos></feature>
+<feature>
+<id>1899928</id>
+<title>BBa_R0062</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>64</startpos>
+<endpos>118</endpos></feature>
+<feature>
+<id>1899929</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>83</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>1899930</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>105</startpos>
+<endpos>110</endpos></feature>
+<feature>
+<id>1899931</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>116</startpos>
+<endpos>116</endpos></feature>
+<feature>
+<id>1899932</id>
+<title>BBa_J22086</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>127</startpos>
+<endpos>251</endpos></feature>
+<feature>
+<id>1899933</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>260</startpos>
+<endpos>339</endpos></feature>
+<feature>
+<id>1899934</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>271</startpos>
+<endpos>314</endpos></feature>
+<feature>
+<id>1899935</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>348</startpos>
+<endpos>388</endpos></feature>
+<feature>
+<id>1899936</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>355</startpos>
+<endpos>374</endpos></feature>
+<feature>
+<id>1899937</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>375</startpos>
+<endpos>388</endpos></feature>
+<feature>
+<id>1899938</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>381</startpos>
+<endpos>381</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//igem2006/NCBS/favorite</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

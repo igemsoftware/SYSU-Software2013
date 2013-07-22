@@ -1,0 +1,289 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10245</part_id>
+<part_name>pSB6A1</part_name>
+<part_short_name>pSB6A1</part_short_name>
+<part_short_desc>pBR322 converted to BioBrick vector (formally BBa_I739201)</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:pSB6A1</part_url>
+<part_entered>2007-10-23</part_entered>
+<part_author>Stefan Luzi</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tactagtagcggccgctgcagctctacgccggacgcatcgtggccggcatcaccggcgccacaggtgcggttgctggcgc
+ctatatcgccgacatcaccgatggggaagatcgggctcgccacttcgggctcatgagcgcttgtttcggcgtgggtatgg
+tggcaggccccgtggccgggggactgttgggcgccatctccttgcatgcaccattccttgcggcggcggtgctcaacggc
+ctcaacctactactgggctgcttcctaatgcaggagtcgcataagggagagcgtcgaccgatgcccttgagagccttcaa
+cccagtcagctccttccggtgggcgcggggcatgactatcgtcgccgcacttatgactgtcttctttatcatgcaactcg
+taggacaggtgccggcagcgctctgggtcattttcggcgaggaccgctttcgctggagcgcgacgatgatcggcctgtcg
+cttgcggtattcggaatcttgcacgccctcgctcaagccttcgtcactggtcccgccaccaaacgtttcggcgagaagca
+ggccattatcgccggcatggcggccgacgcgctgggctacgtcttgctggcgttcgcgacgcgaggctggatggccttcc
+ccattatgattcttctcgcttccggcggcatcgggatgcccgcgttgcaggccatgctgtccaggcaggtagatgacgac
+catcagggacagcttcaaggatcgctcgcggctcttaccagcctaacttcgatcactggaccgctgatcgtcacggcgat
+ttatgccgcctcggcgagcacatggaacgggttggcatggattgtaggcgccgccctataccttgtctgcctccccgcgt
+tgcgtcgcggtgcatggagccgggccacctcgacctgaatggaagccggcggcacctcgctaacggattcaccactccaa
+gaattggagccaatcaattcttgcggagaactgtgaatgcgcaaaccaacccttggcagaacatatccatcgcgtccgcc
+atctccagcagccgcacgcggcgcatctcgggcagcgttgggtcctggccacgggtgcgcatgatcgtgctcctgtcgtt
+gaggacccggctaggctggcggggttgccttactggttagcagaatgaatcaccgatacgcgagcgaacgtgaagcgact
+gctgctgcaaaacgtctgcgacctgagcaacaacatgaatggtcttcggtttccgtgtttcgtaaagtctggaaacgcgg
+aagtcagcgccctgcaccattatgttccggatctgcatcgcaggatgctgctggctaccctgtggaacacctacatctgt
+attaacgaagcgctggcattgaccctgagtgatttttctctggtcccgccgcatccataccgccagttgtttaccctcac
+aacgttccagtaaccgggcatgttcatcatcagtaacccgtatcgtgagcatcctctctcgtttcatcggtatcattacc
+cccatgaacagaaatcccccttacacggaggcatcagtgaccaaacaggaaaaaaccgcccttaacatggcccgctttat
+cagaagccagacattaacgcttctggagaaactcaacgagctggacgcggatgaacaggcagacatctgtgaatcgcttc
+acgaccacgctgatgagctttaccgcagctgcctcgcgcgtttcggtgatgacggtgaaaacctctgacacatgcagctc
+ccggagacggtcacagcttgtctgtaagcggatgccgggagcagacaagcccgtcagggcgcgtcagcgggtgttggcgg
+gtgtcggggcgcagccatgacccagtcacgtagcgatagcggagtgtatactggcttaactatgcggcatcagagcagat
+tgtactgagagtgcaccatatgcggtgtgaaataccgcacagatgcgtaaggagaaaataccgcatcaggcgctcttccg
+cttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctcactcaaaggcggtaatacgg
+ttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaaggccaggaaccgtaaaaaggc
+cgcgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacgctcaagtcagaggtggcgaa
+acccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctcctgttccgaccctgccgctt
+accggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcacgctgtaggtatctcagttcggt
+gtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctgcgccttatccggtaactatc
+gtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaacaggattagcagagcgaggtat
+gtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaaggacagtatttggtatctgcgctct
+gctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccaccgctggtagcggtggttttt
+ttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatcttttctacggggtctgacgct
+cagtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttcacctagatccttttaaatta
+aaaatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttaccaatgcttaatcagtgaggcac
+ctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagataactacgatacgggagggc
+ttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagatttatcagcaataaaccagcc
+agccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctattaattgttgccgggaagcta
+gagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctgtaggcatcgtggtgtcacgctcgtcgttt
+ggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgttgtgcaaaaaagcggttag
+ctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggttatggcagcactgcataatt
+ctcttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtcattctgagaatagtgtatg
+cggcgaccgagttgctcttgcccggcgtcaacacgggataataccgcgccacatagcagaactttaaaagtgctcatcat
+tggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcgatgtaacccactcgtgcac
+ccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgccgcaaaaaag
+ggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaagcatttatcagggttattg
+tctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgcacatttccccgaaaagtgc
+cacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggccctttcgtcttcaa
+gaattcgcggccgcttctagag
+</seq_data></sequences>
+<features>
+<feature>
+<id>1969637</id>
+<title>BioBrick suffix</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>1969638</id>
+<title>partial tetracycline resistance CDS (nonfunctional)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>23</startpos>
+<endpos>918</endpos></feature>
+<feature>
+<id>1969639</id>
+<title>gamma-delta insertion sequence</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1157</startpos>
+<endpos>1161</endpos></feature>
+<feature>
+<id>1969640</id>
+<title>from pSC101</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1278</startpos>
+<endpos>1404</endpos></feature>
+<feature>
+<id>1969641</id>
+<title>rop</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1557</startpos>
+<endpos>1748</endpos></feature>
+<feature>
+<id>1969642</id>
+<title>H-strand Y effector site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1653</startpos>
+<endpos>1809</endpos></feature>
+<feature>
+<id>1969643</id>
+<title>L-strand Y effector site</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>1993</startpos>
+<endpos>2056</endpos></feature>
+<feature>
+<id>1969645</id>
+<title>rep pMB1</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>2161</startpos>
+<endpos>2775</endpos></feature>
+<feature>
+<id>1969644</id>
+<title>RNAII transcript</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>2176</startpos>
+<endpos>2728</endpos></feature>
+<feature>
+<id>1969648</id>
+<title>RNAI transcript promoter -35 sequence</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2582</startpos>
+<endpos>2587</endpos></feature>
+<feature>
+<id>1969649</id>
+<title>RNAI transcript promoter -10 sequence</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2604</startpos>
+<endpos>2609</endpos></feature>
+<feature>
+<id>1969646</id>
+<title>RNAI transcript</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2618</startpos>
+<endpos>2725</endpos></feature>
+<feature>
+<id>1969650</id>
+<title>RNAII transcript promoter -10 sequence</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>2738</startpos>
+<endpos>2743</endpos></feature>
+<feature>
+<id>1969651</id>
+<title>RNAII transcript promoter -35 sequence</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>2759</startpos>
+<endpos>2764</endpos></feature>
+<feature>
+<id>1969657</id>
+<title>Repeat region 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>2790</startpos>
+<endpos>4003</endpos></feature>
+<feature>
+<id>1969647</id>
+<title>beta-lactamase (bla gene)</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>2935</startpos>
+<endpos>3795</endpos></feature>
+<feature>
+<id>1969653</id>
+<title>beta-lactamase mature peptide</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>2938</startpos>
+<endpos>3726</endpos></feature>
+<feature>
+<id>1969652</id>
+<title>beta-lactamase signal peptide</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>3727</startpos>
+<endpos>3795</endpos></feature>
+<feature>
+<id>1969654</id>
+<title>bla gene</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>3803</startpos>
+<endpos>3807</endpos></feature>
+<feature>
+<id>1969655</id>
+<title>bla(P3) promoter -10 sequence</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>3839</startpos>
+<endpos>3844</endpos></feature>
+<feature>
+<id>1969656</id>
+<title>bla(P3) promoter -35 sequence </title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>3860</startpos>
+<endpos>3865</endpos></feature>
+<feature>
+<id>1969658</id>
+<title>BioBrick prefix</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>4001</startpos>
+<endpos>4022</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>copies</name>
+<value>15-20</value>
+<units></units>
+<url></url>
+<id>4191</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>A</value>
+<units></units>
+<url></url>
+<id>4192</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>mcs</name>
+<value>BioBrick</value>
+<units></units>
+<url></url>
+<id>4193</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>pMB1</value>
+<units></units>
+<url></url>
+<id>4194</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4195</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//plasmidbackbone/assembly</category>
+<category>//plasmidbackbone/copynumber/medium</category>
+<category>//plasmidbackbone/operation</category>
+<category>//standard/10</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

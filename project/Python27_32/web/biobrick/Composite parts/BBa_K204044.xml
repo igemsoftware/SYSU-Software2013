@@ -1,0 +1,237 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16011</part_id>
+<part_name>BBa_K204044</part_name>
+<part_short_name>K204044</part_short_name>
+<part_short_desc>placI + RFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K204044</part_url>
+<part_entered>2009-10-15</part_entered>
+<part_author>Uno Keisuke</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5829</part_id>
+<part_name>BBa_J06504</part_name>
+<part_short_desc>monomeric RFP optimized for bacteria</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>mCherry</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>5855</part_id>
+<part_name>BBa_J06702</part_name>
+<part_short_desc>mCherry, bacterial with RBS and forward terminator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>mCherry</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5855</part_id>
+<part_name>BBa_J06702</part_name>
+<part_short_desc>mCherry, bacterial with RBS and forward terminator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>mCherry</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>caatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcg
+ggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactttatgcttccggctcg
+tatgttgtgtggaattgtgagcggataacaatttcacacatactagagaaagaggagaaatactagatggtgagcaaggg
+cgaggaggataacatggccatcatcaaggagttcatgcgcttcaaggtgcacatggagggctccgtgaacggccacgagt
+tcgagatcgagggcgagggcgagggccgcccctacgagggcacccagaccgccaagctgaaggtgaccaagggtggcccc
+ctgcccttcgcctgggacatcctgtcccctcagttcatgtacggctccaaggcctacgtgaagcaccccgccgacatccc
+cgactacttgaagctgtccttccccgagggcttcaagtgggagcgcgtgatgaacttcgaggacggcggcgtggtgaccg
+tgacccaggactcctccttgcaggacggcgagttcatctacaaggtgaagctgcgcggcaccaacttcccctccgacggc
+cccgtaatgcagaagaagaccatgggctgggaggcctcctccgagcggatgtaccccgaggacggcgccctgaagggcga
+gatcaagcagaggctgaagctgaaggacggcggccactacgacgctgaggtcaagaccacctacaaggccaagaagcccg
+tgcagctgcccggcgcctacaacgtcaacatcaagttggacatcacctcccacaacgaggactacaccatcgtggaacag
+tacgaacgcgccgagggccgccactccaccggcggcatggacgagctgtacaagtaataatactagagccaggcatcaaa
+taaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcac
+actggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2043176</id>
+<title>end of LacI coding region (inactive)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>2043175</id>
+<title>BBa_R0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>2043177</id>
+<title>CAP binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>126</endpos></feature>
+<feature>
+<id>2043178</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>137</startpos>
+<endpos>142</endpos></feature>
+<feature>
+<id>2043179</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>161</startpos>
+<endpos>166</endpos></feature>
+<feature>
+<id>2043180</id>
+<title>LacI binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>166</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>2043181</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>173</startpos>
+<endpos>173</endpos></feature>
+<feature>
+<id>2043183</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>209</startpos>
+<endpos>220</endpos></feature>
+<feature>
+<id>2043182</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>213</startpos>
+<endpos>216</endpos></feature>
+<feature>
+<id>2043186</id>
+<title>BBa_J06504</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>227</startpos>
+<endpos>940</endpos></feature>
+<feature>
+<id>2043184</id>
+<title>mCherry</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>227</startpos>
+<endpos>937</endpos></feature>
+<feature>
+<id>2043185</id>
+<title>C-&gt;T (removing PstI site)</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>578</startpos>
+<endpos>578</endpos></feature>
+<feature>
+<id>2043187</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>949</startpos>
+<endpos>1028</endpos></feature>
+<feature>
+<id>2043188</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>960</startpos>
+<endpos>1003</endpos></feature>
+<feature>
+<id>2043189</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1037</startpos>
+<endpos>1077</endpos></feature>
+<feature>
+<id>2043190</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1044</startpos>
+<endpos>1063</endpos></feature>
+<feature>
+<id>2043191</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1064</startpos>
+<endpos>1077</endpos></feature>
+<feature>
+<id>2043192</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1070</startpos>
+<endpos>1070</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

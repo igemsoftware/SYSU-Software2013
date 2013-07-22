@@ -1,0 +1,101 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>23537</part_id>
+<part_name>BBa_J176005</part_name>
+<part_short_name>J176005</part_short_name>
+<part_short_desc>mCh</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>mCh</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J176005</part_url>
+<part_entered>2011-09-29</part_entered>
+<part_author>Karmella Haynes</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gtgagcaagggcgaggaggataacatggccatcatcaaggagttcatgcgcttcaaggtgcacatggagggctccgtgaa
+cggccacgagttcgagatcgagggcgagggcgagggccgcccctacgagggcacccagaccgccaagctgaaggtgacca
+agggtggccccctgcccttcgcctgggacatcctgtcccctcagttcatgtacggctccaaggcctacgtgaagcacccc
+gccgacatccccgactacttgaagctgtccttccccgagggcttcaagtgggagcgcgtgatgaacttcgaggacggcgg
+cgtggtgaccgtgacccaggactcctccttgcaggacggcgagttcatctacaaggtgaagctgcgcggcaccaacttcc
+cctccgacggccccgtaatgcagaagaagaccatgggctgggaggcctcctccgagcggatgtaccccgaggacggcgcc
+ctgaagggcgagatcaagcagaggctgaagctgaaggacggcggccactacgacgctgaggtcaagaccacctacaaggc
+caagaagcccgtgcagctacccggcgcctacaacgtcaacatcaagttggacatcacctcccacaacgaggactacacca
+tcgtggaacagtacgaacgcgccgagggccgccactccaccggcggcatggacgagctgtacaag
+</seq_data></sequences>
+<features></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>emission</name>
+<value>610 nm</value>
+<units></units>
+<url></url>
+<id>16128</id>
+<m_date>2012-04-05 16:10:23</m_date>
+<user_id>1144</user_id>
+<user_name>kahaynes</user_name></parameter>
+<parameter>
+<name>emission</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16127</id>
+<m_date>2012-04-05 16:10:08</m_date>
+<user_id>1144</user_id>
+<user_name>kahaynes</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>587 nm</value>
+<units></units>
+<url></url>
+<id>16126</id>
+<m_date>2012-04-05 16:10:00</m_date>
+<user_id>1144</user_id>
+<user_name>kahaynes</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16125</id>
+<m_date>2012-04-05 16:09:43</m_date>
+<user_id>1144</user_id>
+<user_name>kahaynes</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>mammalian cells</value>
+<units></units>
+<url></url>
+<id>16124</id>
+<m_date>2012-04-05 16:00:35</m_date>
+<user_id>1144</user_id>
+<user_name>kahaynes</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16123</id>
+<m_date>2012-04-05 16:00:18</m_date>
+<user_id>1144</user_id>
+<user_name>kahaynes</user_name></parameter></parameters>
+<categories>
+<category>//cds</category>
+<category>//classic/reporter</category>
+<category>//function/reporter/fluorescence</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

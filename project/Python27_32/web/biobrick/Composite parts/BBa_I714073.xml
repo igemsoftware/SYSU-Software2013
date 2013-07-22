@@ -1,0 +1,123 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10153</part_id>
+<part_name>BBa_I714073</part_name>
+<part_short_name>I714073</part_short_name>
+<part_short_desc>[R0040][I714033]</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I714073</part_url>
+<part_entered>2007-10-22</part_entered>
+<part_author>Mingzhi Qu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>187</part_id>
+<part_name>BBa_R0040</part_name>
+<part_short_desc>TetR repressible promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>p(tetR)</part_nickname></subpart>
+<subpart>
+<part_id>10150</part_id>
+<part_name>BBa_I714033</part_name>
+<part_short_desc>crRNA-lock3-var1  (A new &quot;lock&quot; designed by our team)</part_short_desc>
+<part_type>RNA</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>187</part_id>
+<part_name>BBa_R0040</part_name>
+<part_short_desc>TetR repressible promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>p(tetR)</part_nickname></subpart>
+<subpart>
+<part_id>10150</part_id>
+<part_name>BBa_I714033</part_name>
+<part_short_desc>crRNA-lock3-var1  (A new &quot;lock&quot; designed by our team)</part_short_desc>
+<part_type>RNA</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>187</part_id>
+<part_name>BBa_R0040</part_name>
+<part_short_desc>TetR repressible promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>p(tetR)</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>10150</part_id>
+<part_name>BBa_I714033</part_name>
+<part_short_desc>crRNA-lock3-var1  (A new &quot;lock&quot; designed by our team)</part_short_desc>
+<part_type>RNA</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tccctatcagtgatagagattgacatccctatcagtgatagagatactgagcactactagagacatctccgttctaggac
+tgcctctttgtgaggtctttgggttaagaggaag
+</seq_data></sequences>
+<features>
+<feature>
+<id>1952086</id>
+<title>TetR 1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>19</endpos></feature>
+<feature>
+<id>1952087</id>
+<title>BBa_R0040</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>54</endpos></feature>
+<feature>
+<id>1952088</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>25</endpos></feature>
+<feature>
+<id>1952089</id>
+<title>TetR 2</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>26</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>1952090</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>43</startpos>
+<endpos>48</endpos></feature>
+<feature>
+<id>1952091</id>
+<title>BBa_I714033</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>63</startpos>
+<endpos>114</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

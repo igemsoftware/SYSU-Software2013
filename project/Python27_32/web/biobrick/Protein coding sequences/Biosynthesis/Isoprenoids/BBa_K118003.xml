@@ -1,0 +1,78 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11355</part_id>
+<part_name>BBa_K118003</part_name>
+<part_short_name>K118003</part_short_name>
+<part_short_desc>crtI coding sequence encoding phytoene dehydrogenase</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K118003</part_url>
+<part_entered>2008-07-24</part_entered>
+<part_author>Andrew Hall</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgaaaccaactacggtaattggtgcaggcttcggtggcctggcactggcaattcgtctacaagctgcggggatccccgt
+cttactgcttgaacaacgtgataaacccggcggtcgggcttatgtctacgaggatcaggggtttacctttgatgcaggcc
+cgacggttatcaccgatcccagtgccattgaagaactgtttgcactggcaggaaaacagttaaaagagtatgtcgaactg
+ctgccggttacgccgttttaccgcctgtgttgggagtcagggaaggtctttaattacgataacgatcaaacccggctcga
+agcgcagattcagcagtttaatccccgcgatgtcgaaggttatcgtcagtttctggactattcacgcgcggtgtttaaag
+aaggctatctaaagctcggtactgtcccttttttatcgttcagagacatgcttcgcgccgcacctcaactggcgaaactg
+caagcatggagaagcgtttacagtaaggttgccagttacatcgaagatgaacatctgcgccaggcgttttctttccactc
+gctgttggtgggcggcaatcccttcgccacctcatccatttatacgttgatacacgcgctggagcgtgagtggggcgtct
+ggtttccgcgtggcggcaccggcgcattagttcaggggatgataaagctgtttcaggatctgggtggcgaagtcgtgtta
+aacgccagagtcagccatatggaaacgacaggaaacaagattgaagccgtgcatttagaggacggtcgcaggttcctgac
+gcaagccgtcgcgtcaaatgcagatgtggttcatacctatcgcgacctgttaagccagcaccctgccgcggttaagcagt
+ccaacaaactgcaaactaagcgcatgagtaactctctgtttgtgctctattttggtttgaatcaccatcatgatcagctc
+gcgcatcacacggtttgtttcggcccgcgttaccgcgagctgattgacgaaatttttaatcatgatggcctcgcagagga
+cttctcactttatctgcacgcgccctgtgtcacggattcgtcactggcgcctgaaggttgcggcagttactatgtgttgg
+cgccggtgccgcatttaggcaccgcgaacctcgactggacggttgaggggccaaaactacgcgaccgtatttttgcgtac
+cttgagcagcattacatgcctggcttacggagtcagctggtcacgcaccggatgtttacgccgtttgattttcgcgacca
+gcttaatgcctatcatggctcagccttttctgtggagcccgttcttacccagagcgcctggtttcggccgcataaccgcg
+ataaaaccattactaatctctacctggtcggcgcaggcacgcatcccggcgcaggcattcctggcgtcatcggctcggca
+aaagcgacagcaggtttgatgctggaggatctgatataataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1995702</id>
+<title>crtI coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1479</endpos></feature>
+<feature>
+<id>1968244</id>
+<title>PstI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>478</startpos>
+<endpos>483</endpos></feature>
+<feature>
+<id>1968245</id>
+<title>PstI site removed</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>889</startpos>
+<endpos>894</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>///igem2008/edinburgh/favorite</category>
+<category>//function/biosynthesis/isoprenoid</category>
+<category>//function/odor</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

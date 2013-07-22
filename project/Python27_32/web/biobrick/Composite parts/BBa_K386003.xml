@@ -1,0 +1,127 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20704</part_id>
+<part_name>BBa_K386003</part_name>
+<part_short_name>K386003</part_short_name>
+<part_short_desc>HapR promoter with GFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K386003</part_url>
+<part_entered>2010-10-25</part_entered>
+<part_author>Matthew Ford</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>20701</part_id>
+<part_name>BBa_K386002</part_name>
+<part_short_desc>HapR promoter</part_short_desc>
+<part_type>Other</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>20701</part_id>
+<part_name>BBa_K386002</part_name>
+<part_short_desc>HapR promoter</part_short_desc>
+<part_type>Other</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<scar>
+<scar_id>2</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Prefix</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>gaattcgcggccgcttctagag</scar_sequence></scar>
+<subpart>
+<part_id>20701</part_id>
+<part_name>BBa_K386002</part_name>
+<part_short_desc>HapR promoter</part_short_desc>
+<part_type>Other</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>0</scar_id>
+<scar_standard>0</scar_standard>
+<scar_type>Custom</scar_type>
+<scar_name>[tactagtagcggccgctgcagtactag]</scar_name>
+<scar_nickname>[tactagtagcggccgctgcagtactag]</scar_nickname>
+<scar_comments>Custom sequence</scar_comments>
+<scar_sequence>tactagtagcggccgctgcagtactag</scar_sequence></scar>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>gaattcgcggccgcttctagagaccagttgaaaaagaatgcattgtataaatggggcttggagaatttaggcgaataatt
+ttctcttctatccatttcctacttgaagctgtagcggtgttggcagaatttgctcaccccaatcacagagtgtatcttac
+tagtagcggccgctgcagtactagatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattaga
+tggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaat
+ttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcg
+agatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatt
+tttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaa
+aaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatc
+atggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagc
+agaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctg
+ccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggc
+atggatgaactatacaaataataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2099014</id>
+<title>BBa_K386002</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>178</endpos></feature>
+<feature>
+<id>2099013</id>
+<title>HapR</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>157</endpos></feature>
+<feature>
+<id>2099016</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>185</startpos>
+<endpos>904</endpos></feature>
+<feature>
+<id>2099015</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>185</startpos>
+<endpos>904</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

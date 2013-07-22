@@ -1,0 +1,148 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10254</part_id>
+<part_name>BBa_I742143</part_name>
+<part_short_name>I742143</part_short_name>
+<part_short_desc>sam8+sam5 (tyrosine ammonia lyase + coumarate hydroxylase)</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>sam8sam5</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I742143</part_url>
+<part_entered>2007-10-23</part_entered>
+<part_author>Chris French</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10349</part_id>
+<part_name>BBa_I742146</part_name>
+<part_short_desc>sam8 native rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10253</part_id>
+<part_name>BBa_I742142</part_name>
+<part_short_desc>sam8 (tyrosine-ammonia lyase) coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>sam8</part_nickname></subpart>
+<subpart>
+<part_id>10347</part_id>
+<part_name>BBa_I742145</part_name>
+<part_short_desc>sam5 native rbs</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10252</part_id>
+<part_name>BBa_I742141</part_name>
+<part_short_desc>sam5 (coumarate hydroxylase) coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>sam5</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10352</part_id>
+<part_name>BBa_I742148</part_name>
+<part_short_desc>sam8 (tyrosine ammonia lyase) with native rbs</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>rbs+sam8</part_nickname></subpart>
+<subpart>
+<part_id>10351</part_id>
+<part_name>BBa_I742147</part_name>
+<part_short_desc>sam5 (coumarate hydroxylase) with native rbs.</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>rbs+sam5</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<!--Error: Sequence does not match subpart list --></specified_subscars>
+<sequences>
+<seq_data>gaggttgggacaagtactagatgacgcaggtcgtggaacgtcaggctgatcggctcagcagcagggagtacctggcccgg
+gtcgtgcgcagcgccgggtgggacgccggtctcacctcgtgcaccgacgaggagatcgtccggatgggcgcgagcgcgcg
+caccatcgaggagtacctgaagtccgacaagcccatctacggcctgacgcagggcttcggtccgctggtgctgttcgacg
+ccgactcggagctggagcagggcggctcgctgatctcgcacctgggcaccggccagggcgcgccactggccccggaggtg
+tcgcggctgatcctctggctgcgcatccagaacatgcgcaaggggtactcggcggtctcgccggtgttctggcagaagct
+cgccgacctgtggaacaaggggttcaccccggcgatcccccggcacggcacggtcagcgcgagcggcgacctgcaaccgc
+tggcgcacgccgcgctcgccttcaccggtgtcggcgaggcgtggacccgggacgccgacggccggtggtccaccgtgccg
+gccgtggacgcgctcgccgcgctgggggcggagccgttcgactggccggtgcgcgaggcgctggcgttcgtcaacgggac
+cggcgcgagcctcgcggtggctgtgctcaaccaccggtccgccctgcggctggtccgcgcctgcgccgtgctctccgcgc
+ggctggcgaccctgctgggggccaatcccgagcactacgacgtggggcacggtgtcgcgcgcggccaggtcggtcagctg
+accgcggcggagtggatccggcaggggctgccccggggcatggtgcgcgacggcagccgcccgctccaggagccgtacag
+cctgcggtgcgcgccgcaggtgctcggcgcggtgctcgaccagctcgacggcgcgggcgacgtgctggcgcgggaggtcg
+acggctgccaggacaacccgatcacctacgagggcgagctgctgcacggcggcaacttccacgccatgccggtgggtttc
+gcctccgaccagatcgggttggccatgcacatggccgcctacctggccgagcgccagctgggtctgctggtcagcccggt
+gaccaacggcgacctgccgcccatgctcaccccgcgcgccgggcgcggtgccgggctggccggggtgcagatcagcgcga
+cctcgttcgtctcgcggatccggcagctggtgttccccgcctcgctgaccaccctgccgaccaacggctggaaccaggac
+cacgtgccgatggcgctcaacggggcgaactcggtgttcgaggcgttggagctcggctggctgacggtcgggtcgctggc
+ggtgggcgtcgcgcagctcgcggccatgaccggccacgccgcggagggcgtctgggcggagctggccgggatctgcccgc
+cgctggacgccgaccgcccgctgggcgccgaggtgcgcgccgcgcgcgacctgctgtccgcgcacgcggaccaactgctc
+gtcgacgaggcagacgggaaggatttcggataataatactagagacggagaagcagcgaatactagatgaccatcacgtc
+acctgcgccggcgggccggctcaacaacgtccgcccgatgacgggcgaggagtacctggaatcactgcgggacggccgag
+aggtctacatctacggcgagcgggtcgacgacgtcaccacgcacctggccttccgcaacagcgtgcgctccatcgcgcgg
+ctctacgacgtgctgcacgacccggcgtccgaaggtgtgctgcgggtgcccaccgacaccggcaacggcgggttcaccca
+cccgttcttcaagaccgcccggtcgtcggaggacctggtcgccgcgcgcgaggccatcgtcggctggcagcggctggtgt
+acgggtggatgggccgcaccccggactacaaggcggcgttcttcggcacgctcgacgccaacgccgagttctacgggccg
+ttcgaggccaacgcccgccgctggtaccgcgacgcccaggaacgggtgctgtacttcaaccacgcgatcgtgcacccgcc
+ggtcgaccgggaccggcccgccgaccggaccgccgacatctgcgtgcacgtggaggaggagaccgacagcgggttgatcg
+tctccggcgccaaggtggtcgcgaccggctccgcgatgaccaacgcgaacctcatcgcgcactacgggcttccggtgcgg
+gacaagaagttcggcctggtgttcacggtcccgatgaactcgcccggcctcaagctcatctgccgcacctcctacgagct
+gatggtcgcgacgcagggctcgcccttcgactacccgctgtcgagccggctcgacgagaacgactcgatcatgatcttcg
+accgggtgctggtgccctgggagaacgtgttcatgtacgacgcgggcgcggccaactccttcgccaccgggtcaggcttc
+ctcgaacgcttcaccttccacggctgcacccgcctcgcggtcaagctggacttcatcgccggctgcgtcatgaaggcggt
+ggaggtcaccggcaccacgcacttccggggcgtgcaggcgcaggtcggcgaagtgctcaactggcgcgacgtgttctggg
+gcctgtccgacgcgatggccaagtcgccgaactcgtgggtcggcggctcggtgcagccgaacctcaactacgggctcgcg
+taccgcaccttcatgggcgtgggctacccgcgcatcaaggagatcatccagcagaccctcggcagcgggttgatctacct
+gaactcctcggccgccgactggaagaaccccgacgtccgcccgtacctcgaccgctacctgcgcggctcgcggggcatcc
+aggcgatcgaccgggtcaagctgctgaagctgctgtgggacgcggtcggcaccgagttcgccggccggcacgagctctac
+gagcgcaactacggcggcgaccacgagggcatccgggtgcagaccctgcaggcgtaccaggcgaacggccaagccgccgc
+gctcaagggtttcgccgagcagtgcatgtccgagtacgacctcgacggctggacgaggcccgacctgatcaaccccggca
+cctaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1955440</id>
+<title>BBa_I742146</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>14</endpos></feature>
+<feature>
+<id>1955441</id>
+<title>BBa_I742142</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>21</startpos>
+<endpos>1556</endpos></feature>
+<feature>
+<id>1955442</id>
+<title>BBa_I742145</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1565</startpos>
+<endpos>1580</endpos></feature>
+<feature>
+<id>1955444</id>
+<title>BBa_I742141</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1587</startpos>
+<endpos>3128</endpos></feature>
+<feature>
+<id>1955443</id>
+<title>PstI site to be removed</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>3006</startpos>
+<endpos>3011</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//igem2007/edinburgh/favorite</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

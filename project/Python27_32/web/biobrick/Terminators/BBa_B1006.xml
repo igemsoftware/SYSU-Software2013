@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7333</part_id>
+<part_name>BBa_B1006</part_name>
+<part_short_name>B1006</part_short_name>
+<part_short_desc>Terminator (artificial, large, %T~&gt;90)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_B1006</part_url>
+<part_entered>2006-08-31</part_entered>
+<part_author>Haiyao Huang</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>aaaaaaaaaccccgcccctgacagggcggggtttttttt
+</seq_data></sequences>
+<features>
+<feature>
+<id>1898428</id>
+<title>B1006</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>39</endpos></feature>
+<feature>
+<id>1898431</id>
+<title>PolyA</title>
+<type>polya</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>9</endpos></feature>
+<feature>
+<id>1898429</id>
+<title>modified thr terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>10</startpos>
+<endpos>31</endpos></feature>
+<feature>
+<id>1898430</id>
+<title>PolyA</title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>32</startpos>
+<endpos>39</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>forward_efficiency</name>
+<value>0.99[CH]</value>
+<units></units>
+<url></url>
+<id>2771</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>reverse_efficiency</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>2772</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>direction</name>
+<value>Forward</value>
+<units></units>
+<url></url>
+<id>4206</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>reversed_version</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4207</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4208</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//terminator/single</category>
+<category>//direction/forward</category></categories>
+<twins>
+<twin>BBa_M39111</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

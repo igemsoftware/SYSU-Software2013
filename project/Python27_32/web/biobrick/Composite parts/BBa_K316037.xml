@@ -1,0 +1,268 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20820</part_id>
+<part_name>BBa_K316037</part_name>
+<part_short_name>K316037</part_short_name>
+<part_short_desc>Pveg-spoVG-LytC-Helical Linker-Elastase Cleavage Site-AIP-His Tag</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>P-RBS-CWB-</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K316037</part_url>
+<part_entered>2010-10-26</part_entered>
+<part_author>IC 2010 Team</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19457</part_id>
+<part_name>BBa_K316001</part_name>
+<part_short_desc>pVeg Constitutive promoter for Veg locus from B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<subpart>
+<part_id>21107</part_id>
+<part_name>BBa_K316047</part_name>
+<part_short_desc>LytC - Helical Linker - Elastase Cleavage Site - AIP - His Tag</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>LytC-Heli-</part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>144</part_id>
+<part_name>BBa_B0011</part_name>
+<part_short_desc>LuxICDABEG (+/-)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19457</part_id>
+<part_name>BBa_K316001</part_name>
+<part_short_desc>pVeg Constitutive promoter for Veg locus from B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<subpart>
+<part_id>21107</part_id>
+<part_name>BBa_K316047</part_name>
+<part_short_desc>LytC - Helical Linker - Elastase Cleavage Site - AIP - His Tag</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>LytC-Heli-</part_nickname></subpart>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19457</part_id>
+<part_name>BBa_K316001</part_name>
+<part_short_desc>pVeg Constitutive promoter for Veg locus from B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>21107</part_id>
+<part_name>BBa_K316047</part_name>
+<part_short_desc>LytC - Helical Linker - Elastase Cleavage Site - AIP - His Tag</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname>LytC-Heli-</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aattttgtcaaaataattttattgacaacgtcttattaacgttgatataatttaaattttatttgacaaaaatgggctcg
+tgttgtacaataaatgttactagagtcttcagaaaggagttactagatgcgttcttatataaaagtcctaacaatgtgtt
+ttctggggctcatactttttgtgccaacagctttggccgataactcagtgaaaagagttgggggaagcaatagatacggc
+actgctgtacaaatatcaaagcaaatgtattcaacagcaagtacagctgtaattgttggtgggagttcctatgcagatgc
+tatttcagcagcacctcttgcttaccagaagaatgcgccattgctttacactaattctgataagctttcatatgaaacga
+aaacaagattgaaagagatgcagactaaaaatgtaattattgtaggcggaacacctgctgtttcttctaacactgctaac
+cagattaaaagcttggggataagtattaaacgaattgcaggaagcaaccgttatgatacggctgcacgggtggcaaaagc
+gatgggtgcgacttcaaaagctgttattttgaacggcttcttatatgcagacgctccggccgtcatcccttatgcagcga
+aaaacgggtatccaattctttttacaaataaaacatctataaatagtgcgactacgtctgtgataaaagataagggaatt
+tcgagtaccgttgttgtaggaggcactggaagtatcagcaatacggtatacaacaagttaccttctcctacaagaattag
+cggttcaaacagatatgagcttgctgcaaatatcgtacaaaaacttaatttatcaacaagcaccgtatatgtaagcaatg
+gattcagctaccctgactctattgcaggagctacactggcagctaagaagaagcaatctcttattcttacaaatggtgaa
+aatttatctacaggagcccgtaaaattattggaagtaaaaacatgtcaaactttatgattatcggaaacactcctgccgt
+aagcacaaaggttgctaatcagctaaagaatccagttgtaagcagaggctcacgcgcactggcagaagccgcagctaagg
+aagctgctgcaaaagaggcggcggcgaaagccgcggcctcatggccgctggaaatgcgtctgtcaaaattctttcgcgat
+tttattcttcaaagaaaaaagcatcaccatcatcaccattaataatactagagtcacactggctcaccttcgggtgggcc
+tttctgcgtttatatactagagagagaatataaaaagccagattattaatccggcttttttattattt
+</seq_data></sequences>
+<features>
+<feature>
+<id>2112006</id>
+<title>BBa_K316001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>97</endpos></feature>
+<feature>
+<id>2112004</id>
+<title>Sigma A-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>63</startpos>
+<endpos>68</endpos></feature>
+<feature>
+<id>2112005</id>
+<title>Sigma A-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>86</startpos>
+<endpos>91</endpos></feature>
+<feature>
+<id>2112016</id>
+<title>BBa_K316047</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>106</startpos>
+<endpos>1245</endpos></feature>
+<feature>
+<id>2112007</id>
+<title>sRBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>106</startpos>
+<endpos>120</endpos></feature>
+<feature>
+<id>2112009</id>
+<title>LytC Cell Wall Binding Domain</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>127</startpos>
+<endpos>1081</endpos></feature>
+<feature>
+<id>2112008</id>
+<title>start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>127</startpos>
+<endpos>129</endpos></feature>
+<feature>
+<id>2112010</id>
+<title>Helical Linker</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1082</startpos>
+<endpos>1158</endpos></feature>
+<feature>
+<id>2112011</id>
+<title>Elastase Cleavage Site</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1159</startpos>
+<endpos>1170</endpos></feature>
+<feature>
+<id>2112012</id>
+<title>Auto Inducing Peptide</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1171</startpos>
+<endpos>1221</endpos></feature>
+<feature>
+<id>2112013</id>
+<title>His Tag</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>1222</startpos>
+<endpos>1239</endpos></feature>
+<feature>
+<id>2112014</id>
+<title>Stop Codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1240</startpos>
+<endpos>1242</endpos></feature>
+<feature>
+<id>2112015</id>
+<title>Stop Codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1243</startpos>
+<endpos>1245</endpos></feature>
+<feature>
+<id>2112017</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1254</startpos>
+<endpos>1294</endpos></feature>
+<feature>
+<id>2112023</id>
+<title>BBa_B0014</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1254</startpos>
+<endpos>1348</endpos></feature>
+<feature>
+<id>2112018</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1261</startpos>
+<endpos>1280</endpos></feature>
+<feature>
+<id>2112019</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1281</startpos>
+<endpos>1294</endpos></feature>
+<feature>
+<id>2112020</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1287</startpos>
+<endpos>1287</endpos></feature>
+<feature>
+<id>2112021</id>
+<title>BBa_B0011</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1303</startpos>
+<endpos>1348</endpos></feature>
+<feature>
+<id>2112022</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1315</startpos>
+<endpos>1337</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

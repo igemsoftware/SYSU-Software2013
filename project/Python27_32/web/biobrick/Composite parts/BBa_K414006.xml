@@ -1,0 +1,158 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19747</part_id>
+<part_name>BBa_K414006</part_name>
+<part_short_name>K414006</part_short_name>
+<part_short_desc>35S Promoter + (Strong Plant RBS + GFP) From K414001 </part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K414006</part_url>
+<part_entered>2010-10-18</part_entered>
+<part_author>Matthew Polasko</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19046</part_id>
+<part_name>BBa_K414002</part_name>
+<part_short_desc>35S promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19045</part_id>
+<part_name>BBa_K414001</part_name>
+<part_short_desc>Strong Plant RBS (Kozak sequence) + GFP from E0040</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19046</part_id>
+<part_name>BBa_K414002</part_name>
+<part_short_desc>35S promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19045</part_id>
+<part_name>BBa_K414001</part_name>
+<part_short_desc>Strong Plant RBS (Kozak sequence) + GFP from E0040</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19046</part_id>
+<part_name>BBa_K414002</part_name>
+<part_short_desc>35S promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19045</part_id>
+<part_name>BBa_K414001</part_name>
+<part_short_desc>Strong Plant RBS (Kozak sequence) + GFP from E0040</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>gactagagccaagctgatctcctttgccccggagatcaccatggacgactttctctatctctacgatctaggaagaaagt
+tcgacggagaaggtgacgataccatgttcaccaccgataatgagaagattagcctcttcaatttcagaaagaatgctgac
+ccacagatggttagagaggcctacgcggcaggtctcatcaagacgatctacccgagtaataatctccaggagatcaaata
+ccttcccaagaaggttaaagatgcagtcaaaagattcaggactaactgcatcaagaacacagagaaagatatatttctca
+agatcagaagtactattccagtatggacgattcaaggcttgcttcataaaccaaggcaagtaatagagattggagtctct
+aagaaagtagttcctactgaatcaaaggccatggagtcaaaaattcagatcgaggatctaacagaactcgccgtgaagac
+tggcgaacagttcatacagagtcttttacgactcaatgacaagaagaaaatcttcgtcaacatggtggagcacgacactc
+tcgtctactccaagaatatcaaagatacagtctcagaagaccaaagggctattgagacttttcaacaaagggtaatatcg
+ggaaacctcctcggattccattgcccagctatctgtcacttcatcaaaaggacagtagaaaaggaaggtggcacctacaa
+atgccatcattgcgataaaggaaaggctatcgttcaagatgcccctgccgacagtggtcccaaagatggacccccaccca
+cgaggagcatcgtggaaaaagaagacgttccaaccacgtcttcaaagcaagtggattgatgtgatatctccactgacgta
+agggatgacgcacaatcccactatccttcgcaagacccttcctctatataaggaagttcatttcatttggagaggactcc
+ggtatttttacaacaattaccacaacaaaacaaacaacaaacaacattacaatttactattctagtcgatactagagggt
+accaaaaaaaaaacaatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgt
+taatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgca
+ctactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagataccca
+gatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaaga
+tgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattg
+attttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagac
+aaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccatta
+tcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcga
+aagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaa
+ctatacaaataataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2089448</id>
+<title>35S promoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1029</endpos></feature>
+<feature>
+<id>2089449</id>
+<title>BBa_K414002</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1029</endpos></feature>
+<feature>
+<id>2089450</id>
+<title>Kpn I</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1038</startpos>
+<endpos>1043</endpos></feature>
+<feature>
+<id>2089455</id>
+<title>BBa_K414001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1038</startpos>
+<endpos>1775</endpos></feature>
+<feature>
+<id>2089451</id>
+<title>Kozak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>1044</startpos>
+<endpos>1055</endpos></feature>
+<feature>
+<id>2089452</id>
+<title>Translational Start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1056</startpos>
+<endpos>1058</endpos></feature>
+<feature>
+<id>2089453</id>
+<title>GFP ( E0040 )</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1056</startpos>
+<endpos>1769</endpos></feature>
+<feature>
+<id>2089454</id>
+<title>Translational Stop 2x</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1770</startpos>
+<endpos>1775</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

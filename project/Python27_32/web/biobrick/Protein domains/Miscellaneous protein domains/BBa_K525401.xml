@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22100</part_id>
+<part_name>BBa_K525401</part_name>
+<part_short_name>K525401</part_short_name>
+<part_short_desc>S-Layer SbpA from Lysinibacillus sphaericus</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>SbpA</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K525401</part_url>
+<part_entered>2011-09-10</part_entered>
+<part_author>Timo Wolf</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggccggcgctcaggttaacgactacaacaagatctccggctacgcaaaggaggctgttcagtccctcgtcgaccaggg
+tgttatccagggcgataccaacggcaacttcaacccactgaacaccgttactcgcgcacaggctgctgagatcttcacca
+aggctctcgaactggaggcagacggtgacgtcaacttctccgatgttaagaagggcgcttggtactacaactctatcgca
+gctgttgtcgcaaacggcatcttcgagggtgtgtccgctaacgagttcgcaccaaacaagtcccttacccgttccgaggc
+tgcaaaggttctcgttgacgctttcggcctggagggctctgaatccctctcccagttcgcagacgcttcccaggtcaagg
+gttgggcaaagtctgctctggagaccgcagttgctaacggcatcttcactggctccgaggaaaacggtaagcttaacctc
+aagcctaacgcagctatcacccgccaggatttcgcagttgtcttcgctcgtaccctggacctcgcagttgagaccgttga
+cgcttccgtcaaggcaatcaacaacactaccgtggaggttaccttcgatgaagaggttgacaacgtcgaggctctgaagt
+tcaagatcgaaggccttgaggttaagaacgcagctgttaagcagaccaacaagaaggtcgttgttctcactaccgaggca
+cagaccgctgacaaggaatacgtcgtgaccctggatggcgaggagatcggtaagttcaagggcatcgaagcagttgttcc
+aaagtccatcgtcctcaagactaccaacacccagggcaaggttggtaaccaggttaccctgactgctgacgtcggcgtta
+aggcagctggcatcccagttaccttcaacgtcgacgcacctaccggctctcttaacaaggatgctgtggttgaggtttac
+accaacgcagagggcatcgcttcctactcctacactcagtacgcaccagacgctgacgatgtcaccgtttacccaaccgg
+cgcacctcagctccgcgctttcggtccagtttactggggcgtcgacaacatcctgaccatcgaagaggttactaccggca
+acaccctcgcaaacggtgttaagaagacctacaaggtcactttcaaggacccaaagaccggcgctgcactgaccaacaag
+aagcttaacgtgtccttcgttgagaacaccaacgttgctttcaacgcaatctctaaggctactgtcaccaacccttcctc
+cggcctcaccgttaccccataccagactaccaccggcctccaggaagagatccaggttaccactgattccaacggccagg
+caaccttcgtcgtttctggcaccaacaccgctgttactccatacgtcttcgtggacggttcctcctccgttctcggcgtt
+tctaccgtcaccggcaccaacaacgttactcaggcaaccaccgctaacaagaagtgggaggcaaccgaactgactgctac
+cgcagctcaggttaagttcgagggtgcacagcttaaccaccagatcaccgtcgagcgtgacggcgaagaggaggcagcag
+ctcagtacggctccaagctcaacggtcgcgaatacaaggttaaggttctggataaggacggcaagccttacgcaaacggc
+ctcgtcaacatcggtctggacgaggtgcttgatcgtaacctcaacaccaactccaaggctcagttcgcaaacgttactga
+cggcaccgctctgaccctcaacccaggcacctcccagcagggtaagatcaagctgaactctaagggcgaggcaactgttg
+tcctttacggcgctaagggtgaagttggcaccccagttgtctggatcgaccagaacacctcccagaacaaccagtccggc
+gttctcgaggatggtgagcctttcttcaaggcaccagtttccaacttccagtacgaacgcgtcatgggcgctgagttcac
+cgtggagggcaagacttctaaccagaacgttggtaccgacggcatcgcaaactacgctttcgcactgaccaaccagtccg
+gcaagaccctcactaacctgatcggtaagatgacctacgaaatccgtaacacctccggccagccaatcgaggttaagacc
+cctatctcctaccgcgaccagaacaacgtctcttccactcttttcaagatcgaggaatacggctccatcaccatctccgc
+tgatgttatctctacctccaacgcagctttcaccatcgagactgcaccaaacggtaaggctgcaaccgttgtcgttaccc
+catccttcgttaccgctaacaacttcgacgcatccgctgacaacaacctcaacggcgtcgtgactgatgcacgtgacttc
+aacaagcacgttaccgctcctgcactgaccgctaccttcggcaacaacaaggaggttggtactaactacaccggcaccgt
+ccagtacttcaacaaggacaagaagaccatcactttcaacggcaagaacgcagttaagtacgctggtgaatctggcaaga
+cctacaagtacttcggcctcggttccaccccaatctccaccgcagatgacttcatcactcagctccagaacaacgctgca
+aacggctccgttaccgtcacctacaaggttgttgacaacgaggtccagttctacatcgtgtctttcaacaacgatggcgc
+tgcaaacgctgttaagccagagcctaccgcagttgctccaactgacggtaccgtcgcattcaccaacacctccttcaacg
+cttccgcaaaccagactatcaccgttaccgacgctgatcttaacgcagacgctaccgttgcagaaactaccaccgtcaag
+gttacctccggcactgttgtctacaccctcaccgctaccgagactggcgtgaacaccggcgttttcaccgcaaccctgac
+tgctgcacagctcgctgttctgtctgacggcgtcatcaccgcaacctacgaggatgttaagaacaccactggctcctccg
+ttacccgcaccgctaccgcaactcttaacaccgtcgttggtcaggttaactacaacgcagcagctaccaccgcatactcc
+accggttaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2129988</id>
+<title>SbpA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3129</endpos></feature>
+<feature>
+<id>2129989</id>
+<title>SbpA domain</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3129</endpos></feature>
+<feature>
+<id>2129990</id>
+<title>ATG</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2129991</id>
+<title>NgoMIV</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>9</endpos></feature>
+<feature>
+<id>2129993</id>
+<title>AgeI</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>3121</startpos>
+<endpos>3126</endpos></feature>
+<feature>
+<id>2129992</id>
+<title>TAA</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>3127</startpos>
+<endpos>3129</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>	S-Layer SbpA from Lysinibacillus sphaericus</value>
+<units></units>
+<url></url>
+<id>13060</id>
+<m_date>2011-09-21 20:18:11</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>13059</id>
+<m_date>2011-09-21 20:18:02</m_date>
+<user_id>9852</user_id>
+<user_name>MEder</user_name></parameter></parameters>
+<categories>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//proteindomain/internal</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,339 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10277</part_id>
+<part_name>BBa_I728979</part_name>
+<part_short_name>I728979</part_short_name>
+<part_short_desc>I14032+B0034+BBa_I728000+B0014</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I728979</part_url>
+<part_entered>2007-10-23</part_entered>
+<part_author>Bernice Huang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>4987</part_id>
+<part_name>BBa_I14032</part_name>
+<part_short_desc>promoter P(Lac) IQ</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>P(Lac) IQ</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>9355</part_id>
+<part_name>BBa_I728500</part_name>
+<part_short_desc>CPX Terminal Surface Display Protein with Polystyrene-Binding Peptide</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>CPX</part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>144</part_id>
+<part_name>BBa_B0011</part_name>
+<part_short_desc>LuxICDABEG (+/-)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>4987</part_id>
+<part_name>BBa_I14032</part_name>
+<part_short_desc>promoter P(Lac) IQ</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>P(Lac) IQ</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>9355</part_id>
+<part_name>BBa_I728500</part_name>
+<part_short_desc>CPX Terminal Surface Display Protein with Polystyrene-Binding Peptide</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>CPX</part_nickname></subpart>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>4987</part_id>
+<part_name>BBa_I14032</part_name>
+<part_short_desc>promoter P(Lac) IQ</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>P(Lac) IQ</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>9355</part_id>
+<part_name>BBa_I728500</part_name>
+<part_short_desc>CPX Terminal Surface Display Protein with Polystyrene-Binding Peptide</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>CPX</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>200</part_id>
+<part_name>BBa_B0014</part_name>
+<part_short_desc>double terminator (B0012-B0011)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tggtgcaaaacctttcgcggtatggcatgatagcgcctactagagaaagaggagaaatactagatgaaaaaaattgcgtg
+cctgagcgcgctggccgcggttctggcctttaccgcgggcaccagcgttgcgggccagtctggccaaagatcttttttca
+gctttttttttccggcgagcgcgtggggtagcgtcgacaaacgtatggcgagcatgaccggcggtcagcagatgggtggt
+ggccagagcggccagagcggtgattataacaaaaaccagtattatggcattaccgcgggtccggcgtatcgtattaacga
+ttgggcgagcatttatggcgtggtgggcgtgggctatggcaaatttcagaccaccgaatatccgacctataaacacgata
+ccagcgattatggctttagctatggcgcgggtctgcaatttaatccgatggaaaacgtggcgctggattttagctatgaa
+cagagccgtattcgtagcgtggatgtgggcacctggattgcgggcgtgggttatcgttttggcggcagcggtgcgaccag
+caccgtgaccggcggttatgcgcagagcgatgcgcagggccagatgaacaaaatgggcggcttcaacctgaaatatcgct
+atgaagaagataacagcccgctgggcgtgattggcagctttacctataccgaaaaaagccgtaccgcgagctgataatac
+tagagtcacactggctcaccttcgggtgggcctttctgcgtttatatactagagagagaatataaaaagccagattatta
+atccggcttttttattattt
+</seq_data></sequences>
+<features>
+<feature>
+<id>1975649</id>
+<title>P(Lac) IQ</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>37</endpos></feature>
+<feature>
+<id>1975652</id>
+<title>BBa_I14032</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>37</endpos></feature>
+<feature>
+<id>1975650</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>3</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>1975651</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>26</startpos>
+<endpos>31</endpos></feature>
+<feature>
+<id>1975654</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>46</startpos>
+<endpos>57</endpos></feature>
+<feature>
+<id>1975653</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>50</startpos>
+<endpos>53</endpos></feature>
+<feature>
+<id>1975669</id>
+<title>BBa_I728500</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>64</startpos>
+<endpos>717</endpos></feature>
+<feature>
+<id>1975656</id>
+<title>Coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>64</startpos>
+<endpos>717</endpos></feature>
+<feature>
+<id>1975655</id>
+<title>Start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>64</startpos>
+<endpos>66</endpos></feature>
+<feature>
+<id>1975657</id>
+<title>Native Starting Signal</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>64</startpos>
+<endpos>132</endpos></feature>
+<feature>
+<id>1975658</id>
+<title>SfiI Restriction Site</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>133</startpos>
+<endpos>147</endpos></feature>
+<feature>
+<id>1975659</id>
+<title>BglII Cut Site</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>148</startpos>
+<endpos>153</endpos></feature>
+<feature>
+<id>1975660</id>
+<title>Polystyrene Sticky Peptide</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>154</startpos>
+<endpos>192</endpos></feature>
+<feature>
+<id>1975661</id>
+<title>SalI Restriction Site</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>193</startpos>
+<endpos>198</endpos></feature>
+<feature>
+<id>1975662</id>
+<title>Trypsin Cleavage Site</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>199</startpos>
+<endpos>204</endpos></feature>
+<feature>
+<id>1975663</id>
+<title>T7 Antibody Tag</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>205</startpos>
+<endpos>237</endpos></feature>
+<feature>
+<id>1975664</id>
+<title>Linker</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>238</startpos>
+<endpos>255</endpos></feature>
+<feature>
+<id>1975665</id>
+<title>S54-F148 of OmpX</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>256</startpos>
+<endpos>540</endpos></feature>
+<feature>
+<id>1975666</id>
+<title>Linker</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>541</startpos>
+<endpos>552</endpos></feature>
+<feature>
+<id>1975667</id>
+<title>A1-S53 of OmpX</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>553</startpos>
+<endpos>711</endpos></feature>
+<feature>
+<id>1975668</id>
+<title>Double stop codon (TGATAA)</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>712</startpos>
+<endpos>717</endpos></feature>
+<feature>
+<id>1975670</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>726</startpos>
+<endpos>766</endpos></feature>
+<feature>
+<id>1975671</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>733</startpos>
+<endpos>752</endpos></feature>
+<feature>
+<id>1975672</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>753</startpos>
+<endpos>766</endpos></feature>
+<feature>
+<id>1975673</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>759</startpos>
+<endpos>759</endpos></feature>
+<feature>
+<id>1975674</id>
+<title>BBa_B0011</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>775</startpos>
+<endpos>820</endpos></feature>
+<feature>
+<id>1975675</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>787</startpos>
+<endpos>809</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_I728201</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

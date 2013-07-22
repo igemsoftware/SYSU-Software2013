@@ -1,0 +1,215 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15132</part_id>
+<part_name>BBa_K177046</part_name>
+<part_short_name>K177046</part_short_name>
+<part_short_desc>Tetracycline repressor under AraC regulated promoter</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K177046</part_url>
+<part_entered>2009-09-24</part_entered>
+<part_author>Marcin Ziemniak</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>3923</part_id>
+<part_name>BBa_R0080</part_name>
+<part_short_desc>Promoter (AraC regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>AraC</part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>154</part_id>
+<part_name>BBa_C0040</part_name>
+<part_short_desc>tetracycline repressor from transposon Tn10 (+LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetR</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>3923</part_id>
+<part_name>BBa_R0080</part_name>
+<part_short_desc>Promoter (AraC regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>AraC</part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>154</part_id>
+<part_name>BBa_C0040</part_name>
+<part_short_desc>tetracycline repressor from transposon Tn10 (+LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetR</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>3923</part_id>
+<part_name>BBa_R0080</part_name>
+<part_short_desc>Promoter (AraC regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>AraC</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>154</part_id>
+<part_name>BBa_C0040</part_name>
+<part_short_desc>tetracycline repressor from transposon Tn10 (+LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetR</part_nickname></subpart>
+<barcode></barcode></specified_subscars>
+<sequences>
+<seq_data>gcgtaacaaaagtgtctataatcacggcagaaaagtccacattgattatttgcacggcgtcacactttgctatgccatag
+catttttatccataagattagcggatcctacctgacgctttttatcgcaactctctactgtttctccattactagagtca
+cacaggaaagtactagatgtccagattagataaaagtaaagtgattaacagcgcattagagctgcttaatgaggtcggaa
+tcgaaggtttaacaacccgtaaactcgcccagaagctaggtgtagagcagcctacattgtattggcatgtaaaaaataag
+cgggctttgctcgacgccttagccattgagatgttagataggcaccatactcacttttgccctttagaaggggaaagctg
+gcaagattttttacgtaataacgctaaaagttttagatgtgctttactaagtcatcgcgatggagcaaaagtacatttag
+gtacacggcctacagaaaaacagtatgaaactctcgaaaatcaattagcctttttatgccaacaaggtttttcactagag
+aatgcattatatgcactcagcgctgtggggcattttactttaggttgcgtattggaagatcaagagcatcaagtcgctaa
+agaagaaagggaaacacctactactgatagtatgccgccattattacgacaagctatcgaattatttgatcaccaaggtg
+cagagccagccttcttattcggccttgaattgatcatatgcggattagaaaaacaacttaaatgtgaaagtgggtccgct
+gcaaacgacgaaaactacgctttagtagcttaataacactgatagtgctagtgtagatcac
+</seq_data></sequences>
+<features>
+<feature>
+<id>2049949</id>
+<title>BBa_R0080</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>149</endpos></feature>
+<feature>
+<id>2049943</id>
+<title>c-amp2</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>29</endpos></feature>
+<feature>
+<id>2049944</id>
+<title>araO1</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>6</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>2049945</id>
+<title>c-amp1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>43</startpos>
+<endpos>72</endpos></feature>
+<feature>
+<id>2049946</id>
+<title>ara1 and ara2</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>101</endpos></feature>
+<feature>
+<id>2049947</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>113</startpos>
+<endpos>118</endpos></feature>
+<feature>
+<id>2049948</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>136</startpos>
+<endpos>141</endpos></feature>
+<feature>
+<id>2049951</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>158</startpos>
+<endpos>170</endpos></feature>
+<feature>
+<id>2049950</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>158</startpos>
+<endpos>170</endpos></feature>
+<feature>
+<id>2049952</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>164</startpos>
+<endpos>167</endpos></feature>
+<feature>
+<id>2049955</id>
+<title>BBa_C0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>177</startpos>
+<endpos>836</endpos></feature>
+<feature>
+<id>2049953</id>
+<title>tetR</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>180</startpos>
+<endpos>796</endpos></feature>
+<feature>
+<id>2049954</id>
+<title>SsrA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>797</startpos>
+<endpos>830</endpos></feature>
+<feature>
+<id>2049956</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>837</startpos>
+<endpos>861</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

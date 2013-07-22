@@ -1,0 +1,214 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19334</part_id>
+<part_name>BBa_K322126</part_name>
+<part_short_name>K322126</part_short_name>
+<part_short_desc>Red light sensor (Cph8) and reporter system (EYFP)</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K322126</part_url>
+<part_entered>2010-10-08</part_entered>
+<part_author>Chris French and Richard Partridge Hicks</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19104</part_id>
+<part_name>BBa_K322124</part_name>
+<part_short_desc>Red light sensor Cph8 (from Coliroid) with RBS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>3910</part_id>
+<part_name>BBa_R0082</part_name>
+<part_short_desc>Promoter (OmpR, positive)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>OmpR</part_nickname></subpart>
+<subpart>
+<part_id>4460</part_id>
+<part_name>BBa_E0030</part_name>
+<part_short_desc>enhanced yellow fluorescent protein derived from A. victoria GFP</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>eyfp</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19104</part_id>
+<part_name>BBa_K322124</part_name>
+<part_short_desc>Red light sensor Cph8 (from Coliroid) with RBS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>3910</part_id>
+<part_name>BBa_R0082</part_name>
+<part_short_desc>Promoter (OmpR, positive)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>OmpR</part_nickname></subpart>
+<subpart>
+<part_id>4460</part_id>
+<part_name>BBa_E0030</part_name>
+<part_short_desc>enhanced yellow fluorescent protein derived from A. victoria GFP</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>eyfp</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19104</part_id>
+<part_name>BBa_K322124</part_name>
+<part_short_desc>Red light sensor Cph8 (from Coliroid) with RBS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>3910</part_id>
+<part_name>BBa_R0082</part_name>
+<part_short_desc>Promoter (OmpR, positive)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>OmpR</part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>4460</part_id>
+<part_name>BBa_E0030</part_name>
+<part_short_desc>enhanced yellow fluorescent protein derived from A. victoria GFP</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>eyfp</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aggagaaaggtacccatggccaccaccgtacaactcagcgaccaatccctccgtcagctagaaaccctcgccatccacac
+cgcccacctgattcagccccacggtttagtggtggtcctgcaagaaccagacctcaccatcagccaaattagcgccaact
+gcaccggcattttagggcgatcgccagaggatttgttgggcagaaccctaggggaagtgtttgatagctttcagattgat
+cccatccagagtcgcctaacggccggacaaatcagcagcctcaaccccagtaaactttgggcgcgggtcatgggggacga
+ctttgtcatttttgacggggtttttcatcgcaacagtgacggtttattggtatgtgaactcgagccagcctacacttccg
+ataatctgcccttcctcggtttttatcacatggccaacgctgccctgaatcggttgcgccaacaagctaatctacgggat
+ttctacgatgttattgtcgaagaagtccgccgtatgactggctttgaccgggtgatgctataccgctttgatgaaaataa
+ccacggtgatgtcattgccgaagataaacgggatgatatggaaccctatttgggcctgcactatcccgaatcggatattc
+cccaacccgcccgtcggctatttatccacaaccccattcgagtaattcccgatgtttatggtgtggcggtgcccctgacc
+ccagcggttaaccccagcaccaaccgagcggtggatttaacagaatccattctgcgcagtgcgtaccattgccacttgac
+ctatctgaaaaatatgggggtaggagcgtctttaaccatttccctaattaaggacggccatctctgggggctcattgcct
+gccaccatcaaacccccaaagtaattccctttgaactgcgtaaagcctgcgaattttttggtcgggtggtgtttagcaac
+atttccgcccaggaagatacggaaaccttcgattaccgggtgcagctggcggagcatgaagcggttttattggacaaaat
+gaccacggcggcggattttgtcgaaggattaactaatcatcccgatcgcctgttgggattaacgggctcccagggggcgg
+ccatttgctttggggaaaaattgattttagtaggggaaaccccggacgagaaagcagtgcaatatttactgcaatggttg
+gagaatcgggaagtgcaagacgttttcttcacctcttccctctcacaaatttatcctgatgcagtgaattttaaatccgt
+ggccagtggcttattggccattcccattgcccgtcacaactttttgctctggtttcgccctgaagtgttgcaaacggtta
+attggggcggtgacccaaatcatgcttacgaagctacccaggaagacggtaaaatcgagctccatccccgccaatccttt
+gacctctggaaagaaattgtccgactccaatctttgccctggcaatcggtggaaatccaaagtgccctggccctgaaaaa
+ggcgatcgtcaacctcattttgcgccaggcagaagaattgcatatggcggctggtgttaagcaactggcggatgaccgca
+cgctgctgatggcgggggtaagtcacgacttgcgcacgccgctgacgcgtattcgcctggcgactgagatgatgagcgag
+caggatggctatctggcagaatcgatcaataaagatatcgaagagtgcaacgccatcattgagcagtttatcgactacct
+gcgcaccgggcaggagatgccgatggaaatggcggatcttaatgcagtactcggtgaggtgattgctgccgaaagtggct
+atgagcgggaaattgaaaccgcgctttaccccggcagcattgaagtgaaaatgcacccgctgtcgatcaaacgcgcggtg
+gcgaatatggtggtcaacgccgcccgttatggcaatggctgggtcaaagtcagcagcggaacggagccgaatcgcgcctg
+gttccaggtggaagatgacggtccgggaattgcgccggaacaacgtaagcacctgttccagccgtttgtccgcggcgaca
+gtgcgcgcaccattagcggcacgggattagggctggcaattgtgcagcgtatcgtggataaccataacgggatgctggag
+cttggcaccagcgagcggggcgggctttccattcgcgcctggctgccagtgccggtaacgcgggcgcagggcatgacaaa
+agaagggtaataatactagagtcccttgcatttacattttgaaacatctatagcgataaatgaaacatcttaaaagtttt
+agtatcatattcgtgttggattattctgcatttttggggagaatggacttactagatggtgagcaagggcgaggagctgt
+tcaccggggtggtgcccatcctggtcgagctggacggcgacgtaaacggccacaagttcagcgtgtccggcgagggcgag
+ggcgatgccacctacggcaagctgaccctgaagttcatctgcaccaccggcaagctgcccgtgccctggcccaccctcgt
+gaccaccttcggctacggcctgcaatgcttcgcccgctaccccgaccacatgaagctgcacgacttcttcaagtccgcca
+tgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacggcaactacaagacccgcgccgaggtgaagttc
+gagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttcaaggaggacggcaacatcctggggcacaagct
+ggagtacaactacaacagccacaacgtctatatcatggccgacaagcagaagaacggcatcaaggtgaacttcaagatcc
+gccacaacatcgaggacggcagcgtgcagctcgccgaccactaccagcagaacacccccatcggcgacggccccgtgctg
+ctgcccgacaaccactacctgagctaccagtccgccctgagcaaagaccccaacgagaagcgcgatcacatggtcctgct
+ggagttcgtgaccgccgccgggatcactctcggcatggacgagctgtacaagtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2084152</id>
+<title>BBa_K322124</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>2253</endpos></feature>
+<feature>
+<id>2084150</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>6</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2084151</id>
+<title>Cph8</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>16</startpos>
+<endpos>2250</endpos></feature>
+<feature>
+<id>2084158</id>
+<title>BBa_R0082</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2262</startpos>
+<endpos>2369</endpos></feature>
+<feature>
+<id>2084153</id>
+<title>C1 OmpR</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>2274</startpos>
+<endpos>2291</endpos></feature>
+<feature>
+<id>2084154</id>
+<title>C2 OmpR</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>2295</startpos>
+<endpos>2312</endpos></feature>
+<feature>
+<id>2084155</id>
+<title>C3 OmpR</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>2315</startpos>
+<endpos>2332</endpos></feature>
+<feature>
+<id>2084156</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2336</startpos>
+<endpos>2341</endpos></feature>
+<feature>
+<id>2084157</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2359</startpos>
+<endpos>2364</endpos></feature>
+<feature>
+<id>2084159</id>
+<title>BBa_E0030</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2376</startpos>
+<endpos>3098</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

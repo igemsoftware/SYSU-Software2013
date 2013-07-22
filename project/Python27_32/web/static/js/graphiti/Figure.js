@@ -474,8 +474,12 @@ graphiti.Figure = Class.extend({
         temp.id = this.id;
         g.Storage.push(temp);
       }    
-      
-      console.log(g.Storage);
+
+      // 更新菜单栏位置
+        var toggleBar = $("#toggleBar");
+        toggleBar.css("left", (this.x + 250) + "px");
+        toggleBar.css("top", this.y + "px");
+        toggleBar.css("display", "block");
     },
 
     /**

@@ -173,7 +173,6 @@ graphiti.VectorFigure = graphiti.shape.node.Node.extend({
    getColor:function()
    {
      return this.color;
-   }
-
+   }    
 });
 

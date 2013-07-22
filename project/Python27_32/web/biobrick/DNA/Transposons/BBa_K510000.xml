@@ -1,0 +1,260 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22409</part_id>
+<part_name>BBa_K510000</part_name>
+<part_short_name>K510000</part_short_name>
+<part_short_desc>pUC18Sfi-miniTn7BB-Gm</part_short_desc>
+<part_type>Plasmid</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K510000</part_url>
+<part_entered>2011-09-16</part_entered>
+<part_author>David Caballero, Fernando Govantes</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tactagtagcggccgctgcagtccggcaaaaaaacgggcaaggtgtcaccaccctgccctttttctttaaaaccgaaaag
+attacttcgcgttatgcaggcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctc
+actcaaaggcggtaataggccaaccagataagtgaaatctagttccaaactattttgtcatttttaattttcgtattagc
+ttacgacgctacacccagttcccatctattttgtcactcttccctaaataatccttaaaaactccatttccacccctccc
+agttcccaactattttgtccgcccacaggccgcctaggccgtagcttggcactggccgtcgttttacaacgtcgtgactg
+ggaaaaccctggcgttacccaacttaatcgccttgcagcacatccccctttcgccagctggcgtaatagcgaagaggccc
+gcaccgatcgcccttcccaacagttgcgcagcctgaatggcgaatggcgcctgatgcggtattttctccttacgcatctg
+tgcggtatttcacaccgcatatggtgcactctcagtacaatctgctctgatgccgcatagttaagccagccccgacaccc
+gccaacacccgctgacgcgccctgacgggcttgtctgctcccggcatccgcttacagacaagctgtgaccgtctccggga
+gctgcatgtgtcagaggttttcaccgtcatcaccgaaacgcgcgagacgaaagggcctcgtgatacgcctatttttatag
+gttaatgtcatgataataatggtttcttagacgtcaggtggcacttttcggggaaatgtgcgcggaacccctatttgttt
+atttttctaaatacattcaaatatgtatccgctcatgagacaataaccctgataaatgcttcaataatattgaaaaagga
+agagtatgagtattcaacatttccgtgtcgcccttattcccttttttgcggcattttgccttcctgtttttgctcaccca
+gaaacgctggtgaaagtaaaagatgctgaagatcagttgggtgcacgagtgggttacatcgaactggatctcaacagcgg
+taagatccttgagagttttcgccccgaagaacgttttccaatgatgagcacttttaaagttctgctatgtggcgcggtat
+tatcccgtattgacgccgggcaagagcaactcggtcgccgcatacactattctcagaatgacttggttgagtactcacca
+gtcacagaaaagcatcttacggatggcatgacagtaagagaattatgcagtgctgccataaccatgagtgataacactgc
+ggccaacttacttctgacaacgatcggaggaccgaaggagctaaccgcttttttgcacaacatgggggatcatgtaactc
+gccttgatcgttgggaaccggagctgaatgaagccataccaaacgacgagcgtgacaccacgatgcctgtagcaatggca
+acaacgttgcgcaaactattaactggcgaactacttactctagcttcccggcaacaattaatagactggatggaggcgga
+taaagttgcaggaccacttctgcgctcggcccttccggctggctggtttattgctgataaatctggagccggtgagcgtg
+ggtctcgcggtatcattgcagcactggggccagatggtaagccctcccgtatcgtagttatctacacgacggggagtcag
+gcaactatggatgaacgaaatagacagatcgctgagataggtgcctcactgattaagcattggtaactgtcagaccaagt
+ttactcatatatactttagattgatttaaaacttcatttttaatttaaaaggatctaggtgaagatcctttttgataatc
+tcatgaccaaaatcccttaacgtgagttttcgttccactgagcgtcagaccccgtagaaaagatcaaaggatcttcttga
+gatcctttttttctgcgcgtaatctgctgcttgcaaacaaaaaaaccaccgctaccagcggtggtttgtttgccggatca
+agagctaccaactctttttccgaaggtaactggcttcagcagagcgcagataccaaatactgttcttctagtgtagccgt
+agttaggccaccacttcaagaactctgtagcaccgcctacatacctcgctctgctaatcctgttaccagtggctgctgcc
+agtggcgataagtcgtgtcttaccgggttggactcaagacgatagttaccggataaggcgcagcggtcgggctgaacggg
+gggttcgtgcacacagcccagcttggagcgaacgacctacaccgaactgagatacctacagcgtgagctttgagaaagcg
+ccacgcttcccgaagggagaaaggcggacaggtatccggtaagcggcagggtcggaacaggagagcgcacgagggagctt
+ccagggggaaacgcctggtatctttatagtcctgtcgggtttcgccacctctgacttgagcgtcgatttttgtgatgctc
+gtcaggggggcggagcctatggaaaaacgccagcaacgcggcctttttacggttcctggccttttgctggccttttgctc
+acatgttctttcctgcgttatcccctgattctgtggataaccgtattaccgcctttgagtgagctgataccgctcgccgc
+agccgaacgaccgagcgcagcgagtcagtgagcgaggaagcggaagagcgcccaatacgcaaaccgcctctccccgcgcg
+ttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcgggcagtgagcgcaacgcaattaatgtga
+gttagctcactcattaggcaccccaggctttacactttatgcttccggctcgtatgttgtgtggaattgtgagcggataa
+caatttcacacaggaaacagctatgaccatgattacgaattggccgcctaggcctgtgggcggacaataaagtcttaaac
+tgaacaaaatagatctaaactatgacaataaagtcttaaactagacagaatagttgtaaactgaaatcagtccagttatg
+ctgtgaaaaagcatactggacttttgttatggctaaagcaaactcttcattttctgaagtgcaaattgcccgtcgtatta
+aagaggggcgtggggttcgcttgtcacactggctcaccttcgggtgggcctttctgcgtttatatactagagagagaata
+taaaaagccagattattaatccggcttttttattatttgctagatcttgaagtacctattccgaagttcctattctctaa
+aaagtataggaacttcagaggcatgcccatggttaggtggcggtacttgggtcgatatcaaagtgcatcacttcttcccg
+tatgcccaactttgtatagagagccactgcgggatcgtcaccgtaatctgcttgcacgtagatcacataagcaccaagcg
+cgttggcctcatgcttgaggagattgatgagcgcggtggcaatgccctgcctccggtgctcgccggagactgcgagatca
+tagatatagatctcactacgcggctgctcaaacttgggcagaacgtaagccgcgagagcgccaacaaccgcttcttggtc
+gaaggcagcaagcgcgatgaatgtcttactacggagcaagttcccgaggtaatcggagtccggctgatgttgggagtagg
+tggctacgtctccgaactcacgaccgaaaagatcaagagcagcccgcatggatttgacttggtcagggccgagcctacat
+gtgcgaatgatgcccatacttgagccacctaactttgttttagggcgactgccctgctgcgtaacatcgttgctgctgcg
+taacatcgttgctgctccataacatcaaacatcgacccacggcgtaacgcgcttgctgcttggatgcccgaggcatagac
+tgtacaaaaaaacagtcataacaagccatgaaaaccgccactgcgccgttaccaccgctgcgttcggtcaaggttctgga
+ccagttgcgtgagcgcatacgctacttgcattacagtttacgaaccgaacaggcttatgtcaattcgatccattgctgtt
+gacaaagggaatcaggggatcttccatgggcatgcgaagtacctattccgaagttcctattctctaaaaagtataggaac
+ttcagagctgccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggcaga
+atttcagataaaaaaaatccttagctttcgctaaggatgatttctggaattcgcggccgcttctagag
+</seq_data></sequences>
+<features>
+<feature>
+<id>2137411</id>
+<title>Suffix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>2</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>2137412</id>
+<title>E. coli his operon terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>93</endpos></feature>
+<feature>
+<id>2137413</id>
+<title>VR (BBa_G00101) primer binding site</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>157</startpos>
+<endpos>176</endpos></feature>
+<feature>
+<id>2137414</id>
+<title>Tn7-L end</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>182</startpos>
+<endpos>347</endpos></feature>
+<feature>
+<id>2137415</id>
+<title>SfiI restriction site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>348</startpos>
+<endpos>360</endpos></feature>
+<feature>
+<id>2137416</id>
+<title>Ampicillin resistance (bla)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>966</startpos>
+<endpos>1826</endpos></feature>
+<feature>
+<id>2137417</id>
+<title>ColEI (pUC18) Replication origin</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1965</startpos>
+<endpos>2644</endpos></feature>
+<feature>
+<id>2137418</id>
+<title>SfiI restriction site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>3002</startpos>
+<endpos>3014</endpos></feature>
+<feature>
+<id>2137419</id>
+<title>Tn7-R end</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>3014</startpos>
+<endpos>3213</endpos></feature>
+<feature>
+<id>2137424</id>
+<title>double terminator (BBa_B0014)</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>3224</startpos>
+<endpos>3318</endpos></feature>
+<feature>
+<id>2137420</id>
+<title>Flipase recombination sequence (FRT)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>3329</startpos>
+<endpos>3376</endpos></feature>
+<feature>
+<id>2137425</id>
+<title>SphI restriction site</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>3381</startpos>
+<endpos>3386</endpos></feature>
+<feature>
+<id>2137436</id>
+<title>NcoI restrictino site</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>3387</startpos>
+<endpos>3392</endpos></feature>
+<feature>
+<id>2137421</id>
+<title>Gentamycin resistance</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>3393</startpos>
+<endpos>3926</endpos></feature>
+<feature>
+<id>2137439</id>
+<title>NcoI restriction site</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>4184</startpos>
+<endpos>4189</endpos></feature>
+<feature>
+<id>2137440</id>
+<title>SphI restriction site</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>4190</startpos>
+<endpos>4195</endpos></feature>
+<feature>
+<id>2137422</id>
+<title>Flipase recombination sequence (FRT)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>4196</startpos>
+<endpos>4243</endpos></feature>
+<feature>
+<id>2137442</id>
+<title>VF2 (G00100) primer binding site</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>4249</startpos>
+<endpos>4268</endpos></feature>
+<feature>
+<id>2137449</id>
+<title>Terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>4326</startpos>
+<endpos>4359</endpos></feature>
+<feature>
+<id>2137423</id>
+<title>Prefix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>4367</startpos>
+<endpos>4387</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>pUC18Sfi-miniTn7BB-Gm</value>
+<units></units>
+<url></url>
+<id>12529</id>
+<m_date>2011-09-18 07:06:44</m_date>
+<user_id>6163</user_id>
+<user_name>dcabpra</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pUC18Sfi-miniTn7BB-Gm</value>
+<units></units>
+<url></url>
+<id>12528</id>
+<m_date>2011-09-18 07:06:44</m_date>
+<user_id>6163</user_id>
+<user_name>dcabpra</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>pUC18Sfi-miniTn7BB-Gm</value>
+<units></units>
+<url></url>
+<id>12530</id>
+<m_date>2011-09-18 07:06:44</m_date>
+<user_id>6163</user_id>
+<user_name>dcabpra</user_name></parameter></parameters>
+<categories>
+<category>//dna/chromosomalintegration</category>
+<category>//dna/transposon</category>
+<category>//plasmid/chromosomalintegration</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

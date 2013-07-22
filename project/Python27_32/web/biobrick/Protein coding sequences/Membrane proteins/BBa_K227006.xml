@@ -1,0 +1,100 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15636</part_id>
+<part_name>BBa_K227006</part_name>
+<part_short_name>K227006</part_short_name>
+<part_short_desc>puc BA coding region of R. sphaeroides</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K227006</part_url>
+<part_entered>2009-10-12</part_entered>
+<part_author>WashU iGEM 2009</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gtgactgacgatctgaacaaagtctggccgagcggcctgaccgttgccgaagccgaagaagttcataagcaactcatcct
+cggcacccgcgtcttcggtggcatggcgctcatcgcgcacttcctcgccgccgctgcgaccccgtggctcggctgatagg
+agaagactgacatgaccaacggcaaaatctggctcgtggtgaaaccgaccgtcggcgttccgctgttcctcagcgctgcc
+gtcatcgcctccgtcgttatccacgctgctgtgctgacgaccaccacctggctgcccgcctactaccaaggctcggctgc
+ggtcgcggccgagtaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2057319</id>
+<title>pucB</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>156</endpos></feature>
+<feature>
+<id>2057320</id>
+<title>RBS</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>159</startpos>
+<endpos>163</endpos></feature>
+<feature>
+<id>2057321</id>
+<title>pucA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>172</startpos>
+<endpos>336</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>direction</name>
+<value>forward</value>
+<units></units>
+<url></url>
+<id>9671</id>
+<m_date>2009-10-21 22:13:31</m_date>
+<user_id>4645</user_id>
+<user_name>jathman</user_name></parameter>
+<parameter>
+<name>direction</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>9670</id>
+<m_date>2009-10-21 22:13:21</m_date>
+<user_id>4645</user_id>
+<user_name>jathman</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>800, 850nm</value>
+<units></units>
+<url></url>
+<id>9662</id>
+<m_date>2009-10-21 22:07:22</m_date>
+<user_id>4645</user_id>
+<user_name>jathman</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>9661</id>
+<m_date>2009-10-21 22:06:53</m_date>
+<user_id>4645</user_id>
+<user_name>jathman</user_name></parameter></parameters>
+<categories>
+<category>//cds/membrane</category>
+<category>//classic/reporter</category>
+<category>//direction/forward</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

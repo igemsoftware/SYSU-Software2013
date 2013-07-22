@@ -1,0 +1,147 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15525</part_id>
+<part_name>BBa_K243020</part_name>
+<part_short_name>K243020</part_short_name>
+<part_short_desc>Strep-DigA</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>Strep_Dig</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K243020</part_url>
+<part_entered>2009-10-12</part_entered>
+<part_author>Freiburg Bioware09</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>12758</part_id>
+<part_name>BBa_K157012</part_name>
+<part_short_desc>Strep affinity tag II; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15523</part_id>
+<part_name>BBa_K243003</part_name>
+<part_short_desc>Digoxigenin binding protein (DigA)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>DigA</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>12758</part_id>
+<part_name>BBa_K157012</part_name>
+<part_short_desc>Strep affinity tag II; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15523</part_id>
+<part_name>BBa_K243003</part_name>
+<part_short_desc>Digoxigenin binding protein (DigA)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>DigA</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>12758</part_id>
+<part_name>BBa_K157012</part_name>
+<part_short_desc>Strep affinity tag II; Freiburg standard</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>15937</part_id>
+<part_name>BBa_B0105</part_name>
+<part_short_desc>RFC 25 Scar Sequence</part_short_desc>
+<part_type>DNA</part_type>
+<part_nickname>Scar 25</part_nickname></subpart>
+<subpart>
+<part_id>15523</part_id>
+<part_name>BBa_K243003</part_name>
+<part_short_desc>Digoxigenin binding protein (DigA)</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_nickname>DigA</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tggagccatccgcagtttgaaaaaaccggcgacgtgtaccacgacggcgcctgccccgaagtgaagcccgtggacaactt
+cgactggtcccagtaccacggcaagtggtggcaggtggccgcttatcccgaccacatcaccaagtacggcaagtgcggct
+gggccgagtacacccccgagggcaagagcgtgaaggtgtcccggtacagcgtgatccacggcaaagagtacttcagcgag
+ggcaccgcctaccctgtgggcgacagcaagatcggcaagatctaccacagctacaccatcggcggcgtgacccaggtggg
+cgtgagcaacgtgctgtccaccgacaacaagaactacatcatcggctacttttgcagatacgacgaggacaagaagggcc
+actgggacgccgtgtgggtgctgtcccggtccatggtgctgaccggcgaggccaagaccgccgtggagaactacctgatc
+ggcagccccgtggtggacagccagaaactggtgtacagcgacttctccgaggccgcctgcaaagtgaacaacagcaactg
+gtcccacccccagttcgaaaag
+</seq_data></sequences>
+<features>
+<feature>
+<id>2047279</id>
+<title>Strep-Tag II</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>2047280</id>
+<title>Strep-Tag II</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>2047281</id>
+<title>BBa_K157012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>2047282</id>
+<title>Scar 25</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>25</startpos>
+<endpos>30</endpos></feature>
+<feature>
+<id>2047283</id>
+<title>BBa_B0105</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>25</startpos>
+<endpos>30</endpos></feature>
+<feature>
+<id>2047284</id>
+<title>Digoxigenin tag</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>31</startpos>
+<endpos>582</endpos></feature>
+<feature>
+<id>2047285</id>
+<title>BBa_K243003</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>31</startpos>
+<endpos>582</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

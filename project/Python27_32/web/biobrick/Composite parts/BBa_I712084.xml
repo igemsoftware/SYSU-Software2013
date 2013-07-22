@@ -1,0 +1,178 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10215</part_id>
+<part_name>BBa_I712084</part_name>
+<part_short_name>I712084</part_short_name>
+<part_short_desc>CMV promoter - CD4 (shortened) - TLR3 TIR</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I712084</part_url>
+<part_entered>2007-10-22</part_entered>
+<part_author>Marko Bitenc</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10211</part_id>
+<part_name>BBa_I712082</part_name>
+<part_short_desc>CMV promoter - CD4 (shortened)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10084</part_id>
+<part_name>BBa_I712012</part_name>
+<part_short_desc>TIR domain of TLR3</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10211</part_id>
+<part_name>BBa_I712082</part_name>
+<part_short_desc>CMV promoter - CD4 (shortened)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10084</part_id>
+<part_name>BBa_I712012</part_name>
+<part_short_desc>TIR domain of TLR3</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>10211</part_id>
+<part_name>BBa_I712082</part_name>
+<part_short_desc>CMV promoter - CD4 (shortened)</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>10084</part_id>
+<part_name>BBa_I712012</part_name>
+<part_short_desc>TIR domain of TLR3</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>cgatgtacgggccagatatacgcgttgacattgattattgcctagttattaatagtaatcaattacggggtcattagttc
+atagcccatatatggagttccgcgttacataacttacggtaaatggcccgcctggctgaccgcccaacgacccccgccca
+ttgacgtcaataatgacgtatgttcccatagtaacgccaatagggactttccattgacgtcaatgggtggagtatttacg
+gtaaactgcccacttggcagtacatcaagtgtatcatatgccaagtacgccccctattgacgtcaatgacggtaaatggc
+ccgcctggcattatgcccagtacatgaccttatgggactttcctacttggcagtacatctacgtattagtcatcgctatt
+accatggtgatgcggttttggcagtacatcaatgggcgtggatagcggtttgactcacggggatttccaagtctccaccc
+cattgacgtcaatgggagtttgttttggcaccaaaatcaacgggactttccaaaatgtcgtaacaactccgccccattga
+cgcaaatgggcggtaggcgtgtacggtgggaggtctatataagcagagctctctggctaactagagaacccactgcttac
+tggcttatcgaaattactagagcgatgtacgggccagatatacgcgttgacattgattattgcctagttattaatagtaa
+tcaattacggggtcattagttcatagcccatatatggagttccgcgttacataacttacggtaaatggcccgcctggctg
+accgcccaacgacccccgcccattgacgtcaataatgacgtatgttcccatagtaacgccaatagggactttccattgac
+gtcaatgggtggagtatttacggtaaactgcccacttggcagtacatcaagtgtatcatatgccaagtacgccccctatt
+gacgtcaatgacggtaaatggcccgcctggcattatgcccagtacatgaccttatgggactttcctacttggcagtacat
+ctacgtattagtcatcgctattaccatggtgatgcggttttggcagtacatcaatgggcgtggatagcggtttgactcac
+ggggatttccaagtctccaccccattgacgtcaatgggagtttgttttggcaccaaaatcaacgggactttccaaaatgt
+cgtaacaactccgccccattgacgcaaatgggcggtaggcgtgtacggtgggaggtctatataagcagagctctctggct
+aactagagaacccactgcttactggcttatcgaaatactagaatgaaccggggagtcccttttaggcacttgcttctggt
+gctgcaactggcgctcctcccagcagccactcagggaaagaaagtggtgctgggcaaaaaaggggatacagtggaactga
+cctgtacagcttcccagaagaagagcatacaattccactggaaaaactccaaccagataaagattctgggaaatcagggc
+tccttcttaactaaaggtccatccaagctgaatgatcgcgctgactcaagaagaagcctttgggaccaaggaaactttcc
+cctgatcatcaagaatcttaagatagaagactcagatacttacatctgtgaagtggaggaccagaaggaggaggtgcaat
+tgctagtgttcggattgactgccaactctgacacccacctgcttcaggggcagagcctgaccctgaccttggagagcccc
+cctggtagtagcccctcagtgcaatgtaggagtccaaggggtaaaaacatacagggggggaagaccctctccgtgtctca
+gctggagctccaggatagtggcacctggacatgcactgtcttgcagaaccagaagaaggtggagttcaaaatagacatcg
+tggtgctagctttccagaaggcctccagcatagtctataagaaagagggggaacaggtggagttctccttcccactcgcc
+tttacagttgaaaagctgacgggcagtggcgagctgtggtggcaggcggagagggcttcctcctccaagtcttggatcac
+ctttgacctgaagaacaaggaagtgtctgtaaaacgggttacccaggaccctaagctccagatgggcaagaagctcccgc
+tccacctcaccctgccccaggccttgcctcagtatgctggctctggaaacctcaccctggcccttgaagcgaaaacagga
+aagttgcatcaggaagtgaacctggtggtgatgagagccactcagctccagaaaaatttgacctgtgaggtgtggggacc
+cacctcccctaagctgatgctgagtttgaaactggagaacaaggaggcaaaggtctcgaagcgggagaaggcggtgtggg
+tgctgaaccctgaggcggggatgtggcagtgtctgctgagtgactcgggacaggtcctgctggaatccaacatcaaggtt
+ctgcccacatggtccaccccggtgcagccaatggccctgattgtgctggggggcgtcgccggcctcctgcttttcattgg
+gctaggcattactagagtttgaatatgcagcatatataattcatgcctataaagataaggattgggtctgggaacatttc
+tcttcaatggaaaaggaagaccaatctctcaaattttgtctggaagaaagggactttgaggcgggtgtttttgaactaga
+agcaattgttaacagcatcaaaagaagcagaaaaattatttttgttataacacaccatctattaaaagacccattatgca
+aaagattcaaggtacatcatgcagttcaacaagctattgaacaaaatctggattccattatattggttttccttgaggag
+attccagattataaactgaaccatgcactctgtttgcgaagaggaatgtttaaatctcactgcatcttgaactggccagt
+tcagaaagaacggataggtgcctttcgtcataaattgcaagtagcacttggatccaaaaactctgtacattag
+</seq_data></sequences>
+<features>
+<feature>
+<id>1997039</id>
+<title>BBa_I712004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>654</endpos></feature>
+<feature>
+<id>1997038</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>1997040</id>
+<title>BBa_I712082</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>663</startpos>
+<endpos>2569</endpos></feature>
+<feature>
+<id>1997041</id>
+<title>TIR domain</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>2578</startpos>
+<endpos>3033</endpos></feature>
+<feature>
+<id>1997042</id>
+<title>BBa_I712012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2578</startpos>
+<endpos>3033</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

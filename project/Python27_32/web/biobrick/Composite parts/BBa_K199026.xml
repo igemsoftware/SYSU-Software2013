@@ -1,0 +1,185 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>14236</part_id>
+<part_name>BBa_K199026</part_name>
+<part_short_name>K199026</part_short_name>
+<part_short_desc>Tetrev-RBSrev-pLux</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K199026</part_url>
+<part_entered>2009-07-08</part_entered>
+<part_author>Kin Lau</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>6930</part_id>
+<part_name>BBa_J31006</part_name>
+<part_short_desc>tetracycline resistance protein TetA(C) (backwards) [cf. BBa_J31007]</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetA(C)b</part_nickname></subpart>
+<subpart>
+<part_id>7061</part_id>
+<part_name>BBa_J44001</part_name>
+<part_short_desc>Reverse RBS (RBS&lt;sub&gt;rev&lt;/sub&gt;)  -- corresponds to BBa_B0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>192</part_id>
+<part_name>BBa_R0062</part_name>
+<part_short_desc>Promoter (luxR &amp; HSL regulated -- lux pR)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lux pR</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>7064</part_id>
+<part_name>BBa_S03532</part_name>
+<part_short_desc>TetB-RBS&lt;sub&gt;rev&lt;/sub&gt;</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>192</part_id>
+<part_name>BBa_R0062</part_name>
+<part_short_desc>Promoter (luxR &amp; HSL regulated -- lux pR)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lux pR</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>7064</part_id>
+<part_name>BBa_S03532</part_name>
+<part_short_desc>TetB-RBS&lt;sub&gt;rev&lt;/sub&gt;</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>192</part_id>
+<part_name>BBa_R0062</part_name>
+<part_short_desc>Promoter (luxR &amp; HSL regulated -- lux pR)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>lux pR</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttaggtcgaggtggcccggctccatgcaccgcgacgcaacgcggggaggcagacaaggtatagggcggcgcctacaatcc
+atgccaacccgttccatgtgctcgccgaggcggcataaatcgccgtgacgatcagcggtccaatgatcgaagttaggctg
+gtaagagccgcgagcgatccttgaagctgtccctgatggtcgtcatctacctgcctggacagcatggcctgcaacgcggg
+catcccgatgccgccggaagcgagaagaatcataatggggaaggccatccagcctcgcgtcgcgaacgccagcaagacgt
+agcccagcgcgtcggccgccatgccggcgataatggcctgcttctcgccgaaacgtttggtggcggggccagtgacgaag
+gcttgagcgagggcgtgcaagattccgaataccgcaagcgacaggccgatcatcgtcgcgctccagcgaaagcggtcctc
+gccgaaaatgacccagagcgctgccggcacctgtcctacgagttgcatgataaagaagacagtcataagtgcggcgacga
+tagtcatgccccgcgcccaccggaaggagctgactgggttgaaggctctcaagggcatcggtcgacgctctcccttatgc
+gactcctgcattaggaagcagcccagtagtaggttgaggccgttgagcaccgccgccgcaaggaatggtgcatgcaagga
+gatggcgcccaacagtcccccggccacggggcctgccaccatacccacgccgaaacaagcgctcatgagcccgaagtggc
+gagcccgatcttccccatcggtgatgtcggcgatataggcgccagcaaccgcacctgtggcgccggtgatgccggccacg
+atgcgtccggcgtagaggatccacaggacgggtgtggtcgccatgatcgcgtagtcgatagtggctccaagtagcgaagc
+gagcaggactgggcggcggccaaagcggtcggacagtgctccgagaacgggtgcgcatagaaattgcatcaacgcatata
+gcgctagcagcacgccatagtgactggcgatgctgtcggaatggacgatatcccgcaagaggcccggcagtaccggcata
+accaagcctatgcctacagcatccagggtgacggtgccgaggatgacgatgagcgcattgttagatttcattactagagt
+ttctcctctttaattactagagacctgtaggatcgtacaggtttacgcaagaaaatggtttgttatagtcgaataaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2010361</id>
+<title>tetA(C) backwards</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1191</endpos></feature>
+<feature>
+<id>2010362</id>
+<title></title>
+<type>stop</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2010363</id>
+<title>Rev primer J31006</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2010365</id>
+<title>BBa_J31006</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>1191</endpos></feature>
+<feature>
+<id>2010364</id>
+<title>Fwd primer J31006</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>1168</startpos>
+<endpos>1191</endpos></feature>
+<feature>
+<id>2010367</id>
+<title>BBa_J44001</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1200</startpos>
+<endpos>1214</endpos></feature>
+<feature>
+<id>2010366</id>
+<title>Reverse RBS</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>1200</startpos>
+<endpos>1214</endpos></feature>
+<feature>
+<id>2010368</id>
+<title>LuxR/HSL</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>1223</startpos>
+<endpos>1242</endpos></feature>
+<feature>
+<id>2010369</id>
+<title>BBa_R0062</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1223</startpos>
+<endpos>1277</endpos></feature>
+<feature>
+<id>2010370</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1242</startpos>
+<endpos>1247</endpos></feature>
+<feature>
+<id>2010371</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1264</startpos>
+<endpos>1269</endpos></feature>
+<feature>
+<id>2010372</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1275</startpos>
+<endpos>1275</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

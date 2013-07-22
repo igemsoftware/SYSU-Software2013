@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>5253</part_id>
+<part_name>BBa_I11023</part_name>
+<part_short_name>I11023</part_short_name>
+<part_short_desc>Lambda attP</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>Lambda att</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I11023</part_url>
+<part_entered>2004-09-03</part_entered>
+<part_author>bu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tacaggtcactaataccatctaagtagttgattcatagtgactggatatgttgtgttttacagtattatgtagtctgttt
+tttatgcaaaatctaatttaatatattgatatttatatcattttacgtttctcgttcagctttcttgtacaaagttggca
+ttataagaaagcattgcttatcaatttgttgcaacgaacaggtcactatcagtcaaaataaaatcattattt
+</seq_data></sequences>
+<features>
+<feature>
+<id>1064123</id>
+<title>lambda phage attp site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>232</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/other/uncategorized</category>
+<category>//function/recombination/lambda</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,153 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>4072</part_id>
+<part_name>BBa_C2001</part_name>
+<part_short_name>C2001</part_short_name>
+<part_short_desc>Zif23-GCN4 engineered repressor (+LVA, C2000 codon-optimized for E.coli)</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>zif23</part_nickname>
+<part_barcode>True</part_barcode>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_C2001</part_url>
+<part_entered>2004-01-29</part_entered>
+<part_author>Drew Endy</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgaaaccgttccagtgccgtatctgcatgcgtaacttctcccgttccgaccacctgaccacccacatccgtacccacac
+cggtgaaaaaccgttcgcttgcgacatctgcggtcgtaaattcgctcgttccgacgaacgtaaacgtcaccgtaaattgc
+agcacatgaaacagctggaagacaaagttgaagaactgctgtccaaaaactaccacctggaaaacgaagttgctcgtctg
+aaaaaactggttggtgaacgtgctgctaacgacgaaaactacgctctggttgcttaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>318101</id>
+<title>Finger 2</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>90</endpos></feature>
+<feature>
+<id>318108</id>
+<title>Recognition site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>43</startpos>
+<endpos>63</endpos></feature>
+<feature>
+<id>318103</id>
+<title>Finger 3</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>91</startpos>
+<endpos>150</endpos></feature>
+<feature>
+<id>318109</id>
+<title>Recognition site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>127</startpos>
+<endpos>147</endpos></feature>
+<feature>
+<id>318104</id>
+<title>linker</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>151</startpos>
+<endpos>165</endpos></feature>
+<feature>
+<id>318105</id>
+<title>GCN4: leucine zipper</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>166</startpos>
+<endpos>261</endpos></feature>
+<feature>
+<id>318106</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>262</startpos>
+<endpos>294</endpos></feature>
+<feature>
+<id>318107</id>
+<title>2</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>295</startpos>
+<endpos>300</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>ligands</name>
+<value>?</value>
+<units></units>
+<url></url>
+<id>2572</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>swisspro</name>
+<value>P03069</value>
+<units></units>
+<url></url>
+<id>2573</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>protein</name>
+<value>Zif23-GCN4</value>
+<units></units>
+<url></url>
+<id>3938</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>direction</name>
+<value>Forward</value>
+<units></units>
+<url></url>
+<id>3939</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>tag</name>
+<value>LVA</value>
+<units></units>
+<url></url>
+<id>3940</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>function</name>
+<value>Rep</value>
+<units></units>
+<url></url>
+<id>4102</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//cds</category>
+<category>//cds/transcriptionalregulator/repressor</category>
+<category>//function/regulation/transcriptional</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

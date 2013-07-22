@@ -1,0 +1,176 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19302</part_id>
+<part_name>BBa_K322140</part_name>
+<part_short_name>K322140</part_short_name>
+<part_short_desc>lac promoter + luxAB</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K322140</part_url>
+<part_entered>2010-10-07</part_entered>
+<part_author>Richard Partridge-Hicks and Maria Kowal</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>7809</part_id>
+<part_name>BBa_J33207</part_name>
+<part_short_desc>lac promoter and lacZ</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19101</part_id>
+<part_name>BBa_K322139</part_name>
+<part_short_desc>Blue emitting luciferase (from X. luminescens)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>7809</part_id>
+<part_name>BBa_J33207</part_name>
+<part_short_desc>lac promoter and lacZ</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19101</part_id>
+<part_name>BBa_K322139</part_name>
+<part_short_desc>Blue emitting luciferase (from X. luminescens)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>7809</part_id>
+<part_name>BBa_J33207</part_name>
+<part_short_desc>lac promoter and lacZ</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19101</part_id>
+<part_name>BBa_K322139</part_name>
+<part_short_desc>Blue emitting luciferase (from X. luminescens)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ctcatgttatatcccgccgttaaccaccatcaaacaggattttcgcctgctggggcaaaccagcgtggaccgcttgctgc
+aactctctcagggccaggcggtgaagggcaatcagctgttgcccgtctcactggtgaaaagaaaaaccaccctggcgccc
+aatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcgg
+gcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactttatgcttccggctcgt
+atgttgtgtgaaattgtgagcggataacaatttcacacaggaaacagctatgaccatgattacggattcactggccgtcg
+ttttacaacgtcgtgactgggaaaaccctggcgttacccaacttaatcgccttgcagcacatccccctttcgccagctgg
+cgtaatagcgaagaggcccgcaccgatcgcccttcccaacagttgcgcagcctgaatggcgaatggcgctttgcctggtt
+tccggcaccagaagcggtgccggaaagctggctggagtgatactagagctcaaatagcaatataaggactctctatgaaa
+tttggaaactttttgcttacataccaacctccccaattttctcaaacagaggtaatgaaacgtttggttaaattaggtcg
+catctctgaggagtgtggttttgataccgtatggttactggagcatcatttcacggagtttggtttgcttggtaaccctt
+atgtcgctgctgcatatttacttggcgcgactaaaaaattgaatgtaggaactgccgctattgttcttcccacagcccat
+ccagtacgccaacttgaagatgtgaatttattggatcaaatgtcaaaaggacgatttcggtttggtatttgccgagggct
+ttacaacaaggactttcgcgtattcggcacagatatgaataacagtcgcgccttagcggaatgctggtacgggctgataa
+agaatggcatgacagagggatatatggaagctgataatgaacatatcaagttccataaggtaaaagtaaaccccgcggcg
+tatagcagaggtggcgcaccggtttatgtggtggctgaatcagcttcgacgactgagtgggctgctcaatttggcctacc
+gatgatattaagttggattataaatactaacgaaaagaaagcacaacttgagctttataatgaagtggctcaagaatatg
+ggcacgatattcataatatcgaccattgcttatcatatataacatctgtagatcatgactcaattaaagcgaaagagatt
+tgccggaaatttctggggcattggtatgattcttatgtgaatgctacgactatttttgatgattcagaccaaacaagagg
+ttatgatttcaataaagggcagtggcgtgactttgtattaaaaggacataaagatactaatcgccgtattgattacagtt
+acgaaatcaatcccgtgggaacgccgcaggaatgtattgacataattcaaaaagacattgatgctacaggaatatcaaat
+atttgttgtggatttgaagctaatggaacagtagacgaaattattgcttccatgaagctcttccagtctgatgtcatgcc
+atttcttaaagaaaaacaacgttcgctattatattagctaaggagaaagaaatgaaatttggattgttcttccttaactt
+catcaattcaacaactgttcaagaacaaagtatagttcgcatgcaggaaataacggagtatgttgataagttgaattttg
+aacagattttagtgtatgaaaatcatttttcagataatggtgttgtcggcgctcctctgactgtttctggttttctgctc
+ggtttaacagagaaaattaaaattggttcattaaatcacatcattacaactcatcatcctgtcgccatagcggaggaagc
+ttgcttattggatcagttaagtgaagggagatttattttagggtttagtgattgcgaaaaaaaagatgaaatgcattttt
+ttaatcgcccggttgaatatcaacagcaactatttgaagagtgttatgaaatcattaacgatgctttaacaacaggctat
+tgtaatccagataacgatttttatagcttccctaaaatatctgtaaatccccatgcttatacgccaggcggacctcggaa
+atatgtaacagcaaccagtcatcatattgttgagtgggcggccaaaaaaggtattcctctcatctttaagtgggatgatt
+ctaatgatgttagatatgaatatgctgaaagatataaagccgttgcggataaatatgacgttgacctatcagagatagac
+catcagttaatgatattagttaactataacgaagatagtaataaagctaaacaagagacgcgtgcatttattagtgatta
+tgttcttgaaatgcaccctaatgaaaatttcgaaaataaacttgaagaaataattgcagaaaacgctgtcggaaattata
+cggagtgtataactgcggctaagttggcaattgaaaagtgtggtgcgaaaagtgtattgctgtcctttgaaccaatgaat
+gatttgatgagccaaaaaaatgtaatcaatattgttgatgataatattaagaagtaccacatggaatatacctaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2083578</id>
+<title>SacI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2083585</id>
+<title>BBa_J33207</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>600</endpos></feature>
+<feature>
+<id>2083579</id>
+<title>CAP binding site</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>248</startpos>
+<endpos>285</endpos></feature>
+<feature>
+<id>2083580</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>297</startpos>
+<endpos>302</endpos></feature>
+<feature>
+<id>2083581</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>320</startpos>
+<endpos>325</endpos></feature>
+<feature>
+<id>2083582</id>
+<title>LacI binding site</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>332</startpos>
+<endpos>352</endpos></feature>
+<feature>
+<id>2083583</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>359</startpos>
+<endpos>362</endpos></feature>
+<feature>
+<id>2083584</id>
+<title>lacZ&apos;</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>370</startpos>
+<endpos>600</endpos></feature>
+<feature>
+<id>2083586</id>
+<title>BBa_K322139</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>609</startpos>
+<endpos>2718</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

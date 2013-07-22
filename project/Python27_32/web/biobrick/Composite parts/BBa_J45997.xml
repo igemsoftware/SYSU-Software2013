@@ -1,0 +1,201 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>8039</part_id>
+<part_name>BBa_J45997</part_name>
+<part_short_name>J45997</part_short_name>
+<part_short_desc>Stationary phase dependent GFP generator</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Fails</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J45997</part_url>
+<part_entered>2007-01-24</part_entered>
+<part_author>Stephen Payne</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>6908</part_id>
+<part_name>BBa_J45993</part_name>
+<part_short_desc>Minimal stationary phase osmY promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>p(osmY)</part_nickname></subpart>
+<subpart>
+<part_id>147</part_id>
+<part_name>BBa_B0030</part_name>
+<part_short_desc>RBS.1 (strong) -- modified from R. Weiss</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>6908</part_id>
+<part_name>BBa_J45993</part_name>
+<part_short_desc>Minimal stationary phase osmY promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>p(osmY)</part_nickname></subpart>
+<subpart>
+<part_id>5338</part_id>
+<part_name>BBa_E0840</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP genera</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>6908</part_id>
+<part_name>BBa_J45993</part_name>
+<part_short_desc>Minimal stationary phase osmY promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>p(osmY)</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5338</part_id>
+<part_name>BBa_E0840</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP genera</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>gcttatgttttcgctgatatcccgagcggtttcaaaattgtgatctatatttaacaatactagagattaaagaggagaaa
+tactagatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggca
+caaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaa
+aactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatg
+aaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaa
+ctacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaag
+aagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaag
+aatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaa
+tactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatccca
+acgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaa
+taataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgt
+cggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1910659</id>
+<title>BBa_J45993</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>57</endpos></feature>
+<feature>
+<id>1910657</id>
+<title>-35</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>27</endpos></feature>
+<feature>
+<id>1910658</id>
+<title>-10</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>46</startpos>
+<endpos>51</endpos></feature>
+<feature>
+<id>1910660</id>
+<title>RBS-1\Strong</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>66</startpos>
+<endpos>80</endpos></feature>
+<feature>
+<id>1910661</id>
+<title>BBa_B0030</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>66</startpos>
+<endpos>80</endpos></feature>
+<feature>
+<id>1910662</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>77</endpos></feature>
+<feature>
+<id>1910663</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>87</startpos>
+<endpos>806</endpos></feature>
+<feature>
+<id>1910664</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>815</startpos>
+<endpos>894</endpos></feature>
+<feature>
+<id>1910665</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>826</startpos>
+<endpos>869</endpos></feature>
+<feature>
+<id>1910666</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>903</startpos>
+<endpos>943</endpos></feature>
+<feature>
+<id>1910667</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>910</startpos>
+<endpos>929</endpos></feature>
+<feature>
+<id>1910668</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>930</startpos>
+<endpos>943</endpos></feature>
+<feature>
+<id>1910669</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>936</startpos>
+<endpos>936</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//classic/reporter/pret</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

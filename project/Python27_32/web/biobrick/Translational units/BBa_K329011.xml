@@ -1,0 +1,73 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19650</part_id>
+<part_name>BBa_K329011</part_name>
+<part_short_name>K329011</part_short_name>
+<part_short_desc>RBS + Xis-Int HK022</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K329011</part_url>
+<part_entered>2010-10-17</part_entered>
+<part_author>Xavier Duportet</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>attctgcggagactttgcgatgtacttaacacttcaggagtggaacgctcgccagcgacgcccaagaagccttgaaacag
+ttcgtcgatgggtgcgcgaatgcaggatattccctcctccggttaaggatggaagagagtatctgttccacgaatcagcg
+gtaaaggttgacttaaatcgaccagtaacaggtagccttttgaagaggatcagaaatgggaagaaggcgaagtcatgagc
+gccgggatttaccccctaacctttatataagaaacaatggatattactgctacagggacccaaggacgggtaaagagttt
+ggattaggccgagacaggcgaatcgcaatcactgaagctatacaggccaacattgagttgctatccgggaacaggcgtga
+gtcactgatagacagaattaaaggcgctgacgcaatcactcttcatgcgtggcttgaccgatatgaaacaatcctcagcg
+agaggggtatcaggccgaaaactctactcgactacgccagcaaaatcagagcaatccgaagaaaattgccggacaaaccg
+ctcgctgacatatcaacgaaagaggtggcagcaatgctaaacacctacgtagcagaaggcaaatcggcttccgcaaaatt
+gatcaggtcaacccttgttgacgtttttcgtgaggcaatagccgaggggcatgtggctacgaatccggtaacagcaaccc
+gcacagcaaaatcagaagtaaggcgttcaagactgacagctaatgaatatgtcgcgatataccatgcagccgaaccgctc
+ccaatctggctgagactggcaatggatttggctgtcgttacagggcagagagtaggcgatttgtgcagaatgaaatggtc
+agacataaacgacaaccatcttcacattgaacagagtaaaacaggggctaaactcgccattccactaacgctaacgattg
+acgcgctcaatatctcattggctgatacactacagcaatgcagggaggccagcagcagtgaaactataatcgcatcaaag
+catcacgatccgctttccccgaaaacagtatcaaagtattttacaaaggcgagaaatgcatctggactctcatttgatgg
+aaacccgccaacattccatgaactgcgtagcctgtcagcgaggctataccggaaccagattggcgataagtttgctcaac
+gtcttctcgggcataaatcagattcaatggcggcgcggtatagggacagccgtggacgggaatgggacaaaattgaaatc
+gacaaatgataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2087858</id>
+<title>RBS Xis</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>7</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2113822</id>
+<title>Xis</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>20</startpos>
+<endpos>238</endpos></feature>
+<feature>
+<id>2113823</id>
+<title>Int</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>216</startpos>
+<endpos>1289</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,175 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18568</part_id>
+<part_name>BBa_K318513</part_name>
+<part_short_name>K318513</part_short_name>
+<part_short_desc>gadA/RBS + RFP + TT</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K318513</part_url>
+<part_entered>2010-07-22</part_entered>
+<part_author>Sarah R. Sandock</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>18567</part_id>
+<part_name>BBa_K318512</part_name>
+<part_short_desc>gadA (pH promoter and RBS)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>gadA</part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>18567</part_id>
+<part_name>BBa_K318512</part_name>
+<part_short_desc>gadA (pH promoter and RBS)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>gadA</part_nickname></subpart>
+<subpart>
+<part_id>5455</part_id>
+<part_name>BBa_I13501</part_name>
+<part_short_desc>Screening plasmid intermediate</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>18567</part_id>
+<part_name>BBa_K318512</part_name>
+<part_short_desc>gadA (pH promoter and RBS)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>gadA</part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>5455</part_id>
+<part_name>BBa_I13501</part_name>
+<part_short_desc>Screening plasmid intermediate</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ctttcctgcacagtctgaacggggtgtacacgccgtatatgcaggataaacaataattaatttgatcgcccgaacagcaa
+tgtttgggcgatttttattacgataataaagtctgtttttaatattatcatgttaaatgtttatattataaaaagtcgtt
+tttctgcttaggattttgttatttaaattaagcctgtaatgccttgcttccattgcggataaatcctacttttttattgc
+cttcaaataaatttaaggagttcgtactagatggcttcctccgaagacgttatcaaagagttcatgcgtttcaaagttcg
+tatggaaggttccgttaacggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacgaaggtacccagaccg
+ctaaactgaaagttaccaaaggtggtccgctgccgttcgcttgggacatcctgtccccgcagttccagtacggttccaaa
+gcttacgttaaacacccggctgacatcccggactacctgaaactgtccttcccggaaggtttcaaatgggaacgtgttat
+gaacttcgaagacggtggtgttgttaccgttacccaggactcctccctgcaagacggtgagttcatctacaaagttaaac
+tgcgtggtaccaacttcccgtccgacggtccggttatgcagaaaaaaaccatgggttgggaagcttccaccgaacgtatg
+tacccggaagacggtgctctgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcactacgacgctgaagt
+taaaaccacctacatggctaaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaactggacatcacctccc
+acaacgaagactacaccatcgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgcttaataacgctgatag
+tgctagtgtagatcgctactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatc
+tgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2075738</id>
+<title>BBa_K318510</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>264</endpos></feature>
+<feature>
+<id>2075739</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>271</startpos>
+<endpos>945</endpos></feature>
+<feature>
+<id>2075740</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>271</startpos>
+<endpos>951</endpos></feature>
+<feature>
+<id>2075741</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>952</startpos>
+<endpos>976</endpos></feature>
+<feature>
+<id>2075742</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>985</startpos>
+<endpos>1064</endpos></feature>
+<feature>
+<id>2075743</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>996</startpos>
+<endpos>1039</endpos></feature>
+<feature>
+<id>2075744</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1073</startpos>
+<endpos>1113</endpos></feature>
+<feature>
+<id>2075745</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1080</startpos>
+<endpos>1099</endpos></feature>
+<feature>
+<id>2075746</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1100</startpos>
+<endpos>1113</endpos></feature>
+<feature>
+<id>2075747</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1106</startpos>
+<endpos>1106</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,103 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13824</part_id>
+<part_name>BBa_K284999</part_name>
+<part_short_name>K284999</part_short_name>
+<part_short_desc>Deletar este tamb�m</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K284999</part_url>
+<part_entered>2009-05-16</part_entered>
+<part_author>Johana Rincones</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgattaaaaaaattccaactatcatcggcggtgtaattcaagatgaaaggggcttgagagagttaatattaacaaatga
+gactaaggtattaatttctattattgacgacaatcatattaaaagcatcattgataatgaagttgttaataatttaagat
+taaatcaagtagttaactttttatatacggttggacagcgatggagaagtgaagaatatactcgtcgacgaacatatatt
+cgagatttgacaaattttcttggttattcaaatgaaatggcaaaactagaagcgaattggattgccatgttgttatgctc
+taaaagtgccttatatgacattgtccaacatgacttaggatcattgcatattattgatgagtggatccctcaaggggatt
+gttatattaaagcattaccaaaaggaaaatcagtacatttgttggcaggtaatgtccctctatctggagtgacctctatt
+cttcgagctattttgactaagaatgaatgcattattaaaacgtcttccactgacccttttactgctaccgctttagtctc
+cagttttatcgatgttaatgccgaccatcctattactcgttcaatgtcagtaatgtactggtctcataatgaagatatgt
+cattgccgaaaaaaataatgaatcatgctgatgttgttgcctggggcggggatgaagctattaaatgggcagtaaagcat
+tcgccacatcatgtcgatattgtgaaatttgggcctaaaaaaagtttgagcatcattgatgatcctgaagacataacagc
+cgctgcgacaggcgttgctcatgatatctgtttctatgatcaacaagcgtgtttttctacgcaaaacatttattacatag
+gtaataaattaaacttgtttattgatgaactagaaaaaaaattaaatgtgtatgccaaaatattacctaaaggatgtcaa
+aattttgatgaaaaagccgctttcactttaactgagaaagagtgtttatttgcgggttatcaagttagaaaaggggaaaa
+tcaaagttggataattattcaatctcctttagatgcgtttgggaatcaaccattatctcggtcggtatatatccatcagg
+tttctagtattgaagatattcttcctttcattaataaaaatacgacacaaaccgtttcaattgctccatgggagtcatca
+tttaaatacagagatgaactggctaagcatggcgcagaacgtattgttgaatctggtatgaataatatattccgcgttgg
+tggggcgcatgatggtatgcgtccactacagtatctcgttaattatgtatcacaagaaaggccgttcaaccacacaacaa
+aagatgttgccgtagaaatagaacaaacacgttatttagaagaagataaatttctagtctttgtcccttaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2003098</id>
+<title>ATG start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>2003117</id>
+<title>Vs_LuxC protein coding sequence</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1431</endpos></feature>
+<feature>
+<id>2003104</id>
+<title>TAA Stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1429</startpos>
+<endpos>1431</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>Deletar este tamb�m</value>
+<units></units>
+<url></url>
+<id>6776</id>
+<m_date>2009-10-12 19:02:41</m_date>
+<user_id>4968</user_id>
+<user_name>gleidson</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Deletar este tamb�m</value>
+<units></units>
+<url></url>
+<id>6777</id>
+<m_date>2009-10-12 19:02:41</m_date>
+<user_id>4968</user_id>
+<user_name>gleidson</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Deletar este tamb�m</value>
+<units></units>
+<url></url>
+<id>6778</id>
+<m_date>2009-10-12 19:02:41</m_date>
+<user_id>4968</user_id>
+<user_name>gleidson</user_name></parameter></parameters>
+<categories>
+<category>//function/biosynthesis</category>
+<category>//function/reporter/light</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

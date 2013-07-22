@@ -1,0 +1,81 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20042</part_id>
+<part_name>BBa_K316015</part_name>
+<part_short_name>K316015</part_short_name>
+<part_short_desc>ComD receptor for CSP-1 (S. pneumoniae), phosphorylates ComE</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>ComD</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K316015</part_url>
+<part_entered>2010-10-20</part_entered>
+<part_author>IC 2010 Team</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gtagagagggtactagatggacttatttgggtttggcactgtgattgtgcattttcttatcatctcacatagttatcact
+ttatctgtaaaggccaaattaacagaaaagagctgtttgtgtttggagcgtatacactgcttacggaaattgtctttgat
+tttccgctgtatattctgtacttagatggattgggcattgaacgctttctgttccctcttgggttatacagctattttcg
+atggatgaaacagtatgaacgggatagaggactgttcctgtctctgctcttgtctcttctttacgaaagtacccacaatt
+ttctttcagtgacatttagctccattacaggcgataacttcgtactccaataccatttccctttcttcttcgtggttaca
+gttttaacctattttgtaactctgaagattatttattacttccacttagaactcgcgtactttgatgaagattacttata
+tccgtttcttaaaaaagtgttctttgcgctgttactcttgcatattgtttctttcgtgagtgacatggtttcgacaatca
+agcatctgaactcatttggttcgattctttcctccatcgtatttatctctttgctgctcacattctttgcgatgaatagc
+cataaagtacagatggagaaagaaatcgccttgaaacagaaaaaatttgacagaaatatctatcgcattacgcagaatga
+aattgtcgggttatataacgagattcgtggtttcagacatgattatgctgggatgttagtctcaatgcaaatggcaattg
+atagcggaaacttgcaagagatagatcgcatctataatgaggtccttgtcaaagcaaatcacaagttgcgtagcgacaag
+tatacctattttgatcttaataacatagaggatagtgctcttaggtcacttgtagctcaatctatcgtgtatgcacgtaa
+taatggagtcgagtttacattggaggttaaggacacaattacgaaattacccatcgaattactggatttagttcggataa
+tgtctgttctgctgaataatgccgtagaaggcagcgctgactcctataagaaacaaatggaagttgccgtcattaagatg
+gaaacagaaactgtcatcgttattcagaactcatgcaagatgacgatgaccccatcaggtgacctctttgcactgggctt
+tagcacgaaaggaagaaaccgaggtgtcggacttaacaatgtgaaagaattgctggataaatacaataacatcatattgg
+aaacggaaatggaaggctcgactttcaggcagataattcgctttaaacgggaatttgaggagcaaaaacttatttcagaa
+gaagatctgtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2098164</id>
+<title>RBS ComD</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2098165</id>
+<title>start codon of ComD</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>18</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2102129</id>
+<title>Coding Region</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>18</startpos>
+<endpos>1370</endpos></feature>
+<feature>
+<id>2098168</id>
+<title>stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1371</startpos>
+<endpos>1373</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

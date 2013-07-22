@@ -1,0 +1,184 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>11432</part_id>
+<part_name>BBa_K137054</part_name>
+<part_short_name>K137054</part_short_name>
+<part_short_desc>Constitutive folKE expression construct</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>folKE + b0</part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K137054</part_url>
+<part_entered>2008-07-28</part_entered>
+<part_author>Victoria Hsiao</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>7142</part_id>
+<part_name>BBa_J23100</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>11085</part_id>
+<part_name>BBa_K137011</part_name>
+<part_short_desc>folKE (GTP Cyclohydrolase I + pyrophosphokinase)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>folKE</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11423</part_id>
+<part_name>BBa_S04033</part_name>
+<part_short_desc>J23100:S03958</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname>folKE +j23</part_nickname></subpart>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11423</part_id>
+<part_name>BBa_S04033</part_name>
+<part_short_desc>J23100:S03958</part_short_desc>
+<part_type>Intermediate</part_type>
+<part_nickname>folKE +j23</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>202</part_id>
+<part_name>BBa_B0015</part_name>
+<part_short_desc>double terminator (B0010-B0012)</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttgacggctagctcagtcctaggtacagtgctagctactagagaaagaggagaaatactagatgcaaacaacttatttaa
+gcatgggaagtaatattggtgaccgtcagtattatttacatgaagccattcgtttattgggaaaacaccctaaaattatg
+attgaaaaagtatcaaatttttatgaaagtactccagtcggcggcgtcaaacaagatgattttactaatttggcattaaa
+ggtggcaacgctacttgaacctttggaattattatcttttattcatgaagttgagctatctttgaaccgtgagcgaaaaa
+ttcattgggggccaagaacaattgatattgatattattttctataacgacttagaaatgcaagaagaaaacttggttatt
+ccacataaagaagcttttaatcgtctttttgtcttgaaacctatttttgaacttattgataaagactttaaatattatgc
+gtcaatagaaaaagcaatagccgaactttcagtaagtgaacaagagctccatgtgataaaagaagaaaaaacaccaagaa
+atcgtattgaagatgctgttaaagagattctctttgcagtaggtgaaaatccaaatcgagaaggattacttgaaactcca
+gcgagagtagctaaaatgtatgaagaaattctttcgtcacaacgcttaagcaagtttaatgagtataaactttttgaaat
+tgattcttctaaaacggattcaatcgtgttgattaaagatattcctttttattcaatgtgtgagcatcatatgttaccat
+tttttgggaaagctcatgttgcctatattccagctgatggaaaaattattggcttgtcaaaaattccccgtttagttgat
+tatgtttcgcgcaaactctcagttcaagaaaatatcactcatgatattggagatgttttgactgatattttgaatcctaa
+aggagtggcagttcttgttgaaggacgtcatatgtgcgttgaaatgcgtggagtaaaaaaagtaaattctattactaaaa
+cttcttattttttaggtgaatttaaagaaaataatgaaaaaagaatggaatttttagaaagtcttttataataatactag
+agccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctc
+tctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1969101</id>
+<title>BBa_J23100</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>1969103</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>44</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>1969102</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>48</startpos>
+<endpos>51</endpos></feature>
+<feature>
+<id>1969104</id>
+<title>BBa_K137011</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>62</startpos>
+<endpos>1114</endpos></feature>
+<feature>
+<id>1969105</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1123</startpos>
+<endpos>1202</endpos></feature>
+<feature>
+<id>1969106</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1134</startpos>
+<endpos>1177</endpos></feature>
+<feature>
+<id>1969107</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1211</startpos>
+<endpos>1251</endpos></feature>
+<feature>
+<id>1969108</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1218</startpos>
+<endpos>1237</endpos></feature>
+<feature>
+<id>1969109</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1238</startpos>
+<endpos>1251</endpos></feature>
+<feature>
+<id>1969110</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1244</startpos>
+<endpos>1244</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//igem2008/Caltech/favorite</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

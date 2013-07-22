@@ -1,0 +1,82 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>20467</part_id>
+<part_name>BBa_K332011</part_name>
+<part_short_name>K332011</part_short_name>
+<part_short_desc>Crystal protein gene (cry11Aa) from Bacillus thuringiensis subsp. Israelensis.</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>cry11Aa</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K332011</part_url>
+<part_entered>2010-10-24</part_entered>
+<part_author>Chia-Le Meng</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggaagatagttctttagatactttaagtatagttaatgaaacagactttccattatataataattataccgaacctac
+tattgcgccagcattaatagcagtagctcccatcgcacaatatcttgcaacagctatagggaaatgggcggcaaaggcag
+cattttcaaaagtactatcacttatattcccaggttctcaacctgctactatggaaaaagttcgtacagaagtggaaaca
+cttataaatcaaaaattaagccaagatcgagtcaatatattaaacgcagaatatagggggattattgaggttagtgatgt
+atttgatgcgtatattaaacaaccaggttttacccctgcaacagccaagggttattttctaaatctaagtggtgctataa
+tacaacgattacctcaatttgaggttcaaacatatgaaggagtatctatagcactttttactcaaatgtgtacacttcat
+ttaactttattaaaagacggaatcctagctgggagtgcatggggatttactcaagctgatgtagattcatttataaaatt
+atttaatcaaaaagtattagattacaggaccagattaatgagaatgtacacagaagagttcggaagattgtgtaaagtca
+gtcttaaagatggattgacgttccggaatatgtgtaatttatatgtgtttccatttgctgaagcctggtctttaatgaga
+tatgaaggattaaaattacaaagctctctatcattatgggattatgttggtgtctcaattcctgtaaattataatgaatg
+gggaggactggtttataagttattaatgggggaagttaatcaaagattaacaactgttaaatttaattattctttcacta
+atgaaccagctgatataccagcaagagaaaatattcgtggcgtccatcctatatacgatcctagttctgggcttacagga
+tggataggaaacggaagaacaaacaattttaattttgctgataacaatggcaatgaaattatggaagttagaacacaaac
+tttttatcaaaatccaaataatgagcctatagcgcctagagatattataaatcaaattttaactgcgccagcaccagcag
+acctattttttaaaaatgcagatataaatgtaaagttcacacagtggtttcagtctactctatatgggtggaacattaaa
+ctcggtacacaaacggttttaagtagtagaaccggaacaataccaccaaattatttagcatatgatggatattatattcg
+tgctatttcagcttgcccaagaggagtctcacttgcatataatcacgatcttacaacactaacatataatagaatagagt
+atgattcacctactacagaaaatattattgtagggtttgcaccagataatactaaggacttttattctaaaaaatctcac
+tatttaagtgaaacgaatgatagttatgtaattcctgctctgcaatttgctgaagtttcagatagatcatttttagaaga
+tacgccagatcaagcaacagacggcagtattaaatttgcacgtactttcattagtaatgaagctaagtactctattagac
+taaacaccgggtttaatacggcaactagatataaattaattatcagggtaagagtaccttatcgcttacctgctggaata
+cgggtacaatctcagaactcgggaaataatagaatgctaggcagttttactgcaaatgctaatccagaatgggtggattt
+tgtcacagatgcatttacatttaacgatttagggattacaacttcaagtacaaatgctttatttagtatttcttcagata
+gtttaaattctggagaagagtggtatttatcgcagttgtttttagtaaaagaatcggcctttacgacgcaaattaatccg
+ttactaaagtag
+</seq_data></sequences>
+<features></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>biology</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>11595</id>
+<m_date>2010-10-27 07:26:44</m_date>
+<user_id>7059</user_id>
+<user_name>jim6904</user_name></parameter>
+<parameter>
+<name>function</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>11597</id>
+<m_date>2010-10-27 07:26:44</m_date>
+<user_id>7059</user_id>
+<user_name>jim6904</user_name></parameter></parameters>
+<categories>
+<category>//cds/biosynthesis</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//function/biosynthesis</category>
+<category>//plasmidbackbone/copynumber/high</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

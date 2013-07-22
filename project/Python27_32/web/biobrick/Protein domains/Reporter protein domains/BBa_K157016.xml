@@ -1,0 +1,99 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>12747</part_id>
+<part_name>BBa_K157016</part_name>
+<part_short_name>K157016</part_short_name>
+<part_short_desc>Tm-Fluolinker-cCFP</part_short_desc>
+<part_type>Protein_Domain</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname>Tm-Fluolin</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K157016</part_url>
+<part_entered>2008-10-26</part_entered>
+<part_author>iGEM Team Freiburg 2008</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggccggcatagctaccggaatggtgggtgcacttttgctccttttggtcgttgccctggggataggactctttatgac
+cggccgaccagcctgtaagattccaaatgacctgaagcagaaagttatgaatcacaccggcaagaacggcatcaaggcca
+acttcaagatccggcacaacatcgaggatggcagcgtgcagctggccgatcactaccagcagaacacccccatcggcgac
+ggccccgtgctgctgcccgacaaccactacctgagcacccagagcaagctgtccaaggaccccaacgagaagcgggacca
+catggtgctgctggaatttgtgacagccgccggaatcaccctgggcatggacgagctgtacaagaccggttaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1989971</id>
+<title>Tm-Fluolinker-cCFP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>390</endpos></feature>
+<feature>
+<id>1989969</id>
+<title>NgoMI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>9</endpos></feature>
+<feature>
+<id>1991280</id>
+<title>Tm</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>10</startpos>
+<endpos>78</endpos></feature>
+<feature>
+<id>1991281</id>
+<title>Scar (Thr, Gly)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>79</startpos>
+<endpos>84</endpos></feature>
+<feature>
+<id>1991282</id>
+<title>Fluolinker</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>85</startpos>
+<endpos>135</endpos></feature>
+<feature>
+<id>1991283</id>
+<title>Sca  (Thr, Gly)</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>136</startpos>
+<endpos>141</endpos></feature>
+<feature>
+<id>1991284</id>
+<title>C-Term_CFP</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>142</startpos>
+<endpos>384</endpos></feature>
+<feature>
+<id>1989970</id>
+<title>AgeI</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>385</startpos>
+<endpos>390</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/reporter/fluorescence</category>
+<category>//proteindomain/internal</category>
+<category>//standard/25</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

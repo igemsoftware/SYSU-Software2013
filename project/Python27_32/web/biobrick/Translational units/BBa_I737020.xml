@@ -1,0 +1,104 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10520</part_id>
+<part_name>BBa_I737020</part_name>
+<part_short_name>I737020</part_short_name>
+<part_short_desc>PoPS-&gt;Agarase (Digests agar)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I737020</part_url>
+<part_entered>2007-10-26</part_entered>
+<part_author>Vladislav Lavrovsky</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tatccgcacatacccaaggttgagcaccctatttaataacggaaacaacaacatgaaatacccacaattcattacaaagg
+tcgcctttagggcaagcgcgattgcgctagctattaccctaaccggctgtagtcatgatcaacatgaaattgctcaggct
+cagggtgttccacaagaccttgctggaaacggtagcccactaggcagtgcagaggacgcgtttaccaacgagcaaaaaat
+cgtctcactgattgactttgataaccaagagcaacttaactggctgcagcaaagtgatacctcattcgcgcagatcacca
+gcagcgagagcttaattgacaagcaattagcggtggagtttgcgaaaaccggtaatatttccacgttgcgcgtagagcca
+ccgaagccttgggatcttagggagtacgaaaactacaacattgcctttgatgtgcaaaacaccagcccagattcagttca
+tttgtacttgtctttggaaaatgtaaacggacaaatccagagtcactcaatttctctggctccgaattacaaaggcacgg
+tgtattttcccctcgatggtattgaagcagaaaccgacagcggcatgtggggagatgtgcctcattggcaaacccaagac
+gacttaatggtgtggcgttcttggcgcaaagcagagcaagactatagccaactcaccgcgcttaatttcttcactattgg
+aatattggaaaacaaatctgtgattttggatgatgtgcgtctgcgcgcgaatccagctcacgacccgaacgtatcggtcg
+gattaatcgataaatacgggcaaaacgccaaacaaagcacccccttagatgtgcattcagatgcccaactaaaacaacaa
+gccgatgaagaactggccaagctagccaaatcatcgggtatgccagaccgttctcgttttggtggttataccaaagcccc
+aaaacgtgaagcaaccggcttttttagaacggaaaaggtcgatggtaagtggtggatggtcgaccctgatggctatctgt
+ttttctcacacgggccagctaacgtgcgtatggcaaacatgagtacgttaaccggaatagactacgaccaaccgagtatt
+cgcgtgcgcaccagtgatgaaattaccccagaagattccatgggaattgtatctgttcctgacagcgcaaaagaaaaacg
+ctatgtcatttcaaaggcgcgcaacgatatgtttcagtggttaccaagctatgatgatgagctctctgagcactatagct
+atcgccgctctacccacaaagggcctattccttacggcgagacctacagcttttaccgcgctaatttagaacgtagatac
+ggtgatgacgacctacgcgcaggtgaaggtgaaaaagcaggcgaaaatcaaggcagcgatccttcctacgtaaaaaaatg
+gcatgacgtcaccgcacagcgtatgcatgactgggggtttacctcttttggtaactgggtagacccagcgttttatcaat
+cagagcaagtgccttatttcgccaatggttggatcatcggcgattaccaaacactgtcgggtcacactaatcattggggc
+ttgatgccagatccttttgatcccgtatttgcacagcgagcaaaggtcactatcgatgctattgccgaaaatattcaagc
+gtcaccttggtgtgcgggtatttttattgataatgagaagagctggggagagcgtgaaggcacagtgtcacaacgctatg
+gggtgatccttgatgcactatcaaaaaatattgagaagagccctgcaaaaacggcctttgcagcccatttgcagcaaaaa
+taccagacgatcgatgcattgaattctgcatggtcatcacacttcgatagttggcaaatgtttgaagatgacgccagcgt
+cagcacgcacaccgatgcccaaattgctgatttgtcaaaaatgctcgagatgctgggtgagcagtactttaaagtggtac
+acaataccttagaagcggcgctgccagagcacttgtacatgggcgcgcgcatggccaactggggcatgcctgatgaaatc
+attactgcctctttgaaatactctgacgtactgagcttcaatatttatgaggaaggggtgcaagaagactattggaagtt
+ccttgaagaagtcgacttacccgtagtgattggtgagtttcatattggcagcacgacagattcaggcatgtacaacccgg
+gtattgtgcacagcgcaaaccagcaagacagagcccaaatgtacaaagattacatgcaaagcgtgttagacaagccgtat
+atggtcggggcccattggtttcaatacatagatgagcccatatcggggcgtgcatttgacggcgaaaacgccaatatcgg
+ctttgtaacggtaacggatatcccatatccgcatatgatccaagcggtcaaagaggtgacatccaccatgtaccaaaaac
+gcttagccgactaatacaggcttagtgataacaaaaaacgcccgataacgtcgggcgttttgcgtttgtaaacgactatt
+ctccttgcacgttaactaccactcgaccgcg
+</seq_data></sequences>
+<features>
+<feature>
+<id>1957376</id>
+<title>Forward Primer</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>1955819</id>
+<title>Agarase</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>53</startpos>
+<endpos>2495</endpos></feature>
+<feature>
+<id>1957508</id>
+<title>Start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>53</startpos>
+<endpos>56</endpos></feature>
+<feature>
+<id>1957509</id>
+<title>Stop</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>2493</startpos>
+<endpos>2495</endpos></feature>
+<feature>
+<id>1957377</id>
+<title>Reverse Primer</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>2571</startpos>
+<endpos>2591</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//function/biosynthesis</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

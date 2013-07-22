@@ -1,0 +1,100 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10971</part_id>
+<part_name>BBa_J70010</part_name>
+<part_short_name>J70010</part_short_name>
+<part_short_desc>A BioScaffold Part (Uses PpiI), for offset see Part Design page</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Missing</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J70010</part_url>
+<part_entered>2008-05-09</part_entered>
+<part_author>Julie Norville</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gagagctggttcaccaggttaattaattaattaaacctggtgaacgtggtctc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1963026</id>
+<title>PpiI 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>1963027</id>
+<title>PpiI 1</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>9</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>1963030</id>
+<title>MabI 1</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>13</startpos>
+<endpos>19</endpos></feature>
+<feature>
+<id>1963032</id>
+<title>PacI 1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>24</endpos></feature>
+<feature>
+<id>1963034</id>
+<title>PacI3</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>23</startpos>
+<endpos>30</endpos></feature>
+<feature>
+<id>1963033</id>
+<title>PacI 2</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>27</startpos>
+<endpos>34</endpos></feature>
+<feature>
+<id>1963031</id>
+<title>MabI 2</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>35</startpos>
+<endpos>41</endpos></feature>
+<feature>
+<id>1963028</id>
+<title>PpiI 2</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>42</startpos>
+<endpos>45</endpos></feature>
+<feature>
+<id>1963029</id>
+<title>PpiI2</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>51</startpos>
+<endpos>53</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//DNA/bioscaffold</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,107 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22724</part_id>
+<part_name>BBa_K592100</part_name>
+<part_short_name>K592100</part_short_name>
+<part_short_desc>Blue Fluorescent Protein (mTagBFP)</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>BFP</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K592100</part_url>
+<part_entered>2011-09-20</part_entered>
+<part_author>Erik Gullberg</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgagcgaactgatcaaagagaacatgcacatgaagctgtacatggaaggcaccgttgacaaccaccactttaagtgcac
+gtctgagggtgagggtaagccgtacgaaggcacccaaaccatgcgtatcaaagttgtggagggcggtccactgccgttcg
+cttttgacattctggcgaccagcttcctgtacggttccaaaacgttcattaaccatactcagggcattccggatttcttc
+aaacagagctttccggaaggtttcacctgggagcgtgtcaccacgtatgaagatggtggtgtgttgaccgccacccaaga
+tacctccctgcaagatggctgtctgatctataacgtgaaaattcgtggcgtcaactttacgagcaatggtccggtgatgc
+agaagaaaaccctgggttgggaggcgtttacggaaaccctgtatccggccgatggtggcctggagggccgtaacgacatg
+gcactgaagctggttggtggcagccatttgatcgcaaatatcaagacgacgtaccgcagcaagaaaccggcgaaaaatct
+gaagatgccgggtgtttactatgtcgactaccgtctggaacgcattaaagaagcgaataatgagacttacgtggagcagc
+acgaggttgcagtcgcgcgctattgcgacttgcctagcaagctgggtcataaactgaattaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2135490</id>
+<title>mTagBFP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>699</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>excitation</name>
+<value>399 nm</value>
+<units></units>
+<url></url>
+<id>12651</id>
+<m_date>2011-09-20 08:38:56</m_date>
+<user_id>10137</user_id>
+<user_name>erigu863</user_name></parameter>
+<parameter>
+<name>emission</name>
+<value>456 nm</value>
+<units></units>
+<url></url>
+<id>12650</id>
+<m_date>2011-09-20 08:38:41</m_date>
+<user_id>10137</user_id>
+<user_name>erigu863</user_name></parameter>
+<parameter>
+<name>abs</name>
+<value>399 nm</value>
+<units></units>
+<url></url>
+<id>12649</id>
+<m_date>2011-09-20 08:38:27</m_date>
+<user_id>10137</user_id>
+<user_name>erigu863</user_name></parameter>
+<parameter>
+<name>abs</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12648</id>
+<m_date>2011-09-20 08:38:10</m_date>
+<user_id>10137</user_id>
+<user_name>erigu863</user_name></parameter>
+<parameter>
+<name>emission</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12647</id>
+<m_date>2011-09-20 08:37:04</m_date>
+<user_id>10137</user_id>
+<user_name>erigu863</user_name></parameter>
+<parameter>
+<name>excitation</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12646</id>
+<m_date>2011-09-20 08:36:41</m_date>
+<user_id>10137</user_id>
+<user_name>erigu863</user_name></parameter></parameters>
+<categories>
+<category>//function/reporter</category>
+<category>//function/reporter/fluorescence</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

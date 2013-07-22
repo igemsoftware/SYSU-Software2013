@@ -1,0 +1,141 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19327</part_id>
+<part_name>BBa_K322149</part_name>
+<part_short_name>K322149</part_short_name>
+<part_short_desc>Bacterial luciferase (luxAB) blue shifted by lumazine protein</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K322149</part_url>
+<part_entered>2010-10-08</part_entered>
+<part_author>Chris French and Richard Partridge Hicks</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>19101</part_id>
+<part_name>BBa_K322139</part_name>
+<part_short_desc>Blue emitting luciferase (from X. luminescens)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19112</part_id>
+<part_name>BBa_K322007</part_name>
+<part_short_desc>Lumazine protein (LumP). Causes blue shift of &lt;i&gt;P. phosphoreum&lt;/i&gt; luciferase emmision spectrum.</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>19101</part_id>
+<part_name>BBa_K322139</part_name>
+<part_short_desc>Blue emitting luciferase (from X. luminescens)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>19112</part_id>
+<part_name>BBa_K322007</part_name>
+<part_short_desc>Lumazine protein (LumP). Causes blue shift of &lt;i&gt;P. phosphoreum&lt;/i&gt; luciferase emmision spectrum.</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>19101</part_id>
+<part_name>BBa_K322139</part_name>
+<part_short_desc>Blue emitting luciferase (from X. luminescens)</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>19112</part_id>
+<part_name>BBa_K322007</part_name>
+<part_short_desc>Lumazine protein (LumP). Causes blue shift of &lt;i&gt;P. phosphoreum&lt;/i&gt; luciferase emmision spectrum.</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ctcaaatagcaatataaggactctctatgaaatttggaaactttttgcttacataccaacctccccaattttctcaaaca
+gaggtaatgaaacgtttggttaaattaggtcgcatctctgaggagtgtggttttgataccgtatggttactggagcatca
+tttcacggagtttggtttgcttggtaacccttatgtcgctgctgcatatttacttggcgcgactaaaaaattgaatgtag
+gaactgccgctattgttcttcccacagcccatccagtacgccaacttgaagatgtgaatttattggatcaaatgtcaaaa
+ggacgatttcggtttggtatttgccgagggctttacaacaaggactttcgcgtattcggcacagatatgaataacagtcg
+cgccttagcggaatgctggtacgggctgataaagaatggcatgacagagggatatatggaagctgataatgaacatatca
+agttccataaggtaaaagtaaaccccgcggcgtatagcagaggtggcgcaccggtttatgtggtggctgaatcagcttcg
+acgactgagtgggctgctcaatttggcctaccgatgatattaagttggattataaatactaacgaaaagaaagcacaact
+tgagctttataatgaagtggctcaagaatatgggcacgatattcataatatcgaccattgcttatcatatataacatctg
+tagatcatgactcaattaaagcgaaagagatttgccggaaatttctggggcattggtatgattcttatgtgaatgctacg
+actatttttgatgattcagaccaaacaagaggttatgatttcaataaagggcagtggcgtgactttgtattaaaaggaca
+taaagatactaatcgccgtattgattacagttacgaaatcaatcccgtgggaacgccgcaggaatgtattgacataattc
+aaaaagacattgatgctacaggaatatcaaatatttgttgtggatttgaagctaatggaacagtagacgaaattattgct
+tccatgaagctcttccagtctgatgtcatgccatttcttaaagaaaaacaacgttcgctattatattagctaaggagaaa
+gaaatgaaatttggattgttcttccttaacttcatcaattcaacaactgttcaagaacaaagtatagttcgcatgcagga
+aataacggagtatgttgataagttgaattttgaacagattttagtgtatgaaaatcatttttcagataatggtgttgtcg
+gcgctcctctgactgtttctggttttctgctcggtttaacagagaaaattaaaattggttcattaaatcacatcattaca
+actcatcatcctgtcgccatagcggaggaagcttgcttattggatcagttaagtgaagggagatttattttagggtttag
+tgattgcgaaaaaaaagatgaaatgcatttttttaatcgcccggttgaatatcaacagcaactatttgaagagtgttatg
+aaatcattaacgatgctttaacaacaggctattgtaatccagataacgatttttatagcttccctaaaatatctgtaaat
+ccccatgcttatacgccaggcggacctcggaaatatgtaacagcaaccagtcatcatattgttgagtgggcggccaaaaa
+aggtattcctctcatctttaagtgggatgattctaatgatgttagatatgaatatgctgaaagatataaagccgttgcgg
+ataaatatgacgttgacctatcagagatagaccatcagttaatgatattagttaactataacgaagatagtaataaagct
+aaacaagagacgcgtgcatttattagtgattatgttcttgaaatgcaccctaatgaaaatttcgaaaataaacttgaaga
+aataattgcagaaaacgctgtcggaaattatacggagtgtataactgcggctaagttggcaattgaaaagtgtggtgcga
+aaagtgtattgctgtcctttgaaccaatgaatgatttgatgagccaaaaaaatgtaatcaatattgttgatgataatatt
+aagaagtaccacatggaatatacctaataatactagaggagattattatgttcaaaggtatagttcagggcactggaata
+attaaaaaaatatcaaaaaatgatgatacccaaagacatggcattacttttccaaaaaatatattggacttagttgcaaa
+agatactgtcatgctcgtaaatggatgctcattaactgttgttcgcatcacaggtgatgtcgtttatttcgatatagatc
+aggcacttaataccacaacctttgattcattagaaatcggtgacaaggtaaacttagaactacgtccagaatttggctca
+ctccttgggaaaggtgctttaactggaaatataaagggggtagctactgttgataatattactgaagaagaagatcttct
+taaagtttatattgaaattcctaaaaacctaaccaaaaatatttccgcagaagatcatattggaattaatggtgtatcta
+attctattgaagaagtttccaatgatattatttgcattaattatcccaaaaatttatctattaccaccaaccttagcact
+ttagaagcaggttcgaaggttaacgtagaaacattaaatgtatcaaatgaatggtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2084070</id>
+<title>BBa_K322139</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>2110</endpos></feature>
+<feature>
+<id>2084071</id>
+<title></title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>2119</startpos>
+<endpos>2127</endpos></feature>
+<feature>
+<id>2084073</id>
+<title>BBa_K322007</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2119</startpos>
+<endpos>2700</endpos></feature>
+<feature>
+<id>2084072</id>
+<title>lumP</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>2128</startpos>
+<endpos>2696</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

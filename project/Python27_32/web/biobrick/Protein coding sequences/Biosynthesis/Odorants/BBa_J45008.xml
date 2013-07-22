@@ -1,0 +1,117 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>6779</part_id>
+<part_name>BBa_J45008</part_name>
+<part_short_name>J45008</part_short_name>
+<part_short_desc>branched-chain amino acid transaminase (BAT2); converts leucine to alpha-ketoisocaproate</part_short_desc>
+<part_type>Coding</part_type>
+<part_status>Available</part_status>
+<part_results>Fails</part_results>
+<part_nickname>BAT2</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J45008</part_url>
+<part_entered>2006-06-07</part_entered>
+<part_author>Veena Venkatachalam</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgaccttggcacccctagacgcctccaaagttaagataactaccacacaacatgcatctaagccaaaaccgaacagtga
+gttagtgtttggcaagagcttcacggaccacatgttaactgcggaatggacagctgaaaaagggtggggtaccccagaga
+ttaaaccttatcaaaatctgtctttagacccttccgcggtggttttccattatgcttttgagctattcgaagggatgaag
+gcttacagaacggtggacaacaaaattacaatgtttcgtccagatatgaatatgaagcgcatgaataagtctgctcagag
+aatctgtttgccaacgttcgacccagaagagttgattaccctaattgggaaactgatccagcaagataagtgcttagttc
+ctgaaggaaaaggttactctttatatatcaggcctacattaatcggcactacggccggtttaggggtttccacgcctgat
+agagccttgctatatgtcatttgctgccctgtgggtccttattacaaaactggatttaaggcggtcagactggaagccac
+tgattatgccacaagagcttggccaggaggctgtggtgacaagaaactaggtgcaaactacgccccctgcgtcctgccac
+aattgcaagctgcttcaaggggttaccaacaaaatttatggctatttggtccaaataacaacattactgaagtcggcacc
+atgaatgcttttttcgtgtttaaagatagtaaaacgggcaagaaggaactggttactgctccactagacggtaccatttt
+ggaaggtgttactagggattccattttaaatcttgctaaagaaagactcgaaccaagtgaatggaccattagtgaacgct
+acttcactataggcgaagttactgagagatccaagaacggtgaactacttgaagcctttggttctggtactgctgcgatt
+gtttctcccattaaggaaatcggctggaaaggcgaacaaattaatattccgttgttgcccggcgaacaaaccggtccatt
+ggccaaagaagttgcacaatggattaatggaatccaatatggcgagactgagcatggcaattggtcaagggttgttactg
+atttgaactaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>1883624</id>
+<title>start codon</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3</endpos></feature>
+<feature>
+<id>1961299</id>
+<title>BAT2</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1134</endpos></feature>
+<feature>
+<id>1894553</id>
+<title>a-&gt;g to eliminate SpeI</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>771</startpos>
+<endpos>771</endpos></feature>
+<feature>
+<id>1883625</id>
+<title>double TAA stop codon</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1129</startpos>
+<endpos>1134</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>ec_num</name>
+<value>2.6.1.42</value>
+<units></units>
+<url></url>
+<id>2591</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>swisspro</name>
+<value>P47176</value>
+<units></units>
+<url></url>
+<id>2592</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>kegg</name>
+<value> 	sce:YJR148W</value>
+<units></units>
+<url></url>
+<id>2593</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>protein</name>
+<value>BAT2</value>
+<units></units>
+<url></url>
+<id>4109</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//function/biosynthesis/odorant</category>
+<category>//function/odor</category>
+<category>//igem2006/mit/favorites</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

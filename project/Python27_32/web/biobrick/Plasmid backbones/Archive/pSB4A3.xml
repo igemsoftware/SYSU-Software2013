@@ -1,0 +1,254 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>4740</part_id>
+<part_name>pSB4A3</part_name>
+<part_short_name>pSB4A3</part_short_name>
+<part_short_desc>pSB4A3 (Replaced by pSB4A5)</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname>pSB4A3</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:pSB4A3</part_url>
+<part_entered>2004-06-29</part_entered>
+<part_author>Reshma Shetty</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tactagtagcggccgctgcagtccggcaaaaaaacgggcaaggtgtcaccaccctgccctttttctttaaaaccgaaaag
+attacttcgcgttatgcaggcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctc
+actcaaaggcggtaatctcgaggttacattgtcgatctgttcatggtgaacagctttaaatgcaccaaaaactcgtaaaa
+gctctgatgtatctatcttttttacaccgttttcatctgtgcatatggacagttttccctttgatatctaacggtgaaca
+gttgttctacttttgtttgttagtcttgatgcttcactgatagatacaagagccataagaacctcagatccttccgtatt
+tagccagtatgttctctagtgtggttcgttgtttttgcgtgagccatgagaacgaaccattgagatcatgcttactttgc
+atgtcactcaaaaattttgcctcaaaactggtgagctgaatttttgcagttaaagcatcgtgtagtgtttttcttagtcc
+gttacgtaggtaggaatctgatgtaatggttgttggtattttgtcaccattcatttttatctggttgttctcaagttcgg
+ttacgagatccatttgtctatctagttcaacttggaaaatcaacgtatcagtcgggcggcctcgcttatcaaccaccaat
+ttcatattgctgtaagtgtttaaatctttacttattggtttcaaaacccattggttaagccttttaaactcatggtagtt
+attttcaagcattaacatgaacttaaattcatcaaggctaatctctatatttgccttgtgagttttcttttgtgttagtt
+cttttaataaccactcataaatcctcatagagtatttgttttcaaaagacttaacatgttccagattatattttatgaat
+ttttttaactggaaaagataaggcaatatctcttcactaaaaactaattctaatttttcgcttgagaacttggcatagtt
+tgtccactggaaaatctcaaagcctttaaccaaaggattcctgatttccacagttctcgtcatcagctctctggttgctt
+tagctaatacaccataagcattttccctactgatgttcatcatctgagcgtattggttataagtgaacgataccgtccgt
+tctttccttgtagggttttcaatcgtggggttgagtagtgccacacagcataaaattagcttggtttcatgctccgttaa
+gtcatagcgactaatcgctagttcatttgctttgaaaacaactaattcagacatacatctcaattggtctaggtgatttt
+aatcactataccaattgagatgggctagtcaatgataattacatgtccttttcctttgagttgtgggtatctgtaaattc
+tgctagacctttgctggaaaacttgtaaattctgctagaccctctgtaaattccgctagacctttgtgtgttttttttgt
+ttatattcaagtggttataatttatagaataaagaaagaataaaaaaagataaaaagaatagatcccagccctgtgtata
+actcactactttagtcagttccgcagtattacaaaaggatgtcgcaaacgctgtttgctcctctacaaaacagaccttaa
+aaccctaaaggcttaagtagcaccctcgcaagctcgggcaaatcgctgaatattccttttgtctccgaccatcaggcacc
+tgagtcgctgtctttttcgtgacattcagttcgctgcgctcacggctctggcagtgaatgggggtaaatggcactacagg
+cgccttttatggattcatgcaaggaaactacccataatacaagaaaagcccgtcacgggcttctcagggcgttttatggc
+gggtctgctatgtggtgctatctgactttttgctgttcagcagttcctgccctctgattttccagtctgaccacttcgga
+ttatcccgtgacaggtcattcagactggctaatgcacccagtaaggcagcggtatcatcaacaggcttacccgtcttact
+gtccctagtgcttggattctcaccaataaaaaacgcccggcggcaaccgagcgttctgaacaaatccagatggagttctg
+aggtcattactggatctatcaacaggagtccaagcgagctcgtaaacttggtctgacagttaccaatgcttaatcagtga
+ggcacctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtagataactacgatacggg
+agggcttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagatttatcagcaataaac
+cagccagccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctattaattgttgccggga
+agctagagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcgtggtgtcacgctcgt
+cgtttggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatgttgtgcaaaaaagcg
+gttagctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggttatggcagcactgca
+taattctcttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagtcattctgagaatagt
+gtatgcggcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcagaactttaaaagtgctc
+atcattggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttcgatgtaacccactcg
+tgcacccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaaggcaaaatgccgcaa
+aaaagggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattgaagcatttatcagggt
+tattgtctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcgcacatttcccatggt
+gccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatcacgaggcagaatttcagat
+aaaaaaaatccttagctttcgctaaggatgatttctggaattcgcggccgcttctagag
+</seq_data></sequences>
+<features>
+<feature>
+<id>1782532</id>
+<title>suffix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>1782533</id>
+<title>E.coli His operon terminator</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>93</endpos></feature>
+<feature>
+<id>1824031</id>
+<title>terminator stem loop</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>30</startpos>
+<endpos>64</endpos></feature>
+<feature>
+<id>1823771</id>
+<title>deletion of two bases</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>34</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>1782542</id>
+<title>VR</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>157</startpos>
+<endpos>176</endpos></feature>
+<feature>
+<id>1782534</id>
+<title>repA (rev)</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>384</startpos>
+<endpos>1334</endpos></feature>
+<feature>
+<id>1782535</id>
+<title>RBS (rev)</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>1338</startpos>
+<endpos>1350</endpos></feature>
+<feature>
+<id>1782536</id>
+<title>(rev)</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>1355</startpos>
+<endpos>1374</endpos></feature>
+<feature>
+<id>1782538</id>
+<title>Terminator (rev)</title>
+<type>stem_loop</type>
+<direction>reverse</direction>
+<startpos>2145</startpos>
+<endpos>2174</endpos></feature>
+<feature>
+<id>1782537</id>
+<title>AmpR (rev)</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>2220</startpos>
+<endpos>3080</endpos></feature>
+<feature>
+<id>1782527</id>
+<title>rbs(rev)</title>
+<type>rbs</type>
+<direction>reverse</direction>
+<startpos>3085</startpos>
+<endpos>3089</endpos></feature>
+<feature>
+<id>1782528</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>3098</startpos>
+<endpos>3103</endpos></feature>
+<feature>
+<id>1782529</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>3124</startpos>
+<endpos>3129</endpos></feature>
+<feature>
+<id>1782550</id>
+<title>VF2</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>3200</startpos>
+<endpos>3219</endpos></feature>
+<feature>
+<id>1782530</id>
+<title>end of terminator</title>
+<type>misc</type>
+<direction>reverse</direction>
+<startpos>3276</startpos>
+<endpos>3279</endpos></feature>
+<feature>
+<id>1824032</id>
+<title>terminator stem loop</title>
+<type>stem_loop</type>
+<direction>reverse</direction>
+<startpos>3289</startpos>
+<endpos>3308</endpos></feature>
+<feature>
+<id>1782531</id>
+<title>prefix</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>3318</startpos>
+<endpos>3339</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>insert</name>
+<value>None</value>
+<units></units>
+<url></url>
+<id>3324</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>copies</name>
+<value>10-12</value>
+<units></units>
+<url></url>
+<id>3325</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>A</value>
+<units></units>
+<url></url>
+<id>3326</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>mcs</name>
+<value>BioBrick</value>
+<units></units>
+<url></url>
+<id>3327</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>pSC101</value>
+<units></units>
+<url></url>
+<id>3328</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>3329</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//plasmidbackbone/archive</category>
+<category>//plasmidbackbone/copynumber/low</category>
+<category>//plasmidbackbone/version/3</category>
+<category>//standard/10</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

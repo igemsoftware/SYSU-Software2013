@@ -1,0 +1,170 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>22019</part_id>
+<part_name>BBa_K515004</part_name>
+<part_short_name>K515004</part_short_name>
+<part_short_desc>T4 Anti-Holin</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K515004</part_url>
+<part_entered>2011-09-07</part_entered>
+<part_author>Atipat Patharagulpong</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>cagcctgcggtccgggcgataataaggaggtactaatggccttaaaagcaacagcactttttgccatgctaggattgtca
+tttgttttatctccatcgattgaagcgaatgtcgatcctcattttgataaatttatggaatctggtattaggcacgttta
+tatgctttttgaaaataaaagcgtagaatcgtctgaacaattctatagttttatgagaacgacctataaaaatgacccgt
+gctcttctgattttgaatgtatagagcgaggcgcggagatggcacaatcatacgctagaattatgaacattaaattggag
+actgaataataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2129766</id>
+<title>insulator</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>15</endpos></feature>
+<feature>
+<id>2129767</id>
+<title>rbs</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>16</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>2129768</id>
+<title>antiholin</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>36</startpos>
+<endpos>332</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>strain</name>
+<value>NEB DH5&amp;#945;</value>
+<units></units>
+<url></url>
+<id>12458</id>
+<m_date>2011-09-12 09:41:09</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>strain</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12457</id>
+<m_date>2011-09-12 09:39:54</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>Chloramphenicol</value>
+<units></units>
+<url></url>
+<id>12456</id>
+<m_date>2011-09-12 09:39:24</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>resistance</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12455</id>
+<m_date>2011-09-12 09:39:10</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>protein</name>
+<value>T4 Anti-holin</value>
+<units></units>
+<url></url>
+<id>12454</id>
+<m_date>2011-09-12 09:38:34</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>protein</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12453</id>
+<m_date>2011-09-12 09:38:08</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>target</name>
+<value>T4 Holin</value>
+<units></units>
+<url></url>
+<id>12452</id>
+<m_date>2011-09-12 09:37:30</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>target</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12451</id>
+<m_date>2011-09-12 09:36:57</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>Bba_K112808</value>
+<units></units>
+<url></url>
+<id>12449</id>
+<m_date>2011-09-12 09:36:24</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12447</id>
+<m_date>2011-09-12 09:36:06</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>Escherichia coli</value>
+<units></units>
+<url></url>
+<id>12444</id>
+<m_date>2011-09-12 09:35:37</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>12443</id>
+<m_date>2011-09-12 09:35:11</m_date>
+<user_id>10169</user_id>
+<user_name>cs3109</user_name></parameter></parameters>
+<categories>
+<category>//cds</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

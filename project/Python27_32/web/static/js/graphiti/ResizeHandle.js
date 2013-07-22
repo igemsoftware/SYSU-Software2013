@@ -356,5 +356,11 @@ graphiti.ResizeHandle = graphiti.shape.basic.Rectangle.extend({
     {
       // A resizeHandle doesn't fire this event.
       // Normally this set the document dirty. This is not necessary for a ResizeHandle.
-    }
+    },
+
+
+    // 添加 onclick事件 显示工具栏
+    onClick: function(evt) {
+      // 重载onclick函数，使点击resizeHandle点时不显示菜单栏和配置栏
+    }    
 });

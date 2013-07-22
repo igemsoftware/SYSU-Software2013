@@ -1,0 +1,225 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>13483</part_id>
+<part_name>BBa_K116633</part_name>
+<part_short_name>K116633</part_short_name>
+<part_short_desc>pLac + RBS + CII + T</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K116633</part_url>
+<part_entered>2008-10-30</part_entered>
+<part_author>Jesse Wu</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>13457</part_id>
+<part_name>BBa_K116602</part_name>
+<part_short_desc>CII coding region from &amp;#955; phage</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>CII</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<subpart>
+<part_id>13476</part_id>
+<part_name>BBa_K116622</part_name>
+<part_short_desc>BBa_B0032 + CII + BBa_B0015</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>185</part_id>
+<part_name>BBa_R0010</part_name>
+<part_short_desc>promoter (lacI regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>LacI</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>13476</part_id>
+<part_name>BBa_K116622</part_name>
+<part_short_desc>BBa_B0032 + CII + BBa_B0015</part_short_desc>
+<part_type>Generator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>caatacgcaaaccgcctctccccgcgcgttggccgattcattaatgcagctggcacgacaggtttcccgactggaaagcg
+ggcagtgagcgcaacgcaattaatgtgagttagctcactcattaggcaccccaggctttacactttatgcttccggctcg
+tatgttgtgtggaattgtgagcggataacaatttcacacatactagagtcacacaggaaagtactagatggttcgtgcaa
+acaaacgcaacgaggctctacgaatcgagagtgcgttgcttaacaaaatcgcaatgcttggaactgagaagacagcggaa
+gctgtgggcgttgataagtcgcagatcagcaggtggaagagggactggattccaaagttctcaatgctgcttgctgttct
+tgaatggggggtcgttgacgacgacatggctcgattggcgcgacaagttgctgcgattctcaccaataaaaaacgcccgg
+cggcaaccgagcgttctgaacaaatccagatggagttctgatactagagccaggcatcaaataaaacgaaaggctcagtc
+gaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtg
+ggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1997906</id>
+<title>BBa_R0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>1997907</id>
+<title>end of LacI coding region (inactive)</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>88</endpos></feature>
+<feature>
+<id>1997908</id>
+<title>CAP binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>89</startpos>
+<endpos>126</endpos></feature>
+<feature>
+<id>1997909</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>137</startpos>
+<endpos>142</endpos></feature>
+<feature>
+<id>1997910</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>161</startpos>
+<endpos>166</endpos></feature>
+<feature>
+<id>1997911</id>
+<title>LacI binding site</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>166</startpos>
+<endpos>200</endpos></feature>
+<feature>
+<id>1997912</id>
+<title></title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>173</startpos>
+<endpos>173</endpos></feature>
+<feature>
+<id>1997914</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>209</startpos>
+<endpos>221</endpos></feature>
+<feature>
+<id>1997913</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>209</startpos>
+<endpos>221</endpos></feature>
+<feature>
+<id>1997915</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>215</startpos>
+<endpos>218</endpos></feature>
+<feature>
+<id>1997916</id>
+<title>BBa_K116602</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>228</startpos>
+<endpos>521</endpos></feature>
+<feature>
+<id>1997917</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>530</startpos>
+<endpos>609</endpos></feature>
+<feature>
+<id>1997918</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>541</startpos>
+<endpos>584</endpos></feature>
+<feature>
+<id>1997919</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>618</startpos>
+<endpos>658</endpos></feature>
+<feature>
+<id>1997920</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>625</startpos>
+<endpos>644</endpos></feature>
+<feature>
+<id>1997921</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>645</startpos>
+<endpos>658</endpos></feature>
+<feature>
+<id>1997922</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>651</startpos>
+<endpos>651</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,210 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10524</part_id>
+<part_name>BBa_I732952</part_name>
+<part_short_name>I732952</part_short_name>
+<part_short_desc>Ptemplate1 + RBS.ARL2A0103</part_short_desc>
+<part_type>Plasmid_Backbone</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I732952</part_url>
+<part_entered>2007-10-26</part_entered>
+<part_author>Zhan Jian</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tactagtagcggccgctgcagtccggcaaaaaaacgggcaaggtgtcaccaccctgccctttttctttaaaaccgaaaag
+attacttcgcgttatgcaggcttcctcgctcactgactcgctgcgctcggtcgttcggctgcggcgagcggtatcagctc
+actcaaaggcggtaatacggttatccacagaatcaggggataacgcaggaaagaacatgtgagcaaaaggccagcaaaag
+gccaggaaccgtaaaaaggccgcgttgctggcgtttttccataggctccgcccccctgacgagcatcacaaaaatcgacg
+ctcaagtcagaggtggcgaaacccgacaggactataaagataccaggcgtttccccctggaagctccctcgtgcgctctc
+ctgttccgaccctgccgcttaccggatacctgtccgcctttctcccttcgggaagcgtggcgctttctcatagctcacgc
+tgtaggtatctcagttcggtgtaggtcgttcgctccaagctgggctgtgtgcacgaaccccccgttcagcccgaccgctg
+cgccttatccggtaactatcgtcttgagtccaacccggtaagacacgacttatcgccactggcagcagccactggtaaca
+ggattagcagagcgaggtatgtaggcggtgctacagagttcttgaagtggtggcctaactacggctacactagaaggaca
+gtatttggtatctgcgctctgctgaagccagttaccttcggaaaaagagttggtagctcttgatccggcaaacaaaccac
+cgctggtagcggtggtttttttgtttgcaagcagcagattacgcgcagaaaaaaaggatctcaagaagatcctttgatct
+tttctacggggtctgacgctcagtggaacgaaaactcacgttaagggattttggtcatgagattatcaaaaaggatcttc
+acctagatccttttaaattaaaaatgaagttttaaatcaatctaaagtatatatgagtaaacttggtctgacagttacca
+atgcttaatcagtgaggcacctatctcagcgatctgtctatttcgttcatccatagttgcctgactccccgtcgtgtaga
+taactacgatacgggagggcttaccatctggccccagtgctgcaatgataccgcgagacccacgctcaccggctccagat
+ttatcagcaataaaccagccagccggaagggccgagcgcagaagtggtcctgcaactttatccgcctccatccagtctat
+taattgttgccgggaagctagagtaagtagttcgccagttaatagtttgcgcaacgttgttgccattgctacaggcatcg
+tggtgtcacgctcgtcgtttggtatggcttcattcagctccggttcccaacgatcaaggcgagttacatgatcccccatg
+ttgtgcaaaaaagcggttagctccttcggtcctccgatcgttgtcagaagtaagttggccgcagtgttatcactcatggt
+tatggcagcactgcataattctcttactgtcatgccatccgtaagatgcttttctgtgactggtgagtactcaaccaagt
+cattctgagaatagtgtatgcggcgaccgagttgctcttgcccggcgtcaatacgggataataccgcgccacatagcaga
+actttaaaagtgctcatcattggaaaacgttcttcggggcgaaaactctcaaggatcttaccgctgttgagatccagttc
+gatgtaacccactcgtgcacccaactgatcttcagcatcttttactttcaccagcgtttctgggtgagcaaaaacaggaa
+ggcaaaatgccgcaaaaaagggaataagggcgacacggaaatgttgaatactcatactcttcctttttcaatattattga
+agcatttatcagggttattgtctcatgagcggatacatatttgaatgtatttagaaaaataaacaaataggggttccgcg
+cacatttccccgaaaagtgccacctgacgtctaagaaaccattattatcatgacattaacctataaaaataggcgtatca
+cgaggcagaatttcagataaaaaaaatccttagctttcgctaaggatgatttctggaattcctacccacaacccaattcg
+agaccggaactcgattgtatctgtagtgctttagtagtggagtttacactttatgcttccggctcgtataatgtgtggaa
+catcccctttatctatcgcctgtgcccactacatcaagccaaattaaacaggattaacactctagag
+</seq_data></sequences>
+<features>
+<feature>
+<id>1975789</id>
+<title>BioBrick suffix</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>21</endpos></feature>
+<feature>
+<id>1975794</id>
+<title>E. coli his operon terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>22</startpos>
+<endpos>93</endpos></feature>
+<feature>
+<id>1975795</id>
+<title>Stem loop</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>30</startpos>
+<endpos>64</endpos></feature>
+<feature>
+<id>1975796</id>
+<title>Deletion of AC</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>34</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>1975797</id>
+<title>Verification reverse (VR) primer binding site</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>157</startpos>
+<endpos>176</endpos></feature>
+<feature>
+<id>1975785</id>
+<title>pBR322 origin</title>
+<type>dna</type>
+<direction>reverse</direction>
+<startpos>261</startpos>
+<endpos>880</endpos></feature>
+<feature>
+<id>1975786</id>
+<title>beta-lactamase (ampicillin resistance marker)</title>
+<type>cds</type>
+<direction>reverse</direction>
+<startpos>1035</startpos>
+<endpos>1895</endpos></feature>
+<feature>
+<id>1975787</id>
+<title>beta-lactamase (ampR) promoter</title>
+<type>promoter</type>
+<direction>reverse</direction>
+<startpos>1937</startpos>
+<endpos>1965</endpos></feature>
+<feature>
+<id>1975791</id>
+<title>Verification forward (VF2) primer binding site</title>
+<type>primer_binding</type>
+<direction>forward</direction>
+<startpos>2018</startpos>
+<endpos>2037</endpos></feature>
+<feature>
+<id>1975793</id>
+<title>End of terminator</title>
+<type>stem_loop</type>
+<direction>reverse</direction>
+<startpos>2094</startpos>
+<endpos>2097</endpos></feature>
+<feature>
+<id>1975792</id>
+<title>Stem loop</title>
+<type>stem_loop</type>
+<direction>reverse</direction>
+<startpos>2107</startpos>
+<endpos>2126</endpos></feature>
+<feature>
+<id>1975788</id>
+<title>EcoRI</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>2136</startpos>
+<endpos>2141</endpos></feature>
+<feature>
+<id>1975798</id>
+<title>Ptemplate1?</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2142</startpos>
+<endpos>2300</endpos></feature>
+<feature>
+<id>1975790</id>
+<title>XbaI</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>2301</startpos>
+<endpos>2306</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>resistance</name>
+<value>A</value>
+<units></units>
+<url></url>
+<id>4456</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>copies</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4561</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>mcs</name>
+<value>BioBrick friendly</value>
+<units></units>
+<url></url>
+<id>4562</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>origin</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4563</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter>
+<parameter>
+<name>chassis</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4564</id>
+<m_date>2008-11-29 13:15:14</m_date>
+<user_id>24</user_id>
+<user_name>registry</user_name></parameter></parameters>
+<categories>
+<category>//plasmid</category>
+<category>//plasmidbackbone/libraryscreening/rbscodingsequence</category>
+<category>//standard/biobrickfriendly</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

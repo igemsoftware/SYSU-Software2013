@@ -150,6 +150,5 @@ graphiti.shape.basic.Rectangle = graphiti.VectorFigure.extend({
         if(typeof memento.radius ==="number"){
             this.radius = memento.radius;
         }
-    }
-    
+    }    
 });

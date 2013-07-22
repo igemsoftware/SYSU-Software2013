@@ -1,0 +1,294 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>10320</part_id>
+<part_name>BBa_I712047</part_name>
+<part_short_name>I712047</part_short_name>
+<part_short_desc>CMVp - HA - CD4 - HIV protease cleavage site - T7RNAP - NLS</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I712047</part_url>
+<part_entered>2007-10-23</part_entered>
+<part_author>Katja Kolar</part_author>
+<best_quality>Long Part</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10162</part_id>
+<part_name>BBa_I712009</part_name>
+<part_short_desc>CD4 signal peptide; localizes to plasma membrane</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>CD4 signal</part_nickname></subpart>
+<subpart>
+<part_id>10033</part_id>
+<part_name>BBa_I712008</part_name>
+<part_short_desc>HA affinity tag</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>HA</part_nickname></subpart>
+<subpart>
+<part_id>10242</part_id>
+<part_name>BBa_I712010</part_name>
+<part_short_desc>CD4 sequence without signal peptide</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10068</part_id>
+<part_name>BBa_I712015</part_name>
+<part_short_desc>HIV-1 protease cleavage site</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10163</part_id>
+<part_name>BBa_I712022</part_name>
+<part_short_desc>T7 RNA polymerase with NLS</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10162</part_id>
+<part_name>BBa_I712009</part_name>
+<part_short_desc>CD4 signal peptide; localizes to plasma membrane</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>CD4 signal</part_nickname></subpart>
+<subpart>
+<part_id>10033</part_id>
+<part_name>BBa_I712008</part_name>
+<part_short_desc>HA affinity tag</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>HA</part_nickname></subpart>
+<subpart>
+<part_id>10242</part_id>
+<part_name>BBa_I712010</part_name>
+<part_short_desc>CD4 sequence without signal peptide</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10068</part_id>
+<part_name>BBa_I712015</part_name>
+<part_short_desc>HIV-1 protease cleavage site</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>10163</part_id>
+<part_name>BBa_I712022</part_name>
+<part_short_desc>T7 RNA polymerase with NLS</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>10004</part_id>
+<part_name>BBa_I712004</part_name>
+<part_short_desc>CMV promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>10162</part_id>
+<part_name>BBa_I712009</part_name>
+<part_short_desc>CD4 signal peptide; localizes to plasma membrane</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>CD4 signal</part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>10033</part_id>
+<part_name>BBa_I712008</part_name>
+<part_short_desc>HA affinity tag</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname>HA</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>10242</part_id>
+<part_name>BBa_I712010</part_name>
+<part_short_desc>CD4 sequence without signal peptide</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>10068</part_id>
+<part_name>BBa_I712015</part_name>
+<part_short_desc>HIV-1 protease cleavage site</part_short_desc>
+<part_type>Tag</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>10163</part_id>
+<part_name>BBa_I712022</part_name>
+<part_short_desc>T7 RNA polymerase with NLS</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>cgatgtacgggccagatatacgcgttgacattgattattgcctagttattaatagtaatcaattacggggtcattagttc
+atagcccatatatggagttccgcgttacataacttacggtaaatggcccgcctggctgaccgcccaacgacccccgccca
+ttgacgtcaataatgacgtatgttcccatagtaacgccaatagggactttccattgacgtcaatgggtggagtatttacg
+gtaaactgcccacttggcagtacatcaagtgtatcatatgccaagtacgccccctattgacgtcaatgacggtaaatggc
+ccgcctggcattatgcccagtacatgaccttatgggactttcctacttggcagtacatctacgtattagtcatcgctatt
+accatggtgatgcggttttggcagtacatcaatgggcgtggatagcggtttgactcacggggatttccaagtctccaccc
+cattgacgtcaatgggagtttgttttggcaccaaaatcaacgggactttccaaaatgtcgtaacaactccgccccattga
+cgcaaatgggcggtaggcgtgtacggtgggaggtctatataagcagagctctctggctaactagagaacccactgcttac
+tggcttatcgaaattactagatgaaccggggagtcccttttaggcacttgcttctggtgctgcaactggcgctcctccca
+gcagccactcagggatactagatgtacccctacgacgtgcccgactacgcctactagagaagaaagtggtgctgggcaaa
+aaaggggatacagtggaactgacctgtacagcttcccagaagaagagcatacaattccactggaaaaactccaaccagat
+aaagattctgggaaatcagggctccttcttaactaaaggtccatccaagctgaatgatcgcgctgactcaagaagaagcc
+tttgggaccaaggaaactttcccctgatcatcaagaatcttaagatagaagactcagatacttacatctgtgaagtggag
+gaccagaaggaggaggtgcaattgctagtgttcggattgactgccaactctgacacccacctgcttcaggggcagagcct
+gaccctgaccttggagagcccccctggtagtagcccctcagtgcaatgtaggagtccaaggggtaaaaacatacaggggg
+ggaagaccctctccgtgtctcagctggagctccaggatagtggcacctggacatgcactgtcttgcagaaccagaagaag
+gtggagttcaaaatagacatcgtggtgctagctttccagaaggcctccagcatagtctataagaaagagggggaacaggt
+ggagttctccttcccactcgcctttacagttgaaaagctgacgggcagtggcgagctgtggtggcaggcggagagggctt
+cctcctccaagtcttggatcacctttgacctgaagaacaaggaagtgtctgtaaaacgggttacccaggaccctaagctc
+cagatgggcaagaagctcccgctccacctcaccctgccccaggccttgcctcagtatgctggctctggaaacctcaccct
+ggcccttgaagcgaaaacaggaaagttgcatcaggaagtgaacctggtggtgatgagagccactcagctccagaaaaatt
+tgacctgtgaggtgtggggacccacctcccctaagctgatgctgagtttgaaactggagaacaaggaggcaaaggtctcg
+aagcgggagaaggcggtgtgggtgctgaaccctgaggcggggatgtggcagtgtctgctgagtgactcgggacaggtcct
+gctggaatccaacatcaaggttctgcccacatggtccaccccggtgcagccaatggccctgattgtgctggggggcgtcg
+ccggcctcctgcttttcattgggctaggcatcttcttctgtgtcaggtgccggcaccgaaggcgccaagcagagcggatg
+tctcagatcaagagactcctcagtgagaagaagacctgccagtgtcctcaccggtttcagaagacatgtagccccattta
+ctagagagccaggtgagccagaactaccccatcgtgcagaacctccaatactagatgaacacgattaacatcgctaagaa
+cgacttctctgacatcgaactggctgctatcccgttcaacactctggctgaccattacggtgagcgtttagctcgcgaac
+agttggcccttgagcatgagtcttacgagatgggtgaagcacgcttccgcaagatgtttgagcgtcaacttaaagctggt
+gaggttgcggataacgctgccgccaagcctctcatcactaccctactccctaagatgattgcacgcatcaacgactggtt
+tgaggaagtgaaagctaagcgcggcaagcgcccgacagccttccagttcctgcaagaaatcaagccggaagccgtagcgt
+acatcaccattaagaccactctggcttgcctaaccagtgctgacaatacaaccgttcaggctgtagcaagcgcaatcggt
+cgggccattgaggacgaggctcgcttcggtcgtatccgtgaccttgaagctaagcacttcaagaaaaacgttgaggaaca
+actcaacaagcgcgtagggcacgtctacaagaaagcatttatgcaagttgtcgaggctgacatgctctctaagggtctac
+tcggtggcgaggcgtggtcttcgtggcataaggaagactctattcatgtaggagtacgctgcatcgagatgctcattgag
+tcaaccggaatggttagcttacaccgccaaaatgctggcgtagtaggtcaagactctgagactatcgaactcgcacctga
+atacgctgaggctatcgcaacccgtgcaggtgcgctggctggcatctctccgatgttccaaccttgcgtagttcctccta
+agccgtggactggcattactggtggtggctattgggctaacggtcgtcgtcctctggcgctggtgcgtactcacagtaag
+aaagcactgatgcgctacgaagacgtttacatgcctgaggtgtacaaagcgattaacattgcgcaaaacaccgcatggaa
+aatcaacaagaaagtcctagcggtcgccaacgtaatcaccaagtggaagcattgtccggtcgaggacatccctgcgattg
+agcgtgaagaactcccgatgaaaccggaagacatcgacatgaatcctgaggctctcaccgcgtggaaacgtgctgccgct
+gctgtgtaccgcaaggacaaggctcgcaagtctcgccgtatcagccttgagttcatgcttgagcaagccaataagtttgc
+taaccataaggccatctggttcccttacaacatggactggcgcggtcgtgtttacgctgtgtcaatgttcaacccgcaag
+gtaacgatatgaccaaaggactgcttacgctggcgaaaggtaaaccaatcggtaaggaaggttactactggctgaaaatc
+cacggtgcaaactgtgcgggtgtcgataaggttccgttccctgagcgcatcaagttcattgaggaaaaccacgagaacat
+catggcttgcgctaagtctccactggagaacacttggtgggctgagcaagattctccgttctgcttccttgcgttctgct
+ttgagtacgctggggtacagcaccacggcctgagctataactgctcccttccgctggcgtttgacgggtcttgctctggc
+atccagcacttctccgcgatgctccgagatgaggtaggtggtcgcgcggttaacttgcttcctagtgaaaccgttcagga
+catctacgggattgttgctaagaaagtcaacgagattctacaagcagacgcaatcaatgggaccgataacgaagtagtta
+ccgtgaccgatgagaacactggtgaaatctctgagaaagtcaagctgggcactaaggcactggctggtcaatggctggct
+tacggtgttactcgcagtgtgactaagcgttcagtcatgacgctggcttacgggtccaaagagttcggcttccgtcaaca
+agtgctggaagataccattcagccagctattgattccggcaagggtctgatgttcactcagccgaatcaggctgctggat
+acatggctaagctgatttgggaatctgtgagcgtgacggtggtagctgcggttgaagcaatgaactggcttaagtctgct
+gctaagctgctggctgctgaggtcaaagataagaagactggagagattcttcgcaagcgttgcgctgtgcattgggtaac
+tcctgatggtttccctgtgtggcaggaatacaagaagcctattcagacgcgcttgaacctgatgttcctcggtcagttcc
+gcttacagcctaccattaacaccaacaaagatagcgagattgatgcacacaaacaggagtctggtatcgctcctaacttt
+gtacacagccaagacggtagccaccttcgtaagactgtagtgtgggcacacgagaagtacggaatcgaatcttttgcact
+gattcacgactccttcggtaccattccggctgacgctgcgaacctgttcaaagcagtgcgcgaaactatggttgacacat
+atgagtcttgtgatgtactggctgatttctacgaccagttcgctgaccagttgcacgagtctcaattggacaaaatgcca
+gcacttccggctaaaggtaacttgaacctccgtgacatcttagagtcggacttcgcgttcgcggatccaaaaaagaagag
+aaaggta
+</seq_data></sequences>
+<features>
+<feature>
+<id>1953548</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>1953549</id>
+<title>BBa_I712004</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>654</endpos></feature>
+<feature>
+<id>1953550</id>
+<title>BBa_I712009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>661</startpos>
+<endpos>735</endpos></feature>
+<feature>
+<id>1953551</id>
+<title>BBa_I712008</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>742</startpos>
+<endpos>771</endpos></feature>
+<feature>
+<id>1953552</id>
+<title>BBa_I712010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>780</startpos>
+<endpos>2078</endpos></feature>
+<feature>
+<id>1953553</id>
+<title>BBa_I712015</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2087</startpos>
+<endpos>2128</endpos></feature>
+<feature>
+<id>1953554</id>
+<title>BBa_I712022</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>2135</startpos>
+<endpos>4807</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//igem[2007]/ljubljana/favorite</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

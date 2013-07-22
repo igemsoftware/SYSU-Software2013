@@ -1,0 +1,251 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>8612</part_id>
+<part_name>BBa_I50042</part_name>
+<part_short_name>I50042</part_short_name>
+<part_short_desc>pSC101 origin of replication</part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Planning</part_status>
+<part_results>Works</part_results>
+<part_nickname>pSC101</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I50042</part_url>
+<part_entered>2007-04-11</part_entered>
+<part_author>Reshma Shetty</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ctgtcagaccaagtttacgagctcgcttggactcctgttgatagatccagtaatgacctcagaactccatctggatttgt
+tcagaacgctcggttgccgccgggcgttttttattggtgagaatccaagcactagggacagtaagacgggtaagcctgtt
+gatgataccgctgccttactgggtgcattagccagtctgaatgacctgtcacgggataatccgaagtggtcagactggaa
+aatcagagggcaggaactgctgaacagcaaaaagtcagatagcaccacatagcagacccgccataaaacgccctgagaag
+cccgtgacgggcttttcttgtattatgggtagtttccttgcatgaatccataaaaggcgcctgtagtgccatttaccccc
+attcactgccagagccgtgagcgcagcgaactgaatgtcacgaaaaagacagcgactcaggtgcctgatggtcggagaca
+aaaggaatattcagcgatttgcccgagcttgcgagggtgctacttaagcctttagggttttaaggtctgttttgtagagg
+agcaaacagcgtttgcgacatccttttgtaatactgcggaactgactaaagtagtgagttatacacagggctgggatcta
+ttctttttatctttttttattctttctttattctataaattataaccacttgaatataaacaaaaaaaacacacaaaggt
+ctagcggaatttacagagggtctagcagaatttacaagttttccagcaaaggtctagcagaatttacagatacccacaac
+tcaaaggaaaaggacatgtaattatcattgactagcccatctcaattggtatagtgattaaaatcacctagaccaattga
+gatgtatgtctgaattagttgttttcaaagcaaatgaactagcgattagtcgctatgacttaacggagcatgaaaccaag
+ctaattttatgctgtgtggcactactcaaccccacgattgaaaaccctacaaggaaagaacggacggtatcgttcactta
+taaccaatacgctcagatgatgaacatcagtagggaaaatgcttatggtgtattagctaaagcaaccagagagctgatga
+cgagaactgtggaaatcaggaatcctttggttaaaggctttgagattttccagtggacaaactatgccaagttctcaagc
+gaaaaattagaattagtttttagtgaagagatattgccttatcttttccagttaaaaaaattcataaaatataatctgga
+acatgttaagtcttttgaaaacaaatactctatgaggatttatgagtggttattaaaagaactaacacaaaagaaaactc
+acaaggcaaatatagagattagccttgatgaatttaagttcatgttaatgcttgaaaataactaccatgagtttaaaagg
+cttaaccaatgggttttgaaaccaataagtaaagatttaaacacttacagcaatatgaaattggtggttgataagcgagg
+ccgcccgactgatacgttgattttccaagttgaactagatagacaaatggatctcgtaaccgaacttgagaacaaccaga
+taaaaatgaatggtgacaaaataccaacaaccattacatcagattcctacctacataacggactaagaaaaacactacac
+gatgctttaactgcaaaaattcagctcaccagttttgaggcaaaatttttgagtgacatgcaaagtaagtatgatctcaa
+tggttcgttctcatggctcacgcaaaaacaacgaaccacactagagaacatactggctaaatacggaaggatctgaggtt
+cttatggctcttgtatctatcagtgaagcatcaagactaacaaacaaaagtagaacaactgttcaccgttacatatcaaa
+gggaaaactgtccatatgcacagatgaaaacggtgtaaaaaagatagatacatcagagcttttacgagtttttggtgcat
+tcaaagctgttcaccatgaacagatcgacaatgtaac
+</seq_data></sequences>
+<features>
+<feature>
+<id>2071309</id>
+<title>Terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>46</startpos>
+<endpos>75</endpos></feature>
+<feature>
+<id>2071310</id>
+<title>par region</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>137</startpos>
+<endpos>504</endpos></feature>
+<feature>
+<id>2071311</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>139</startpos>
+<endpos>152</endpos></feature>
+<feature>
+<id>2071312</id>
+<title>Tn3 integration site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>158</startpos>
+<endpos>162</endpos></feature>
+<feature>
+<id>2071313</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>165</startpos>
+<endpos>181</endpos></feature>
+<feature>
+<id>2071314</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>192</startpos>
+<endpos>215</endpos></feature>
+<feature>
+<id>2071315</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>221</startpos>
+<endpos>238</endpos></feature>
+<feature>
+<id>2071316</id>
+<title>AT rich region</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>635</startpos>
+<endpos>717</endpos></feature>
+<feature>
+<id>2071317</id>
+<title>direct repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>716</startpos>
+<endpos>735</endpos></feature>
+<feature>
+<id>2071318</id>
+<title>direct repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>737</startpos>
+<endpos>756</endpos></feature>
+<feature>
+<id>2071319</id>
+<title>direct repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>769</startpos>
+<endpos>788</endpos></feature>
+<feature>
+<id>2071320</id>
+<title>mutated SpeI site</title>
+<type>mutation</type>
+<direction>reverse</direction>
+<startpos>814</startpos>
+<endpos>819</endpos></feature>
+<feature>
+<id>2071321</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>828</startpos>
+<endpos>833</endpos></feature>
+<feature>
+<id>2071322</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>838</startpos>
+<endpos>859</endpos></feature>
+<feature>
+<id>2071323</id>
+<title>promoter region</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>846</startpos>
+<endpos>865</endpos></feature>
+<feature>
+<id>2071324</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>850</startpos>
+<endpos>855</endpos></feature>
+<feature>
+<id>2071325</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>862</startpos>
+<endpos>884</endpos></feature>
+<feature>
+<id>2071326</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>870</startpos>
+<endpos>882</endpos></feature>
+<feature>
+<id>2071327</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>879</startpos>
+<endpos>884</endpos></feature>
+<feature>
+<id>2071328</id>
+<title>repA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>886</startpos>
+<endpos>1836</endpos></feature>
+<feature>
+<id>2071329</id>
+<title>G to A difference with canonical pSC101 vector sequence</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>1655</startpos>
+<endpos>1655</endpos></feature>
+<feature>
+<id>2071330</id>
+<title>C to T difference with canonical pSC101 vector sequence</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>1750</startpos>
+<endpos>1750</endpos></feature>
+<feature>
+<id>2071331</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1847</startpos>
+<endpos>1861</endpos></feature>
+<feature>
+<id>2071332</id>
+<title>G to C difference with canonical pSC101 vector sequence</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>1912</startpos>
+<endpos>1912</endpos></feature>
+<feature>
+<id>2071333</id>
+<title>putative polyA</title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1947</startpos>
+<endpos>1962</endpos></feature>
+<feature>
+<id>2071334</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1963</startpos>
+<endpos>1979</endpos></feature>
+<feature>
+<id>2071335</id>
+<title>T to C difference with canonical pSC101 vector sequence</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>2002</startpos>
+<endpos>2002</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//plasmid/component/origin</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

@@ -1,0 +1,513 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>16578</part_id>
+<part_name>BBa_K188713</part_name>
+<part_short_name>K188713</part_short_name>
+<part_short_desc>GFP regulated by tetracycline, weaker GFP expression.</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K188713</part_url>
+<part_entered>2009-10-19</part_entered>
+<part_author>Hsiao-Yun Ko</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>7280</part_id>
+<part_name>BBa_J23116</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>154</part_id>
+<part_name>BBa_C0040</part_name>
+<part_short_desc>tetracycline repressor from transposon Tn10 (+LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetR</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>16574</part_id>
+<part_name>BBa_K188733</part_name>
+<part_short_desc>TetR repressible promoter ( weak ) </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>7280</part_id>
+<part_name>BBa_J23116</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>154</part_id>
+<part_name>BBa_C0040</part_name>
+<part_short_desc>tetracycline repressor from transposon Tn10 (+LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetR</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>16574</part_id>
+<part_name>BBa_K188733</part_name>
+<part_short_desc>TetR repressible promoter ( weak ) </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>7280</part_id>
+<part_name>BBa_J23116</part_name>
+<part_short_desc>constitutive promoter family member</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>154</part_id>
+<part_name>BBa_C0040</part_name>
+<part_short_desc>tetracycline repressor from transposon Tn10 (+LVA)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>tetR</part_nickname></subpart>
+<barcode></barcode>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>16574</part_id>
+<part_name>BBa_K188733</part_name>
+<part_short_desc>TetR repressible promoter ( weak ) </part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>ttgacagctagctcagtcctagggactatgctagctactagagaaagaggagaaatactagatgtccagattagataaaa
+gtaaagtgattaacagcgcattagagctgcttaatgaggtcggaatcgaaggtttaacaacccgtaaactcgcccagaag
+ctaggtgtagagcagcctacattgtattggcatgtaaaaaataagcgggctttgctcgacgccttagccattgagatgtt
+agataggcaccatactcacttttgccctttagaaggggaaagctggcaagattttttacgtaataacgctaaaagtttta
+gatgtgctttactaagtcatcgcgatggagcaaaagtacatttaggtacacggcctacagaaaaacagtatgaaactctc
+gaaaatcaattagcctttttatgccaacaaggtttttcactagagaatgcattatatgcactcagcgctgtggggcattt
+tactttaggttgcgtattggaagatcaagagcatcaagtcgctaaagaagaaagggaaacacctactactgatagtatgc
+cgccattattacgacaagctatcgaattatttgatcaccaaggtgcagagccagccttcttattcggccttgaattgatc
+atatgcggattagaaaaacaacttaaatgtgaaagtgggtccgctgcaaacgacgaaaactacgctttagtagcttaata
+acactgatagtgctagtgtagatcactactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctt
+tcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgttt
+atatactagagtccctatcagtgatagagattgacatccctatcagtgatagagataaagagcactactagagtcacaca
+ggaaagtactagatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaa
+tgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcacta
+ctggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagat
+catatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatga
+cgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgatt
+ttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaa
+caaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatca
+acaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaag
+atcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaacta
+tacaaataataatactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgtt
+gtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2053617</id>
+<title>BBa_J23116</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>35</endpos></feature>
+<feature>
+<id>2053619</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>44</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>2053618</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>48</startpos>
+<endpos>51</endpos></feature>
+<feature>
+<id>2053622</id>
+<title>BBa_C0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>62</startpos>
+<endpos>721</endpos></feature>
+<feature>
+<id>2053620</id>
+<title>tetR</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>65</startpos>
+<endpos>681</endpos></feature>
+<feature>
+<id>2053621</id>
+<title>SsrA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>682</startpos>
+<endpos>715</endpos></feature>
+<feature>
+<id>2053623</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>722</startpos>
+<endpos>746</endpos></feature>
+<feature>
+<id>2053624</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>755</startpos>
+<endpos>834</endpos></feature>
+<feature>
+<id>2053625</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>766</startpos>
+<endpos>809</endpos></feature>
+<feature>
+<id>2053626</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>843</startpos>
+<endpos>883</endpos></feature>
+<feature>
+<id>2053627</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>850</startpos>
+<endpos>869</endpos></feature>
+<feature>
+<id>2053628</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>870</startpos>
+<endpos>883</endpos></feature>
+<feature>
+<id>2053629</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>876</startpos>
+<endpos>876</endpos></feature>
+<feature>
+<id>2053630</id>
+<title>BBa_K188733</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>892</startpos>
+<endpos>945</endpos></feature>
+<feature>
+<id>2053631</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>954</startpos>
+<endpos>966</endpos></feature>
+<feature>
+<id>2053632</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>954</startpos>
+<endpos>966</endpos></feature>
+<feature>
+<id>2053633</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>960</startpos>
+<endpos>963</endpos></feature>
+<feature>
+<id>2053634</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>973</startpos>
+<endpos>1692</endpos></feature>
+<feature>
+<id>2053635</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>973</startpos>
+<endpos>1692</endpos></feature>
+<feature>
+<id>2053636</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1701</startpos>
+<endpos>1780</endpos></feature>
+<feature>
+<id>2053637</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1712</startpos>
+<endpos>1755</endpos></feature>
+<feature>
+<id>2053638</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>1789</startpos>
+<endpos>1829</endpos></feature>
+<feature>
+<id>2053639</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>1796</startpos>
+<endpos>1815</endpos></feature>
+<feature>
+<id>2053640</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1816</startpos>
+<endpos>1829</endpos></feature>
+<feature>
+<id>2053641</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>1822</startpos>
+<endpos>1822</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>n/a</name>
+<value>GFP regulated by tetracycline, weaker GFP expression.</value>
+<units></units>
+<url></url>
+<id>9863</id>
+<m_date>2009-10-31 15:51:01</m_date>
+<user_id>4218</user_id>
+<user_name>terence</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>GFP regulated by tetracycline, weaker GFP expression.</value>
+<units></units>
+<url></url>
+<id>9864</id>
+<m_date>2009-10-31 15:51:01</m_date>
+<user_id>4218</user_id>
+<user_name>terence</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>GFP regulated by tetracycline, weaker GFP expression.</value>
+<units></units>
+<url></url>
+<id>9865</id>
+<m_date>2009-10-31 15:51:01</m_date>
+<user_id>4218</user_id>
+<user_name>terence</user_name></parameter></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

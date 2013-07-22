@@ -1,0 +1,251 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>18245</part_id>
+<part_name>BBa_I50052</part_name>
+<part_short_name>I50052</part_short_name>
+<part_short_desc>pSC101 temperature sensitive origin of replication </part_short_desc>
+<part_type>DNA</part_type>
+<part_status>Planning</part_status>
+<part_results>None</part_results>
+<part_nickname>pSC101 ts</part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_I50052</part_url>
+<part_entered>2010-06-21</part_entered>
+<part_author>Reshma Shetty</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ctgtcagaccaagtttacgagctcgcttggactcctgttgatagatccagtaatgacctcagaactccatctggatttgt
+tcagaacgctcggttgccgccgggcgttttttattggtgagaatccaagcactagggacagtaagacgggtaagcctgtt
+gatgataccgctgccttactgggtgcattagccagtctgaatgacctgtcacgggataatccgaagtggtcagactggaa
+aatcagagggcaggaactgctgaacagcaaaaagtcagatagcaccacatagcagacccgccataaaacgccctgagaag
+cccgtgacgggcttttcttgtattatgggtagtttccttgcatgaatccataaaaggcgcctgtagtgccatttaccccc
+attcactgccagagccgtgagcgcagcgaactgaatgtcacgaaaaagacagcgactcaggtgcctgatggtcggagaca
+aaaggaatattcagcgatttgcccgagcttgcgagggtgctacttaagcctttagggttttaaggtctgttttgtagagg
+agcaaacagcgtttgcgacatccttttgtaatactgcggaactgactaaagtagtgagttatacacagggctgggatcta
+ttctttttatctttttttattctttctttattctataaattataaccacttgaatataaacaaaaaaaacacacaaaggt
+ctagcggaatttacagagggtctagcagaatttacaagttttccagcaaaggtctagcagaatttacagatacccacaac
+tcaaaggaaaaggacatgtaattatcattgactagcccatctcaattggtatagtgattaaaatcacctagaccaattga
+gatgtatgtctgaattagttgttttcaaagcaaatgaactagcgattagtcgctatgacttaacggagcatgaaaccaag
+ctaattttatgctgtgtggcactactcaaccccacgattgaaaaccctacaaggaaagaacggacggtatcgttcactta
+taaccaatacgttcagatgatgaacatcagtagggaaaatgcttatggtgtattagctaaagcaaccagagagctgatga
+cgagaactgtggaaatcaggaatcctttggttaaaggctttgagattttccagtggacaaactatgccaagttctcaagc
+gaaaaattagaattagtttttagtgaagagatattgccttatcttttccagttaaaaaaattcataaaatataatctgga
+acatgttaagtcttttgaaaacaaatactctatgaggatttatgagtggttattaaaagaactaacacaaaagaaaactc
+acaaggcaaatatagagattagccttgatgaatttaagttcatgttaatgcttgaaaataactaccatgagtttaaaagg
+cttaaccaatgggttttgaaaccaataagtaaagatttaaacacttacagcaatatgaaattggtggttgataagcgagg
+ccgcccgactgatacgttgattttccaagttgaactagatagacaaatggatctcgtaaccgaacttgagaacaaccaga
+taaaaatgaatggtgacaaaataccaacaaccattacatcagattcctacctacataacggactaagaaaaacactacac
+gatgctttaactgcaaaaattcagctcaccagttttgaggcaaaatttttgagtgacatgcaaagtaagtatgatctcaa
+tggttcgttctcatggctcacgcaaaaacaacgaaccacactagagaacatactggctaaatacggaaggatctgaggtt
+cttatggctcttgtatctatcagtgaagcatcaagactaacaaacaaaagtagaacaactgttcaccgttacatatcaaa
+gggaaaactgtccatatgcacagatgaaaacggtgtaaaaaagatagatacatcagagcttttacgagtttttggtgcat
+tcaaagctgttcaccatgaacagatcgacaatgtaac
+</seq_data></sequences>
+<features>
+<feature>
+<id>2071336</id>
+<title>Terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>46</startpos>
+<endpos>75</endpos></feature>
+<feature>
+<id>2071337</id>
+<title>par region</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>137</startpos>
+<endpos>504</endpos></feature>
+<feature>
+<id>2071338</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>139</startpos>
+<endpos>152</endpos></feature>
+<feature>
+<id>2071339</id>
+<title>Tn3 integration site</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>158</startpos>
+<endpos>162</endpos></feature>
+<feature>
+<id>2071340</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>165</startpos>
+<endpos>181</endpos></feature>
+<feature>
+<id>2071341</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>192</startpos>
+<endpos>215</endpos></feature>
+<feature>
+<id>2071342</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>221</startpos>
+<endpos>238</endpos></feature>
+<feature>
+<id>2071343</id>
+<title>AT rich region</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>635</startpos>
+<endpos>717</endpos></feature>
+<feature>
+<id>2071344</id>
+<title>direct repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>716</startpos>
+<endpos>735</endpos></feature>
+<feature>
+<id>2071345</id>
+<title>direct repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>737</startpos>
+<endpos>756</endpos></feature>
+<feature>
+<id>2071346</id>
+<title>direct repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>769</startpos>
+<endpos>788</endpos></feature>
+<feature>
+<id>2071347</id>
+<title>mutated SpeI site</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>814</startpos>
+<endpos>819</endpos></feature>
+<feature>
+<id>2071348</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>828</startpos>
+<endpos>833</endpos></feature>
+<feature>
+<id>2071349</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>838</startpos>
+<endpos>859</endpos></feature>
+<feature>
+<id>2071350</id>
+<title>promoter region</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>846</startpos>
+<endpos>865</endpos></feature>
+<feature>
+<id>2071351</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>850</startpos>
+<endpos>855</endpos></feature>
+<feature>
+<id>2071352</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>862</startpos>
+<endpos>884</endpos></feature>
+<feature>
+<id>2071353</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>870</startpos>
+<endpos>882</endpos></feature>
+<feature>
+<id>2071354</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>879</startpos>
+<endpos>884</endpos></feature>
+<feature>
+<id>2071355</id>
+<title>repA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>886</startpos>
+<endpos>1836</endpos></feature>
+<feature>
+<id>2071357</id>
+<title>GCT-&gt;GTT ts mutation (Ala-&gt;Val)</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>1051</startpos>
+<endpos>1053</endpos></feature>
+<feature>
+<id>2071358</id>
+<title>G to A difference with canonical pSC101 vector sequence</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>1655</startpos>
+<endpos>1655</endpos></feature>
+<feature>
+<id>2071360</id>
+<title>C to T difference with canonical pSC101 vector sequence</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>1750</startpos>
+<endpos>1750</endpos></feature>
+<feature>
+<id>2071356</id>
+<title>inverted repeat</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>1847</startpos>
+<endpos>1861</endpos></feature>
+<feature>
+<id>2071361</id>
+<title>G to C difference with canonical pSC101 vector sequence</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>1912</startpos>
+<endpos>1912</endpos></feature>
+<feature>
+<id>2071359</id>
+<title>putative polyA</title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>1947</startpos>
+<endpos>1962</endpos></feature>
+<feature>
+<id>2071362</id>
+<title>T to C difference with canonical pSC101 vector sequence</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>2002</startpos>
+<endpos>2002</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//plasmid/component/origin</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

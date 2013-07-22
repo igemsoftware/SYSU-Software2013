@@ -1,0 +1,128 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>21152</part_id>
+<part_name>BBa_K426020</part_name>
+<part_short_name>K426020</part_short_name>
+<part_short_desc>Self-Lysis Device under Pbad and with BRP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K426020</part_url>
+<part_entered>2010-10-27</part_entered>
+<part_author>Daniela Mehech</part_author>
+<best_quality>None</best_quality>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gatctctatgctactccatcgagccgtcaattgtctgattcgttaccaattatgacaacttgacggctacatcattcact
+ttttcttcacaaccggcacggaactcgctcgggctggccccggtgcattttttaaatacccgcgagaaatagagttgatc
+gtcaaaaccaacattgcgaccgacggtggcgataggcatccgggtggtgctcaaaagcagcttcgcctggctgatacgtt
+ggtcctcgcgccagcttaagacgctaatccctaactgctggcggaaaagatgtgacagacgcgacggcgacaagcaaaca
+tgctgtgcgacgctggcgatatcaaaattgctgtctgccaggtgatcgctgatgtactgacaagcctcgcgtacccgatt
+atccatcggtggatggagcgactcgttaatcgcttccatgcgccgcagtaacaattgctcaagcagatttatcgccagca
+gctccgaatagcgcccttccccttgcccggcgttaatgatttgcccaaacaggtcgctgaaatgcggctggtgcgcttca
+tccgggcgaaagaaccccgtattggcaaatattgacggccagttaagccattcatgccagtaggcgcgcggacgaaagta
+aacccactggtgataccattcgcgagcctccggatgacgaccgtagtgatgaatctctcctggcgggaacagcaaaatat
+cacccggtcggcaaacaaattctcgtccctgatttttcaccaccccctgaccgcgaatggtgagattgagaatataacct
+ttcattcccagcggtcggtcgataaaaaaatcgagataaccgttggcctcaatcggcgttaaacccgccaccagatgggc
+attaaacgagtatcccggcagcaggggatcattttgcgcttcagccatacttttcatactcccgccattcagagaagaaa
+ccaattgtccatattgcatcagacattgccgtcactgcgtcttttactggctcttctcgctaaccaaaccggtaaccccg
+cttattaaaagcattctgtaacaaagcgggaccaaagccatgacaaaaacgcgtaacaaaagtgtctataatcacggcag
+aaaagtccacattgattatttgcacggcgtcacactttgctatgccatagcatttttatccataagattagcggatctta
+cctgacgctttttatcgcaactctctactgtttctccatacccggatcttttataaggaggatctgtatatgaaagctac
+caaactggttctgggtgctgttatcctgggttctaccctgctggctgcttgccaggctaactacatccgtgacgttcagg
+gtcgtaccgttgctccgtctacctcttctgaactgaccggtatcgctgttcagtaaggatctaaaaaagccggagtagaa
+gatggtagaaatcaataatcaacgtaaggcgttcctcgatatgctggcgtggtcggagggaactgataacggacgtcaga
+aaaccagaaatcatggttatgacgtcattgtaggcggagagctattcactgattactccgatcaccctcgcaaacttgtc
+acgctaaacccaaaactcaaatcaacaggcgccggacgctaccagcttctttcccgttggtgggatgcctaccgcaagca
+gcttggcctgaaagacttctctccgaaaagtcaggacgctgtggcattgcagcagattaaggagcgtggcgctttaccta
+tgattgatcgtggtgatatccgtcaggcaatcgaccgttgcagcaatatctgggcttcactgccgggcgctggttatggt
+cagttcgagcataaggctgacagcctgattgcaaaattcaaagaagcgggcggaacggtcagagagattgatgtatgagg
+atctattgggggtaagacctgaagatgccagaaaaacatgacctgttggccgccattctcgcggcaaaggaacaaggcat
+cggggcaatccttgcgtttgcaatggcgtaccttcgcggcagatataatggcggtgcgtttacaaaaacagtaatcgacg
+caacgatgtgcgccattatcgcctggttcattcgtgaccttctcgacttcgccggactaagtagcaatctcgcttatata
+acgagcgtgtttatcggctacatcggtactgactcgattggttcgcttatcaaacgcttcgctgctaaaaaagccggagt
+agaagatggtagaaatcaataaggatctccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttt
+tatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttatagga
+tctcttacggctagctcagtcctaggcactttgctagcggatctccccttattgggggtaagacatgaagctgccagaaa
+aacatgacctgttggccgccattctcgcggcaaaggaacaaggcatcggggcaatccttgcgtttgcaatggcgtacctt
+cgcggcagatataatggcggtgcgtttacaaaaacagtaatcgacgcaacgatgtgcgccattatcgcctggttcattcg
+tgaccttctcgacttcgccggactaagtagcaatctcgcttatataacgagcgtgtttatcggctacatcggtactgact
+cgattggttcgcttatcaaacgcttcgctgctaaaaaagccggagtagaagatggtagaaatcaataaggatctgccggc
+ttatcggtcagtttcacctgatttacgtaaaaacccgcttcggcgggtttttgcttttggaggggcagaaagatgaatga
+ctgtccacgacgctatacccaaaagaaatg
+</seq_data></sequences>
+<features>
+<feature>
+<id>2114291</id>
+<title>Pbad</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>1194</endpos></feature>
+<feature>
+<id>2114312</id>
+<title>rbs.BRP</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1245</startpos>
+<endpos>1417</endpos></feature>
+<feature>
+<id>2114292</id>
+<title>rbs.lambda lysozyme</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1418</startpos>
+<endpos>1919</endpos></feature>
+<feature>
+<id>2114301</id>
+<title>rbs.lambda holin</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>1920</startpos>
+<endpos>2263</endpos></feature>
+<feature>
+<id>2114313</id>
+<title>dbl Terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2269</startpos>
+<endpos>2397</endpos></feature>
+<feature>
+<id>2114311</id>
+<title>Pcon</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>2404</startpos>
+<endpos>2438</endpos></feature>
+<feature>
+<id>2114310</id>
+<title>rbs.antiholin </title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>2440</startpos>
+<endpos>2789</endpos></feature>
+<feature>
+<id>2114314</id>
+<title>rnpB T1 Terminator</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>2796</startpos>
+<endpos>2908</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

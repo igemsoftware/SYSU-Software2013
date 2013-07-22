@@ -1,0 +1,210 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>7752</part_id>
+<part_name>BBa_J09250</part_name>
+<part_short_name>J09250</part_short_name>
+<part_short_desc>Constitutive device for GFP</part_short_desc>
+<part_type>Composite</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating>1</part_rating>
+<part_url>http://partsregistry.org/Part:BBa_J09250</part_url>
+<part_entered>2006-10-26</part_entered>
+<part_author>Jon Badalamenti</part_author>
+<best_quality>Confirmed</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>4987</part_id>
+<part_name>BBa_I14032</part_name>
+<part_short_desc>promoter P(Lac) IQ</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>P(Lac) IQ</part_nickname></subpart>
+<subpart>
+<part_id>149</part_id>
+<part_name>BBa_B0032</part_name>
+<part_short_desc>RBS.3 (medium) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>4987</part_id>
+<part_name>BBa_I14032</part_name>
+<part_short_desc>promoter P(Lac) IQ</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>P(Lac) IQ</part_nickname></subpart>
+<subpart>
+<part_id>5339</part_id>
+<part_name>BBa_E0240</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP report</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>4987</part_id>
+<part_name>BBa_I14032</part_name>
+<part_short_desc>promoter P(Lac) IQ</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>P(Lac) IQ</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>5339</part_id>
+<part_name>BBa_E0240</part_name>
+<part_short_desc>GFP generator</part_short_desc>
+<part_type>Reporter</part_type>
+<part_nickname>GFP report</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tggtgcaaaacctttcgcggtatggcatgatagcgcctactagagtcacacaggaaagtactagatgcgtaaaggagaag
+aacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagag
+ggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaac
+acttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaaga
+gtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtc
+aagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggaca
+caaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttca
+aaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccct
+gtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggt
+ccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagccaggcat
+caaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagag
+tcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>1906762</id>
+<title>P(Lac) IQ</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>37</endpos></feature>
+<feature>
+<id>1906765</id>
+<title>BBa_I14032</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>37</endpos></feature>
+<feature>
+<id>1906763</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>3</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>1906764</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>26</startpos>
+<endpos>31</endpos></feature>
+<feature>
+<id>1906766</id>
+<title>RBS-3\Weak</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>46</startpos>
+<endpos>58</endpos></feature>
+<feature>
+<id>1906767</id>
+<title>BBa_B0032</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>46</startpos>
+<endpos>58</endpos></feature>
+<feature>
+<id>1906768</id>
+<title>RBS</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>52</startpos>
+<endpos>55</endpos></feature>
+<feature>
+<id>1906769</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>65</startpos>
+<endpos>784</endpos></feature>
+<feature>
+<id>1906770</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>793</startpos>
+<endpos>872</endpos></feature>
+<feature>
+<id>1906771</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>804</startpos>
+<endpos>847</endpos></feature>
+<feature>
+<id>1906772</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>881</startpos>
+<endpos>921</endpos></feature>
+<feature>
+<id>1906773</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>888</startpos>
+<endpos>907</endpos></feature>
+<feature>
+<id>1906774</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>908</startpos>
+<endpos>921</endpos></feature>
+<feature>
+<id>1906775</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>914</startpos>
+<endpos>914</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories>
+<category>//iGEM2006/PennState/favorite</category></categories>
+<twins>
+<twin>BBa_J107011</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>

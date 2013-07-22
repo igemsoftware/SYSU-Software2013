@@ -1,0 +1,205 @@
+<?xml version="1.0" standalone="yes" ?>
+
+<!--Parts from the MIT Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15123</part_id>
+<part_name>BBa_K176162</part_name>
+<part_short_name>K176162</part_short_name>
+<part_short_desc>PoPS-&gt;RBS(weak)+lacZalpha-ccdB-LVA-&gt;PoPS</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_status>Available</part_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://partsregistry.org/Part:BBa_K176162</part_url>
+<part_entered>2009-09-22</part_entered>
+<part_author>Danqian Liu, Zongxiao He, Hao Jiang</part_author>
+<best_quality>None</best_quality>
+<deep_subparts>
+<subpart>
+<part_id>148</part_id>
+<part_name>BBa_B0031</part_name>
+<part_short_desc>RBS.2 (weak) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>14926</part_id>
+<part_name>BBa_K176158</part_name>
+<part_short_desc>lacZalpha-ccdB-LVA coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>lacZa-ccdB</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>148</part_id>
+<part_name>BBa_B0031</part_name>
+<part_short_desc>RBS.2 (weak) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>14926</part_id>
+<part_name>BBa_K176158</part_name>
+<part_short_desc>lacZalpha-ccdB-LVA coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>lacZa-ccdB</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>148</part_id>
+<part_name>BBa_B0031</part_name>
+<part_short_desc>RBS.2 (weak) -- derivative of BBa_0030</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>14926</part_id>
+<part_name>BBa_K176158</part_name>
+<part_short_desc>lacZalpha-ccdB-LVA coding sequence</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>lacZa-ccdB</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>tcacacaggaaacctactagatgaccatgattacggattcactggccgtcgttttacaacgtcgtgactgggaaaaccct
+ggcgttacccaacttaatcgccttgcagcacatccccctttcgccagctggcgtaatagcgaagaggcccgcaccgatcg
+cccttcccaacagttgcgcagcctatacgtacggcagtttaaggtttacacctataaaagagagagccgttatcgtctgt
+ttgtggatgtacagagtgatattattgacacgccggggcgacggatggtgatccccctggccagtgcacgtctgctgtca
+gataaagtctcccgtgaactttacccggtggtgcatatcggggatgaaagctggcgcatgatgaccaccgatatggccag
+tgtgccggtctccgttatcggggaagaagtggctgatctcagccaccgcgaaaatgacatcaaaaacgccattaacctga
+tgttctggggaatagctgcaaacgacgaaaactacgctttagtagcttaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2026612</id>
+<title>BBa_B0031</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>14</endpos></feature>
+<feature>
+<id>2026611</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>7</startpos>
+<endpos>10</endpos></feature>
+<feature>
+<id>2026627</id>
+<title>BBa_K176158</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>21</startpos>
+<endpos>533</endpos></feature>
+<feature>
+<id>2026615</id>
+<title>Start</title>
+<type>start</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>23</endpos></feature>
+<feature>
+<id>2026614</id>
+<title>a part of lacZalpha (I732006)</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>185</endpos></feature>
+<feature>
+<id>2026613</id>
+<title>lacZalpha-ccdB</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>21</startpos>
+<endpos>494</endpos></feature>
+<feature>
+<id>2026616</id>
+<title>177bp and a in J32026</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>36</startpos>
+<endpos>36</endpos></feature>
+<feature>
+<id>2026617</id>
+<title>M13 -20 primer</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>41</startpos>
+<endpos>57</endpos></feature>
+<feature>
+<id>2026619</id>
+<title>M13 -47 primer (K176059)</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>61</startpos>
+<endpos>84</endpos></feature>
+<feature>
+<id>2026618</id>
+<title>M13 -40 primer</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>61</startpos>
+<endpos>77</endpos></feature>
+<feature>
+<id>2026620</id>
+<title>g and 69bp in I732006</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>185</startpos>
+<endpos>185</endpos></feature>
+<feature>
+<id>2026622</id>
+<title>ccdB (K145151)</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>192</startpos>
+<endpos>494</endpos></feature>
+<feature>
+<id>2026621</id>
+<title>at in K145151</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>192</startpos>
+<endpos>193</endpos></feature>
+<feature>
+<id>2026623</id>
+<title>VRccdB primer (K176058)</title>
+<type>primer_binding</type>
+<direction>reverse</direction>
+<startpos>208</startpos>
+<endpos>235</endpos></feature>
+<feature>
+<id>2026624</id>
+<title>c in K145151</title>
+<type>s_mutation</type>
+<direction>forward</direction>
+<startpos>275</startpos>
+<endpos>275</endpos></feature>
+<feature>
+<id>2026625</id>
+<title>LVA degradation tag (AANDENYALVA)</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>495</startpos>
+<endpos>527</endpos></feature>
+<feature>
+<id>2026626</id>
+<title>Stop</title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>528</startpos>
+<endpos>533</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 4/2010--></samples>
+<references>
+<!--References are not available yet - rdr 4/2010--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 4/2010--></groups></part></part_list></rsbpml>
