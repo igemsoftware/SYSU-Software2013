@@ -30,20 +30,20 @@
     	<button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
     	<button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
    		<button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
-    </div>
-    <img src="../static/img/glass.jpg" id="divBody" style="left: 29px; top: 14px;position:absolute;z-index:1;">
-
-    
-    <div id='seqPanel' style="width:100%;height:130px;float:left;">
+    </div> 
+    <div id='seqPanel' style="width:100%;height:60px;float:left;">
 		<label id='x1' style="width:25%;height:15px;float:left;">1</label>    
-		<label id='x2' style="width:25%;height:15px;float:left;">46</label>
-		<label id='x3' style="width:25%;height:15px;float:left;">91</label>
-        <label id='x4' style="width:25%;height:15px;float:left;">136</label>
-        <textarea name="" cols="180" rows="1" readonly wrap="off" id="seqCurrentText" style="resize: none;width:100%;height:15px;overflow:hidden;font-size:12px;" onClick="seqTextOnClickHandler(this);" onSelect="seqTextOnClickHandler(this);"></textarea>        
-        <canvas id="plasmid-canvas" width="1100" height="80">
-      	</canvas>
+		<label id='x2' style="width:25%;height:15px;float:left;">21</label>
+		<label id='x3' style="width:25%;height:15px;float:left;">41</label>
+        <label id='x4' style="width:25%;height:15px;float:left;">61</label>
+        <textarea name="" cols="100" rows="1" readonly wrap="off" id="seqCurrentText" style="resize: none;width:100%;height:15px;overflow:hidden;font-size:20px;" ></textarea>        
+        <!--<canvas id="plasmid-canvas" width="1100" height="80">
+      	</canvas>-->
     </div>
-    <div id='canvasDiv' style="width:67%;height:400px;float:left;">    
+    <div id='drawCanvasDiv' style="width:67%;height:400px;float:left;"> 
+     <img src="../static/img/glass.jpg" name="divBody" width="25" height="25" id="divBody" style="float: left; z-index: 1; left: 0px;top:0px;position:relative;" title='You can drag this picture on to the graph to show the seq.'>     	
+   	  <div id='canvasDiv' style="width:100%;height:400px;left: 0px;top:0px;position:relative;"></div>   
+       	 
     </div>  
     <div id='optionpanel' style="width:33%;height:400px;float:left;">
    		<select name="standard" style="width:100%;height:10%">

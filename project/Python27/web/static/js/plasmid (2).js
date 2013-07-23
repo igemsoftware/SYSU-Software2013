@@ -76,6 +76,26 @@ function show(id) {
 	plasmidPainter.init(data);
 	plasmidPainter.drawAll();
 }
+jQuery.fn.toolTip = function() { 
+this.unbind().hover( 
+function(e) { 
+this.t = this.title; 
+this.title = ''; 
+$('body').append( '<p id="p_toolTip" style="display:none; max-width:320px;text-align:left;">' + this.t + '</p>' ); 
+var tip = $('p#p_toolTip').css({ "position": "absolute", "padding": "10px 5px 5px 10px", "left": "5px", "font-size": "14px", "background-color": "white", "border": "1px solid #a6c9e2","line-height":"160%", "-moz-border-radius": "5px", "-webkit-border-radius": "5px", "z-index": "9999"}); 
+var target = $(this); 
+var position = target.position(); 
+this.top = (position.top - 8); this.left = (position.left + target.width() + 5); 
+$('p#p_toolTip').css({"position": "absolute", "top": "8px", "left": "-6px" }); 
+tip.css({"top": this.top+"px","left":this.left+"px"}); 
+tip.fadeIn("slow"); 
+}, 
+function() { 
+this.title = this.t; 
+$("p#p_toolTip").fadeOut("slow").remove(); 
+} 
+); 
+};
 var data =  [];
 var size=0;//整个序列的长度
 var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色
@@ -124,11 +144,11 @@ var raw_data={
     }
 };
 var seq=raw_data.DnaComponent.DnaSequence.nucleotides;
+var chart=null;
 function sortNumber(a, b)//用于数组排序的函数
 {
 	return a.start - b.start;
 }
-
 function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形图的数组的函数
 {                               //The function that can turn raw json data to array that can generate donut
 	var tempArray=[];
@@ -167,7 +187,6 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
 		}
 	}		
-	//console.log(real_data);
 	tempArray=null;
 	return real_data;	
 }
@@ -178,7 +197,7 @@ function getRawData()//to get the raw data of plasmid
 function initDrawChart(){
 	getRawData();
 	data=turnRawDatatoData(raw_data);		
-	var chart = new iChart.Donut2D({
+	chart = new iChart.Donut2D({
 		id:'ichartjs2013',
 		animation:true,
 		render : 'canvasDiv',//图表渲染的HTML DOM的id //Chart rendering the HTML DOM id
@@ -255,8 +274,8 @@ function initDrawChart(){
 								if(i==0)
 									break;
 								turnTheData(i);
-								var chart2 = $.get('ichartjs2013');//根据ID获取图表对象
-								chart2.load(data);//载入新数据
+								//var chart2 = document.getElementById("ichartjs2013");//$.get('ichartjs2013');//根据ID获取图表对象
+								chart.load(data);//载入新数据
 								break;
 							}
 						}
@@ -371,9 +390,10 @@ function createDivStrByData()
 }
 function updateSeqPosText(){
 	document.getElementById('x1').innerText=left;
-	document.getElementById('x2').innerText=left+45;
-	document.getElementById('x3').innerText=left+90;
-	document.getElementById('x4').innerText=left+135;
+	document.getElementById('x2').innerText=left+20;
+	document.getElementById('x3').innerText=left+40;
+	document.getElementById('x4').innerText=left+60;
+	document.getElementById('seqCurrentText').value=seq.substring(left,left+60);
 }
 //turn the data array to another index at the first place
 function turnTheData(indexToBeFirst)
@@ -393,23 +413,6 @@ function turnTheData(indexToBeFirst)
 	data=newData;
 	newData=null;
 }
-function InitAjax()
-{
-var ajax=false;
-try {
-   ajax = new ActiveXObject("Msxml2.XMLHTTP");
-} catch (e) {
-   try {
-    ajax = new ActiveXObject("Microsoft.XMLHTTP");
-   } catch (E) {
-    ajax = false;
-   }
-}
-if (!ajax && typeof XMLHttpRequest!='undefined') {
-   ajax = new XMLHttpRequest();
-}
-         return ajax;
-}
 function testWebSocket(){
 	if ("WebSocket" in window) {
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
@@ -424,16 +427,117 @@ function testWebSocket(){
 		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 	}
 }
+function CircleClass(ui,drawArea,drawAreaToBody)
+{
+	var _this = this ; 
+	_this.x = 0 ;
+	_this.y = 0 ;
+	_this.r=140;
+	_this.innerR=70;
+	_this.center=null;
+	var init = function ()
+	{ 
+		_this.x = parseInt(drawAreaToBody.left+drawArea.width/2);
+		_this.y = parseInt(drawAreaToBody.top+drawArea.height/2);
+		_this.center=new PointClass(_this.x,_this.y);
+	};
+	_this.getRadius=function(){return _this.r;};
+	_this.getInnerRadius=function(){return _this.innerR;};
+	_this.getX=function(){return _this.x;};
+	_this.getY=function(){return _this.y;};
+	init();
+}
+function PointClass(x,y)
+{
+	var _this=this;
+	_this.x = 0 ;
+	_this.y = 0 ;
+	var init = function ()
+	{ 
+		_this.x = x;
+		_this.y = y;
+	};
+	init();
+}
 function setUpDrag(){
-	//bindDrag(document.getElementById('divBody')); 
-	$("#divBody").draggable({containment: "parent" });
+	$("#divBody").draggable({
+		containment: "parent" ,
+		drag: function(event,ui) {			
+		},
+		stop:function(event,ui){
+			var circle=new CircleClass(ui,chart.getDrawingArea(),$('#drawCanvasDiv').offset());
+			var x=ui.offset.left;//+ui.helper.context.clientWidth/2;
+			var y=ui.offset.top;//+ui.helper.context.clientWidth/2;
+			if(isPointInCircle(circle,x,y)){
+				left=parseInt(getAngleFromLineToXAxis(circle,x,y)/360*size);
+				updateSeqPosText();
+			}
+			console.log(parseInt(getAngleFromLineToXAxis(circle,x,y)/360*size));
+		}
+	});
+}
+ /**
+     * vector from (x1,y1) to (x2,y2) To Y Axis's cos value
+     * @param x1
+     * @param y1 
+     * @param x2
+     * @param y2 
+     * @return cosValue between vector(x2-x1,y2-y1)and positive Y axis
+*/
+function cosValueBetweenALineAndPositiveX(x1,y1,x2,y2) {
+   var cosValue = 0;
+   var realx = x2 - x1;
+   var realy = y2 - y1;
+   cosValue = (realx * 0 + realy * (-1)) / (1 * Math.sqrt(realx * realx + realy * realy));
+   return cosValue;
+}
+/**
+     * Get angle from Line:(circle's center to(x,y)) To Y Axis's positive side
+     * @param circle
+     * @param x 
+     * @param y
+     * @return an angle from 0 to 360
+     */
+function getAngleFromLineToYAxis(circle,x,y) {
+	var angle = 0;
+	angle = cosValueBetweenALineAndPositiveX(circle.getX(), circle.getY(), x, y);
+	var pai=2*Math.asin(1);
+	angle = 180*Math.acos(angle)/pai;
+    if (circle.getX() > x) {
+    	return 360 - angle;
+	}
+    return angle;
+}
+/**
+     * Get angle from Line:(circle's center to(x,y)) To X Axis's positive side
+     * @param circle
+     * @param x 
+     * @param y
+     * @return an angle from 0 to 360
+     */
+function getAngleFromLineToXAxis(circle,x,y) {
+	return (getAngleFromLineToYAxis(circle,x,y)-90<0)?getAngleFromLineToYAxis(circle,x,y)-90+360:getAngleFromLineToYAxis(circle,x,y)-90;
+}
+function lengthBetweenTwoPoint(x1,y1,x2,y2) {
+  return Math.sqrt((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2));
+}
+function isPointInCircle(circle,x,y)
+{
+	var lengthTemp = lengthBetweenTwoPoint(circle.x, circle.y, x, y);
+	console.log(lengthTemp,circle.getInnerRadius(),circle.getRadius());
+	if (lengthTemp >= circle.getInnerRadius() && lengthTemp <= circle.getRadius()) {
+		return true;
+    }
+    return false;
 }
 $(function(){
 	initDrawChart();	
-	document.getElementById('seqCurrentText').value=seq;
+	document.getElementById('seqCurrentText').value=seq.substring(1,61);
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();	
-	show('plasmid-canvas');
+	//show('plasmid-canvas');
 	//InitAjax();
 	testWebSocket();
+	$("#divBody").toolTip();
 	setUpDrag();
+	
 });
