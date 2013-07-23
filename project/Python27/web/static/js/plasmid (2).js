@@ -421,8 +421,7 @@ function testWebSocket(){
 		   var message = JSON.parse(msg.data);
 		   if(message.request==="getLoginedUserName")
 		   {			  
-			   console.log(message.result);
-			   sessionStorage.LoginedUserName="result";
+			   sessionStorage.LoginedUserName=message.result;
 		   }
 		};
 	}
