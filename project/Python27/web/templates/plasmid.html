@@ -52,8 +52,8 @@
     </div>
     <div id='drawCanvasDiv' style="width:67%;height:400px;float:left;"> 
      <!--<img src="../static/img/glass.jpg" name="divBody" width="25" height="25" id="divBody" style="float: left; z-index: 1; left: 0px;top:0px;position:relative;" title='You can drag this picture on to the graph to show the seq.'> -->    	
-   	 <div id='canvasDiv' style="width:100%;height:400px;left: 0px;top:0px;position:relative;" onmousedown="canvasMouseDown(this,event);" onmouseup="canvasMouseUp(this,event);"></div>   
-       	 
+     
+   	 <div id='canvasDiv' style="width:100%;height:400px;left: 0px;top:0px;position:relative;" onmousedown="canvasMouseDown(this,event);" onmouseup="canvasMouseUp(this,event);"></div> 
     </div>  
     <div id='optionpanel' style="width:33%;height:400px;float:left;">
    		<select name="standard" style="width:100%;height:10%">
@@ -176,7 +176,7 @@
                 <option value="pSB6A1.xml">pSB6A1.xml</option>
             </optgroup>
         </select>
-        <input name="saveplasmidgraphBtn" style="width:100%;height:10%;" type="submit" value="Save Plasmid Graph"/>
+        <input name="saveplasmidgraphBtn" style="width:100%;height:10%;" type="submit" value="Save Plasmid Graph" onClick="saveGraph();"/>
         <div style="width:100%;height:10%;">
             <label style="height:100%;float:left;">Sequence</label>
             <input id="copy-botton" style="cursor:pointer;height:100%;float:right;" type="submit" value="copy" onClick="copyBtnOnClick(this);"/>        </div>    	        

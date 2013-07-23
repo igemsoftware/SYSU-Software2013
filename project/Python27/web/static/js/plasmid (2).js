@@ -188,7 +188,7 @@ function getRawData()//to get the raw data of plasmid
 		
 }
 function initDrawChart(){
-	sessionStorage._offsetAngle=0;
+	sessionStorage._offsetAngle=270;
 	getRawData();
 	data=turnRawDatatoData(raw_data);		
 	chart = new iChart.Donut2D({
@@ -285,30 +285,31 @@ function initDrawChart(){
 		radius:140
 		
 	});	
-	chart.plugin(create0BP(chart));
-	chart.plugin(create14sBP(chart));
-	chart.plugin(createhalfBP(chart));
-	chart.plugin(create34BP(chart));
+	chart.plugin(createRight(chart));
+	chart.plugin(createBottom(chart));
+	chart.plugin(createLeft(chart));
+	chart.plugin(createTop(chart));
 	chart.draw();	
 }
-function create0BP(chart){
+function createRight(chart){
 	return new iChart.Custom({
 		drawFn:function(){	
 			var radius=140;
+			var str=parseInt(size/4,10)+"bp";
 			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2+radius;
 			var y=  chart.getDrawingArea().height/2;	
 			chart.target.textAlign('left')
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
-			.fillText('0bp',x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+			.fillText(str,x,y,false,'#6d869f', 'lr',26,false,0,'middle');
 		}		
 	});
 }
-function create14sBP(chart){
+function createBottom(chart){
 	return new iChart.Custom({
 		drawFn:function(){	
 			var radius=140;
-			var str=parseInt(size/4,10)+"bp";
+			var str=parseInt(size/2,10)+"bp";
 			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-20;
 			var y=  chart.getDrawingArea().height/2+radius;	
 			chart.target.textAlign('left')
@@ -318,11 +319,11 @@ function create14sBP(chart){
 		}		
 	});
 }
-function createhalfBP(chart){
+function createLeft(chart){
 	return new iChart.Custom({
 		drawFn:function(){	
 			var radius=140;
-			var str=parseInt(size/2,10)+"bp";
+			var str=parseInt(size*3/4,10)+"bp";
 			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-radius-35;
 			var y=  chart.getDrawingArea().height/2;
 			chart.target.textAlign('left')
@@ -332,17 +333,16 @@ function createhalfBP(chart){
 		}		
 	});
 }
-function create34BP(chart){
+function createTop(chart){
 	return new iChart.Custom({
 		drawFn:function(){	
-			var radius=140;
-			var str=parseInt(size*3/4,10)+"bp";
+			var radius=140;			
 			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-15;
 			var y=  chart.getDrawingArea().height/2-radius;
 			chart.target.textAlign('left')
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
-			.fillText(str,x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+			.fillText("0BP",x,y,false,'#6d869f', 'lr',26,false,0,'middle');
 		}		
 	});
 }
@@ -353,7 +353,7 @@ var left=1;//the int to record seq's left position
 }*/
 function copyBtnOnClick(obj)
 {
-	var copyText = document.getElementById("ctl00_cpRight_txtUrl").value; 
+	var copyText =seq;
 	window.clipboardData.setData("Text",copyText); 
 }
 //accrording to the data array 's colors to add the color to the seq
@@ -550,9 +550,19 @@ function canvasMouseUp(obj,e)
 	chart.push("offset_angle",offsetang);
 	chart.push("animation","false");
 	chart.resize(783,400);
-	//chart.setUp();
-	left=parseInt(offsetang/360*size);
+	var ang=offsetang-270;
+	if(ang<0)
+	{
+		ang=ang+360;
+	}
+	left=parseInt(ang/360*size);
 	updateSeqPosText();
+}
+function saveGraph(){
+	var _canvas=document.getElementById(chart.canvasid);
+	var data = _canvas.toDataURL(); 
+	var b64 = data.substring(22); 
+	console.log(b64);
 }
 function isPointInCircle(circle,x,y)
 {
