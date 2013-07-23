@@ -393,7 +393,8 @@ function updateSeqPosText(){
 	document.getElementById('x2').innerText=left+20;
 	document.getElementById('x3').innerText=left+40;
 	document.getElementById('x4').innerText=left+60;
-	document.getElementById('seqCurrentText').value=seq.substring(left,left+60);
+	console.log(document.getElementById('seqCurrentText'));
+	document.getElementById('seqCurrentText').innerHTML=seq.substring(left,left+60);
 }
 //turn the data array to another index at the first place
 function turnTheData(indexToBeFirst)
@@ -418,7 +419,11 @@ function testWebSocket(){
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
 		ws.onmessage = function(msg) {
 		   var message = JSON.parse(msg.data);
-		   console.log(message.result);
+		   if(message.request==="getLoginedUserName")
+		   {			  
+			   console.log(message.result);
+			   sessionStorage.LoginedUserName="result";
+		   }
 		};
 	}
 	ws.onopen = function() {
@@ -539,5 +544,12 @@ $(function(){
 	testWebSocket();
 	$("#divBody").toolTip();
 	setUpDrag();
-	
+	//console.log(document.getElementById());
+	/*var canvas = document.getElementById(chart.canvasid);
+	var context = canvas.getContext("2d");
+	context.beginPath();
+    context.strokeStyle = "#000";
+	context.rect(150, 300, 500, 600);
+	context.stroke();
+	console.log(context);*/	
 });
