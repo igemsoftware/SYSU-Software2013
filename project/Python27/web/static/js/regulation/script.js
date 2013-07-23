@@ -76,7 +76,6 @@ g.View = graphiti.Canvas.extend({
    * @private
    **/
   onDrop: function(droppedDomNode, x, y) {
-    //console.log("onDrop: x(" + x + "), y(" + y + ")");
     var type = $(droppedDomNode).data("shape");
     var figure = eval("new " + type + "();");
     // create a command for the undo/redo support
@@ -112,7 +111,7 @@ g.Shapes.Process = graphiti.shape.basic.Circle.extend({
     this.setBackgroundColor("#DDF4FB");
 
     // Label
-    this.label = new graphiti.shape.basic.Label("圆");
+    this.label = new graphiti.shape.basic.Label("Protein");
     this.label.setFontColor("#000000");
     this.label.setStroke(0);
     this.addFigure(this.label, new graphiti.layout.locator.CenterLocator(this));
@@ -134,18 +133,11 @@ g.Shapes.Process = graphiti.shape.basic.Circle.extend({
 
   // 添加 onclick事件 显示工具栏
   onClick: function() {
-    // 显示菜单栏
-    var toggleBar = $("#toggleBar");
-    toggleBar.css("left", (this.x + 250) + "px");
-    toggleBar.css("top", this.y + "px");
-    toggleBar.css("display", "block");
-
-    // 显示配置栏
-    var configBar = $("div.span2#configBar");
-    configBar.css("display", "none");
-    configBar = $("div.span2#configBar");
-    configBar.css("display", "block");
-    configbar.setAttributes(this.id);
+    // // 显示菜单栏
+    // var toggleBar = $("#toggleBar");
+    // toggleBar.css("left", (this.x + 250) + "px");
+    // toggleBar.css("top", this.y + "px");
+    // toggleBar.css("display", "block");
   }
 });
 
@@ -189,10 +181,10 @@ g.Shapes.Rectangle = graphiti.shape.basic.Rectangle.extend({
   // 添加 onclick事件 显示工具栏
   onClick: function() {
     // 显示菜单栏
-    var toggleBar = $("#toggleBar");
-    toggleBar.css("left", (this.x + 250) + "px");
-    toggleBar.css("top", this.y + "px");
-    toggleBar.css("display", "block");
+    // var toggleBar = $("#toggleBar");
+    // toggleBar.css("left", (this.x + 250) + "px");
+    // toggleBar.css("top", this.y + "px");
+    // toggleBar.css("display", "block");
 
   }
 });
@@ -237,10 +229,10 @@ g.Shapes.Diamond = graphiti.shape.basic.Diamond.extend({
   // 添加 onclick事件 显示工具栏
   onClick: function() {
     // 显示菜单栏
-    var toggleBar = $("#toggleBar");
-    toggleBar.css("left", (this.x + 250) + "px");
-    toggleBar.css("top", this.y + "px");
-    toggleBar.css("display", "block");
+    // var toggleBar = $("#toggleBar");
+    // toggleBar.css("left", (this.x + 250) + "px");
+    // toggleBar.css("top", this.y + "px");
+    // toggleBar.css("display", "block");
 
   }
 });
@@ -437,7 +429,6 @@ var catalogHandler = {
 
   renderNode: function(data) {
     var split = data.split(" ");
-    console.log(split);
 
     var id = "";
     if (split.length > 1) {

@@ -41,6 +41,15 @@ body {
   -webkit-transition: left 0.5s;   /* Safari 和 Chrome */
 }
 
+#left-container .adder {
+  position: absolute;
+  visibility: hidden;
+  width: 30px;
+  height: 30px;
+  z-index: 1055;
+  cursor: pointer;
+}
+
 #left-container .mCSB_container {
   margin-right: 16px;
 }
@@ -69,6 +78,7 @@ body {
   height: 60px;
   margin: 0 auto;
   background-color: #fff;
+  cursor: pointer;
 }
 
 #left-container .factorIcon img {
@@ -121,40 +131,6 @@ body {
   min-height: 554px;
   border-radius: 6px;
   background-color: #FFF;  
-}
-
-#toolbar {
-  display: none;
-  position: absolute;
-  overflow: auto;
-  top: 0;
-  right: -250px;
-  width: 250px;
-  height: 621px;
-  padding: 10px;  
-  border-radius: 2px;
-  box-shadow: -2px 2px 5px #111;
-  background-color: #333;
-  z-index: 1055;
-  transition: right 0.5s;
-  -webkit-transition: right 0.5s;   /* Safari 和 Chrome */
-}
-
-#toolbar:hover {
-  right: 0;
-}
-
-.toolbar_icon {
-  height: 32px;
-  width: 32px;
-  margin: 2px;
-}
-
-#toggleBar {
-  position: absolute;
-  display: none;
-  width: 137px;
-  height: 25px;
 }
 
 #right-container {
@@ -296,6 +272,12 @@ body {
   width: 470px;
   height: 30px;
   margin: 10px auto;
+}
+
+.cmd-group {
+  position: absolute;
+  right: 100px;
+  bottom: 20px;
 }
 
 
