@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+	console.log(location.href);
 	if ("WebSocket" in window) {
 	  	ws = new WebSocket("ws://" + document.domain + ":5000/ws");
 	  	ws.onmessage = function (msg) {
@@ -7,7 +8,8 @@ $(document).ready(function () {
 		    if(message.result === "Password correct!") {
 		    	// redirect to "index.html"
 				alert("Welcome back! user: "+$("#username").attr('value'));
-				window.location = "http://127.0.0.1:5000/index";
+				
+				window.location =location.href+"index";
 		    }else{
 				alert(message.result);
 			}
