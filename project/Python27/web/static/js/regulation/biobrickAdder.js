@@ -17,6 +17,9 @@ var BiobrickAdder = {
 	show: function() {
 		var actualTop = (parseInt(this.offsetTop) - 15) + "px";
 		var actualLeft = (parseInt(this.offsetLeft) + 29) + "px";
+		var that = this;
+
+		$(".adder").data("shape", this.type);
 
 		$(".adder").css({
 			"visibility": "visible",
@@ -24,14 +27,21 @@ var BiobrickAdder = {
 			"left": actualLeft
 		});
 
-		$(".adder").data("shape", this.type);
+		$(".adder").click(function() {
+			that.paint();
+
+			$(this).unbind("click");	// 取消click事件绑定，避免多次绑定
+		});
 	},
 
 	paint: function() {
-		var figure = eval("new " + this.type + "()");
+		var figure = eval("new " + this.type + "()");	// 实例化对象
 
-		var command = new graphiti.command.CommandAdd(this, figure, this.offsetTop, this.offsetLeft);
-    	
+		var command = new graphiti.command.CommandAdd(app.view, figure, this.offsetTop, this.offsetLeft);
+    	app.view.getCommandStack().execute(command);	// 添加到命令栈中
+
+		figure.setId(this.name);	// 设置id
+		figure.label.setText(this.name);	// 设置label
 	}
 };
 
@@ -41,7 +51,7 @@ $(".factorNode").live("click", function(){
 	var offset = $(this).offset();
 	var thisId = $(this).attr("id");
 	var name = thisId.substr(7, thisId.length - 1);
-	
+
 	var adder = BiobrickAdder;
 	adder.init(name, "g.Shapes.Arrow", offset.top, offset.left);
 	adder.show();
