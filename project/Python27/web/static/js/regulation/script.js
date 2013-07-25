@@ -746,6 +746,7 @@ $().ready(function() {
     ws.send(JSON.stringify({
       'request': 'getDirList',
       'dir': 'web\\biobrick\\Protein coding sequences'
+      //'dir': './biobrick/Protein coding sequences'
     }));
 
     ws.send(JSON.stringify({

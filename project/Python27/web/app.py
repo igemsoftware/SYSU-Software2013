@@ -54,7 +54,7 @@ def goToSimulation():
 @app.route("/ws")
 def webSocket():
   if request.environ.get('wsgi.websocket'):
-    handle_websocket(request.environ["wsgi.websocket"])
+    handle_websocket(request.environ["wsgi.websocket"], sql)
   return
 	
 if __name__ == "__main__":
