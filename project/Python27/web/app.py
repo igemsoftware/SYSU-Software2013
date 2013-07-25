@@ -9,6 +9,8 @@ from gevent.pywsgi import WSGIServer
 from geventwebsocket.handler import WebSocketHandler
 import xmlParse
 
+sql = db.SqliteDatabase()
+
 app = Flask(__name__)
 	
 @app.route("/")
@@ -23,8 +25,14 @@ def demo():
 def index():
 	return render_template('index.html')
 
+@app.route("/profile/")
+@app.route("/profile/<username>")
+def profile(username=None):
+  userExist = sql.isRecordExist("user_list", {"name": username})
+  return render_template('profile.html', username = username, flag = userExist)
+
 @app.route("/getdir/<pathname>")
-def getDir(pathname):	
+def getDir(pathname):
 	return json.dumps(xmlParse.get_allfiledirs('web\\'+pathname))
 
 @app.route("/genecircuit")
