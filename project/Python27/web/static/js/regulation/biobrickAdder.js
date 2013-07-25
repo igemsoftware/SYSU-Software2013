@@ -42,6 +42,8 @@ var BiobrickAdder = {
 
 		figure.setId(this.name);	// 设置id
 		figure.label.setText(this.name);	// 设置label
+
+		app.view.collection.push(this.name);	// 放入collection中
 	}
 };
 
