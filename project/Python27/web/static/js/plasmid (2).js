@@ -188,7 +188,11 @@ function getRawData()//to get the raw data of plasmid
 		
 }
 function initDrawChart(){
-	sessionStorage._offsetAngle=270;
+	//console.log(sessionStorage._offsetAngle);
+	if(sessionStorage._offsetAngle===undefined)
+	{
+		sessionStorage._offsetAngle=270;
+	}
 	getRawData();
 	data=turnRawDatatoData(raw_data);		
 	chart = new iChart.Donut2D({
@@ -353,8 +357,40 @@ var left=1;//the int to record seq's left position
 }*/
 function copyBtnOnClick(obj)
 {
-	var copyText =seq;
-	window.clipboardData.setData("Text",copyText); 
+	/*var copyText =seq;
+	window.clipboardData.setData("Text",copyText); */
+	if(window.clipboardData) {   
+              window.clipboardData.clearData();   
+              window.clipboardData.setData("Text", seq);
+            alert("Copy success");   
+      } else if(navigator.userAgent.indexOf("Opera") != -1) {   
+           window.location = seq;   
+      } else if (window.netscape) {   
+           try {   
+                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");   
+           } catch (e) {   
+                alert("如果您正在使用FireFox！\n请在浏览器地址栏输入'about:config'并回车\n然后将'signed.applets.codebase_principal_support'设置为'true'");   
+           }   
+           var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);   
+           if (!clip)   
+                return;   
+           var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);   
+           if (!trans)   
+                return;   
+           trans.addDataFlavor('text/unicode');   
+           var str = new Object();   
+           var len = new Object();   
+           var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);   
+           var copytext = seq;   
+           str.data = copytext;   
+           trans.setTransferData("text/unicode",str,copytext.length*2);   
+           var clipid = Components.interfaces.nsIClipboard;   
+           if (!clip)   
+                return false;   
+           clip.setData(trans,null,clipid.kGlobalClipboard);   
+           alert("Copy success！")   
+      }   
+
 }
 //accrording to the data array 's colors to add the color to the seq
 function createDivStrByData()
@@ -560,9 +596,15 @@ function canvasMouseUp(obj,e)
 }
 function saveGraph(){
 	var _canvas=document.getElementById(chart.canvasid);
-	var data = _canvas.toDataURL(); 
+	var data = _canvas.toDataURL("image/png"); 
 	var b64 = data.substring(22); 
-	console.log(b64);
+	//console.log(b64);
+	//console.log(document.getElementById("standardSelect").value);
+	var w=window.open('about:blank','image from canvas','location=0,directories=0'); 
+	w.window.onclose=function(){
+		parent.refresh;
+	}
+	w.document.write("<img src='"+data+"' alt='from canvas'/>");	
 }
 function isPointInCircle(circle,x,y)
 {

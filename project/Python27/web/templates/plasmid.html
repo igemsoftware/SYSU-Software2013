@@ -7,9 +7,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Graphiti</title>
+  <title>Plasmid</title>
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="Jiexin Guo">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
   <!--<link rel="stylesheet" href="../static/css/dtree.css">-->
@@ -17,17 +17,7 @@
   <!--<link rel="stylesheet" href="../static/css/graphiti.css">-->
   <script type="text/javascript" src="../static/js/lib/ZeroClipboard.js"></script>
   <script type="text/javascript" src="../static/js/ichartjs.v1.2/ichart.1.2.min.js"></script>  
-  <link rel="stylesheet" href="../static/css/demo.css" type="text/css"/>	
-  <style>
-	.btn1 {
-	 BORDER-RIGHT: #7b9ebd 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #7b9ebd 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); BORDER-LEFT: #7b9ebd 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #7b9ebd 1px solid
-	}
-	.btn1_mouseout {
-	 BORDER-RIGHT: #7EBF4F 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #7EBF4F 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#B3D997); BORDER-LEFT: #7EBF4F 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #7EBF4F 1px solid
-	}
-	.btn1_mouseover {
-	 BORDER-RIGHT: #7EBF4F 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #7EBF4F 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#CAE4B6); BORDER-LEFT: #7EBF4F 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #7EBF4F 1px solid
-	}</style>
+  <link rel="stylesheet" href="../static/css/demo.css" type="text/css"/>	  
 </head>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 <body bgcolor="#FFFFFF" >
@@ -46,9 +36,7 @@
 		<label id='x3' style="width:25%;height:15px;float:left;">41</label>
         <label id='x4' style="width:25%;height:15px;float:left;">61</label>
         <!--<textarea name="" cols="100" rows="1" readonly wrap="off" id="seqCurrentText" style="resize: none;width:100%;height:15px;overflow:hidden;font-size:20px;" ></textarea>    --> 
-        <pre contenteditable="false" id="seqCurrentText" style="resize:none;width:100%;height:15px;overflow:hidden;font-size:30px;"></pre>   
-        <!--<canvas id="plasmid-canvas" width="1100" height="80">
-      	</canvas>-->
+        <pre contenteditable="false" id="seqCurrentText" style="resize:none;width:100%;height:15px;overflow:hidden;font-size:30px;"></pre>           
     </div>
     <div id='drawCanvasDiv' style="width:67%;height:400px;float:left;"> 
      <!--<img src="../static/img/glass.jpg" name="divBody" width="25" height="25" id="divBody" style="float: left; z-index: 1; left: 0px;top:0px;position:relative;" title='You can drag this picture on to the graph to show the seq.'> -->    	
@@ -56,14 +44,14 @@
    	 <div id='canvasDiv' style="width:100%;height:400px;left: 0px;top:0px;position:relative;" onmousedown="canvasMouseDown(this,event);" onmouseup="canvasMouseUp(this,event);"></div> 
     </div>  
     <div id='optionpanel' style="width:33%;height:400px;float:left;">
-   		<select name="standard" style="width:100%;height:10%">
+   		<select id='standardSelect' name="standard" style="width:100%;height:10%">
         	<option selected="selected" value="">Assembly Standard</option>
             <option value="RFC 10">RFC 10</option>
             <option value="RFC 20">RFC 20</option>
             <option value="RFC 21">RFC 21</option>
             <option value="RFC 23">RFC 23</option>
         </select>
-        <select name="backbone" style="width:100%;height:10%">
+        <select id="backboneSelect" name="backbone" style="width:100%;height:10%">
         	<option selected="selected" value="">Plasmid Backbone</option>
             <optgroup label="Archive">
             	<option value="pSB1A2.xml">pSB1A2.xml</option>
