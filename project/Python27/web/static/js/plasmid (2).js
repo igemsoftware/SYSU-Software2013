@@ -187,8 +187,7 @@ function getRawData()//to get the raw data of plasmid
 {
 		
 }
-function initDrawChart(){
-	//console.log(sessionStorage._offsetAngle);
+function initDrawChart(){	
 	if(sessionStorage._offsetAngle===undefined)
 	{
 		sessionStorage._offsetAngle=270;
