@@ -1,8 +1,6 @@
 /******************************************************* 画图区  ***************************************************/
 // Create namespace
 var g = {};
-var storage = window.localStorage;
-g.Storage = Array();
 
 g.Application = Class.extend({
   NAME: "graphiti.Application",
@@ -13,7 +11,7 @@ g.Application = Class.extend({
    * @param {String} canvasId the id of the DOM element to use as paint container
    */
   init: function() {
-    this.view = new g.View("canvas");
+    this.view = new g.View("canvas");    
   },
 
   undo: function() {
@@ -45,7 +43,8 @@ g.View = graphiti.Canvas.extend({
     this.setScrollArea("#" + id);
     this.currentDropConnection = null;
     this.setSnapToGrid(true);
-
+    this.collection = new Array();    // Store all components in this view
+    this.currentSelected = null;       // Store the figure that is currently seleted
   },
 
   /**
@@ -76,23 +75,14 @@ g.View = graphiti.Canvas.extend({
    * @private
    **/
   onDrop: function(droppedDomNode, x, y) {
-    //console.log("onDrop: x(" + x + "), y(" + y + ")");
     var type = $(droppedDomNode).data("shape");
     var figure = eval("new " + type + "();");
     // create a command for the undo/redo support
     var command = new graphiti.command.CommandAdd(this, figure, x, y);
     this.getCommandStack().execute(command);
-
-    // store the node
-    var temp = {};
-    temp.x = figure.x;
-    temp.y = figure.y;
-    temp.type = type;
-    temp.id = figure.id;
-    g.Storage.push(temp);
-    //console.log(g.Storage);
   }
 });
+
 
 g.Shapes = {};
 g.Shapes.Process = graphiti.shape.basic.Circle.extend({
@@ -112,7 +102,7 @@ g.Shapes.Process = graphiti.shape.basic.Circle.extend({
     this.setBackgroundColor("#DDF4FB");
 
     // Label
-    this.label = new graphiti.shape.basic.Label("圆");
+    this.label = new graphiti.shape.basic.Label("Protein");
     this.label.setFontColor("#000000");
     this.label.setStroke(0);
     this.addFigure(this.label, new graphiti.layout.locator.CenterLocator(this));
@@ -132,118 +122,11 @@ g.Shapes.Process = graphiti.shape.basic.Circle.extend({
     }
   },
 
-  // 添加 onclick事件 显示工具栏
   onClick: function() {
-    // 显示菜单栏
-    var toggleBar = $("#toggleBar");
-    toggleBar.css("left", (this.x + 250) + "px");
-    toggleBar.css("top", this.y + "px");
-    toggleBar.css("display", "block");
-
-    // 显示配置栏
-    var configBar = $("div.span2#configBar");
-    configBar.css("display", "none");
-    configBar = $("div.span2#configBar");
-    configBar.css("display", "block");
-    configbar.setAttributes(this.id);
+    
   }
 });
 
-g.Shapes.Rectangle = graphiti.shape.basic.Rectangle.extend({
-  NAME: "g.Shapes.Rectangle",
-
-  init: function(width, height) {
-    this._super();
-
-    if (typeof radius === "number") {
-      this.setDimension(radius, radius);
-    } else {
-      this.setDimension(100, 100);
-    }
-
-
-    this.setColor("#339BB9");
-    this.setBackgroundColor("#DDF4FB");
-
-    // Label
-    this.label = new graphiti.shape.basic.Label("矩形");
-    this.label.setFontColor("#000000");
-    this.label.setStroke(0);
-    this.addFigure(this.label, new graphiti.layout.locator.CenterLocator(this));
-
-    this.createPort("hybrid", new graphiti.layout.locator.TopLocator(this));
-    this.createPort("hybrid", new graphiti.layout.locator.RightLocator(this));
-    this.createPort("hybrid", new graphiti.layout.locator.LeftLocator(this));
-    this.createPort("hybrid", new graphiti.layout.locator.BottomLocator(this));
-
-    this.label.installEditor(new graphiti.ui.LabelEditor(this.label));
-  },
-
-  onDoubleClick: function() {
-    var t = prompt("Name: ", this.label.getText());
-    if (t) {
-      this.label.setText(t);
-    }
-  },
-
-  // 添加 onclick事件 显示工具栏
-  onClick: function() {
-    // 显示菜单栏
-    var toggleBar = $("#toggleBar");
-    toggleBar.css("left", (this.x + 250) + "px");
-    toggleBar.css("top", this.y + "px");
-    toggleBar.css("display", "block");
-
-  }
-});
-
-g.Shapes.Diamond = graphiti.shape.basic.Diamond.extend({
-  NAME: "g.Shapes.Diamond",
-
-  init: function(width, height) {
-    this._super();
-
-    if (typeof radius === "number") {
-      this.setDimension(radius, radius);
-    } else {
-      this.setDimension(100, 100);
-    }
-
-
-    this.setColor("#339BB9");
-    this.setBackgroundColor("#DDF4FB");
-
-    // Label
-    this.label = new graphiti.shape.basic.Label("菱形");
-    this.label.setFontColor("#000000");
-    this.label.setStroke(0);
-    this.addFigure(this.label, new graphiti.layout.locator.CenterLocator(this));
-
-    this.createPort("hybrid", new graphiti.layout.locator.TopLocator(this));
-    this.createPort("hybrid", new graphiti.layout.locator.RightLocator(this));
-    this.createPort("hybrid", new graphiti.layout.locator.LeftLocator(this));
-    this.createPort("hybrid", new graphiti.layout.locator.BottomLocator(this));
-
-    this.label.installEditor(new graphiti.ui.LabelEditor(this.label));
-  },
-
-  onDoubleClick: function() {
-    var t = prompt("Name: ", this.label.getText());
-    if (t) {
-      this.label.setText(t);
-    }
-  },
-
-  // 添加 onclick事件 显示工具栏
-  onClick: function() {
-    // 显示菜单栏
-    var toggleBar = $("#toggleBar");
-    toggleBar.css("left", (this.x + 250) + "px");
-    toggleBar.css("top", this.y + "px");
-    toggleBar.css("display", "block");
-
-  }
-});
 
 g.Shapes.Arrow = graphiti.shape.icon.ProteinArrow.extend({
   NAME: "g.Shapes.Arrow",
@@ -257,36 +140,139 @@ g.Shapes.Arrow = graphiti.shape.icon.ProteinArrow.extend({
       this.setDimension(100, 100);
     }
 
+    this.setColor("#339BB9");   
 
-    this.setColor("#339BB9");
-    //this.setBackgroundColor("#DDF4FB");
+    // remove button
+    this.remove = new g.Buttons.Remove();
+    this.Activate = new g.Buttons.Activate();
+    this.Inhibit = new g.Buttons.Inhibit();
+    this.CoExpress = new g.Buttons.CoExpress();
 
     // Label
-    // this.label = new graphiti.shape.basic.Label("PCS");
-    // this.label.setFontColor("#000000");
-    // this.label.setStroke(0);
-    // this.addFigure(this.label, new graphiti.layout.locator.CenterLocator(this));
+    this.label = new graphiti.shape.basic.Label("PCS");
+    this.label.setFontColor("#000000");
 
-    //this.createPort("hybrid", new graphiti.layout.locator.TopLocator(this));
-    this.createPort("hybrid", new graphiti.layout.locator.RightLocator(this));
-    this.createPort("hybrid", new graphiti.layout.locator.LeftLocator(this));
-    //this.createPort("hybrid", new graphiti.layout.locator.BottomLocator(this));
+    // this.createPort("hybrid", new graphiti.layout.locator.RightLocator(this));
+    // this.createPort("hybrid", new graphiti.layout.locator.LeftLocator(this)); 
+  },
 
-    // this.label.installEditor(new graphiti.ui.LabelEditor(this.label));
+  onClick: function() {    
+    app.view.currentSelected = this.getId();   // set current selected figure
+
+    if (this.remove || this.label) {
+      this.resetChildren();
+    }
+
+    this.addFigure(this.remove, new graphiti.layout.locator.TopLocator(this));    
+    this.addFigure(this.label, new graphiti.layout.locator.BottomLocator(this));
+
+    var canvas = this.getCanvas();
+    for (var i = 0; i < canvas.collection.length; i++) {
+      var figure = canvas.getFigure(canvas.collection[i]);
+      if (this.getId() !== figure.getId()) {
+        figure.resetChildren();
+        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLocator(figure));
+      }
+    };
+  },
+
+  onDoubleClick: function() {
+    if (this.remove || this.label) {
+      this.resetChildren();
+    }
   }
 });
 
+// Buttons
+g.Buttons = {};
+// Remove Button
+g.Buttons.Remove = graphiti.shape.icon.Remove.extend({
+  NAME: "g.Buttons.Remove",
 
+  init: function(width, height) {
+    this._super();
 
+    if (typeof radius === "number") {
+      this.setDimension(radius, radius);
+    } else {
+      this.setDimension(20, 20);
+    }
+  },
 
+  onClick: function() {
+    var parent = this.getParent();
+    var command = new graphiti.command.CommandDelete(parent);   // 删除父节点
+    app.view.getCommandStack().execute(command);  // 添加到命令栈中
+  }
+});
 
+// Activate Button
+g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
+  NAME: "g.Buttons.Activate",
 
+  init: function(width, height) {
+    this._super();
 
+    if (typeof radius === "number") {
+      this.setDimension(radius, radius);
+    } else {
+      this.setDimension(20, 20);
+    }
+  },
 
+  onClick: function() {
+    var target = this.getParent();
+    var source = this.getCanvas().getFigure(app.view.currentSelected);
 
+    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.RightLocator(source));
+    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.LeftLocator(target));
 
+    var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort);   // 连接两点
+    app.view.getCommandStack().execute(command);  // 添加到命令栈中
 
+    var connection = sourcePort.getConnections();
+    console.log(connection);
+    connection.get(0).setTargetDecorator(new graphiti.decoration.connection.ArrowDecorator());  // remaining a bug, wait to fix
+  }
+});
 
+// Inhibit Button
+g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
+  NAME: "g.Buttons.Inhibit",
+
+  init: function(width, height) {
+    this._super();
+
+    if (typeof radius === "number") {
+      this.setDimension(radius, radius);
+    } else {
+      this.setDimension(20, 20);
+    }
+  },
+
+  onClick: function() {
+
+  }
+});
+
+// Co-Expression Button
+g.Buttons.CoExpress = graphiti.shape.icon.CoExpress.extend({
+  NAME: "g.Buttons.CoExpress",
+
+  init: function(width, height) {
+    this._super();
+
+    if(typeof radius === "number") {
+      this.setDimension(radius, radius);
+    } else {
+      this.setDimension(20, 20);
+    }
+  },
+
+  onClick: function() {
+
+  }
+}); 
 
 
 
@@ -437,7 +423,6 @@ var catalogHandler = {
 
   renderNode: function(data) {
     var split = data.split(" ");
-    console.log(split);
 
     var id = "";
     if (split.length > 1) {
@@ -472,109 +457,6 @@ var catalogHandler = {
 
 
 
-
-
-
-
-
-
-
-/******************************************************* 配置栏  ***************************************************/
-var configbar = {
-  createInput: function(attr, defaultValue) {
-    var div = document.createElement("div");
-    div.className = "input-prepend";
-    var label = document.createElement("label");
-    label.className = "add-on"
-    label.innerText = attr + ":";
-    var input = document.createElement("input");
-    input.type = "text";
-    input.id = attr + "-input";
-    input.name = attr + "-input";
-    input.value = defaultValue;
-    div.appendChild(label);
-    div.appendChild(input);
-
-    return div;
-  },
-
-  saveData: function(id, JSONdata) {
-    storage.setItem(id, JSON.stringify(JSONdata));
-    ws.onopen = function() {
-      dataToSend = JSON.stringify({
-        'request': 'saveUserData',
-        'data': JSON.stringify(JSONdata)
-      });
-      ws.send(dataToSend);
-      console.log(dataToSend);
-    }
-    //storage.clear();
-  },
-
-  setAttributes: function(id) {
-    // 生成config bar并添加标题 
-    var configBar = document.getElementById("optionpanel");
-    configBar.innerHTML = "";
-    var h3 = document.createElement("h3");
-    h3.innerText = "Config Bar";
-    configBar.appendChild(h3);
-
-    // add input for id
-    //var defaultValue = storage.getItem(id) === null ? "" : storage.getItem(id);
-    var idInput = this.createInput("id", "");
-    configBar.appendChild(idInput);
-
-    // add input for seq
-    var seqInput = this.createInput("seq", "");
-    configBar.appendChild(seqInput);
-
-    // add button 
-    var btn_save = document.createElement("button");
-    btn_save.id = "btn-save";
-    btn_save.innerText = "save";
-    var thisObj = this;
-    btn_save.onclick = function() {
-      var inputList = document.getElementsByTagName("input");
-      var elem = {};
-      var key = inputList[0].value;
-      for (var i = 0; i < inputList.length; i++) {
-        elem[inputList[i].id] = inputList[i].value;
-      };
-
-      thisObj.saveData(id, elem);
-
-      //alert("saved. ^_^! ");
-    };
-    configBar.appendChild(btn_save);
-  },
-
-  showAttributes: function(JSONdata) {
-    //example
-    //console.log(JSONdata);
-    var id = JSONdata["rsbpml"]["part_list"]["part"]["part_id"];
-    var seq = JSONdata["rsbpml"]["part_list"]["part"]["sequences"]["seq_data"];
-    var attrs = [{
-      attrName: "id",
-      attrValue: id
-    }, {
-      attrName: "seq",
-      attrValue: seq
-    }];
-    // 生成config bar并添加标题 
-    var configBar = document.getElementById("optionpanel");
-    configBar.innerHTML = "";
-    var h3 = document.createElement("h3");
-    h3.innerText = "Config Bar";
-    configBar.appendChild(h3);
-
-    // 添加属性
-    for (var i = 0; i < attrs.length; i++) {
-      var p = document.createElement("p");
-      p.innerText = attrs[i].attrName + ": " + attrs[i].attrValue;
-      configBar.appendChild(p);
-    }
-  }
-};
 
 
 /******************************************************* 全局  ***************************************************/
@@ -864,6 +746,7 @@ $().ready(function() {
     ws.send(JSON.stringify({
       'request': 'getDirList',
       'dir': 'web\\biobrick\\Protein coding sequences'
+      //'dir': './biobrick/Protein coding sequences'
     }));
 
     ws.send(JSON.stringify({
@@ -880,7 +763,7 @@ $().ready(function() {
 
 
   // 创建工作区应用
-  var app = new g.Application();
+  app = new g.Application();
 
   $('#cmd_undo').click(function(ev) {
     app.undo();

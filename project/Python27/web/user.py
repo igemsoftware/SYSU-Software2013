@@ -36,9 +36,13 @@ def changeUserPassword(database,password):
     database.updateUserPassword(password)
     
 def userLogout(database):
-    database.logger.debug(database.getUserNameById(database.userId)+' log out')
-    database.userId=-1
-    return 'success'
+	if(isUserLogined(database)):
+		database.logger.debug(database.getUserNameById(database.userId)+' log out')
+		database.userId=-1
+		return 'user logout success'
+	else:
+		database.logger.error('Not loggin but want to log out')
+		return 'you have not logined in yet!'
 
 def getUserFileList(database):
 	return database.getUserFileNameList()

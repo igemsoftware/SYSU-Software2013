@@ -454,32 +454,7 @@ graphiti.Figure = Class.extend({
       this.canvas.commandStack.execute(this.command);
       this.command = null;
       this.isMoving = false;
-      this.fireMoveEvent();
-
-      /* storage */
-      var hasOne = false;
-      for(var i = 0 ; i < g.Storage.length ; i++){
-        if(g.Storage[i].id == this.id){
-          g.Storage[i].x = this.x;
-          g.Storage[i].y = this.y;
-          hasOne = true;
-        }
-      }
-
-      if(!hasOne){
-        var temp = {};
-        temp.x = this.x;
-        temp.y = this.y;
-        temp.type = this.NAME;
-        temp.id = this.id;
-        g.Storage.push(temp);
-      }    
-
-      // 更新菜单栏位置
-        var toggleBar = $("#toggleBar");
-        toggleBar.css("left", (this.x + 250) + "px");
-        toggleBar.css("top", this.y + "px");
-        toggleBar.css("display", "block");
+      this.fireMoveEvent();      
     },
 
     /**

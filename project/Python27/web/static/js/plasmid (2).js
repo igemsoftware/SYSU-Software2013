@@ -52,9 +52,8 @@ var plasmidPainter = {
 		jc.start(this.canvasId);
 		jc.rect(0, 0, 1100, 50, "#EEEEFF", true);
 		jc.text("seq: select a segment to show its sequence", 400, 60).id("seq");
-		this.text = jc("#seq");
-		jc.start(this.canvasId);		
-		// 把JSONdata里的每一个元素画出来
+		this.text = jc("#seq");		
+		jc.start(this.canvasId);
 		var temp=0;
 		for(i=0;i<data.length;i++)
 		{			
@@ -64,11 +63,6 @@ var plasmidPainter = {
 				temp++;
 			}
 		}
-		//this.drawSegment(0, 40, '1','type1', 'AAATTACGA');
-		//this.drawSegment(60, 200, '2', 'type2', 'TAGCAGTA');
-		//this.drawSegment(280, 500, '3', 'type2', 'CGATATGATC');
-		//this.drawSegment(700, 800, '4', 'type1', 'GACTAACT');
-		//this.drawSegment(850, 870, '5', 'type2', 'ATTACGATACGA');
 	}
 };
 function show(id) {
@@ -90,11 +84,11 @@ $('p#p_toolTip').css({"position": "absolute", "top": "8px", "left": "-6px" });
 tip.css({"top": this.top+"px","left":this.left+"px"}); 
 tip.fadeIn("slow"); 
 }, 
-function() { 
-this.title = this.t; 
-$("p#p_toolTip").fadeOut("slow").remove(); 
-} 
-); 
+	function() { 
+		this.title = this.t; 
+		$("p#p_toolTip").fadeOut("slow").remove(); 
+		} 
+	); 
 };
 var data =  [];
 var size=0;//整个序列的长度
@@ -161,8 +155,7 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 		tempArray[i].end=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioEnd,10);
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
 	}		
-	tempArray=tempArray.sort(sortNumber);
-	
+	tempArray=tempArray.sort(sortNumber);	
 	var real_data=[];
 	var start=0;
 	var index=0;
@@ -194,11 +187,15 @@ function getRawData()//to get the raw data of plasmid
 {
 		
 }
-function initDrawChart(){
+function initDrawChart(){	
+	if(sessionStorage._offsetAngle===undefined)
+	{
+		sessionStorage._offsetAngle=270;
+	}
 	getRawData();
 	data=turnRawDatatoData(raw_data);		
 	chart = new iChart.Donut2D({
-		id:'ichartjs2013',
+		id:"ichartjs2013",
 		animation:true,
 		render : 'canvasDiv',//图表渲染的HTML DOM的id //Chart rendering the HTML DOM id
 		center:{
@@ -210,7 +207,7 @@ function initDrawChart(){
 			shadow_color:'#b7b7b7',
 			color:'#6f6f6f'
 		},
-		//offset_angle: 270,
+		offset_angle: sessionStorage._offsetAngle,
 		data: data,//图表的数据源 //Chart data source
 		offsetx:0,
 		shadow:false,
@@ -263,8 +260,8 @@ function initDrawChart(){
 				fontweight:600,
 				color : '#4572a7',		
 			},
-			color_factor : 0.3,
-			listeners:{
+			color_factor : 0.3
+			/*,			listeners:{
 				click:function(l,e,m){
 					if(e["event"]["button"]===0)//&&typeof(l.get('name'))!="number")
 					{
@@ -282,7 +279,7 @@ function initDrawChart(){
 					}					
 
 				}
-			}
+			}*/
 		},
 		showpercent:true,
 		decimalsnum:0,
@@ -291,35 +288,19 @@ function initDrawChart(){
 		radius:140
 		
 	});	
-	chart.plugin(create0BP(chart));
-	chart.plugin(create14sBP(chart));
-	chart.plugin(createhalfBP(chart));
-	chart.plugin(create34BP(chart));
+	chart.plugin(createRight(chart));
+	chart.plugin(createBottom(chart));
+	chart.plugin(createLeft(chart));
+	chart.plugin(createTop(chart));
 	chart.draw();	
 }
-function create0BP(chart){
-	return new iChart.Custom({
-		drawFn:function(){	
-			var radius=140;
-			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2+radius;
-			var y=  chart.getDrawingArea().height/2;
-			//console.log(chart.radius);
-			//在左侧的位置，设置竖排模式渲染文字			
-			chart.target.textAlign('left')
-			.textBaseline('top')
-			.textFont('600 12px 微软雅黑')
-			.fillText('0bp',x,y,false,'#6d869f', 'lr',26,false,0,'middle');
-		}		
-	});
-}
-function create14sBP(chart){
+function createRight(chart){
 	return new iChart.Custom({
 		drawFn:function(){	
 			var radius=140;
 			var str=parseInt(size/4,10)+"bp";
-			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-20;
-			var y=  chart.getDrawingArea().height/2+radius;
-			//在左侧的位置，设置竖排模式渲染文字			
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2+radius;
+			var y=  chart.getDrawingArea().height/2;	
 			chart.target.textAlign('left')
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
@@ -327,15 +308,13 @@ function create14sBP(chart){
 		}		
 	});
 }
-function createhalfBP(chart){
+function createBottom(chart){
 	return new iChart.Custom({
 		drawFn:function(){	
 			var radius=140;
 			var str=parseInt(size/2,10)+"bp";
-			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-radius-35;
-			var y=  chart.getDrawingArea().height/2;
-			//console.log(chart.radius);
-			//在左侧的位置，设置竖排模式渲染文字			
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-20;
+			var y=  chart.getDrawingArea().height/2+radius;	
 			chart.target.textAlign('left')
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
@@ -343,28 +322,74 @@ function createhalfBP(chart){
 		}		
 	});
 }
-function create34BP(chart){
+function createLeft(chart){
 	return new iChart.Custom({
 		drawFn:function(){	
 			var radius=140;
 			var str=parseInt(size*3/4,10)+"bp";
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-radius-35;
+			var y=  chart.getDrawingArea().height/2;
+			chart.target.textAlign('left')
+			.textBaseline('top')
+			.textFont('600 12px 微软雅黑')
+			.fillText(str,x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+		}		
+	});
+}
+function createTop(chart){
+	return new iChart.Custom({
+		drawFn:function(){	
+			var radius=140;			
 			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-15;
 			var y=  chart.getDrawingArea().height/2-radius;
 			chart.target.textAlign('left')
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
-			.fillText(str,x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+			.fillText("0BP",x,y,false,'#6d869f', 'lr',26,false,0,'middle');
 		}		
 	});
 }
 var left=1;//the int to record seq's left position
-function seqTextOnClickHandler(obj){	
+/*function seqTextOnClickHandler(obj){	
 	left=parseInt((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size,10)+1;
 	updateSeqPosText();
-}
+}*/
 function copyBtnOnClick(obj)
 {
-	
+	/*var copyText =seq;
+	window.clipboardData.setData("Text",copyText); */
+	if(window.clipboardData) {   
+              window.clipboardData.clearData();   
+              window.clipboardData.setData("Text", seq);
+            alert("Copy success");   
+      } else if(navigator.userAgent.indexOf("Opera") != -1) {   
+           window.location = seq;   
+      } else if (window.netscape) {   
+           try {   
+                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");   
+           } catch (e) {   
+                alert("如果您正在使用FireFox！\n请在浏览器地址栏输入'about:config'并回车\n然后将'signed.applets.codebase_principal_support'设置为'true'");   
+           }   
+           var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);   
+           if (!clip)   
+                return;   
+           var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);   
+           if (!trans)   
+                return;   
+           trans.addDataFlavor('text/unicode');   
+           var str = new Object();   
+           var len = new Object();   
+           var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);   
+           var copytext = seq;   
+           str.data = copytext;   
+           trans.setTransferData("text/unicode",str,copytext.length*2);   
+           var clipid = Components.interfaces.nsIClipboard;   
+           if (!clip)   
+                return false;   
+           clip.setData(trans,null,clipid.kGlobalClipboard);   
+           alert("Copy success！")   
+      }   
+
 }
 //accrording to the data array 's colors to add the color to the seq
 function createDivStrByData()
@@ -393,7 +418,7 @@ function updateSeqPosText(){
 	document.getElementById('x2').innerText=left+20;
 	document.getElementById('x3').innerText=left+40;
 	document.getElementById('x4').innerText=left+60;
-	console.log(document.getElementById('seqCurrentText'));
+	//console.log(document.getElementById('seqCurrentText'));
 	document.getElementById('seqCurrentText').innerHTML=seq.substring(left,left+60);
 }
 //turn the data array to another index at the first place
@@ -431,7 +456,7 @@ function testWebSocket(){
 		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 	}
 }
-function CircleClass(ui,drawArea,drawAreaToBody)
+function CircleClass(drawArea,drawAreaToBody)
 {
 	var _this = this ; 
 	_this.x = 0 ;
@@ -476,7 +501,12 @@ function setUpDrag(){
 				left=parseInt(getAngleFromLineToXAxis(circle,x,y)/360*size);
 				updateSeqPosText();
 			}
-			console.log(parseInt(getAngleFromLineToXAxis(circle,x,y)/360*size));
+			//console.log(parseInt(getAngleFromLineToXAxis(circle,x,y)/360*size));
+			var ang=parseInt(sessionStorage._offsetAngle);
+			sessionStorage._offsetAngle=ang+20;
+			chart.push("offset_angle",ang+20);
+			chart.push("")
+			chart.setUp();	
 		}
 	});
 }
@@ -525,6 +555,56 @@ function getAngleFromLineToXAxis(circle,x,y) {
 function lengthBetweenTwoPoint(x1,y1,x2,y2) {
   return Math.sqrt((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2));
 }
+function canvasMouseDown(obj,e)
+{
+	 sessionStorage.x1=e.clientX;
+	 sessionStorage.y1=e.clientY;
+	 obj.style.cursor = "hand";
+}
+function canvasMouseUp(obj,e)
+{
+	obj.style.cursor = "default";
+	sessionStorage.x2=e.clientX;
+	sessionStorage.y2=e.clientY;
+	if (Math.abs(sessionStorage.x1-sessionStorage.x2)<3&& Math.abs(sessionStorage.y1-sessionStorage.y2)<3)
+	{
+		return;
+	}
+	var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());	
+	a2=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));
+	a1=parseInt(getAngleFromLineToXAxis(circle,parseInt(sessionStorage.x1),parseInt(sessionStorage.y1)));		
+	var offsetang=parseInt(sessionStorage._offsetAngle)+a2-a1;
+	if(offsetang<0)
+	{
+		offsetang=offsetang+360;
+	}else if(offsetang>360)
+	{
+		offsetang=offsetang-360;
+	}	
+	sessionStorage._offsetAngle=offsetang;
+	chart.push("offset_angle",offsetang);
+	chart.push("animation","false");
+	chart.resize(783,400);
+	var ang=offsetang-270;
+	if(ang<0)
+	{
+		ang=ang+360;
+	}
+	left=parseInt(ang/360*size);
+	updateSeqPosText();
+}
+function saveGraph(){
+	var _canvas=document.getElementById(chart.canvasid);
+	var data = _canvas.toDataURL("image/png"); 
+	var b64 = data.substring(22); 
+	//console.log(b64);
+	//console.log(document.getElementById("standardSelect").value);
+	var w=window.open('about:blank','image from canvas','location=0,directories=0'); 
+	w.window.onclose=function(){
+		parent.refresh;
+	}
+	w.document.write("<img src='"+data+"' alt='from canvas'/>");	
+}
 function isPointInCircle(circle,x,y)
 {
 	var lengthTemp = lengthBetweenTwoPoint(circle.x, circle.y, x, y);
@@ -535,6 +615,16 @@ function isPointInCircle(circle,x,y)
     return false;
 }
 $(function(){
+	window.requestAnimFrame = (function(){
+      return  window.requestAnimationFrame       || 
+              window.webkitRequestAnimationFrame || 
+              window.mozRequestAnimationFrame    || 
+              window.oRequestAnimationFrame      || 
+              window.msRequestAnimationFrame     || 
+              function(/* function */ callback, /* DOMElement */ element){
+                window.setTimeout(callback, 1000 / 60);
+              };
+    })();
 	initDrawChart();	
 	document.getElementById('seqCurrentText').value=seq.substring(1,61);
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();	
@@ -542,7 +632,7 @@ $(function(){
 	//InitAjax();
 	testWebSocket();
 	$("#divBody").toolTip();
-	setUpDrag();
+	//setUpDrag();
 	//console.log(document.getElementById());
 	/*var canvas = document.getElementById(chart.canvasid);
 	var context = canvas.getContext("2d");

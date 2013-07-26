@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Graphiti</title>
+  <title>Regulation</title>
   <meta name="description" content="">
   <meta name="author" content="rathinho">
   <meta name="viewport" content="width=device-width">
@@ -32,6 +32,12 @@
 
   <div class="regulation-container">
     <div id="left-container">
+      <!-- biobrick adder -->
+      <div class="palette_node_element graphiti_droppable adder" data-shape="g.Shapes.Arrow">
+        <img src="../static/img/adder.png" width="30px" height="30px">
+      </div>
+
+      
       <div class="accordion" id="accordion1">
         <div class="accordion-group">
           <div class="accordion-heading">
@@ -40,7 +46,7 @@
               <i class="icon-chevron-down" style="display: block; float: right"></i>
             </a>
           </div>
-          <div id="collapse1One" class="accordion-body collapse">
+          <div id="collapse1One" class="accordion-body collapse in">
             <div class="accordion-inner">
               <div id="eFactors">
                 
@@ -55,7 +61,7 @@
               <i class="icon-chevron-down" style="display: block; float: right"></i>
             </a>
           </div>
-          <div id="collapse1Two" class="accordion-body collapse in">
+          <div id="collapse1Two" class="accordion-body collapse">
             <div class="accordion-inner">
               <div id="catalog"></div>
             </div>
@@ -64,41 +70,9 @@
       </div>      
     </div>
 
-    <!-- <div id="toolbar">
-      <div class="well sidebar-nav" style="background-color:#FFF;">
-        <ul class="nav nav-list">
-          <li class="nav-header">工具栏</li>
-          <li onmouseover="mOver(this)" onmouseout="mOut(this)" data-shape="g.Shapes.Process" class="palette_node_element graphiti_droppable" >
-              <img src="../static/img/process.png" class="toolbar_icon" /> 圆                
-          </li> 
-          <li onmouseover="mOver(this)" onmouseout="mOut(this)" data-shape="g.Shapes.Arrow" class="palette_node_element graphiti_droppable" >
-              <img src="../static/img/Protein coding sequences.png" class="toolbar_icon" /> PCS
-          </li> 
-          <li onmouseover="mOver(this)" onmouseout="mOut(this)" data-shape="g.Shapes.Rectangle" class="palette_node_element graphiti_droppable" >
-              <img src="../static/img/external.png" class="toolbar_icon" /> 矩形
-          </li> 
-          <li onmouseover="mOver(this)" onmouseout="mOut(this)" data-shape="g.Shapes.Diamond" class="palette_node_element graphiti_droppable" >
-              <img src="../static/img/diamond.png" class="toolbar_icon" /> 菱形
-          </li> 
-          <li>
-            <button id="btn-load">加载</button>
-          </li>
-          <li>
-            <button id="btn-save">保存</button>
-          </li>
-        </ul>
-      </div>
-    </div> -->
-
     <div id="content"> 
       <!-- canvas -->
-      <div id="canvas"></div>
-  
-      <div id="toggleBar">
-        <button class="btn-toolbar" id="btn-add">ADD</button>
-        <button class="btn-danger" id="btn-delete">DEL</button>
-        <button class="btn-success" id="btn-link">LINK</button>
-      </div>      
+      <div id="canvas"></div>   
     </div>
 
     <div id="right-container">
@@ -262,6 +236,22 @@
       <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
       <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
     </div>
+
+    <div class="cmd-group">
+      <a href="javascript:void(0);" id="cmd_undo">
+        <img src="../static/img/Undo.png" width="30px" height="30px">
+        <span>Undo</span>
+      </a>
+      <a href="javascript:void(0);" id="cmd_redo">
+        <img src="../static/img/Redo.png" width="30px" height="30px">
+        <span>Redo</span>
+      </a>
+    <!--   
+      <a href="javascript:void(0);" id="cmd_zoom_in">zoom in</a>
+      <a href="javascript:void(0);" id="cmd_zoom_out">zoom out</a>
+      <a href="javascript:void(0);" id="cmd_zoom_reset">zoom reset</a>
+     -->
+    </div>
   </div>
 
 
@@ -335,6 +325,10 @@
 
   <script src="../static/js/graphiti/shape/icon/Icon.js"></script>
   <script src="../static/js/graphiti/shape/icon/ProteinArrow.js"></script>
+  <script src="../static/js/graphiti/shape/icon/Remove.js"></script>
+  <script src="../static/js/graphiti/shape/icon/Activate.js"></script>
+  <script src="../static/js/graphiti/shape/icon/Inhibit.js"></script>
+  <script src="../static/js/graphiti/shape/icon/CoExpress.js"></script>
 
   <script src="../static/js/graphiti/shape/basic/Oval.js"></script>
   <script src="../static/js/graphiti/shape/basic/Circle.js"></script>
@@ -400,7 +394,8 @@
   <script src="../static/js/bootstrap.min.js"></script>
   <script src="../static/js/regulation/base/js/easy.js"></script> 
   <script src="../static/js/regulation/dtree.js"></script> 
-  <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>  
   <script src="../static/js/regulation/script.js"></script>
+  <script src="../static/js/regulation/biobrickAdder.js"></script>
 </body>
 </html>
