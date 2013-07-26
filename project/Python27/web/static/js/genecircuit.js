@@ -377,6 +377,9 @@ var game = {
 		if(c.objectType == "group") {
 			this.scaleObject(c); 
 		}
+		if(c.alive == false) {
+			this.setInactiveTransform(c);
+		}
 		for(var i = 0; i < c.objectChildren.length; i++) {
 			this.resetComponentDisplay(c.objectChildren[i]);
 		}
@@ -449,7 +452,9 @@ var game = {
 			this.deleteGroup(src.objectParent);
 		} else {
 			for(var i = x; i < src.objectParent.objectChildren.length-1; i++) {
-				this.exchangePosition(src.objectParent.objectChildren[i], src.objectParent.objectChildren[i+1]);
+				this.exchangePosition(src.objectParent.objectChildren[x], src.objectParent.objectChildren[i+1]);
+			}
+			for(var i = x; i < src.objectParent.objectChildren.length-1; i++) {
 				src.objectParent.objectChildren[i] = src.objectParent.objectChildren[i+1];
 			}
 			src.objectParent.objectChildren.pop();
@@ -554,6 +559,7 @@ $(function(){
 						game.moveRight(selectedObject);  
 						break;
 					} else if(selectedObject.geneType == "del") {  
+						console.log(game.groups);
 						game.deleteComponent(selectedObject);  
 						break;
 					}  
@@ -609,12 +615,6 @@ $(function(){
 			game.setCurrentState(game.getNextHistoryStackState());  
 		}	  
 	});  
-	  
-
-
-
-
-
 
 	game.initData(); 
 	game.recordCurrentState();
