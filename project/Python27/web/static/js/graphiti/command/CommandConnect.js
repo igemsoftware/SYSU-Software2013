@@ -39,7 +39,7 @@ graphiti.command.CommandConnect = graphiti.command.Command.extend({
      * @param {graphiti.Port} source the source port for the connection to create
      * @param {graphiti.Port} target the target port for the connection to create
      */
-    init : function(canvas, source, target, decorator)
+    init : function(canvas, source, target, decorator, type)
      {
        this._super("Connecting Ports");
        this.canvas = canvas;
@@ -47,6 +47,7 @@ graphiti.command.CommandConnect = graphiti.command.Command.extend({
        this.target   = target;
        this.connection = null;
        this.decorator = decorator;
+       this.type = type;
     },
     
     setConnection:function(connection)
@@ -64,12 +65,25 @@ graphiti.command.CommandConnect = graphiti.command.Command.extend({
        if(this.connection===null)
           this.connection = new graphiti.Connection();
 
-       if(this.decorator === "T"){
-          this.connection.setSourceDecorator(new graphiti.decoration.connection.TDecorator());
+        
+       // 
+       if(this.type === "Activate"){
+        this.connection.setTargetDecorator(this.decorator);
+        this.connection.setColor(new graphiti.util.Color("#0000ff"));
+        this.label = new graphiti.shape.icon.Activate();
+       }else if(this.type === "Inhibit"){
+        this.connection.setTargetDecorator(this.decorator);
+        this.connection.setColor(new graphiti.util.Color("#ff0000"));
+        this.label = new graphiti.shape.icon.Inhibit();
+       }else{
+        this.connection.setColor(new graphiti.util.Color("#00ff00"));
+        this.label = new graphiti.shape.icon.CoExpress();
        }
-       else if(this.decorator === "Arrow") {
-          this.connection.setSourceDecorator(new graphiti.decoration.connection.ArrowDecorator());
-       }
+
+       // add label to connection
+       this.label.setDimension(20,20);
+       this.connection.addFigure(this.label, new graphiti.layout.locator.ManhattanMidpointLocator(this.connection));
+
        this.connection.setSource(this.source);
        this.connection.setTarget(this.target);
        this.canvas.addFigure(this.connection);
@@ -82,6 +96,15 @@ graphiti.command.CommandConnect = graphiti.command.Command.extend({
      **/
     redo:function()
     {
+       if(this.type === "Activate"){
+        this.connection.setTargetDecorator(this.decorator);
+        this.connection.setColor(new graphiti.util.Color("#0000ff"));
+       }else if(this.type === "Inhibit"){
+        this.connection.setTargetDecorator(this.decorator);
+        this.connection.setColor(new graphiti.util.Color("#ff0000"));
+       }else{
+        this.connection.setColor(new graphiti.util.Color("#00ff00"));
+       }
        this.canvas.addFigure(this.connection);
        this.connection.reconnect();
     },
@@ -89,10 +112,11 @@ graphiti.command.CommandConnect = graphiti.command.Command.extend({
     /** 
      * @method
      * Undo the command.
-     *
+     * 
      **/
     undo:function()
-    {
+    {   
+        this.connection.getTargetDecorator().setColor(new graphiti.util.Color(250, 250, 250));   // unuseful. wait to fix
         this.canvas.removeFigure(this.connection);
     }
 });

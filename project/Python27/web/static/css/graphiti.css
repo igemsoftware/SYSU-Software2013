@@ -55,11 +55,20 @@ body {
 }
 
 #left-container #eFactors {
-  height: 530px;
+  /*height: 530px;*/
   overflow: auto;
 }
 
 #left-container #eFactors .tooltip-inner {
+  max-width: 96px;
+}
+
+#left-container #pFactors {
+  height: 530px;
+  overflow: auto;
+}
+
+#left-container #pFactors .tooltip-inner {
   max-width: 96px;
 }
 
