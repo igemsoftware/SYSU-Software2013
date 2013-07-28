@@ -154,6 +154,7 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 		tempArray[i].name=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.name;
 		tempArray[i].end=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioEnd,10);
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
+		tempArray[i].desp=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.description;
 	}		
 	tempArray=tempArray.sort(sortNumber);	
 	var real_data=[];
@@ -165,6 +166,7 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 		real_data[index].start=start;
 		real_data[index].end=tempArray[i].start-1;		
 		real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
+		real_data[index].desp=tempArray[i].desp;
 		if(real_data[index].value===0)
 			real_data[index].value=1;
 		index=index+1;
@@ -207,16 +209,16 @@ function initDrawChart(){
 			shadow_color:'#b7b7b7',
 			color:'#6f6f6f'
 		},
-		offset_angle: sessionStorage._offsetAngle,
+		offset_angle: parseInt(sessionStorage._offsetAngle,10),
 		data: data,//图表的数据源 //Chart data source
 		offsetx:0,
 		shadow:false,
 		background_color:'#f4f4f4',
 		separate_angle:0,//分离角度 //Separation angle
-		/*tip:{
+		tip:{
 			enable:true,
-			showType:'fixed',
-			animation:true,
+			showType:'follow',
+			animation:false,
 			listeners:{
 				parseText:function(tip,name,value,text){
                     var str= "";
@@ -227,18 +229,20 @@ function initDrawChart(){
 						if(data[i].name==name){
 							if(typeof(data[i].name)=="number")
 							{
-								str=str+data[i].start+" to "+data[i].end;
-								if(i!==0){
+								str=str+"From:"+data[i].start+" To:"+data[i].end;								
+								/*if(i!==0){
 									str=str+"<br\/>"+seq.substring(data[i].start-1,data[i].end+1);
 								}
 								else
 								{
 									str=str+"<br\/>"+seq.substring(data[i].start,data[i].end+1);
-								}
+								}*/
+								return '';								
 							}else
 							{
-								str=str+data[i].start+" to "+data[i].end;
-								str=str+"<br\/>"+seq.substring(data[i].start,data[i].end);
+								str=str+"From:"+data[i].start+" To:"+data[i].end;
+								//str=str+"<br\/>"+seq.substring(data[i].start,data[i].end);
+								str=str+"<br\/>Description:"+data[i].desp;
 							}							
 							break;
 						}
@@ -246,7 +250,7 @@ function initDrawChart(){
 					return str;
 				}
 			}
-		},*/
+		},	
 		sub_option:{			
 			label : {
 				background_color:null,
@@ -261,6 +265,7 @@ function initDrawChart(){
 				color : '#4572a7',		
 			},
 			color_factor : 0.3
+		},
 			/*,			listeners:{
 				click:function(l,e,m){
 					if(e["event"]["button"]===0)//&&typeof(l.get('name'))!="number")
@@ -280,7 +285,7 @@ function initDrawChart(){
 
 				}
 			}*/
-		},
+		
 		showpercent:true,
 		decimalsnum:0,
 		width : 783,
@@ -305,8 +310,18 @@ function createRight(chart){
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
 			.fillText(str,x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+			addDegreeScale();
 		}		
 	});
+}
+function addDegreeScale()
+{
+	var centerx=parseInt(chart.getDrawingArea().width/2);
+	var centery=chart.getDrawingArea().height/2;
+	chart.target.line(centerx,centery+140,centerx,centery+140+30,3,"black",false);
+	chart.target.line(centerx+140,centery,centerx+140+30,centery,3,"black",false);
+	chart.target.line(centerx-120-30,centery,centerx-120,centery,3,"black",false);
+	chart.target.line(centerx,centery-120,centerx,centery-120-30,3,"black",false);
 }
 function createBottom(chart){
 	return new iChart.Custom({
@@ -356,8 +371,6 @@ var left=1;//the int to record seq's left position
 }*/
 function copyBtnOnClick(obj)
 {
-	/*var copyText =seq;
-	window.clipboardData.setData("Text",copyText); */
 	if(window.clipboardData) {   
               window.clipboardData.clearData();   
               window.clipboardData.setData("Text", seq);
@@ -418,7 +431,6 @@ function updateSeqPosText(){
 	document.getElementById('x2').innerText=left+20;
 	document.getElementById('x3').innerText=left+40;
 	document.getElementById('x4').innerText=left+60;
-	//console.log(document.getElementById('seqCurrentText'));
 	document.getElementById('seqCurrentText').innerHTML=seq.substring(left,left+60);
 }
 //turn the data array to another index at the first place
@@ -631,14 +643,18 @@ $(function(){
 	//show('plasmid-canvas');
 	//InitAjax();
 	testWebSocket();
-	$("#divBody").toolTip();
+	//$("#divBody").toolTip();
 	//setUpDrag();
 	//console.log(document.getElementById());
-	/*var canvas = document.getElementById(chart.canvasid);
-	var context = canvas.getContext("2d");
-	context.beginPath();
-    context.strokeStyle = "#000";
-	context.rect(150, 300, 500, 600);
-	context.stroke();
-	console.log(context);*/	
+	var canvas = document.getElementById(chart.canvasid);
+	var context = chart.target.getContext();
+	//console.log(context);
+	//context.beginPath();
+    //context.strokeStyle = "#000";
+	//context.rect(150, 300, 500, 600);
+	//context.stroke();
+	var img=new Image();
+	img.src="../static/img/glass.jpg";
+	context.drawImage(img,0,0);
+	console.log(context);	
 });

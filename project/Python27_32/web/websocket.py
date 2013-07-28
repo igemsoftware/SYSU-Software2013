@@ -10,9 +10,8 @@ import os
 logging = mlog.logging
 
 class apis():
-  db = SqliteDatabase()
-  def __init__(self):
-    db = SqliteDatabase()
+  def __init__(self, db):
+    self.db = db
   def get_part(self, message):
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):
@@ -41,7 +40,7 @@ class apis():
   def getUserFileList(self,message):
 	return user.getUserFileList(self.db)
 
-def handle_websocket(ws):
+def handle_websocket(ws, db):
   logging.info("start handling websocket...")
   #db = SqliteDatabase()
   while True:
@@ -51,7 +50,7 @@ def handle_websocket(ws):
       break
     else:
       message = json.loads(message)
-      api = apis()
+      api = apis(db)
       result = getattr(api, message['request'])(message)
       logging.info("message is %s" % message)
       ret = json.dumps({'request':message['request'],'result': result})
