@@ -1,10 +1,14 @@
+var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色
 var plasmidPainter = {
 	canvas: null,
 	canvasId: null,
-	data: null,
+	data2: null,
 	text: null,
-	init: function(JSONdata) {
-		data = JSONdata;
+	datasize:null,
+	init: function(JSONdata,dataSize) {
+		data2 = JSONdata;
+		datasize=dataSize;
+		this.clearAll();
 	},
 	bindCanvas: function(canvasId) {
 		var canvas = document.getElementById(canvasId);
@@ -15,19 +19,23 @@ var plasmidPainter = {
 		this.canvas = canvas;
 		this.canvasId = canvasId;
 	},
-	drawSegment: function(bioStart, bioEnd, name, type, seq) {
-		var color;
-		switch (type) {
+	clearAll:function() {
+		jc.clear();
+	},
+	drawSegment: function(bioStart, bioEnd, name, color, seq) {
+		//var color=colors[typeCount];
+		/*switch (type) {
 			case 'type1':
 				color = "#9e33cc";
 				break;
 			case 'type2':
 				color = "#00FF00";
 				break;
-		}
+		}*/
 		var marginLeft = 0, 
 			marginTop = 12.5;
 		jc.start(this.canvasId, true);
+		console.log(bioStart, bioEnd, name, color, seq);
 		jc.rect((marginLeft + bioStart), marginTop, (bioEnd - bioStart), 25, color, true).id(name);
 		// add shadow
 		jc('#'+name).shadow({
@@ -37,7 +45,7 @@ var plasmidPainter = {
             color:'rgba(100, 100, 100, 0.5)'
         });
 		// bind mouseover event
-		jc("#"+name).mouseover(function() {
+		/*jc("#"+name).mouseover(function() {
 			this.color("#FF0000");
 			jc("#seq").string("seq: " + seq);
 		});
@@ -45,30 +53,189 @@ var plasmidPainter = {
 		jc("#"+name).mouseout(function() {
 			this.color(color);
 			jc("#seq").string("seq: select a segment to show its sequence");
-		});
-		//jc.start(this.canvasId, true);
+		});*/
+		jc.start(this.canvasId, true);
 	},
 	drawAll: function() {
 		jc.start(this.canvasId);
 		jc.rect(0, 0, 1100, 50, "#EEEEFF", true);
-		jc.text("seq: select a segment to show its sequence", 400, 60).id("seq");
-		this.text = jc("#seq");		
+		//jc.text("seq: select a segment to show its sequence", 400, 60).id("seq");
+		//this.text = jc("#seq");		
 		jc.start(this.canvasId);
-		var temp=0;
-		for(i=0;i<data.length;i++)
-		{			
-			if(typeof(data[i].name)!=="number")
-			{
-				this.drawSegment(data[i].start/size*1100,data[i].end/size*1100,parseInt(temp,10),(temp%2==0)?"type1":"type2",seq.substring(data[i].start,data[i].end));	
-				temp++;
+		for(var i=0;i<data2.length;i++)
+		{		
+			if(!/[A-Z]/.test(data2[i].seq[0]))//typeof(data[i].name)!=="number")
+			{				
+				var st=data2[i].start*300/datasize;
+				var en=data2[i].end*300/datasize;
+				if(data2[i].name=== undefined)
+				{				
+					this.drawSegment(st,en,i,data2[i].color,data2[i].seq);
+				}else
+				{
+					this.drawSegment(st,en,i,data2[i].color,data2[i].seq);	
+				}
+				console.log(st,en,i,data2[i].color,data2[i].seq);
 			}
 		}
 	}
 };
-function show(id) {
+function show(id,tempdata,datasize) {
 	plasmidPainter.bindCanvas(id);
-	plasmidPainter.init(data);
+	plasmidPainter.init(tempdata,datasize);
+	//plasmidPainter.clearAll();
 	plasmidPainter.drawAll();
+}
+function createTempDataForCanvas(seqText,leftTemp)
+{  
+	var tempdata=[];
+	var tempsize=0;
+	var templeft=0;
+	for(var i=0;i<seqText.length;i++)
+	{
+		//var patt1 = new RegExp("/[A-Z]/");
+		if(/[A-Z]/.test(seqText[i])&&!/[A-Z]/.test(seqText[i+1])&&templeft!=i+1)
+		{
+			tempdata[tempsize]={};
+			tempdata[tempsize].start=templeft;
+			tempdata[tempsize].end=i+1;
+			tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
+			console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+			tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+			tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+			tempsize=tempsize+1;
+			templeft=i+1;
+			for(var j=templeft;j<seqText.length;j++)
+			{
+				if(!/[A-Z]/.test(seqText[j])&&/[A-Z]/.test(seqText[j+1])&&j+1!=templeft)
+				{
+					tempdata[tempsize]={};
+					tempdata[tempsize].start=templeft;
+					tempdata[tempsize].end=j+1;
+					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
+					console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempsize=tempsize+1;
+					templeft=j+1;
+					i=j-1;					
+				}else if(j==seqText.length-1&&j+1!=templeft)
+				{					
+					tempdata[tempsize]={};
+					tempdata[tempsize].start=templeft;
+					tempdata[tempsize].end=j+1;
+					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
+					//console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempsize=tempsize+1;
+					templeft=j+1;
+					i=seqText.length;					
+				}
+			}
+		}else if(!/[A-Z]/.test(seqText[i])&&/[A-Z]/.test(seqText[i+1])&&templeft!=i+1)
+		{
+			tempdata[tempsize]={};
+			tempdata[tempsize].start=templeft;
+			tempdata[tempsize].end=i+1;
+			tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
+			console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+			tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+			tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+			tempsize=tempsize+1;
+			templeft=i+1;
+			for(var j=templeft;j<seqText.length;j++)
+			{
+				if(/[A-Z]/.test(seqText[j])&&!/[A-Z]/.test(seqText[j+1])&&j+1!=templeft)
+				{
+					tempdata[tempsize]={};
+					tempdata[tempsize].start=templeft;
+					tempdata[tempsize].end=j+1;
+					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
+					//console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempsize=tempsize+1;
+					templeft=j+1;
+					i=j-1;
+					
+				}else if(j==seqText.length-1&&j+1!=templeft)
+				{
+					tempdata[tempsize]={};
+					tempdata[tempsize].start=templeft;
+					tempdata[tempsize].end=j+1;
+					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
+					//console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempsize=tempsize+1;
+					templeft=j+1;
+					i=seqText.length;					
+				}
+			}
+		}		
+	}
+	if(templeft===0)
+	{
+		tempdata[0]={};
+		tempdata[0].start=templeft;
+		tempdata[0].end=seqText.length+1;
+		tempdata[0].seq=seqText.substring(tempdata[0].start,tempdata[0].end);
+		//console.log(seqText.substring(tempdata[0].start,tempdata[0].end));
+		tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[0].start,tempdata[0].end));
+		tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+		tempsize=tempsize+1;
+	}
+	return tempdata;
+}
+function findNameInDataBySeq(seqIn)
+{
+	for(var i=0;i<data.length;i++)
+	{
+		var str="";
+		if(typeof(data[i].name)=="number")
+		{
+			if(i===0)
+			{
+				str=seq.substring(data[i].start,data[i].end+1);
+			}else
+			{
+				str=seq.substring(data[i-1].end,data[i].end+1);
+			}
+		}else{			
+			str=seq.substring(data[i].start,data[i].end);
+		}
+		var reg=new RegExp(seqIn);	
+		//console.log(str);	
+		if(reg.test(str))
+		{			
+			return data[i].name;
+		}
+	}
+}
+function findColorInDataBySeq(seqIn)
+{
+	for(var i=0;i<data.length;i++)
+	{
+		var str="";
+		if(typeof(data[i].name)=="number")
+		{
+			if(i===0)
+			{
+				str=seq.substring(data[i].start,data[i].end+1);
+			}else
+			{
+				str=seq.substring(data[i-1].end,data[i].end+1);
+			}
+		}else{			
+			str=seq.substring(data[i].start,data[i].end);
+		}
+		var reg=new RegExp(seqIn);	
+		if(reg.test(str))
+		{			
+			return data[i].color;
+		}
+	}
 }
 jQuery.fn.toolTip = function() { 
 this.unbind().hover( 
@@ -92,7 +259,6 @@ tip.fadeIn("slow");
 };
 var data =  [];
 var size=0;//整个序列的长度
-var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色
 var raw_data={
     "DnaComponent": {
         "description": "undefined",
@@ -154,6 +320,7 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 		tempArray[i].name=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.name;
 		tempArray[i].end=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioEnd,10);
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
+		tempArray[i].desp=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.description;
 	}		
 	tempArray=tempArray.sort(sortNumber);	
 	var real_data=[];
@@ -165,6 +332,7 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 		real_data[index].start=start;
 		real_data[index].end=tempArray[i].start-1;		
 		real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
+		real_data[index].desp=tempArray[i].desp;
 		if(real_data[index].value===0)
 			real_data[index].value=1;
 		index=index+1;
@@ -188,10 +356,10 @@ function getRawData()//to get the raw data of plasmid
 		
 }
 function initDrawChart(){	
-	if(sessionStorage._offsetAngle===undefined)
-	{
+	//if(sessionStorage._offsetAngle===undefined)
+	//{
 		sessionStorage._offsetAngle=270;
-	}
+	//}
 	getRawData();
 	data=turnRawDatatoData(raw_data);		
 	chart = new iChart.Donut2D({
@@ -207,16 +375,16 @@ function initDrawChart(){
 			shadow_color:'#b7b7b7',
 			color:'#6f6f6f'
 		},
-		offset_angle: sessionStorage._offsetAngle,
+		offset_angle: parseInt(sessionStorage._offsetAngle,10),
 		data: data,//图表的数据源 //Chart data source
 		offsetx:0,
 		shadow:false,
 		background_color:'#f4f4f4',
 		separate_angle:0,//分离角度 //Separation angle
-		/*tip:{
+		tip:{
 			enable:true,
-			showType:'fixed',
-			animation:true,
+			showType:'follow',
+			animation:false,
 			listeners:{
 				parseText:function(tip,name,value,text){
                     var str= "";
@@ -227,18 +395,20 @@ function initDrawChart(){
 						if(data[i].name==name){
 							if(typeof(data[i].name)=="number")
 							{
-								str=str+data[i].start+" to "+data[i].end;
-								if(i!==0){
+								str=str+"From:"+data[i].start+" To:"+data[i].end;								
+								/*if(i!==0){
 									str=str+"<br\/>"+seq.substring(data[i].start-1,data[i].end+1);
 								}
 								else
 								{
 									str=str+"<br\/>"+seq.substring(data[i].start,data[i].end+1);
-								}
+								}*/
+								return '';								
 							}else
 							{
-								str=str+data[i].start+" to "+data[i].end;
-								str=str+"<br\/>"+seq.substring(data[i].start,data[i].end);
+								str=str+"From:"+data[i].start+" To:"+data[i].end;
+								//str=str+"<br\/>"+seq.substring(data[i].start,data[i].end);
+								str=str+"<br\/>Description:"+data[i].desp;
 							}							
 							break;
 						}
@@ -246,7 +416,7 @@ function initDrawChart(){
 					return str;
 				}
 			}
-		},*/
+		},	
 		sub_option:{			
 			label : {
 				background_color:null,
@@ -261,6 +431,7 @@ function initDrawChart(){
 				color : '#4572a7',		
 			},
 			color_factor : 0.3
+		},
 			/*,			listeners:{
 				click:function(l,e,m){
 					if(e["event"]["button"]===0)//&&typeof(l.get('name'))!="number")
@@ -280,7 +451,7 @@ function initDrawChart(){
 
 				}
 			}*/
-		},
+		
 		showpercent:true,
 		decimalsnum:0,
 		width : 783,
@@ -305,8 +476,19 @@ function createRight(chart){
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
 			.fillText(str,x,y,false,'#6d869f', 'lr',26,false,0,'middle');
+			addDegreeScale();
 		}		
 	});
+}
+function addDegreeScale()
+{
+	//console.log(chart);
+	var centerx=parseInt(chart.getDrawingArea().width/2);
+	var centery=chart.getDrawingArea().height/2;
+	chart.target.line(centerx,centery+140,centerx,centery+140+30,3,"black",false);
+	chart.target.line(centerx+140,centery,centerx+140+30,centery,3,"black",false);
+	chart.target.line(centerx-120-30,centery,centerx-120,centery,3,"black",false);
+	chart.target.line(centerx,centery-120,centerx,centery-120-30,3,"black",false);
 }
 function createBottom(chart){
 	return new iChart.Custom({
@@ -356,8 +538,6 @@ var left=1;//the int to record seq's left position
 }*/
 function copyBtnOnClick(obj)
 {
-	/*var copyText =seq;
-	window.clipboardData.setData("Text",copyText); */
 	if(window.clipboardData) {   
               window.clipboardData.clearData();   
               window.clipboardData.setData("Text", seq);
@@ -418,7 +598,6 @@ function updateSeqPosText(){
 	document.getElementById('x2').innerText=left+20;
 	document.getElementById('x3').innerText=left+40;
 	document.getElementById('x4').innerText=left+60;
-	//console.log(document.getElementById('seqCurrentText'));
 	document.getElementById('seqCurrentText').innerHTML=seq.substring(left,left+60);
 }
 //turn the data array to another index at the first place
@@ -585,13 +764,14 @@ function canvasMouseUp(obj,e)
 	chart.push("offset_angle",offsetang);
 	chart.push("animation","false");
 	chart.resize(783,400);
-	var ang=offsetang-270;
+	var ang=270-offsetang;
 	if(ang<0)
 	{
 		ang=ang+360;
 	}
 	left=parseInt(ang/360*size);
 	updateSeqPosText();
+	show('plasmid-canvas',createTempDataForCanvas(seq.substring(left,left+60),left),60);
 }
 function saveGraph(){
 	var _canvas=document.getElementById(chart.canvasid);
@@ -627,18 +807,21 @@ $(function(){
     })();
 	initDrawChart();	
 	document.getElementById('seqCurrentText').value=seq.substring(1,61);
-	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();	
-	//show('plasmid-canvas');
+	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();		
 	//InitAjax();
 	testWebSocket();
-	$("#divBody").toolTip();
+	//$("#divBody").toolTip();
 	//setUpDrag();
 	//console.log(document.getElementById());
-	/*var canvas = document.getElementById(chart.canvasid);
-	var context = canvas.getContext("2d");
-	context.beginPath();
-    context.strokeStyle = "#000";
-	context.rect(150, 300, 500, 600);
-	context.stroke();
-	console.log(context);*/	
+	//var canvas = document.getElementById(chart.canvasid);
+//	var context = chart.target.getContext();
+//	//console.log(context);
+//	//context.beginPath();
+//    //context.strokeStyle = "#000";
+//	//context.rect(150, 300, 500, 600);
+//	//context.stroke();
+//	var img=new Image();
+//	img.src="../static/img/glass.jpg";
+//	context.drawImage(img,0,0);
+//	console.log(context);	
 });

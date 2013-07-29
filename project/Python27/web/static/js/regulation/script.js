@@ -128,8 +128,8 @@ g.Shapes.Process = graphiti.shape.basic.Circle.extend({
 });
 
 
-g.Shapes.Arrow = graphiti.shape.icon.ProteinArrow.extend({
-  NAME: "g.Shapes.Arrow",
+g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
+  NAME: "g.Shapes.Protein",
 
   init: function(width, height) {
     this._super();
@@ -137,7 +137,7 @@ g.Shapes.Arrow = graphiti.shape.icon.ProteinArrow.extend({
     if (typeof radius === "number") {
       this.setDimension(radius, radius);
     } else {
-      this.setDimension(100, 100);
+      this.setDimension(107, 94);
     }
 
     this.setColor("#339BB9");   
@@ -171,9 +171,25 @@ g.Shapes.Arrow = graphiti.shape.icon.ProteinArrow.extend({
       var figure = canvas.getFigure(canvas.collection[i]);
       if (this.getId() !== figure.getId()) {
         figure.resetChildren();
-        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLocator(figure));
+        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
+        figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
+        figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
       }
     };
+
+    $("#right-container").css({right: '0px'});
+    var hasClassIn = $("#collapseTwo").hasClass('in');
+    if(!hasClassIn) {
+      $("#collapseOne").toggleClass('in');
+      $("#collapseOne").css({height: '0'});
+      $("#collapseTwo").toggleClass('in');
+      $("#collapseTwo").css({height: "auto"});
+    }
+
+    $("#exogenous-factors-config").css({"display": "none"});
+    $("#protein-config").css({"display": "block"});
+    $("#component-config").css({"display": "none"});
+    $("#arrow-config").css({"display": "none"});
   },
 
   onDoubleClick: function() {
@@ -227,12 +243,8 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
     var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.RightLocator(source));
     var targetPort = target.createPort("hybrid", new graphiti.layout.locator.LeftLocator(target));
 
-    var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort);   // 连接两点
+    var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "Activate");   // 连接两点
     app.view.getCommandStack().execute(command);  // 添加到命令栈中
-
-    var connection = sourcePort.getConnections();
-    console.log(connection);
-    connection.get(0).setTargetDecorator(new graphiti.decoration.connection.ArrowDecorator());  // remaining a bug, wait to fix
   }
 });
 
@@ -251,7 +263,14 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
   },
 
   onClick: function() {
+    var target = this.getParent();
+    var source = this.getCanvas().getFigure(app.view.currentSelected);
 
+    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.RightLocator(source));
+    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.LeftLocator(target));
+
+    var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "Inhibit");   // 连接两点
+    app.view.getCommandStack().execute(command);  // 添加到命令栈中
   }
 });
 
@@ -270,7 +289,14 @@ g.Buttons.CoExpress = graphiti.shape.icon.CoExpress.extend({
   },
 
   onClick: function() {
+    var target = this.getParent();
+    var source = this.getCanvas().getFigure(app.view.currentSelected);
 
+    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.RightLocator(source));
+    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.LeftLocator(target));
+
+    var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "CoExpress");   // 连接两点
+    app.view.getCommandStack().execute(command);  // 添加到命令栈中
   }
 }); 
 
@@ -409,7 +435,7 @@ var catalogHandler = {
       }
     }
 
-    $("#eFactors").mCustomScrollbar({
+    $("#pFactors").mCustomScrollbar({
       autoHideScrollbar: true,
       theme: "light",
       advanced: {
@@ -442,8 +468,8 @@ var catalogHandler = {
 
     
 
-    $("#eFactors").append(outerDiv);
-    $("#eFactors").mCustomScrollbar('update');
+    $("#pFactors").append(outerDiv);
+    $("#pFactors").mCustomScrollbar('update');
 
     $("#factor-" + id + " .label").tooltip({
       animation: true,
@@ -515,7 +541,7 @@ $().ready(function() {
 
     E.use('slider', function() {
       // Slider 1
-      var slider = new E.ui.Slider('#slider-1', {
+      var slider1 = new E.ui.Slider('#slider-1', {
         min: 0,
         max: 10,
         value: 5,
@@ -523,17 +549,17 @@ $().ready(function() {
         size: '198px'
       });
 
-      var demoText = E('#slider-text-1');
-      slider.on('slide', function(e) {
-        demoText.text(this.value / 10);
+      var demoText1 = E('#slider-text-1');
+      slider1.on('slide', function(e) {
+        demoText1.text(this.value / 10);
       });
 
-      demoText.on('click', function() {
-        slider.setValue(5);
+      demoText1.on('click', function() {
+        slider1.setValue(5);
       });
 
       // Slider 2
-      var slider = new E.ui.Slider('#slider-2', {
+      var slider2 = new E.ui.Slider('#slider-2', {
         min: -1,
         max: 10,
         value: 0,
@@ -541,35 +567,35 @@ $().ready(function() {
         size: '198px'
       });
 
-      var demoText = E('#slider-text-2');
-      slider.on('slide', function(e) {
-        demoText.text(this.value);
+      var demoText2 = E('#slider-text-2');
+      slider2.on('slide', function(e) {
+        demoText2.text(this.value);
       });
 
-      demoText.on('click', function() {
-        slider.setValue(0);
+      demoText2.on('click', function() {
+        slider2.setValue(0);
       });
 
       // Slider 3
-      var slider = new E.ui.Slider('#slider-3', {
+      var slider3 = new E.ui.Slider('#slider-3', {
         min: -10,
         max: 10,
-        value: 0,
+        value: 0.5,
         axis: 'x',
         size: '198px'
       });
 
-      var demoText = E('#slider-text-3');
-      slider.on('slide', function(e) {
-        demoText.text(this.value);
+      var demoText3 = E('#slider-text-3');
+      slider3.on('slide', function(e) {
+        demoText3.text(this.value);
       });
 
-      demoText.on('click', function() {
-        slider.setValue(0);
+      demoText3.on('click', function() {
+        slider3.setValue(0.5);
       });
 
       // Slider 4
-      var slider = new E.ui.Slider('#slider-4', {
+      var slider4 = new E.ui.Slider('#slider-4', {
         min: -10,
         max: 10,
         value: 0,
@@ -577,13 +603,13 @@ $().ready(function() {
         size: '198px'
       });
 
-      var demoText = E('#slider-text-4');
-      slider.on('slide', function(e) {
-        demoText.text(this.value);
+      var demoText4 = E('#slider-text-4');
+      slider4.on('slide', function(e) {
+        demoText4.text(this.value);
       });
 
-      demoText.on('click', function() {
-        slider.setValue(0);
+      demoText4.on('click', function() {
+        slider4.setValue(0);
       });
     });
 

@@ -55,6 +55,6 @@ $(".factorNode").live("click", function(){
 	var name = thisId.substr(7, thisId.length - 1);
 
 	var adder = BiobrickAdder;
-	adder.init(name, "g.Shapes.Protein", offset.top, offset.left);
+	adder.init(name, "g.Shapes.Arrow", offset.top, offset.left);
 	adder.show();
 });

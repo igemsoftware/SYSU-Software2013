@@ -400,6 +400,10 @@ dTree.prototype.s = function(id) {
 			$("#collapseTwo").toggleClass('in');
 			$("#collapseTwo").css({height: "auto"});
 		}	
+		$("#exogenous-factors-config").css({"display": "none"});
+        $("#protein-config").css({"display": "none"});
+        $("#component-config").css({"display": "block"});
+        $("#arrow-config").css({"display": "none"});
 
 		ws.send(JSON.stringify({
 			'request' : 'getXmlJson',

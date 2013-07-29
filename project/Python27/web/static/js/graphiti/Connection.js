@@ -30,7 +30,7 @@ graphiti.Connection = graphiti.shape.basic.PolyLine.extend({
     NAME : "graphiti.Connection",
 
 //    DEFAULT_ROUTER: new graphiti.layout.connection.DirectRouter(),
-    DEFAULT_ROUTER: new graphiti.layout.connection.ManhattanConnectionRouter(),
+    DEFAULT_ROUTER: new graphiti.layout.connection.DirectRouter(),
         
     /**
      * @constructor
@@ -611,7 +611,24 @@ graphiti.Connection = graphiti.shape.basic.PolyLine.extend({
         this._super(memento);
         // no extra param to read.
         // Reason: done by the Layoute/Router
-    }
-    
+    },
+
+
+    onClick: function() {
+        // wait to be implemented
+        $("#right-container").css({right: '0px'});
+        var hasClassIn = $("#collapseTwo").hasClass('in');
+        if(!hasClassIn) {
+          $("#collapseOne").toggleClass('in');
+          $("#collapseOne").css({height: '0'});
+          $("#collapseTwo").toggleClass('in');
+          $("#collapseTwo").css({height: "auto"});
+        }
+
+        $("#exogenous-factors-config").css({"display": "none"});
+        $("#protein-config").css({"display": "none"});
+        $("#component-config").css({"display": "none"});
+        $("#arrow-config").css({"display": "block"});
+    }   
 
 });
