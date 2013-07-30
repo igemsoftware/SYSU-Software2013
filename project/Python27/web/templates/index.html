@@ -154,7 +154,10 @@
 
               <div id="protein-config" class="well well-small">
                 <span class="label label-info">Protein Configuration</span>
-                <div class="slider-div">
+                <form id="protein-form">
+                  <span class="label">Expression Value</span><input type="text" name="expressionVal"/>
+                </form>
+                <!-- <div class="slider-div">
                   <p>Expression Value</p>
                   <div class="eui_slider" id="slider-1">
                       <div class="sd_complete"></div>
@@ -170,7 +173,7 @@
                       <div class="sd_thumb"></div>
                   </div>
                   <p id="slider-text-2">0</p>
-                </div>
+                </div> -->
               </div>
 
 
@@ -196,23 +199,27 @@
 
               <div id="arrow-config" class="well well-small">
                 <span class="label label-info">Arrow Configuration</span>
-                <div class="slider-div">
-                  <p>Regulation Strength</p>
-                  <div class="eui_slider" id="slider-3">
-                      <div class="sd_complete"></div>
-                      <div class="sd_thumb"></div>
+                 <form id="arrow-form">
+                  <span class="label">Regulation Strength</span><input type="text" name="regStrength"/>
+                   <!-- <div class="slider-div">
+                    <p>Regulation Strength</p>
+                    <div class="eui_slider" id="slider-3">
+                        <div class="sd_complete"></div>
+                        <div class="sd_thumb"></div>
+                    </div>
+                    <p id="slider-text-3">0.5</p>
                   </div>
-                  <p id="slider-text-3">0.5</p>
-                </div>
 
-                <div class="slider-div">
-                  <p>Floating Value</p>
-                  <div class="eui_slider" id="slider-4">
-                      <div class="sd_complete"></div>
-                      <div class="sd_thumb"></div>
-                  </div>
-                  <p id="slider-text-4">0</p>
-                </div>
+                  <div class="slider-div">
+                    <p>Floating Value</p>
+                    <div class="eui_slider" id="slider-4">
+                        <div class="sd_complete"></div>
+                        <div class="sd_thumb"></div>
+                    </div>
+                    <p id="slider-text-4">0</p>
+                  </div> -->
+                </form>
+               
               </div>
             </div> <!-- accordion-inner end -->
           </div>  <!-- accordion-body end -->
