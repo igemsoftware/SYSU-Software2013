@@ -29,7 +29,7 @@ body {
 #left-container {
   position: absolute;
   top: 0;
-  left: -261px;
+  left: 0px;
   width: 250px;
   height: 621px;
   padding: 10px;  
@@ -43,11 +43,11 @@ body {
 
 #left-container .adder {
   position: absolute;
-  visibility: hidden;
   width: 30px;
   height: 30px;
   z-index: 1055;
   cursor: pointer;
+  background-image: url(../img/adder.png);
 }
 
 #left-container .mCSB_container {
@@ -64,12 +64,18 @@ body {
 }
 
 #left-container #pFactors {
-  height: 530px;
-  overflow: auto;
+  /*height: 530px;
+  overflow: auto;*/
 }
 
 #left-container #pFactors .tooltip-inner {
   max-width: 96px;
+}
+
+#left-container .factorLevel {
+  display: none;
+  height: 530px;
+  overflow: auto;
 }
 
 #left-container .factorNode {

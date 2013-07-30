@@ -430,18 +430,18 @@ var catalogHandler = {
         if(j >= 3) {
           this.insertCatalogItem(parentName, levels[j], d, path);
 
-          this.renderNode(levels[j]);          
+          // this.renderNode(levels[j]);          
         } 
       }
     }
 
-    $("#pFactors").mCustomScrollbar({
-      autoHideScrollbar: true,
-      theme: "light",
-      advanced: {
-        autoExpandVerticalScroll: true
-      }
-    });
+    // $("#pFactors").mCustomScrollbar({
+    //   autoHideScrollbar: true,
+    //   theme: "light",
+    //   advanced: {
+    //     autoExpandVerticalScroll: true
+    //   }
+    // });
 
     this.showTree(d); // 显示目录树
     d.openAll(); // 默认打开所有目录

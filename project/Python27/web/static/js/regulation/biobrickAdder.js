@@ -1,12 +1,14 @@
-var BiobrickAdder = {
-	name: null,	
+function BiobrickAdder() {
+	this.name = null;	
 
-	type: null,
+	this.type = null;
 
-	offsetTop: null,
+	this.offsetTop = null;
 
-	offsetLeft: null,
+	this.offsetLeft = null;
+};
 
+BiobrickAdder.prototype = {
 	init: function(name, type, offsetTop, offsetLeft) {
 		this.name = name;
 		this.type = type;
@@ -15,23 +17,33 @@ var BiobrickAdder = {
 	},
 
 	show: function() {
-		var actualTop = (parseInt(this.offsetTop) - 15) + "px";
-		var actualLeft = (parseInt(this.offsetLeft) + 29) + "px";
+		this.hideAll();
+
+		var actualTop = (parseInt(this.offsetTop) - 105) + "px";
+		var actualLeft = (parseInt(this.offsetLeft)) + "px";
 		var that = this;
+		var adder = "<div class=\"adder\" id=\"adder-" + this.name + "\"></div>";
 
-		$(".adder").data("shape", this.type);
+		if ($("#factor-"+this.name + "> .adder").length == 0) {
+			$("#factor-"+this.name).append(adder);
+		}
 
-		$(".adder").css({
-			"visibility": "visible",
+		$("#adder-"+this.name).data("shape", this.type);
+
+		$("#adder-"+this.name).css({
 			"top": actualTop,
 			"left": actualLeft
 		});
-
-		$(".adder").click(function() {
+	
+		$("#adder-"+this.name).click(function() {
 			that.paint();
 
 			$(this).unbind("click");	// 取消click事件绑定，避免多次绑定
 		});
+	},
+
+	hideAll: function() {
+		$(".adder").remove();
 	},
 
 	paint: function() {
@@ -49,12 +61,12 @@ var BiobrickAdder = {
 
 
 
-$(".factorNode").live("click", function(){
-	var offset = $(this).offset();
-	var thisId = $(this).attr("id");
-	var name = thisId.substr(7, thisId.length - 1);
+// $(".factorNode").live("click", function(){
+// 	var offset = $(this).offset();
+// 	var thisId = $(this).attr("id");
+// 	var name = thisId.substr(7, thisId.length - 1);
 
-	var adder = BiobrickAdder;
-	adder.init(name, "g.Shapes.Protein", offset.top, offset.left);
-	adder.show();
-});
+// 	var adder = BiobrickAdder;
+// 	adder.init(name, "g.Shapes.Protein", offset.top, offset.left);
+// 	adder.show();
+// });

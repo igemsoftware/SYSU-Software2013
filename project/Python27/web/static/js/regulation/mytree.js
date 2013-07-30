@@ -51,7 +51,7 @@ Tree.prototype = {
 			icon = "file.png";
 		} else {
 			type = "folder";
-			icon = "folder.png";
+			icon = "filefolder.png";
 		}
 
 		var name = name.split(".");
@@ -69,7 +69,7 @@ Tree.prototype = {
 
 	renderNode: function(node) {
 		var shortname = node.name.length > 12 ? node.name.substr(0, 9) + ".." : node.name,
-			img = "<img src=\"" + node.icon + "\">",
+			img = "<img src=\"../static/img/" + node.icon + "\">",
 			iconDiv = "<div class=\"factorIcon\">" + img + "</div>",
 			nameDiv = "<div class=\"factorName\"><span class=\"label label-info\">" + shortname + "</span></div>",
 			outerDiv = "<div class=\"factorNode\" id=\"factor-" + node.name + "\">" + iconDiv + nameDiv + "</div>";
@@ -77,12 +77,23 @@ Tree.prototype = {
 		$("#level-" + node.level + "-" + node.parent).append(outerDiv);
 		$("#factor-" + node.name).click(function() {
 			if (node.type === "folder") {
-				$(".factorLevel").each(function(){
-					$(this).css("display", "none");					
+				$(".factorLevel").each(function() {
+					$(this).css("display", "none");
 				});
-				$("#level-" + (node.level+1) + "-" + node.name).css("display", "block");
+				$("#level-" + (node.level + 1) + "-" + node.name).css("display", "block");
+				$("#level-" + (node.level + 1) + "-" + node.name).mCustomScrollbar({
+					autoHideScrollbar: true,
+					theme: "light",
+					advanced: {
+						autoExpandVerticalScroll: true
+					}
+				});
 			} else {
-				alert("file");
+				// alert("file");
+				var adder = new BiobrickAdder();
+				var offset = $(this).offset();			
+				adder.init(node.name, "g.Shapes.Protein", offset.top, offset.left);
+				adder.show();
 			}
 		});
 	},
@@ -108,5 +119,17 @@ t.addNode("6.xml", 2, "folder-2");
 t.addNode("7.xml", 2, "folder-2");
 t.addNode("8.xml", 2, "folder-2");
 t.addNode("9.xml", 2, "folder-2");
-t.addNode("9.xml", 2, "folder-2");
+t.addNode("19.xml", 2, "folder-2");
+t.addNode("15.xml", 2, "folder-2");
+t.addNode("16.xml", 2, "folder-2");
+t.addNode("17.xml", 2, "folder-2");
+t.addNode("18.xml", 2, "folder-2");
+t.addNode("29.xml", 2, "folder-2");
+t.addNode("39.xml", 2, "folder-2");
+t.addNode("35.xml", 2, "folder-2");
+t.addNode("36.xml", 2, "folder-2");
+t.addNode("37.xml", 2, "folder-2");
+t.addNode("38.xml", 2, "folder-2");
+t.addNode("49.xml", 2, "folder-2");
+t.addNode("59.xml", 2, "folder-2");
 t.renderAll();
