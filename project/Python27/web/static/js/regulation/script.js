@@ -701,7 +701,8 @@ $().ready(function() {
             var path = message.result.path.split("\\");
             catalogHandler.addExtraJSONdata(message.result, path[path.length - 1]);
           } else {
-            catalogHandler.handleJSONdata(message.result.files);
+            // catalogHandler.handleJSONdata(message.result.files);
+            biobrickCatalog.parseJson(message.result.files);
           }
         }
       } else if (message.request == "getXmlJson") { // 获取单个元件的配置数据
