@@ -5,7 +5,7 @@ import user
 import mlog
 import xmlParse
 import os
-#import make_graph
+import make_graph
 
 logging = mlog.logging
 

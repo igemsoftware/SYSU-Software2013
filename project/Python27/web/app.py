@@ -7,6 +7,7 @@ import json
 from websocket import handle_websocket
 from gevent.pywsgi import WSGIServer
 from geventwebsocket.handler import WebSocketHandler
+import user
 import xmlParse
 
 sql = db.SqliteDatabase()
@@ -25,11 +26,16 @@ def demo():
 def index():
 	return render_template('index.html')
 
-@app.route("/profile/")
-@app.route("/profile/<username>")
-def profile(username=None):
-  userExist = sql.isRecordExist("user_list", {"name": username})
-  return render_template('profile.html', username = username, flag = userExist)
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+  if request.method == 'GET':
+    username = user.getLoginedUserName(sql)
+    userInfo = user.getUserInfo(sql)
+    return render_template('profile.html', username = username,
+        userInfo = userInfo,
+        flag = (username != "NULL"))
+  else:
+    pass
 
 @app.route("/getdir/<pathname>")
 def getDir(pathname):
