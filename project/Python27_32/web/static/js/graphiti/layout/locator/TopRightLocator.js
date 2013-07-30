@@ -19,15 +19,15 @@ MA 02111-1307 USA
 
 
 /**
- * @class graphiti.layout.locator.TopLocator
+ * @class graphiti.layout.locator.TopRightLocator
  * 
- * A TopLocator  is used to place figures at the top/center of a parent shape.
+ * A TopRightLocator  is used to place figures at the top/right of a parent shape.
  *
- * @author Andreas Herz
+ * @author Rathinho
  * @extend graphiti.layout.locator.Locator
  */
-graphiti.layout.locator.TopLocator= graphiti.layout.locator.Locator.extend({
-    NAME : "graphiti.layout.locator.TopLocator",
+graphiti.layout.locator.TopRightLocator= graphiti.layout.locator.Locator.extend({
+    NAME : "graphiti.layout.locator.TopRightLocator",
     
     /**
      * @constructor
@@ -55,6 +55,6 @@ graphiti.layout.locator.TopLocator= graphiti.layout.locator.Locator.extend({
        var boundingBox = parent.getBoundingBox();
     
        var targetBoundingBox = target.getBoundingBox();
-       target.setPosition(boundingBox.w/2-(targetBoundingBox.w/2),-(targetBoundingBox.h+2));
+       target.setPosition(boundingBox.w/2+2*(targetBoundingBox.w/2),-(targetBoundingBox.h+2));
     }
 });
