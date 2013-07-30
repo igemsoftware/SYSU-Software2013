@@ -29,7 +29,7 @@ body {
 #left-container {
   position: absolute;
   top: 0;
-  left: 0px;
+  left: -261px;
   width: 250px;
   height: 621px;
   padding: 10px;  
@@ -256,6 +256,15 @@ body {
   margin-bottom: 10px;
 }
 
+#right-container #protein-form {
+  margin-top: 20px;
+}
+
+#right-container #protein-form input {
+  width: 187px;
+  margin-bottom: 10px;
+}
+
 #right-container #component-config {
   display: none;
   width: 228px;
@@ -282,6 +291,15 @@ body {
 #right-container #arrow-config {
   display: none;
   width: 198px;
+  margin-bottom: 10px;
+}
+
+#right-container #arrow-form {
+  margin-top: 20px;
+}
+
+#right-container #arrow-form input {
+  width: 187px;
   margin-bottom: 10px;
 }
 
