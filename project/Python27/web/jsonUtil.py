@@ -11,6 +11,8 @@ import json
 import csv
 import database
 import sqlite3 as sqlite
+import os
+import random
 "turn a selection of the database 's result to the encoded json"
 def turnSelectionResultToJson(description=[],result=[]):
     dict= {}
@@ -162,10 +164,57 @@ def convertpromoterCsvToDatabase():
 	cu.execute("select * from promoter")
 	print cu.fetchall()
 
+def createRandomDataInRBS():
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\RBS_test.csv', 'wb')
+	writer = csv.writer(csvfile)
+	writer.writerow(['Name', 'Number', 'RiPS'])
+	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Ribosome Binding Sites\Constitutive prokaryotic RBS\Anderson RBS library'):
+		writer.writerow(['Anderson RBS Family',os.path.splitext(filename)[0],round(random.random(),4)])
+	csvfile.close()
+
+def createRandomDataInTerminators():
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\terminator_test.csv', 'wb')
+	writer = csv.writer(csvfile)
+	writer.writerow(['Name', 'Number', 'Efficiency'])
+	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Terminators'):
+		writer.writerow(['Tet',os.path.splitext(filename)[0],round(random.random(),4)])
+	csvfile.close()
+
+def createRandomDataInplasmid_backbone():
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\plasmid_backbone_test.csv', 'wb')
+	writer = csv.writer(csvfile)
+	writer.writerow(['Name', 'Number', 'rho'])
+	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Plasmid backbones\Assembly'):
+		writer.writerow(['pTAK10'+os.path.splitext(filename)[0][len(os.path.splitext(filename)[0])-1],os.path.splitext(filename)[0],round(random.randint(1, 100),4)])
+	csvfile.close()
+
+def createRandomDataInrepressor():
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\repressor_test.csv', 'wb')
+	writer = csv.writer(csvfile)
+	writer.writerow(['Name', 'Number', 'Nd','Kd','Kx'])
+	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators'):
+		data=['LacI',os.path.splitext(filename)[0],random.randint(0,100000),random.randint(100,10000),random.randint(100,10000)]
+		writer.writerow(data)
+	csvfile.close()
+
+def createRandomDataInpromoter():
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\promoter_test.csv', 'wb')
+	writer = csv.writer(csvfile)
+	writer.writerow(['Name', 'Number', 'MaxProduction','LeakageRateEpsilon','Kd','Regulated','Repressor','Source'])
+	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Promoters\Cell signalling'):
+		data=['LuxR',os.path.splitext(filename)[0],round(round(random.random(),4),4),round(round(random.random(),4),4),random.randint(100,10000),1,'LuxR','Paper']
+		writer.writerow(data)	
+	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Promoters\Constitutive promoters'):
+		data=['TetO',os.path.splitext(filename)[0],round(round(random.random(),4),4),round(round(random.random(),4),4),random.randint(100,10000),0,'null','Paper']
+		writer.writerow(data)
+	csvfile.close()
+
 if __name__=="__main__":
 	#convertpromoterCsvToDatabase()
 	#convertRBSCsvToDatabase()
 	#convertrepressorCsvToDatabase()
 	#convertterminatorCsvToDatabase()
-	convertplasmid_backboneCsvToDatabase()
-			
+	#convertplasmid_backboneCsvToDatabase()
+	#createRandomDataInRBS()
+	#createRandomDataInplasmid_backbone()
+	createRandomDataInpromoter()
