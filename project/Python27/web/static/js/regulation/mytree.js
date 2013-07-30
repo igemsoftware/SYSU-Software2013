@@ -25,15 +25,17 @@ function Node(id, name, level, type, parent, children, icon, path) {
 
 	this.path = path;
 
+	this.isInit = false;
+
 };
 
-function Tree(id) {
+function Tree(id, rootName) {
 	// Tree body...
 	this.id = id;
 
 	this.nodes = [];
 
-	this.root = new Node(-1, "root", "folder");
+	this.root = new Node(-1, rootName, 0, "folder");
 
 };
 
@@ -48,7 +50,7 @@ Tree.prototype = {
 
 		if (name.match(/\.xml/)) {
 			type = "file";
-			icon = "file.png";
+			icon = "protein.png";
 		} else {
 			type = "folder";
 			icon = "filefolder.png";
@@ -73,63 +75,135 @@ Tree.prototype = {
 			iconDiv = "<div class=\"factorIcon\">" + img + "</div>",
 			nameDiv = "<div class=\"factorName\"><span class=\"label label-info\">" + shortname + "</span></div>",
 			outerDiv = "<div class=\"factorNode\" id=\"factor-" + node.name + "\">" + iconDiv + nameDiv + "</div>";
+		
+		if ($("#factor-" + node.name).length == 0) {
+			$("#level-" + node.level + "-" + node.parent).append(outerDiv);
 
-		$("#level-" + node.level + "-" + node.parent).append(outerDiv);
-		$("#factor-" + node.name).click(function() {
-			if (node.type === "folder") {
-				$(".factorLevel").each(function() {
-					$(this).css("display", "none");
-				});
-				$("#level-" + (node.level + 1) + "-" + node.name).css("display", "block");
-				$("#level-" + (node.level + 1) + "-" + node.name).mCustomScrollbar({
-					autoHideScrollbar: true,
-					theme: "light",
-					advanced: {
-						autoExpandVerticalScroll: true
+			// add tooltip
+			$("#factor-" + node.name + " .label").tooltip({
+		      animation: true,
+		      title : node.name,
+		      placement : 'top',
+		    });
+
+
+			// bind click event
+			$("#factor-" + node.name).click(function() {
+				// if type is "folder"
+				if (node.type === "folder") {
+					// display when subtree exists
+					if ($("#level-" + (node.level + 1) + "-" + node.name).length > 0) {
+						$(".factorLevel").each(function() {
+							$(this).css("display", "none");
+						});
+						$("#level-" + (node.level + 1) + "-" + node.name).css("display", "block");
+						$("#level-" + (node.level + 1) + "-" + node.name).mCustomScrollbar("update");
+
+					} else {	// else load subtree and add it to tree						
+						// alert("not found");
+						console.log(node.path);
+						ws.send(JSON.stringify({
+							'request': 'getDirList',
+					      	'dir': node.path
+						}));
 					}
-				});
-			} else {
-				// alert("file");
-				var adder = new BiobrickAdder();
-				var offset = $(this).offset();			
-				adder.init(node.name, "g.Shapes.Protein", offset.top, offset.left);
-				adder.show();
-			}
-		});
+				} else {	// if type is "file"					
+					var adder = new BiobrickAdder();
+					var offset = $(this).offset();			
+					adder.init(node.name, "g.Shapes.Protein", offset.top, offset.left);
+					adder.show();
+
+					$("#right-container").css({right: '0px'});
+					var hasClassIn = $("#collapseTwo").hasClass('in');
+					if(!hasClassIn) {
+						$("#collapseOne").toggleClass('in');
+						$("#collapseOne").css({height: '0'});
+						$("#collapseTwo").toggleClass('in');
+						$("#collapseTwo").css({height: "auto"});
+					}	
+					$("#exogenous-factors-config").css({"display": "none"});
+			        $("#protein-config").css({"display": "none"});
+			        $("#component-config").css({"display": "block"});
+			        $("#arrow-config").css({"display": "none"});
+
+					ws.send(JSON.stringify({
+						'request' : 'getXmlJson',
+						'path' : node.path
+					}));
+				}
+			});
+		}
 	},
 
 	renderAll: function() {
 		for (var i = 0; i < this.nodes.length; i++) {
 			this.renderNode(this.nodes[i]);
+		};		
+	},
+
+	parseSubTree: function(data) {
+		var rootPathSeg = data.path.split("\\");
+		var rootParentName = rootPathSeg[rootPathSeg.length - 1].split(" ").join("-");
+		var rootLevel = (rootPathSeg.length - 3) + 1;
+		var levelDiv = "<div class=\"factorLevel\" id=\"level-" + rootLevel + "-" + rootParentName + "\"><button class=\"btn btn-primary tree-return\" id=\"back-" + rootParentName + "\">Back</button></div>"
+		$("#pFactors").append(levelDiv);
+		$(".factorLevel").each(function() {
+			$(this).css("display", "none");
+		});
+		$("#level-" + rootLevel + "-" + rootParentName).css("display", "block");
+		
+
+		var childNodes = data.files;
+		for (var i = 0; i < childNodes.length; i++) {
+			var pathSeg = childNodes[i].split("\\");
+			var name = pathSeg[pathSeg.length - 1].split(" ").join("-");
+			var level = pathSeg.length - 3;
+			var parentName = pathSeg[pathSeg.length - 2].split(" ").join("-");
+
+			this.addNode(name, level, parentName, "", childNodes[i]);
 		};
+
+		this.renderAll();
+
+		var rootParentTreeName = rootPathSeg[rootPathSeg.length - 2].split(" ").join("-");
+		console.log(rootParentTreeName);
+		$("#back-" + rootParentName).click(function(){
+			$("#level-" + rootLevel + "-" + rootParentName).css("display", "none");
+			$("#level-" + (rootLevel - 1) + "-" + rootParentTreeName).css("display", "block");
+		});
+
+
+		$("#level-" + rootLevel + "-" + rootParentName).mCustomScrollbar({
+			autoHideScrollbar: true,
+			theme: "light",
+			advanced: {
+				autoExpandVerticalScroll: true
+			}
+		});
+	},
+
+	parseJson: function(data) {
+		this.isInit = true;
+		var rootPathSeg = data[0].split("\\");
+		var rootLevel = rootPathSeg.length - 3;
+		var rootParentName = rootPathSeg[rootPathSeg.length - 2].split(" ").join("-");
+		var levelDiv = "<div class=\"factorLevel\" id=\"level-" + rootLevel + "-" + rootParentName + "\"></div>"
+		$("#pFactors").append(levelDiv);
+		$("#level-" + rootLevel + "-" + rootParentName).css("display", "block");
+
+		for (var i = 0; i < data.length; i++) {
+			var pathSeg = data[i].split("\\");
+			var name = pathSeg[pathSeg.length - 1].split(" ").join("-");
+			var level = pathSeg.length - 3;
+			var parentName = pathSeg[pathSeg.length - 2].split(" ").join("-");
+
+			this.addNode(name, level, parentName, "", data[i]);
+		};
+
+		this.renderAll();
 	}
 };
 
 
 // Test script
-var t = new Tree("mt");
-t.addNode("folder-1", 1, "root");
-t.addNode("folder-2", 1, "root");
-t.addNode("1.xml", 2, "folder-1");
-t.addNode("2.xml", 2, "folder-1");
-t.addNode("3.xml", 2, "folder-1");
-t.addNode("4.xml", 2, "folder-1");
-t.addNode("5.xml", 2, "folder-2");
-t.addNode("6.xml", 2, "folder-2");
-t.addNode("7.xml", 2, "folder-2");
-t.addNode("8.xml", 2, "folder-2");
-t.addNode("9.xml", 2, "folder-2");
-t.addNode("19.xml", 2, "folder-2");
-t.addNode("15.xml", 2, "folder-2");
-t.addNode("16.xml", 2, "folder-2");
-t.addNode("17.xml", 2, "folder-2");
-t.addNode("18.xml", 2, "folder-2");
-t.addNode("29.xml", 2, "folder-2");
-t.addNode("39.xml", 2, "folder-2");
-t.addNode("35.xml", 2, "folder-2");
-t.addNode("36.xml", 2, "folder-2");
-t.addNode("37.xml", 2, "folder-2");
-t.addNode("38.xml", 2, "folder-2");
-t.addNode("49.xml", 2, "folder-2");
-t.addNode("59.xml", 2, "folder-2");
-t.renderAll();
+var biobrickCatalog = new Tree("mt");

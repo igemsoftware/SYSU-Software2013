@@ -18,9 +18,8 @@ BiobrickAdder.prototype = {
 
 	show: function() {
 		this.hideAll();
-
 		var actualTop = (parseInt(this.offsetTop) - 105) + "px";
-		var actualLeft = (parseInt(this.offsetLeft)) + "px";
+		var actualLeft = (parseInt(this.offsetLeft) + 5) + "px";
 		var that = this;
 		var adder = "<div class=\"adder\" id=\"adder-" + this.name + "\"></div>";
 

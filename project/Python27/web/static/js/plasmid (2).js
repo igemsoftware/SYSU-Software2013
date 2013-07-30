@@ -485,17 +485,17 @@ function addDegreeScale()
 	//console.log(chart);
 	var centerx=parseInt(chart.getDrawingArea().width/2);
 	var centery=chart.getDrawingArea().height/2;
-	chart.target.line(centerx,centery+140,centerx,centery+140+30,3,"black",false);
+	chart.target.line(centerx+13,centery+140,centerx+13,centery+140+30,3,"black",false);
 	chart.target.line(centerx+140,centery,centerx+140+30,centery,3,"black",false);
 	chart.target.line(centerx-120-30,centery,centerx-120,centery,3,"black",false);
-	chart.target.line(centerx,centery-120,centerx,centery-120-30,3,"black",false);
+	chart.target.line(centerx+13,centery-120,centerx+13,centery-120-30,3,"black",false);
 }
 function createBottom(chart){
 	return new iChart.Custom({
 		drawFn:function(){	
 			var radius=140;
 			var str=parseInt(size/2,10)+"bp";
-			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-20;
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2;
 			var y=  chart.getDrawingArea().height/2+radius;	
 			chart.target.textAlign('left')
 			.textBaseline('top')
@@ -509,7 +509,7 @@ function createLeft(chart){
 		drawFn:function(){	
 			var radius=140;
 			var str=parseInt(size*3/4,10)+"bp";
-			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-radius-35;
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-radius-40;
 			var y=  chart.getDrawingArea().height/2;
 			chart.target.textAlign('left')
 			.textBaseline('top')
@@ -522,7 +522,7 @@ function createTop(chart){
 	return new iChart.Custom({
 		drawFn:function(){	
 			var radius=140;			
-			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2-15;
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2;
 			var y=  chart.getDrawingArea().height/2-radius;
 			chart.target.textAlign('left')
 			.textBaseline('top')
