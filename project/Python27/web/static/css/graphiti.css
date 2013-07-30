@@ -78,6 +78,10 @@ body {
   overflow: auto;
 }
 
+#left-container .factorLevel .tree-return {
+  display: block;
+}
+
 #left-container .factorNode {
   float: left;
   width: 90px;

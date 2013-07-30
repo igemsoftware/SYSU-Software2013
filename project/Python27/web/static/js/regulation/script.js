@@ -697,9 +697,10 @@ $().ready(function() {
         if (message.result.files == 'true') {
 
         } else {
-          if (catalogHandler.istreeInit === true) {
+          if (biobrickCatalog.isInit) {
             var path = message.result.path.split("\\");
-            catalogHandler.addExtraJSONdata(message.result, path[path.length - 1]);
+            // catalogHandler.addExtraJSONdata(message.result, path[path.length - 1]);
+            biobrickCatalog.parseSubTree(message.result);
           } else {
             // catalogHandler.handleJSONdata(message.result.files);
             biobrickCatalog.parseJson(message.result.files);
@@ -745,16 +746,16 @@ $().ready(function() {
           'value': part.best_quality
         });
 
-        var twinsHtml = "";
-        if (part.twins) {
-          for (var i = 0; i < part.twins.twin.length; i++) {
-            var li = "<li>" + part.twins.twin[i] + "</li>"
-            twinsHtml += li;
-          }
-        }
-        $("#twins").html(twinsHtml);
+    //     var twinsHtml = "";
+    //     if (part.twins) {
+    //       for (var i = 0; i < part.twins.twin.length; i++) {
+    //         var li = "<li>" + part.twins.twin[i] + "</li>"
+    //         twinsHtml += li;
+    //       }
+    //     }
+    //     $("#twins").html(twinsHtml);
 
-				game.addComponent(part);
+				// game.addComponent(part);
 
       } else if (message.request == "getLoginedUserName") { // 获取用户名
         $("#user-view-left > p").text(message.result);

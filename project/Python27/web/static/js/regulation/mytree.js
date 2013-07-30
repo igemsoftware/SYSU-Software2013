@@ -50,7 +50,7 @@ Tree.prototype = {
 
 		if (name.match(/\.xml/)) {
 			type = "file";
-			icon = "file.png";
+			icon = "protein.png";
 		} else {
 			type = "folder";
 			icon = "filefolder.png";
@@ -70,13 +70,13 @@ Tree.prototype = {
 	},
 
 	renderNode: function(node) {
-		if ($("#level-" + node.level + "-" + node.parent).length > 0) {
-			var shortname = node.name.length > 12 ? node.name.substr(0, 9) + ".." : node.name,
-				img = "<img src=\"../static/img/" + node.icon + "\">",
-				iconDiv = "<div class=\"factorIcon\">" + img + "</div>",
-				nameDiv = "<div class=\"factorName\"><span class=\"label label-info\">" + shortname + "</span></div>",
-				outerDiv = "<div class=\"factorNode\" id=\"factor-" + node.name + "\">" + iconDiv + nameDiv + "</div>";
-	
+		var shortname = node.name.length > 12 ? node.name.substr(0, 9) + ".." : node.name,
+			img = "<img src=\"../static/img/" + node.icon + "\">",
+			iconDiv = "<div class=\"factorIcon\">" + img + "</div>",
+			nameDiv = "<div class=\"factorName\"><span class=\"label label-info\">" + shortname + "</span></div>",
+			outerDiv = "<div class=\"factorNode\" id=\"factor-" + node.name + "\">" + iconDiv + nameDiv + "</div>";
+		
+		if ($("#factor-" + node.name).length == 0) {
 			$("#level-" + node.level + "-" + node.parent).append(outerDiv);
 
 			// add tooltip
@@ -97,25 +97,39 @@ Tree.prototype = {
 							$(this).css("display", "none");
 						});
 						$("#level-" + (node.level + 1) + "-" + node.name).css("display", "block");
-						$("#level-" + (node.level + 1) + "-" + node.name).mCustomScrollbar({
-							autoHideScrollbar: true,
-							theme: "light",
-							advanced: {
-								autoExpandVerticalScroll: true
-							}
-						});
+						$("#level-" + (node.level + 1) + "-" + node.name).mCustomScrollbar("update");
 
 					} else {	// else load subtree and add it to tree						
-						alert("not found");
-
-						
-
+						// alert("not found");
+						console.log(node.path);
+						ws.send(JSON.stringify({
+							'request': 'getDirList',
+					      	'dir': node.path
+						}));
 					}
 				} else {	// if type is "file"					
 					var adder = new BiobrickAdder();
 					var offset = $(this).offset();			
 					adder.init(node.name, "g.Shapes.Protein", offset.top, offset.left);
 					adder.show();
+
+					$("#right-container").css({right: '0px'});
+					var hasClassIn = $("#collapseTwo").hasClass('in');
+					if(!hasClassIn) {
+						$("#collapseOne").toggleClass('in');
+						$("#collapseOne").css({height: '0'});
+						$("#collapseTwo").toggleClass('in');
+						$("#collapseTwo").css({height: "auto"});
+					}	
+					$("#exogenous-factors-config").css({"display": "none"});
+			        $("#protein-config").css({"display": "none"});
+			        $("#component-config").css({"display": "block"});
+			        $("#arrow-config").css({"display": "none"});
+
+					ws.send(JSON.stringify({
+						'request' : 'getXmlJson',
+						'path' : node.path
+					}));
 				}
 			});
 		}
@@ -128,7 +142,44 @@ Tree.prototype = {
 	},
 
 	parseSubTree: function(data) {
+		var rootPathSeg = data.path.split("\\");
+		var rootParentName = rootPathSeg[rootPathSeg.length - 1].split(" ").join("-");
+		var rootLevel = (rootPathSeg.length - 3) + 1;
+		var levelDiv = "<div class=\"factorLevel\" id=\"level-" + rootLevel + "-" + rootParentName + "\"><button class=\"btn btn-primary tree-return\" id=\"back-" + rootParentName + "\">Back</button></div>"
+		$("#pFactors").append(levelDiv);
+		$(".factorLevel").each(function() {
+			$(this).css("display", "none");
+		});
+		$("#level-" + rootLevel + "-" + rootParentName).css("display", "block");
+		
 
+		var childNodes = data.files;
+		for (var i = 0; i < childNodes.length; i++) {
+			var pathSeg = childNodes[i].split("\\");
+			var name = pathSeg[pathSeg.length - 1].split(" ").join("-");
+			var level = pathSeg.length - 3;
+			var parentName = pathSeg[pathSeg.length - 2].split(" ").join("-");
+
+			this.addNode(name, level, parentName, "", childNodes[i]);
+		};
+
+		this.renderAll();
+
+		var rootParentTreeName = rootPathSeg[rootPathSeg.length - 2].split(" ").join("-");
+		console.log(rootParentTreeName);
+		$("#back-" + rootParentName).click(function(){
+			$("#level-" + rootLevel + "-" + rootParentName).css("display", "none");
+			$("#level-" + (rootLevel - 1) + "-" + rootParentTreeName).css("display", "block");
+		});
+
+
+		$("#level-" + rootLevel + "-" + rootParentName).mCustomScrollbar({
+			autoHideScrollbar: true,
+			theme: "light",
+			advanced: {
+				autoExpandVerticalScroll: true
+			}
+		});
 	},
 
 	parseJson: function(data) {
