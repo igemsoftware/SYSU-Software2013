@@ -9,36 +9,22 @@
 
   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="../static/css/dtree.css">  
-  <link rel="stylesheet" href="../static/css/graphiti.css">
   <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" href="../static/css/reset.css">
   <link rel="stylesheet" href="../static/css/slider_style.css">
+  <link rel="stylesheet" href="../static/css/dtree.css">  
+  <link rel="stylesheet" href="../static/css/graphiti.css">    
 </head>
 
 <body>
-  <script>
-  function mOver(obj) {
-    obj.style.background = "gray"
-    obj.style.display = "block";
-  }
-
-  function mOut(obj) {
-    obj.style.background = "#FFF";
-    obj.style.display = "block";
-  }
-  </script>
-
-
+  <!-- regulation-container starts -->
   <div class="regulation-container">
-    <div id="left-container">
-      <!-- biobrick adder -->
-      <!-- <div class="adder">
-        <img src="../static/img/adder.png" width="30px" height="30px">
-      </div> -->
 
-      
+    <!-- left container starts -->
+    <div id="left-container">
+      <!-- Left Menu list starts-->
       <div class="accordion" id="accordion1">
+        <!-- Exogenous Factors starts-->
         <div class="accordion-group">
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1One">
@@ -56,6 +42,9 @@
             </div>
           </div>
         </div>
+        <!-- Exogenous Factors ends -->
+
+        <!-- Protein starts-->
         <div class="accordion-group">
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1Two">
@@ -71,26 +60,42 @@
             </div>
           </div>
         </div>
-      </div>      
+        <!-- Protein ends -->
+      </div> 
+      <!-- Left Menu list ends-->   
     </div>
+    <!-- left container ends -->
 
+
+    <!-- Painting Area -->
     <div id="content"> 
-      <!-- canvas -->
       <div id="canvas"></div>   
     </div>
 
+
+    <!-- right container starts -->
     <div id="right-container">
+
+      <!-- right menu list starts -->
       <div class="accordion" id="accordion2">
+
+         <!-- basic menu starts -->
         <div class="accordion-group">
+          <!-- accordion-heading starts -->
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
               Menu
               <i class="icon-chevron-down" style="display: block; float: right"></i>
             </a>
           </div>
+          <!-- accordion-heading ends -->
+
+          <!-- accordion-body starts -->
           <div id="collapseOne" class="accordion-body collapse in">
+            <!-- accordion-inner starts -->
             <div class="accordion-inner">
               <div id="menu">
+                <!-- userview starts -->
                 <div id="user-view" class="well well-small">
                   <div id="user-view-left">
                     <p>Rathinho</p>
@@ -102,15 +107,19 @@
                       <img src="../static/img/db.png">
                     </div>
                   </div>
-                </div> <!-- userview end -->
+                </div> 
+                <!-- userview ends -->
 
+                <!-- commandmenu starts -->
                 <div id="commandmenu" class="well well-small">
                   <div id="button-group">
                     <button class="btn btn-success" id="myfile" style="width: 117px; margin-bottom: 10px;">My Files</button>
                     <button class="btn" id="create-part">Create New Part</button>
                   </div>
-                </div>  <!-- commandmenu end -->
+                </div>  
+                <!-- commandmenu ends -->
 
+                <!-- filemenu starts -->
                 <div id="filemenu" class="well well-small">
                   <label for="filename">FileName:</label>
                   <input id="fn-input" type="text" name="filename" data-toggle="tooltip" title="filename can not be empty">
@@ -123,21 +132,36 @@
                     <i class="icon-remove"></i>
                     Clear
                   </a>                  
-                </div> <!-- filemenu end -->
-              </div>  <!-- menu end -->
-            </div>  <!-- accordion-inner -->
-          </div>  <!-- accordion-body -->
-        </div>  <!-- accordion-group end -->
+                </div> 
+                <!-- filemenu ends -->
 
+              </div>  
+              <!-- menu ends -->
+            </div>  
+            <!-- accordion-inner ends -->
+          </div>  
+          <!-- accordion-body ends -->
+        </div>  
+        <!-- basic menu ends -->
+
+
+        <!-- configuration menu starts -->
         <div class="accordion-group">
+          <!-- accordion-group starts -->
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
               Configuration
               <i class="icon-chevron-down" style="display: block; float: right"></i>
             </a>
           </div>
+          <!-- accordion-group ends -->
+
+          <!-- accordion-body starts -->
           <div id="collapseTwo" class="accordion-body collapse">
+            <!-- accordion-inner starts -->
             <div class="accordion-inner">
+
+              <!-- exogenous-factors-config starts -->
               <div id="exogenous-factors-config" class="well well-small">
                 <span class="label label-info">Exogenous-factors Configuration</span>
                 Undetermined.<br/>
@@ -150,8 +174,9 @@
                 Undetermined.<br/>
                 Undetermined.<br/>
               </div>
+              <!-- exogenous-factors-config ends -->
 
-
+              <!-- protein-config starts -->
               <div id="protein-config" class="well well-small">
                 <span class="label label-info">Protein Configuration</span>
                 <form id="protein-form">
@@ -175,8 +200,10 @@
                   <p id="slider-text-2">0</p>
                 </div> -->
               </div>
+              <!-- protein-config ends -->
 
 
+              <!-- component-config starts -->
               <div id="component-config" class="well well-small" style="display: block">
                 <span class="label label-info">Component Configuration</span>
                 <form id="component-form">
@@ -195,8 +222,10 @@
                     <span class="label">twins</span><ul id="twins"></ul>
                 </form>
               </div>
+              <!-- component-config ends -->
 
 
+              <!-- arrow-config starts -->
               <div id="arrow-config" class="well well-small">
                 <span class="label label-info">Arrow Configuration</span>
                  <form id="arrow-form">
@@ -218,15 +247,25 @@
                     </div>
                     <p id="slider-text-4">0</p>
                   </div> -->
-                </form>
-               
+                </form>               
               </div>
-            </div> <!-- accordion-inner end -->
-          </div>  <!-- accordion-body end -->
-        </div>  <!-- accordion-group end -->
-      </div>   <!-- accordion end -->  
-    </div>  <!-- right-container end -->
+              <!-- arrow-config ends -->
 
+            </div> 
+            <!-- accordion-inner ends -->
+          </div> 
+          <!-- accordion-body ends -->
+        </div>
+        <!-- configuration menu ends -->
+
+      </div>   
+      <!-- right menu list ends -->  
+
+    </div>  
+    <!-- right container ends -->
+
+
+    <!-- save modal starts -->
     <div id="save-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -239,36 +278,43 @@
         <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
       </div>
     </div>
+    <!-- save modal ends -->
 
+
+    <!-- footer starts -->
     <div class="footer">
-      <button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
-      <button class="btn" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
-      <button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
-      <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
-      <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
+      <button class="btn btn-primary" onclick="window.location.pathname = '/index'">Regulation network</button>
+      <button class="btn btn-primary" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
+      <button class="btn btn-primary" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
+      <button class="btn btn-primary" onclick="window.location.pathname = '/protocol'">Protocol</button>
+      <button class="btn btn-primary" onclick="window.location.pathname = '/simulation'">Simulation</button>
     </div>
+    <!-- footer ends -->
 
+
+    <!-- command group starts-->
     <div class="cmd-group">
-      <a href="javascript:void(0);" id="cmd_undo">
-        <img src="../static/img/Undo.png" width="30px" height="30px">
+      <button class="btn" id="cmd_undo">
+        <img src="../static/img/Undo.png" width="17px" height="17px">
         <span>Undo</span>
-      </a>
-      <a href="javascript:void(0);" id="cmd_redo">
-        <img src="../static/img/Redo.png" width="30px" height="30px">
+      </button>
+      <button class="btn" id="cmd_redo">
+        <img src="../static/img/Redo.png" width="17px" height="17px">
         <span>Redo</span>
-      </a>
+      </button>
     <!--   
       <a href="javascript:void(0);" id="cmd_zoom_in">zoom in</a>
       <a href="javascript:void(0);" id="cmd_zoom_out">zoom out</a>
       <a href="javascript:void(0);" id="cmd_zoom_reset">zoom reset</a>
      -->
     </div>
+    <!-- command group ends-->
+
   </div>
+  <!-- regulation-container ends -->
 
 
-
-  <!-- Javascript -->
-
+  <!-- Jquery and underscore -->
   <script src="../static/js/underscore-min.js"></script>
   <script src="../static/js/jquery-1.8.0.min.js"></script>
   <script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>
@@ -399,8 +445,8 @@
   <script src="../static/js/regulation/dtree.js"></script> 
   <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="../static/js/regulation/biobrickAdder.js"></script>
-   <script src="../static/js/regulation/mytree.js"></script>
-  <script src="../static/js/regulation/script.js"></script>
+  <script src="../static/js/regulation/mytree.js"></script>
+  <script src="../static/js/regulation/graphiti.js"></script>
   <script src="../static/js/regulation/regulation.js"></script>  
 </body>
 </html>
