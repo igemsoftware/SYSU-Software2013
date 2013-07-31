@@ -2,7 +2,7 @@
  *
  *		File: 			mytree.js
  *		Author: 		Rathinho
- *		Description: 	XXX
+ *		Description: 	A tree to store proteins and render them as a file system directory
  *
  **/
 
