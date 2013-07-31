@@ -41,9 +41,9 @@ class apis():
 	return user.getUserFileList(self.db)
   def loadUserFile(self,message):
 	if message.has_key("fileType"):
-	  return user.loadUserData(self.db,message['fileName'],message['fileType'])
-    else:
-      return user.loadUserData(self.db,message['fileName'],"data")
+		return user.loadUserData(self.db,message['fileName'],message['fileType'])
+	else:
+		return user.loadUserData(self.db,message['fileName'],"data")
 
 def handle_websocket(ws, db):
   logging.info("start handling websocket...")
