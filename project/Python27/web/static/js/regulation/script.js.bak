@@ -128,8 +128,8 @@ g.Shapes.Process = graphiti.shape.basic.Circle.extend({
 });
 
 
-g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
-  NAME: "g.Shapes.Protein",
+g.Shapes.Arrow = graphiti.shape.icon.ProteinArrow.extend({
+  NAME: "g.Shapes.Arrow",
 
   init: function(width, height) {
     this._super();
@@ -137,7 +137,7 @@ g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
     if (typeof radius === "number") {
       this.setDimension(radius, radius);
     } else {
-      this.setDimension(107, 94);
+      this.setDimension(100, 100);
     }
 
     this.setColor("#339BB9");   
@@ -171,25 +171,9 @@ g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
       var figure = canvas.getFigure(canvas.collection[i]);
       if (this.getId() !== figure.getId()) {
         figure.resetChildren();
-        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
-        figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
-        figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
+        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLocator(figure));
       }
     };
-
-    $("#right-container").css({right: '0px'});
-    var hasClassIn = $("#collapseTwo").hasClass('in');
-    if(!hasClassIn) {
-      $("#collapseOne").toggleClass('in');
-      $("#collapseOne").css({height: '0'});
-      $("#collapseTwo").toggleClass('in');
-      $("#collapseTwo").css({height: "auto"});
-    }
-
-    $("#exogenous-factors-config").css({"display": "none"});
-    $("#protein-config").css({"display": "block"});
-    $("#component-config").css({"display": "none"});
-    $("#arrow-config").css({"display": "none"});
   },
 
   onDoubleClick: function() {
@@ -243,8 +227,12 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
     var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.RightLocator(source));
     var targetPort = target.createPort("hybrid", new graphiti.layout.locator.LeftLocator(target));
 
-    var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "Activate");   // 连接两点
+    var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort);   // 连接两点
     app.view.getCommandStack().execute(command);  // 添加到命令栈中
+
+    var connection = sourcePort.getConnections();
+    console.log(connection);
+    connection.get(0).setTargetDecorator(new graphiti.decoration.connection.ArrowDecorator());  // remaining a bug, wait to fix
   }
 });
 
@@ -263,14 +251,7 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
   },
 
   onClick: function() {
-    var target = this.getParent();
-    var source = this.getCanvas().getFigure(app.view.currentSelected);
 
-    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.RightLocator(source));
-    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.LeftLocator(target));
-
-    var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "Inhibit");   // 连接两点
-    app.view.getCommandStack().execute(command);  // 添加到命令栈中
   }
 });
 
@@ -289,14 +270,7 @@ g.Buttons.CoExpress = graphiti.shape.icon.CoExpress.extend({
   },
 
   onClick: function() {
-    var target = this.getParent();
-    var source = this.getCanvas().getFigure(app.view.currentSelected);
 
-    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.RightLocator(source));
-    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.LeftLocator(target));
-
-    var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "CoExpress");   // 连接两点
-    app.view.getCommandStack().execute(command);  // 添加到命令栈中
   }
 }); 
 
@@ -430,18 +404,18 @@ var catalogHandler = {
         if(j >= 3) {
           this.insertCatalogItem(parentName, levels[j], d, path);
 
-          // this.renderNode(levels[j]);          
+          this.renderNode(levels[j]);          
         } 
       }
     }
 
-    // $("#pFactors").mCustomScrollbar({
-    //   autoHideScrollbar: true,
-    //   theme: "light",
-    //   advanced: {
-    //     autoExpandVerticalScroll: true
-    //   }
-    // });
+    $("#eFactors").mCustomScrollbar({
+      autoHideScrollbar: true,
+      theme: "light",
+      advanced: {
+        autoExpandVerticalScroll: true
+      }
+    });
 
     this.showTree(d); // 显示目录树
     d.openAll(); // 默认打开所有目录
@@ -468,8 +442,8 @@ var catalogHandler = {
 
     
 
-    $("#pFactors").append(outerDiv);
-    $("#pFactors").mCustomScrollbar('update');
+    $("#eFactors").append(outerDiv);
+    $("#eFactors").mCustomScrollbar('update');
 
     $("#factor-" + id + " .label").tooltip({
       animation: true,
@@ -541,7 +515,7 @@ $().ready(function() {
 
     E.use('slider', function() {
       // Slider 1
-      var slider1 = new E.ui.Slider('#slider-1', {
+      var slider = new E.ui.Slider('#slider-1', {
         min: 0,
         max: 10,
         value: 5,
@@ -549,17 +523,17 @@ $().ready(function() {
         size: '198px'
       });
 
-      var demoText1 = E('#slider-text-1');
-      slider1.on('slide', function(e) {
-        demoText1.text(this.value / 10);
+      var demoText = E('#slider-text-1');
+      slider.on('slide', function(e) {
+        demoText.text(this.value / 10);
       });
 
-      demoText1.on('click', function() {
-        slider1.setValue(5);
+      demoText.on('click', function() {
+        slider.setValue(5);
       });
 
       // Slider 2
-      var slider2 = new E.ui.Slider('#slider-2', {
+      var slider = new E.ui.Slider('#slider-2', {
         min: -1,
         max: 10,
         value: 0,
@@ -567,35 +541,17 @@ $().ready(function() {
         size: '198px'
       });
 
-      var demoText2 = E('#slider-text-2');
-      slider2.on('slide', function(e) {
-        demoText2.text(this.value);
+      var demoText = E('#slider-text-2');
+      slider.on('slide', function(e) {
+        demoText.text(this.value);
       });
 
-      demoText2.on('click', function() {
-        slider2.setValue(0);
+      demoText.on('click', function() {
+        slider.setValue(0);
       });
 
       // Slider 3
-      var slider3 = new E.ui.Slider('#slider-3', {
-        min: -10,
-        max: 10,
-        value: 0.5,
-        axis: 'x',
-        size: '198px'
-      });
-
-      var demoText3 = E('#slider-text-3');
-      slider3.on('slide', function(e) {
-        demoText3.text(this.value);
-      });
-
-      demoText3.on('click', function() {
-        slider3.setValue(0.5);
-      });
-
-      // Slider 4
-      var slider4 = new E.ui.Slider('#slider-4', {
+      var slider = new E.ui.Slider('#slider-3', {
         min: -10,
         max: 10,
         value: 0,
@@ -603,13 +559,31 @@ $().ready(function() {
         size: '198px'
       });
 
-      var demoText4 = E('#slider-text-4');
-      slider4.on('slide', function(e) {
-        demoText4.text(this.value);
+      var demoText = E('#slider-text-3');
+      slider.on('slide', function(e) {
+        demoText.text(this.value);
       });
 
-      demoText4.on('click', function() {
-        slider4.setValue(0);
+      demoText.on('click', function() {
+        slider.setValue(0);
+      });
+
+      // Slider 4
+      var slider = new E.ui.Slider('#slider-4', {
+        min: -10,
+        max: 10,
+        value: 0,
+        axis: 'x',
+        size: '198px'
+      });
+
+      var demoText = E('#slider-text-4');
+      slider.on('slide', function(e) {
+        demoText.text(this.value);
+      });
+
+      demoText.on('click', function() {
+        slider.setValue(0);
       });
     });
 
@@ -697,13 +671,11 @@ $().ready(function() {
         if (message.result.files == 'true') {
 
         } else {
-          if (biobrickCatalog.isInit) {
+          if (catalogHandler.istreeInit === true) {
             var path = message.result.path.split("\\");
-            // catalogHandler.addExtraJSONdata(message.result, path[path.length - 1]);
-            biobrickCatalog.parseSubTree(message.result);
+            catalogHandler.addExtraJSONdata(message.result, path[path.length - 1]);
           } else {
-            // catalogHandler.handleJSONdata(message.result.files);
-            biobrickCatalog.parseJson(message.result.files);
+            catalogHandler.handleJSONdata(message.result.files);
           }
         }
       } else if (message.request == "getXmlJson") { // 获取单个元件的配置数据
@@ -746,16 +718,16 @@ $().ready(function() {
           'value': part.best_quality
         });
 
-    //     var twinsHtml = "";
-    //     if (part.twins) {
-    //       for (var i = 0; i < part.twins.twin.length; i++) {
-    //         var li = "<li>" + part.twins.twin[i] + "</li>"
-    //         twinsHtml += li;
-    //       }
-    //     }
-    //     $("#twins").html(twinsHtml);
+        var twinsHtml = "";
+        if (part.twins) {
+          for (var i = 0; i < part.twins.twin.length; i++) {
+            var li = "<li>" + part.twins.twin[i] + "</li>"
+            twinsHtml += li;
+          }
+        }
+        $("#twins").html(twinsHtml);
 
-				// game.addComponent(part);
+				game.addComponent(part);
 
       } else if (message.request == "getLoginedUserName") { // 获取用户名
         $("#user-view-left > p").text(message.result);
@@ -773,8 +745,8 @@ $().ready(function() {
   ws.onopen = function() {
     ws.send(JSON.stringify({
       'request': 'getDirList',
-      'dir': 'web\\biobrick\\Protein coding sequences'
-      //'dir': './biobrick/Protein coding sequences'
+      //'dir': 'web\\biobrick\\Protein coding sequences'
+      'dir': './biobrick/Protein coding sequences'
     }));
 
     ws.send(JSON.stringify({

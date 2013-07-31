@@ -158,7 +158,14 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]['id']
-		
+
+	def getUserInfoByName(self,name='Bobby'):
+		excuteString='select * from user_list where name = "%s"' %name
+		self.__cursor.execute(excuteString)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
 	"the demo of selecting all data of part_list to the encoded json format"
 	def demo1(self):
 		pass

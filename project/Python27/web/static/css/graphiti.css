@@ -43,11 +43,11 @@ body {
 
 #left-container .adder {
   position: absolute;
-  visibility: hidden;
   width: 30px;
   height: 30px;
   z-index: 1055;
   cursor: pointer;
+  background-image: url(../img/adder.png);
 }
 
 #left-container .mCSB_container {
@@ -64,12 +64,22 @@ body {
 }
 
 #left-container #pFactors {
-  height: 530px;
-  overflow: auto;
+  /*height: 530px;
+  overflow: auto;*/
 }
 
 #left-container #pFactors .tooltip-inner {
   max-width: 96px;
+}
+
+#left-container .factorLevel {
+  display: none;
+  height: 530px;
+  overflow: auto;
+}
+
+#left-container .factorLevel .tree-return {
+  display: block;
 }
 
 #left-container .factorNode {
@@ -91,8 +101,10 @@ body {
 }
 
 #left-container .factorIcon img {
-  width: 88px;
+  display: block;
+  width: 60px;
   height: 60px;
+  margin: 0 auto;
 }
 
 #left-container .factorName {
@@ -244,6 +256,15 @@ body {
   margin-bottom: 10px;
 }
 
+#right-container #protein-form {
+  margin-top: 20px;
+}
+
+#right-container #protein-form input {
+  width: 187px;
+  margin-bottom: 10px;
+}
+
 #right-container #component-config {
   display: none;
   width: 228px;
@@ -270,6 +291,15 @@ body {
 #right-container #arrow-config {
   display: none;
   width: 198px;
+  margin-bottom: 10px;
+}
+
+#right-container #arrow-form {
+  margin-top: 20px;
+}
+
+#right-container #arrow-form input {
+  width: 187px;
   margin-bottom: 10px;
 }
 

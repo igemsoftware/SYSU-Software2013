@@ -764,7 +764,7 @@ function canvasMouseUp(obj,e)
 	chart.push("offset_angle",offsetang);
 	chart.push("animation","false");
 	chart.resize(783,400);
-	var ang=offsetang-270;
+	var ang=270-offsetang;
 	if(ang<0)
 	{
 		ang=ang+360;

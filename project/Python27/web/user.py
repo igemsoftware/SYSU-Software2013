@@ -65,23 +65,30 @@ def registAUser(database,name,password,email,group_id):
         database.insertAUser(name,password,email,group_id)
         return 'registAUser success'
     else:
-        database.logger.debug('you have not logined in!')        
-        return 'you have not logined in yet!' 
-    
+        database.logger.debug('you have not logined in!')
+        return 'you have not logined in yet!'
+
 "get the name of who has been logined"
 def getLoginedUserName(database):
 	if(isUserLogined(database)):
 		return database.getUserNameById(database.userId)
 	else:
 		return "NULL"
-	
+
+def getUserInfo(database):
+	if (isUserLogined(database)):
+		name = getLoginedUserName(database)
+		return database.getUserInfoByName(name)
+	else:
+		return "NULL"
+
 if __name__=="__main__":
     sql=SqliteDatabase()
     print userLogin(sql,'kitty','1212')
     #saveUserData(sql,'{"name":"ffff"}','default1')
     print getUserFileList(sql)
     #print getLoginedUserName(sql)
-    #changeUserPassword(sql,'1212')    
+    #changeUserPassword(sql,'1212')
     #userLogout(sql)
     #sql.getMaxUserId()
     #sql.isRecordExist('user_list')

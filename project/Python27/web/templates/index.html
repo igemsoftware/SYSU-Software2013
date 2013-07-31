@@ -33,9 +33,9 @@
   <div class="regulation-container">
     <div id="left-container">
       <!-- biobrick adder -->
-      <div class="palette_node_element graphiti_droppable adder" data-shape="g.Shapes.Arrow">
+      <!-- <div class="adder">
         <img src="../static/img/adder.png" width="30px" height="30px">
-      </div>
+      </div> -->
 
       
       <div class="accordion" id="accordion1">
@@ -65,7 +65,9 @@
           </div>
           <div id="collapse1Two" class="accordion-body collapse in">
             <div class="accordion-inner">
-              <div id="pFactors"></div>
+              <div id="pFactors">
+
+              </div>
             </div>
           </div>
         </div>
@@ -152,7 +154,10 @@
 
               <div id="protein-config" class="well well-small">
                 <span class="label label-info">Protein Configuration</span>
-                <div class="slider-div">
+                <form id="protein-form">
+                  <span class="label">Expression Value</span><input type="text" name="expressionVal"/>
+                </form>
+                <!-- <div class="slider-div">
                   <p>Expression Value</p>
                   <div class="eui_slider" id="slider-1">
                       <div class="sd_complete"></div>
@@ -168,7 +173,7 @@
                       <div class="sd_thumb"></div>
                   </div>
                   <p id="slider-text-2">0</p>
-                </div>
+                </div> -->
               </div>
 
 
@@ -194,23 +199,27 @@
 
               <div id="arrow-config" class="well well-small">
                 <span class="label label-info">Arrow Configuration</span>
-                <div class="slider-div">
-                  <p>Regulation Strength</p>
-                  <div class="eui_slider" id="slider-3">
-                      <div class="sd_complete"></div>
-                      <div class="sd_thumb"></div>
+                 <form id="arrow-form">
+                  <span class="label">Regulation Strength</span><input type="text" name="regStrength"/>
+                   <!-- <div class="slider-div">
+                    <p>Regulation Strength</p>
+                    <div class="eui_slider" id="slider-3">
+                        <div class="sd_complete"></div>
+                        <div class="sd_thumb"></div>
+                    </div>
+                    <p id="slider-text-3">0.5</p>
                   </div>
-                  <p id="slider-text-3">0.5</p>
-                </div>
 
-                <div class="slider-div">
-                  <p>Floating Value</p>
-                  <div class="eui_slider" id="slider-4">
-                      <div class="sd_complete"></div>
-                      <div class="sd_thumb"></div>
-                  </div>
-                  <p id="slider-text-4">0</p>
-                </div>
+                  <div class="slider-div">
+                    <p>Floating Value</p>
+                    <div class="eui_slider" id="slider-4">
+                        <div class="sd_complete"></div>
+                        <div class="sd_thumb"></div>
+                    </div>
+                    <p id="slider-text-4">0</p>
+                  </div> -->
+                </form>
+               
               </div>
             </div> <!-- accordion-inner end -->
           </div>  <!-- accordion-body end -->
@@ -386,10 +395,12 @@
 
   <!-- Custom js -->
   <script src="../static/js/bootstrap.min.js"></script>
-  <script src="../static/js/regulation/base/js/easy.js"></script> 
+  <script src="../static/js/regulation/base/js/easy.js"></script>  
   <script src="../static/js/regulation/dtree.js"></script> 
-  <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>  
-  <script src="../static/js/regulation/script.js"></script>
+  <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="../static/js/regulation/biobrickAdder.js"></script>
+   <script src="../static/js/regulation/mytree.js"></script>
+  <script src="../static/js/regulation/script.js"></script>
+  
 </body>
 </html>

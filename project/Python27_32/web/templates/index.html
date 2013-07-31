@@ -46,11 +46,13 @@
               <i class="icon-chevron-down" style="display: block; float: right"></i>
             </a>
           </div>
-          <div id="collapse1One" class="accordion-body collapse in">
+          <div id="collapse1One" class="accordion-body collapse">
             <div class="accordion-inner">
+              <div id="catalog"></div>   
               <div id="eFactors">
+
                 
-              </div>
+              </div>           
             </div>
           </div>
         </div>
@@ -61,9 +63,9 @@
               <i class="icon-chevron-down" style="display: block; float: right"></i>
             </a>
           </div>
-          <div id="collapse1Two" class="accordion-body collapse">
+          <div id="collapse1Two" class="accordion-body collapse in">
             <div class="accordion-inner">
-              <div id="catalog"></div>
+              <div id="pFactors"></div>
             </div>
           </div>
         </div>
@@ -170,7 +172,7 @@
               </div>
 
 
-              <div id="component-config" class="well well-small"  style="display: block">
+              <div id="component-config" class="well well-small" style="display: block">
                 <span class="label label-info">Component Configuration</span>
                 <form id="component-form">
                     <span class="label">Part_id</span><input type="text" name="part_id"/>
@@ -198,7 +200,7 @@
                       <div class="sd_complete"></div>
                       <div class="sd_thumb"></div>
                   </div>
-                  <p id="slider-text-4">0.5</p>
+                  <p id="slider-text-3">0.5</p>
                 </div>
 
                 <div class="slider-div">
@@ -314,6 +316,8 @@
   <script src="../static/js/graphiti/layout/locator/RightLocator.js"></script>
   <script src="../static/js/graphiti/layout/locator/LeftLocator.js"></script>
   <script src="../static/js/graphiti/layout/locator/BottomLocator.js"></script>
+  <script src="../static/js/graphiti/layout/locator/TopLeftLocator.js"></script>
+  <script src="../static/js/graphiti/layout/locator/TopRightLocator.js"></script>
 
   <script src="../static/js/graphiti/Canvas.js"></script>
   <script src="../static/js/graphiti/Figure.js"></script>
@@ -324,7 +328,7 @@
   <script src="../static/js/graphiti/SVGFigure.js"></script>
 
   <script src="../static/js/graphiti/shape/icon/Icon.js"></script>
-  <script src="../static/js/graphiti/shape/icon/ProteinArrow.js"></script>
+  <script src="../static/js/graphiti/shape/icon/ProteinIcon.js"></script>
   <script src="../static/js/graphiti/shape/icon/Remove.js"></script>
   <script src="../static/js/graphiti/shape/icon/Activate.js"></script>
   <script src="../static/js/graphiti/shape/icon/Inhibit.js"></script>
@@ -379,16 +383,6 @@
 
   <script src="../static/js/graphiti/decoration/connection/Decorator.js"></script>
   <script src="../static/js/graphiti/decoration/connection/ArrowDecorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/DiamondDecorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/TDecorator.js"></script>
-
-
-  <!-- <script src="static/js/libs/bootstrap/bootstrap.min.js"></script> -->
-  <script src="../static/js/graphiti/decoration/connection/Decorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/ArrowDecorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/DiamondDecorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/TDecorator.js"></script>
-
 
   <!-- Custom js -->
   <script src="../static/js/bootstrap.min.js"></script>
