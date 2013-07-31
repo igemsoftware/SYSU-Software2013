@@ -5,8 +5,6 @@ $(document).ready(function() {
 		ws.onmessage = function(msg) {
 			var message = JSON.parse(msg.data);
 			if (message.result === "Password correct!") {
-				// redirect to "index.html"
-				// alert("Welcome back! user: " + $("#username").attr('value'));
 				$("#login-info").html("Welcome back! user: " + $("#username").attr('value'));
 				$("#login-info").addClass("alert-success");
 				$("#login-info").css("visibility", "visible");
@@ -16,7 +14,7 @@ $(document).ready(function() {
 				}, 1000);
 				
 			} else {
-				$("#login-info").html(message.result);
+				$("#login-info > button").html(message.result);
 				$("#login-info").addClass("alert-error");
 				$("#login-info").css("visibility", "visible");
 			}
