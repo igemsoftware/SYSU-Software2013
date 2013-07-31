@@ -6,11 +6,19 @@ $(document).ready(function() {
 			var message = JSON.parse(msg.data);
 			if (message.result === "Password correct!") {
 				// redirect to "index.html"
-				alert("Welcome back! user: " + $("#username").attr('value'));
+				// alert("Welcome back! user: " + $("#username").attr('value'));
+				$("#login-info").html("Welcome back! user: " + $("#username").attr('value'));
+				$("#login-info").addClass("alert-success");
+				$("#login-info").css("visibility", "visible");
 
-				window.location = location.href + "index";
+				setTimeout(function(){
+					window.location = location.href + "index";
+				}, 1000);
+				
 			} else {
-				alert(message.result);
+				$("#login-info").html(message.result);
+				$("#login-info").addClass("alert-error");
+				$("#login-info").css("visibility", "visible");
 			}
 		};
 	};
