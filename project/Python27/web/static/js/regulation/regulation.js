@@ -42,20 +42,29 @@ $().ready(function() {
       fnInput.focus();
       fnInput.tooltip('show');
 
+      // check whether filename input has changed 
       var tid = setInterval(function() {
-        var newFilename = fnInput.attr('value');
-
-        if (newFilename) {
-          console.log("change");
+        filename = fnInput.attr('value');
+        if (filename) {
           fnInput.tooltip('destroy');
           clearInterval(tid);
         }
-      }, 500);
+      }, 1000);
     } else {
+      
+      // ws.send({
+      //   "request" : "saveUserData",
+      //   "data" : filename
+      // });
+
+
+      $("#myModalInfo").html("File: " + filename + " is saved!");
       $("#save-trigger").click();
     }
   });
 
+
+  // protein configuration
   $("#protein-config").ready(function() {
     E.config({
       baseUrl: 'static/js/regulation/slider/js/'
@@ -63,76 +72,76 @@ $().ready(function() {
 
     E.use('slider', function() {
       // Slider 1
-      var slider1 = new E.ui.Slider('#slider-1', {
-        min: 0,
-        max: 10,
-        value: 5,
-        axis: 'x',
-        size: '198px'
-      });
+    //   var slider1 = new E.ui.Slider('#slider-1', {
+    //     min: 0,
+    //     max: 10,
+    //     value: 5,
+    //     axis: 'x',
+    //     size: '198px'
+    //   });
 
-      var demoText1 = E('#slider-text-1');
-      slider1.on('slide', function(e) {
-        demoText1.text(this.value / 10);
-      });
+    //   var demoText1 = E('#slider-text-1');
+    //   slider1.on('slide', function(e) {
+    //     demoText1.text(this.value / 10);
+    //   });
 
-      demoText1.on('click', function() {
-        slider1.setValue(5);
-      });
+    //   demoText1.on('click', function() {
+    //     slider1.setValue(5);
+    //   });
 
-      // Slider 2
-      var slider2 = new E.ui.Slider('#slider-2', {
-        min: -1,
-        max: 10,
-        value: 0,
-        axis: 'x',
-        size: '198px'
-      });
+    //   // Slider 2
+    //   var slider2 = new E.ui.Slider('#slider-2', {
+    //     min: -1,
+    //     max: 10,
+    //     value: 0,
+    //     axis: 'x',
+    //     size: '198px'
+    //   });
 
-      var demoText2 = E('#slider-text-2');
-      slider2.on('slide', function(e) {
-        demoText2.text(this.value);
-      });
+    //   var demoText2 = E('#slider-text-2');
+    //   slider2.on('slide', function(e) {
+    //     demoText2.text(this.value);
+    //   });
 
-      demoText2.on('click', function() {
-        slider2.setValue(0);
-      });
+    //   demoText2.on('click', function() {
+    //     slider2.setValue(0);
+    //   });
 
-      // Slider 3
-      var slider3 = new E.ui.Slider('#slider-3', {
-        min: -10,
-        max: 10,
-        value: 0.5,
-        axis: 'x',
-        size: '198px'
-      });
+    //   // Slider 3
+    //   var slider3 = new E.ui.Slider('#slider-3', {
+    //     min: -10,
+    //     max: 10,
+    //     value: 0.5,
+    //     axis: 'x',
+    //     size: '198px'
+    //   });
 
-      var demoText3 = E('#slider-text-3');
-      slider3.on('slide', function(e) {
-        demoText3.text(this.value);
-      });
+    //   var demoText3 = E('#slider-text-3');
+    //   slider3.on('slide', function(e) {
+    //     demoText3.text(this.value);
+    //   });
 
-      demoText3.on('click', function() {
-        slider3.setValue(0.5);
-      });
+    //   demoText3.on('click', function() {
+    //     slider3.setValue(0.5);
+    //   });
 
-      // Slider 4
-      var slider4 = new E.ui.Slider('#slider-4', {
-        min: -10,
-        max: 10,
-        value: 0,
-        axis: 'x',
-        size: '198px'
-      });
+    //   // Slider 4
+    //   var slider4 = new E.ui.Slider('#slider-4', {
+    //     min: -10,
+    //     max: 10,
+    //     value: 0,
+    //     axis: 'x',
+    //     size: '198px'
+    //   });
 
-      var demoText4 = E('#slider-text-4');
-      slider4.on('slide', function(e) {
-        demoText4.text(this.value);
-      });
+    //   var demoText4 = E('#slider-text-4');
+    //   slider4.on('slide', function(e) {
+    //     demoText4.text(this.value);
+    //   });
 
-      demoText4.on('click', function() {
-        slider4.setValue(0);
-      });
+    //   demoText4.on('click', function() {
+    //     slider4.setValue(0);
+    //   });
     });
 
     $("#component-config").ready(function() {
@@ -158,10 +167,10 @@ $().ready(function() {
         if (message.result.files == 'true') {
 
         } else {
-          if (biobrickCatalog.isInit) {
-            biobrickCatalog.parseSubTree(message.result);
+          if (proteinList.isInit) {
+            proteinList.parseSubTree(message.result);
           } else {
-            biobrickCatalog.parseJson(message.result.files);
+            proteinList.parseJson(message.result.files);
           }
         }
       } else if (message.request == "getXmlJson") {   // get configuration data of a single protein

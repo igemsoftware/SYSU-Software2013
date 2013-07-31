@@ -46,7 +46,7 @@ Tree.prototype = {
 	// add a new node to nodes array
 	addNode: function(name, level, parentName, childrenNames, path) {
 		var id = this.nodes.length;
-		var type;
+		var type, icon;
 
 		if (name.match(/\.xml/)) {
 			type = "file";
@@ -205,5 +205,90 @@ Tree.prototype = {
 };
 
 
-// Test script
-var biobrickCatalog = new Tree("mt");
+// EFTree, inherits the Tree
+function EFTree(id, rootName) {
+
+	// Inherits attributes
+	Tree.call(this, rootName);
+
+	this.id = id;
+
+}
+
+// Inherits methods
+EFTree.prototype = new Tree();
+
+EFTree.prototype.constructor = EFTree;
+
+// Rewrite parseSubTree function
+EFTree.prototype.parseSubTree = function() {};
+
+// Rewrite addNode function 
+EFTree.prototype.addNode = function(name) {
+	var id = this.nodes.length;
+	var type, icon;
+
+	if (name == "Inducer") {
+		type = "g.Shapes.Inducer";
+		icon = "Inducer.png";
+	} else if (name == "Metal-ion") {
+		type = "g.Shapes.MetalIon";
+		icon = "MetalIon.png";
+	} else if (name == "Temperature") {
+		type = "g.Shapes.Temperature";
+		icon = "Temperature.png";
+	}
+
+	this.nodes[this.nodes.length] = new Node(id, name, 1, type, "EFactors", "", icon, "");
+};
+
+// Rewrite renderNode function
+EFTree.prototype.renderNode = function(node) {
+	var shortname = node.name.length > 12 ? node.name.substr(0, 9) + ".." : node.name,
+		img = "<img src=\"../static/img/" + node.icon + "\">",
+		iconDiv = "<div class=\"factorIcon\">" + img + "</div>",
+		nameDiv = "<div class=\"factorName\"><span class=\"label label-info\">" + shortname + "</span></div>",
+		outerDiv = "<div class=\"factorNode\" id=\"factor-" + node.name + "\">" + iconDiv + nameDiv + "</div>";
+	
+	if ($("#factor-" + node.name).length == 0) {
+		$("#level-" + node.level + "-" + node.parent).append(outerDiv);
+
+		// add tooltip
+		$("#factor-" + node.name + " .label").tooltip({
+	      animation: true,
+	      title : node.name,
+	      placement : 'top',
+	    });
+
+
+		// bind click event
+		$("#factor-" + node.name).click(function() {
+			var adder = new BiobrickAdder();
+			var offset = $(this).offset();			
+			adder.init(node.name, node.type, offset.top + 50, offset.left + 15);
+			adder.show();
+		});
+	}
+};
+
+// Rewrite parseJson function
+EFTree.prototype.parseJson = function(data) {
+	var levelDiv = "<div class=\"eFactorLevel\" id=\"level-1-EFactors\"></div>"
+	$("#eFactors").append(levelDiv);
+	$("#level-1-EFactors").css("display", "block");
+
+	for (var i = 0; i < data.length; i++) {
+		this.addNode(data[i]);
+	};
+	this.renderAll();
+};
+
+
+
+// create a tree
+var proteinList = new Tree("protein", "protein");
+
+// create a EFTree
+var eFactorList = new EFTree("eFactors", "eFactors");
+var data = ["Inducer", "Metal-ion", "Temperature"];
+eFactorList.parseJson(data); 

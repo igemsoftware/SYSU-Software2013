@@ -78,6 +78,12 @@ body {
   overflow: auto;
 }
 
+#left-container .eFactorLevel {
+  display: none;
+  height: 530px;
+  overflow: auto;
+}
+
 #left-container .factorLevel .tree-return {
   display: block;
 }
@@ -247,6 +253,15 @@ body {
 #right-container #exogenous-factors-config {
   display: none;
   width: 198px;
+  margin-bottom: 10px;
+}
+
+#right-container #exogenous-factors-form {
+  margin-top: 20px;
+}
+
+#right-container #exogenous-factors-form input {
+  width: 187px;
   margin-bottom: 10px;
 }
 
