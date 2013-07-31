@@ -268,8 +268,10 @@ body {
 
 #right-container #exogenous-factors-config {
   display: none;
-  width: 198px;
+  width: 228px;
   margin-bottom: 10px;
+  padding: 9px;
+  padding-right: 0;
 }
 
 #right-container #exogenous-factors-form {
@@ -277,14 +279,16 @@ body {
 }
 
 #right-container #exogenous-factors-form input {
-  width: 187px;
+  width: 197px;
   margin-bottom: 10px;
 }
 
 #right-container #protein-config {
   display: none;
-  width: 198px;
+  width: 228px;
   margin-bottom: 10px;
+  padding: 9px;
+  padding-right: 0;
 }
 
 #right-container #protein-form {
@@ -292,7 +296,7 @@ body {
 }
 
 #right-container #protein-form input {
-  width: 187px;
+  width: 197px;
   margin-bottom: 10px;
 }
 
@@ -321,8 +325,10 @@ body {
 
 #right-container #arrow-config {
   display: none;
-  width: 198px;
+  width: 228px;
   margin-bottom: 10px;
+  padding: 9px;
+  padding-right: 0;
 }
 
 #right-container #arrow-form {
@@ -330,7 +336,7 @@ body {
 }
 
 #right-container #arrow-form input {
-  width: 187px;
+  width: 197px;
   margin-bottom: 10px;
 }
 
