@@ -118,6 +118,10 @@ body {
   text-align: center;
 }
 
+#left-container .factorName .label {
+  cursor: pointer;
+}
+
 #left-container #catalog {
   height: 530px;
   overflow: auto;
