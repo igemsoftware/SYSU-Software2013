@@ -56,11 +56,11 @@ def saveUserData(database,datastr,fileName):
         print 'insertUserData'
         return database.insertUserData(datastr,fileName)
 
-def loadUserData(database,fileName):
+def loadUserData(database,fileName,type):
 	fileList=getUserFileList(database)
 	for file in fileList:
-		if(fileName==file):
-			return database.getUserFile(fileName)
+		if(fileName==file['fileName']):
+			return database.getUserFile(fileName,type)
 	return "no such file"
     
 "create a new user whose name cannot be the same as those in the database"
@@ -94,7 +94,7 @@ if __name__=="__main__":
     print userLogin(sql,'kitty','1212')
     #saveUserData(sql,'{"name":"ffff"}','default1')
     print getUserFileList(sql)
-    print loadUserData(sql,'files1')
+    print loadUserData(sql,'filetse','data1')
     #print getLoginedUserName(sql)
     #changeUserPassword(sql,'1212')
     #userLogout(sql)

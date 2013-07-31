@@ -89,22 +89,26 @@ class SqliteDatabase:
 		if self.userId==-1:
 			self.logger.error('not login but want to get the user fileList')
 			return 'getUserFileNameList failed'
-		sql_cmd='select fileName from user_save WHERE user_id=%d'%(self.userId)
+		sql_cmd='select fileName,fileType from user_save WHERE user_id=%d'%(self.userId)
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('select fileName from user_save: %s'%sql_cmd)
-		rec=[]
-		for item in self.__cursor.fetchall():
-			rec.append(item[0])
-		return rec
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
 	
-	def getUserFile(self,filename):
+	def getUserFile(self,filename,type):
 		if self.userId==-1:
 			self.logger.error('not login but want to get the user file')
 			return 'getUserFile failed'
-		sql_cmd='select data from user_save WHERE user_id=%d AND fileName="%s"'%(self.userId,filename)
+		sql_cmd='select data from user_save WHERE user_id=%d AND fileType="%s" AND fileName="%s"'%(self.userId,type,filename)
+		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('select fileName from user_save: %s'%sql_cmd)
-		return self.__cursor.fetchall()[0][0]
+		result=self.__cursor.fetchall()
+		if(len(result)!=0):
+			return result[0][0]
+		else:
+			return 'getUserFile No result!'
 
 	def updateUserData(self,data,fileName):
 		if self.userId==-1:
