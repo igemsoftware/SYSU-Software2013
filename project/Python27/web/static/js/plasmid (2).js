@@ -58,7 +58,7 @@ var plasmidPainter = {
 	},
 	drawAll: function() {
 		jc.start(this.canvasId);
-		jc.rect(0, 0, 1100, 50, "#EEEEFF", true);
+		jc.rect(0, 0, 1189, 50, "#EEEEFF", true);
 		//jc.text("seq: select a segment to show its sequence", 400, 60).id("seq");
 		//this.text = jc("#seq");		
 		jc.start(this.canvasId);
@@ -66,8 +66,8 @@ var plasmidPainter = {
 		{		
 			if(!/[A-Z]/.test(data2[i].seq[0]))//typeof(data[i].name)!=="number")
 			{				
-				var st=data2[i].start*300/datasize;
-				var en=data2[i].end*300/datasize;
+				var st=data2[i].start*1189/datasize;
+				var en=data2[i].end*1189/datasize;
 				if(data2[i].name=== undefined)
 				{				
 					this.drawSegment(st,en,i,data2[i].color,data2[i].seq);
