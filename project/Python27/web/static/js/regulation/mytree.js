@@ -100,8 +100,6 @@ Tree.prototype = {
 						$("#level-" + (node.level + 1) + "-" + node.name).mCustomScrollbar("update");
 
 					} else {	// else load subtree and add it to tree						
-						// alert("not found");
-						console.log(node.path);
 						ws.send(JSON.stringify({
 							'request': 'getDirList',
 					      	'dir': node.path
@@ -109,7 +107,7 @@ Tree.prototype = {
 					}
 				} else {	// if type is "file"					
 					var adder = new BiobrickAdder();
-					var offset = $(this).offset();			
+					var offset = $(this).offset();
 					adder.init(node.name, "g.Shapes.Protein", offset.top, offset.left);
 					adder.show();
 

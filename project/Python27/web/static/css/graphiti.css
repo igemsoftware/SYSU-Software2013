@@ -45,7 +45,7 @@ body {
 }
 
 #left-container .adder {
-  position: absolute;
+  position: relative;
   width: 30px;
   height: 30px;
   z-index: 1055;

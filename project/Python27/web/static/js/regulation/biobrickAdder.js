@@ -30,8 +30,8 @@ BiobrickAdder.prototype = {
 		$("#adder-"+this.name).data("shape", this.type);
 
 		$("#adder-"+this.name).css({
-			"top": actualTop,
-			"left": actualLeft
+			"top": "-95px",
+			"left": "30px"
 		});
 	
 		$("#adder-"+this.name).click(function() {
