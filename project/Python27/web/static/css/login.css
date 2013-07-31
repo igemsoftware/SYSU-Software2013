@@ -1,0 +1,98 @@
+/*
+ *
+ *  Styles for login view
+ *
+ */
+
+ body {
+ 	background-image: url(../img/background.jpg);
+ 	background-position: 0px -400px;
+ }
+
+ #container {
+ 	position: absolute;
+ 	left: 50%;
+ 	top: 50%;
+ 	width: 260px;
+ 	height: 250px;
+ 	margin: -126px 0 0 -131px;
+ 	border-right: #5A6569 1px inset; 
+ 	border-top: #BFBEBA 1px inset; 
+ 	border-left: #5A6569 1px; 
+ 	border-bottom: #000000 1px inset; 
+ 	border-collapse: collapse;
+ 	border-radius: 8px;
+ 	background-image: url(../img/container.png);
+
+ 	box-shadow: 0px 0px 15px #002;
+ }
+
+ #header {
+ 	height: 40px;
+ 	line-height: 40px;
+ 	text-align: center;
+ }
+
+ #header p {
+ 	font-size: 18px;
+ 	font-family: Arial;
+ 	color: #fff;
+ }
+
+ #seperator {
+ 	height: 0px;
+ 	width: 260px;
+ 	border-top: #8a8a8a 1px inset;
+ 	border-bottom: #7f7d80 2px inset;
+ }
+
+ #input-field {
+ 	width: 180px;
+ 	margin: 20px auto;
+ }
+
+ #input-field .input-outer {
+ 	margin: 20px auto;
+ 	border-radius: 3px;
+ 	border-bottom: 1px solid #ccc;
+ }
+
+ #input-field input {
+ 	width: 170px;
+ 	height: 25px; 	
+ 	line-height: 25px;
+ 	font-size: 20px;
+ 	color: #fff;
+ 	margin-bottom: 0px;
+ 	border: 1px solid #333;
+ 	background-color: rgba(0, 0, 0, 0); 	
+ }
+
+ #input-field #username {
+ 	background-image: url(../img/user.png);
+ 	background-position: 5px 5px;
+ 	background-repeat: no-repeat;
+ }
+
+ #input-field #password {
+ 	background-image: url(../img/password.png);
+ 	background-position: 5px 5px;
+ 	background-repeat: no-repeat;
+ }
+
+ #input-field #username:focus {
+ 	background: rgba(80, 80, 80, 0.3);
+ 	border-color: #cccccc;
+ 	box-shadow: 0 0 6px #cccccc;
+ }
+
+ #input-field #password:focus {
+ 	background: rgba(80, 80, 80, 0.3);
+ 	border-color: #cccccc;
+ 	box-shadow: 0 0 6px #cccccc;
+ }
+
+ #input-field button {
+ 	margin-top: 15px;
+ 	width: 88px;
+ }
