@@ -13,7 +13,9 @@
           ws = new WebSocket("ws://" + document.domain + ":5000/ws");
           ws.onmessage = function (msg) {
             var message = JSON.parse(msg.data);
-            alert(message.result);
+            var name = message.result.name;
+            if (message.result.result == "deleteUserData succeed")
+              $("tr#"+name).remove();
           };
         };
 
@@ -43,7 +45,7 @@
       </thead>
       <tbody>
         {% for item in filelist %}
-        <tr>
+        <tr id="{{ item.fileName }}">
           <th>{{ item.fileName }}</th>
           <th>{{ item.fileType }}</th>
           <th>

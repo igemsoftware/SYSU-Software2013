@@ -45,7 +45,8 @@ class apis():
   def getUserFileList(self,message):
     return user.getUserFileList(self.db)
   def deleteUserData(self,message):
-    return user.deleteUserData(self.db,message["name"])
+    return {"name":message["name"],
+        "result":user.deleteUserData(self.db,message["name"])}
   def updateUserInfo(self,message):
     return user.updateUserInfo(self.db, message["userInfo"])
   def updatePassword(self,message):
