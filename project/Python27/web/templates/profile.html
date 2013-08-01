@@ -8,7 +8,52 @@
     <script src="../static/js/jquery-1.8.0.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
     <script>
-      $()
+      $(document).ready(function(){
+        if ("WebSocket" in window) {
+          ws = new WebSocket("ws://" + document.domain + ":5000/ws");
+          ws.onmessage = function (msg) {
+            alert("haha");
+            var message = JSON.parse(msg.data);
+            var show;
+            alert(JSON.stringify(message));
+            if (message.request == "updatePassword")
+              show = "input#reset_passwd";
+            else
+              show = "input#update_info";
+            if (message.result == "success")
+              $(show).next().text('success!');
+            else
+              $(show).next().text('error occured!');
+            }
+          };
+
+        // Bind send button to websocket
+        $("input#update_info").live("click", function() {
+          var info = {};
+          info.name = $("input#username").val();
+          info.gender = $("input#gender").val();
+          info.e_mail = $("input#e_mail").val();
+          alert(JSON.stringify(info));
+          ws.send(JSON.stringify({'request': 'updateUserInfo', 'userInfo': info}));
+        });
+        $("input#reset_passwd").live("click", function() {
+          var password = $("input#new_password").val();
+          var old = $("input#old_password").val();
+          var confirm = $("input#confirm").val();
+          if (password != confirm) {
+            $("input#confirm").after("password confirm mismatched!");
+            return;
+          }
+          ws.send(JSON.stringify({'request': 'updatePassword', 'old': old,
+                                 'new': password}));
+        });
+
+        // Cleanly close websocket when unload window
+        window.onbeforeunload = function() {
+          ws.onclose = function () {}; // disable onclose handler first
+          ws.close()
+        };
+      });
     </script>
   </head>
   <body>
@@ -33,26 +78,36 @@
   </div>
   <div class="span9 tab-content">
     <div class="tab-pane active" id="profile">
-      <form action="profile" method="POST">
+      <form action="javascript:void(0);" id="update_form">
         <legend>{{ username }}</legend>
         <label>Username:</label>
-        <input type="text" name="username" value={{username}}>
+        <input type="text" id="username" name="username" value={{username}}>
         <label>Gender:</label>
-        <input type="radio" name="gender" value="1" {% if userInfo.gender%}
+        <input type="radio" id="gender" name="gender" value="1" {% if userInfo.gender%}
         checked{%endif %}/> Male &nbsp&nbsp
-        <input type="radio" name="gender" value="0" {% if not userInfo.gender%}
+        <input type="radio" id="gender" name="gender" value="0" {% if not userInfo.gender%}
         checked{%endif%}/> Female
 
         <label>Email:</label>
-        <input type="text" name="e_mail" value={{userInfo.e_mail}}>
+        <input type="text" id="e_mail" name="e_mail" value={{userInfo.e_mail}}>
         <br/>
-        <input type="submit" class="btn">
+        <input type="submit" id="update_info" class="btn">
+        <span></span>
       </form>
   </div>
   <div class="tab-pane" id="password">
-    <p>
-      test
-    </p>
+      <form action="javascript:void(0);" id="update_passwd">
+        <legend>{{ username }}</legend>
+        <label>Old password:</label>
+        <input type="password" id="old_password">
+        <label>New password:</label>
+        <input type="password" id="new_password">
+        <label>Confirm:</label>
+        <input type="password" id="confirm">
+        <br/>
+        <input type="submit" id="reset_passwd" class="btn">
+        <span></span>
+      </form>
   </div>
     {% endif %}
   </body>
