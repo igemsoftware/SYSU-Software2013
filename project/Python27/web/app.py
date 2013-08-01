@@ -37,6 +37,13 @@ def profile():
   else:
     pass
 
+@app.route("/file_manager")
+def file_manager():
+  print "haha"
+  filelist = sql.getUserFileNameList()
+  print filelist
+  return render_template('file_manager.html', filelist = filelist)
+
 @app.route("/getdir/<pathname>")
 def getDir(pathname):
 	return json.dumps(xmlParse.get_allfiledirs('web\\'+pathname))
