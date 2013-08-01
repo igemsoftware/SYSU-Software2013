@@ -12,10 +12,8 @@
         if ("WebSocket" in window) {
           ws = new WebSocket("ws://" + document.domain + ":5000/ws");
           ws.onmessage = function (msg) {
-            alert("haha");
             var message = JSON.parse(msg.data);
             var show;
-            alert(JSON.stringify(message));
             if (message.request == "updatePassword")
               show = "input#reset_passwd";
             else
@@ -33,7 +31,6 @@
           info.name = $("input#username").val();
           info.gender = $("input#gender").val();
           info.e_mail = $("input#e_mail").val();
-          alert(JSON.stringify(info));
           ws.send(JSON.stringify({'request': 'updateUserInfo', 'userInfo': info}));
         });
         $("input#reset_passwd").live("click", function() {

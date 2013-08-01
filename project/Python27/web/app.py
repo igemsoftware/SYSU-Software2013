@@ -39,9 +39,8 @@ def profile():
 
 @app.route("/file_manager")
 def file_manager():
-  print "haha"
+  #TODO: pagination
   filelist = sql.getUserFileNameList()
-  print filelist
   return render_template('file_manager.html', filelist = filelist)
 
 @app.route("/getdir/<pathname>")
