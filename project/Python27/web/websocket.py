@@ -25,7 +25,7 @@ class apis():
     return content
   def saveUserData(self,message):
     message['data']=message['data'].replace('"','\'')
-    if message.has_key("fileName")&&message.has_key("fileType"):
+    if message.has_key("fileName") & message.has_key("fileType"):
       return user.saveUserData(self.db,message['data'],message['fileName'],message['fileType'])
     elif message.has_key("fileName"):
       return user.saveUserData(self.db,message['data'],message['fileName'],"default")
