@@ -34,6 +34,13 @@ $().ready(function() {
     }));
   });
 
+  // load file list
+  $("#myfile").click(function() {
+    ws.send(JSON.stringify({
+      'request': 'getUserFileList'
+    }));
+  });
+
   // save file
   $("#save").click(function() {
     var fnInput = $("#fn-input");
@@ -51,7 +58,7 @@ $().ready(function() {
         }
       }, 1000);
     } else {
-      
+
       // ws.send({
       //   "request" : "saveUserData",
       //   "data" : filename
@@ -72,76 +79,76 @@ $().ready(function() {
 
     E.use('slider', function() {
       // Slider 1
-    //   var slider1 = new E.ui.Slider('#slider-1', {
-    //     min: 0,
-    //     max: 10,
-    //     value: 5,
-    //     axis: 'x',
-    //     size: '198px'
-    //   });
+      //   var slider1 = new E.ui.Slider('#slider-1', {
+      //     min: 0,
+      //     max: 10,
+      //     value: 5,
+      //     axis: 'x',
+      //     size: '198px'
+      //   });
 
-    //   var demoText1 = E('#slider-text-1');
-    //   slider1.on('slide', function(e) {
-    //     demoText1.text(this.value / 10);
-    //   });
+      //   var demoText1 = E('#slider-text-1');
+      //   slider1.on('slide', function(e) {
+      //     demoText1.text(this.value / 10);
+      //   });
 
-    //   demoText1.on('click', function() {
-    //     slider1.setValue(5);
-    //   });
+      //   demoText1.on('click', function() {
+      //     slider1.setValue(5);
+      //   });
 
-    //   // Slider 2
-    //   var slider2 = new E.ui.Slider('#slider-2', {
-    //     min: -1,
-    //     max: 10,
-    //     value: 0,
-    //     axis: 'x',
-    //     size: '198px'
-    //   });
+      //   // Slider 2
+      //   var slider2 = new E.ui.Slider('#slider-2', {
+      //     min: -1,
+      //     max: 10,
+      //     value: 0,
+      //     axis: 'x',
+      //     size: '198px'
+      //   });
 
-    //   var demoText2 = E('#slider-text-2');
-    //   slider2.on('slide', function(e) {
-    //     demoText2.text(this.value);
-    //   });
+      //   var demoText2 = E('#slider-text-2');
+      //   slider2.on('slide', function(e) {
+      //     demoText2.text(this.value);
+      //   });
 
-    //   demoText2.on('click', function() {
-    //     slider2.setValue(0);
-    //   });
+      //   demoText2.on('click', function() {
+      //     slider2.setValue(0);
+      //   });
 
-    //   // Slider 3
-    //   var slider3 = new E.ui.Slider('#slider-3', {
-    //     min: -10,
-    //     max: 10,
-    //     value: 0.5,
-    //     axis: 'x',
-    //     size: '198px'
-    //   });
+      //   // Slider 3
+      //   var slider3 = new E.ui.Slider('#slider-3', {
+      //     min: -10,
+      //     max: 10,
+      //     value: 0.5,
+      //     axis: 'x',
+      //     size: '198px'
+      //   });
 
-    //   var demoText3 = E('#slider-text-3');
-    //   slider3.on('slide', function(e) {
-    //     demoText3.text(this.value);
-    //   });
+      //   var demoText3 = E('#slider-text-3');
+      //   slider3.on('slide', function(e) {
+      //     demoText3.text(this.value);
+      //   });
 
-    //   demoText3.on('click', function() {
-    //     slider3.setValue(0.5);
-    //   });
+      //   demoText3.on('click', function() {
+      //     slider3.setValue(0.5);
+      //   });
 
-    //   // Slider 4
-    //   var slider4 = new E.ui.Slider('#slider-4', {
-    //     min: -10,
-    //     max: 10,
-    //     value: 0,
-    //     axis: 'x',
-    //     size: '198px'
-    //   });
+      //   // Slider 4
+      //   var slider4 = new E.ui.Slider('#slider-4', {
+      //     min: -10,
+      //     max: 10,
+      //     value: 0,
+      //     axis: 'x',
+      //     size: '198px'
+      //   });
 
-    //   var demoText4 = E('#slider-text-4');
-    //   slider4.on('slide', function(e) {
-    //     demoText4.text(this.value);
-    //   });
+      //   var demoText4 = E('#slider-text-4');
+      //   slider4.on('slide', function(e) {
+      //     demoText4.text(this.value);
+      //   });
 
-    //   demoText4.on('click', function() {
-    //     slider4.setValue(0);
-    //   });
+      //   demoText4.on('click', function() {
+      //     slider4.setValue(0);
+      //   });
     });
 
     $("#component-config").ready(function() {
@@ -163,7 +170,7 @@ $().ready(function() {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function(msg) {
       var message = JSON.parse(msg.data);
-      if (message.request == "getDirList") {  // get directory
+      if (message.request == "getDirList") { // get directory
         if (message.result.files == 'true') {
 
         } else {
@@ -173,7 +180,7 @@ $().ready(function() {
             proteinList.parseJson(message.result.files);
           }
         }
-      } else if (message.request == "getXmlJson") {   // get configuration data of a single protein
+      } else if (message.request == "getXmlJson") { // get configuration data of a single protein
         var part = eval('(' + message.result + ')').rsbpml.part_list.part;
 
         $("input[name=part_id]").attr({
@@ -213,10 +220,26 @@ $().ready(function() {
           'value': part.best_quality
         });
 
-      } else if (message.request == "getLoginedUserName") {   // get username
+      } else if (message.request == "getLoginedUserName") { // get username
         $("#user-view-left > p").text(message.result);
-      } else if (message.request == "loginOut") {             // get logout info
+      } else if (message.request == "loginOut") { // get logout info
         window.location = "..";
+      } else if (message.request == "getUserFileList") {
+        $("#filelist").html("");
+        for (var i = 0; i < message.result.length; i++) {
+          $("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
+        };
+
+        $("#filelist > a").live("click", function() {
+          console.log($(this).attr("id"));
+          ws.send(JSON.stringify({
+            "request": "loadUserFile",
+            "fileName": $(this).attr("id")
+          }));
+        });
+      } else if (message.request == "loadUserFile") {
+        console.log(message.result);
+
       }
     };
   }
