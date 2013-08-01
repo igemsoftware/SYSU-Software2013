@@ -9,18 +9,25 @@
     <script src="../static/js/bootstrap.min.js"></script>
   </head>
   <body>
+    <h2>File Manager</h2>
     <table class="table table-hover">
       <thead>
         <tr>
           <th>Filename</th>
           <th>Type</th>
+          <th>operation</th>
         </tr>
       </thead>
       <tbody>
         {% for item in filelist %}
         <tr>
-          <th>item.filename</th>
-          <th>item.type</th>
+          <th>{{ item.fileName }}</th>
+          <th>{{ item.fileType }}</th>
+          <th>
+            <button class="btn">open<i class="icon-folder-open"></i></button>
+            &nbsp
+            <button class="btn">delete<i class="icon-trash"></i></button>
+          </th>
         </tr>
         {% endfor %}
       </tbody>
