@@ -110,22 +110,22 @@ class SqliteDatabase:
 		else:
 			return 'getUserFile No result!'
 
-	def updateUserData(self,data,fileName):
+	def updateUserData(self,data,fileName,fileType):
 		if self.userId==-1:
 			self.logger.error('not login but want to save the user data')
 			return 'updateUserData failed'
-		sql_cmd='UPDATE user_save SET data="%s" WHERE user_id=%d AND fileName="%s"'%(data,self.userId,fileName)
+		sql_cmd='UPDATE user_save SET data="%s" WHERE user_id=%d AND fileName="%s" AND fileType="%s"'%(data,self.userId,fileName,fileType)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
 		self.__cx.commit()
 		return 'updateUserData succeed'		
 	
-	def insertUserData(self,data,fileName):
+	def insertUserData(self,data,fileName,fileType):
 		if self.userId==-1:
 			self.logger.error('not login but want to save the user data')
 			return 'updateUserData failed'
-		sql_cmd='INSERT INTO user_save (user_id,data,fileName) VALUES (%d,"%s","%s")'%(self.userId,data,fileName)
+		sql_cmd='INSERT INTO user_save (user_id,data,fileName,fileType) VALUES (%d,"%s","%s","%s")'%(self.userId,data,fileName,fileType)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))

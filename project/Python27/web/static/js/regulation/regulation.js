@@ -225,21 +225,21 @@ $().ready(function() {
       } else if (message.request == "loginOut") { // get logout info
         window.location = "..";
       } else if (message.request == "getUserFileList") {
+        console.log(message.result);
         $("#filelist").html("");
         for (var i = 0; i < message.result.length; i++) {
           $("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
         };
 
         $("#filelist > a").live("click", function() {
-          console.log($(this).attr("id"));
           ws.send(JSON.stringify({
             "request": "loadUserFile",
-            "fileName": $(this).attr("id")
+            "fileName": "default1",
+            "fileType": "data"
           }));
         });
       } else if (message.request == "loadUserFile") {
         console.log(message.result);
-
       }
     };
   }
