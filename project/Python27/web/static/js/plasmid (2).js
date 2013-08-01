@@ -632,7 +632,7 @@ function testWebSocket(){
 	}
 	ws.onopen = function() {
 		//ws.send(JSON.stringify({'request': 'getUserFileList'}));
-		ws.send(JSON.stringify({'request': 'loadUserFile','fileName':'default1','fileType':'data'}));
+		ws.send(JSON.stringify({'request': 'loadUserFile','fileName':'default1','fileType':'default'}));
 		//ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 	}

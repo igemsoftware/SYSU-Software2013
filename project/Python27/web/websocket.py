@@ -25,10 +25,15 @@ class apis():
     return content
   def saveUserData(self,message):
     message['data']=message['data'].replace('"','\'')
-    if message.has_key("fileName"):
-      return user.saveUserData(self.db,message['data'],message['fileName'])
+    if message.has_key("fileName")&&message.has_key("fileType"):
+      return user.saveUserData(self.db,message['data'],message['fileName'],message['fileType'])
+    elif message.has_key("fileName"):
+      return user.saveUserData(self.db,message['data'],message['fileName'],"default")
+    elif message.has_key("fileType"):
+      return user.saveUserData(self.db,message['data'],"default",message['fileType'])
     else:
-      return user.saveUserData(self.db,message['data'],"default")
+      return user.saveUserData(self.db,message['data'],"default","default")
+
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
   "ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));"
