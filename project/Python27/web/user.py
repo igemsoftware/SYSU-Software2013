@@ -32,8 +32,14 @@ def isUserLogined(database):
     else:
         return True
     
-def changeUserPassword(database,password):
+def changeUserPassword(database, old, password):
+  name = getLoginedUserName(database)
+  result=database.isUserNameAndPasswordCorrect(name,old)
+  if result=='Password correct!':
     database.updateUserPassword(password)
+    return "success"
+  else:
+    return "fail"
     
 def userLogout(database):
 	if(isUserLogined(database)):
@@ -88,6 +94,13 @@ def getUserInfo(database):
 		return database.getUserInfoByName(name)
 	else:
 		return "NULL"
+
+def updateUserInfo(database, info):
+	if (isUserLogined(database)):
+		return database.updateUserInfo(info, database.userId)
+	else:
+		return "NULL"
+
 
 if __name__=="__main__":
     sql=SqliteDatabase()

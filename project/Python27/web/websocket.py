@@ -26,24 +26,30 @@ class apis():
   def saveUserData(self,message):
     message['data']=message['data'].replace('"','\'')
     if message.has_key("fileName"):
-		return user.saveUserData(self.db,message['data'],message['fileName'])
+      return user.saveUserData(self.db,message['data'],message['fileName'])
     else:
-		return user.saveUserData(self.db,message['data'],"default")
+      return user.saveUserData(self.db,message['data'],"default")
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
   "ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));"
   def getXmlJson(self,message):
-	xml=xmlParse.xmlBiobrick(path=message['path'])
-	return xml.getJsonString()
+    xml=xmlParse.xmlBiobrick(path=message['path'])
+    return xml.getJsonString()
   def loginOut(self,message):
-	return user.userLogout(self.db)
+    return user.userLogout(self.db)
   def getUserFileList(self,message):
-	return user.getUserFileList(self.db)
+    return user.getUserFileList(self.db)
+  def updateUserInfo(self,message):
+    return user.updateUserInfo(self.db, message["userInfo"])
+  def updatePassword(self,message):
+    ret= user.changeUserPassword(self.db, message["old"], message["new"])
+    print ret
+    return ret
   def loadUserFile(self,message):
-	if message.has_key("fileType"):
-		return user.loadUserData(self.db,message['fileName'],message['fileType'])
-	else:
-		return user.loadUserData(self.db,message['fileName'],"data")
+    if message.has_key("fileType"):
+  	  return user.loadUserData(self.db,message['fileName'],message['fileType'])
+    else:
+      return user.loadUserData(self.db,message['fileName'],"data")
 
 def handle_websocket(ws, db):
   logging.info("start handling websocket...")
@@ -54,6 +60,7 @@ def handle_websocket(ws, db):
       print "message is empty"
       break
     else:
+      print message
       message = json.loads(message)
       api = apis(db)
       result = getattr(api, message['request'])(message)
