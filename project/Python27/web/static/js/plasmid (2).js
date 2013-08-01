@@ -623,6 +623,7 @@ function testWebSocket(){
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
 		ws.onmessage = function(msg) {
 		   var message = JSON.parse(msg.data);
+		   console.log(message.result);
 		   if(message.request==="getLoginedUserName")
 		   {			  
 			   sessionStorage.LoginedUserName=message.result;
@@ -630,7 +631,8 @@ function testWebSocket(){
 		};
 	}
 	ws.onopen = function() {
-		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+		//ws.send(JSON.stringify({'request': 'getUserFileList'}));
+		ws.send(JSON.stringify({'request': 'loadUserFile','fileName':'default1','fileType':'default'}));
 		//ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 	}

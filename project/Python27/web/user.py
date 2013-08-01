@@ -53,14 +53,14 @@ def userLogout(database):
 def getUserFileList(database):
 	return database.getUserFileNameList()
 
-def saveUserData(database,datastr,fileName):
+def saveUserData(database,datastr,fileName,fileType):
     datastr=jsonUtil.turnStringDoubleQuoteToSingleQuote(datastr)
-    if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName})):
+    if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName,'fileType':fileType})):
         print 'updateUserData'
-        return database.updateUserData(datastr,fileName)
+        return database.updateUserData(datastr,fileName,fileType)
     else:
         print 'insertUserData'
-        return database.insertUserData(datastr,fileName)
+        return database.insertUserData(datastr,fileName,fileType)
 
 def loadUserData(database,fileName,type):
 	fileList=getUserFileList(database)
@@ -105,9 +105,9 @@ def updateUserInfo(database, info):
 if __name__=="__main__":
     sql=SqliteDatabase()
     print userLogin(sql,'kitty','1212')
-    #saveUserData(sql,'{"name":"ffff"}','default1')
-    print getUserFileList(sql)
-    print loadUserData(sql,'filetse','data1')
+    saveUserData(sql,'sdfsdfdaf}','default1',"default2")
+    #print getUserFileList(sql)
+    #print loadUserData(sql,'filetse','data1')
     #print getLoginedUserName(sql)
     #changeUserPassword(sql,'1212')
     #userLogout(sql)
