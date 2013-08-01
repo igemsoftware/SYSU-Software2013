@@ -110,7 +110,7 @@
                 <!-- commandmenu starts -->
                 <div id="commandmenu" class="well well-small">
                   <div id="button-group">
-                    <button class="btn btn-success" id="myfile" style="width: 117px; margin-bottom: 10px;">My Files</button>
+                    <button class="btn btn-success" id="myfile" style="width: 117px; margin-bottom: 10px;" href="#filelist-modal" data-toggle="modal">My Files</button>
                     <button class="btn" id="create-part">Create New Part</button>
                   </div>
                 </div>  
@@ -271,6 +271,20 @@
     </div>
     <!-- save modal ends -->
 
+    <!-- filelist modal starts -->
+    <div id="filelist-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h6>File List</h6>
+      </div>
+      <div class="modal-body">                      
+        <div id="filelist"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+    <!-- filelist modal ends -->
 
     <!-- footer starts -->
     <div class="footer">

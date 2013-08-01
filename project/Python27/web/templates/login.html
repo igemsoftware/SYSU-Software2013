@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Welcome to iGem</title>
 	<link rel="stylesheet" href="../static/css/bootstrap.css">
-	<link rel="stylesheet" href="../static/css/login.css">
+	<link rel="stylesheet" href="../static/css/login.css">	
 </head>
 
 <body>
@@ -15,15 +15,18 @@
 		<div id="seperator"></div>
 		<form id="input-field">
 			<div class="input-outer">
-				<input type="text" name="userName" id="username"/>
+				<input type="text" name="userName" id="username" placeholder="username"/>
 			</div>
 			
 			<div class="input-outer">
-				<input type="password" name="password" id="password"/>
-			</div>
+				<input type="password" name="password" id="password" placeholder="password"/>
+			</div>			
+
 			<button class="btn btn-success" id="btn-login" type="submit" onclick="return false;">Log In</button>
 			<button class="btn" id="btn-reset" type="reset">Reset</button> 
 		</form>
+
+		<div class="alert" id="login-info"></div>
 	</div>
 
 
