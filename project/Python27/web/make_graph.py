@@ -1,4 +1,4 @@
-#import graph
+import graph
 import ctypes
 import json
 
@@ -8,7 +8,7 @@ def parse_data():
   # UNACCEPTABLY SLOW AND UGLY!!!
   # fp = open("Datafile.txt")
   # content = [(lambda s: [float(x) for x in s])(line.split()) for line in fp.readlines()]
-  graph = ctypes.cdll.LoadLibrary( 'G:\igem2013_sysu_oschina\project\Python27\web\\graph.dll' )
+  # graph = ctypes.cdll.LoadLibrary( 'G:\igem2013_sysu_oschina\project\Python27\web\\graph.dll' )
   content = graph.run()
   length = graph.get_length()
   size = graph.get_size()
