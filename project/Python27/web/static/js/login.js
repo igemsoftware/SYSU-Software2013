@@ -5,7 +5,8 @@ $(document).ready(function() {
 		ws.onmessage = function(msg) {
 			var message = JSON.parse(msg.data);
 			if (message.result === "Password correct!") {
-				$("#login-info").html("Welcome back! user: " + $("#username").attr('value'));
+				$("#login-info").html("<strong>Welcome back!</strong>  User: " + $("#username").attr('value'));
+				$("#login-info").removeClass("alert-error");
 				$("#login-info").addClass("alert-success");
 				$("#login-info").css("visibility", "visible");
 
@@ -14,7 +15,8 @@ $(document).ready(function() {
 				}, 1000);
 				
 			} else {
-				$("#login-info > button").html(message.result);
+				console.log(message.result);
+				$("#login-info").html("<strong>Warning!</strong> " + message.result);
 				$("#login-info").addClass("alert-error");
 				$("#login-info").css("visibility", "visible");
 			}
@@ -26,44 +28,21 @@ $(document).ready(function() {
 		var username = $("#username").attr('value');
 		var password = $("#password").attr('value');
 
-		//ws.send(JSON.stringify({'request': 'get_part', 'table_name': 'part_list'}));
-		ws.send(JSON.stringify({
-			'request': 'userLogin',
-			'name': username,
-			'password': password
-		}));
+		if (!username || !password) {
+			$("#login-info").html("<strong>Warning!</strong> Username or password can't be empty!");
+			$("#login-info").addClass("alert-error");
+			$("#login-info").css("visibility", "visible");
+		} else {
+			ws.send(JSON.stringify({
+				'request': 'userLogin',
+				'name': username,
+				'password': password
+			}));
+		}
 	});
 
 	$("#btn-reset").live("click", function() {
 		$("#username").reset();
 		$("#password").reset();
-	});
-
-	$("#username").change(function() {
-		if ($(this).val()) {
-			$(this).css({
-				"background": "rgba(80, 80, 80, 0.3)"
-			});
-		} else {
-			// $(this).css({
-			// 	"background-image": "url(../static/img/user.png)",
-			// 	"background-position": "5px 5px",
-			// 	"background-repeat": "no-repeat"
-			// });
-		}
-	});
-
-	$("#password").change(function() {
-		if ($(this).val()) {
-			$(this).css({
-				"background": "rgba(80, 80, 80, 0.3)"
-			});
-		} else {
-			// $(this).css({
-			// 	"background-image": "url(../static/img/password.png)",
-			// 	"background-position": "5px 5px",
-			// 	"background-repeat": "no-repeat"
-			// });
-		}
 	});
 });
