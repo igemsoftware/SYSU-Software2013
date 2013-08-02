@@ -96,11 +96,12 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson
 	
-	def getUserFile(self,filename,type):
+	def getUserFile(self,filename, fileType):
 		if self.userId==-1:
 			self.logger.error('not login but want to get the user file')
 			return 'getUserFile failed'
-		sql_cmd='select data from user_save WHERE user_id=%d AND fileType="%s" AND fileName="%s"'%(self.userId,type,filename)
+		# sql_cmd='select data from user_save WHERE user_id=%d AND fileType="%s" AND fileName="%s"'%(self.userId, fileType,filename)
+		sql_cmd='select data from user_save WHERE user_id=%d AND fileName="%s"'%(self.userId, filename)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('select fileName from user_save: %s'%sql_cmd)

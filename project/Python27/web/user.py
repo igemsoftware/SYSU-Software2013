@@ -70,11 +70,11 @@ def deleteUserData(database, fileName):
         return "file does not exist!"
 
 
-def loadUserData(database,fileName,type):
+def loadUserData(database,fileName, fileType):
 	fileList=getUserFileList(database)
-	for file in fileList:
-		if(fileName==file['fileName']):
-			return database.getUserFile(fileName,type)
+	for item in fileList:
+		if(fileName==item['fileName']):
+			return database.getUserFile(fileName, fileType)
 	return "no such file"
 
 "create a new user whose name cannot be the same as those in the database"

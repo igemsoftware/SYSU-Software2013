@@ -22,6 +22,12 @@ def login():
 def demo():
   return render_template('demo.html')
 
+@app.route("/get_demo")
+def get_demo():
+  filename = request.args.get('file','')
+  return render_template('get_demo.html', filename=filename)
+
+
 @app.route("/index")
 def index():
 	return render_template('index.html')
