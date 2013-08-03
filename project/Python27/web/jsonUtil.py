@@ -137,6 +137,29 @@ def convertplasmid_backboneCsvToDatabase():
 	cu.execute("select * from plasmid_backbone")
 	print cu.fetchall()
 
+def convertProteinCsvToDatabase():
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\Protein_test.csv','rb')
+	reader = csv.reader(csvfile)
+	i=0
+	data={}
+	standard=[]
+	for line in reader:		
+		if(i==0):
+			standard=line
+		else:
+			data[i-1]={}
+			for j in range(len(standard)):
+				data[i-1][standard[j]]=line[j]			
+		i=i+1
+	csvfile.close()
+	cx = sqlite.connect('igem.db')
+	cu = cx.cursor()
+	for i in range(len(data)):
+		cu.execute('insert into Protein(Name,Number,DegRatemRNA, DegRatePro) values("%s","%s",%s,%s)'%(data[i]['Name'],data[i]['Number'],data[i]['DegRatemRNA'],data[i]['DegRatePro']))
+		cx.commit()
+	cu.execute("select * from plasmid_backbone")
+	print cu.fetchall()
+
 def convertpromoterCsvToDatabase():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\promoter.csv','rb')
 	reader = csv.reader(csvfile)
@@ -200,7 +223,7 @@ def createRandomDataInrepressor():
 def createRandomDataInProtein():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\Protein_test.csv', 'wb')
 	writer = csv.writer(csvfile)
-	writer.writerow(['Name', 'Number', 'DegRatemRNA',' DegRatePro'])
+	writer.writerow(['Name', 'Number', 'DegRatemRNA','DegRatePro'])
 	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators'):
 		data=['LacI',os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
 		writer.writerow(data)
@@ -227,4 +250,6 @@ if __name__=="__main__":
 	#createRandomDataInRBS()
 	#createRandomDataInplasmid_backbone()
 	#createRandomDataInpromoter()
+	#createRandomDataInProtein()
 	createRandomDataInProtein()
+	convertProteinCsvToDatabase()
