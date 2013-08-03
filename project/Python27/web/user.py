@@ -9,7 +9,7 @@ Copyright (C) 2013-2014 sysu-software. All Rights Reserved.
 from database import SqliteDatabase
 import jsonUtil
 
-def userLogin(database,name,password):    
+def userLogin(database,name,password):
     database.logger.debug('user login now: name:%s,password:%s'%(name,password))
     result=database.isUserNameAndPasswordCorrect(name,password)
     if result=='Password correct!':
@@ -25,13 +25,13 @@ def isNameedUserLogined(database,name):
         return True
     else:
         return False
-    
+
 def isUserLogined(database):
     if database.userId==-1:
         return False
     else:
         return True
-    
+
 def changeUserPassword(database, old, password):
   name = getLoginedUserName(database)
   result=database.isUserNameAndPasswordCorrect(name,old)
@@ -40,7 +40,7 @@ def changeUserPassword(database, old, password):
     return "success"
   else:
     return "fail"
-    
+
 def userLogout(database):
 	if(isUserLogined(database)):
 		database.logger.debug(database.getUserNameById(database.userId)+' log out')
@@ -62,19 +62,27 @@ def saveUserData(database,datastr,fileName,fileType):
         print 'insertUserData'
         return database.insertUserData(datastr,fileName,fileType)
 
-def loadUserData(database,fileName,type):
+def deleteUserData(database, fileName):
+    if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName})):
+        return database.deleteUserData(fileName)
+    else:
+        database.logger.error("file does not exist")
+        return "file does not exist!"
+
+
+def loadUserData(database,fileName, fileType):
 	fileList=getUserFileList(database)
-	for file in fileList:
-		if(fileName==file['fileName']):
-			return database.getUserFile(fileName,type)
+	for item in fileList:
+		if(fileName==item['fileName']):
+			return database.getUserFile(fileName, fileType)
 	return "no such file"
-    
+
 "create a new user whose name cannot be the same as those in the database"
 def registAUser(database,name,password,email,group_id):
-    if isUserLogined(database) is True:      
-        if database.isRecordExist(tableName='user_list',recs={'name':name}):        
+    if isUserLogined(database) is True:
+        if database.isRecordExist(tableName='user_list',recs={'name':name}):
             database.logger.debug('user name exist: %s'%name)
-            return 'user with the same name exist!'              
+            return 'user with the same name exist!'
         database.insertAUser(name,password,email,group_id)
         return 'registAUser success'
     else:

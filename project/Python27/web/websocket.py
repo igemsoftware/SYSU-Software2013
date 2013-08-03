@@ -44,11 +44,13 @@ class apis():
     return user.userLogout(self.db)
   def getUserFileList(self,message):
     return user.getUserFileList(self.db)
+  def deleteUserData(self,message):
+    return {"name":message["name"],
+        "result":user.deleteUserData(self.db,message["name"])}
   def updateUserInfo(self,message):
     return user.updateUserInfo(self.db, message["userInfo"])
   def updatePassword(self,message):
     ret= user.changeUserPassword(self.db, message["old"], message["new"])
-    print ret
     return ret
   def loadUserFile(self,message):
     if message.has_key("fileType"):
@@ -71,5 +73,6 @@ def handle_websocket(ws, db):
       result = getattr(api, message['request'])(message)
       logging.info("message is %s" % message)
       ret = json.dumps({'request':message['request'],'result': result})
+      print ret
       logging.info("return %s" % ret)
       ws.send(ret)

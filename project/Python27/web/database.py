@@ -96,11 +96,12 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson
 	
-	def getUserFile(self,filename,type):
+	def getUserFile(self,filename, fileType):
 		if self.userId==-1:
 			self.logger.error('not login but want to get the user file')
 			return 'getUserFile failed'
-		sql_cmd='select data from user_save WHERE user_id=%d AND fileType="%s" AND fileName="%s"'%(self.userId,type,filename)
+		# sql_cmd='select data from user_save WHERE user_id=%d AND fileType="%s" AND fileName="%s"'%(self.userId, fileType,filename)
+		sql_cmd='select data from user_save WHERE user_id=%d AND fileName="%s"'%(self.userId, filename)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('select fileName from user_save: %s'%sql_cmd)
@@ -132,6 +133,17 @@ class SqliteDatabase:
 		print self.__cx.commit()
 		return 'updateUserData succeed'	
 		
+	def deleteUserData(self,fileName):
+		if self.userId==-1:
+			self.logger.error('not login but want to delete the user data')
+			return 'deleteUserData failed'
+		sql_cmd='DELETE FROM user_save WHERE user_id = %d AND fileName = "%s"'%(self.userId,fileName)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)
+		self.logger.debug('delete user: %s'%self.getUserNameById(self.userId))
+		print self.__cx.commit()
+		return 'deleteUserData succeed'	
+
 	def insertAUser(self,name,password,email,group_id):
 		nextId=self.getMaxUserId()+1
 		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d);'%(nextId,name,password,email,group_id)
@@ -185,11 +197,11 @@ class SqliteDatabase:
 		gender = info["gender"]
 		e_mail = info["e_mail"]
 		excuteString= 'UPDATE user_list SET name="%s", e_mail = "%s" WHERE id = "%s"' % (name, e_mail, userId)
-		print excuteString
-		self.__cursor.execute(excuteString)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		return decodejson[0]
+		try:
+		  self.__cursor.execute(excuteString)
+		  return "success"
+		except:
+		  return "fail"
 
 	"the demo of selecting all data of part_list to the encoded json format"
 	def demo1(self):

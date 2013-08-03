@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="../static/js/jquery-1.8.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        if ("WebSocket" in window) {
+          ws = new WebSocket("ws://" + document.domain + ":5000/ws");
+          ws.onmessage = function (msg) {
+            var message = JSON.parse(msg.data);
+            alert(message);
+          };
+        };
+
+        // Bind send button to websocket
+        ws.onopen = function() {
+          var filename = '{{ filename }}';
+          ws.send(JSON.stringify({'request': 'loadUserFile', 'fileName':
+                                 filename}));
+        }
+
+        // Cleanly close websocket when unload window
+        window.onbeforeunload = function() {
+          ws.onclose = function () {}; // disable onclose handler first
+          ws.close()
+        };
+      });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
