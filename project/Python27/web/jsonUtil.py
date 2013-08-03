@@ -13,6 +13,7 @@ import database
 import sqlite3 as sqlite
 import os
 import random
+import xmlParse as myxml
 "turn a selection of the database 's result to the encoded json"
 def turnSelectionResultToJson(description=[],result=[]):
     dict= {}
@@ -232,12 +233,36 @@ def createRandomDataInrepressor():
 		writer.writerow(data)
 	csvfile.close()
 
+def appendDirToListProtein(root,writer):
+	for filename in os.listdir(root):
+		if os.path.isdir(os.path.join(root,filename)):
+			appendDirToListProtein(os.path.join(root,filename),writer)
+		else:
+			data=[myxml.xmlBiobrick(os.path.join(root,filename)).getPartShortName(),os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
+			writer.writerow(data)
+
 def createRandomDataInProtein():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\Protein_test.csv', 'wb')
 	writer = csv.writer(csvfile)
 	writer.writerow(['Name', 'Number', 'DegRatemRNA','DegRatePro'])
-	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators'):
-		data=['LacI',os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
+	root=r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences'
+	for filename in os.listdir(root):
+		#data=['LacI',os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
+		#writer.writerow(data)
+		if os.path.isdir(os.path.join(root,filename)):
+			appendDirToListProtein(os.path.join(root,filename),writer)
+	else:		
+		data=[myxml.xmlBiobrick(os.path.join(root,filename)).getPartShortName(),os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
+		writer.writerow(data)
+	csvfile.close()
+
+def createRandomDataInProteinSpecial():
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\Protein_test2.csv', 'w+')
+	writer = csv.writer(csvfile)
+	#writer.writerow(['Name', 'Number', 'DegRatemRNA','DegRatePro'])
+	root=r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators'
+	for filename in os.listdir(root):	
+		data=[myxml.xmlBiobrick(os.path.join(root,filename)).getPartShortName(),os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
 		writer.writerow(data)
 	csvfile.close()
 
@@ -281,6 +306,7 @@ if __name__=="__main__":
 	#createRandomDataInplasmid_backbone()
 	#createRandomDataInpromoter()
 	#createRandomDataInProtein()
+	createRandomDataInProteinSpecial()
 	#createRandomDataInProtein()
 	#convertProteinCsvToDatabase()
-	createExpression_valueTable()
+	#createExpression_valueTable()

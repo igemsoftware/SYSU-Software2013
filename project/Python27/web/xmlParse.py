@@ -75,7 +75,10 @@ class xmlBiobrick:
         #jsonStr = json.dumps(data);
         #print "jsonStr=",jsonStr;
         #print data["rsbpml"]["part_list"]
-        
+
+    def getPartShortName(self):
+		return self.getPart()['part_short_name']
+
     def getJsonString(self):
         return json.dumps(self.data)
     
@@ -83,8 +86,8 @@ class xmlBiobrick:
         return self.getPart()['part_id']
     
     def getPart(self):
-        return self.data["rsbpml"]["part_list"]["part"]
-        
+        return self.data["rsbpml"]["part_list"]["part"]    
+	
 #        self.filepath=path
 #        dom = xml.dom.minidom.parse(self.filepath)        
 #        self.root = dom.documentElement     
@@ -100,7 +103,7 @@ class xmlBiobrick:
  
 if __name__ == '__main__':  
     xml=xmlBiobrick(path="web/biobrick/Terminators/BBa_B0010.xml")
-    print xml.getJsonString()
+    print xml.getPart()
 	#print get_allfiledirs(path="web/biobrick/Plasmid backbones/Assembly")
 	#outputPathsToFile(test(path="web/biobrick/Plasmid backbones/System operation"))
     #getAllFilesInPath("biobrick")
