@@ -64,7 +64,7 @@ def convertRBSCsvToDatabase():
 	cx = sqlite.connect('igem.db')
 	cu = cx.cursor()
 	for i in range(len(data)):
-		cu.execute('insert into RBS (Name,Number,RiPS) values("%s","%s",%s)'%(data[i]['Name'],data[i]['Number'],data[i]['RiPS']))
+		cu.execute('insert into RBS (Name,Number,MPRBS) values("%s","%s",%s)'%(data[i]['Name'],data[i]['Number'],data[i]['MPRBS']))
 		cx.commit()	
 	print cu.fetchall()
 
@@ -86,7 +86,7 @@ def convertrepressorCsvToDatabase():
 	cx = sqlite.connect('igem.db')
 	cu = cx.cursor()
 	for i in range(len(data)):
-		cu.execute('insert into repressor (Name,Number,Nd,Kd,Kx) values("%s","%s",%s,%s,%s)'%(data[i]['Name'],data[i]['Number'],data[i]['Nd'],data[i]['Kd'],data[i]['Kx']))
+		cu.execute('insert into repressor (Name,Number,HillCoeff1,K1,K2) values("%s","%s",%s,%s,%s)'%(data[i]['Name'],data[i]['Number'],data[i]['HillCoeff1'],data[i]['K1'],data[i]['K2']))
 		cx.commit()	
 	cu.execute("select * from repressor")
 	print cu.fetchall()
@@ -132,7 +132,7 @@ def convertplasmid_backboneCsvToDatabase():
 	cx = sqlite.connect('igem.db')
 	cu = cx.cursor()
 	for i in range(len(data)):
-		cu.execute('insert into plasmid_backbone(Name,Number,rho) values("%s","%s",%s)'%(data[i]['Name'],data[i]['Number'],data[i]['rho']))
+		cu.execute('insert into plasmid_backbone(Name,Number,CopyNumber) values("%s","%s",%s)'%(data[i]['Name'],data[i]['Number'],data[i]['CopyNumber']))
 		cx.commit()
 	cu.execute("select * from plasmid_backbone")
 	print cu.fetchall()
@@ -159,7 +159,7 @@ def convertpromoterCsvToDatabase():
 	cx = sqlite.connect('igem.db')
 	cu = cx.cursor()
 	for i in range(len(data)):
-		cu.execute('insert into promoter (Name,Number,MaxProduction,LeakageRateEpsilon,Kd,Regulated,Repressor,Source) values("%s","%s",%s,%s,%s,"%s","%s","%s")'%(data[i]['Name'],data[i]['Number'],data[i]['MaxProduction'],data[i]['LeakageRateEpsilon'],data[i]['Kd'],data[i]['Regulated'],data[i]['Repressor'],data[i]['Source']))
+		cu.execute('insert into promoter (Name,Number,MPPromoter,LeakageRate,K1,Regulated,Repressor,Source,Activator) values("%s","%s",%s,%s,%s,"%s","%s","%s")'%(data[i]['Name'],data[i]['Number'],data[i]['MPPromoter'],data[i]['LeakageRate'],data[i]['K1'],data[i]['Regulated'],data[i]['Repressor'],data[i]['Source'],data[i]['Activator']))
 		cx.commit()
 	cu.execute("select * from promoter")
 	print cu.fetchall()
@@ -167,7 +167,7 @@ def convertpromoterCsvToDatabase():
 def createRandomDataInRBS():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\RBS_test.csv', 'wb')
 	writer = csv.writer(csvfile)
-	writer.writerow(['Name', 'Number', 'RiPS'])
+	writer.writerow(['Name', 'Number', 'MPRBS'])
 	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Ribosome Binding Sites\Constitutive prokaryotic RBS\Anderson RBS library'):
 		writer.writerow(['Anderson RBS Family',os.path.splitext(filename)[0],round(random.random(),4)])
 	csvfile.close()
@@ -183,7 +183,7 @@ def createRandomDataInTerminators():
 def createRandomDataInplasmid_backbone():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\plasmid_backbone_test.csv', 'wb')
 	writer = csv.writer(csvfile)
-	writer.writerow(['Name', 'Number', 'rho'])
+	writer.writerow(['Name', 'Number', 'CopyNumber'])
 	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Plasmid backbones\Assembly'):
 		writer.writerow(['pTAK10'+os.path.splitext(filename)[0][len(os.path.splitext(filename)[0])-1],os.path.splitext(filename)[0],round(random.randint(1, 100),4)])
 	csvfile.close()
@@ -191,21 +191,30 @@ def createRandomDataInplasmid_backbone():
 def createRandomDataInrepressor():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\repressor_test.csv', 'wb')
 	writer = csv.writer(csvfile)
-	writer.writerow(['Name', 'Number', 'Nd','Kd','Kx'])
+	writer.writerow(['Name', 'Number', 'HillCoeff1','K1','K2'])
 	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators'):
 		data=['LacI',os.path.splitext(filename)[0],random.randint(0,100000),random.randint(100,10000),random.randint(100,10000)]
+		writer.writerow(data)
+	csvfile.close()
+
+def createRandomDataInProtein():
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\Protein_test.csv', 'wb')
+	writer = csv.writer(csvfile)
+	writer.writerow(['Name', 'Number', 'DegRatemRNA',' DegRatePro'])
+	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators'):
+		data=['LacI',os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
 		writer.writerow(data)
 	csvfile.close()
 
 def createRandomDataInpromoter():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\promoter_test.csv', 'wb')
 	writer = csv.writer(csvfile)
-	writer.writerow(['Name', 'Number', 'MaxProduction','LeakageRateEpsilon','Kd','Regulated','Repressor','Source'])
+	writer.writerow(['Name', 'Number', 'MPPromoter','LeakageRate','K1','Regulated','Repressor','Source','Activator'])
 	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Promoters\Cell signalling'):
-		data=['LuxR',os.path.splitext(filename)[0],round(round(random.random(),4),4),round(round(random.random(),4),4),random.randint(100,10000),1,'LuxR','Paper']
+		data=['LuxR',os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4),random.randint(100,10000),1,'LuxR','Paper','null']
 		writer.writerow(data)	
 	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Promoters\Constitutive promoters'):
-		data=['TetO',os.path.splitext(filename)[0],round(round(random.random(),4),4),round(round(random.random(),4),4),random.randint(100,10000),0,'null','Paper']
+		data=['TetO',os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4),random.randint(100,10000),0,'null','Paper','null']
 		writer.writerow(data)
 	csvfile.close()
 
@@ -217,4 +226,5 @@ if __name__=="__main__":
 	#convertplasmid_backboneCsvToDatabase()
 	#createRandomDataInRBS()
 	#createRandomDataInplasmid_backbone()
-	createRandomDataInpromoter()
+	#createRandomDataInpromoter()
+	createRandomDataInProtein()
