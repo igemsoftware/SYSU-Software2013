@@ -95,7 +95,14 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson
-	
+
+	def getExpressionValue(self):
+		sql_cmd='SELECT [expression_value].* FROM [expression_value]'
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
 	def getUserFile(self,filename, fileType):
 		if self.userId==-1:
 			self.logger.error('not login but want to get the user file')

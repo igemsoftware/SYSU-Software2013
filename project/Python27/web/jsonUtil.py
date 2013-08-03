@@ -66,7 +66,7 @@ def convertRBSCsvToDatabase():
 	cu = cx.cursor()
 	for i in range(len(data)):
 		cu.execute('insert into RBS (Name,Number,MPRBS) values("%s","%s",%s)'%(data[i]['Name'],data[i]['Number'],data[i]['MPRBS']))
-		cx.commit()	
+	cx.commit()	
 	print cu.fetchall()
 	cu.close()
 	cx.close()
@@ -90,7 +90,7 @@ def convertrepressorCsvToDatabase():
 	cu = cx.cursor()
 	for i in range(len(data)):
 		cu.execute('insert into repressor (Name,Number,HillCoeff1,K1,K2) values("%s","%s",%s,%s,%s)'%(data[i]['Name'],data[i]['Number'],data[i]['HillCoeff1'],data[i]['K1'],data[i]['K2']))
-		cx.commit()	
+	cx.commit()	
 	cu.execute("select * from repressor")
 	print cu.fetchall()
 	cu.close()
@@ -115,14 +115,14 @@ def convertterminatorCsvToDatabase():
 	cu = cx.cursor()
 	for i in range(len(data)):
 		cu.execute('insert into terminator(Name,Number,Efficiency) values("%s","%s",%s)'%(data[i]['Name'],data[i]['Number'],data[i]['Efficiency']))
-		cx.commit()
+	cx.commit()
 	cu.execute("select * from terminator")
 	print cu.fetchall()
 	cu.close()
 	cx.close()
 
 def convertplasmid_backboneCsvToDatabase():
-	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\plasmid_backbone.csv','rb')
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\plasmid_backbone_test.csv','rb')
 	reader = csv.reader(csvfile)
 	i=0
 	data={}
@@ -140,7 +140,7 @@ def convertplasmid_backboneCsvToDatabase():
 	cu = cx.cursor()
 	for i in range(len(data)):
 		cu.execute('insert into plasmid_backbone(Name,Number,CopyNumber) values("%s","%s",%s)'%(data[i]['Name'],data[i]['Number'],data[i]['CopyNumber']))
-		cx.commit()
+	cx.commit()
 	cu.execute("select * from plasmid_backbone")
 	print cu.fetchall()
 	cu.close()
@@ -165,14 +165,14 @@ def convertProteinCsvToDatabase():
 	cu = cx.cursor()
 	for i in range(len(data)):
 		cu.execute('insert into Protein(Name,Number,DegRatemRNA, DegRatePro) values("%s","%s",%s,%s)'%(data[i]['Name'],data[i]['Number'],data[i]['DegRatemRNA'],data[i]['DegRatePro']))
-		cx.commit()
+	cx.commit()
 	cu.execute("select * from plasmid_backbone")
 	print cu.fetchall()
 	cu.close()
 	cx.close()
 
 def convertpromoterCsvToDatabase():
-	csvfile = file('C:\Users\Administrator\Desktop\IGEM\promoter.csv','rb')
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\promoter_test.csv','rb')
 	reader = csv.reader(csvfile)
 	i=0
 	data={}
@@ -193,8 +193,8 @@ def convertpromoterCsvToDatabase():
 	cx = sqlite.connect('igem.db')
 	cu = cx.cursor()
 	for i in range(len(data)):
-		cu.execute('insert into promoter (Name,Number,MPPromoter,LeakageRate,K1,Regulated,Repressor,Source,Activator) values("%s","%s",%s,%s,%s,"%s","%s","%s")'%(data[i]['Name'],data[i]['Number'],data[i]['MPPromoter'],data[i]['LeakageRate'],data[i]['K1'],data[i]['Regulated'],data[i]['Repressor'],data[i]['Source'],data[i]['Activator']))
-		cx.commit()
+		cu.execute('insert into promoter (Name,Number,MPPromoter,LeakageRate,K1,Regulated,Repressor,Source,Activator) values("%s","%s",%s,%s,%s,"%s","%s","%s","%s")'%(data[i]['Name'],data[i]['Number'],data[i]['MPPromoter'],data[i]['LeakageRate'],data[i]['K1'],data[i]['Regulated'],data[i]['Repressor'],data[i]['Source'],'null'))
+	cx.commit()
 	cu.execute("select * from promoter")
 	print cu.fetchall()
 	cu.close()
@@ -296,7 +296,8 @@ def createExpression_valueTable():
 		for plasmid_backbone in plasmid_backboneTable:			
 			cu.execute('insert into expression_value(Number,Promoter,PlasmidBackbone, ExpressionValue) values("%s","%s","%s",%s)'%(size,promoter['Number'],plasmid_backbone['Number'],round(promoter['MPPromoter']*plasmid_backbone['CopyNumber'],4)))
 			size+=1
-			cx.commit()	
+		print size
+	cx.commit()
 	cu.close()
 	cx.close()
 
@@ -311,7 +312,7 @@ if __name__=="__main__":
 	#createRandomDataInpromoter()
 	#createRandomDataInProtein()
 	#bioBrickGetpartshortname(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators\BBa_C0071.xml')
-	createRandomDataInProteinSpecial()
+	#createRandomDataInProteinSpecial()
 	#createRandomDataInProtein()
-	#convertProteinCsvToDatabase()
+	convertProteinCsvToDatabase()
 	#createExpression_valueTable()

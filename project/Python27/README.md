@@ -17,3 +17,6 @@
 <br>
 2013.7.28:增加局部序列色条
 <img src="http://ww1.sinaimg.cn/mw690/b8700d2fgw1e72rfa4xqrj21hc0hl0w7.jpg" width="690" height="227" />
+<br>
+2013.8.03:数据库增加protein条目
+<img src="http://ww3.sinaimg.cn/mw690/b8700d2fgw1e79iyltte7j21400l4wl5.jpg" width="690" height="227" />
