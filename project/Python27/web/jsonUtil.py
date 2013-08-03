@@ -13,7 +13,7 @@ import database
 import sqlite3 as sqlite
 import os
 import random
-import xmlParse as myxml
+from  xml.dom import  minidom
 "turn a selection of the database 's result to the encoded json"
 def turnSelectionResultToJson(description=[],result=[]):
     dict= {}
@@ -238,7 +238,7 @@ def appendDirToListProtein(root,writer):
 		if os.path.isdir(os.path.join(root,filename)):
 			appendDirToListProtein(os.path.join(root,filename),writer)
 		else:
-			data=[myxml.xmlBiobrick(os.path.join(root,filename)).getPartShortName(),os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
+			data=[bioBrickGetpartshortname(os.path.join(root,filename)),os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
 			writer.writerow(data)
 
 def createRandomDataInProtein():
@@ -247,25 +247,29 @@ def createRandomDataInProtein():
 	writer.writerow(['Name', 'Number', 'DegRatemRNA','DegRatePro'])
 	root=r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences'
 	for filename in os.listdir(root):
-		#data=['LacI',os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
-		#writer.writerow(data)
 		if os.path.isdir(os.path.join(root,filename)):
 			appendDirToListProtein(os.path.join(root,filename),writer)
 	else:		
-		data=[myxml.xmlBiobrick(os.path.join(root,filename)).getPartShortName(),os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
+		data=[bioBrickGetpartshortname(os.path.join(root,filename)),os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
 		writer.writerow(data)
 	csvfile.close()
 
 def createRandomDataInProteinSpecial():
-	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\Protein_test2.csv', 'w+')
+	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\Protein_test2.csv', 'wb')
 	writer = csv.writer(csvfile)
-	#writer.writerow(['Name', 'Number', 'DegRatemRNA','DegRatePro'])
 	root=r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators'
 	for filename in os.listdir(root):	
-		data=[myxml.xmlBiobrick(os.path.join(root,filename)).getPartShortName(),os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
+		data=[bioBrickGetpartshortname(os.path.join(root,filename)),os.path.splitext(filename)[0],round(random.random(),4),round(random.random(),4)]
 		writer.writerow(data)
 	csvfile.close()
 
+def bioBrickGetpartshortname(path):
+	doc = minidom.parse(path)
+	root = doc.documentElement
+	node = root.getElementsByTagName("part_list")[0].getElementsByTagName("part")  
+	nodeValue=node[0].getElementsByTagName("part_short_name")[0].childNodes[0].nodeValue
+	return nodeValue
+	
 def createRandomDataInpromoter():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\promoter_test.csv', 'wb')
 	writer = csv.writer(csvfile)
@@ -306,6 +310,7 @@ if __name__=="__main__":
 	#createRandomDataInplasmid_backbone()
 	#createRandomDataInpromoter()
 	#createRandomDataInProtein()
+	#bioBrickGetpartshortname(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators\BBa_C0071.xml')
 	createRandomDataInProteinSpecial()
 	#createRandomDataInProtein()
 	#convertProteinCsvToDatabase()
