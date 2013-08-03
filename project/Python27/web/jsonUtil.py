@@ -67,6 +67,8 @@ def convertRBSCsvToDatabase():
 		cu.execute('insert into RBS (Name,Number,MPRBS) values("%s","%s",%s)'%(data[i]['Name'],data[i]['Number'],data[i]['MPRBS']))
 		cx.commit()	
 	print cu.fetchall()
+	cu.close()
+	cx.close()
 
 def convertrepressorCsvToDatabase():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\repressor.csv','rb')
@@ -90,6 +92,8 @@ def convertrepressorCsvToDatabase():
 		cx.commit()	
 	cu.execute("select * from repressor")
 	print cu.fetchall()
+	cu.close()
+	cx.close()
 
 def convertterminatorCsvToDatabase():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\terminator.csv','rb')
@@ -113,6 +117,8 @@ def convertterminatorCsvToDatabase():
 		cx.commit()
 	cu.execute("select * from terminator")
 	print cu.fetchall()
+	cu.close()
+	cx.close()
 
 def convertplasmid_backboneCsvToDatabase():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\plasmid_backbone.csv','rb')
@@ -136,6 +142,8 @@ def convertplasmid_backboneCsvToDatabase():
 		cx.commit()
 	cu.execute("select * from plasmid_backbone")
 	print cu.fetchall()
+	cu.close()
+	cx.close()
 
 def convertProteinCsvToDatabase():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\\Protein_test.csv','rb')
@@ -159,6 +167,8 @@ def convertProteinCsvToDatabase():
 		cx.commit()
 	cu.execute("select * from plasmid_backbone")
 	print cu.fetchall()
+	cu.close()
+	cx.close()
 
 def convertpromoterCsvToDatabase():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\promoter.csv','rb')
@@ -186,6 +196,8 @@ def convertpromoterCsvToDatabase():
 		cx.commit()
 	cu.execute("select * from promoter")
 	print cu.fetchall()
+	cu.close()
+	cx.close()
 
 def createRandomDataInRBS():
 	csvfile = file('C:\Users\Administrator\Desktop\IGEM\RBS_test.csv', 'wb')
@@ -241,6 +253,24 @@ def createRandomDataInpromoter():
 		writer.writerow(data)
 	csvfile.close()
 
+def createExpression_valueTable():
+	cx = sqlite.connect('igem.db')
+	cu = cx.cursor()
+	cu.execute("select * from promoter")
+	temp1 = turnSelectionResultToJson(cu.description,cu.fetchall())
+	promoterTable = json.loads(temp1)
+	cu.execute("select * from plasmid_backbone")
+	temp1 = turnSelectionResultToJson(cu.description,cu.fetchall())
+	plasmid_backboneTable = json.loads(temp1)
+	size=0
+	for promoter in promoterTable:
+		for plasmid_backbone in plasmid_backboneTable:			
+			cu.execute('insert into expression_value(Number,Promoter,PlasmidBackbone, ExpressionValue) values("%s","%s","%s",%s)'%(size,promoter['Number'],plasmid_backbone['Number'],round(promoter['MPPromoter']*plasmid_backbone['CopyNumber'],4)))
+			size+=1
+			cx.commit()	
+	cu.close()
+	cx.close()
+
 if __name__=="__main__":
 	#convertpromoterCsvToDatabase()
 	#convertRBSCsvToDatabase()
@@ -251,5 +281,6 @@ if __name__=="__main__":
 	#createRandomDataInplasmid_backbone()
 	#createRandomDataInpromoter()
 	#createRandomDataInProtein()
-	createRandomDataInProtein()
-	convertProteinCsvToDatabase()
+	#createRandomDataInProtein()
+	#convertProteinCsvToDatabase()
+	createExpression_valueTable()
