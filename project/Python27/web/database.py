@@ -94,14 +94,7 @@ class SqliteDatabase:
 		self.logger.debug('select fileName from user_save: %s'%sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
-		return decodejson
-
-	def getExpressionValue(self):
-		sql_cmd='SELECT [expression_value].* FROM [expression_value]'
-		self.__cursor.execute(sql_cmd)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		return decodejson
+		return decodejson	
 
 	def getUserFile(self,filename, fileType):
 		if self.userId==-1:
