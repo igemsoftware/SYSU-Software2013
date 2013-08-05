@@ -3,7 +3,7 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -12,68 +12,61 @@
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width">
     
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/css/dtree.css">
-    <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="../static/css/graphiti.css">
-      <style type="text/css">
-        ul.item{margin:0;padding:0;width: 1030px;
-        height: 509px;background-color: #FFFFFF;}
-        table{border-collapse:collapse;border-spacing:0}
-        .category{width:1230px;height:513px;border:1px solid #8A0E00;}
-        .category ul li{height:50px;line-height:50px;text-indent:10px;background:#66CCFF;
-          border-bottom:1px solid #ECECEC;border-top:1px solid #fff;
-        cursor:pointer;color:#A71F37;width: 200px;} 
-        .category ul li:hover{background-color:#ECECEC;color:#fff;}
-        .pop-category{width:1022px;border:2px solid #8A0E00;background:#FDF5F5;
-        position:relative;left:203px;top:-508px;z-index:1000;}
-        .sub-item{width:1022px;height:507px;display:none; background-color: #F5F5F5;overflow:auto}
-        .auto-style {background-color: #00CCFF;}
-        table, td, th{border:2px solid black;width:350px;
-        height:20px;background-color: #FFFFFF;}      
-    </style>
-  </head>
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="../static/css/reset.css">
+  <link rel="stylesheet" href="../static/css/slider_style.css">
+  <link rel="stylesheet" href="../static/css/dtree.css">  
+  <link rel="stylesheet" href="../static/css/graphiti.css">
+  <link rel="stylesheet" href="../static/css/navlist.css">
+  <style>
+    li{height:45px;line-height: 28px;}
+    p{font-size:14px;line-height:20px;} 
+  </style>
+</head>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-
+<body>
   <div class="container">
     <h1>Protocol</h1>
-    <div class="footer">
-      <button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
-      <button class="btn" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
-      <button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
-      <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
-      <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
+    <div class="footer" align="center">
+      <button class="btn btn-primary" onclick="window.location.pathname = '/index'">Regulation network</button>
+      <button class="btn btn-primary" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
+      <button class="btn btn-primary" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
+      <button class="btn btn-primary" onclick="window.location.pathname = '/protocol'">Protocol</button>
+      <button class="btn btn-primary" onclick="window.location.pathname = '/simulation'">Simulation</button>
     </div>
-    <div style="position:absolute;left:25px;">
-      <div>
-        <div class="category">
-          <ul id="J_category" class="item" style="list-style-type:none">
-            <li class="auto-style">Overview</li>
-            <li class="auto-style">1.Obtain plasmid DNA for parts</li>
-            <li class="auto-style">2.Enzyme Digestion</li>
-            <li class="auto-style">3.Gel Electrophoresis</li>
-            <li class="auto-style">4.Gel Purification</li>
-            <li class="auto-style">5.Ligation</li>
-            <li class="auto-style">6.Transformation</li>
-            <li class="auto-style">7.Colony PCR</li>
-            <li class="auto-style">8.Conclusive Test</li>
-            <li class="auto-style">9.Glycerol Stock</li>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <ul class="nav nav-list bs-docs-sidenav affix" id="myTab" style="background:white">
+            <li class="active"><a href="#0" data-toggle="tab">Overview<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#1" data-toggle="tab">1.Obtain plasmid DNA for parts<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#2" data-toggle="tab">2.Enzyme Digestion<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#3" data-toggle="tab">3.Gel Electrophoresis<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#4" data-toggle="tab">4.Gel Purification<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#5" data-toggle="tab">5.Ligation<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#6" data-toggle="tab">6.Transformation<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#7" data-toggle="tab">7.Colony PCR<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#8" data-toggle="tab">8.Conclusive Test<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#9" data-toggle="tab">9.Glycerol Stock<i class="icon-chevron-right"></i></a></li>
           </ul>
-          <div id="J_popCategory" class="pop-category">
-            <div class='sub-item' style='display:block;'><br />
-              <canvas id="myCanvas" width="1000" height="1000" style="border:1px;">
+        </div>
+        <div class="span9 tab-content bs-docs-sidenav affix" id="myTabContent" style="background:white;position:relative;top:0px;left:-30px;height:451px;">
+          <div class="tab-pane active" id="0"><br />
+              <canvas id="myCanvas" width="800" height="400" style="border:1px;">
                 your browser does not support the canvas element.
               </canvas>
-            </div>
-            <div class='sub-item'><br />
+          </div>
+          <div class="tab-pane" id="1"><br />
               <p>&nbsp;&nbsp;When obtaining plasmid DNA for digestion and ligation, a yield of at least 15 ng/μL is desirable. 
               Also, it is helpful to miniprep more than one sample of each type of plasmid DNA every time the miniprep 
               procedure is done. Due to the overnight incubation step, minipreps are a bottleneck process, so minimize the 
               number of times you perform minipreps. Another benefit of having a large volume of DNA is that you have the 
-              option of concentrating the DNA if needed.</p>
-            </div>
-            <div class='sub-item'><br />
+              option of concentrating the DNA if needed.</p> 
+          </div>
+            <div class="tab-pane" id="2"><br />
               <p><strong>&nbsp;&nbsp;Digest the plasmid DNA for the two parts with the appropriate enzymes for the desired ligation.</strong></p>
               <p><b>2.1</b> If you are digesting with EcoRI and PstI to verify the size of an insert, use 12 μL of miniprep DNA, 
               or at least 400 ng. If digesting to make a vector or an insert, the amount of DNA to digest depends 
@@ -83,7 +76,7 @@
               to 20 μL with dH2O.Salt conditions for double digestion. Useful enzyme combinations for digesting 
               BioBrick parts with their optimal buffer and what the digestion produces. All five reactions are 
               optimal at 37°C<br /><br /></p>
-              <table align="center">
+              <table class="table table-bordered table-hover" align="center" style="width:450px;">
                 <caption><b>Table 1</b></caption>
                 <tr>
                   <th colspan="2"><b>Restriction enzymes</b></th>
@@ -125,7 +118,7 @@
               For inserts and vectors, incubate the reaction for at least 3 h. For maximum 
               digestion, incubate the reaction overnight.<br /><br /><br /></p>
             </div>
-            <div class='sub-item'><br />
+            <div class="tab-pane" id="3"><br />
               <p><strong>&nbsp;&nbsp;Run the digested DNA on a gel until there is adequate separation between the desired piece of DNA and the DNA that it was cut from.</strong></p>
               <p><b>3.1</b> Prepare a gel of appropriate agarose concentration(use the web tool 
               at<a href="http://gcat.davidson.edu/iGEM08/gelwebsite/gelwebsite.html" target=blank>
@@ -133,7 +126,7 @@
               <p><b>3.2</b> Run DNA samples on the gel until there is adequate separation between the 
               desired piece of DNA and the DNA that it was cut from.<br /><br /></p>
             </div>
-            <div class='sub-item'><br />
+            <div class="tab-pane" id="4"><br />
               <p><strong>&nbsp;&nbsp;Place the gel under UV light at an intensity just high enough to visualize the bands. Cut out the bands containing the insert and the vector with a razor and purify the DNA.</strong></p>
               <p><b>4.1</b> Place the gel under UV light at an intensity just high enough to visualize the bands. 
               Cut out the bands containing the insert and the vector to purify the DNA.<br /><br /></p>
@@ -156,13 +149,13 @@
               for 1 min.<br /><br /></p>
               <p><b>4.11</b> Quantify the DNA, which is eluted in the flow-through.<br /><br /><br /></p>
             </div>
-            <div class='sub-item'><br />
+            <div class="tab-pane" id="5"><br />
               <p><strong>&nbsp;&nbsp;Ligate the purified insert and vector together.</strong></p>
               <p><b>5.1</b> Place 50 ng of digested vector, 5 μL of ligation buffer, and 1 μL of T4 ligase into 
               a 500-μL microfuge tube. The amount of insert to add is calculated from the following 
-              formula:<br /></p>
-              ng of insert=(2)(bp\ insert)(50ng linearized plasmid)/ (size of plasmid in bp). 
-              Add water to increase the final volume to 10 μL.<br /><br /></p>
+              formula:<br /><br /></p>
+              <p align="center">&nbsp;&nbsp;ng of insert=(2)(bp\ insert)(50ng linearized plasmid)/ (size of plasmid in bp).<br /><br /></p> 
+              <p>&nbsp;&nbsp;Add water to increase the final volume to 10 μL.<br /><br /></p>
               <p><b>5.2</b> Prepare both a positive ligation mixture that contains the digested vector and insert 
               as well as a negative ligation mixture that contains only the digested vector. Add more 
               water to the negative ligation mixture to prepare equal volumes.<br /><br /></p>
@@ -170,7 +163,7 @@
               transformation of E. coli competent cells, or store it by freezing until transformation.
               <br /><br /><br /></p>
             </div>
-            <div class='sub-item'><br />
+            <div class="tab-pane" id="6"><br />
               <p><strong>&nbsp;&nbsp;Use the ligation mixture to transform into competent E. coli cells.</strong></p>
               <p><b>6.1</b> Prewarm culture plates to increase the drying rate of plated cells. The culture plates 
               should contain the appropriate antibiotic for the transforming plasmid.<br /><br /></p>
@@ -189,7 +182,7 @@
               or electroporation with a different brand of competent cells may yield higher efficiencies.
               <br /><br /><br /></p>
             </div>
-            <div class='sub-item'><br />
+            <div class="tab-pane" id="7"><br />
               <p><strong>&nbsp;&nbsp;After overnight incubation of the transformed cells, pick colonies from the ligation and the control plates for colony PCR to quickly test if the ligation was successful in any of the colonies.</strong></p>
               <p><b>7.1</b> Compare your positive ligation plate to your negative ligation plate to estimate the number of 
               background negative colonies. Plan to screen an appropriate amount so that it is highly probable 
@@ -218,12 +211,12 @@
               or by sequencing. After successful ligation and transformation, the part can be used or 
               manipulated more to construct more new parts.<br /><br /><br /></p>
             </div>
-            <div class='sub-item'><br /> 
+            <div class="tab-pane" id="8"><br /> 
               <p><b>8.1</b> Grow clones with positive results from the colony PCR overnight in tubes of 2 mL LB media containing the appropriate antibiotic.</p>
               <p><b>8.2</b> Miniprep the overnight cultures to obtain plasmid DNA. Digest the plasmid DNA with EcoRI and PstI as a conclusive test for whether the ligation was successful.</p>
               <p><strong>&nbsp;&nbsp;The product from step 8 may be used for further assembly and processing.</strong></p>
             </div>
-            <div class='sub-item'><br />
+            <div class="tab-pane" id="9"><br />
               <p><strong>&nbsp;&nbsp;Store cells that have been confirmed to have successful ligations in glycerol stocks at −80°C.</strong></p>
               <p><b>9.1</b> Grow a 2-mL culture of a particular cell type overnight for each frozen stock that is needed.<br /><br /></p>
               <p><b>9.2</b> Microwave sterile glycerol for 30s. Do not mix the glycerol so that the top portion 
@@ -235,144 +228,12 @@
               <p><b>9.6</b> After putting the caps on, shake the tubes vigorously to ensure that the glycerol mixes evenly 
               with the bacterial culture.<br /><br /></p>
               <p><b>9.7</b> Immediately after step 10.6, put the tubes into a −80°C freezer.<br /><br /><br /></p>
-            </div>
-          </div>
+            </div> 
         </div>
-        <script src="../static/js/protocol_step.js"></script>
-        <script src="../static/js/protocol.js"></script>
       </div>
     </div>
-    <!-- /container -->
-    <!--
-    <script src="../static/js/underscore-min.js"></script>
-
-    <script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>-->
-
-    <!-- graphiti -->
-    <!--
-    <script src="../static/js/lib/shifty.js"></script>
-    <script src="../static/js/lib/raphael.js"></script>
-    <script src="../static/js/lib/jquery.layout.js"></script>
-
-    <script src="../static/js/lib/rgbcolor.js"></script>
-    <script src="../static/js/lib/canvg.js"></script>
-    <script src="../static/js/lib/Class.js"></script>
-    <script src="../static/js/lib/json2.js"></script>
-
-    <script src="../static/js/graphiti/graphiti.js"></script>
-    <script src="../static/js/graphiti/SnapToHelper.js"></script>
-
-
-    <script src="../static/js/graphiti/util/Color.js"></script>
-    <script src="../static/js/graphiti/util/ArrayList.js"></script>
-    <script src="../static/js/graphiti/util/UUID.js"></script>
-    <script src="../static/js/graphiti/geo/PositionConstants.js"></script>
-    <script src="../static/js/graphiti/geo/Point.js"></script>
-    <script src="../static/js/graphiti/geo/Rectangle.js"></script>
-
-    <script src="../static/js/graphiti/command/CommandType.js"></script>
-    <script src="../static/js/graphiti/command/Command.js"></script>
-    <script src="../static/js/graphiti/command/CommandStack.js"></script>
-    <script src="../static/js/graphiti/command/CommandStackEvent.js"></script>
-    <script src="../static/js/graphiti/command/CommandStackEventListener.js"></script>
-    <script src="../static/js/graphiti/command/CommandMove.js"></script>
-    <script src="../static/js/graphiti/command/CommandResize.js"></script>
-    <script src="../static/js/graphiti/command/CommandConnect.js"></script>
-    <script src="../static/js/graphiti/command/CommandReconnect.js"></script>
-    <script src="../static/js/graphiti/command/CommandDelete.js"></script>
-    <script src="../static/js/graphiti/command/CommandAdd.js"></script>
-
-    <script src="../static/js/graphiti/layout/connection/ConnectionRouter.js"></script>
-    <script src="../static/js/graphiti/layout/connection/DirectRouter.js"></script>
-    <script src="../static/js/graphiti/layout/connection/ManhattanConnectionRouter.js"></script>
-
-    <script src="../static/js/graphiti/layout/mesh/MeshLayouter.js"></script>
-    <script src="../static/js/graphiti/layout/mesh/ExplodeLayouter.js"></script>
-    <script src="../static/js/graphiti/layout/mesh/ProposedMeshChange.js"></script>
-
-    <script src="../static/js/graphiti/layout/locator/Locator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/PortLocator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/InputPortLocator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/OutputPortLocator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/ConnectionLocator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/ManhattanMidpointLocator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/CenterLocator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/TopLocator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/RightLocator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/LeftLocator.js"></script>
-    <script src="../static/js/graphiti/layout/locator/BottomLocator.js"></script>
-
-    <script src="../static/js/graphiti/Canvas.js"></script>
-    <script src="../static/js/graphiti/Figure.js"></script>
-    <script src="../static/js/graphiti/shape/node/Node.js"></script>
-    <script src="../static/js/graphiti/VectorFigure.js"></script>
-    <script src="../static/js/graphiti/shape/basic/Rectangle.js"></script>
-    <script src="../static/js/graphiti/SetFigure.js"></script>
-    <script src="../static/js/graphiti/SVGFigure.js"></script>
-
-    <script src="../static/js/graphiti/shape/icon/Icon.js"></script>
-    <script src="../static/js/graphiti/shape/icon/ProteinArrow.js"></script>
-
-    <script src="../static/js/graphiti/shape/basic/Oval.js"></script>
-    <script src="../static/js/graphiti/shape/basic/Circle.js"></script>
-    <script src="../static/js/graphiti/shape/basic/Diamond.js"></script>
-    <script src="../static/js/graphiti/shape/basic/Label.js"></script>
-    <script src="../static/js/graphiti/shape/basic/Line.js"></script>
-    <script src="../static/js/graphiti/shape/basic/PolyLine.js"></script>
-    <script src="../static/js/graphiti/Connection.js"></script>
-    <script src="../static/js/graphiti/ResizeHandle.js"></script>
-    <script src="../static/js/graphiti/LineResizeHandle.js"></script>
-    <script src="../static/js/graphiti/LineStartResizeHandle.js"></script>
-    <script src="../static/js/graphiti/LineEndResizeHandle.js"></script>
-    <script src="../static/js/graphiti/Port.js"></script>
-    <script src="../static/js/graphiti/InputPort.js"></script>
-    <script src="../static/js/graphiti/OutputPort.js"></script>
-    <script src="../static/js/graphiti/HybridPort.js"></script>
-    <script src="../static/js/graphiti/ConnectionAnchor.js"></script>
-
-    <script src="../static/js/graphiti/shape/arrow/CalligrapherArrowLeft.js"></script>
-    <script src="../static/js/graphiti/shape/arrow/CalligrapherArrowDownLeft.js"></script>
-    <script src="../static/js/graphiti/shape/node/Start.js"></script>
-    <script src="../static/js/graphiti/shape/node/End.js"></script>
-    <script src="../static/js/graphiti/shape/node/Between.js"></script>
-    <script src="../static/js/graphiti/shape/note/PostIt.js"></script>
-
-    <script src="../static/js/graphiti/shape/widget/Widget.js"></script>
-    <script src="../static/js/graphiti/shape/widget/Slider.js"></script>
-
-    <script src="../static/js/graphiti/shape/diagram/Diagram.js"></script>
-    <script src="../static/js/graphiti/shape/diagram/Pie.js"></script>
-    <script src="../static/js/graphiti/shape/diagram/Sparkline.js"></script>
-
-    <script src="../static/js/graphiti/shape/analog/OpAmp.js"></script>
-    <script src="../static/js/graphiti/shape/analog/ResistorBridge.js"></script>
-    <script src="../static/js/graphiti/shape/analog/ResistorVertical.js"></script>
-    <script src="../static/js/graphiti/shape/analog/VoltageSupplyHorizontal.js"></script>
-    <script src="../static/js/graphiti/shape/analog/VoltageSupplyVertical.js"></script>
-
-    <script src="../static/js/graphiti/ui/LabelEditor.js"></script>
-    <script src="../static/js/graphiti/ui/LabelInplaceEditor.js"></script>
-
-    <script src="../static/js/graphiti/io/Reader.js"></script>
-    <script src="../static/js/graphiti/io/Writer.js"></script>
-    <script src="../static/js/graphiti/io/png/Writer.js"></script>
-    <script src="../static/js/graphiti/io/svg/Writer.js"></script>
-    <script src="../static/js/graphiti/io/json/Writer.js"></script>
-    <script src="../static/js/graphiti/io/json/Reader.js"></script>
-
-    <script src="../static/js/graphiti/decoration/connection/Decorator.js"></script>
-    <script src="../static/js/graphiti/decoration/connection/ArrowDecorator.js"></script>
-    <script src="../static/js/graphiti/decoration/connection/DiamondDecorator.js"></script>
-    <script src="../static/js/graphiti/decoration/connection/TDecorator.js"></script>-->
-
-
-    <!-- <script src="static/js/libs/bootstrap/bootstrap.min.js"></script>
-    <script src="../static/js/graphiti/decoration/connection/Decorator.js"></script>
-    <script src="../static/js/graphiti/decoration/connection/ArrowDecorator.js"></script>
-    <script src="../static/js/graphiti/decoration/connection/DiamondDecorator.js"></script>
-    <script src="../static/js/graphiti/decoration/connection/TDecorator.js"></script>
-    -->
-    <!-- Custom js -->  
-
-
+    <script src="../static/js/protocol_step.js"></script>
+    <script src="../static/js/jquery-1.8.0.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+</body>
   </html>
