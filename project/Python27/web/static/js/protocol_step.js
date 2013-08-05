@@ -107,8 +107,8 @@ function parse_data() {
   return img;
 }
 
-var interval = 100;
-var horizon = 100;
+var interval = 50;
+var horizon = 50;
 var img = parse_data();
 function draw(cxt, horizon) {
 }
@@ -117,12 +117,12 @@ window.onload=function() {
   var cxt=c.getContext("2d");
   var tot = img.length;
   var k = 2;
-  var hor = 100;
+  var hor = 50;
   var step = 1;
   var text_pos = -1;
   for (var l = 0; l < Math.log(tot)/Math.LN2; l++) {
     var tot = img.length;
-    var bgn = 0;
+    var bgn = 30;
     for (var i = 0; i < tot; i++) {
       var height = img[i].height * interval /img[i].width;
       cxt.drawImage(img[i], bgn, hor - height, interval, height);
@@ -133,7 +133,7 @@ window.onload=function() {
     }
     if (text_pos == -1)
       text_pos = bgn;
-    cxt.font="30px Arial";
+    cxt.font="20px Arial";
     cxt.fillText("Step " + step, text_pos, hor);
     var pos = interval;
     /*
