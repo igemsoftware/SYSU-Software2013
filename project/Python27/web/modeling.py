@@ -8,22 +8,28 @@ Copyright (C) 2013-2014 sysu-software. All Rights Reserved.
 '''
 import json
 import jsonUtil
+import string
 from database import SqliteDatabase
 class modeling:
-	def __init__(self,database,AValue,BValue,ProteinAName,ProteinBName):
+	def __init__(self,database,AValue,BValue,ProteinAName,ProteinBName,isDepressing):
 		self.db = database
 		self.__ProteinAValue=AValue
 		self.__ProteinBValue=BValue
 		self.AExpressionValueRecord=self.__getBestExpressionValueRecord(self.__ProteinAValue)
 		self.APromoter= self.__getPromoterByExpressionValueRecord(self.AExpressionValueRecord)
 		self.APlasmidBackbone= self.__getPlasmidBackboneByExpressionValueRecord(self.AExpressionValueRecord)
+		#print self.AExpressionValueRecord
 		self.BExpressionValueRecord=self.__getBestExpressionValueRecord(self.__ProteinBValue)
 		self.BPromoter= self.__getPromoterByExpressionValueRecord(self.BExpressionValueRecord)
 		self.BPlasmidBackbone= self.__getPlasmidBackboneByExpressionValueRecord(self.BExpressionValueRecord)
+		#print self.BExpressionValueRecord
 		self.ProteinA=self.__getProteinByName(ProteinAName)
 		self.ProteinB=self.__getProteinByName(ProteinBName)
 		self.RBS=self.__getRBSByName('BBa_J61111')
-		print self.ProteinA,self.ProteinB,self.RBS
+		self.RepressorTable=self.__getRepressor()
+		f = open("out.txt","w")
+		for item in self.RepressorTable:
+			self.depressingFunction(item,f)
 
 	def __getBestExpressionValueRecord(self,idealValue):
 		#data= self.db.getExpressionValue()
@@ -39,6 +45,12 @@ class modeling:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
+	def __getRepressor(self):
+		self.db._SqliteDatabase__cursor.execute('SELECT [repressor].* FROM [repressor]')	
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.db._SqliteDatabase__cursor.description,self.db._SqliteDatabase__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+		
 	def __getPromoterByExpressionValueRecord(self,ExpressionValueRecord):
 		self.db._SqliteDatabase__cursor.execute('select * from promoter where Number="%s"' %(ExpressionValueRecord['Promoter']))		
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.db._SqliteDatabase__cursor.description,self.db._SqliteDatabase__cursor.fetchall())
@@ -63,6 +75,29 @@ class modeling:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
+	def depressingFunction(self,repressor,f):
+		CopyNumber1=string.atof(self.APlasmidBackbone['CopyNumber'])
+		CopyNumber2=string.atof(self.BPlasmidBackbone['CopyNumber'])
+		LeakageRate1=string.atof(self.APromoter['LeakageRate'])
+		MPPromoter1=string.atof(self.APromoter['MPPromoter'])
+		LeakageRate2=string.atof(self.BPromoter['LeakageRate'])
+		MPPromoter2=string.atof(self.BPromoter['MPPromoter'])
+		c1=CopyNumber1*(MPPromoter1-LeakageRate1)
+		c2=CopyNumber2*(MPPromoter2-LeakageRate2)			
+		proteina0=self.RBS['MPRBS']/self.ProteinA['DegRatePro']*((c1+LeakageRate1)/self.ProteinA['DegRatemRNA'])
+		print>>f,'CopyNumber1',CopyNumber1
+		print>>f,'CopyNumber2',CopyNumber2
+		print>>f,'LeakageRate1',LeakageRate1
+		print>>f,'MPPromoter1',MPPromoter1	
+		print>>f,'c1',c1
+		print>>f,'c2',c2
+		print>>f,'proteina0',proteina0
+		RepressorResult=pow(proteina0/repressor['K1'],repressor['HillCoeff1'])+1
+		RepressorResult=c2/RepressorResult+LeakageRate2
+		RepressorResult=RepressorResult/(c2+LeakageRate2)
+		print>>f,'RepressorResult',RepressorResult			
+		
+
 if __name__=="__main__":
 	sql=SqliteDatabase()
-	m=modeling(sql,0.2,0.8,'BBa_C0060','BBa_I725014')	
+	m=modeling(sql,0.2,0.8,'BBa_C0060','BBa_I725014',True)	

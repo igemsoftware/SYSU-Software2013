@@ -229,7 +229,7 @@ def createRandomDataInrepressor():
 	writer = csv.writer(csvfile)
 	writer.writerow(['Name', 'Number', 'HillCoeff1','K1','K2'])
 	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators'):
-		data=['LacI',os.path.splitext(filename)[0],random.randint(0,100000),random.randint(100,10000),random.randint(100,10000)]
+		data=['LacI',os.path.splitext(filename)[0],random.randint(1,3),random.randint(100,10000),random.randint(100,10000)]
 		writer.writerow(data)
 	csvfile.close()
 
@@ -302,6 +302,7 @@ def createExpression_valueTable():
 	cx.close()
 
 if __name__=="__main__":
+	createRandomDataInrepressor()
 	#convertpromoterCsvToDatabase()
 	#convertRBSCsvToDatabase()
 	#convertrepressorCsvToDatabase()
@@ -310,9 +311,8 @@ if __name__=="__main__":
 	#createRandomDataInRBS()
 	#createRandomDataInplasmid_backbone()
 	#createRandomDataInpromoter()
-	#createRandomDataInProtein()
-	#bioBrickGetpartshortname(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators\BBa_C0071.xml')
+	#createRandomDataInProtein()	#bioBrickGetpartshortname(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators\BBa_C0071.xml')
 	#createRandomDataInProteinSpecial()
 	#createRandomDataInProtein()
-	convertProteinCsvToDatabase()
+	#convertProteinCsvToDatabase()
 	#createExpression_valueTable()
