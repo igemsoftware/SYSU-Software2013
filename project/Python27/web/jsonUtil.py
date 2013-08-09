@@ -229,7 +229,7 @@ def createRandomDataInrepressor():
 	writer = csv.writer(csvfile)
 	writer.writerow(['Name', 'Number', 'HillCoeff1','K1','K2'])
 	for filename in os.listdir(r'G:\igem2013_sysu_oschina\project\Python27\web\biobrick\Protein coding sequences\Transcriptional regulators'):
-		data=['LacI',os.path.splitext(filename)[0],random.randint(1,3),random.randint(100,10000),random.randint(100,10000)]
+		data=['LacI',os.path.splitext(filename)[0],random.randint(1,3),random.uniform(0.0001, 0.01),random.uniform(0.0001, 0.01)]
 		writer.writerow(data)
 	csvfile.close()
 

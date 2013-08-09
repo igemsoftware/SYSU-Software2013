@@ -25,7 +25,7 @@ class modeling:
 		#print self.BExpressionValueRecord
 		self.ProteinA=self.__getProteinByName(ProteinAName)
 		self.ProteinB=self.__getProteinByName(ProteinBName)
-		self.RBS=self.__getRBSByName('BBa_J61111')
+		self.RBS=self.__getRBSByName('BBa_J61102')
 		self.RepressorTable=self.__getRepressor()
 		f = open("out.txt","w")
 		for item in self.RepressorTable:
@@ -76,28 +76,39 @@ class modeling:
 		return decodejson[0]
 
 	def depressingFunction(self,repressor,f):
+		repressor['K1']=repressor['K1']*10
 		CopyNumber1=string.atof(self.APlasmidBackbone['CopyNumber'])
 		CopyNumber2=string.atof(self.BPlasmidBackbone['CopyNumber'])
 		LeakageRate1=string.atof(self.APromoter['LeakageRate'])
 		MPPromoter1=string.atof(self.APromoter['MPPromoter'])
+		#if LeakageRate1>MPPromoter1:
+			#LeakageRate1=string.atof(self.APromoter['MPPromoter'])
+			#MPPromoter1=string.atof(self.APromoter['LeakageRate'])		
 		LeakageRate2=string.atof(self.BPromoter['LeakageRate'])
+		#LeakageRate2=0.1
 		MPPromoter2=string.atof(self.BPromoter['MPPromoter'])
+		#if LeakageRate2>MPPromoter2:
+			#LeakageRate2=string.atof(self.BPromoter['MPPromoter'])
+			#MPPromoter2=string.atof(self.BPromoter['LeakageRate'])	
 		c1=CopyNumber1*(MPPromoter1-LeakageRate1)
 		c2=CopyNumber2*(MPPromoter2-LeakageRate2)			
-		proteina0=self.RBS['MPRBS']/self.ProteinA['DegRatePro']*((c1+LeakageRate1)/self.ProteinA['DegRatemRNA'])
-		print>>f,'CopyNumber1',CopyNumber1
-		print>>f,'CopyNumber2',CopyNumber2
-		print>>f,'LeakageRate1',LeakageRate1
-		print>>f,'MPPromoter1',MPPromoter1	
-		print>>f,'c1',c1
-		print>>f,'c2',c2
-		print>>f,'proteina0',proteina0
+		proteina0=self.RBS['MPRBS']/self.ProteinB['DegRatePro']*((c2+LeakageRate2)/self.ProteinB['DegRatemRNA'])
+		#print>>f,'CopyNumber1',CopyNumber1
+		#print>>f,'CopyNumber2',CopyNumber2
+		#print>>f,'LeakageRate1',LeakageRate1
+		#print>>f,'MPPromoter1',MPPromoter1	
+		#print>>f,'c1',c1
+		#print>>f,'c2',c2
+		#print>>f,'k1',repressor['K1']
+		#print>>f,'proteina0',proteina0		
 		RepressorResult=pow(proteina0/repressor['K1'],repressor['HillCoeff1'])+1
-		RepressorResult=c2/RepressorResult+LeakageRate2
-		RepressorResult=RepressorResult/(c2+LeakageRate2)
+		#print>>f,'temp',pow(proteina0/repressor['K1'],repressor['HillCoeff1'])
+		#RepressorResult=1+1.5
+		RepressorResult=c2/RepressorResult#+LeakageRate2		
+		RepressorResult=RepressorResult/c2#+LeakageRate2)
 		print>>f,'RepressorResult',RepressorResult			
 		
 
 if __name__=="__main__":
 	sql=SqliteDatabase()
-	m=modeling(sql,0.2,0.8,'BBa_C0060','BBa_I725014',True)	
+	m=modeling(sql,0.1,0.9,'BBa_K091109','BBa_I725011',True)	
