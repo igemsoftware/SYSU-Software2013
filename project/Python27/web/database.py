@@ -225,7 +225,20 @@ class SqliteDatabase:
 			temp=temp+row[0]+','
 		print temp
 		return temp
-	
+
+	def select_row(self, tableName, idx):
+		excuteString = "SELECT * FROM %s ORDER BY Number DESC LIMIT %s,1" % (tableName, idx)
+		self.__cursor.execute(excuteString)		
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if len(decodejson)==0:
+			return None
+		else:
+			return decodejson[0]['Number']		
+
+	def find_promoter(self, activator = None, repressor = None):
+	  return "BBa_J64000"
+
 	"""
 		test if there is the same record in the table
 		@author: Jiexin Guo		

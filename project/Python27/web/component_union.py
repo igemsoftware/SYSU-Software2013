@@ -83,6 +83,10 @@ def connect(rule_name, content):
   ret += rule.suffix
   return ret
 
+def sbol_connect(content):
+  for i in content:
+    pass
+
 #format info into SBOL v1.1
 def formatter_v11(content, dna_sequence):
   header = """DnaComponent [
