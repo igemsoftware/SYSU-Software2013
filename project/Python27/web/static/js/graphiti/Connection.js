@@ -30,7 +30,7 @@ graphiti.Connection = graphiti.shape.basic.PolyLine.extend({
     NAME : "graphiti.Connection",
 
 //    DEFAULT_ROUTER: new graphiti.layout.connection.DirectRouter(),
-    DEFAULT_ROUTER: new graphiti.layout.connection.DirectRouter(),
+    DEFAULT_ROUTER: new graphiti.layout.connection.ManhattanConnectionRouter(),
         
     /**
      * @constructor

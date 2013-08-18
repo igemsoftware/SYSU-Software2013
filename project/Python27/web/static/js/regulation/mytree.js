@@ -235,6 +235,9 @@ EFTree.prototype.addNode = function(name) {
 	} else if (name == "Temperature") {
 		type = "g.Shapes.Temperature";
 		icon = "Temperature.png";
+	} else if (name == "RorA") {
+		type = "g.Shapes.RORA";
+		icon = "RorA.png";
 	}
 
 	this.nodes[this.nodes.length] = new Node(id, name, 1, type, "EFactors", "", icon, "");
@@ -288,5 +291,5 @@ var proteinList = new Tree("protein", "protein");
 
 // create a EFTree
 var eFactorList = new EFTree("eFactors", "eFactors");
-var data = ["Inducer", "Metal-ion", "Temperature"];
+var data = ["Inducer", "Metal-ion", "Temperature", "RorA"];
 eFactorList.parseJson(data); 
