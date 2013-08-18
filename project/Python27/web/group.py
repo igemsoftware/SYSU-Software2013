@@ -124,13 +124,11 @@ def work(data, database):
 def dump_sbol(data):
   sbol = []
   rule = "RFC10"
-  print data
   for i in data:
     data[i] = [find_file(s + ".xml", ".") for s in data[i]]
     content = component_union.union(rule, data[i])
     dna_sequence = component_union.connect(rule, content)
     sbol.append(sequence_serializer.format_to_json(component_union.formatter_v11(content, dna_sequence)))
-    print sbol[-1]
   return sbol
 
 if __name__ == "__main__":
