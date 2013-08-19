@@ -5,6 +5,7 @@ import user
 import mlog
 import xmlParse
 import os
+import group
 # import make_graph
 
 logging = mlog.logging
@@ -57,6 +58,44 @@ class apis():
   	  return user.loadUserData(self.db,message['fileName'],message['fileType'])
     else:
       return user.loadUserData(self.db,message['fileName'],"default")
+  def loadSBOL(self,message):
+    data = {
+    "part": [
+      { "id"  : 1,
+        "name": "BBa_C0060",
+        "type": "Protein"
+        },
+      { "id"  : 2,
+        "name": "repressor",
+        "type": "Repressor"
+        },
+      { "id"  : 3,
+        "name": "BBa_C0160",
+        "type": "Protein"
+        },
+      { "id"  : 4,
+        "name": "BBa_C0178",
+        "type": "Protein"
+        }
+
+      ],
+    "link": [
+      { "from": 1,
+        "to"  : 2,
+        "type": "Bound",
+        },
+      { "from": 2,
+        "to"  : 3,
+        "type": "repressor_protein",
+        },
+      { "from": 2,
+        "to"  : 4,
+        "type": "repressor_protein",
+        },
+      ]
+    }        
+    print json.loads(message['data'])
+    return group.dump_sbol(group.work(json.loads(message['data']), self.db))
 
 def handle_websocket(ws, db):
   logging.info("start handling websocket...")
@@ -66,9 +105,9 @@ def handle_websocket(ws, db):
     if message is None:
       print "message is empty"
       break
-    else:
-      print message
+    else:      
       message = json.loads(message)
+      print message
       api = apis(db)
       result = getattr(api, message['request'])(message)
       logging.info("message is %s" % message)

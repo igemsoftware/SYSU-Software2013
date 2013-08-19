@@ -134,4 +134,4 @@ def dump_sbol(data):
 if __name__ == "__main__":
   import database
   db = database.SqliteDatabase()
-  dump_sbol(work(data, db))
+  print dump_sbol(work(data, db))

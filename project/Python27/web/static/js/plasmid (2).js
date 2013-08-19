@@ -618,16 +618,25 @@ function turnTheData(indexToBeFirst)
 	data=newData;
 	newData=null;
 }
+function json2str(o) {
+	var arr = [];
+	var fmt = function(s) {
+		if (typeof s == 'object' && s != null) return json2str(s);
+			return /^(string|number)$/.test(typeof s) ? "'" + s + "'" : s;
+	}
+	for (var i in o) arr.push("'" + i + "':" + fmt(o[i]));
+	return '{' + arr.join(',') + '}';
+}
 function testWebSocket(){
 	if ("WebSocket" in window) {
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
 		ws.onmessage = function(msg) {
 		   var message = JSON.parse(msg.data);
-		   console.log(message.result);
-		   if(message.request==="getLoginedUserName")
+		   console.log(message);
+		   /*if(message.request==="getLoginedUserName")
 		   {			  
 			   sessionStorage.LoginedUserName=message.result;
-		   }
+		   }*/
 		};
 	}
 	ws.onopen = function() {
@@ -635,11 +644,48 @@ function testWebSocket(){
 		//ws.send(JSON.stringify({'request': 'loadUserFile','fileName':'default1','fileType':'default'}));
 		//ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
-		ws.send(JSON.stringify({'request': 'saveUserData',
+		/*ws.send(JSON.stringify({'request': 'saveUserData',
 		'data':'web/biobrick/Terminators/BBa_B0010.xml',
 		'fileName':'test1',
 		'fileType':'youtest'
-		}));
+		}));*/
+		datatemp = {
+    "part": [
+      { "id"  : 1,
+        "name": "BBa_C0060",
+        "type": "Protein"
+        },
+      { "id"  : 2,
+        "name": "repressor",
+        "type": "Repressor"
+        },
+      { "id"  : 3,
+        "name": "BBa_C0160",
+        "type": "Protein"
+        },
+      { "id"  : 4,
+        "name": "BBa_C0178",
+        "type": "Protein"
+        }
+
+      ],
+    "link": [
+      { "from": 1,
+        "to"  : 2,
+        "type": "Bound",
+        },
+      { "from": 2,
+        "to"  : 3,
+        "type": "repressor_protein",
+        },
+      { "from": 2,
+        "to"  : 4,
+        "type": "repressor_protein",
+        },
+      ]
+    }        
+	    datatemp=JSON.stringify(datatemp);
+		ws.send(JSON.stringify({'request': 'loadSBOL','data':datatemp}));
 	}
 }
 function CircleClass(drawArea,drawAreaToBody)
