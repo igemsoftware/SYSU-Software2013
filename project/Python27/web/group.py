@@ -132,7 +132,7 @@ def dump_sbol(network, database):
     sbol.append(sequence_serializer.format_to_json(component_union.formatter_v11(content, dna_sequence)))
   return sbol
 
-def dump_group(data, database):
+def dump_group(network, database):
   data = work(network, database)
   # TODO: export group info, including name and type
 
@@ -140,6 +140,6 @@ def dump_group(data, database):
 if __name__ == "__main__":
   import database
   db = database.SqliteDatabase()
-  rr = dump_group(data, db)
+  rr = dump_sbol(data, db)
   for i in rr:
     print i
