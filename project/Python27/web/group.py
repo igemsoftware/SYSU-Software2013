@@ -121,7 +121,8 @@ def work(data, database):
       groups[link["to"]] = activate(database, groups[link["from"]], groups[link["to"]])
   return groups
 
-def dump_sbol(data):
+def dump_sbol(network, database):
+  data = work(network, database)
   sbol = []
   rule = "RFC10"
   for i in data:
@@ -131,7 +132,14 @@ def dump_sbol(data):
     sbol.append(sequence_serializer.format_to_json(component_union.formatter_v11(content, dna_sequence)))
   return sbol
 
+def dump_group(data, database):
+  data = work(network, database)
+  # TODO: export group info, including name and type
+
+
 if __name__ == "__main__":
   import database
   db = database.SqliteDatabase()
-  dump_sbol(work(data, db))
+  rr = dump_group(data, db)
+  for i in rr:
+    print i

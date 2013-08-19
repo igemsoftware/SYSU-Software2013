@@ -123,11 +123,16 @@ def formatter_v11(content, dna_sequence):
 ]""" % dna_sequence
   return s
 
-if __name__ == "__main__":
-  rule = "RFC25"
-  content = union(rule, sys.argv[2:])
+def get_sbol(component, rule = "RFC10"):
+  content = union(rule, component)
   dna_sequence = connect(rule, content)
   sbol = formatter_v11(content, dna_sequence)
+  return sbol
+
+
+if __name__ == "__main__":
+  rule = "RFC25"
+  sbol = get_sbol(sys.argv[2:], rule)
 
   fp = open(sys.argv[1], "w")
   fp.write(sbol)

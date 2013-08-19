@@ -1,6 +1,8 @@
 # coding: utf-8
 import json
 from database import SqliteDatabase
+import component_union
+import sequence_serializer
 import user
 import mlog
 import xmlParse
@@ -57,6 +59,15 @@ class apis():
   	  return user.loadUserData(self.db,message['fileName'],message['fileType'])
     else:
       return user.loadUserData(self.db,message['fileName'],"default")
+  def getPlasmidSbol(self, message):
+    if message.has_key("rule"):
+      rule = message["rule"]
+    else:
+      rule = "RFC10"
+    sbol = component_union.get_sbol(message["component"], rule)
+    ret = sequence_serializer.format_to_json(sbol)
+    return ret
+
 
 def handle_websocket(ws, db):
   logging.info("start handling websocket...")
