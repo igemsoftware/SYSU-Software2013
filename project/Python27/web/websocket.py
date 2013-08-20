@@ -108,7 +108,7 @@ class apis():
       ]
     }        
     print json.loads(message['data'])
-    return group.dump_sbol(group.work(json.loads(message['data']), self.db))
+    return group.dump_sbol(json.loads(message['data']), self.db)
 
 def handle_websocket(ws, db):
   logging.info("start handling websocket...")
