@@ -164,7 +164,6 @@ Tree.prototype = {
 		this.renderAll();
 
 		var rootParentTreeName = rootPathSeg[rootPathSeg.length - 2].split(" ").join("-");
-		console.log(rootParentTreeName);
 		$("#back-" + rootParentName).click(function(){
 			$("#level-" + rootLevel + "-" + rootParentName).css("display", "none");
 			$("#level-" + (rootLevel - 1) + "-" + rootParentTreeName).css("display", "block");

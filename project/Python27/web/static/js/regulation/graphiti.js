@@ -681,15 +681,26 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
 
   onClick: function() {    
     var canvas = this.getCanvas();
-    g.bind(canvas.getFigure(app.view.currentSelected), null, "A");
     var source = this.getParent();
-    var target = g.cache;
 
-    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
-    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
+    console.log(canvas.getFigure(app.view.currentSelected));
+    if (canvas.getFigure(app.view.currentSelected).TYPE == "Protein") {
+      g.bind(canvas.getFigure(app.view.currentSelected), null, "A");
+      var target = g.cache;
 
-    var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate"); // 连接两点
-    app.view.getCommandStack().execute(command); // 添加到命令栈中
+      var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
+      var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
+
+      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate"); // 连接两点
+      app.view.getCommandStack().execute(command); // 添加到命令栈中
+    } else if (canvas.getFigure(app.view.currentSelected).TYPE == "RORA") {
+      var target = canvas.getFigure(app.view.currentSelected);
+      var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
+      var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
+
+      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate"); // 连接两点
+      app.view.getCommandStack().execute(command); // 添加到命令栈中
+    }
   }
 });
 
@@ -710,15 +721,26 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
 
   onClick: function() {
     var canvas = this.getCanvas();
-    g.bind(canvas.getFigure(app.view.currentSelected), null, "R");
     var source = this.getParent();
-    var target = g.cache;
 
-    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
-    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
+    if (canvas.getFigure(app.view.currentSelected).TYPE == "Protein") {
+      g.bind(canvas.getFigure(app.view.currentSelected), null, "R");      
+      var target = g.cache;
 
-    var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Inhibit"); // 连接两点
-    app.view.getCommandStack().execute(command); // 添加到命令栈中
+      var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
+      var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
+
+      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Inhibit"); // 连接两点
+      app.view.getCommandStack().execute(command); // 添加到命令栈中
+    } else if (canvas.getFigure(app.view.currentSelected).TYPE == "RORA") {
+      var target = canvas.getFigure(app.view.currentSelected);
+
+      var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
+      var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
+
+      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Inhibit"); // 连接两点
+      app.view.getCommandStack().execute(command); // 添加到命令栈中
+    }
   }
 });
 
@@ -848,7 +870,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
       app.view.collection.push(figure.targetName);  // 放入collection中
 
       figure.getCanvas().removeFigure(figure);
-      
+
     } else if (figure.TYPE == "PandRORA") {
       var posX = figure.getX(),
           posY = figure.getY();
