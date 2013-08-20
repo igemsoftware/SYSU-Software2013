@@ -7,6 +7,7 @@ import user
 import mlog
 import xmlParse
 import os
+import group
 # import make_graph
 
 logging = mlog.logging
@@ -59,6 +60,8 @@ class apis():
   	  return user.loadUserData(self.db,message['fileName'],message['fileType'])
     else:
       return user.loadUserData(self.db,message['fileName'],"default")
+  def getGroup(self, message):
+    return group.dump_group(message["data"], self.db)
   def getPlasmidSbol(self, message):
     if message.has_key("rule"):
       rule = message["rule"]

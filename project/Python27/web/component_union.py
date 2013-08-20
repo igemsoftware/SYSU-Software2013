@@ -28,6 +28,11 @@ class RFC21():
   suffix = "GGATCCTAACTCGAG"
   intermediat = "GGATCT"
 
+def get_rule(xml_file):
+  t = ET.parse(xml_file)
+  path = "part_list/part/"
+  return t.find(path + "part_type").text
+
 # return dna component and sequence annotation info from all files
 def union(rule_name, file_list):
   rule = globals()[rule_name]()

@@ -134,12 +134,18 @@ def dump_sbol(network, database):
 
 def dump_group(network, database):
   data = work(network, database)
-  # TODO: export group info, including name and type
+  plasmid = []
+  for i in data:
+    grp = []
+    for elem in data[i]:
+      xml_file = find_file(elem + ".xml", ".")
+      print xml_file
+      grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
+    plasmid.append(grp)
+  return plasmid
 
 
 if __name__ == "__main__":
   import database
   db = database.SqliteDatabase()
-  rr = dump_sbol(data, db)
-  for i in rr:
-    print i
+  print dump_group(data, db)
