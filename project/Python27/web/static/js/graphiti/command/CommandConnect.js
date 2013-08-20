@@ -82,7 +82,7 @@ graphiti.command.CommandConnect = graphiti.command.Command.extend({
 
        // add label to connection
        this.label.setDimension(20,20);
-       this.connection.addFigure(this.label, new graphiti.layout.locator.ManhattanMidpointLocator(this.connection));
+       // this.connection.addFigure(this.label, new graphiti.layout.locator.ManhattanMidpointLocator(this.connection));
 
        this.connection.setSource(this.source);
        this.connection.setTarget(this.target);
