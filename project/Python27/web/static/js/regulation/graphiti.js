@@ -137,7 +137,7 @@ g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
     var canvas = this.getCanvas();
     for (var i = 0; i < canvas.collection.length; i++) {
       var figure = canvas.getFigure(canvas.collection[i]);
-      if (this.getId() !== figure.getId()) {
+      if (figure != null && this.getId() !== figure.getId()) {
         figure.resetChildren();
         figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
         figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
@@ -220,11 +220,13 @@ g.Shapes.Inducer = graphiti.shape.icon.InducerIcon.extend({
     var canvas = this.getCanvas();
     for (var i = 0; i < canvas.collection.length; i++) {
       var figure = canvas.getFigure(canvas.collection[i]);
-      if (this.getId() !== figure.getId()) {
-        figure.resetChildren();
-        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
-        figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
-        figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
+      if (figure != null && this.getId() !== figure.getId()) {
+        // console.log(figure.getConnections());
+        var connections = figure.getConnections();
+        for (var j = 0 ; j < connections.size ; j++) {
+          var connection = connections.get(j);
+          connection.addFigure(this.Activate, new graphiti.layout.locator.ManhattanMidpointLocator(connection));
+        }
       }
     };
 
@@ -304,7 +306,7 @@ g.Shapes.MetalIon = graphiti.shape.icon.MetalIonIcon.extend({
     var canvas = this.getCanvas();
     for (var i = 0; i < canvas.collection.length; i++) {
       var figure = canvas.getFigure(canvas.collection[i]);
-      if (this.getId() !== figure.getId()) {
+      if (figure != null && this.getId() !== figure.getId()) {
         figure.resetChildren();
         figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
         figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
@@ -388,7 +390,7 @@ g.Shapes.Temperature = graphiti.shape.icon.TemperatureIcon.extend({
     var canvas = this.getCanvas();
     for (var i = 0; i < canvas.collection.length; i++) {
       var figure = canvas.getFigure(canvas.collection[i]);
-      if (this.getId() !== figure.getId()) {
+      if (figure != null && this.getId() !== figure.getId()) {
         figure.resetChildren();
         figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
         figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
@@ -472,7 +474,7 @@ g.Shapes.RORA = graphiti.shape.icon.RORAIcon.extend({
     var canvas = this.getCanvas();
     for (var i = 0; i < canvas.collection.length; i++) {
       var figure = canvas.getFigure(canvas.collection[i]);
-      if (this.getId() !== figure.getId()) {
+      if (figure != null && this.getId() !== figure.getId()) {
         figure.resetChildren();
         figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
         figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
