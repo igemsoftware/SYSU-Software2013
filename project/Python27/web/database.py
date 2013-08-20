@@ -238,6 +238,12 @@ class SqliteDatabase:
 
 	def find_promoter(self, activator = None, repressor = None):
 	  return "BBa_J64000"
+	
+	def getRBSNearValue(self,idealValue):
+		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%f) limit 0,1' %idealValue)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
 
 	"""
 		test if there is the same record in the table

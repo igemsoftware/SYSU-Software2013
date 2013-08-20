@@ -641,6 +641,7 @@ function testWebSocket(){
 	}
 	ws.onopen = function() {
 		//ws.send(JSON.stringify({'request': 'getUserFileList'}));
+		ws.send(JSON.stringify({'request': 'changeRBS'}));
 		//ws.send(JSON.stringify({'request': 'loadUserFile','fileName':'default1','fileType':'default'}));
 		//ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
@@ -649,7 +650,7 @@ function testWebSocket(){
 		'fileName':'test1',
 		'fileType':'youtest'
 		}));*/
-		datatemp = {
+		/*datatemp = {
     "part": [
       { "id"  : 1,
         "name": "BBa_C0060",
@@ -685,7 +686,7 @@ function testWebSocket(){
       ]
     }        
 	    datatemp=JSON.stringify(datatemp);
-		ws.send(JSON.stringify({'request': 'loadSBOL','data':datatemp}));
+		ws.send(JSON.stringify({'request': 'loadSBOL','data':datatemp}));*/
 	}
 }
 function CircleClass(drawArea,drawAreaToBody)
