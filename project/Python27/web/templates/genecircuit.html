@@ -2,53 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Graphiti</title>
+  <title>Regulation</title>
   <meta name="description" content="">
   <meta name="author" content="rathinho">
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="../static/css/dtree.css">  
-  <link rel="stylesheet" href="../static/css/graphiti.css">
   <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" href="../static/css/reset.css">
   <link rel="stylesheet" href="../static/css/slider_style.css">
-  <link rel="stylesheet" href="../static/css/genecircuit.css">
+  <link rel="stylesheet" href="../static/css/dtree.css">  
+  <link rel="stylesheet" href="../static/css/graphiti.css">    
+  <link rel="stylesheet" href="../static/css/genecircuit.css">    
 </head>
 
 <body>
-  <script>
-  function mOver(obj) {
-    obj.style.background = "gray"
-    obj.style.display = "block";
-  }
+  <!-- regulation-container starts -->
+  <div id="regulation-container">
 
-  function mOut(obj) {
-    obj.style.background = "#FFF";
-    obj.style.display = "block";
-  }
-  </script>
-
-
-  <div class="regulation-container">
+    <!-- left container starts -->
     <div id="left-container">
+      <!-- Left Menu list starts-->
       <div class="accordion" id="accordion1">
+        <!-- Exogenous Factors starts-->
         <div class="accordion-group">
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1One">
-              Exogenous Factors
+              Regulatory Factors
               <i class="icon-chevron-down" style="display: block; float: right"></i>
             </a>
           </div>
           <div id="collapse1One" class="accordion-body collapse">
-            <div class="accordion-inner">
-              <div id="eFactors">
-                
-              </div>
+            <div class="accordion-inner"> 
+              <div id="eFactors">                
+              </div>           
             </div>
           </div>
         </div>
+        <!-- Exogenous Factors ends -->
+
+        <!-- Protein starts-->
         <div class="accordion-group">
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1Two">
@@ -58,413 +52,154 @@
           </div>
           <div id="collapse1Two" class="accordion-body collapse in">
             <div class="accordion-inner">
-              <div id="catalog"></div>
+              <div id="pFactors">
+
+              </div>
             </div>
           </div>
         </div>
-      </div>      
+        <!-- Protein ends -->
+      </div> 
+      <!-- Left Menu list ends-->   
     </div>
+    <!-- left container ends -->
 
-    <!-- <div id="toolbar">
-      <div class="well sidebar-nav" style="background-color:#FFF;">
-        <ul class="nav nav-list">
-          <li class="nav-header">工具栏</li>
-          <li onmouseover="mOver(this)" onmouseout="mOut(this)" data-shape="g.Shapes.Process" class="palette_node_element graphiti_droppable" >
-              <img src="../static/img/process.png" class="toolbar_icon" /> 圆                
-          </li> 
-          <li onmouseover="mOver(this)" onmouseout="mOut(this)" data-shape="g.Shapes.Arrow" class="palette_node_element graphiti_droppable" >
-              <img src="../static/img/Protein coding sequences.png" class="toolbar_icon" /> PCS
-          </li> 
-          <li onmouseover="mOver(this)" onmouseout="mOut(this)" data-shape="g.Shapes.Rectangle" class="palette_node_element graphiti_droppable" >
-              <img src="../static/img/external.png" class="toolbar_icon" /> 矩形
-          </li> 
-          <li onmouseover="mOver(this)" onmouseout="mOut(this)" data-shape="g.Shapes.Diamond" class="palette_node_element graphiti_droppable" >
-              <img src="../static/img/diamond.png" class="toolbar_icon" /> 菱形
-          </li> 
-          <li>
-            <button id="btn-load">加载</button>
-          </li>
-          <li>
-            <button id="btn-save">保存</button>
-          </li>
-        </ul>
-      </div>
-    </div> -->
 
+    <!-- Painting Area -->
     <div id="content"> 
-      <!-- canvas -->
-	  <div id="canvasDiv" style="background-color:#FFF">
-		<!--   <svg height="554" width="1000" viewBox="0 0 277 500"> -->
-		  <svg height="554" width="1000" >
-				<g id="root" transform="translate(0, -1016.3622)">
-					<rect class="component" x="0" y="1016.3622" rx="0" ry="0" width="1224" height="554" style="fill:green;stroke:black;stroke-width:5;opacity:0"></rect>
-				</g>
-				<g id="editing" transform="translate(0, -1016.3622)">
-					<g id="backwardI" class="edit" transform="translate(590, 0)">
-						<g
-							 id="g3348"
-							 transform="matrix(0.37546766,0,0,0.37546766,-4.6706675,620.69686)"
-							 style="fill:#008080">
-							<path
-								 id="path3905"
-								 d="m 67.7501,1081.4487 c 0,15.2735 -12.3817,27.6552 -27.6553,27.6552 -15.2735,0 -27.6552,-12.3817 -27.6552,-27.6552 0,-15.2736 12.3817,-27.6553 27.6552,-27.6553 15.2736,0 27.6553,12.3817 27.6553,27.6553 z"
-								 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 id="path3940"
-								 d="m 58.130637,1081.7493 c 0,9.795 -7.940349,17.7354 -17.7354,17.7354 -9.79497,0 -17.7354,-7.9404 -17.7354,-17.7354 0,-9.795 7.94043,-17.7354 17.7354,-17.7354 9.795051,0 17.7354,7.9404 17.7354,17.7354 z"
-								 style="color:#000000;fill:#008080;stroke:#ffffff;stroke-width:5.32669067;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 sodipodi:nodetypes="cccc"
-								 id="path3905-2"
-								 d="m 22,1100.3622 c -8,-17 1,-44 14.518592,-42.66 L 40,1081.3622 z"
-								 inkscape:transform-center-y="-15.404118"
-								 inkscape:transform-center-x="21.422329"
-								 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 id="path3986"
-								 d="m 42.086962,1066.9968 -2.299172,-1.3275 -2.299173,-1.3274 2.299137,-1.3274 2.299207,-1.3274 -3.5e-5,2.6548 z"
-								 inkscape:transform-center-y="-2.3777844e-005"
-								 inkscape:transform-center-x="0.76639017"
-								 style="color:#000000;fill:#008080;stroke:#ffffff;stroke-width:6.9246974;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-						</g>
-					</g>
-					<g id="forwardI" class="edit" transform="translate(632, 0)">
-						<g
-							 id="g3348-4"
-							 transform="matrix(-0.37546766,0,0,0.37546766,25.437972,620.69686)"
-							 style="fill:#008080">
-							<path
-								 id="path3905-8"
-								 d="m 67.7501,1081.4487 c 0,15.2735 -12.3817,27.6552 -27.6553,27.6552 -15.2735,0 -27.6552,-12.3817 -27.6552,-27.6552 0,-15.2736 12.3817,-27.6553 27.6552,-27.6553 15.2736,0 27.6553,12.3817 27.6553,27.6553 z"
-								 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 id="path3940-8"
-								 d="m 58.130637,1081.7493 c 0,9.795 -7.940349,17.7354 -17.7354,17.7354 -9.79497,0 -17.7354,-7.9404 -17.7354,-17.7354 0,-9.795 7.94043,-17.7354 17.7354,-17.7354 9.795051,0 17.7354,7.9404 17.7354,17.7354 z"
-								 style="color:#000000;fill:#008080;stroke:#ffffff;stroke-width:5.32669067;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 sodipodi:nodetypes="cccc"
-								 id="path3905-2-2"
-								 d="m 22,1100.3622 c -8,-17 1,-44 14.518592,-42.66 L 40,1081.3622 z"
-								 inkscape:transform-center-y="-15.404118"
-								 inkscape:transform-center-x="21.422329"
-								 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 id="path3986-4"
-								 d="m 42.086962,1066.9968 -2.299172,-1.3275 -2.299173,-1.3274 2.299137,-1.3274 2.299207,-1.3274 -3.5e-5,2.6548 z"
-								 inkscape:transform-center-y="-2.3777844e-005"
-								 inkscape:transform-center-x="0.76639017"
-								 style="color:#000000;fill:#008080;stroke:#ffffff;stroke-width:6.9246974;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-						</g>
-					</g>
+      <!-- <div id="canvas"></div>    -->
 
-				</g>
+			<div id="content-row2">
+				<div id="plasmids-view">
 
-				<g id="assets" transform="translate(-999999,-999999)">
-					<g id="terminator" class="">
-						<g
-							 id="g4391"
-							 class="component"
-							 style="fill:#ff8080"
-							 transform="translate(0,0)">
-							<path
-							 id="path4122"
-							 d="m 0.404103,1041.1479 63.191796,0 c 0.2585,0 0.4666,0.1684 0.4666,0.3774 l 0,5.6738 c 0,0.2091 -0.2081,0.3774 -0.4666,0.3774 l -63.191796,0 c -0.258498,0 -0.466602,-0.1683 -0.466602,-0.3774 l 0,-5.6738 c 0,-0.209 0.208104,-0.3774 0.466602,-0.3774 z"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-							 inkscape:connector-curvature="0" />
-							<path
-							 id="rect4142"
-							 d="m 28.81802,1025.1385 6.363961,0 0,18.7384 -6.363961,0 z"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-							 inkscape:connector-curvature="0" />
-							<path
-							 inkscape:connector-curvature="0"
-							 id="rect4177"
-							 d="m 15.736545,1021.0728 32.526911,0 0,6.1872 -32.526911,0 z"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" />
-						<!-- // <rect class="component" x="0" y="1016.3622" rx="4" ry="4" width="64" height="36" style="fill:green;stroke:black;stroke-width:5;opacity:0.6"></rect>  -->
-						</g>
-					</g>
-					<g id="coding">
-						<g
-							 id="g4386"
-							 class="component"
-							 style="fill:#ff8080;fill-opacity:1"
-							 transform="translate(64,0)">
-							<path
-							 id="rect3005"
-							 d="m -63.564216,1041.1479 63.191795,0 c 0.258498,0 0.466603,0.1684 0.466603,0.3774 l 0,5.6738 c 0,0.2091 -0.208105,0.3774 -0.466603,0.3774 l -63.191795,0 c -0.258498,0 -0.466602,-0.1683 -0.466602,-0.3774 l 0,-5.6738 c 0,-0.209 0.208104,-0.3774 0.466602,-0.3774 z"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-							 inkscape:connector-curvature="0" />
-							<path
-							 inkscape:connector-curvature="0"
-							 id="rect3841"
-							 d="m -52.625,1036.7372 31.75,0 0,15.25 -31.75,0 z"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" />
-							<path
-							 sodipodi:nodetypes="ccccc"
-							 inkscape:connector-curvature="0"
-							 id="rect3887"
-							 d="m -20.988232,1036.7387 9.280777,7.513 0,0.1768 -9.280777,7.6014 z"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" />
-						</g>
-					</g>
+				</div>
+			</div>
 
-					<g id="rbs">
-						<g
-							 id="g4376"
-							 class="component"
-							 style="fill:#ff8080;fill-opacity:1"
-							 transform="translate(192,0)">
-							<path
-							 inkscape:connector-curvature="0"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-							 d="m -191.5959,1041.1479 63.1918,0 c 0.2585,0 0.4666,0.1684 0.4666,0.3774 l 0,5.6738 c 0,0.2091 -0.2081,0.3774 -0.4666,0.3774 l -63.1918,0 c -0.25849,0 -0.4666,-0.1683 -0.4666,-0.3774 l 0,-5.6738 c 0,-0.209 0.20811,-0.3774 0.4666,-0.3774 z"
-							 id="path3985" />
-							<path
-							 sodipodi:nodetypes="ccsc"
-							 inkscape:connector-curvature="0"
-							 id="path4124"
-							 d="m -146.74175,1042.4627 -26.5165,0 c 0,0 5.93592,-13.2582 13.25825,-13.2582 7.32233,0 13.25825,13.2582 13.25825,13.2582 z"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" />
-						</g>
-					</g>
-					<g id="promoter">
-						<g
-							 id="g4380"
-							 class="component"
-							 style="fill:#ff8080;fill-opacity:1"
-							 transform="translate(128,0)">
-							<path
-							 id="path3987"
-							 d="m -127.56422,1041.1479 63.191799,0 c 0.258498,0 0.466603,0.1684 0.466603,0.3774 l 0,5.6738 c 0,0.2091 -0.208105,0.3774 -0.466603,0.3774 l -63.191799,0 c -0.25849,0 -0.4666,-0.1683 -0.4666,-0.3774 l 0,-5.6738 c 0,-0.209 0.20811,-0.3774 0.4666,-0.3774 z"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-							 inkscape:connector-curvature="0" />
-							<path
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-							 d="m -102.72093,1021.4263 5.303303,0 0,22.8042 -5.303303,0 z"
-							 id="rect3994"
-							 inkscape:connector-curvature="0" />
-							<path
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-							 d="m -102.72093,1020.042 20.019958,0 0,4.6404 -20.019958,0 z"
-							 id="rect4007"
-							 inkscape:connector-curvature="0" />
-							<path
-							 sodipodi:nodetypes="cccc"
-							 inkscape:connector-curvature="0"
-							 id="rect4020"
-							 d="m -86.521616,1016.2634 9.474913,6.0989 -9.474913,6.0987 z"
-							 style="fill:#ff8080;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" />
-						</g>
-					</g>
-					<g id="frame">
-						<rect class="component" x="0" y="1016.3622" rx="4" ry="4" width="64" height="36" style="fill:green;stroke:black;stroke-width:5;opacity:0.6"></rect>
-					</g>
-					<!-- <g id="objectName"> -->
-					<text id="objectName" transform="translate(0, 1070.3622)" style="font-size:10px;">a</text>
-					<!-- </g> -->
 
-					<g id="left">
-						<g
-							 id="g4028"
-							 class="component"
-							 transform="matrix(0.83254701,0,0,0.83254701,-3.5220467,164.73208)">
-							<g
-							 transform="matrix(-0.39780589,0,0,0.39780589,370.88027,846.70181)"
-							 id="g4428-8-7-4-8-0"
-							 style="stroke-width:0.40931055;stroke-miterlimit:4;stroke-dasharray:none">
-							<path
-								 inkscape:connector-curvature="0"
-								 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0.60387915000000003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 d="m 921.43009,470.88409 c 0,15.2736 -12.3817,27.6552 -27.6553,27.6552 -15.2735,0 -27.6552,-12.3816 -27.6552,-27.6552 0,-15.2736 12.3817,-27.6552 27.6552,-27.6552 15.2736,0 27.6553,12.3816 27.6553,27.6552 z"
-								 id="path3905-3-7-4-2-2-9" />
-							</g>
-							<path
-							 inkscape:connector-curvature="0"
-							 style="color:#000000;fill:none;stroke:#ffffff;stroke-width:0.24022672;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-							 d="m 5.8432266,1034.1486 c 0,5.2378 4.2459824,9.4838 9.4837974,9.4838 5.237707,0 9.483797,-4.246 9.483797,-9.4838 0,-5.2377 -4.24609,-9.4838 -9.483797,-9.4838 -5.237815,0 -9.4837974,4.2461 -9.4837974,9.4838 z"
-							 id="path3940-2-2-4-3-2-4" />
-							<path
-							 style="color:#000000;fill:#ffffff;stroke:none;stroke-width:55.57400131;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-							 inkscape:transform-center-x="-0.77207983"
-							 inkscape:transform-center-y="-0.16069378"
-							 d="m 19.923023,1040.1164 0.0026,-1e-4 -0.01086,-12.2891 -0.0014,10e-5 -10.6371322,6.154 -0.00136,0 z"
-							 id="path5198-8"
-							 inkscape:connector-curvature="0" />
-						</g>
-					</g>
-					<g id="right">
-						<g
-							 id="g4034"
-							 class="component"
-							 transform="matrix(-0.83280022,0,0,0.83280022,22.029958,164.49019)">
-							<g
-								 style="stroke-width:0.40931055;stroke-miterlimit:4;stroke-dasharray:none"
-								 id="g4036"
-								 transform="matrix(-0.39780589,0,0,0.39780589,370.88027,846.70181)">
-								<path
-									 id="path4038"
-									 d="m 921.43009,470.88409 c 0,15.2736 -12.3817,27.6552 -27.6553,27.6552 -15.2735,0 -27.6552,-12.3816 -27.6552,-27.6552 0,-15.2736 12.3817,-27.6552 27.6552,-27.6552 15.2736,0 27.6553,12.3816 27.6553,27.6552 z"
-									 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0.60369557;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-									 inkscape:connector-curvature="0" />
-							</g>
-							<path
-								 id="path4040"
-								 d="m 5.8432266,1034.1486 c 0,5.2378 4.2459824,9.4838 9.4837974,9.4838 5.237707,0 9.483797,-4.246 9.483797,-9.4838 0,-5.2377 -4.24609,-9.4838 -9.483797,-9.4838 -5.237815,0 -9.4837974,4.2461 -9.4837974,9.4838 z"
-								 style="color:#000000;fill:none;stroke:#ffffff;stroke-width:0.24015367;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 inkscape:connector-curvature="0"
-								 id="path4042"
-								 d="m 19.923023,1040.1164 0.0026,-1e-4 -0.01086,-12.2891 -0.0014,10e-5 -10.6371322,6.154 -0.00136,0 z"
-								 inkscape:transform-center-y="-0.16069378"
-								 inkscape:transform-center-x="-0.77207983"
-								 style="color:#000000;fill:#ffffff;stroke:none;stroke-width:55.57400131;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
-						</g>
-					</g>
-					<g id="del">
-						<g
-							 id="g4283"
-							 class="component"
-							 transform="matrix(0.83398307,0,0,0.83398307,-17.412455,162.99662)">
-							<g
-								 style="stroke-width:0.40931055;stroke-miterlimit:4;stroke-dasharray:none"
-								 id="g4036-2"
-								 transform="matrix(0.39780589,0,0,0.39780589,-323.5489,847.04174)">
-								<path
-									 id="path4038-4"
-									 d="m 921.43009,470.88409 c 0,15.2736 -12.3817,27.6552 -27.6553,27.6552 -15.2735,0 -27.6552,-12.3816 -27.6552,-27.6552 0,-15.2736 12.3817,-27.6552 27.6552,-27.6552 15.2736,0 27.6553,12.3816 27.6553,27.6552 z"
-									 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0.60283929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-									 inkscape:connector-curvature="0" />
-							</g>
-							<g
-								 transform="matrix(0.69805849,0,0,0.69805849,14.438071,281.97281)"
-								 id="g4250">
-								<path
-									 inkscape:export-ydpi="207.91878"
-									 inkscape:export-xdpi="207.91878"
-									 inkscape:export-filename="C:\Users\a_why\Desktop\cancel.png"
-									 style="color:#000000;fill:#ffffff;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-									 d="m 15.222574,1083.5924 15.696695,-15.6967 4.174653,4.1747 -15.696696,15.6967 z"
-									 id="rect4327-58-4-9"
-									 inkscape:connector-curvature="0" />
-								<g
-									 id="g4151">
-									<path
-										 inkscape:export-ydpi="207.91878"
-										 inkscape:export-xdpi="207.91878"
-										 inkscape:export-filename="C:\Users\a_why\Desktop\cancel.png"
-										 style="color:#000000;fill:#ffffff;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-										 d="m 30.91926,1087.7672 -15.69671,-15.6967 4.174688,-4.1747 15.69671,15.6967 z"
-										 id="rect4327-58-4-9-0"
-										 inkscape:connector-curvature="0" />
-								</g>
-							</g>
-							<path
-								 id="path4040-5"
-								 d="m 41.483797,1034.3622 c 0,5.2378 -4.245982,9.4838 -9.483797,9.4838 -5.237707,0 -9.483797,-4.246 -9.483797,-9.4838 0,-5.2377 4.24609,-9.4838 9.483797,-9.4838 5.237815,0 9.483797,4.2461 9.483797,9.4838 z"
-								 style="color:#000000;fill:none;stroke:#ffffff;stroke-width:0.23981306;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-						</g>
-					</g>
-					<g id="backward">
-						<g
-							 id="g3348"
-							 transform="matrix(0.37546766,0,0,0.37546766,-4.6706675,620.69686)"
-							 style="fill:#008080">
-							<path
-								 id="path3905"
-								 d="m 67.7501,1081.4487 c 0,15.2735 -12.3817,27.6552 -27.6553,27.6552 -15.2735,0 -27.6552,-12.3817 -27.6552,-27.6552 0,-15.2736 12.3817,-27.6553 27.6552,-27.6553 15.2736,0 27.6553,12.3817 27.6553,27.6553 z"
-								 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 id="path3940"
-								 d="m 58.130637,1081.7493 c 0,9.795 -7.940349,17.7354 -17.7354,17.7354 -9.79497,0 -17.7354,-7.9404 -17.7354,-17.7354 0,-9.795 7.94043,-17.7354 17.7354,-17.7354 9.795051,0 17.7354,7.9404 17.7354,17.7354 z"
-								 style="color:#000000;fill:#008080;stroke:#ffffff;stroke-width:5.32669067;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 sodipodi:nodetypes="cccc"
-								 id="path3905-2"
-								 d="m 22,1100.3622 c -8,-17 1,-44 14.518592,-42.66 L 40,1081.3622 z"
-								 inkscape:transform-center-y="-15.404118"
-								 inkscape:transform-center-x="21.422329"
-								 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 id="path3986"
-								 d="m 42.086962,1066.9968 -2.299172,-1.3275 -2.299173,-1.3274 2.299137,-1.3274 2.299207,-1.3274 -3.5e-5,2.6548 z"
-								 inkscape:transform-center-y="-2.3777844e-005"
-								 inkscape:transform-center-x="0.76639017"
-								 style="color:#000000;fill:#008080;stroke:#ffffff;stroke-width:6.9246974;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-						</g>
-					</g>
-					<g id="forward">
-						<g
-							 id="g3348-4"
-							 transform="matrix(-0.37546766,0,0,0.37546766,25.437972,620.69686)"
-							 style="fill:#008080">
-							<path
-								 id="path3905-8"
-								 d="m 67.7501,1081.4487 c 0,15.2735 -12.3817,27.6552 -27.6553,27.6552 -15.2735,0 -27.6552,-12.3817 -27.6552,-27.6552 0,-15.2736 12.3817,-27.6553 27.6552,-27.6553 15.2736,0 27.6553,12.3817 27.6553,27.6553 z"
-								 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 id="path3940-8"
-								 d="m 58.130637,1081.7493 c 0,9.795 -7.940349,17.7354 -17.7354,17.7354 -9.79497,0 -17.7354,-7.9404 -17.7354,-17.7354 0,-9.795 7.94043,-17.7354 17.7354,-17.7354 9.795051,0 17.7354,7.9404 17.7354,17.7354 z"
-								 style="color:#000000;fill:#008080;stroke:#ffffff;stroke-width:5.32669067;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 sodipodi:nodetypes="cccc"
-								 id="path3905-2-2"
-								 d="m 22,1100.3622 c -8,-17 1,-44 14.518592,-42.66 L 40,1081.3622 z"
-								 inkscape:transform-center-y="-15.404118"
-								 inkscape:transform-center-x="21.422329"
-								 style="color:#000000;fill:#008080;fill-opacity:1;fill-rule:evenodd;stroke:#9dac93;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-							<path
-								 id="path3986-4"
-								 d="m 42.086962,1066.9968 -2.299172,-1.3275 -2.299173,-1.3274 2.299137,-1.3274 2.299207,-1.3274 -3.5e-5,2.6548 z"
-								 inkscape:transform-center-y="-2.3777844e-005"
-								 inkscape:transform-center-x="0.76639017"
-								 style="color:#000000;fill:#008080;stroke:#ffffff;stroke-width:6.9246974;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-								 inkscape:connector-curvature="0" />
-						</g>
-					</g>
-					
-				</g>
 
-			</svg>
-	  
-	  </div>
-  
-      <div id="toggleBar">
-        <button class="btn-toolbar" id="btn-add">ADD</button>
-        <button class="btn-danger" id="btn-delete">DEL</button>
-        <button class="btn-success" id="btn-link">LINK</button>
-      </div>      
+			<div id="content-row1">
+				<div id="regulation-view" class="">
+					<div class="module-title">
+						<h2>Regulation network</h2>
+					</div>
+					<div class="browser">
+						<img src="../static/img/protein.png" />
+					</div>
+					<button class="btn-more" onclick="window.location.pathname = '/index'">Edit</button>
+				</div>
+				<div id="simulation-view">
+					<div class="module-title">
+						<h2>Simulation</h2>
+					</div>
+					<div class="browser">
+						<img src="../static/img/process.png" />
+					</div>
+					<button class="btn-more" onclick="window.location.pathname='/simulation'">View more</button>
+				</div>
+				<div id="dashboard-view">
+					<div class="proteins">
+						<div class="module-title">
+							<em>protein1</em>
+						</div>
+						<div class="protein-row1">
+							<div class="dashboard"></div>
+							<div class="dashboard"></div>
+							<div class="dashboard"></div>
+						</div>
+						<div class="protein-row2">
+							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
+							<div class="protein-range"><span>RiPs</span><input type="range"/></div>
+							<div class="protein-range"><span>copy</span><input type="range"/></div>
+							<div class="protein-range"><span>repress rate</span><input type="range"/></div>
+							<div class="protein-range"><span>induce rate</span><input type="range"/></div>
+						</div>
+					</div>
+
+
+					<div class="proteins">
+						<div class="module-title">
+							<em>protein2</em>
+						</div>
+						<div class="protein-row1">
+							<div class="dashboard"></div>
+							<div class="dashboard"></div>
+							<div class="dashboard"></div>
+						</div>
+						<div class="protein-row2">
+							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
+							<div class="protein-range"><span>RiPs</span><input type="range"/></div>
+							<div class="protein-range"><span>copy</span><input type="range"/></div>
+							<div class="protein-range"><span>repress rate</span><input type="range"/></div>
+							<div class="protein-range"><span>induce rate</span><input type="range"/></div>
+						</div>
+					</div>
+
+
+					<div class="proteins">
+						<div class="module-title">
+							<em>protein3</em>
+						</div>
+						<div class="protein-row1">
+							<div class="dashboard"></div>
+							<div class="dashboard"></div>
+							<div class="dashboard"></div>
+						</div>
+						<div class="protein-row2">
+							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
+							<div class="protein-range"><span>RiPs</span><input type="range"/></div>
+							<div class="protein-range"><span>copy</span><input type="range"/></div>
+							<div class="protein-range"><span>repress rate</span><input type="range"/></div>
+							<div class="protein-range"><span>induce rate</span><input type="range"/></div>
+						</div>
+					</div>
+
+
+					<div class="proteins">
+						<div class="module-title">
+							<em>protein4</em>
+						</div>
+						<div class="protein-row1">
+							<div class="dashboard"></div>
+							<div class="dashboard"></div>
+							<div class="dashboard"></div>
+						</div>
+						<div class="protein-row2">
+							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
+							<div class="protein-range"><span>RiPs</span><input type="range"/></div>
+							<div class="protein-range"><span>copy</span><input type="range"/></div>
+							<div class="protein-range"><span>repress rate</span><input type="range"/></div>
+							<div class="protein-range"><span>induce rate</span><input type="range"/></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
     </div>
 
+
+    <!-- right container starts -->
     <div id="right-container">
+
+      <!-- right menu list starts -->
       <div class="accordion" id="accordion2">
+
+         <!-- basic menu starts -->
         <div class="accordion-group">
+          <!-- accordion-heading starts -->
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
               Menu
               <i class="icon-chevron-down" style="display: block; float: right"></i>
             </a>
           </div>
+          <!-- accordion-heading ends -->
+
+          <!-- accordion-body starts -->
           <div id="collapseOne" class="accordion-body collapse in">
+            <!-- accordion-inner starts -->
             <div class="accordion-inner">
               <div id="menu">
+                <!-- userview starts -->
                 <div id="user-view" class="well well-small">
                   <div id="user-view-left">
                     <p>Rathinho</p>
@@ -476,18 +211,22 @@
                       <img src="../static/img/db.png">
                     </div>
                   </div>
-                </div> <!-- userview end -->
+                </div> 
+                <!-- userview ends -->
 
+                <!-- commandmenu starts -->
                 <div id="commandmenu" class="well well-small">
                   <div id="button-group">
-                    <button class="btn btn-success" id="myfile" style="width: 117px; margin-bottom: 10px;">My Files</button>
+                    <button class="btn btn-success" id="myfile" style="width: 117px; margin-bottom: 10px;" href="#filelist-modal" data-toggle="modal">My Files</button>
                     <button class="btn" id="create-part">Create New Part</button>
                   </div>
-                </div>  <!-- commandmenu end -->
+                </div>  
+                <!-- commandmenu ends -->
 
+                <!-- filemenu starts -->
                 <div id="filemenu" class="well well-small">
                   <label for="filename">FileName:</label>
-                  <input id="fn-input" type="text" name="filename" data-toggle="tooltip" title="filename can not be empty">
+                  <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty">
                   <a class="btn btn-primary" id="save">
                     <i class="icon-ok"></i>
                     Save
@@ -497,38 +236,51 @@
                     <i class="icon-remove"></i>
                     Clear
                   </a>                  
-                </div> <!-- filemenu end -->
-              </div>  <!-- menu end -->
-            </div>  <!-- accordion-inner -->
-          </div>  <!-- accordion-body -->
-        </div>  <!-- accordion-group end -->
+                </div> 
+                <!-- filemenu ends -->
 
+              </div>  
+              <!-- menu ends -->
+            </div>  
+            <!-- accordion-inner ends -->
+          </div>  
+          <!-- accordion-body ends -->
+        </div>  
+        <!-- basic menu ends -->
+
+
+        <!-- configuration menu starts -->
         <div class="accordion-group">
+          <!-- accordion-group starts -->
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
               Configuration
               <i class="icon-chevron-down" style="display: block; float: right"></i>
             </a>
           </div>
+          <!-- accordion-group ends -->
+
+          <!-- accordion-body starts -->
           <div id="collapseTwo" class="accordion-body collapse">
+            <!-- accordion-inner starts -->
             <div class="accordion-inner">
+
+              <!-- exogenous-factors-config starts -->
               <div id="exogenous-factors-config" class="well well-small">
                 <span class="label label-info">Exogenous-factors Configuration</span>
-                Undetermined.<br/>
-                Undetermined.<br/>
-                Undetermined.<br/>
-                Undetermined.<br/>
-                Undetermined.<br/>
-                Undetermined.<br/>
-                Undetermined.<br/>
-                Undetermined.<br/>
-                Undetermined.<br/>
+                <form id="exogenous-factors-form">
+                  <span class="label">Concentration</span><input type="text" name="ConcentrationVal"/>
+                </form>
               </div>
+              <!-- exogenous-factors-config ends -->
 
-
+              <!-- protein-config starts -->
               <div id="protein-config" class="well well-small">
                 <span class="label label-info">Protein Configuration</span>
-                <div class="slider-div">
+                <form id="protein-form">
+                  <span class="label">Expression Value</span><input type="text" name="expressionVal"/>
+                </form>
+                <!-- <div class="slider-div">
                   <p>Expression Value</p>
                   <div class="eui_slider" id="slider-1">
                       <div class="sd_complete"></div>
@@ -544,11 +296,13 @@
                       <div class="sd_thumb"></div>
                   </div>
                   <p id="slider-text-2">0</p>
-                </div>
+                </div> -->
               </div>
+              <!-- protein-config ends -->
 
 
-              <div id="component-config" class="well well-small"  style="display: block">
+              <!-- component-config starts -->
+              <div id="component-config" class="well well-small" style="display: block">
                 <span class="label label-info">Component Configuration</span>
                 <form id="component-form">
                     <span class="label">Part_id</span><input type="text" name="part_id"/>
@@ -566,60 +320,115 @@
                     <span class="label">twins</span><ul id="twins"></ul>
                 </form>
               </div>
+              <!-- component-config ends -->
 
 
+              <!-- arrow-config starts -->
               <div id="arrow-config" class="well well-small">
                 <span class="label label-info">Arrow Configuration</span>
-                <div class="slider-div">
-                  <p>Regulation Strength</p>
-                  <div class="eui_slider" id="slider-3">
-                      <div class="sd_complete"></div>
-                      <div class="sd_thumb"></div>
+                 <form id="arrow-form">
+                  <span class="label">Regulation Strength</span><input type="text" name="regStrength"/>
+                   <!-- <div class="slider-div">
+                    <p>Regulation Strength</p>
+                    <div class="eui_slider" id="slider-3">
+                        <div class="sd_complete"></div>
+                        <div class="sd_thumb"></div>
+                    </div>
+                    <p id="slider-text-3">0.5</p>
                   </div>
-                  <p id="slider-text-4">0.5</p>
-                </div>
 
-                <div class="slider-div">
-                  <p>Floating Value</p>
-                  <div class="eui_slider" id="slider-4">
-                      <div class="sd_complete"></div>
-                      <div class="sd_thumb"></div>
-                  </div>
-                  <p id="slider-text-4">0</p>
-                </div>
+                  <div class="slider-div">
+                    <p>Floating Value</p>
+                    <div class="eui_slider" id="slider-4">
+                        <div class="sd_complete"></div>
+                        <div class="sd_thumb"></div>
+                    </div>
+                    <p id="slider-text-4">0</p>
+                  </div> -->
+                </form>               
               </div>
-            </div> <!-- accordion-inner end -->
-          </div>  <!-- accordion-body end -->
-        </div>  <!-- accordion-group end -->
-      </div>   <!-- accordion end -->  
-    </div>  <!-- right-container end -->
+              <!-- arrow-config ends -->
 
+            </div> 
+            <!-- accordion-inner ends -->
+          </div> 
+          <!-- accordion-body ends -->
+        </div>
+        <!-- configuration menu ends -->
+
+      </div>   
+      <!-- right menu list ends -->  
+
+    </div>  
+    <!-- right container ends -->
+
+
+    <!-- save modal starts -->
     <div id="save-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h6 id="myModalLabel">Info</h6>
       </div>
       <div class="modal-body" style="text-align: center;">                      
-        <h4>File Saved!</h4>
+        <h4 id="myModalInfo">File Saved!</h4>
       </div>
       <div class="modal-footer">
         <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
       </div>
     </div>
+    <!-- save modal ends -->
 
-    <div class="footer">
-      <button class="btn" onclick="window.location.pathname = '/index'">Regulation network</button>
-      <button class="btn" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
-      <button class="btn" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
-      <button class="btn" onclick="window.location.pathname = '/protocol'">Protocol</button>
-      <button class="btn" onclick="window.location.pathname = '/simulation'">Simulation</button>
+    <!-- filelist modal starts -->
+    <div id="filelist-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h6>File List</h6>
+      </div>
+      <div class="modal-body">                      
+        <div id="filelist"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
     </div>
+    <!-- filelist modal ends -->
+
+    <!-- footer starts -->
+    <div class="footer">
+      <div class="footer-navigator">
+        <button class="btn btn-primary" onclick="window.location.pathname = '/index'">Regulation network</button>
+        <button class="btn btn-primary" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
+        <button class="btn btn-primary" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
+        <button class="btn btn-primary" onclick="window.location.pathname = '/protocol'">Protocol</button>
+        <button class="btn btn-primary" onclick="window.location.pathname = '/simulation'">Simulation</button>
+      </div>
+    </div>
+    <!-- footer ends -->
+
+
+    <!-- command group starts-->
+    <div class="cmd-group">
+      <button class="btn" id="cmd_undo">
+        <img src="../static/img/Undo.png" width="17px" height="17px">
+        <span>Undo</span>
+      </button>
+      <button class="btn" id="cmd_redo">
+        <img src="../static/img/Redo.png" width="17px" height="17px">
+        <span>Redo</span>
+      </button>
+    <!--   
+      <a href="javascript:void(0);" id="cmd_zoom_in">zoom in</a>
+      <a href="javascript:void(0);" id="cmd_zoom_out">zoom out</a>
+      <a href="javascript:void(0);" id="cmd_zoom_reset">zoom reset</a>
+     -->
+    </div>
+    <!-- command group ends-->
+
   </div>
+  <!-- regulation-container ends -->
 
 
-
-  <!-- Javascript -->
-
+  <!-- Jquery and underscore -->
   <script src="../static/js/underscore-min.js"></script>
   <script src="../static/js/jquery-1.8.0.min.js"></script>
   <script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>
@@ -676,6 +485,9 @@
   <script src="../static/js/graphiti/layout/locator/RightLocator.js"></script>
   <script src="../static/js/graphiti/layout/locator/LeftLocator.js"></script>
   <script src="../static/js/graphiti/layout/locator/BottomLocator.js"></script>
+  <script src="../static/js/graphiti/layout/locator/TopLeftLocator.js"></script>
+  <script src="../static/js/graphiti/layout/locator/TopRightLocator.js"></script>
+  <script src="../static/js/graphiti/layout/locator/BottomRightLocator.js"></script>
 
   <script src="../static/js/graphiti/Canvas.js"></script>
   <script src="../static/js/graphiti/Figure.js"></script>
@@ -686,7 +498,18 @@
   <script src="../static/js/graphiti/SVGFigure.js"></script>
 
   <script src="../static/js/graphiti/shape/icon/Icon.js"></script>
-  <script src="../static/js/graphiti/shape/icon/ProteinArrow.js"></script>
+  <script src="../static/js/graphiti/shape/icon/ProteinIcon.js"></script>
+  <script src="../static/js/graphiti/shape/icon/InducerIcon.js"></script>
+  <script src="../static/js/graphiti/shape/icon/MetalIonIcon.js"></script>
+  <script src="../static/js/graphiti/shape/icon/TemperatureIcon.js"></script>
+  <script src="../static/js/graphiti/shape/icon/RORAIcon.js"></script>
+  <script src="../static/js/graphiti/shape/icon/PandR.js"></script>
+  <script src="../static/js/graphiti/shape/icon/PandA.js"></script>
+  <script src="../static/js/graphiti/shape/icon/PandP.js"></script>
+  <script src="../static/js/graphiti/shape/icon/Remove.js"></script>
+  <script src="../static/js/graphiti/shape/icon/Activate.js"></script>
+  <script src="../static/js/graphiti/shape/icon/Inhibit.js"></script>
+  <script src="../static/js/graphiti/shape/icon/CoExpress.js"></script>
 
   <script src="../static/js/graphiti/shape/basic/Oval.js"></script>
   <script src="../static/js/graphiti/shape/basic/Circle.js"></script>
@@ -737,24 +560,16 @@
 
   <script src="../static/js/graphiti/decoration/connection/Decorator.js"></script>
   <script src="../static/js/graphiti/decoration/connection/ArrowDecorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/DiamondDecorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/TDecorator.js"></script>
-
-
-  <!-- <script src="static/js/libs/bootstrap/bootstrap.min.js"></script> -->
-  <script src="../static/js/graphiti/decoration/connection/Decorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/ArrowDecorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/DiamondDecorator.js"></script>
-  <script src="../static/js/graphiti/decoration/connection/TDecorator.js"></script>
-
 
   <!-- Custom js -->
-  <script src="../static/js/raw_datas.js"></script>
-  <script src="../static/js/genecircuit.js"></script>
-  <script src="../static/js/regulation/script.js"></script>
   <script src="../static/js/bootstrap.min.js"></script>
-  <script src="../static/js/regulation/base/js/easy.js"></script> 
+  <script src="../static/js/regulation/base/js/easy.js"></script>  
   <script src="../static/js/regulation/dtree.js"></script> 
   <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../static/js/genecircuit.js"></script>
+  <script src="../static/js/regulation/biobrickAdder.js"></script>
+  <script src="../static/js/regulation/mytree.js"></script>
+  <script src="../static/js/regulation/graphiti.js"></script>
+  <script src="../static/js/regulation/regulation.js"></script>  
 </body>
 </html>
