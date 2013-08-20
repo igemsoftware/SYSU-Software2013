@@ -144,8 +144,22 @@ def dump_group(network, database):
     plasmid.append(grp)
   return plasmid
 
+'''	sbol_dict is the sbol create by this python program
+	rbs_value is the new value that user want for the rbs
+	proteinName is the protein that the user want to change
+'''
+def changeRBS_MPRBS(database,sbol_dict,rbs_value,proteinName):
+  bestRBS= database.getRBSNearValue(rbs_value)
+  for item in sbol_dict:
+    for i in range(0,len(item)):
+      if item[i]['name']==proteinName:
+        if item[i-1]['type']=='RBS':
+          item[i-1]['name']=bestRBS['Number']
+  return sbol_dict
 
 if __name__ == "__main__":
   import database
   db = database.SqliteDatabase()
-  print dump_group(data, db)
+  sbol=dump_group(data, db)
+  print sbol
+  print changeRBS_MPRBS(db,sbol,0.97,data["part"][2]['name'])
