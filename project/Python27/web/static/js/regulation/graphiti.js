@@ -460,39 +460,25 @@ g.Shapes.RORA = graphiti.shape.icon.RORAIcon.extend({
   },
 
   onClick: function() {
-    // app.view.currentSelected = this.getId();   // set current selected figure
+    app.view.currentSelected = this.getId(); // set current selected figure
 
-    // if (this.remove || this.label) {
-    //   this.resetChildren();
-    // }
+    if (this.remove || this.label) {
+      this.resetChildren();
+    }
 
-    // this.addFigure(this.remove, new graphiti.layout.locator.TopLocator(this));    
-    // this.addFigure(this.label, new graphiti.layout.locator.BottomLocator(this));
+    this.addFigure(this.remove, new graphiti.layout.locator.TopLocator(this));
+    this.addFigure(this.label, new graphiti.layout.locator.BottomLocator(this));
 
-    // var canvas = this.getCanvas();
-    // for (var i = 0; i < canvas.collection.length; i++) {
-    //   var figure = canvas.getFigure(canvas.collection[i]);
-    //   if (this.getId() !== figure.getId()) {
-    //     figure.resetChildren();
-    //     figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
-    //     figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
-    //     figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
-    //   }
-    // };
-
-    // $("#right-container").css({right: '0px'});
-    // var hasClassIn = $("#collapseTwo").hasClass('in');
-    // if(!hasClassIn) {
-    //   $("#collapseOne").toggleClass('in');
-    //   $("#collapseOne").css({height: '0'});
-    //   $("#collapseTwo").toggleClass('in');
-    //   $("#collapseTwo").css({height: "auto"});
-    // }
-
-    // $("#exogenous-factors-config").css({"display": "block"});
-    // $("#protein-config").css({"display": "none"});
-    // $("#component-config").css({"display": "none"});
-    // $("#arrow-config").css({"display": "none"});
+    var canvas = this.getCanvas();
+    for (var i = 0; i < canvas.collection.length; i++) {
+      var figure = canvas.getFigure(canvas.collection[i]);
+      if (this.getId() !== figure.getId()) {
+        figure.resetChildren();
+        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
+        figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
+        figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
+      }
+    };
   },
 
   onDoubleClick: function() {
@@ -616,6 +602,44 @@ g.Shapes.PandP = graphiti.shape.icon.PandP.extend({
   }
 });
 
+g.Shapes.PandRORA = graphiti.shape.icon.PandRORA.extend({
+  NAME: "g.Shapes.PandRORA",
+
+  init: function(width, height) {
+    this._super();
+
+    if (typeof radius === "number") {
+      this.setDimension(radius, radius);
+    } else {
+      this.setDimension(90, 45);
+    }
+
+    this.setColor("#339BB9");
+
+    this.TYPE = "PandRORA";
+    // remove button
+    this.Unbind = new g.Buttons.Unbind();
+    this.remove = new g.Buttons.Remove();
+    this.Activate = new g.Buttons.Activate();
+    this.Inhibit = new g.Buttons.Inhibit();
+    this.CoExpress = new g.Buttons.CoExpress();
+
+    // Label
+    this.label = new graphiti.shape.basic.Label("PandRORA");
+    this.label.setFontColor("#000000");
+
+    this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
+  },
+
+  onClick: function() {
+    
+  },
+
+  onDoubleClick: function() {
+    g.unbind(this);
+  }
+});
+
 
 
 // Buttons
@@ -716,7 +740,12 @@ g.Buttons.CoExpress = graphiti.shape.icon.CoExpress.extend({
   onClick: function() {
     var target = this.getParent();
     var source = this.getCanvas().getFigure(app.view.currentSelected);
-    g.bind(source, target, "Protein");
+
+    if (source.TYPE == "Protein") {
+      g.bind(source, target, "Protein");
+    } else if (source.TYPE == "RORA") {
+      g.bind(source, target, "RORA")
+    }
     // var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.RightLocator(source));
     // var targetPort = target.createPort("hybrid", new graphiti.layout.locator.LeftLocator(target));
 
@@ -759,6 +788,10 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
       bindedFigure.sourceName = source.getId();
       bindedFigure.targetName = target.getId();
       // bindedFigure.setPosition(srcPosX, srcPosY);
+    } else if (type == "RORA") {
+      bindedFigure = new g.Shapes.PandRORA();
+      bindedFigure.sourceName = source.getId();
+      bindedFigure.targetName = target.getId();
     } else if (type == "R") {
       bindedFigure = new g.Shapes.PandR();
       bindedFigure.sourceName = source.getId();
@@ -815,6 +848,29 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
       app.view.collection.push(figure.targetName);  // 放入collection中
 
       figure.getCanvas().removeFigure(figure);
+      
+    } else if (figure.TYPE == "PandRORA") {
+      var posX = figure.getX(),
+          posY = figure.getY();
+      var p1 = new g.Shapes.Protein(),
+          p2 = new g.Shapes.RORA();
+
+      var command = new graphiti.command.CommandAdd(app.view, p1, posX, posY),
+          command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
+      app.view.getCommandStack().execute(command);  // 添加到命令栈中
+      app.view.getCommandStack().execute(command2);
+
+
+      p1.setId(figure.sourceName);
+      p1.label.setText(figure.sourceName);
+      app.view.collection.push(figure.sourceName);  // 放入collection中
+
+      p2.setId(figure.targetName);
+      p2.label.setText(figure.targetName);
+      app.view.collection.push(figure.targetName);  // 放入collection中
+
+      figure.getCanvas().removeFigure(figure);
+
     } else if (figure.TYPE == "PandR" || figure.TYPE == "PandA") {
       var posX = figure.getX(),
           posY = figure.getY();
