@@ -657,14 +657,14 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
 
   onClick: function() {    
     var canvas = this.getCanvas();
-    g.bind(this.getParent(), null, "A");
-    var source = g.cache;
-    var target = canvas.getFigure(app.view.currentSelected);
+    g.bind(canvas.getFigure(app.view.currentSelected), null, "A");
+    var source = this.getParent();
+    var target = g.cache;
 
-    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(source));
-    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
+    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
+    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
 
-    var command = new graphiti.command.CommandConnect(canvas, sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "Activate"); // 连接两点
+    var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate"); // 连接两点
     app.view.getCommandStack().execute(command); // 添加到命令栈中
   }
 });
@@ -686,14 +686,14 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
 
   onClick: function() {
     var canvas = this.getCanvas();
-    g.bind(this.getParent(), null, "R");
-    var source = g.cache;
-    var target = canvas.getFigure(app.view.currentSelected);
+    g.bind(canvas.getFigure(app.view.currentSelected), null, "R");
+    var source = this.getParent();
+    var target = g.cache;
 
-    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(source));
-    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
+    var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
+    var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
 
-    var command = new graphiti.command.CommandConnect(canvas, sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "Inhibit"); // 连接两点
+    var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Inhibit"); // 连接两点
     app.view.getCommandStack().execute(command); // 添加到命令栈中
   }
 });
