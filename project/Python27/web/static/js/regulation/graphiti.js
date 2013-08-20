@@ -221,11 +221,12 @@ g.Shapes.Inducer = graphiti.shape.icon.InducerIcon.extend({
     for (var i = 0; i < canvas.collection.length; i++) {
       var figure = canvas.getFigure(canvas.collection[i]);
       if (figure != null && this.getId() !== figure.getId()) {
-        // console.log(figure.getConnections());
         var connections = figure.getConnections();
         for (var j = 0 ; j < connections.size ; j++) {
           var connection = connections.get(j);
           connection.addFigure(this.Activate, new graphiti.layout.locator.ManhattanMidpointLocator(connection));
+
+          // wait to be implemented;
         }
       }
     };
