@@ -69,37 +69,6 @@
     <div id="content"> 
       <!-- <div id="canvas"></div>    -->
 
-			<div id="content-row2">
-				<div id="plasmids-view">
-					<div class="plasmids">
-						<ul id="sbol1" class="sbol">
-							<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>aa</span></li>
-							<li><div><img src="../static/img/component/rbs.PNG"/></div><span>aa</span></li>
-							<li><div><img src="../static/img/component/Coding.PNG"/></div><span>aa</span></li>
-							<li><div><img src="../static/img/component/Terminator.PNG"/></div><span>aa</span></li>
-						</ul>
-
-						<ul id="sbol2" class="sbol">
-							<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>aa</span></li>
-							<li><div><img src="../static/img/component/rbs.PNG"/></div><span>aa</span></li>
-							<li><div><img src="../static/img/component/Coding.PNG"/></div><span>aa</span></li>
-							<li><div><img src="../static/img/component/Terminator.PNG"/></div><span>aa</span></li>
-						</ul>
-
-						<ul id="sbol3" class="sbol">
-							<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>aa</span></li>
-							<li><div><img src="../static/img/component/rbs.PNG"/></div><span>aa</span></li>
-							<li><div><img src="../static/img/component/Coding.PNG"/></div><span>aa</span></li>
-							<li><div><img src="../static/img/component/Terminator.PNG"/></div><span>aa</span></li>
-						</ul>
-					</div>
-					<div id="cmd">
-						<button class="btn">New plasmid</button>
-					</div>
-				</div>
-			</div>
-
-
 
 			<div id="content-row1">
 				<div id="regulation-view" class="">
@@ -129,6 +98,9 @@
 							<div class="dashboard"></div>
 							<div class="dashboard"></div>
 							<div class="dashboard"></div>
+							<span>before<br/> regulated</span>
+							<span>after<br/> regulated</span>
+							<span>after<br/> induced</span>
 						</div>
 						<div class="protein-row2">
 							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
@@ -148,6 +120,9 @@
 							<div class="dashboard"></div>
 							<div class="dashboard"></div>
 							<div class="dashboard"></div>
+							<span>before<br/> regulated</span>
+							<span>after<br/> regulated</span>
+							<span>after<br/> induced</span>
 						</div>
 						<div class="protein-row2">
 							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
@@ -167,6 +142,9 @@
 							<div class="dashboard"></div>
 							<div class="dashboard"></div>
 							<div class="dashboard"></div>
+							<span>before<br/> regulated</span>
+							<span>after<br/> regulated</span>
+							<span>after<br/> induced</span>
 						</div>
 						<div class="protein-row2">
 							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
@@ -186,6 +164,9 @@
 							<div class="dashboard"></div>
 							<div class="dashboard"></div>
 							<div class="dashboard"></div>
+							<span>before<br/> regulated</span>
+							<span>after<br/> regulated</span>
+							<span>after<br/> induced</span>
 						</div>
 						<div class="protein-row2">
 							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
@@ -198,6 +179,93 @@
 
 				</div>
 			</div>
+
+
+			<div id="content-row2">
+				<div id="plasmids-view">
+					<!-- <div class="module-title"> -->
+						<!-- <span class="label label-info">plasmids</span> -->
+						<!-- <h2>plasmids</h2> -->
+					<!-- </div> -->
+					<div class="plasmids">
+						<div>
+							<span class="label">plasmid1</span>
+						</div>
+						<div id="sbol1" class="sbol">
+							<ul class="sbol-components">
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/rbs.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Coding.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Terminator.PNG"/></div><span>BBa_C0060</span></li>
+							</ul>
+							<div class="sbol-handle"><i class="icon-move"></i></div>
+							<button class="sbol-switch switch-on">On</button>
+						</div>
+
+						<div id="sbol2" class="sbol">
+							<ul class="sbol-components">
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/rbs.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Coding.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Terminator.PNG"/></div><span>BBa_C0060</span></li>
+							</ul>
+							<div class="sbol-handle"><i class="icon-move"></i></div>
+							<!-- <div style="clear: both"> </div> -->
+							<button class="sbol-switch switch-off">On</button>
+						</div>
+
+					</div>
+
+					<div class="plasmids">
+						<div>
+							<span class="label">plasmid2</span>
+						</div>
+						<div id="sbol1" class="sbol">
+							<ul class="sbol-components">
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/rbs.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Coding.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Terminator.PNG"/></div><span>BBa_C0060</span></li>
+							</ul>
+							<div class="sbol-handle"><i class="icon-move"></i></div>
+							<button class="sbol-switch switch-on">On</button>
+						</div>
+
+						<div id="sbol2" class="sbol">
+							<ul class="sbol-components">
+								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/rbs.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Coding.PNG"/></div><span>BBa_C0060</span></li>
+								<li><div><img src="../static/img/component/Terminator.PNG"/></div><span>BBa_C0060</span></li>
+							</ul>
+							<div class="sbol-handle"><i class="icon-move"></i></div>
+							<button class="sbol-switch switch-off">On</button>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="cmd">
+					<button class="btn">New plasmid</button>
+				</div>
+
+			</div>
+
+
+
+
     </div>
 
 

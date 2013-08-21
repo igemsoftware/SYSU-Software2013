@@ -40,6 +40,7 @@
 	height: 50%;
 	/* letter-spacing: -4px; */
 	/* font-size: 0; */
+	position: relative;
 }
 
 #regulation-view {
@@ -105,6 +106,12 @@
 	height: 40%;
 }
 
+.protein-row1 span {
+	display: inline-block;
+	width: 32%;
+	line-height: 0.6em;
+}
+
 .protein-row2 {
 	/* display: inline-block; */
 	float: left;
@@ -141,10 +148,7 @@
   line-height: 1em;
   height: 1em;
   width: 2em;
-}
-
-.dashboard.dashboard-small {
-  font-size: 17px;
+	overflow: hidden;
 }
 
 .dashboard:before {
@@ -161,38 +165,74 @@
 }
 
 .dashboard .dashboard-arrow {
-  height: 1em;
-  width: .1em;
-  margin-left: -.05em;
-  transform-origin: 50% 100%;
-	-webkit-transform-origin: 50% 100%;
+  height: 2em;
+  width: 2em;
+  transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
   transition: all 0.5s;
-}
 
-.dashboard .dashboard-arrow, .dashboard .dashboard-arrow:before {
-  position: absolute;
-  display: inline-block;
-  background: #333;
-  left: 50%;
-  box-sizing: border-box;
 }
 
 .dashboard .dashboard-arrow:before {
   content: '';
-  height: .2em;
-  width: .2em;
-  bottom: -.1em;
-  margin-left: -.1em;
+  position: absolute;
+  font-size: 100%;
+  height: 2em;
+  width: 2em;
+  line-height: 1em;
+  border: 0.22em solid #cc8f66;
+  box-sizing: border-box;
   border-radius: 100%;
+  clip: rect(auto, auto, 1em, auto);
 }
 
+/* .dashboard .dashboard-arrow { */
+  /* height: 1em; */
+  /* width: .1em; */
+  /* margin-left: -.05em; */
+  /* transform-origin: 50% 100%; */
+	/* -webkit-transform-origin: 50% 100%; */
+  /* transition: all 0.5s; */
+/* } */
+/*  */
+/* .dashboard .dashboard-arrow, .dashboard .dashboard-arrow:before { */
+  /* position: absolute; */
+  /* display: inline-block; */
+  /* background: #333; */
+  /* left: 50%; */
+  /* box-sizing: border-box; */
+/* } */
+/*  */
+/* .dashboard .dashboard-arrow:before { */
+  /* content: ''; */
+  /* height: .2em; */
+  /* width: .2em; */
+  /* bottom: -.1em; */
+  /* margin-left: -.1em; */
+  /* border-radius: 100%; */
+/*  */
+  /* content: ''; */
+  /* position: absolute; */
+  /* font-size: 100%; */
+  /* height: 2em; */
+  /* width: 2em; */
+  /* line-height: 1em; */
+  /* border: 0.22em solid #666666; */
+  /* box-sizing: border-box; */
+  /* border-radius: 100%; */
+  /* clip: rect(auto, auto, 1em, auto); */
+/* } */
+
 .dashboard:before {
-  border-color: #cc8f66;
+  border-color: #e0dede;
 }
 
 .dashboard-value {
-	font-size: .3em;
-	left: 50%;
+	position: absolute;
+	bottom: 0em;
+	left: 1em;
+	line-height: 1em;
+	font-size: .5em;
 }
 
 #cmd {
@@ -203,15 +243,31 @@
 
 .sbol {
 	float: left;
-	/* vertical-align: bottom; */
-	/* padding: 10px; */
-	text-align: justify;
-	margin: 10px;
+	margin: 3px;
+	/* padding: 3px; */
+	/* border: solid 2px #111; */
+	position: relative;
+	max-width: 950px;
+	padding-right: 30px;
+	/* min-width: 330px; */
+}
+
+.sbol:hover {
+	/* background: #ddd; */
+}
+
+.sbol ul {
+	float: left;
+	/* margin: 3px 0 3px 3px; */
+	/* padding: 1.8px; */
+	border: dashed 1.2px #9FB4A9;
+	background: #FFF;
 }
 
 .sbol li {
-	width: 60px;
-	height: 60px;
+	width: 72px;
+	/* height: 60px; */
+	min-height: 50px;
 	/* display: inline-block; */
 	float: left;
 	text-align: center;
@@ -221,6 +277,7 @@
 .sbol li div {
 	/* position: absolute; */
 	position: relative;
+	overflow: hidden;
 	height: 50px;
 }
 
@@ -232,5 +289,70 @@
 
 .sbol li span {
 	display: inline-block;
-	margin: 0 auto;
+	margin: 1.8px auto;
+	border: solid 1px #8F8787;
+	border-radius: 2.4px;
+	padding: 1px;
+}
+
+.sbol li img, .sbol li span:hover {
+	cursor: move;
+}
+
+/* .sbol-op { */
+	/* float: left; */
+	/* width: 30px; */
+	/* height: 60px; */
+	/* margin: 5px 5px 5px 0px; */
+/* } */
+
+.sbol-handle {
+	content: "<>";
+	background: #9FB4A9;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.sbol-handle:hover {
+	cursor: move;
+}
+
+.sbol-handle i {
+	position: absolute;
+	top: 25%;
+	left: 25%;
+}
+
+.sbol-switch {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 0;
+	bottom: 0;
+	border: 0;
+}
+
+.switch-on{ 
+	background: #51a351;
+}
+
+.switch-off {
+	background: #808884;
+}
+
+.plasmids {
+	border: solid 1px #666;
+	margin: 3px;
+}
+
+.plasmids:after {
+	display: block;
+	content: ".";
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
 }
