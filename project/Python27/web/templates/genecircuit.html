@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="../static/jq-ui/themes/ui-lightness/jquery.ui.all.css">
   <link rel="stylesheet" href="../static/css/reset.css">
   <link rel="stylesheet" href="../static/css/slider_style.css">
   <link rel="stylesheet" href="../static/css/dtree.css">  
@@ -78,7 +79,7 @@
 					<div class="browser">
 						<img src="../static/img/protein.png" />
 					</div>
-					<button class="btn-more" onclick="window.location.pathname = '/index'">Edit</button>
+					<button class="btn-more btn" onclick="window.location.pathname = '/index'">Edit</button>
 				</div>
 				<div id="simulation-view">
 					<div class="module-title">
@@ -87,95 +88,107 @@
 					<div class="browser">
 						<img src="../static/img/process.png" />
 					</div>
-					<button class="btn-more" onclick="window.location.pathname='/simulation'">View more</button>
+					<button class="btn-more btn" onclick="window.location.pathname='/simulation'">View more</button>
 				</div>
 				<div id="dashboard-view">
-					<div class="proteins">
-						<div class="module-title">
-							<em>protein1</em>
-						</div>
-						<div class="protein-row1">
-							<div class="dashboard"></div>
-							<div class="dashboard"></div>
-							<div class="dashboard"></div>
-							<span>before<br/> regulated</span>
-							<span>after<br/> regulated</span>
-							<span>after<br/> induced</span>
-						</div>
-						<div class="protein-row2">
-							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
-							<div class="protein-range"><span>RiPs</span><input type="range"/></div>
-							<div class="protein-range"><span>copy</span><input type="range"/></div>
-							<div class="protein-range"><span>repress rate</span><input type="range"/></div>
-							<div class="protein-range"><span>induce rate</span><input type="range"/></div>
-						</div>
-					</div>
-
-
-					<div class="proteins">
-						<div class="module-title">
-							<em>protein2</em>
-						</div>
-						<div class="protein-row1">
-							<div class="dashboard"></div>
-							<div class="dashboard"></div>
-							<div class="dashboard"></div>
-							<span>before<br/> regulated</span>
-							<span>after<br/> regulated</span>
-							<span>after<br/> induced</span>
-						</div>
-						<div class="protein-row2">
-							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
-							<div class="protein-range"><span>RiPs</span><input type="range"/></div>
-							<div class="protein-range"><span>copy</span><input type="range"/></div>
-							<div class="protein-range"><span>repress rate</span><input type="range"/></div>
-							<div class="protein-range"><span>induce rate</span><input type="range"/></div>
-						</div>
-					</div>
-
-
-					<div class="proteins">
-						<div class="module-title">
-							<em>protein3</em>
-						</div>
-						<div class="protein-row1">
-							<div class="dashboard"></div>
-							<div class="dashboard"></div>
-							<div class="dashboard"></div>
-							<span>before<br/> regulated</span>
-							<span>after<br/> regulated</span>
-							<span>after<br/> induced</span>
-						</div>
-						<div class="protein-row2">
-							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
-							<div class="protein-range"><span>RiPs</span><input type="range"/></div>
-							<div class="protein-range"><span>copy</span><input type="range"/></div>
-							<div class="protein-range"><span>repress rate</span><input type="range"/></div>
-							<div class="protein-range"><span>induce rate</span><input type="range"/></div>
-						</div>
-					</div>
-
-
-					<div class="proteins">
-						<div class="module-title">
-							<em>protein4</em>
-						</div>
-						<div class="protein-row1">
-							<div class="dashboard"></div>
-							<div class="dashboard"></div>
-							<div class="dashboard"></div>
-							<span>before<br/> regulated</span>
-							<span>after<br/> regulated</span>
-							<span>after<br/> induced</span>
-						</div>
-						<div class="protein-row2">
-							<div class="protein-range"><span>PoPs</span><input type="range"/></div>
-							<div class="protein-range"><span>RiPs</span><input type="range"/></div>
-							<div class="protein-range"><span>copy</span><input type="range"/></div>
-							<div class="protein-range"><span>repress rate</span><input type="range"/></div>
-							<div class="protein-range"><span>induce rate</span><input type="range"/></div>
-						</div>
-					</div>
+					<!-- <div class="proteins"> -->
+						<!-- <div class="module-title"> -->
+							<!-- <em>protein1</em> -->
+						<!-- </div> -->
+						<!-- <div class="dashboard-unit"> -->
+							<!-- <div> -->
+								<!-- <div class="dashboard"></div> -->
+								<!-- <span>before<br/> regulated</span> -->
+							<!-- </div> -->
+							<!-- <div class="protein-range mul"><div class="slider"></div><span>PoPs</span></div> -->
+							<!-- <div class="protein-range mul"><div class="slider"></div><span>RiPs</span></div> -->
+							<!-- <div class="protein-range mul"><div class="slider"></div><span>copy</span></div> -->
+						<!-- </div> -->
+						<!--  -->
+						<!-- <div class="dashboard-unit"> -->
+							<!-- <div> -->
+								<!-- <div class="dashboard"></div> -->
+								<!-- <span>after<br/> regulated</span> -->
+							<!-- </div> -->
+							<!-- <div class="protein-range"><div class="slider"></div><span>repress rate</span></div> -->
+						<!-- </div> -->
+<!--  -->
+						<!-- <div class="dashboard-unit"> -->
+							<!-- <div> -->
+								<!-- <div class="dashboard"></div> -->
+								<!-- <span>after<br/> induced</span> -->
+							<!-- </div> -->
+							<!-- <div class="protein-range"><div class="slider"></div><span>induce rate</span></div> -->
+						<!-- </div> -->
+					<!-- </div> -->
+<!--  -->
+<!--  -->
+<!--  -->
+					<!-- <div class="proteins"> -->
+						<!-- <div class="module-title"> -->
+							<!-- <em>protein1</em> -->
+						<!-- </div> -->
+						<!-- <div class="dashboard-unit"> -->
+							<!-- <div> -->
+								<!-- <div class="dashboard"></div> -->
+								<!-- <span>before<br/> regulated</span> -->
+							<!-- </div> -->
+								<!-- <div class="protein-range mul"><div class="slider"></div><span>PoPs</span></div> -->
+								<!-- <div class="protein-range mul"><div class="slider"></div><span>RiPs</span></div> -->
+								<!-- <div class="protein-range mul"><div class="slider"></div><span>copy</span></div> -->
+<!--  -->
+						<!-- </div> -->
+						<!--  -->
+						<!-- <div class="dashboard-unit"> -->
+							<!-- <div> -->
+								<!-- <div class="dashboard"></div> -->
+								<!-- <span>after<br/> regulated</span> -->
+							<!-- </div> -->
+							<!-- <div class="protein-range"><div class="slider"></div><span>repress rate</span></div> -->
+						<!-- </div> -->
+<!--  -->
+						<!-- <div class="dashboard-unit"> -->
+							<!-- <div> -->
+								<!-- <div class="dashboard"></div> -->
+								<!-- <span>after<br/> induced</span> -->
+							<!-- </div> -->
+							<!-- <div class="protein-range"><div class="slider"></div><span>induce rate</span></div> -->
+						<!-- </div> -->
+					<!-- </div> -->
+<!--  -->
+<!--  -->
+<!--  -->
+					<!-- <div class="proteins"> -->
+						<!-- <div class="module-title"> -->
+							<!-- <em>protein1</em> -->
+						<!-- </div> -->
+						<!-- <div class="dashboard-unit"> -->
+							<!-- <div> -->
+								<!-- <div class="dashboard"></div> -->
+								<!-- <span>before<br/> regulated</span> -->
+							<!-- </div> -->
+								<!-- <div class="protein-range mul"><div class="slider"></div><span>PoPs</span></div> -->
+								<!-- <div class="protein-range mul"><div class="slider"></div><span>RiPs</span></div> -->
+								<!-- <div class="protein-range mul"><div class="slider"></div><span>copy</span></div> -->
+<!--  -->
+						<!-- </div> -->
+						<!--  -->
+						<!-- <div class="dashboard-unit"> -->
+							<!-- <div> -->
+								<!-- <div class="dashboard"></div> -->
+								<!-- <span>after<br/> regulated</span> -->
+							<!-- </div> -->
+							<!-- <div class="protein-range"><div class="slider"></div><span>repress rate</span></div> -->
+						<!-- </div> -->
+<!--  -->
+						<!-- <div class="dashboard-unit"> -->
+							<!-- <div> -->
+								<!-- <div class="dashboard"></div> -->
+								<!-- <span>after<br/> induced</span> -->
+							<!-- </div> -->
+							<!-- <div class="protein-range"><div class="slider"></div><span>induce rate</span></div> -->
+						<!-- </div> -->
+					<!-- </div> -->
 
 				</div>
 			</div>
@@ -193,9 +206,6 @@
 						</div>
 						<div id="sbol1" class="sbol">
 							<ul class="sbol-components">
-								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
-								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
-								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
 								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
 								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
 								<li><div><img src="../static/img/component/Promoter.PNG"/></div><span>BBa_C0060</span></li>
@@ -658,10 +668,10 @@
   <script src="../static/js/regulation/base/js/easy.js"></script>  
   <script src="../static/js/regulation/dtree.js"></script> 
   <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script src="../static/js/genecircuit.js"></script>
+  <script src="../static/js/genecircuit/genecircuit.js"></script>
   <script src="../static/js/regulation/biobrickAdder.js"></script>
   <script src="../static/js/regulation/mytree.js"></script>
   <script src="../static/js/regulation/graphiti.js"></script>
-  <script src="../static/js/regulation/regulation.js"></script>  
+  <script src="../static/js/genecircuit/regulation.js"></script>  
 </body>
 </html>

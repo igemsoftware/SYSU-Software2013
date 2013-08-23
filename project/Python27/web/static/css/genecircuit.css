@@ -30,7 +30,8 @@
 
 #content-row1 {
 	width: 100%;
-	height: 50%;
+	height: 48%;
+	margin-bottom: 5px;
 	/* letter-spacing: -4px; */
 	/* font-size: 0; */
 }
@@ -85,8 +86,8 @@
 	float: left;
 	width: 50%;
 	height: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	/* overflow-y: scroll; */
+	/* overflow-x: hidden; */
 }
 
 #plasmids-view {
@@ -95,60 +96,70 @@
 	float: left;
 	width: 100%;
 	height: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	/* overflow-y: scroll; */
+	/* overflow-x: hidden; */
 }
 
-.protein-row1 {
-	/* display: inline-block; */
-	float: left;
-	width: 100%;
-	height: 40%;
-}
-
-.protein-row1 span {
-	display: inline-block;
-	width: 32%;
-	line-height: 0.6em;
-}
-
-.protein-row2 {
-	/* display: inline-block; */
-	float: left;
-	width: 100%;
-	height: 50%;
-}
 
 .proteins {
 	float: left;
-	width: 50%;
-	height: 50%;
+	width: 245px;
+	margin: 2px;
+	border: dashed 1px #A29E95;
+	border-radius: 5px;
+	/* height: 240px; */
+}
+
+.proteins .dashboard-unit {
+	float: left;
+	width: 33%;
+	/* height: 100%; */
+	text-align: center;
+}
+
+.proteins .protein-range {
+	text-align: center;
+}
+
+.ui-slider-handle {
+	-webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.ui-slider-range {
+	-webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.dashboard-unit > div {
+	text-align: center;
 }
 
 .protein-range {
-	height: 20%;
-}
-
-.protein-range input {
-	width: 70%;
-}
-
-.protein-range span {
 	display: inline-block;
-	text-align: center;
+}
+
+.protein-range.mul{
 	width: 30%;
 }
 
-
+.protein-range .slider {
+	margin: 6px auto;
+}
 
 .dashboard {
   position: relative;
   display: inline-block;
-  font-size: 33px;
+  font-size: 40px;
   line-height: 1em;
   height: 1em;
   width: 2em;
 	overflow: hidden;
+	text-align: left;
 }
 
 .dashboard:before {
@@ -159,7 +170,13 @@
   width: 2em;
   line-height: 1em;
   border: 0.22em solid #666666;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
   border-radius: 100%;
   clip: rect(auto, auto, 1em, auto);
 }
@@ -169,6 +186,13 @@
   width: 2em;
   transform-origin: 50% 50%;
 	-webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 
 }
@@ -180,7 +204,9 @@
   height: 2em;
   width: 2em;
   line-height: 1em;
-  border: 0.22em solid #cc8f66;
+  border: 0.22em solid #f6a828;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 100%;
   clip: rect(auto, auto, 1em, auto);
@@ -262,6 +288,7 @@
 	/* padding: 1.8px; */
 	border: dashed 1.2px #9FB4A9;
 	background: #FFF;
+	/* letter-spacing: -4px; */
 }
 
 .sbol li {
@@ -293,6 +320,7 @@
 	border: solid 1px #8F8787;
 	border-radius: 2.4px;
 	padding: 1px;
+	letter-spacing: 0px;
 }
 
 .sbol li img, .sbol li span:hover {
@@ -344,7 +372,8 @@
 }
 
 .plasmids {
-	border: solid 1px #666;
+	border: dotted 1px #848b89;
+	border-radius: 4px;
 	margin: 3px;
 }
 
