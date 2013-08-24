@@ -99,6 +99,8 @@ g.View = graphiti.Canvas.extend({
 
 // Creates shapes
 g.Shapes = {};
+
+// Protein component
 g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
   NAME: "g.Shapes.Protein",
 
@@ -136,6 +138,7 @@ g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
   }
 });
 
+// Inducer component
 g.Shapes.Inducer = graphiti.shape.icon.InducerIcon.extend({
   NAME: "g.Shapes.Inducer",
 
@@ -174,6 +177,7 @@ g.Shapes.Inducer = graphiti.shape.icon.InducerIcon.extend({
 });
 
 
+// Metal-Ion component
 g.Shapes.MetalIon = graphiti.shape.icon.MetalIonIcon.extend({
   NAME: "g.Shapes.MetalIon",
 
@@ -212,6 +216,7 @@ g.Shapes.MetalIon = graphiti.shape.icon.MetalIonIcon.extend({
 });
 
 
+// Temperature component
 g.Shapes.Temperature = graphiti.shape.icon.TemperatureIcon.extend({
   NAME: "g.Shapes.Temperature",
 
@@ -250,6 +255,7 @@ g.Shapes.Temperature = graphiti.shape.icon.TemperatureIcon.extend({
 });
 
 
+// R/A component
 g.Shapes.RORA = graphiti.shape.icon.RORAIcon.extend({
   NAME: "g.Shapes.RORA",
 
@@ -287,6 +293,8 @@ g.Shapes.RORA = graphiti.shape.icon.RORAIcon.extend({
   }
 });
 
+
+// Protein-Repressor component
 g.Shapes.PandR = graphiti.shape.icon.PandR.extend({
   NAME: "g.Shapes.PandR",
 
@@ -326,6 +334,8 @@ g.Shapes.PandR = graphiti.shape.icon.PandR.extend({
   }
 });
 
+
+// Protein-Activator component
 g.Shapes.PandA = graphiti.shape.icon.PandA.extend({
   NAME: "g.Shapes.PandA",
 
@@ -365,6 +375,8 @@ g.Shapes.PandA = graphiti.shape.icon.PandA.extend({
   }
 });
 
+
+// Protein-Protein component
 g.Shapes.PandP = graphiti.shape.icon.PandP.extend({
   NAME: "g.Shapes.PandP",
 
@@ -405,6 +417,8 @@ g.Shapes.PandP = graphiti.shape.icon.PandP.extend({
   }
 });
 
+
+// Protein-R/A component
 g.Shapes.PandRORA = graphiti.shape.icon.PandRORA.extend({
   NAME: "g.Shapes.PandRORA",
 
@@ -511,10 +525,20 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
       var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Activate"); // 连接两点
       app.view.getCommandStack().execute(command); // 添加到命令栈中
       app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
+
+    } else if (canvas.getFigure(app.view.currentSelected).TYPE == "Inducer") {
+      var target = canvas.getFigure(app.view.currentSelected);
+      // var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
+      var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
+      var sourcePort = new graphiti.HybridPort();
+      source.addFigure(sourcePort, new graphiti.layout.locator.ManhattanMidpointLocator(source));
+
+      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Activate");
+      app.view.getCommandStack().execute(command); // 添加到命令栈中
+      app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
     }
   }
 });
-
 
 // Inhibit Button
 g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
@@ -556,7 +580,6 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
     }
   }
 });
-
 
 // Co-Expression Button
 g.Buttons.CoExpress = graphiti.shape.icon.CoExpress.extend({
@@ -603,8 +626,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 });
 
 
-// functions 
 
+// functions 
 /*
  *  两个元素的绑定
  */
@@ -634,8 +657,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
     var command = new graphiti.command.CommandAdd(app.view, bindedFigure, srcPosX, srcPosY);
     app.view.getCommandStack().execute(command); // 添加到命令栈中
 
-    console.log("绑定前");
-    console.log(app.view.collection); //合并前
+    // console.log("绑定前");
+    // console.log(app.view.collection); //合并前
 
     app.view.collection.remove(source.getId()); // delete source's id from collection    
     if (target != null) {
@@ -650,8 +673,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
     app.view.collection.push(bindedFigure.getId()); // 放入collection中
     app.view.collection.counter += 1;
 
-    console.log("绑定后");
-    console.log(app.view.collection); //合并后
+    // console.log("绑定后");
+    // console.log(app.view.collection); //合并后
 
     canvas.removeFigure(source);
     if (target != null) {
@@ -823,25 +846,13 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
       });
     } else if (ctx.TYPE == "Inducer") {
 
-      var figure, connections, connection;
-      var cnt = 0;
-      // show Activate and Inhibit Icon on the connection lines
-      for (var i = 0; i < canvas.collection.length; i++) {
-        figure = canvas.getFigure(canvas.collection[i]);
-        if (figure != null && ctx.getId() !== figure.getId()) {
-          connections = figure.getConnections();
-          for (var j = 0; j < connections.size; j++) {
-            connection = connections.get(j);
-            connection.addFigure(ctx.Activate, new graphiti.layout.locator.ManhattanMidpointLocator(connection));
+      var connections, connection;
+      connections = canvas.getLines();
 
-            // wait to be implemented;
-          }
-          cnt++;
-          console.log("figure: " + cnt + " 's connections collection is as follow: ");
-          console.log(connections);
-        }
+      for (var i = 0; i < connections.size; i++) {
+        connection = connections.get(i);
+        connection.addFigure(new g.Buttons.Activate(), new graphiti.layout.locator.ManhattanMidpointLocator(connection));
       };
-      console.log("Num of figures in this canvas: " + cnt);
 
       // show exogenous-factors configuration
       $("#exogenous-factors-config").css({
