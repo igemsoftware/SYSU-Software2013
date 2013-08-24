@@ -827,7 +827,6 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
       bindedFigure = new g.Shapes.PandP();
       bindedFigure.sourceName = source.getId();
       bindedFigure.targetName = target.getId();
-      // bindedFigure.setPosition(srcPosX, srcPosY);
     } else if (type == "RORA") {
       bindedFigure = new g.Shapes.PandRORA();
       bindedFigure.sourceName = source.getId();
@@ -875,7 +874,6 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 // Element Unbinding
 (function(ex) {
   ex.unbind = function(figure) {
-    // console.log(figure);
     if (figure.TYPE == "PandP") {
       var posX = figure.getX(),
         posY = figure.getY();
