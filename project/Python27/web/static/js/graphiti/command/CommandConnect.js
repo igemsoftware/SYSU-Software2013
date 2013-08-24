@@ -87,6 +87,8 @@ graphiti.command.CommandConnect = graphiti.command.Command.extend({
        this.connection.setSource(this.source);
        this.connection.setTarget(this.target);
        this.canvas.addFigure(this.connection);
+
+       // return this.connection;
     },
     
     /**

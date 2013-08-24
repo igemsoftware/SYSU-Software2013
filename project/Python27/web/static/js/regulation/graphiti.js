@@ -53,8 +53,10 @@ g.View = graphiti.Canvas.extend({
     this.currentDropConnection = null;
     this.setSnapToGrid(true);
     this.collection = new Array(); // Store all components in this view
-    this.connections = new Array();
+    this.connections = new Array(); // Store all connections in this view
     this.currentSelected = null; // Store the figure that is currently seleted
+
+    this.collection.counter = 0;
   },
 
   /**
@@ -110,10 +112,9 @@ g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
     }
 
     this.setColor("#339BB9");
-
-
     this.TYPE = "Protein";
-    // remove button
+
+    // Buttons
     this.remove = new g.Buttons.Remove();
     this.Activate = new g.Buttons.Activate();
     this.Inhibit = new g.Buttons.Inhibit();
@@ -194,9 +195,9 @@ g.Shapes.Inducer = graphiti.shape.icon.InducerIcon.extend({
     }
 
     this.setColor("#339BB9");
-
     this.TYPE = "Inducer";
-    // remove button
+
+    // Buttons
     this.remove = new g.Buttons.Remove();
     this.Activate = new g.Buttons.Activate();
     this.Inhibit = new g.Buttons.Inhibit();
@@ -288,9 +289,9 @@ g.Shapes.MetalIon = graphiti.shape.icon.MetalIonIcon.extend({
     }
 
     this.setColor("#339BB9");
-
     this.TYPE = "MetalIon";
-    // remove button
+
+    // Buttons
     this.remove = new g.Buttons.Remove();
     this.Activate = new g.Buttons.Activate();
     this.Inhibit = new g.Buttons.Inhibit();
@@ -372,9 +373,9 @@ g.Shapes.Temperature = graphiti.shape.icon.TemperatureIcon.extend({
     }
 
     this.setColor("#339BB9");
-
     this.TYPE = "Temperature";
-    // remove button
+
+    // Buttons
     this.remove = new g.Buttons.Remove();
     this.Activate = new g.Buttons.Activate();
     this.Inhibit = new g.Buttons.Inhibit();
@@ -456,9 +457,9 @@ g.Shapes.RORA = graphiti.shape.icon.RORAIcon.extend({
     }
 
     this.setColor("#339BB9");
-
     this.TYPE = "RORA";
-    // remove button
+
+    // Buttons
     this.remove = new g.Buttons.Remove();
     this.Activate = new g.Buttons.Activate();
     this.Inhibit = new g.Buttons.Inhibit();
@@ -511,9 +512,9 @@ g.Shapes.PandR = graphiti.shape.icon.PandR.extend({
     }
 
     this.setColor("#339BB9");
-
     this.TYPE = "PandR";
-    // remove button
+
+    // Buttons
     this.Unbind = new g.Buttons.Unbind();
     this.remove = new g.Buttons.Remove();
     this.Activate = new g.Buttons.Activate();
@@ -524,6 +525,7 @@ g.Shapes.PandR = graphiti.shape.icon.PandR.extend({
     this.label = new graphiti.shape.basic.Label("PandR");
     this.label.setFontColor("#000000");
 
+    // Unbinder
     this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
   },
 
@@ -549,9 +551,9 @@ g.Shapes.PandA = graphiti.shape.icon.PandA.extend({
     }
 
     this.setColor("#339BB9");
-
     this.TYPE = "PandA";
-    // remove button
+
+    // Buttons
     this.Unbind = new g.Buttons.Unbind();
     this.remove = new g.Buttons.Remove();
     this.Activate = new g.Buttons.Activate();
@@ -562,6 +564,7 @@ g.Shapes.PandA = graphiti.shape.icon.PandA.extend({
     this.label = new graphiti.shape.basic.Label("PandA");
     this.label.setFontColor("#000000");
 
+    // Unbinder
     this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
   },
 
@@ -587,9 +590,9 @@ g.Shapes.PandP = graphiti.shape.icon.PandP.extend({
     }
 
     this.setColor("#339BB9");
-
     this.TYPE = "PandP";
-    // remove button
+
+    // Buttons
     this.Unbind = new g.Buttons.Unbind();
     this.remove = new g.Buttons.Remove();
     this.Activate = new g.Buttons.Activate();
@@ -600,6 +603,8 @@ g.Shapes.PandP = graphiti.shape.icon.PandP.extend({
     this.label = new graphiti.shape.basic.Label("PandP");
     this.label.setFontColor("#000000");
 
+
+    // Unbinder
     this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
   },
 
@@ -625,9 +630,9 @@ g.Shapes.PandRORA = graphiti.shape.icon.PandRORA.extend({
     }
 
     this.setColor("#339BB9");
-
     this.TYPE = "PandRORA";
-    // remove button
+
+    // Buttons
     this.Unbind = new g.Buttons.Unbind();
     this.remove = new g.Buttons.Remove();
     this.Activate = new g.Buttons.Activate();
@@ -638,6 +643,7 @@ g.Shapes.PandRORA = graphiti.shape.icon.PandRORA.extend({
     this.label = new graphiti.shape.basic.Label("PandRORA");
     this.label.setFontColor("#000000");
 
+    // Unbinder
     this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
   },
 
@@ -702,12 +708,13 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
     if (canvas.getFigure(app.view.currentSelected).TYPE == "Protein") {
       g.bind(canvas.getFigure(app.view.currentSelected), null, "A");
       var target = g.cache;
-
       var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
       var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
 
       var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Activate"); // 连接两点
       app.view.getCommandStack().execute(command); // 添加到命令栈中
+      app.view.connections.push(command.connection.getId());  // 添加connection的id到connections集合中
+
     } else if (canvas.getFigure(app.view.currentSelected).TYPE == "RORA") {
       var target = canvas.getFigure(app.view.currentSelected);
       var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
@@ -715,6 +722,7 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
 
       var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Activate"); // 连接两点
       app.view.getCommandStack().execute(command); // 添加到命令栈中
+      app.view.connections.push(command.connection.getId());  // 添加connection的id到connections集合中
     }
   }
 });
@@ -741,21 +749,22 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
     if (canvas.getFigure(app.view.currentSelected).TYPE == "Protein") {
       g.bind(canvas.getFigure(app.view.currentSelected), null, "R");
       var target = g.cache;
-
       var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
       var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
 
       // new graphiti.decoration.connection.ArrowDecorator()
       var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Inhibit"); // 连接两点
       app.view.getCommandStack().execute(command); // 添加到命令栈中
+      app.view.connections.push(command.connection.getId());  // 添加connection的id到connections集合中
+
     } else if (canvas.getFigure(app.view.currentSelected).TYPE == "RORA") {
       var target = canvas.getFigure(app.view.currentSelected);
-
       var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
       var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
 
       var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Inhibit"); // 连接两点
       app.view.getCommandStack().execute(command); // 添加到命令栈中
+      app.view.connections.push(command.connection.getId());  // 添加connection的id到connections集合中
     }
   }
 });
@@ -784,13 +793,6 @@ g.Buttons.CoExpress = graphiti.shape.icon.CoExpress.extend({
     } else if (source.TYPE == "RORA") {
       g.bind(source, target, "RORA")
     }
-    // var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.RightLocator(source));
-    // var targetPort = target.createPort("hybrid", new graphiti.layout.locator.LeftLocator(target));
-
-    // var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "CoExpress"); // 连接两点
-    // app.view.getCommandStack().execute(command); // 添加到命令栈中
-
-
   }
 });
 
@@ -846,15 +848,16 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 
     app.view.collection.remove(source.getId());   // delete source's id from collection    
     if (target != null) {
-      bindedFigure.setId(bindedFigure.sourceName + "&" + bindedFigure.targetName);
+      bindedFigure.setId(bindedFigure.sourceName + "&" + bindedFigure.targetName + "-" + app.view.collection.counter);
       bindedFigure.label.setText(bindedFigure.sourceName + "&" + bindedFigure.targetName); // 设置label
       app.view.collection.remove(target.getId());   // delete target's id from collection if not null
     } else {
-      bindedFigure.setId(bindedFigure.sourceName + "&" + type);
+      bindedFigure.setId(bindedFigure.sourceName + "&" + type + "-" + app.view.collection.counter);
       bindedFigure.label.setText(bindedFigure.sourceName + "&" + type); // 设置label      
     }
  
     app.view.collection.push(bindedFigure.getId()); // 放入collection中
+    app.view.collection.counter += 1;
 
     console.log("绑定后");
     console.log(app.view.collection);   //合并后
@@ -884,14 +887,15 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
       app.view.getCommandStack().execute(command); // 添加到命令栈中
       app.view.getCommandStack().execute(command2);
 
+      app.view.collection.remove(figure.getId());   // 删除绑定体的id
 
       p1.setId(figure.sourceName);
       p1.label.setText(figure.sourceName);
-      app.view.collection.push(figure.sourceName); // 放入collection中
+      app.view.collection.push(figure.sourceName); // 将拆分后的source id放入collection中
 
       p2.setId(figure.targetName);
       p2.label.setText(figure.targetName);
-      app.view.collection.push(figure.targetName); // 放入collection中
+      app.view.collection.push(figure.targetName); // 将拆分后的target id放入collection中
 
       figure.getCanvas().removeFigure(figure);
 
@@ -906,15 +910,19 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
       app.view.getCommandStack().execute(command); // 添加到命令栈中
       app.view.getCommandStack().execute(command2);
 
-
+      // 设置p1
       p1.setId(figure.sourceName);
       p1.label.setText(figure.sourceName);
-      app.view.collection.push(figure.sourceName); // 放入collection中
+      app.view.collection.push(figure.sourceName); // 将拆分后的source id放入collection中
 
-      p2.setId(figure.targetName);
-      p2.label.setText(figure.targetName);
-      app.view.collection.push(figure.targetName); // 放入collection中
+      // 设置p2
+      p2.setId(p2.TYPE + "-" + app.view.collection.counter);
+      app.view.collection.counter += 1;
+      p2.label.setText(p2.TYPE);
+      app.view.collection.push(p2.getId());   // 将拆分后的target id放入collection中
 
+      // 删除原绑定体
+      app.view.collection.remove(figure.getId());   // 删除绑定体的id
       figure.getCanvas().removeFigure(figure);
 
     } else if (figure.TYPE == "PandR" || figure.TYPE == "PandA") {
@@ -926,16 +934,27 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
       var command = new graphiti.command.CommandAdd(app.view, p1, posX, posY),
         command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
       app.view.getCommandStack().execute(command); // 添加到命令栈中
-      app.view.getCommandStack().execute(command2);
+      app.view.getCommandStack().execute(command2);           
 
+      // 设置p1
       p1.setId(figure.sourceName);
       p1.label.setText(figure.sourceName);
-      app.view.collection.push(figure.sourceName); // 放入collection中
+      app.view.collection.push(figure.sourceName); // 将拆分后的source id放入collection中
 
-      // figure.getConnections();
-      figure.getCanvas().removeFigure(figure.getConnections().data[0]);
-      console.log(figure.getConnections().data);
+      // 设置p2
+      p2.setId(p2.TYPE + "-" + app.view.collection.counter);
+      app.view.collection.counter += 1;
+      p2.label.setText(p2.TYPE);
+      app.view.collection.push(p2.getId());   // 将拆分后的target id放入collection中
+
+      // 删除原绑定体
+      app.view.collection.remove(figure.getId());   // 删除绑定体的id
+      figure.getCanvas().removeFigure(figure.getConnections().data[0]);      
       figure.getCanvas().removeFigure(figure);
+      // console.log(figure.getConnections().data);
     }
+
+    console.log("解绑定后");
+    console.log(app.view.collection);
   }
-})(g);
+})(g);  
