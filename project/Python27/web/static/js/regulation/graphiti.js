@@ -126,53 +126,7 @@ g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
   },
 
   onClick: function() {
-    app.view.currentSelected = this.getId(); // set current selected figure
-
-    if (this.remove || this.label) {
-      this.resetChildren();
-    }
-
-    this.addFigure(this.remove, new graphiti.layout.locator.TopLocator(this));
-    this.addFigure(this.label, new graphiti.layout.locator.BottomLocator(this));
-
-    var canvas = this.getCanvas();
-    for (var i = 0; i < canvas.collection.length; i++) {
-      var figure = canvas.getFigure(canvas.collection[i]);
-      if (figure != null && this.getId() !== figure.getId()) {
-        figure.resetChildren();
-        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
-        figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
-        figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
-      }
-    };
-
-    $("#right-container").css({
-      right: '0px'
-    });
-    var hasClassIn = $("#collapseTwo").hasClass('in');
-    if (!hasClassIn) {
-      $("#collapseOne").toggleClass('in');
-      $("#collapseOne").css({
-        height: '0'
-      });
-      $("#collapseTwo").toggleClass('in');
-      $("#collapseTwo").css({
-        height: "auto"
-      });
-    }
-
-    $("#exogenous-factors-config").css({
-      "display": "none"
-    });
-    $("#protein-config").css({
-      "display": "block"
-    });
-    $("#component-config").css({
-      "display": "none"
-    });
-    $("#arrow-config").css({
-      "display": "none"
-    });
+    g.toolbar(this);
   },
 
   onDoubleClick: function() {
@@ -303,53 +257,7 @@ g.Shapes.MetalIon = graphiti.shape.icon.MetalIonIcon.extend({
   },
 
   onClick: function() {
-    app.view.currentSelected = this.getId(); // set current selected figure
-
-    if (this.remove || this.label) {
-      this.resetChildren();
-    }
-
-    this.addFigure(this.remove, new graphiti.layout.locator.TopLocator(this));
-    this.addFigure(this.label, new graphiti.layout.locator.BottomLocator(this));
-
-    var canvas = this.getCanvas();
-    for (var i = 0; i < canvas.collection.length; i++) {
-      var figure = canvas.getFigure(canvas.collection[i]);
-      if (figure != null && this.getId() !== figure.getId()) {
-        figure.resetChildren();
-        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
-        figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
-        figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
-      }
-    };
-
-    $("#right-container").css({
-      right: '0px'
-    });
-    var hasClassIn = $("#collapseTwo").hasClass('in');
-    if (!hasClassIn) {
-      $("#collapseOne").toggleClass('in');
-      $("#collapseOne").css({
-        height: '0'
-      });
-      $("#collapseTwo").toggleClass('in');
-      $("#collapseTwo").css({
-        height: "auto"
-      });
-    }
-
-    $("#exogenous-factors-config").css({
-      "display": "block"
-    });
-    $("#protein-config").css({
-      "display": "none"
-    });
-    $("#component-config").css({
-      "display": "none"
-    });
-    $("#arrow-config").css({
-      "display": "none"
-    });
+    g.toolbar(this);
   },
 
   onDoubleClick: function() {
@@ -387,53 +295,7 @@ g.Shapes.Temperature = graphiti.shape.icon.TemperatureIcon.extend({
   },
 
   onClick: function() {
-    app.view.currentSelected = this.getId(); // set current selected figure
-
-    if (this.remove || this.label) {
-      this.resetChildren();
-    }
-
-    this.addFigure(this.remove, new graphiti.layout.locator.TopLocator(this));
-    this.addFigure(this.label, new graphiti.layout.locator.BottomLocator(this));
-
-    var canvas = this.getCanvas();
-    for (var i = 0; i < canvas.collection.length; i++) {
-      var figure = canvas.getFigure(canvas.collection[i]);
-      if (figure != null && this.getId() !== figure.getId()) {
-        figure.resetChildren();
-        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
-        figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
-        figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
-      }
-    };
-
-    $("#right-container").css({
-      right: '0px'
-    });
-    var hasClassIn = $("#collapseTwo").hasClass('in');
-    if (!hasClassIn) {
-      $("#collapseOne").toggleClass('in');
-      $("#collapseOne").css({
-        height: '0'
-      });
-      $("#collapseTwo").toggleClass('in');
-      $("#collapseTwo").css({
-        height: "auto"
-      });
-    }
-
-    $("#exogenous-factors-config").css({
-      "display": "block"
-    });
-    $("#protein-config").css({
-      "display": "none"
-    });
-    $("#component-config").css({
-      "display": "none"
-    });
-    $("#arrow-config").css({
-      "display": "none"
-    });
+    g.toolbar(this);
   },
 
   onDoubleClick: function() {
@@ -471,25 +333,7 @@ g.Shapes.RORA = graphiti.shape.icon.RORAIcon.extend({
   },
 
   onClick: function() {
-    app.view.currentSelected = this.getId(); // set current selected figure
-
-    if (this.remove || this.label) {
-      this.resetChildren();
-    }
-
-    this.addFigure(this.remove, new graphiti.layout.locator.TopLocator(this));
-    this.addFigure(this.label, new graphiti.layout.locator.BottomLocator(this));
-
-    var canvas = this.getCanvas();
-    for (var i = 0; i < canvas.collection.length; i++) {
-      var figure = canvas.getFigure(canvas.collection[i]);
-      if (figure != null && this.getId() !== figure.getId()) {
-        figure.resetChildren();
-        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
-        figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
-        figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
-      }
-    };
+    g.toolbar(this);
   },
 
   onDoubleClick: function() {
@@ -530,7 +374,7 @@ g.Shapes.PandR = graphiti.shape.icon.PandR.extend({
   },
 
   onClick: function() {
-
+    g.toolbar(this);
   },
 
   onDoubleClick: function() {
@@ -569,7 +413,7 @@ g.Shapes.PandA = graphiti.shape.icon.PandA.extend({
   },
 
   onClick: function() {
-
+    g.toolbar(this);
   },
 
   onDoubleClick: function() {
@@ -609,7 +453,7 @@ g.Shapes.PandP = graphiti.shape.icon.PandP.extend({
   },
 
   onClick: function() {
-
+    g.toolbar(this);
   },
 
   onDoubleClick: function() {
@@ -648,7 +492,7 @@ g.Shapes.PandRORA = graphiti.shape.icon.PandRORA.extend({
   },
 
   onClick: function() {
-
+    g.toolbar(this);
   },
 
   onDoubleClick: function() {
@@ -679,7 +523,7 @@ g.Buttons.Remove = graphiti.shape.icon.Remove.extend({
         connections = parent.getConnections();
 
     for (var i = 0 ; i < connections.size ; i++) {
-
+      app.view.connections.remove(connections.get(i).getId());
     }
 
     var command = new graphiti.command.CommandDelete(parent); // 删除父节点
@@ -815,7 +659,11 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 });
 
 
-// Element Binding
+// functions 
+
+/*
+ *  两个元素的绑定
+ */
 (function(ex) {
   ex.bind = function(source, target, type) {
     var srcPosX = source.getX(),
@@ -871,7 +719,9 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 })(g);
 
 
-// Element Unbinding
+/*
+ *  元素的解绑定
+ */
 (function(ex) {
   ex.unbind = function(figure) {
     if (figure.TYPE == "PandP") {
@@ -955,4 +805,60 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
     console.log("解绑定后");
     console.log(app.view.collection);
   }
-})(g);  
+})(g);
+
+
+/*
+ * 在生物元件上方显示操作按钮组
+ */
+(function(ex) {
+  ex.toolbar = function(ctx) {
+    app.view.currentSelected = ctx.getId(); // set current selected figure
+
+    if (ctx.remove || ctx.label) {
+      ctx.resetChildren();
+    }
+
+    ctx.addFigure(ctx.remove, new graphiti.layout.locator.TopLocator(ctx));
+    ctx.addFigure(ctx.label, new graphiti.layout.locator.BottomLocator(ctx));
+
+    var canvas = ctx.getCanvas();
+    for (var i = 0; i < canvas.collection.length; i++) {
+      var figure = canvas.getFigure(canvas.collection[i]);
+      if (figure != null && ctx.getId() !== figure.getId()) {
+        figure.resetChildren();
+        figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
+        figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
+        figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
+      }
+    };
+
+    $("#right-container").css({
+      right: '0px'
+    });
+    var hasClassIn = $("#collapseTwo").hasClass('in');
+    if (!hasClassIn) {
+      $("#collapseOne").toggleClass('in');
+      $("#collapseOne").css({
+        height: '0'
+      });
+      $("#collapseTwo").toggleClass('in');
+      $("#collapseTwo").css({
+        height: "auto"
+      });
+    }
+
+    $("#exogenous-factors-config").css({
+      "display": "none"
+    });
+    $("#protein-config").css({
+      "display": "block"
+    });
+    $("#component-config").css({
+      "display": "none"
+    });
+    $("#arrow-config").css({
+      "display": "none"
+    });
+  }
+})(g);
