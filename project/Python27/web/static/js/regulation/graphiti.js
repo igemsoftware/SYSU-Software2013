@@ -9,7 +9,6 @@
 // Create namespace
 var g = {};
 
-
 g.Application = Class.extend({
   NAME: "graphiti.Application",
 
@@ -54,6 +53,7 @@ g.View = graphiti.Canvas.extend({
     this.currentDropConnection = null;
     this.setSnapToGrid(true);
     this.collection = new Array(); // Store all components in this view
+    this.connections = new Array();
     this.currentSelected = null; // Store the figure that is currently seleted
   },
 
@@ -218,18 +218,25 @@ g.Shapes.Inducer = graphiti.shape.icon.InducerIcon.extend({
     this.addFigure(this.label, new graphiti.layout.locator.BottomLocator(this));
 
     var canvas = this.getCanvas();
+    var figure, connections, connection;
+    var cnt = 0;
+    // show Activate and Inhibit Icon on the connection lines
     for (var i = 0; i < canvas.collection.length; i++) {
-      var figure = canvas.getFigure(canvas.collection[i]);
+      figure = canvas.getFigure(canvas.collection[i]);
       if (figure != null && this.getId() !== figure.getId()) {
-        var connections = figure.getConnections();
-        for (var j = 0 ; j < connections.size ; j++) {
-          var connection = connections.get(j);
+        connections = figure.getConnections();
+        for (var j = 0; j < connections.size; j++) {
+          connection = connections.get(j);
           connection.addFigure(this.Activate, new graphiti.layout.locator.ManhattanMidpointLocator(connection));
 
           // wait to be implemented;
         }
+        cnt++;
+        console.log("figure: " + cnt + " 's connections collection is as follow: ");
+        console.log(connections);
       }
     };
+    console.log("Num of figures in this canvas: " + cnt);
 
     $("#right-container").css({
       right: '0px'
@@ -516,12 +523,12 @@ g.Shapes.PandR = graphiti.shape.icon.PandR.extend({
     // Label
     this.label = new graphiti.shape.basic.Label("PandR");
     this.label.setFontColor("#000000");
-  
+
     this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
   },
 
   onClick: function() {
-    
+
   },
 
   onDoubleClick: function() {
@@ -559,7 +566,7 @@ g.Shapes.PandA = graphiti.shape.icon.PandA.extend({
   },
 
   onClick: function() {
-    
+
   },
 
   onDoubleClick: function() {
@@ -597,7 +604,7 @@ g.Shapes.PandP = graphiti.shape.icon.PandP.extend({
   },
 
   onClick: function() {
-    
+
   },
 
   onDoubleClick: function() {
@@ -635,7 +642,7 @@ g.Shapes.PandRORA = graphiti.shape.icon.PandRORA.extend({
   },
 
   onClick: function() {
-    
+
   },
 
   onDoubleClick: function() {
@@ -662,7 +669,13 @@ g.Buttons.Remove = graphiti.shape.icon.Remove.extend({
   },
 
   onClick: function() {
-    var parent = this.getParent();
+    var parent = this.getParent(),
+        connections = parent.getConnections();
+
+    for (var i = 0 ; i < connections.size ; i++) {
+
+    }
+
     var command = new graphiti.command.CommandDelete(parent); // 删除父节点
     app.view.getCommandStack().execute(command); // 添加到命令栈中
   }
@@ -682,11 +695,10 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
     }
   },
 
-  onClick: function() {    
+  onClick: function() {
     var canvas = this.getCanvas();
     var source = this.getParent();
 
-    console.log(canvas.getFigure(app.view.currentSelected));
     if (canvas.getFigure(app.view.currentSelected).TYPE == "Protein") {
       g.bind(canvas.getFigure(app.view.currentSelected), null, "A");
       var target = g.cache;
@@ -694,14 +706,14 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
       var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
       var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
 
-      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate"); // 连接两点
+      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Activate"); // 连接两点
       app.view.getCommandStack().execute(command); // 添加到命令栈中
     } else if (canvas.getFigure(app.view.currentSelected).TYPE == "RORA") {
       var target = canvas.getFigure(app.view.currentSelected);
       var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
       var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
 
-      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate"); // 连接两点
+      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Activate"); // 连接两点
       app.view.getCommandStack().execute(command); // 添加到命令栈中
     }
   }
@@ -727,13 +739,14 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
     var source = this.getParent();
 
     if (canvas.getFigure(app.view.currentSelected).TYPE == "Protein") {
-      g.bind(canvas.getFigure(app.view.currentSelected), null, "R");      
+      g.bind(canvas.getFigure(app.view.currentSelected), null, "R");
       var target = g.cache;
 
       var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
       var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
 
-      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Inhibit"); // 连接两点
+      // new graphiti.decoration.connection.ArrowDecorator()
+      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Inhibit"); // 连接两点
       app.view.getCommandStack().execute(command); // 添加到命令栈中
     } else if (canvas.getFigure(app.view.currentSelected).TYPE == "RORA") {
       var target = canvas.getFigure(app.view.currentSelected);
@@ -741,7 +754,7 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
       var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
       var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
 
-      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Inhibit"); // 连接两点
+      var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Inhibit"); // 连接两点
       app.view.getCommandStack().execute(command); // 添加到命令栈中
     }
   }
@@ -777,7 +790,7 @@ g.Buttons.CoExpress = graphiti.shape.icon.CoExpress.extend({
     // var command = new graphiti.command.CommandConnect(this.getCanvas(), sourcePort, targetPort, new graphiti.decoration.connection.ArrowDecorator(), "CoExpress"); // 连接两点
     // app.view.getCommandStack().execute(command); // 添加到命令栈中
 
-    
+
   }
 });
 
@@ -791,11 +804,11 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
       this.setDimension(radius, radius);
     } else {
       this.setDimension(20, 20);
-    }    
+    }
   },
 
   onClick: function() {
-    g.unbind(this.getParent());  
+    g.unbind(this.getParent());
   }
 });
 
@@ -804,7 +817,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 (function(ex) {
   ex.bind = function(source, target, type) {
     var srcPosX = source.getX(),
-        srcPosY = source.getY();
+      srcPosY = source.getY();
     var canvas = source.getCanvas();
 
     var bindedFigure;
@@ -826,17 +839,25 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
     }
 
     var command = new graphiti.command.CommandAdd(app.view, bindedFigure, srcPosX, srcPosY);
-    app.view.getCommandStack().execute(command);  // 添加到命令栈中
+    app.view.getCommandStack().execute(command); // 添加到命令栈中
 
+    console.log("绑定前");
+    console.log(app.view.collection); //合并前
+
+    app.view.collection.remove(source.getId());   // delete source's id from collection    
     if (target != null) {
       bindedFigure.setId(bindedFigure.sourceName + "&" + bindedFigure.targetName);
-      bindedFigure.label.setText(bindedFigure.sourceName + "&" + bindedFigure.targetName);  // 设置label
+      bindedFigure.label.setText(bindedFigure.sourceName + "&" + bindedFigure.targetName); // 设置label
+      app.view.collection.remove(target.getId());   // delete target's id from collection if not null
     } else {
       bindedFigure.setId(bindedFigure.sourceName + "&" + type);
-      bindedFigure.label.setText(bindedFigure.sourceName + "&" + type);  // 设置label
+      bindedFigure.label.setText(bindedFigure.sourceName + "&" + type); // 设置label      
     }
+ 
+    app.view.collection.push(bindedFigure.getId()); // 放入collection中
 
-    app.view.collection.push(bindedFigure.getId());  // 放入collection中
+    console.log("绑定后");
+    console.log(app.view.collection);   //合并后
 
     canvas.removeFigure(source);
     if (target != null) {
@@ -849,67 +870,67 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 
 
 // Element Unbinding
-(function(ex){
+(function(ex) {
   ex.unbind = function(figure) {
     // console.log(figure);
     if (figure.TYPE == "PandP") {
       var posX = figure.getX(),
-          posY = figure.getY();
+        posY = figure.getY();
       var p1 = new g.Shapes.Protein(),
-          p2 = new g.Shapes.Protein();
+        p2 = new g.Shapes.Protein();
 
       var command = new graphiti.command.CommandAdd(app.view, p1, posX, posY),
-          command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
-      app.view.getCommandStack().execute(command);  // 添加到命令栈中
+        command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
+      app.view.getCommandStack().execute(command); // 添加到命令栈中
       app.view.getCommandStack().execute(command2);
 
 
       p1.setId(figure.sourceName);
       p1.label.setText(figure.sourceName);
-      app.view.collection.push(figure.sourceName);  // 放入collection中
+      app.view.collection.push(figure.sourceName); // 放入collection中
 
       p2.setId(figure.targetName);
       p2.label.setText(figure.targetName);
-      app.view.collection.push(figure.targetName);  // 放入collection中
+      app.view.collection.push(figure.targetName); // 放入collection中
 
       figure.getCanvas().removeFigure(figure);
 
     } else if (figure.TYPE == "PandRORA") {
       var posX = figure.getX(),
-          posY = figure.getY();
+        posY = figure.getY();
       var p1 = new g.Shapes.Protein(),
-          p2 = new g.Shapes.RORA();
+        p2 = new g.Shapes.RORA();
 
       var command = new graphiti.command.CommandAdd(app.view, p1, posX, posY),
-          command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
-      app.view.getCommandStack().execute(command);  // 添加到命令栈中
+        command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
+      app.view.getCommandStack().execute(command); // 添加到命令栈中
       app.view.getCommandStack().execute(command2);
 
 
       p1.setId(figure.sourceName);
       p1.label.setText(figure.sourceName);
-      app.view.collection.push(figure.sourceName);  // 放入collection中
+      app.view.collection.push(figure.sourceName); // 放入collection中
 
       p2.setId(figure.targetName);
       p2.label.setText(figure.targetName);
-      app.view.collection.push(figure.targetName);  // 放入collection中
+      app.view.collection.push(figure.targetName); // 放入collection中
 
       figure.getCanvas().removeFigure(figure);
 
     } else if (figure.TYPE == "PandR" || figure.TYPE == "PandA") {
       var posX = figure.getX(),
-          posY = figure.getY();
+        posY = figure.getY();
       var p1 = new g.Shapes.Protein(),
-          p2 = new g.Shapes.RORA();
+        p2 = new g.Shapes.RORA();
 
       var command = new graphiti.command.CommandAdd(app.view, p1, posX, posY),
-          command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
-      app.view.getCommandStack().execute(command);  // 添加到命令栈中
+        command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
+      app.view.getCommandStack().execute(command); // 添加到命令栈中
       app.view.getCommandStack().execute(command2);
 
       p1.setId(figure.sourceName);
       p1.label.setText(figure.sourceName);
-      app.view.collection.push(figure.sourceName);  // 放入collection中
+      app.view.collection.push(figure.sourceName); // 放入collection中
 
       // figure.getConnections();
       figure.getCanvas().removeFigure(figure.getConnections().data[0]);
