@@ -22,16 +22,7 @@ var plasmidPainter = {
 	clearAll:function() {
 		jc.clear();
 	},
-	drawSegment: function(bioStart, bioEnd, name, color, seq) {
-		//var color=colors[typeCount];
-		/*switch (type) {
-			case 'type1':
-				color = "#9e33cc";
-				break;
-			case 'type2':
-				color = "#00FF00";
-				break;
-		}*/
+	drawSegment: function(bioStart, bioEnd, name, color, seq) {		
 		var marginLeft = 0, 
 			marginTop = 12.5;
 		jc.start(this.canvasId, true);
@@ -43,24 +34,12 @@ var plasmidPainter = {
             y:3,
             blur:5,
             color:'rgba(100, 100, 100, 0.5)'
-        });
-		// bind mouseover event
-		/*jc("#"+name).mouseover(function() {
-			this.color("#FF0000");
-			jc("#seq").string("seq: " + seq);
-		});
-		// bind mouseout event
-		jc("#"+name).mouseout(function() {
-			this.color(color);
-			jc("#seq").string("seq: select a segment to show its sequence");
-		});*/
+        });		
 		jc.start(this.canvasId, true);
 	},
 	drawAll: function() {
 		jc.start(this.canvasId);
-		jc.rect(0, 0, 1189, 50, "#EEEEFF", true);
-		//jc.text("seq: select a segment to show its sequence", 400, 60).id("seq");
-		//this.text = jc("#seq");		
+		jc.rect(0, 0, 1189, 50, "#EEEEFF", true);			
 		jc.start(this.canvasId);
 		for(var i=0;i<data2.length;i++)
 		{		
@@ -455,7 +434,7 @@ function initDrawChart(){
 		showpercent:true,
 		decimalsnum:0,
 		width : 783,
-		height : 400,
+		height : 430,
 		radius:140
 		
 	});	
@@ -495,8 +474,8 @@ function createBottom(chart){
 		drawFn:function(){	
 			var radius=140;
 			var str=parseInt(size/2,10)+"bp";
-			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2;
-			var y=  chart.getDrawingArea().height/2+radius;	
+			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2+3;
+			var y=  chart.getDrawingArea().height/2+radius+10;	
 			chart.target.textAlign('left')
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
@@ -523,7 +502,7 @@ function createTop(chart){
 		drawFn:function(){	
 			var radius=140;			
 			var x=	chart.getDrawingArea().x+chart.getDrawingArea().width/2;
-			var y=  chart.getDrawingArea().height/2-radius;
+			var y=  chart.getDrawingArea().height/2-radius-10;
 			chart.target.textAlign('left')
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
@@ -817,7 +796,7 @@ function canvasMouseUp(obj,e)
 	sessionStorage._offsetAngle=offsetang;
 	chart.push("offset_angle",offsetang);
 	chart.push("animation","false");
-	chart.resize(783,400);
+	chart.resize(783,430);
 	var ang=270-offsetang;
 	if(ang<0)
 	{
