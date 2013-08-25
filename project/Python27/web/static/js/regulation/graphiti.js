@@ -832,7 +832,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
     if (ctx.TYPE == "Protein") {
       for (var i = 0; i < canvas.collection.length; i++) {
         var figure = canvas.getFigure(canvas.collection[i]);
-        if (figure != null && ctx.getId() !== figure.getId()) {
+        if (figure != null && ctx.getId() !== figure.getId() && figure.TYPE == "Protein") {
           figure.resetChildren();
           figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
           figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
@@ -859,9 +859,25 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         "display": "block"
       });
 
-    } else {
-
+    } else if (ctx.TYPE == "RORA"){
+      for (var i = 0; i < canvas.collection.length; i++) {
+        var figure = canvas.getFigure(canvas.collection[i]);
+        if (figure != null && ctx.getId() !== figure.getId() && figure.TYPE == "Protein") {
+          figure.resetChildren();
+          figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
+          figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
+          figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
+        }
+      };
     }
 
   };
+})(g);
+
+
+// remove all lines that can be traversed along the path starting from "startNode"
+(function(ex) {
+  ex.removeLinks = function(startNode) {
+
+  }
 })(g);
