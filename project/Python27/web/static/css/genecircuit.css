@@ -18,9 +18,13 @@
 #content {
 	position: static;
 	width: 1067px;
-	height: 600px;
+	height: 90%;
+	/* height: 600px; */
 	min-width: 1067px;
-	min-height: 600px;
+	min-height: 90%;
+	/* min-height: 600px; */
+	/* min-width: 0px; */
+	/* min-height: 10000px; */
 	margin: 20px auto;
 	top: 20px;
 	background: #FFF;
@@ -292,7 +296,7 @@
 }
 
 .sbol li {
-	width: 72px;
+	width: 82px;
 	/* height: 60px; */
 	min-height: 50px;
 	/* display: inline-block; */
@@ -344,6 +348,43 @@
 	top: 0;
 }
 
+.cmd-move {
+	background: #9FB4A9;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.cmd-move:hover {
+	background: #9FB400;
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+.cmd-move {
+	background: #9FB4A9;
+	width: 15px;
+	height: 30px;
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.move-left {
+	position: absolute;
+	right: 15px;
+	top: 0;
+}
+
+
+.move-right {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
 .sbol-handle:hover {
 	cursor: move;
 }
@@ -361,6 +402,8 @@
 	right: 0;
 	bottom: 0;
 	border: 0;
+	padding: 0px;
+	color: white;
 }
 
 .switch-on{ 
@@ -375,6 +418,12 @@
 	border: dotted 1px #848b89;
 	border-radius: 4px;
 	margin: 3px;
+	min-height: 103px;
+	position: relative;
+	-webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .plasmids:after {
@@ -384,4 +433,25 @@
 	clear: both;
 	overflow: hidden;
 	visibility: hidden;
+}
+
+.cmd-del {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 20px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	background: #f84b4b;
+	display: none;
+}
+
+.empty-plasmid .cmd-del {
+	display: block;
+}
+
+.cmd-del:hover {
+	cursor: pointer;
+	background: #b63434;
 }
