@@ -106,7 +106,8 @@ class modeling:
 		#RepressorResult=1+1.5
 		RepressorResult=c2/RepressorResult#+LeakageRate2		
 		RepressorResult=RepressorResult/c2#+LeakageRate2)
-		print>>f,'RepressorResult',RepressorResult			
+		print>>f,'RepressorResult',RepressorResult		
+		return RepressorResult
 		
 
 if __name__=="__main__":
