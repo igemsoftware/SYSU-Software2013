@@ -173,12 +173,16 @@ var genecircuitData = {
 }
 """
 
-def get_pro_info(database, protein, group, backbone = "pSB1AT3"):
+def get_pro_info(database, protein_idx, group, backbone = "pSB1AT3"):
   ret = {}
-  ret["name"] = protein
-  ret["PoPs"] = database.get_column_with_name("MPPromoter", "Promoter", group[0])
-  ret["RiPs"] = database.get_column_with_name("MPRBS", "RBS", group[1])
-  ret["copy"] = database.get_column_with_name("CopyNumber", "plasmid_backbone", backbone)
+  ret["name"] = group[protein_idx]
+  promoter_info= database.select_with_name("promoter", group[0])
+  rbs_info= database.select_with_name("RBS", group[protein_idx - 1])
+  promoter_info= database.select_with_name("promoter", group[0])
+  plasmid_backbone_info = database.get_column_with_name("plasmid_backbone", backbone)
+  ret["PoPs"] = promoter_info["MPPromoter"]
+  ret["RiPs"] = rbs_info["MPRBS"]
+  ret["copy"] = plasmid_backbone_info["CopyNumber"]
   ret["repress_rate"] = random.randint(0, 100)
   ret["induce_rate"] = random.randint(0, 100)
   ret["before_regulated"] = random.randint(0, 100)
