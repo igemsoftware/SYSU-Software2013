@@ -236,8 +236,8 @@ class SqliteDatabase:
 		else:
 			return decodejson[0]['Number']		
   
-	def select_column_with_name(self,column, table, name):
-		self.__cursor.execute('SELECT %s FROM %s WHERE Number = %s' % (column, table,\
+	def select_with_name(self, table, name):
+		self.__cursor.execute('SELECT * FROM %s WHERE Number = "%s"' % (table,\
       name))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
