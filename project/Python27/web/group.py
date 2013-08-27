@@ -178,11 +178,10 @@ def get_pro_info(database, protein_idx, group, backbone = "pSB1AT3"):
   ret["name"] = group[protein_idx]
   promoter_info= database.select_with_name("promoter", group[0])
   rbs_info= database.select_with_name("RBS", group[protein_idx - 1])
-  promoter_info= database.select_with_name("promoter", group[0])
-  plasmid_backbone_info = database.get_column_with_name("plasmid_backbone", backbone)
-  ret["PoPs"] = promoter_info["MPPromoter"]
-  ret["RiPs"] = rbs_info["MPRBS"]
-  ret["copy"] = plasmid_backbone_info["CopyNumber"]
+  plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
+  ret["PoPs"] = promoter_info["MPPromoter"] * 100
+  ret["RiPs"] = rbs_info["MPRBS"] * 100
+  ret["copy"] = plasmid_backbone_info["CopyNumber"] * 100
   ret["repress_rate"] = random.randint(0, 100)
   ret["induce_rate"] = random.randint(0, 100)
   ret["before_regulated"] = random.randint(0, 100)
@@ -195,16 +194,15 @@ def dump_group(network, database):
   plasmids = []
   proteins = []
   for i in data:
-    pro = get_pro_info(data[3])
-    if len(data) == 6:
-      pro
+    proteins.append(get_pro_info(database, 2, data[i]))
+    if len(data[i]) == 6:
+      proteins.append(get_pro_info(database, 4, data[i]))
     grp = []
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
-      print xml_file
       grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
     plasmids.append(grp)
-  return plasmids
+  return {"plasmids": plasmids, "proteins": proteins}
 
 '''	sbol_dict is the sbol create by this python program
 	rbs_value is the new value that user want for the rbs
