@@ -1,6 +1,7 @@
 import os
 import sequence_serializer
 import component_union
+import random
 
 prom_name = "BBa_I712074"
 rbs_name = "BBa_J61104"
@@ -131,18 +132,75 @@ def dump_sbol(network, database):
     dna_sequence = component_union.connect(rule, content)
     sbol.append(sequence_serializer.format_to_json(component_union.formatter_v11(content, dna_sequence)))
   return sbol
+"""
+var genecircuitData = {
+	proteins: [
+		{
+			PoPs: 60,
+			RiPs: 52,
+			copy: 30,
+			repress_rate: 15,
+			induce_rate: 66,
+			before_regulated: 53,
+			after_regulated: 30,
+			after_induced: 20,
+		},
+		{
+			PoPs: 6,
+			RiPs: 50,
+			copy: 71,
+			repress_rate: 15,
+			induce_rate: 66,
+			before_regulated: 25,
+			after_regulated: 53,
+			after_induced: 20,
+		},
+		{
+			PoPs: 46,
+			RiPs: 95,
+			copy: 71,
+			repress_rate: 45,
+			induce_rate: 6,
+			before_regulated: 51,
+			after_regulated: 23,
+			after_induced: 20,
+		},
+	],
+	plasmids: [
+		[{sbol:[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'trans'}, {sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'cis'},{sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}],state:'trans'}],
+		[{sbol:[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'trans'}, {sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'cis'},{sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}],state:'trans'}],
+	]
+}
+"""
+
+def get_pro_info(database, protein, group, backbone = "pSB1AT3"):
+  ret = {}
+  ret["name"] = protein
+  ret["PoPs"] = database.get_column_with_name("MPPromoter", "Promoter", group[0])
+  ret["RiPs"] = database.get_column_with_name("MPRBS", "RBS", group[1])
+  ret["copy"] = database.get_column_with_name("CopyNumber", "plasmid_backbone", backbone)
+  ret["repress_rate"] = random.randint(0, 100)
+  ret["induce_rate"] = random.randint(0, 100)
+  ret["before_regulated"] = random.randint(0, 100)
+  ret["after_regulated"] = random.randint(0, 100)
+  ret["after_induced"] = random.randint(0, 100)
+  return ret
 
 def dump_group(network, database):
   data = work(network, database)
-  plasmid = []
+  plasmids = []
+  proteins = []
   for i in data:
+    pro = get_pro_info(data[3])
+    if len(data) == 6:
+      pro
     grp = []
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
       print xml_file
       grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
-    plasmid.append(grp)
-  return plasmid
+    plasmids.append(grp)
+  return plasmids
 
 '''	sbol_dict is the sbol create by this python program
 	rbs_value is the new value that user want for the rbs
