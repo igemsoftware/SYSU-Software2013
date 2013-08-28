@@ -28,9 +28,15 @@
 # Version: 1.0  
 # LastModified: Oct 5, 2008  
 # This library is free.  You can redistribute it and/or modify it.    
-import struct    
-_DELTA = 0x9E3779B9  
-  
+import struct   
+from random import choice
+import string 
+_DELTA = 0x9E3779B9
+
+'''generate random passwpord whose length is the param(length) default as 8'''
+def generate_passwd(length=8,chars=string.ascii_letters+string.digits):
+    return ''.join([choice(chars) for i in range(length)])
+
 def _long2str(v, w):  
     n = (len(v) - 1) << 2  
     if w:  
@@ -91,5 +97,10 @@ def decrypt(str, key):
         sum = (sum - _DELTA) & 0xffffffff  
     return _long2str(v, True)  
   
-if __name__ == "__main__":  
-    print decrypt(encrypt('Hello XXTEA!', '16bytelongstring'), '16bytelongstring') 
+if __name__ == "__main__":      
+    for i in range(10):
+        #密码的长度为8
+        pwd=generate_passwd(8)
+        print decrypt(encrypt('Hello XXTEA!', pwd), pwd) 
+        print pwd
+	
