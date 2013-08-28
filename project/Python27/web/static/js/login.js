@@ -1,10 +1,14 @@
 $(document).ready(function() {
 	console.log(location.href);
 	if ("WebSocket" in window) {
-		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
-		ws.onmessage = function(msg) {
-			var message = JSON.parse(msg.data);
-			if (message.result === "Password correct!") {
+		ws = new WebSocket("ws://" + document.domain + ":5000/ws");		
+		ws.onmessage = function(msg) {			
+			var message = JSON.parse(msg.data);	
+			if (message.request==="generateRandomsessionKey"){
+				console.log(message.result);
+				return;
+			}
+			else if (message.result === "Password correct!") {
 				$("#login-info").html("<strong>Welcome back!</strong>  User: " + $("#username").attr('value'));
 				$("#login-info").removeClass("alert-error");
 				$("#login-info").addClass("alert-success");
@@ -21,8 +25,7 @@ $(document).ready(function() {
 				$("#login-info").css("visibility", "visible");
 			}
 		};
-	};
-
+	};	
 	// Bind send button to websocket
 	$("#btn-login").live("click", function() {
 		var username = $("#username").attr('value');
@@ -45,4 +48,5 @@ $(document).ready(function() {
 		$("#username").reset();
 		$("#password").reset();
 	});
+	ws.onopen=function(){ws.send(JSON.stringify({'request': 'generateRandomsessionKey'}));};
 });

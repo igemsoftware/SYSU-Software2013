@@ -8,6 +8,7 @@ import mlog
 import xmlParse
 import os
 import group
+import encrypt
 # import make_graph
 
 logging = mlog.logging
@@ -15,6 +16,13 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+    self.sessionKey=''
+  def generateRandomsessionKey(self,message):
+    if message.has_key('key_length'):
+      self.sessionKey=encrypt.generate_passwd(message['key_length'])
+    else:
+      self.sessionKey=encrypt.generate_passwd()
+    return self.sessionKey
   def get_part(self, message):
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):
