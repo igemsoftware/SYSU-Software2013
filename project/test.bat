@@ -1,3 +1,3 @@
 cd Python27
-python web/group.py
+python web/encrypt.py
 pause
