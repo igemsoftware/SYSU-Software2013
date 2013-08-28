@@ -110,6 +110,31 @@ class modeling:
 		return RepressorResult
 		
 
+def repress_rate(database, grp1, CopyNumber1, grp2, CopyNumber2):
+  LeakageRate1 = 0.1
+  LeakageRate2 = 0.1
+  DegRatemPro1 = 0.1
+  DegRatemPro2 = 0.1
+  DegRatemRNA1 = 0.1
+  DegRatemRNA2 = 0.1
+  repressor = database.select_with_name("repressor", grp1[-2])
+  if repressor is None:
+    repressor = database.select_with_name("activator", grp1[-2])
+  promoter1 = database.select_with_name("promoter", grp1[0])
+  promoter2 = database.select_with_name("promoter", grp2[0])
+  rbs1 = database.select_with_name("RBS", grp1[1])
+  rbs2 = database.select_with_name("RBS", grp1[1])
+  c1 = CopyNumber1 * (promoter1["MPPromoter"] - LeakageRate1)
+  c2 = CopyNumber2 * (promoter2["MPPromoter"] - LeakageRate2)
+  c_p1 = rbs1["MPRBS"] * (c1 + LeakageRate1) / (DegRatemPro1 * DegRatemRNA1)
+  c_p2 = rbs2["MPRBS"] * (c2 + LeakageRate2) / (DegRatemPro2 * DegRatemRNA2)
+  repress_rate = (c2 / (1 + (c_p1 / repressor["K1"]) ** repressor["HillCoeff1"])\
+      + LeakageRate2) / (c2 + LeakageRate2)
+  return (c_p2, repress_rate)
+
 if __name__=="__main__":
 	sql=SqliteDatabase()
+	print repress_rate(sql, ['BBa_I712074', 'BBa_J61104', 'BBa_C0060',\
+    'BBa_J61104', u'BBa_K518003', 'BBa_B0013'], 15, ['BBa_J64000',\
+      'BBa_J61104', 'BBa_C0160', 'BBa_B0013'], 15)
 	m=modeling(sql,0.1,0.9,'BBa_K091109','BBa_I725011',True)	

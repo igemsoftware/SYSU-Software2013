@@ -2,6 +2,7 @@ import os
 import sequence_serializer
 import component_union
 import random
+import modeling
 
 prom_name = "BBa_I712074"
 rbs_name = "BBa_J61104"
@@ -183,11 +184,11 @@ def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   ret["PoPs"] = promoter_info["MPPromoter"] * 100
   ret["RiPs"] = rbs_info["MPRBS"] * 100
   ret["copy"] = plasmid_backbone_info["CopyNumber"] * 100
-  ret["repress_rate"] = random.randint(0, 100)
-  ret["induce_rate"] = random.randint(0, 100)
-  ret["before_regulated"] = random.randint(0, 100)
-  ret["after_regulated"] = random.randint(0, 100)
-  ret["after_induced"] = random.randint(0, 100)
+  ret["repress_rate"] = 0
+  ret["induce_rate"] = 0
+  ret["before_regulated"] = 0
+  ret["after_regulated"] = 0
+  ret["after_induced"] = 0
   return ret
 
 def get_graph(link):
@@ -199,6 +200,7 @@ def get_graph(link):
 def dump_group(network, database):
   graph = get_graph(network["link"])
   data = work(network, database)
+  print data
   plasmids = []
   proteins = []
   print data

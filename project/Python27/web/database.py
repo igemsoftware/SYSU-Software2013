@@ -241,7 +241,10 @@ class SqliteDatabase:
       name))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
-		return decodejson[0]
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
 
 	def find_promoter(self, activator = None, repressor = None):
 	  return "BBa_J64000"
