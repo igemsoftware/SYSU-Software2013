@@ -173,9 +173,10 @@ var genecircuitData = {
 }
 """
 
-def get_pro_info(database, protein_idx, group, backbone = "pSB1AT3"):
+def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   ret = {}
   ret["name"] = group[protein_idx]
+  ret["grp_id"] = grp_id
   promoter_info= database.select_with_name("promoter", group[0])
   rbs_info= database.select_with_name("RBS", group[protein_idx - 1])
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
@@ -189,19 +190,31 @@ def get_pro_info(database, protein_idx, group, backbone = "pSB1AT3"):
   ret["after_induced"] = random.randint(0, 100)
   return ret
 
+def get_graph(link):
+  ret = {}
+  for item in link:
+    ret[item["to"]] = item["from"]
+  return ret
+
 def dump_group(network, database):
+  graph = get_graph(network["link"])
   data = work(network, database)
   plasmids = []
   proteins = []
+  print data
   for i in data:
-    proteins.append(get_pro_info(database, 2, data[i]))
+    proteins.append(get_pro_info(database, 2, data[i], i))
     if len(data[i]) == 6:
-      proteins.append(get_pro_info(database, 4, data[i]))
+      proteins.append(get_pro_info(database, 4, data[i], i))
     grp = []
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
       grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
-    plasmids.append(grp)
+    if i in graph:
+      prev = graph[i]
+    else:
+      prev = -1
+    plasmids.append({"id": i, "sbol":grp, "state": "cis", "from": prev})
   return {"plasmids": plasmids, "proteins": proteins}
 
 '''	sbol_dict is the sbol create by this python program
