@@ -22,7 +22,7 @@ class apis():
       self.sessionKey=encrypt.generate_passwd(message['key_length'])
     else:
       self.sessionKey=encrypt.generate_passwd()
-      return encrypt(self.sessionKey, 'sessionKey')
+    return self.sessionKey
   def get_part(self, message):
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):
