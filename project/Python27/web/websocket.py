@@ -44,6 +44,15 @@ class apis():
       return user.saveUserData(self.db,message['data'],"default",message['fileType'])
     else:
       return user.saveUserData(self.db,message['data'],"default","default")
+  def registAUser(self,message):
+    if message['group_name']=='administrator':
+      group_id=2
+    elif message['group_name']=='guest':
+      group_id=1
+    print group_id
+    ret= user.registAUser(self.db,message['name'],message['password'],message['email'],group_id,message['gender'])
+    print ret
+    return ret
 
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
