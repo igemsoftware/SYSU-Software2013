@@ -135,7 +135,7 @@ def repress_rate(database, grp1, CopyNumber1, grp2, CopyNumber2):
 def concen_without_repress(database, group, CopyNumber, pro_idx):
   promoter = database.select_with_name("promoter", group[0]["name"])
   rbs = database.select_with_name("RBS", group[pro_idx - 1]["name"])
-  return (CopyNumber * promoter["MPPromoter"] * rbs["MPRBS"], 100)
+  return (CopyNumber * promoter["MPPromoter"] * rbs["MPRBS"], 1)
 
 
 if __name__=="__main__":

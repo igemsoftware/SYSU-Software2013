@@ -192,22 +192,15 @@ def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   ret["after_induced"] = 0
   return ret
 
-def update_pro_info(database, protein, pro_name, grp2, grp1 = None, copy1 = None):
-  if grp1 == None:
-    for i in range(len(grp2)):
-      if grp2[i]["name"] == pro_name:
-        idx = i
-        break
-    concen, repress_rate = modeling.concen_without_repress(database, grp2, protein["copy"], idx)
-    protein["repress_rate"] = repress_rate
-    protein["concen"] = concen
-    return protein
-  else:
-    concen, repress_rate = modeling.repress_rate(database, grp1, copy1,\
-       grp2, copy2)
-    protein["repress_rate"] = repress_rate
-    protein["concen"] = concen
-    return protein
+def update_pro_info(database, protein, pro_name, grp2):
+  for i in range(len(grp2)):
+    if grp2[i]["name"] == pro_name:
+      idx = i
+      break
+  concen, repress_rate = modeling.concen_without_repress(database, grp2, protein["copy"], idx)
+  protein["repress_rate"] = repress_rate * 100
+  protein["concen"] = concen
+  return protein
 
 # TODO: this function is wrong
 def update_proteins_repress(database, protein, groups):
@@ -221,9 +214,17 @@ def update_proteins_repress(database, protein, groups):
       print pro
       print protein[pro]
     else:
-      pro1 = groups[pro1_grp_id]["sbol"][-2]["name"]
+      grp1 = groups[pro1_grp_id]["sbol"]
+      grp2 = groups[pro2_grp_id]["sbol"]
+      pro1 = grp1[-2]["name"]
       copy1 = protein[pro1]["copy"]
-    # protein["pro"] = update_pro_info(database, plasmid[pro1], )
+      copy2 = protein[pro]["copy"]
+      concen, repress_rate = modeling.repress_rate(database, grp1, copy1,\
+         grp2, copy2)
+      protein[pro]["repress_rate"] = repress_rate * 100
+      protein[pro]["concen"] = concen
+      print pro
+      print protein[pro]
 
 def get_graph(link):
   ret = {}
@@ -254,6 +255,7 @@ def dump_group(network, database):
     # plasmids.append({"id": i, "sbol":grp, "state": "cis", "from": prev})
     groups[i] = {"sbol":grp, "state": "cis", "from": prev}
     plasmid.append(i)
+  update_proteins_repress(database, proteins, groups)
   return {"groups": groups, "proteins": proteins, "plasmids": [plasmid]}
 
 '''	sbol_dict is the sbol create by this python program
