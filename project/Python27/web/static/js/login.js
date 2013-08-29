@@ -48,5 +48,5 @@ $(document).ready(function() {
 		$("#username").reset();
 		$("#password").reset();
 	});
-	ws.onopen=function(){ws.send(JSON.stringify({'request': 'generateRandomsessionKey'}));};
+	//ws.onopen=function(){ws.send(JSON.stringify({'request': 'generateRandomsessionKey'}));};
 });

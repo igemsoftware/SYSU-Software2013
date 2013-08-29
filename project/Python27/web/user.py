@@ -78,12 +78,12 @@ def loadUserData(database,fileName, fileType):
 	return "no such file"
 
 "create a new user whose name cannot be the same as those in the database"
-def registAUser(database,name,password,email,group_id):
+def registAUser(database,name,password,email,group_id,gender):
     if isUserLogined(database) is True:
         if database.isRecordExist(tableName='user_list',recs={'name':name}):
             database.logger.debug('user name exist: %s'%name)
             return 'user with the same name exist!'
-        database.insertAUser(name,password,email,group_id)
+        database.insertAUser(name,password,email,group_id,gender)
         return 'registAUser success'
     else:
         database.logger.debug('you have not logined in!')
