@@ -104,9 +104,9 @@ def work(data, database):
     part_list[part["id"]] = part["name"]
   for link in data["link"]:
     if link["type"] == "Bound":
-      groups[link["from"]] = bind(part_list[link["from"]], part_list[link["to"]])
-      bound_list[link["to"]] = link["from"]
-      del groups[link["to"]]
+      groups[link["to"]] = bind(part_list[link["from"]], part_list[link["to"]])
+      bound_list[link["from"]] = link["to"]
+      del groups[link["from"]]
   for elem in groups:
     groups[elem] = find_repressor(groups[elem], repressor_list, database)
   #groups = [find_activator(item, activator_list, database) for item in groups]
@@ -121,10 +121,10 @@ def work(data, database):
       groups[link["to"]] = repress(database, groups[link["from"]], groups[link["to"]])
     if link["type"] == "activator_protein":
       groups[link["to"]] = activate(database, groups[link["from"]], groups[link["to"]])
-  return groups
+  return (groups, repressor_list, activator_list)
 
 def dump_sbol(network, database):
-  data = work(network, database)
+  data, r_list, a_list = work(network, database)
   sbol = []
   rule = "RFC10"
   for i in data:
@@ -176,38 +176,73 @@ var genecircuitData = {
 
 def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   ret = {}
-  ret["name"] = group[protein_idx]
   ret["grp_id"] = grp_id
   promoter_info= database.select_with_name("promoter", group[0])
   rbs_info= database.select_with_name("RBS", group[protein_idx - 1])
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
   ret["PoPs"] = promoter_info["MPPromoter"] * 100
   ret["RiPs"] = rbs_info["MPRBS"] * 100
-  ret["copy"] = plasmid_backbone_info["CopyNumber"] * 100
-  ret["repress_rate"] = 0
+  ret["copy"] = plasmid_backbone_info["CopyNumber"]
+  ret["repress_rate"] = -1
+  ret["concen"] = -1
+  # following arguments are DEPRECATED
   ret["induce_rate"] = 0
   ret["before_regulated"] = 0
   ret["after_regulated"] = 0
   ret["after_induced"] = 0
   return ret
 
+def update_pro_info(database, protein, pro_name, grp2, grp1 = None, copy1 = None):
+  if grp1 == None:
+    for i in range(len(grp2)):
+      if grp2[i]["name"] == pro_name:
+        idx = i
+        break
+    concen, repress_rate = modeling.concen_without_repress(database, grp2, protein["copy"], idx)
+    protein["repress_rate"] = repress_rate
+    protein["concen"] = concen
+    return protein
+  else:
+    concen, repress_rate = modeling.repress_rate(database, grp1, copy1,\
+       grp2, copy2)
+    protein["repress_rate"] = repress_rate
+    protein["concen"] = concen
+    return protein
+
+# TODO: this function is wrong
+def update_proteins_repress(database, protein, groups):
+  for pro in protein:
+    print protein[pro]
+    pro2_grp_id = protein[pro]["grp_id"]
+    pro1_grp_id = groups[pro2_grp_id]["from"]
+    if pro1_grp_id == -1:
+      protein[pro] = update_pro_info(database, protein[pro], pro,\
+          groups[pro2_grp_id]["sbol"])
+      print pro
+      print protein[pro]
+    else:
+      pro1 = groups[pro1_grp_id]["sbol"][-2]["name"]
+      copy1 = protein[pro1]["copy"]
+    # protein["pro"] = update_pro_info(database, plasmid[pro1], )
+
 def get_graph(link):
   ret = {}
   for item in link:
-    ret[item["to"]] = item["from"]
+    if item["type"] != "Bound":
+      ret[item["to"]] = item["from"]
   return ret
 
 def dump_group(network, database):
   graph = get_graph(network["link"])
-  data = work(network, database)
-  print data
-  plasmids = []
-  proteins = []
+  data, r_list, a_list = work(network, database)
+  groups = {}
+  proteins = {}
+  plasmid = []
   print data
   for i in data:
-    proteins.append(get_pro_info(database, 2, data[i], i))
+    proteins[data[i][2]] = get_pro_info(database, 2, data[i], i)
     if len(data[i]) == 6:
-      proteins.append(get_pro_info(database, 4, data[i], i))
+      proteins[data[i][4]] = get_pro_info(database, 4, data[i], i)
     grp = []
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
@@ -216,8 +251,10 @@ def dump_group(network, database):
       prev = graph[i]
     else:
       prev = -1
-    plasmids.append({"id": i, "sbol":grp, "state": "cis", "from": prev})
-  return {"plasmids": plasmids, "proteins": proteins}
+    # plasmids.append({"id": i, "sbol":grp, "state": "cis", "from": prev})
+    groups[i] = {"sbol":grp, "state": "cis", "from": prev}
+    plasmid.append(i)
+  return {"groups": groups, "proteins": proteins, "plasmids": [plasmid]}
 
 '''	sbol_dict is the sbol create by this python program
 	rbs_value is the new value that user want for the rbs
