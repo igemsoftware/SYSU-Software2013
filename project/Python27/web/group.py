@@ -3,6 +3,7 @@ import sequence_serializer
 import component_union
 import random
 import modeling
+import database
 
 prom_name = "BBa_I712074"
 rbs_name = "BBa_J61104"
@@ -192,12 +193,14 @@ def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   ret["after_induced"] = 0
   return ret
 
-def update_pro_info(database, protein, pro_name, grp2):
-  for i in range(len(grp2)):
-    if grp2[i]["name"] == pro_name:
-      idx = i
-      break
-  concen, repress_rate = modeling.concen_without_repress(database, grp2, protein["copy"], idx)
+def get_index_in_group(pro_name, group):
+  for i in range(len(group)):
+    if group[i]["name"] == pro_name:
+      return i
+
+def update_pro_info(database, protein, pro_name, grp):
+  idx = get_index_in_group(pro_name, grp)
+  concen, repress_rate = modeling.concen_without_repress(database, grp, protein["copy"], idx)
   protein["repress_rate"] = repress_rate * 100
   protein["concen"] = concen
   return protein
@@ -205,14 +208,11 @@ def update_pro_info(database, protein, pro_name, grp2):
 # TODO: this function is wrong
 def update_proteins_repress(database, protein, groups):
   for pro in protein:
-    print protein[pro]
     pro2_grp_id = protein[pro]["grp_id"]
     pro1_grp_id = groups[pro2_grp_id]["from"]
     if pro1_grp_id == -1:
       protein[pro] = update_pro_info(database, protein[pro], pro,\
           groups[pro2_grp_id]["sbol"])
-      print pro
-      print protein[pro]
     else:
       grp1 = groups[pro1_grp_id]["sbol"]
       grp2 = groups[pro2_grp_id]["sbol"]
@@ -223,8 +223,6 @@ def update_proteins_repress(database, protein, groups):
          grp2, copy2)
       protein[pro]["repress_rate"] = repress_rate * 100
       protein[pro]["concen"] = concen
-      print pro
-      print protein[pro]
 
 def get_graph(link):
   ret = {}
@@ -239,7 +237,6 @@ def dump_group(network, database):
   groups = {}
   proteins = {}
   plasmid = []
-  print data
   for i in data:
     proteins[data[i][2]] = get_pro_info(database, 2, data[i], i)
     if len(data[i]) == 6:
@@ -271,8 +268,26 @@ def changeRBS_MPRBS(database,sbol_dict,rbs_value,proteinName):
           item[i-1]['name']=bestRBS['Number']
   return sbol_dict
 
+def update_controller(db, update_info):
+  gene_circuit = update_info["gene_circuit"]
+  detail = update_info["detail"]
+  if detail["type"] == "RBS":
+    pro_name = detail["pro_name"]
+    rbs_value = detail["protein"]["RiPs"] / 100
+    grp_id = detail["protein"]["grp_id"]
+    group = gene_circuit["groups"][grp_id]
+    idx = get_index_in_group(pro_name, group["sbol"])
+    bestRBS = db.getRBSNearValue(rbs_value)
+    print rbs_value
+    print bestRBS
+    print idx
+    gene_circuit["groups"][grp_id]["sbol"][idx-1]["name"] = bestRBS["Number"]
+    gene_circuit["proteins"][pro_name]["RiPs"] = bestRBS["MPRBS"] * 100
+  update_proteins_repress(db, gene_circuit["proteins"],\
+      gene_circuit["groups"])
+  return gene_circuit
+
 if __name__ == "__main__":
-  import database
   db = database.SqliteDatabase()
   sbol=dump_group(data, db)
   print sbol
