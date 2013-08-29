@@ -3,32 +3,39 @@
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to iGem</title>
-	<link rel="stylesheet" href="../static/css/bootstrap.css">
 	<link rel="stylesheet" href="../static/css/login.css">	
 </head>
 
 <body>
-	<div id="container">
-		<div id="header">
-			<p>Sign In</p>
-		</div>
-		<div id="seperator"></div>
-		<form id="input-field">
-			<div class="input-outer">
-				<input type="text" name="userName" id="username" placeholder="username"/>
+	<div class="container">
+		<div class="left-part"></div>
+		
+		<div class="login-part">
+			<form id="input-field">
+				<input type="text" name="userName" id="username" placeholder="username" required>
+				<input type="password" name="password" id="password" placeholder="password" required>
+				<a id="btn-login"></a>
+			</form>
+
+			<div class="tips">
+				<span id="mycheckbox" title="暂时不可用，正在建设中">
+					<span class="checkbox-mask"></span>					
+					<span>&nbsp Remember me</span>
+				</span>
+				<input id="remember" type="checkbox" name="remember">
+
+				<a href="#help" title="click to get help">Having trouble logging in ?</a>
 			</div>
-			
-			<div class="input-outer">
-				<input type="password" name="password" id="password" placeholder="password"/>
-			</div>			
 
-			<button class="btn btn-success" id="btn-login" type="submit" onclick="return false;">Log In</button>
-			<button class="btn" id="btn-reset" type="reset">Reset</button> 
-		</form>
-
-		<div class="alert" id="login-info"></div>
+			<div class="contact-us">
+				<a id="facebook" href="#" title="facebook"><img src="../static/img/login/facebook.png" alt="facebook"></a>
+				<a id="twitter" href="#" title="twitter"><img src="../static/img/login/twitter.png" alt="twitter"></a>
+				<a id="gplus" href="#" title="gplus"><img src="../static/img/login/gplus.png" alt="gplus"></a>
+			</div>
+		</div>
+		
+		<div class="right-part"></div>
 	</div>
-
 
 	<script src="../static/js/jquery-1.8.0.min.js"></script>
 	<script src="../static/js/login.js"></script>
