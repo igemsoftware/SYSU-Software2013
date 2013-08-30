@@ -249,12 +249,34 @@ class SqliteDatabase:
 
 	def find_promoter(self, activator = None, repressor = None):
 	  return "BBa_J64000"
+
+	def find_repressor_with_promoter(self, promoter):
+		# debug purposes
+		if promoter == "BBa_I766557":
+			return "BBa_C0012"
+
+		return "BBa_C0050"
 	
 	def getRBSNearValue(self,idealValue):
 		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%f) limit 0,1' %idealValue)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
+
+	def getPromoterNearValue(self, idealValue, repressor_list):
+		print 'select * from promoter order by\
+        abs(promoter.MPPromoter-%f)\
+				limit 0,%d' % (idealValue, len(repressor_list)+1)
+		self.__cursor.execute('select * from promoter order by\
+        abs(promoter.MPPromoter-%f)\
+				limit 0,%d' % (idealValue, len(repressor_list)+1))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if self.find_repressor_with_promoter(item["Number"]) not in repressor_list:
+				return item
+
+
 
 	"""
 		test if there is the same record in the table
