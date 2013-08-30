@@ -67,9 +67,9 @@ def find_activator(item, activator_list, database):
 
 def find_promoter(database, activator = None, repressor = None):
   if activator is not None:
-    return database.find_promoter(activator = activator)
+    return database.find_promoter_with_activator(activator)
   else:
-    return database.find_promoter(repressor = repressor)
+    return database.find_promoter_with_repressor(repressor)
 
 def find_file(name, path):
     for root, dirs, files in os.walk(path):
@@ -205,7 +205,6 @@ def update_pro_info(database, protein, pro_name, grp):
   protein["concen"] = concen
   return protein
 
-# TODO: this function is wrong
 def update_proteins_repress(database, protein, groups):
   for pro in protein:
     pro2_grp_id = protein[pro]["grp_id"]
@@ -306,6 +305,19 @@ def update_controller(db, update_info):
     gene_circuit["proteins"][new_repressor] = orig_repressor_info
     gene_circuit["groups"][prev_grp]["sbol"][-2]["name"] = new_repressor
     gene_circuit["proteins"][pro_name]["PoPs"] = best_promoter["MPPromoter"] * 100
+
+  elif detail["type"] == "repress_rate":
+    #TODO not completed yet!!!
+
+    # update promoter related to repressor
+    best_promoter = db.find_promoter_with_repressor(best_repressor["Number"])
+    promoter_value = (db.select_with_name("promoter",\
+      best_promoter))["MPPromoter"]
+    for i in gene_circuit["proteins"]:
+      if gene_circuit["proteins"][i]["from"] == grp_id:
+        promoter_grp = gene_circuit["proteins"][i]["grp_id"]
+        gene_circuit["proteins"][i]["PoPs"] = promoter_value
+        gene_circuit["groups"][promoter_grp][0]["name"] = best_promoter
   update_proteins_repress(db, gene_circuit["proteins"],\
       gene_circuit["groups"])
   return gene_circuit

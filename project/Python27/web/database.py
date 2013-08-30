@@ -247,7 +247,10 @@ class SqliteDatabase:
 		else:
 			return None
 
-	def find_promoter(self, activator = None, repressor = None):
+	def find_promoter_with_repressor(self, repressor = None):
+	  return "BBa_J64000"
+
+	def find_promoter_with_activator(self, activator = None):
 	  return "BBa_J64000"
 
 	def find_repressor_with_promoter(self, promoter):
@@ -264,9 +267,6 @@ class SqliteDatabase:
 		return decodejson[0]
 
 	def getPromoterNearValue(self, idealValue, repressor_list):
-		print 'select * from promoter order by\
-        abs(promoter.MPPromoter-%f)\
-				limit 0,%d' % (idealValue, len(repressor_list)+1)
 		self.__cursor.execute('select * from promoter order by\
         abs(promoter.MPPromoter-%f)\
 				limit 0,%d' % (idealValue, len(repressor_list)+1))
@@ -276,6 +276,14 @@ class SqliteDatabase:
 			if self.find_repressor_with_promoter(item["Number"]) not in repressor_list:
 				return item
 
+	def getRepressorNearValue(self, idealValue, repressor_list):
+		self.__cursor.execute('select * from repressor order by abs(repressor.K1-%f)\
+				limit 0,%d' % (idealValue, len(repressor_list)+1))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if item["Number"] not in repressor_list:
+				return item
 
 
 	"""
