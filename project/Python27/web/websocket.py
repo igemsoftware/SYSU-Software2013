@@ -16,11 +16,10 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
-    self.sessionKey=''
-  def generateRandomsessionKey(self,message):    
-    self.encrypt=encrypt.Encrypt()    
-    print self.encrypt.getPublicKey()
-    return {'n':str(self.encrypt.getPublicKey().n),'e':str(self.encrypt.getPublicKey().e)}
+  def generateRandomsessionKey(self,message):   
+    if self.db.encrypt==None:     
+      self.db.encrypt=encrypt.Encrypt()        
+    return {'n':str(self.db.encrypt.getPublicKey().n),'e':str(self.db.encrypt.getPublicKey().e)}
   def get_part(self, message):
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):

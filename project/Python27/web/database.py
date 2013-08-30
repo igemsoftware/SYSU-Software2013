@@ -21,6 +21,7 @@ class SqliteDatabase:
 	URL=''
 	userId=-1
 	logger=None
+	encrypt=None
 	def isDatabaseExist(self,database):
 		if os.path.exists(database):  
 			return True
