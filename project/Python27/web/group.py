@@ -271,18 +271,25 @@ def changeRBS_MPRBS(database,sbol_dict,rbs_value,proteinName):
 def update_controller(db, update_info):
   gene_circuit = update_info["gene_circuit"]
   detail = update_info["detail"]
+  pro_name = detail["pro_name"]
+  grp_id = detail["protein"]["grp_id"]
+  group = gene_circuit["groups"][grp_id]
   if detail["type"] == "RBS":
-    pro_name = detail["pro_name"]
     rbs_value = detail["protein"]["RiPs"] / 100
-    grp_id = detail["protein"]["grp_id"]
-    group = gene_circuit["groups"][grp_id]
     idx = get_index_in_group(pro_name, group["sbol"])
     bestRBS = db.getRBSNearValue(rbs_value)
-    print rbs_value
-    print bestRBS
-    print idx
     gene_circuit["groups"][grp_id]["sbol"][idx-1]["name"] = bestRBS["Number"]
     gene_circuit["proteins"][pro_name]["RiPs"] = bestRBS["MPRBS"] * 100
+  elif detail["type"] == "copy":
+    for plasmid in gene_circuit["plasmids"]:
+      for item in plasmid:
+        if item == grp_id:
+          updated_plasmid = plasmid
+          break
+    copy_value = detail["protein"]["copy"]
+    for i in gene_circuit["proteins"]:
+      if gene_circuit["proteins"][i]["grp_id"] in updated_plasmid:
+        gene_circuit["proteins"][i]["copy"] = copy_value
   update_proteins_repress(db, gene_circuit["proteins"],\
       gene_circuit["groups"])
   return gene_circuit
