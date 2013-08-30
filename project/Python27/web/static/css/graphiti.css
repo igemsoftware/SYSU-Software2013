@@ -1,23 +1,137 @@
 
+/* 
+ * regulation styles
+ */
 
-/* ===== Primary Styles ========================================================
-   Author: Rathinho
-   ========================================================================== */
 body {
   margin: 0;
-  background-color: #333; 
+  padding: 0;  
   overflow: hidden;
+  width: 100%;
   height: 100%;
+  min-width: 1366px;
+  font-family: "微软雅黑";
+  background-color: #4dafb0; 
 }
 
-#regulation-container {
-  position: absolute;
+.mycontainer {
+  width: 100%;
   height: 100%;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
   overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  height: 115px;
+}
+
+.header img {
+  height: 115px;
+}
+
+.header .nav {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+.header .nav ul {
+  margin: 40px 80px 0 0;
+  list-style: none;
+  font-size:  14px;
+  color: #407279;
+}
+
+.header .nav ul li {
+  display: inline-block;
+  padding: 0 11px;
+  height: 29px;
+  margin: 0 17px;
+  line-height: 29px;
+  border-radius: 4px;
+}
+
+.header .nav ul li.active {
+  background-color: #f95f53;
+}
+
+.header .nav ul li.active a {
+  color: #d7f0f4;  
+}
+
+.header .nav ul li a {
+  text-decoration: none;
+  color: #407279;
+}
+
+.header .nav .pointer-arrow {
+  position: relative;
+  top: 11px;
+  left: 73px;
+  height: 0;
+  width: 0;
+  border-bottom: 35px solid #ebebeb;
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+}
+
+.trigger {
+  width: 71px;
+  height: 53px;
+  cursor: pointer;
+}
+
+.trigger-left {
+  position: absolute;
+  left: 270px;
+  top: 350px;
+  background-image: url(../img/left-trigger.png);
+}
+
+.trigger-right {
+  position: absolute;
+  left: -71px;
+  top: 350px;
+  background-image: url(../img/right-trigger.png);
+}
+
+.accordion-group {
+  border: 1px solid #608d93;
+  background-color: #608d93;
+}
+
+.accordion-heading {
+  border: 1px solid #abccd1;
+  background-color: #abccd1;
+  border-radius: 4px;
+}
+
+.accordion-heading:hover {
+  background-color: #c2dfe3;
+}
+
+.accordion-heading a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #ebebeb;
+}
+
+.accordion-heading a:hover {
+  color: #ebebeb;
+}
+
+
+.accordion-inner {
+  border: none;
+  padding: 9px 0 9px 15px;
+}
+
+.mybtn {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
 }
 
 .modal {
@@ -29,16 +143,20 @@ body {
   top: 75%;
 }
 
+
+/*
+ *  Left sidebar styles
+ */
 #left-container {
-  position: absolute;
-  top: 0;
-  left: -261px;
+  position: relative;
+  top: -115px;
+  left: -270px;
   width: 250px;
-  height: 100%;
+  height: 708px;
   padding: 10px;  
 	border-radius: 2px;
-  box-shadow: 2px 2px 5px #111;
-	background-color: #444;
+  box-shadow: 2px 2px 5px #407279;
+	background-color: #407279;
   z-index: 1055;
   transition: left 0.5s;
   -webkit-transition: left 0.5s;   /* Safari 和 Chrome */
@@ -95,17 +213,15 @@ body {
   float: left;
   width: 90px;
   height: 83px;
-  border: 1px solid #fff;
   border-radius: 2px;
   margin: 10px 5px 10px 10px;
-  background-color: #ccc;
+  background-color: #b4d4d8;
 }
 
 #left-container .factorIcon {
   width: 88px;
   height: 60px;
   margin: 0 auto;
-  background-color: #fff;
   cursor: pointer;
 }
 
@@ -119,10 +235,12 @@ body {
 #left-container .factorName {
   margin-top: 3px;
   text-align: center;
+  /*background-color: #3a87ad;*/
 }
 
 #left-container .factorName .label {
   cursor: pointer;
+  width: 82px;
 }
 
 #left-container #catalog {
@@ -130,63 +248,58 @@ body {
   overflow: auto;
 }
 
-#left-container .accordion-group {
-  background-color: #444;
-}
-
-#left-container .accordion-heading:hover {
-  background-color: #ccc;
-}
-
-#left-container .accordion-heading a {
-  text-decoration: none;
-}
-
-#left-container .accordion-heading a:hover {
-  color: #33496B;
-}
-
-
-#left-container .accordion-inner {
-  padding: 9px 0 9px 15px;
-}
 
 #left-container:hover {
   left: 0;
 }
 
-#left-container .dtree, #left-container a {
+/*#left-container .dtree, #left-container a {
   color: #fff;
-}
+}*/
 
+
+/*
+ *  Main content styles
+ */
 #content {
   position: absolute;
-  width: 1349px;
-  min-width: 1349px;
+  width: 100%;
+  min-width: 1366px;
   margin: 0px auto;
-  top: 20px;
-  bottom: 50px;
+  top: 115px;
+}
+
+#canvas-mask {
+  width: 1324px;
+  height: 536px;
+  padding: 20px 0;
+  margin: 0 auto;
+  background-image: url(../img/painterbg.png);
 }
 
 #canvas {	
   margin: 0 auto;
-  width: 1225px;
-  height: 99%;
+  width: 1284px;
+  height: 534px;
   border-radius: 6px;
-  background-color: #FFF;
+  background-color: #ebebeb;
 }
 
+
+
+/*
+ *  Right sidebar styles
+ */
 #right-container {
   position: absolute;
-  overflow: auto;
   top: 0;
-  right: -261px;
+  right: -270px;
   width: 250px;
   height: 100%;
   padding: 10px;  
   border-radius: 2px;
-  box-shadow: -2px 2px 5px #111;
-  background-color: #444;
+  box-shadow: -2px 2px 5px #407279;
+  background-color: #407279;
   z-index: 1056;
   transition: right 0.5s;
   -webkit-transition: right 0.5s;   /* Safari 和 Chrome */
@@ -196,16 +309,20 @@ body {
   right: 0;
 }*/
 
-#right-container .accordion-group {
-  background-color: #fff;
-}
-
-#right-container .accordion-heading:hover {
-  background-color: #ccc;
-}
-
-#right-container .accordion-heading a {
-  text-decoration: none;
+#right-container input {
+  display: block;
+  width: 185px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 14px;
+  color: #608d93;
+  /*margin: 0 auto;*/
+  padding: 5px 5px;
+  border: 1px solid #8fc7c5;
+  border-bottom: none;
+  background-color: #c5d8db;
+  margin-bottom: 10px;
+  margin-top: 2px;
 }
 
 #right-container #user-view {
@@ -214,26 +331,70 @@ body {
   margin-bottom: 5px;
 }
 
+#right-container .block {
+  border: 2px solid #afc8cb;
+  padding: 7px 6px;
+}
+
+#right-container .config-header {
+  display: block;
+  width: 221px;
+  color: #ebebeb;
+  font-size: 17px;
+  text-align: center;
+}
+
+#right-container .label {
+  background-color: #4b7c82;
+}
+
 #right-container #user-view-left {
   float: left;
   width: 80px;
   height: 70px;
-  padding: 20px 20px 20px 0;
+  padding: 23px 20px 10px 0;  
+}
+
+#right-container #user-view-left #username {
+  position: relative;
+  left: 7px;
+  width: 93px;
+  height: 28px;
+  background-image: url(../img/username.png);
+  background-repeat: no-repeat;
+  font-size: 14px;
+  line-height: 28px;
   text-align: center;
-  font-size: 20px;
+  color: #4e7074;
 }
 
 #right-container #user-view-left #logout {
-  text-decoration: none;
+  position: relative;
+  left: 7px;
+  top: 18px;
+  width: 93px;
+  height: 28px;
+  background-image: url(../img/logout.png);
+  background-repeat: no-repeat;
+  font-size: 14px;
+  line-height: 28px;
+  text-align: center;
+  color: #f7fcfd;
+  cursor: pointer;
 }
 
 #right-container #user-view-left #logout:hover {
+  text-decoration: none;
   text-shadow: 1px 1px 2px #333;
 }
 
 #right-container #user-view-right {
   float: left;
-  width: 120px;
+  width: 115px;
+}
+
+#right-container #user-view-right .avatar-container {
+  border: 3px solid #e7eced;
 }
 
 #right-container #commandmenu {
@@ -242,22 +403,48 @@ body {
 }
 
 #right-container #commandmenu #button-group {
-  width: 117px;
-  margin: 0 auto;
+  width: 150px;
+  margin: 0 auto;  
+}
+
+#right-container #commandmenu #button-group #myfile {
+  color: #f7fcfd;
+  font-size: 14px;
+  margin-bottom: 10px;
+  background-color: #2ec6b7;
+}
+
+#right-container #commandmenu #button-group #create-part {
+  color: #f7fcfd;
+  font-size: 14px;
+  background-color: #8db3b8;
 }
 
 #right-container #filemenu {
+  width: 221px;
+  padding: 15px 6px 12px;
   margin-bottom: 5px;
 }
 
-#right-container #filemenu input {
-  width: 213px;
+#right-container #filemenu #fn-input {
+  width: 140px;
+  margin: 0 auto;
 }
 
-#right-container #filemenu a {
+#right-container #filemenu #save {
+  color: #f7fcfd;
+  font-size: 14px;
+  background-color: #46b2e3;
   display: block;
-  width: 100px;
   margin: 15px auto;
+}
+
+#right-container #filemenu #clear {
+  color: #608d93;
+  font-size: 14px;
+  background-color: #f7c969;
+  display: block;
+  margin: 0 auto;
 }
 
 #right-container .slider-div {
@@ -270,7 +457,7 @@ body {
   display: none;
   width: 228px;
   margin-bottom: 10px;
-  padding: 9px;
+  padding: 6px;
   padding-right: 0;
 }
 
@@ -278,16 +465,11 @@ body {
   margin-top: 20px;
 }
 
-#right-container #exogenous-factors-form input {
-  width: 197px;
-  margin-bottom: 10px;
-}
-
 #right-container #protein-config {
   display: none;
   width: 228px;
   margin-bottom: 10px;
-  padding: 9px;
+  padding: 6px;
   padding-right: 0;
 }
 
@@ -295,16 +477,11 @@ body {
   margin-top: 20px;
 }
 
-#right-container #protein-form input {
-  width: 197px;
-  margin-bottom: 10px;
-}
-
 #right-container #component-config {
   display: none;
   width: 228px;
   margin-bottom: 10px;
-  padding: 9px;
+  padding: 6px;
   padding-right: 0;
 }
 
@@ -316,11 +493,6 @@ body {
 
 #right-container .accordion-inner {
   padding: 9px 2px 9px 5px;
-}
-
-#right-container #component-form input {
-  width: 187px;
-  margin-bottom: 10px;
 }
 
 #right-container #arrow-config {
@@ -335,25 +507,8 @@ body {
   margin-top: 20px;
 }
 
-#right-container #arrow-form input {
-  width: 197px;
-  margin-bottom: 10px;
-}
-
 #right-container .config-active {
   display: block;
-}
-
-.footer {
-  position: absolute;
-  width: 100%;
-  height: 30px;
-  bottom: 10px;
-}
-
-.footer .footer-navigator {
-  width: 470px;
-  margin: 0 auto;
 }
 
 .cmd-group {
