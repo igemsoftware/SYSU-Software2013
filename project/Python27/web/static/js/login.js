@@ -8,10 +8,13 @@ $(document).ready(function() {
 			if (message.request === "generateRandomsessionKey") {
 				console.log(message.result);
 				return;
-			} else if (message.result === "Password correct!") {
-				window.location = location.href + "index";
-			} else {
-
+			}
+			if (message.request === "userLogin"){
+				if(message.result === "Password correct!") {
+					window.location = location.href + "index";
+				} else {
+					alert(message.result);
+				}
 			}
 		};
 	};
@@ -31,11 +34,11 @@ $(document).ready(function() {
 		}
 	});
 
-	ws.onopen = function() {
+	/*ws.onopen = function() {
 		ws.send(JSON.stringify({
 			'request': 'generateRandomsessionKey'
 		}));
-	};
+	};*/
 });
 
 
