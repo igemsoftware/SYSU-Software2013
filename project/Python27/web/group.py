@@ -274,12 +274,14 @@ def update_controller(db, update_info):
   pro_name = detail["pro_name"]
   grp_id = detail["protein"]["grp_id"]
   group = gene_circuit["groups"][grp_id]
-  if detail["type"] == "RBS":
+
+  if detail["type"] == "RiPs":
     rbs_value = detail["protein"]["RiPs"] / 100
     idx = get_index_in_group(pro_name, group["sbol"])
     bestRBS = db.getRBSNearValue(rbs_value)
     gene_circuit["groups"][grp_id]["sbol"][idx-1]["name"] = bestRBS["Number"]
     gene_circuit["proteins"][pro_name]["RiPs"] = bestRBS["MPRBS"] * 100
+
   elif detail["type"] == "copy":
     for plasmid in gene_circuit["plasmids"]:
       for item in plasmid:
@@ -290,6 +292,20 @@ def update_controller(db, update_info):
     for i in gene_circuit["proteins"]:
       if gene_circuit["proteins"][i]["grp_id"] in updated_plasmid:
         gene_circuit["proteins"][i]["copy"] = copy_value
+
+  elif detail["type"] == "PoPs":
+    prev_grp = group["from"]
+    promoter_value = detail["protein"]["PoPs"] / 100
+    repressor_list = detail["repressor_list"]
+    best_promoter = db.getPromoterNearValue(promoter_value, repressor_list)
+    gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter["Number"]
+    orig_repressor = gene_circuit["groups"][prev_grp]["sbol"][-2]["name"]
+    orig_repressor_info = gene_circuit["proteins"][orig_repressor]
+    new_repressor = db.find_repressor_with_promoter(best_promoter["Number"])
+    del gene_circuit["proteins"][orig_repressor]
+    gene_circuit["proteins"][new_repressor] = orig_repressor_info
+    gene_circuit["groups"][prev_grp]["sbol"][-2]["name"] = new_repressor
+    gene_circuit["proteins"][pro_name]["PoPs"] = best_promoter["MPPromoter"] * 100
   update_proteins_repress(db, gene_circuit["proteins"],\
       gene_circuit["groups"])
   return gene_circuit
@@ -298,4 +314,3 @@ if __name__ == "__main__":
   db = database.SqliteDatabase()
   sbol=dump_group(data, db)
   print sbol
-  print changeRBS_MPRBS(db,sbol,0.97,data["part"][2]['name'])
