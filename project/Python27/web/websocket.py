@@ -9,6 +9,7 @@ import xmlParse
 import os
 import group
 import encrypt
+import base64
 # import make_graph
 
 logging = mlog.logging
@@ -18,8 +19,10 @@ class apis():
     self.db = db
   def generateRandomsessionKey(self,message):   
     if self.db.encrypt==None:     
-      self.db.encrypt=encrypt.Encrypt()        
-    return {'n':str(self.db.encrypt.getPublicKey().n),'e':str(self.db.encrypt.getPublicKey().e)}
+      self.db.encrypt=encrypt.Encrypt()
+    return {'n':encrypt.dec2hex(self.db.encrypt.getPublicKey().n),'e':encrypt.dec2hex(self.db.encrypt.getPublicKey().e)}
+  def decrypt(self,message):
+    return self.db.encrypt.decrypt(message['crypto'])
   def get_part(self, message):
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):
