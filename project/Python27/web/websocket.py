@@ -26,7 +26,9 @@ class apis():
   def get_part(self, message):
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):
-    return user.userLogin(self.db,name=message['name'],password=message['password'])
+    res=json.loads(self.db.encrypt.decrypt(message['data']))
+    print res['password']
+    return user.userLogin(self.db,name=res['name'],password=res['password'])
   def getDirList(self,message={'dir':'biobrick'}): 
     return xmlParse.get_allfiledirs(message['dir'])
   def getBiobrick(self,message={'path':'biobrick/Terminators/BBa_B0010.xml'}):

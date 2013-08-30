@@ -15,7 +15,7 @@ def dec2hex(string_num):
 
 class Encrypt:
 	def __init__ (self):
-		(pub_key, priv_key) = rsa.newkeys(256)
+		(pub_key, priv_key) = rsa.newkeys(1024)
 		self.publicKey=pub_key
 		self.privateKey=priv_key
 	def getPublicKey(self):
