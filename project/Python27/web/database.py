@@ -80,7 +80,7 @@ class SqliteDatabase:
 		if self.userId==-1:
 			self.logger.error('not login but want to change the user password')
 			return 'updateUserPassword failed'
-		sql_cmd='UPDATE user_list SET password_MD5="%s" WHERE id=%d'%(password,self.userId)
+		sql_cmd='UPDATE user_list SET password_SHA1="%s" WHERE id=%d'%(password,self.userId)
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user password: %s'%sql_cmd)
 		self.__cx.commit()
@@ -147,7 +147,7 @@ class SqliteDatabase:
 
 	def insertAUser(self,name,password,email,group_id,gender):
 		nextId=self.getMaxUserId()+1
-		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d);'%(nextId,name,password,email,group_id,gender)
+		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d);'%(nextId,name,email,password,group_id,gender)
 		self.logger.debug('insert a user: %s ' %excuteString)
 		self.__cursor.execute(excuteString)
 		self.__cx.commit()
@@ -160,7 +160,7 @@ class SqliteDatabase:
 		if len(decodejson)==0:
 			return None
 		else:
-			return decodejson[0]['password_MD5']		
+			return decodejson[0]['password_SHA1']		
 	
 	def isUserNameAndPasswordCorrect(self,name,password):
 		if self.getUserPasswordById(name) is None:
@@ -170,6 +170,15 @@ class SqliteDatabase:
 		else:
 			return 'Password not correct!'
 	
+	def rememberUser(self,username,pwd):	
+		if not self.isRecordExist('remember',recs={'username':username}):
+			excuteString='INSERT INTO remember VALUES("%s","%s");'%(username,pwd)
+			self.logger.debug('insert a user remember: %s ' %excuteString)
+			self.__cursor.execute(excuteString)
+			self.__cx.commit()
+		else:
+			return "the same name user exist"
+
 	def getUserNameById(self,id):
 		excuteString='select * from user_list where id = %d' %id				
 		self.__cursor.execute(excuteString)	

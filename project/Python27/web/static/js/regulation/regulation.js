@@ -13,19 +13,36 @@ $().ready(function() {
     e.preventDefault();
   };
 
-  // slide in right-container
-  $("#right-container").mouseover(function() {
-    $("#right-container").css({
-      right: '0px'
-    });
+  // toggle left-container
+  $(".trigger-left").click(function() {
+    var left = $("#left-container").css("left");
+
+    if (parseInt(left) == 0) {
+      $("#left-container").css({
+        left: '-270px'
+      });
+    } else {
+      $("#left-container").css({
+        left: '0px'
+      });
+    }
   });
 
-  // slide out right-container
-  $("#right-container").mouseout(function() {
-    $("#right-container").css({
-      right: '-261px'
-    });
+  // toggle right-container
+  $(".trigger-right").click(function() {
+    var right = $("#right-container").css("right");
+
+    if (parseInt(right) == 0) {
+      $("#right-container").css({
+        right: '-270px'
+      });
+    } else {
+      $("#right-container").css({
+        right: '0px'
+      });
+    }
   });
+
 
   // logout
   $("#logout").click(function() {
@@ -221,7 +238,7 @@ $().ready(function() {
         });
 
       } else if (message.request == "getLoginedUserName") { // get username
-        $("#user-view-left > p").text(message.result);
+        $("#user-view-left #username").text(message.result);
       } else if (message.request == "loginOut") { // get logout info
         window.location = "..";
       } else if (message.request == "getUserFileList") {

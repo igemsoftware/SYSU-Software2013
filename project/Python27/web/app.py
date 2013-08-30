@@ -16,6 +16,8 @@ app = Flask(__name__)
 	
 @app.route("/")
 def login():
+	if user.isUserLogined(sql):
+		user.userLogout(sql)
 	return render_template('login.html')
 
 @app.route("/demo")

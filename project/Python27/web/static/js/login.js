@@ -16,21 +16,9 @@ $(document).ready(function() {
 		ws.onmessage = function(msg) {
 			var message = JSON.parse(msg.data);
 			if (message.request === "generateRandomsessionKey") {
-				console.log(message.result);
-				var rsa = new RSAKey();
-  				rsa.setPublic(message.result.n,message.result.e);  				
-				enstr='password';
-				var res = rsa.encrypt(enstr);
-				ws.send(JSON.stringify({'request': 'decrypt','crypto':res}));				
-			}
-			if (message.request === "decrypt") {
-				console.log(message.result);
-				return;
-			}
-			if (message.request === "base64Test") {
-				console.log(message.result,'message');	
-				return;			
-			}
+				sessionStorage.n=message.result.n;
+				sessionStorage.e=message.result.e;						
+			}					
 			if (message.request === "userLogin"){
 				if(message.result === "Password correct!") {
 					window.location = location.href + "index";
@@ -48,11 +36,15 @@ $(document).ready(function() {
 		if (!username || !password) {
 
 		} else {
-			ws.send(JSON.stringify({
-				'request': 'userLogin',
-				'name': username,
-				'password': password
-			}));
+			console.log(hex_sha1('123456@yahoo.com'));
+			console.log('123456@yahoo.com');
+			password=hex_sha1(password);
+			sendstr=JSON.stringify({'name': username,'password': password});
+			var rsa = new RSAKey();
+  			rsa.setPublic(sessionStorage.n,sessionStorage.e);  				
+			enstr=sendstr;
+			var res = rsa.encrypt(sendstr);
+			ws.send(JSON.stringify({'request': 'userLogin','data':res}));
 		}
 	});
 
