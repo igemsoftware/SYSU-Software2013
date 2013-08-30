@@ -34,11 +34,11 @@ $(document).ready(function() {
 		}
 	});
 
-	/*ws.onopen = function() {
+	ws.onopen = function() {
 		ws.send(JSON.stringify({
 			'request': 'generateRandomsessionKey'
 		}));
-	};*/
+	};
 });
 
 
