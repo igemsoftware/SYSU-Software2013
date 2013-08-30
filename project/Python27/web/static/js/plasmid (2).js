@@ -24,7 +24,7 @@ var plasmidPainter = {
 	},
 	drawSegment: function(bioStart, bioEnd, name, color, seq) {		
 		var marginLeft = 0, 
-			marginTop = 12.5;
+			marginTop = 10;
 		jc.start(this.canvasId, true);
 		console.log(bioStart, bioEnd, name, color, seq);
 		jc.rect((marginLeft + bioStart), marginTop, (bioEnd - bioStart), 25, color, true).id(name);
@@ -39,14 +39,14 @@ var plasmidPainter = {
 	},
 	drawAll: function() {
 		jc.start(this.canvasId);
-		jc.rect(0, 0, 1189, 50, "#EEEEFF", true);			
+		jc.rect(0, 0, 1284, 50, "#EEEEFF", true);			
 		jc.start(this.canvasId);
 		for(var i=0;i<data2.length;i++)
 		{		
 			if(!/[A-Z]/.test(data2[i].seq[0]))//typeof(data[i].name)!=="number")
 			{				
-				var st=data2[i].start*1189/datasize;
-				var en=data2[i].end*1189/datasize;
+				var st=data2[i].start*1284/datasize;
+				var en=data2[i].end*1284/datasize;
 				if(data2[i].name=== undefined)
 				{				
 					this.drawSegment(st,en,i,data2[i].color,data2[i].seq);
@@ -91,8 +91,7 @@ function createTempDataForCanvas(seqText,leftTemp)
 					tempdata[tempsize]={};
 					tempdata[tempsize].start=templeft;
 					tempdata[tempsize].end=j+1;
-					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
-					console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);					
 					tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempsize=tempsize+1;
@@ -433,7 +432,7 @@ function initDrawChart(){
 		
 		showpercent:true,
 		decimalsnum:0,
-		width : 783,
+		width : 847,
 		height : 430,
 		radius:140
 		
@@ -798,7 +797,7 @@ function canvasMouseUp(obj,e)
 	sessionStorage._offsetAngle=offsetang;
 	chart.push("offset_angle",offsetang);
 	chart.push("animation","false");
-	chart.resize(783,430);
+	chart.resize(847,430);
 	var ang=270-offsetang;
 	if(ang<0)
 	{
