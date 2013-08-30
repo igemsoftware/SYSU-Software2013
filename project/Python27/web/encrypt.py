@@ -4,6 +4,7 @@ import os,sys
 import binascii
 base = [str(x) for x in range(10)] + [ chr(x) for x in range(ord('A'),ord('A')+6)]
 
+
 def dec2hex(string_num):
 	num = int(string_num)
 	mid = []
@@ -27,6 +28,7 @@ class Encrypt:
 if __name__ == "__main__":     
 	(pub_key, priv_key) = rsa.key.newkeys(128)
 	print dec2hex(pub_key.n)
+	print len('ba424b4defb0f99797400547324c4a9b7264ef8a')
 	#crypto =  rsa.encrypt('hello', pub_key)
 	#print rsa.decrypt(crypto, priv_key)
 	

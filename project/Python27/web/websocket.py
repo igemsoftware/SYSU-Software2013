@@ -10,6 +10,7 @@ import os
 import group
 import encrypt
 import base64
+import hashlib
 # import make_graph
 
 logging = mlog.logging
@@ -20,14 +21,15 @@ class apis():
   def generateRandomsessionKey(self,message):   
     if self.db.encrypt==None:     
       self.db.encrypt=encrypt.Encrypt()
-    return {'n':encrypt.dec2hex(self.db.encrypt.getPublicKey().n),'e':encrypt.dec2hex(self.db.encrypt.getPublicKey().e)}
-  def decrypt(self,message):
-    return self.db.encrypt.decrypt(message['crypto'])
+    return {'n':encrypt.dec2hex(self.db.encrypt.getPublicKey().n),'e':encrypt.dec2hex(self.db.encrypt.getPublicKey().e)}  
   def get_part(self, message):
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):
     res=json.loads(self.db.encrypt.decrypt(message['data']))
-    print res['password']
+    if len(res['password'])!=40:
+      m = hashlib.sha1()
+      m.update(res['password'])
+      res['password']=m.hexdigest()
     return user.userLogin(self.db,name=res['name'],password=res['password'])
   def getDirList(self,message={'dir':'biobrick'}): 
     return xmlParse.get_allfiledirs(message['dir'])
@@ -51,11 +53,13 @@ class apis():
       group_id=2
     elif message['group_name']=='guest':
       group_id=1
-    print group_id
-    ret= user.registAUser(self.db,message['name'],message['password'],message['email'],group_id,message['gender'])
-    print ret
+    if len(message['password'])!=40:
+      self.db.rememberUser(message['name'],message['password'])
+      m = hashlib.sha1()
+      m.update(message['password'])
+      message['password']=m.hexdigest()
+    ret= user.registAUser(self.db,name=message['name'],password=message['password'],email=message['email'],group_id=group_id,gender=message['gender'])
     return ret
-
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
   "ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));"
