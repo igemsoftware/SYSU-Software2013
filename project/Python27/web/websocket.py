@@ -58,7 +58,7 @@ class apis():
       m = hashlib.sha1()
       m.update(message['password'])
       message['password']=m.hexdigest()
-    ret= user.registAUser(self.db,name=message['name'],password=message['password'],email=message['email'],group_id=group_id,gender=message['gender'])
+    ret= user.registAUser(self.db,name=message['name'],password=message['password'],email=message['email'],group_id=group_id,gender=message['gender'],question=message['question'],answer=message['answer'])
     return ret
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
