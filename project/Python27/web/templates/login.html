@@ -37,10 +37,17 @@
 		<div class="right-part">
 			<div class="reg-test" style="border: 2px solid red; background: #ccc">
 				<h1>只是测试，很快你就看不到它了</h1>
-				<input type="text" name="user" placeholder="username">
-				<input type="password" name="pw" placeholder="password">
-				<input type="text" name="email" placeholder="email">
-				<input type="text" name="gender" placeholder="gender">
+				<label for="user">用户名:</label><input type="text" name="user" placeholder="username">
+				<label for="pw">密码:</label><input type="password" name="pw" placeholder="password"><br/>
+				<label for="email">邮箱:</label><input type="text" name="email" placeholder="email">
+				<label for="gender">性别:</label>
+				<select name="gender">
+					<option>男</option>
+					<option>女</option>
+				</select><br/>
+				<label for="question">密保问题:</label><input type="text" name="question" placeholder="question"><br/>
+				<label for="answer">密保答案:</label><input type="text" name="answer" placeholder="answer">
+
 				<button id="reg">注册</button>
 			</div>
 		</div>

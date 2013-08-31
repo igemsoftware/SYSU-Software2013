@@ -54,17 +54,21 @@ $(document).ready(function() {
 			var username = $("input[name=user]").val(),
 			pw = $("input[name=pw]").val(),
 			email = $("input[name=email]").val(),
-			gender = $("input[name=gender]").val();
+			gender = $("select[name=gender]").val(),
+			question = $("input[name=question]").val(),
+			answer = $("input[name=answer]").val();
 
-			console.log(username + " " + pw + " " + email + " " + gender);
+			// console.log(username + " " + pw + " " + email + " " + gender);
 
 			ws.send(JSON.stringify({
-				'request': 'registAUser',
-				'group_name': 'guest',
-				'name': username,
-				'password': pw,
-				'email': email,
-				'gender': gender
+				'request'		:	'registAUser',
+				'group_name'	:	'guest',
+				'name'			:	username,
+				'password'		:	pw,
+				'email'			:	email,
+				'gender'		:	gender,
+				'question'		:	question,
+				'answer'		:	answer
 			}));
 		});
 
