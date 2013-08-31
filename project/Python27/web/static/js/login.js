@@ -25,6 +25,8 @@ $(document).ready(function() {
 				} else {
 					alert(message.result);
 				}
+			} else if (message.request === "registAUser") {
+				console.log(message.result);
 			}
 		};
 	};
@@ -47,6 +49,24 @@ $(document).ready(function() {
 			ws.send(JSON.stringify({'request': 'userLogin','data':res}));
 		}
 	});
+
+	$("#reg").click(function() {
+			var username = $("input[name=user]").val(),
+			pw = $("input[name=pw]").val(),
+			email = $("input[name=email]").val(),
+			gender = $("input[name=gender]").val();
+
+			console.log(username + " " + pw + " " + email + " " + gender);
+
+			ws.send(JSON.stringify({
+				'request': 'registAUser',
+				'group_name': 'guest',
+				'name': username,
+				'password': pw,
+				'email': email,
+				'gender': gender
+			}));
+		});
 
 	ws.onopen = function() {
 		ws.send(JSON.stringify({

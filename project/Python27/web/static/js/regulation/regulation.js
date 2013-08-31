@@ -43,6 +43,16 @@ $().ready(function() {
     }
   });
 
+  $("#content").click(function() {
+    $("#left-container").css({
+      left: '-270px'
+    });
+
+    $("#right-container").css({
+      right: '-270px'
+    });
+  });
+
 
   // logout
   $("#logout").click(function() {
