@@ -107,6 +107,9 @@ def work(data, database):
     if link["type"] == "Bound":
       groups[link["to"]] = bind(part_list[link["from"]], part_list[link["to"]])
       bound_list[link["from"]] = link["to"]
+      for l2 in data["link"]:
+        if l2["to"] == link["from"]:
+          l2["to"] = link["to"]
       del groups[link["from"]]
   for elem in groups:
     groups[elem] = find_repressor(groups[elem], repressor_list, database)
@@ -124,6 +127,25 @@ def work(data, database):
       groups[link["to"]] = activate(database, groups[link["from"]], groups[link["to"]])
   return (groups, repressor_list, activator_list)
 
+def get_topology(data):
+  in_degree = {}
+  out_degree = {}
+  for part in data["part"]:
+    in_degree[part] = 0
+    out_degree[part] = 0
+  for link in data["link"]:
+    if link["type"] != "Bound":
+      out_degree[link["from"]] += 1
+      in_degree[link["to"]] += 1
+
+  flag = {}
+  for part in data["part"]:
+    if in_degree[part] == 0 and out_degree[part] > 0:
+      flag[part] = "constitutive"
+    else:
+      pass
+
+
 def dump_sbol(network, database):
   data, r_list, a_list = work(network, database)
   sbol = []
@@ -134,46 +156,6 @@ def dump_sbol(network, database):
     dna_sequence = component_union.connect(rule, content)
     sbol.append(sequence_serializer.format_to_json(component_union.formatter_v11(content, dna_sequence)))
   return sbol
-"""
-var genecircuitData = {
-	proteins: [
-		{
-			PoPs: 60,
-			RiPs: 52,
-			copy: 30,
-			repress_rate: 15,
-			induce_rate: 66,
-			before_regulated: 53,
-			after_regulated: 30,
-			after_induced: 20,
-		},
-		{
-			PoPs: 6,
-			RiPs: 50,
-			copy: 71,
-			repress_rate: 15,
-			induce_rate: 66,
-			before_regulated: 25,
-			after_regulated: 53,
-			after_induced: 20,
-		},
-		{
-			PoPs: 46,
-			RiPs: 95,
-			copy: 71,
-			repress_rate: 45,
-			induce_rate: 6,
-			before_regulated: 51,
-			after_regulated: 23,
-			after_induced: 20,
-		},
-	],
-	plasmids: [
-		[{sbol:[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'trans'}, {sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'cis'},{sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}],state:'trans'}],
-		[{sbol:[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'trans'}, {sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'cis'},{sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}],state:'trans'}],
-	]
-}
-"""
 
 def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   ret = {}
@@ -249,8 +231,10 @@ def dump_group(network, database):
     else:
       prev = -1
     # plasmids.append({"id": i, "sbol":grp, "state": "cis", "from": prev})
-    groups[i] = {"sbol":grp, "state": "cis", "from": prev}
+    groups[i] = {"sbol":grp, "state": "cis", "from": prev, "to": []}
     plasmid.append(i)
+  for i in graph:
+    groups[graph[i]]["to"].append(i)
   update_proteins_repress(database, proteins, groups)
   return {"groups": groups, "proteins": proteins, "plasmids": [plasmid]}
 
@@ -318,6 +302,7 @@ def update_controller(db, update_info):
         promoter_grp = gene_circuit["proteins"][i]["grp_id"]
         gene_circuit["proteins"][i]["PoPs"] = promoter_value
         gene_circuit["groups"][promoter_grp][0]["name"] = best_promoter
+
   update_proteins_repress(db, gene_circuit["proteins"],\
       gene_circuit["groups"])
   return gene_circuit
