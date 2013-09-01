@@ -103,6 +103,8 @@ def work(data, database):
   for part in data["part"]:
     groups[part["id"]] = pre_work(part)
     part_list[part["id"]] = part["name"]
+
+  # combine bound link
   for link in data["link"]:
     if link["type"] == "Bound":
       groups[link["to"]] = bind(part_list[link["from"]], part_list[link["to"]])
@@ -111,9 +113,11 @@ def work(data, database):
         if l2["to"] == link["from"]:
           l2["to"] = link["to"]
       del groups[link["from"]]
+
+  # replace repressor with exact component
   for elem in groups:
     groups[elem] = find_repressor(groups[elem], repressor_list, database)
-  #groups = [find_activator(item, activator_list, database) for item in groups]
+    groups[elem] = find_activator(groups[elem], repressor_list, database)
   for link in data["link"]:
     # TODO: inducer
     if link["from"] not in groups:
@@ -125,25 +129,15 @@ def work(data, database):
       groups[link["to"]] = repress(database, groups[link["from"]], groups[link["to"]])
     if link["type"] == "activator_protein":
       groups[link["to"]] = activate(database, groups[link["from"]], groups[link["to"]])
-  return (groups, repressor_list, activator_list)
+  return (groups, repressor_list, activator_list, bound_list)
 
-def get_topology(data):
-  in_degree = {}
-  out_degree = {}
-  for part in data["part"]:
-    in_degree[part] = 0
-    out_degree[part] = 0
-  for link in data["link"]:
-    if link["type"] != "Bound":
-      out_degree[link["from"]] += 1
-      in_degree[link["to"]] += 1
+def get_start_pos(groups):
+  start_pos = []
+  for i in groups:
+    if groups[i]["from"] == -1:
+      start_pos += i
+  return i
 
-  flag = {}
-  for part in data["part"]:
-    if in_degree[part] == 0 and out_degree[part] > 0:
-      flag[part] = "constitutive"
-    else:
-      pass
 
 
 def dump_sbol(network, database):
@@ -158,6 +152,7 @@ def dump_sbol(network, database):
   return sbol
 
 def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
+  # TODO add pro_type here, merge pro_name here, indexed by pro_id instead.
   ret = {}
   ret["grp_id"] = grp_id
   promoter_info= database.select_with_name("promoter", group[0])
@@ -214,10 +209,11 @@ def get_graph(link):
 
 def dump_group(network, database):
   graph = get_graph(network["link"])
-  data, r_list, a_list = work(network, database)
+  data, r_list, a_list, b_list = work(network, database)
   groups = {}
   proteins = {}
   plasmid = []
+  print data
   for i in data:
     proteins[data[i][2]] = get_pro_info(database, 2, data[i], i)
     if len(data[i]) == 6:
