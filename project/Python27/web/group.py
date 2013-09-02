@@ -286,6 +286,7 @@ def update_controller(db, update_info):
     prev_grp = group["from"]
     promoter_value = detail["new_value"] / 100
     repressor_list = detail["repressor_list"]
+    activator_list = detail["activator_list"]
     best_promoter = db.getPromoterNearValue(promoter_value, repressor_list)
     gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter["Number"]
     pro1_id = gene_circuit["groups"][grp_id]["sbol"][2]["id"]
