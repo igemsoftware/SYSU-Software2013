@@ -256,6 +256,7 @@ var plasmid =  {
 			group.init(aTextureId + "-sbol-" + i.toString(), aData[i]);
 		}
 		checkEmptyPlasmid();
+		$("#plasmids-view").mCustomScrollbar("update");
 	},
 	setData: function(aTextureId, aData) {
 		for(var i = 0; i < aData.length; i++) {

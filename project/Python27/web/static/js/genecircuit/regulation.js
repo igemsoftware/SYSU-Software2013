@@ -284,15 +284,20 @@ $().ready(function() {
           }));
         });
       } else if (message.request == "loadUserFile") {
-        console.log(message.result);
+        console.log("loadUserFile", message.result);
       } else if (message.request == "changeRBS") {
 				/* console.log(message.result); */
-				console.log(genecircuitData);
-				init(genecircuitData);
+				console.log("changeRBS", message.result);
+				// console.log(genecircuitData); 
+				// init(genecircuitData); 
 			} else if (message.request == "getGroup") {
-				init(genecircuitData);
-			} else if (message.request == "getPlasmidSbol")
-				console.log(message)
+				console.log("getGroup", message.result);
+				// init(genecircuitData); 
+			} else if (message.request == "getPlasmidSbol") {
+				console.log("getPlasmidSbol", message);
+			} else if (message.request == "loadSBOL") {
+				console.log("loadSBOL", message);
+			}
     };
   }
 
@@ -323,6 +328,10 @@ $().ready(function() {
 
 		ws.send(JSON.stringify({
 			'request': 'getPlasmidSbol',
+		}));
+
+		ws.send(JSON.stringify({
+			'request': 'loadSBOL',
 		}));
   }
 
