@@ -98,6 +98,7 @@ def work(data, database):
   groups = {}
   part_list = {}
   bound_list = {}
+  rev_bound_list = {}
   repressor_list = []
   activator_list = []
   for part in data["part"]:
@@ -109,6 +110,7 @@ def work(data, database):
     if link["type"] == "Bound":
       groups[link["to"]] = bind(part_list[link["from"]], part_list[link["to"]])
       bound_list[link["from"]] = link["to"]
+      rev_bound_list[link["to"]] = link["from"]
       for l2 in data["link"]:
         if l2["to"] == link["from"]:
           l2["to"] = link["to"]
@@ -129,16 +131,14 @@ def work(data, database):
       groups[link["to"]] = repress(database, groups[link["from"]], groups[link["to"]])
     if link["type"] == "activator_protein":
       groups[link["to"]] = activate(database, groups[link["from"]], groups[link["to"]])
-  return (groups, repressor_list, activator_list, bound_list)
+  return (groups, repressor_list, activator_list, rev_bound_list)
 
 def get_start_pos(groups):
   start_pos = []
   for i in groups:
     if groups[i]["from"] == -1:
-      start_pos += i
-  return i
-
-
+      start_pos.append(i)
+  return start_pos
 
 def dump_sbol(network, database):
   data, r_list, a_list = work(network, database)
@@ -155,6 +155,7 @@ def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   # TODO add pro_type here, merge pro_name here, indexed by pro_id instead.
   ret = {}
   ret["grp_id"] = grp_id
+  ret["name"] = group[protein_idx]
   promoter_info= database.select_with_name("promoter", group[0])
   rbs_info= database.select_with_name("RBS", group[protein_idx - 1])
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
@@ -175,8 +176,8 @@ def get_index_in_group(pro_name, group):
     if group[i]["name"] == pro_name:
       return i
 
-def update_pro_info(database, protein, pro_name, grp):
-  idx = get_index_in_group(pro_name, grp)
+def update_pro_info(database, protein, grp):
+  idx = get_index_in_group(protein["name"], grp)
   concen, repress_rate = modeling.concen_without_repress(database, grp, protein["copy"], idx)
   protein["repress_rate"] = repress_rate * 100
   protein["concen"] = concen
@@ -187,12 +188,12 @@ def update_proteins_repress(database, protein, groups):
     pro2_grp_id = protein[pro]["grp_id"]
     pro1_grp_id = groups[pro2_grp_id]["from"]
     if pro1_grp_id == -1:
-      protein[pro] = update_pro_info(database, protein[pro], pro,\
+      protein[pro] = update_pro_info(database, protein[pro],\
           groups[pro2_grp_id]["sbol"])
     else:
       grp1 = groups[pro1_grp_id]["sbol"]
       grp2 = groups[pro2_grp_id]["sbol"]
-      pro1 = grp1[-2]["name"]
+      pro1 = grp1[-2]["id"]
       copy1 = protein[pro1]["copy"]
       copy2 = protein[pro]["copy"]
       concen, repress_rate = modeling.repress_rate(database, grp1, copy1,\
@@ -213,15 +214,19 @@ def dump_group(network, database):
   groups = {}
   proteins = {}
   plasmid = []
-  print data
   for i in data:
-    proteins[data[i][2]] = get_pro_info(database, 2, data[i], i)
+    # proteins[data[i][2]] = get_pro_info(database, 2, data[i], i)
+    proteins[i] = get_pro_info(database, -2, data[i], i)
     if len(data[i]) == 6:
-      proteins[data[i][4]] = get_pro_info(database, 4, data[i], i)
+      # proteins[data[i][4]] = get_pro_info(database, 4, data[i], i)
+      proteins[b_list[i]] = get_pro_info(database, 2, data[i], i)
     grp = []
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
       grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
+    grp[-2]["id"] = i
+    if len(data[i]) == 6:
+      grp[2]["id"] = b_list[i]
     if i in graph:
       prev = graph[i]
     else:
