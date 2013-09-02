@@ -20,3 +20,5 @@
 <br>
 2013.8.03:数据库增加protein条目
 <img src="http://ww3.sinaimg.cn/mw690/b8700d2fgw1e79iyltte7j21400l4wl5.jpg" width="690" height="227" />
+2013.8.30:更改plasmid css
+<img src="http://ww2.sinaimg.cn/mw690/b8700d2fgw1e84yvscli8j21hc0qj42y.jpg" width="690" height="227" />

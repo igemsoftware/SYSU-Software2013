@@ -145,9 +145,9 @@ class SqliteDatabase:
 		print self.__cx.commit()
 		return 'deleteUserData succeed'	
 
-	def insertAUser(self,name,password,email,group_id,gender,question,answer):
+	def insertAUser(self,name,password,email,group_id,gender):
 		nextId=self.getMaxUserId()+1
-		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d,"%s","%s");'%(nextId,name,email,password,group_id,gender,question,answer)
+		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d);'%(nextId,name,email,password,group_id,gender)
 		self.logger.debug('insert a user: %s ' %excuteString)
 		self.__cursor.execute(excuteString)
 		self.__cx.commit()
@@ -170,20 +170,6 @@ class SqliteDatabase:
 		else:
 			return 'Password not correct!'
 	
-	def getUserGroup(self,username):
-		excuteString="SELECT [user_group].[id],[user_group].[name],  [user_group].[canReadPartList],[user_group].[canWritePartList] FROM user_group,user_list WHERE user_list.name = '%s' AND user_list.group_id = user_group.id" %(username)
-		self.logger.debug(excuteString)
-		self.__cursor.execute(excuteString)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		if len(decodejson)==0:
-			return 'No such a user!'
-		else:
-			for item in decodejson[0]:				
-				if decodejson[0][item] is None:
-					decodejson[0][item]=0
-			return decodejson[0]
-
 	def rememberUser(self,username,pwd):	
 		if not self.isRecordExist('remember',recs={'username':username}):
 			excuteString='INSERT INTO remember VALUES("%s","%s");'%(username,pwd)
@@ -299,6 +285,7 @@ class SqliteDatabase:
 			if self.find_repressor_with_promoter(item["Number"]) not in repressor_list:
 				return item
 
+<<<<<<< HEAD
 	def getRepressorNearValue(self, idealValue, repressor_list):
 		self.__cursor.execute('select * from repressor order by abs(repressor.K1-%f)\
 				limit 0,%d' % (idealValue, len(repressor_list)+1))
@@ -309,6 +296,8 @@ class SqliteDatabase:
 				return item
 
 
+=======
+>>>>>>> 533f344b570674a255957cbb0817405d7e26ead7
 	"""
 		test if there is the same record in the table
 		@author: Jiexin Guo		
@@ -345,7 +334,6 @@ class SqliteDatabase:
 		
 if __name__=="__main__":
 	sql=SqliteDatabase()
-	print sql.getUserGroup('Bobby')
 	#sql.addColumnToTable('part_relation','testw','integer',' 0')
 	sql.demo1()
 	#print sql.isRecordExist('part_list')

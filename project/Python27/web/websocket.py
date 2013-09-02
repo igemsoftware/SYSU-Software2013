@@ -9,6 +9,8 @@ import xmlParse
 import os
 import group
 import encrypt
+import base64
+import hashlib
 # import make_graph
 
 logging = mlog.logging
@@ -16,15 +18,19 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
-    self.sessionKey=''
-  def generateRandomsessionKey(self,message):    
-    self.encrypt=encrypt.Encrypt()    
-    print self.encrypt.getPublicKey()
-    return {'n':str(self.encrypt.getPublicKey().n),'e':str(self.encrypt.getPublicKey().e)}
+  def generateRandomsessionKey(self,message):   
+    if self.db.encrypt==None:     
+      self.db.encrypt=encrypt.Encrypt()
+    return {'n':encrypt.dec2hex(self.db.encrypt.getPublicKey().n),'e':encrypt.dec2hex(self.db.encrypt.getPublicKey().e)}  
   def get_part(self, message):
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):
-    return user.userLogin(self.db,name=message['name'],password=message['password'])
+    res=json.loads(self.db.encrypt.decrypt(message['data']))
+    if len(res['password'])!=40:
+      m = hashlib.sha1()
+      m.update(res['password'])
+      res['password']=m.hexdigest()
+    return user.userLogin(self.db,name=res['name'],password=res['password'])
   def getDirList(self,message={'dir':'biobrick'}): 
     return xmlParse.get_allfiledirs(message['dir'])
   def getBiobrick(self,message={'path':'biobrick/Terminators/BBa_B0010.xml'}):
@@ -47,11 +53,13 @@ class apis():
       group_id=2
     elif message['group_name']=='guest':
       group_id=1
-    print group_id
-    ret= user.registAUser(self.db,message['name'],message['password'],message['email'],group_id,message['gender'])
-    print ret
+    if len(message['password'])!=40:
+      self.db.rememberUser(message['name'],message['password'])
+      m = hashlib.sha1()
+      m.update(message['password'])
+      message['password']=m.hexdigest()
+    ret= user.registAUser(self.db,name=message['name'],password=message['password'],email=message['email'],group_id=group_id,gender=message['gender'],question=message['question'],answer=message['answer'])
     return ret
-
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
   "ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));"
@@ -85,6 +93,9 @@ class apis():
     sbol = component_union.get_sbol(message["component"], rule)
     ret = sequence_serializer.format_to_json(sbol)
     return ret
+  def updateGeneCircuit(self, message):
+    return group.update_controller(self.db, message['data'])
+
   def changeRBS(self,message):
     return {"sbol":"[[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': u'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}]]","PoPs":6,"RiPS":5,"copy":7,"repress_rate":0.15,"induce_rate":0.66}
   def loadSBOL(self,message):    

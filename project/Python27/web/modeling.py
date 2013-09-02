@@ -117,13 +117,13 @@ def repress_rate(database, grp1, CopyNumber1, grp2, CopyNumber2):
   DegRatemPro2 = 0.1
   DegRatemRNA1 = 0.1
   DegRatemRNA2 = 0.1
-  repressor = database.select_with_name("repressor", grp1[-2])
+  repressor = database.select_with_name("repressor", grp1[-2]["name"])
   if repressor is None:
-    repressor = database.select_with_name("activator", grp1[-2])
-  promoter1 = database.select_with_name("promoter", grp1[0])
-  promoter2 = database.select_with_name("promoter", grp2[0])
-  rbs1 = database.select_with_name("RBS", grp1[1])
-  rbs2 = database.select_with_name("RBS", grp1[1])
+    repressor = database.select_with_name("activator", grp1[-2]["name"])
+  promoter1 = database.select_with_name("promoter", grp1[0]["name"])
+  promoter2 = database.select_with_name("promoter", grp2[0]["name"])
+  rbs1 = database.select_with_name("RBS", grp1[3]["name"])
+  rbs2 = database.select_with_name("RBS", grp1[1]["name"])
   c1 = CopyNumber1 * (promoter1["MPPromoter"] - LeakageRate1)
   c2 = CopyNumber2 * (promoter2["MPPromoter"] - LeakageRate2)
   c_p1 = rbs1["MPRBS"] * (c1 + LeakageRate1) / (DegRatemPro1 * DegRatemRNA1)
@@ -131,6 +131,12 @@ def repress_rate(database, grp1, CopyNumber1, grp2, CopyNumber2):
   repress_rate = (c2 / (1 + (c_p1 / repressor["K1"]) ** repressor["HillCoeff1"])\
       + LeakageRate2) / (c2 + LeakageRate2)
   return (c_p2, repress_rate)
+
+def concen_without_repress(database, group, CopyNumber, pro_idx):
+  promoter = database.select_with_name("promoter", group[0]["name"])
+  rbs = database.select_with_name("RBS", group[pro_idx - 1]["name"])
+  return (CopyNumber * promoter["MPPromoter"] * rbs["MPRBS"], 1)
+
 
 if __name__=="__main__":
 	sql=SqliteDatabase()

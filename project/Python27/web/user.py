@@ -53,6 +53,9 @@ def userLogout(database):
 def getUserFileList(database):
 	return database.getUserFileNameList()
 
+def getUserGroup(database,username):
+	return database.getUserGroup(username)
+
 def saveUserData(database,datastr,fileName,fileType):
     datastr=jsonUtil.turnStringDoubleQuoteToSingleQuote(datastr)
     if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName,'fileType':fileType})):
@@ -78,17 +81,13 @@ def loadUserData(database,fileName, fileType):
 	return "no such file"
 
 "create a new user whose name cannot be the same as those in the database"
-def registAUser(database,name,password,email,group_id,gender):
-    if isUserLogined(database) is True:
-        if database.isRecordExist(tableName='user_list',recs={'name':name}):
-            database.logger.debug('user name exist: %s'%name)
-            return 'user with the same name exist!'
-        database.insertAUser(name,password,email,group_id,gender)
-        return 'registAUser success'
-    else:
-        database.logger.debug('you have not logined in!')
-        return 'you have not logined in yet!'
-
+def registAUser(database,name,password,email,group_id,gender,question,answer):
+    if database.isRecordExist(tableName='user_list',recs={'name':name}):
+        database.logger.debug('user name exist: %s'%name)
+        return 'user with the same name exist!'
+    database.insertAUser(name,password,email,group_id,gender,question,answer)
+    return 'registAUser success'
+    
 "get the name of who has been logined"
 def getLoginedUserName(database):
 	if(isUserLogined(database)):
