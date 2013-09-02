@@ -144,9 +144,9 @@ class SqliteDatabase:
 		print self.__cx.commit()
 		return 'deleteUserData succeed'	
 
-	def insertAUser(self,name,password,email,group_id):
+	def insertAUser(self,name,password,email,group_id,gender):
 		nextId=self.getMaxUserId()+1
-		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d);'%(nextId,name,password,email,group_id)
+		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d);'%(nextId,name,password,email,group_id,gender)
 		self.logger.debug('insert a user: %s ' %excuteString)
 		self.__cursor.execute(excuteString)
 		self.__cx.commit()

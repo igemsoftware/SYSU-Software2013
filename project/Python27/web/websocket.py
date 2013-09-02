@@ -17,12 +17,10 @@ class apis():
   def __init__(self, db):
     self.db = db
     self.sessionKey=''
-  def generateRandomsessionKey(self,message):
-    if message.has_key('key_length'):
-      self.sessionKey=encrypt.generate_passwd(message['key_length'])
-    else:
-      self.sessionKey=encrypt.generate_passwd()
-    return self.sessionKey
+  def generateRandomsessionKey(self,message):    
+    self.encrypt=encrypt.Encrypt()    
+    print self.encrypt.getPublicKey()
+    return {'n':str(self.encrypt.getPublicKey().n),'e':str(self.encrypt.getPublicKey().e)}
   def get_part(self, message):
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):
@@ -44,6 +42,15 @@ class apis():
       return user.saveUserData(self.db,message['data'],"default",message['fileType'])
     else:
       return user.saveUserData(self.db,message['data'],"default","default")
+  def registAUser(self,message):
+    if message['group_name']=='administrator':
+      group_id=2
+    elif message['group_name']=='guest':
+      group_id=1
+    print group_id
+    ret= user.registAUser(self.db,message['name'],message['password'],message['email'],group_id,message['gender'])
+    print ret
+    return ret
 
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
