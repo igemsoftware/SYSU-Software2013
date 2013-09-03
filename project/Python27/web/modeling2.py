@@ -1,3 +1,5 @@
+from collections import deque
+
 class Struct1_SYSU_Software:
     Type = ''
     CopyNumber  = None
@@ -35,28 +37,39 @@ class Struct3_SYSU_Software:
         self.HillCoeff1  = hillcoeff1
         self.K1          = k1
 
-def SteadyState_Concen(database, copynumber, circuit):
+def SteadyState_Concen(database, proteins, circuit, start_pos):
     # circuit: [Promoter, RBS, ObjectGene, Terminator] * size
-    size = len(circuit)
-    Plasmid    = [None] * size
-    ObjGene    = [None] * size
-    ObjConcen  = [None] * size
-    for n in range(size):
-        promoter   = database.select_with_name('Promoter', circuit[n][0]['Name'])
-        rbs        = database.select_with_name('RBS', circuit[n][1]['Name'])
+    # size = len(circuit)
+    Plasmid    = {}
+    ObjGene    = {}
+    ObjConcen  = {}
+    queue = deque([start_pos])
+    while len(queue) != 0:
+        n = queue.popleft()
+        cur_group = circuit[n]["sbol"]
+        promoter   = database.select_with_name('Promoter', cur_group[0]['name'])
+        rbs        = database.select_with_name('RBS', cur_group[1]['name'])
         objectgene = {'DegRatemRNA': 0.00288, 'DegRatePro': 0.00288}
-        terminator = database.select_with_naem('Terminator', circuit[n][-1]['Name'])
+        terminator = database.select_with_name('Terminator', cur_group[-1]['name'])
         Plasmid[n] = Struct1_SYSU_Software()
-        Plasmid[n].SetData(promoter['Type'], copynumber[n], promoter['MPPromoter'], promoter['PoPS'], promoter['LeakageRate'], terminator['TerEff'])
+        promoter_type = circuit[n]["type"]
+        Plasmid[n].SetData(promoter_type, proteins[n]["copy"], promoter['MPPromoter'], promoter['MPPromoter'], promoter['LeakageRate'], terminator['Efficiency'])
         ObjGene[n] = Struct2_SYSU_Software()
-        ObjGene[n].SetData(rbs['RIPS'], objectgene['DegRatemRNA'], objectgene['DegRatePro'])
-    for n in range(size):
+        ObjGene[n].SetData(rbs['MPRBS'], objectgene['DegRatemRNA'], objectgene['DegRatePro'])
+        for i in circuit[n]["to"]:
+            queue.append(i)
+
+    queue = deque([start_pos])
+    while len(queue) != 0:
+        n = queue.popleft()
         if Plasmid[n].Type == 'Constitutive':
             ObjConcen[n] = Plasmid[n].CopyNumber * Plasmid[n].TerEff * (Plasmid[n].PoPS        / ObjGene[n].DegRatemRNA) * (ObjGene[n].RIPS / ObjGene[n].DegRatePro)
         elif Plasmid[n].Type == 'Positive':
             ObjConcen[n] = Plasmid[n].CopyNumber * Plasmid[n].TerEff * (Plasmid[n].LeakageRate / ObjGene[n].DegRatemRNA) * (ObjGene[n].RIPS / ObjGene[n].DegRatePro)
         elif Plasmid[n].Type == 'Negative':
             ObjConcen[n] = Plasmid[n].CopyNumber * Plasmid[n].TerEff * (Plasmid[n].MPPromoter  / ObjGene[n].DegRatemRNA) * (ObjGene[n].RIPS / ObjGene[n].DegRatePro)
+        for i in circuit[n]["to"]:
+            queue.append(i)
     return ObjConcen
 
 def SteadyState_Concen_ActRep(database, copynumber, circuit):
@@ -105,7 +118,7 @@ def SteadyState_Concen_ActRep(database, copynumber, circuit):
             ReguConcen[n] = Plasmid[n].CopyNumber * Plasmid[n].TerEff * (((Plasmid[n].MPPromoter - Plasmid[n].LeakageRate) / (1 + pow(ReguConcen[n-1] / ReguGene[n-1].K1, ReguGene[n-1].HillCoeff1)) + Plasmid[n].LeakageRate) / ReguGene[n].DegRatemRNA) * (ReguGene[n].RIPS /ReguGene[n].DegRatePro)
     return ObjConcen
 
-def SteadyState_Concen_CorepInd(daatbase, copynumber, circuit, concen, corepind):
+def SteadyState_Concen_CorepInd(database, copynumber, circuit, concen, corepind):
     # circuit: [Promoter, RBS1, ObjectGene, RBS2/None, RegulationGene(Activator/Repressor/None), Terminator] * size
     # concen: concentration of co-repressor or inducer
     # corepind: co-repressor or inducer, corepind[0] = None for circuit[0] is express without regulation
@@ -156,6 +169,41 @@ def SteadyState_Concen_CorepInd(daatbase, copynumber, circuit, concen, corepind)
             ReguConcen[n] = Plasmid[n].CopyNumber * Plasmid[n].TerEff * (((Plasmid[n].MPPromoter - Plasmid[n].LeakageRate) / (1 + pow(ReguGene[n-1].K1 * CorepIndConst[n] / ReguConcen[n-1], ReguGene[n-1].HillCoeff1)) + Plasmid[n].LeakageRate) / ReguGene[n].DegRatemRNA) * (ReguGene[n].RIPS / ReguGene[n].DegRatePro)
         elif Plasmid[n].Type == 'Negative':
             ObjConcen [n] = Plasmid[n].CopyNumber * Plasmid[n].TerEff * (((Plasmid[n].MPPromoter - Plasmid[n].LeakageRate) / (1 + pow(ReguConcen[n-1] / ReguGene[n-1].K1 / CorepIndConst[n], ReguGene[n-1].HillCoeff1)) + Plasmid[n].LeakageRate) / ObjGene [n].DegRatemRNA) * (ObjGene [n].RIPS / ObjGene [n].DegRatePro)
-            if n == size-2: continue
+            if n == size-1: continue
             ReguConcen[n] = Plasmid[n].CopyNumber * Plasmid[n].TerEff * (((Plasmid[n].MPPromoter - Plasmid[n].LeakageRate) / (1 + pow(ReguConcen[n-1] / ReguGene[n-1].K1 / CorepIndConst[n], ReguGene[n-1].HillCoeff1)) + Plasmid[n].LeakageRate) / ReguGene[n].DegRatemRNA) * (ReguGene[n].RIPS / ReguGene[n].DegRatePro)
     return ObjConcen
+
+
+if __name__ == "__main__":
+  import database
+  db = database.SqliteDatabase()
+  circuit = {2: {'from': -1, 'sbol': [{'type': 'Regulatory', 'name':
+    'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding',
+      'name': 'BBa_C0060', 'id': 1}, {'type': 'RBS', 'name': 'BBa_J61104'},
+    {'type': 'Coding', 'name': u'BBa_K518003', 'id': 2}, {'type': 'Terminator',
+      'name': 'BBa_B0013'}], 'type': 'Constitutive', 'state': 'cis', 'to': [3,
+        4]}, 3: {'from': 2, 'sbol': [{'type': 'Regulatory', 'name':
+          'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type':
+            'Coding', 'name': 'BBa_C0160', 'id': 3}, {'type': 'Terminator',
+              'name': 'BBa_B0013'}], 'type': 'Negative', 'state': 'cis', 'to':
+            []}, 4: {'from': 2, 'sbol': [{'type': 'Regulatory', 'name':
+              'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type':
+                'Coding', 'name': 'BBa_C0178', 'id': 4}, {'type': 'Terminator',
+                  'name': 'BBa_B0013'}], 'type': 'Negative', 'state': 'cis',
+                'to': []}}
+
+  proteins = {1: {'RiPs': 11.49, 'name': 'BBa_C0060',
+    'before_regulated': 0, 'concen': 7.95908853, 'grp_id': 2, 'PoPs': 94.89,
+    'repress_rate': 100, 'induce_rate': 0, 'after_induced': 0, 'copy': 3.0,
+    'after_regulated': 0}, 2: {'RiPs': 11.49, 'name': u'BBa_K518003',
+      'before_regulated': 0, 'concen': 7.95908853, 'grp_id': 2, 'PoPs': 94.89,
+      'repress_rate': 100, 'induce_rate': 0, 'after_induced': 0, 'copy': 3.0,
+      'after_regulated': 0}, 3: {'RiPs': 11.49, 'name': 'BBa_C0160',
+        'before_regulated': 0, 'concen': 383.20873499999993, 'grp_id': 3,
+        'PoPs': 55.55, 'repress_rate': 0.2998365890589771, 'induce_rate': 0,
+        'after_induced': 0, 'copy': 3.0, 'after_regulated': 0}, 4: {'RiPs':
+          11.49, 'name': 'BBa_C0178', 'before_regulated': 0, 'concen':
+          383.20873499999993, 'grp_id': 4, 'PoPs': 55.55, 'repress_rate':
+          0.2998365890589771, 'induce_rate': 0, 'after_induced': 0, 'copy':
+          3.0, 'after_regulated': 0}}
+  print SteadyState_Concen(db, proteins, circuit, 2)
