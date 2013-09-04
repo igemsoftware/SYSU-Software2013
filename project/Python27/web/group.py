@@ -375,4 +375,3 @@ if __name__ == "__main__":
                                 {'type': 'Terminator', 'name': 'BBa_B0013'}],
                               'type': 'Negative', 'state': 'cis', 'to': []}}}}
   print update_controller(db, update_info)
-
