@@ -15,22 +15,36 @@
 	opacity:0.3;
 }
 
-#content {
-	position: static;
-	width: 1067px;
-	height: 90%;
-	/* height: 600px; */
-	min-width: 1067px;
-	min-height: 90%;
-	/* min-height: 600px; */
-	/* min-width: 0px; */
-	/* min-height: 10000px; */
-	margin: 20px auto;
-	top: 20px;
-	background: #FFF;
-	color: #000;
-	/* border-radius: 10px; */
+#genecircuit-canvas {
+	margin: 0 auto;
+	width: 1284px;
+	height: 534px;
+	border-radius: 6px;
+	background-color: #ebebeb;
 }
+
+#content {
+	/* position: static; */
+	/* width: 1067px; */
+	/* height: 90%; */
+	/* /* height: 600px; */ 
+	/* min-width: 1067px; */
+	/* min-height: 90%; */
+	/* /* min-height: 600px; */ 
+	/* /* min-width: 0px; */ 
+	/* /* min-height: 10000px; */ 
+	/* margin: 20px auto; */
+	/* top: 20px; */
+	/* background: #FFF; */
+	/* color: #000; */
+	/* /* border-radius: 10px; */ 
+}
+
+.header .nav .pointer-arrow {
+	left: 240px;
+}
+
+
 
 #content-row1 {
 	width: 100%;
@@ -107,7 +121,8 @@
 
 .proteins {
 	float: left;
-	width: 245px;
+	/* width: 245px; */
+	width: 295px;
 	margin: 2px;
 	border: dashed 1px #A29E95;
 	border-radius: 5px;
@@ -291,7 +306,7 @@
 	/* margin: 3px 0 3px 3px; */
 	/* padding: 1.8px; */
 	border: dashed 1.2px #9FB4A9;
-	background: #FFF;
+	/* background: #FFF; */
 	/* letter-spacing: -4px; */
 }
 
@@ -435,6 +450,10 @@
 	visibility: hidden;
 }
 
+.plasmids .label {
+	vertical-align: middle;
+}
+
 .cmd-del {
 	position: absolute;
 	right: 0;
@@ -455,3 +474,4 @@
 	cursor: pointer;
 	background: #b63434;
 }
+

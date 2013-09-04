@@ -9,68 +9,265 @@
 
 // document ready
 
-var genecircuitData = {
-	proteins: [
-		{
-			PoPs: 60,
-			RiPs: 52,
-			copy: 30,
-			repress_rate: 15,
-			induce_rate: 66,
-			before_regulated: 53,
-			after_regulated: 30,
-			after_induced: 20,
-		},
-		{
-			PoPs: 6,
-			RiPs: 50,
-			copy: 71,
-			repress_rate: 15,
-			induce_rate: 66,
-			before_regulated: 25,
-			after_regulated: 53,
-			after_induced: 20,
-		},
-		{
-			PoPs: 46,
-			RiPs: 95,
-			copy: 71,
-			repress_rate: 45,
-			induce_rate: 6,
-			before_regulated: 51,
-			after_regulated: 23,
-			after_induced: 20,
-		},
-	],
-	plasmids: [
-		[{sbol:[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'trans'}, {sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'cis'},{sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}],state:'trans'}],
-		[{sbol:[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'trans'}, {sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'cis'},{sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}],state:'trans'}],
-	]
+// a_why_begin 
+
+var genecircuitData = 
+{
+    // "detail": { 
+        // "type": "copy", 
+        // "pro_id": 1, 
+        // "new_value": 22.22, 
+        // "repressor_list": [ 
+            //  
+        // ] 
+    // }, 
+    // "gene_circuit": { 
+        'proteins': {
+            1: {
+                'RiPs': 11.49,
+                'name': 'BBa_C0060',
+                'before_regulated': 0,
+                'concen': 7.95908853,
+                'grp_id': 2,
+                'PoPs': 94.89,
+                'repress_rate': 100,
+                'induce_rate': 0,
+                'after_induced': 0,
+                'copy': 73.0,
+                'after_regulated': 0
+            },
+            2: {
+                'RiPs': 11.49,
+                'name': 'BBa_K518003',
+                'before_regulated': 0,
+                'concen': 7.95908853,
+                'grp_id': 2,
+                'PoPs': 94.89,
+                'repress_rate': 100,
+                'induce_rate': 0,
+                'after_induced': 0,
+                'copy': 73.0,
+                'after_regulated': 0
+            },
+            3: {
+                'RiPs': 11.49,
+                'name': 'BBa_C0160',
+                'before_regulated': 0,
+                'concen': 383.20873499999993,
+                'grp_id': 3,
+                'PoPs': 55.55,
+                'repress_rate': 0.2998365890589771,
+                'induce_rate': 0,
+                'after_induced': 0,
+                'copy': 73.0,
+                'after_regulated': 0
+            },
+            4: {
+                'RiPs': 11.49,
+                'name': 'BBa_C0178',
+                'before_regulated': 0,
+                'concen': 383.20873499999993,
+                'grp_id': 4,
+                'PoPs': 55.55,
+                'repress_rate': 0.2998365890589771,
+                'induce_rate': 0,
+                'after_induced': 0,
+                'copy': 73.0,
+                'after_regulated': 0
+            }
+        },
+        'plasmids': [
+            [
+                2,
+                3,
+                4
+            ]
+        ],
+        'groups': {
+            2: {
+                'from': -1,
+                'sbol': [
+                    {
+                        'type': 'Regulatory',
+                        'name': 'BBa_I712074'
+                    },
+                    {
+                        'type': 'RBS',
+                        'name': 'BBa_J61104'
+                    },
+                    {
+                        'type': 'Coding',
+                        'name': 'BBa_C0060',
+                        'id': 1
+                    },
+                    {
+                        'type': 'RBS',
+                        'name': 'BBa_J61104'
+                    },
+                    {
+                        'type': 'Coding',
+                        'name': 'BBa_K518003',
+                        'id': 2
+                    },
+                    {
+                        'type': 'Terminator',
+                        'name': 'BBa_B0013'
+                    }
+                ],
+                'type': 'Constitutive',
+                'state': 'cis',
+                'to': [
+                    3,
+                    4
+                ]
+            },
+            3: {
+                'from': 2,
+                'sbol': [
+                    {
+                        'type': 'Regulatory',
+                        'name': 'BBa_J64000'
+                    },
+                    {
+                        'type': 'RBS',
+                        'name': 'BBa_J61104'
+                    },
+                    {
+                        'type': 'Coding',
+                        'name': 'BBa_C0160',
+                        'id': 3
+                    },
+                    {
+                        'type': 'Terminator',
+                        'name': 'BBa_B0013'
+                    }
+                ],
+                'type': 'Negative',
+                'state': 'cis',
+                'to': [
+                    
+                ]
+            },
+            4: {
+                'from': 2,
+                'sbol': [
+                    {
+                        'type': 'Regulatory',
+                        'name': 'BBa_J64000'
+                    },
+                    {
+                        'type': 'RBS',
+                        'name': 'BBa_J61104'
+                    },
+                    {
+                        'type': 'Coding',
+                        'name': 'BBa_C0178',
+                        'id': 4
+                    },
+                    {
+                        'type': 'Terminator',
+                        'name': 'BBa_B0013'
+                    }
+                ],
+                'type': 'Negative',
+                'state': 'cis',
+                'to': [
+                    
+                ]
+            }
+        }
+    // } 
 }
+// var genecircuitData = { 
+	// proteins: [ 
+		// { 
+			// PoPs: 60, 
+			// RiPs: 52, 
+			// copy: 30, 
+			// repress_rate: 15, 
+			// induce_rate: 66, 
+			// before_regulated: 53, 
+			// after_regulated: 30, 
+			// after_induced: 20, 
+		// }, 
+		// { 
+			// PoPs: 6, 
+			// RiPs: 50, 
+			// copy: 71, 
+			// repress_rate: 15, 
+			// induce_rate: 66, 
+			// before_regulated: 25, 
+			// after_regulated: 53, 
+			// after_induced: 20, 
+		// }, 
+		// { 
+			// PoPs: 46, 
+			// RiPs: 95, 
+			// copy: 71, 
+			// repress_rate: 45, 
+			// induce_rate: 6, 
+			// before_regulated: 51, 
+			// after_regulated: 23, 
+			// after_induced: 20, 
+		// }, 
+	// ], 
+	// plasmids: [ 
+		// [{sbol:[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'trans'}, {sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'cis'},{sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}],state:'trans'}], 
+		// [{sbol:[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'trans'}, {sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], state:'cis'},{sbol:[{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}],state:'trans'}], 
+	// ] 
+// } 
 
 var dataCollection = {
-	proteins: [],
-	plamids: [],
+	// proteins: [], 
+	// plamids: [], 
 }
+// a_why_end 
 
 $().ready(function() {
   document.ontouchmove = function(e) {
     e.preventDefault();
   };
 
-  // slide in right-container
-  $("#right-container").mouseover(function() {
+  // toggle left-container
+  $(".trigger-left").click(function() {
+    var left = $("#left-container").css("left");
+
+    if (parseInt(left) == 0) {
+      $("#left-container").css({
+        left: '-270px'
+      });
+    } else {
+      $("#left-container").css({
+        left: '0px'
+      });
+    }
+  });
+
+  // toggle right-container
+  $(".trigger-right").click(function() {
+    var right = $("#right-container").css("right");
+
+    if (parseInt(right) == 0) {
+      $("#right-container").css({
+        right: '-270px'
+      });
+    } else {
+      $("#right-container").css({
+        right: '0px'
+      });
+    }
+  });
+
+  $("#content").click(function() {
+    $("#left-container").css({
+      left: '-270px'
+    });
+
     $("#right-container").css({
-      right: '0px'
+      right: '-270px'
     });
   });
 
-  // slide out right-container
-  $("#right-container").mouseout(function() {
-    $("#right-container").css({
-      right: '-261px'
-    });
-  });
 
   // logout
   $("#logout").click(function() {
@@ -266,7 +463,7 @@ $().ready(function() {
         });
 
       } else if (message.request == "getLoginedUserName") { // get username
-        $("#user-view-left > p").text(message.result);
+        $("#user-view-left #username").text(message.result);
       } else if (message.request == "loginOut") { // get logout info
         window.location = "..";
       } else if (message.request == "getUserFileList") {
@@ -284,12 +481,12 @@ $().ready(function() {
           }));
         });
       } else if (message.request == "loadUserFile") {
-        console.log("loadUserFile", message.result);
+        console.log(message.result);
       } else if (message.request == "changeRBS") {
 				/* console.log(message.result); */
 				console.log("changeRBS", message.result);
 				// console.log(genecircuitData); 
-				// init(genecircuitData); 
+				init(genecircuitData);  
 			} else if (message.request == "getGroup") {
 				console.log("getGroup", message.result);
 				// init(genecircuitData); 
@@ -297,7 +494,7 @@ $().ready(function() {
 				console.log("getPlasmidSbol", message);
 			} else if (message.request == "loadSBOL") {
 				console.log("loadSBOL", message);
-			}
+      }
     };
   }
 
@@ -310,7 +507,7 @@ $().ready(function() {
     // get directory
     ws.send(JSON.stringify({
       'request': 'getDirList',
-      'dir': 'web\\biobrick'
+      'dir': 'web\\biobrick\\Protein coding sequences'
     }));
 
     // get username
@@ -326,13 +523,17 @@ $().ready(function() {
 			'request': 'getGroup',
 		}));
 
+
 		ws.send(JSON.stringify({
 			'request': 'getPlasmidSbol',
 		}));
 
+
 		ws.send(JSON.stringify({
 			'request': 'loadSBOL',
 		}));
+
+
   }
 
   // Cleanly close websocket when unload window
@@ -341,11 +542,7 @@ $().ready(function() {
     ws.close();
   };
 
-
-
-  // Create graphiti application
-  /* app = new g.Application(); */
-/*  */
+	// a_why_begin 
   $('#cmd_undo').click(function(ev) {
     /* app.undo(); */
 		historyStack.undo();
@@ -354,20 +551,33 @@ $().ready(function() {
   $('#cmd_redo').click(function(ev) {
     historyStack.redo();
   });
+	// a_why_end 
 
-  /* $('#cmd_zoom_in').click(function(ev) { */
-    /* app.zoom(ev.clientX, ev.clientY, 0.9); */
-  /* }); */
-/*  */
-  /* $('#cmd_zoom_out').click(function(ev) { */
-    /* app.zoom(ev.clientX, ev.clientY, 1.1); */
-  /* }); */
-/*  */
-  /* $('#cmd_zoom_reset').click(function(ev) { */
-    /* app.zoomReset(); */
-  /* }); */
-/*  */
-  /* $('#cmd_snap_to_grid').click(function(ev) { */
-    /* app.toggleSnapToGrid(); */
-  /* }); */
+
+  // // Create graphiti application 
+  // app = new g.Application(); 
+//  
+  // $('#cmd_undo').click(function(ev) { 
+    // app.undo(); 
+  // }); 
+//  
+  // $('#cmd_redo').click(function(ev) { 
+    // app.redo(); 
+  // }); 
+//  
+  // $('#cmd_zoom_in').click(function(ev) { 
+    // app.zoom(ev.clientX, ev.clientY, 0.9); 
+  // }); 
+//  
+  // $('#cmd_zoom_out').click(function(ev) { 
+    // app.zoom(ev.clientX, ev.clientY, 1.1); 
+  // }); 
+//  
+  // $('#cmd_zoom_reset').click(function(ev) { 
+    // app.zoomReset(); 
+  // }); 
+//  
+  // $('#cmd_snap_to_grid').click(function(ev) { 
+    // app.toggleSnapToGrid(); 
+  // }); 
 });
