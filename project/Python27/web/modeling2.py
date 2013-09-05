@@ -112,6 +112,9 @@ def SteadyState_Concen_ActRep(database, proteins, circuit, start_pos):
         regugene['DegRatePro']  = 0.00288
         ReguGene[n] = Struct3_SYSU_Software()
         ReguGene[n].SetData(rbs2['RIPS'], regugene['DegRatemRNA'], regugene['DegRatePro'], regugene['HillCoeff1'], regugene['K1'])
+        for i in circuit[n]["to"]:
+            queue.append(i)
+
     if Plasmid[start_pos].Type == 'Constitutive':
         ObjConcen [start_pos] = Plasmid[start_pos].CopyNumber * Plasmid[start_pos].TerEff * (Plasmid[start_pos].PoPS        / ObjGene [start_pos].DegRatemRNA) * (ObjGene [start_pos].RIPS / ObjGene [start_pos].DegRatePro)
         ReguConcen[start_pos] = Plasmid[start_pos].CopyNumber * Plasmid[start_pos].TerEff * (Plasmid[start_pos].PoPS        / ReguGene[start_pos].DegRatemRNA) * (ReguGene[start_pos].RIPS / ReguGene[start_pos].DegRatePro)
@@ -121,8 +124,6 @@ def SteadyState_Concen_ActRep(database, proteins, circuit, start_pos):
     elif Plasmid[start_pos].Type == 'Negative':
         ObjConcen [start_pos] = Plasmid[start_pos].CopyNumber * Plasmid[start_pos].TerEff * (Plasmid[start_pos].MPPromoter  / ObjGene [start_pos].DegRatemRNA) * (ObjGene [start_pos].RIPS / ObjGene [start_pos].DegRatePro)
         ReguConcen[start_pos] = Plasmid[start_pos].CopyNumber * Plasmid[start_pos].TerEff * (Plasmid[start_pos].MPPromoter  / ReguGene[start_pos].DegRatemRNA) * (ReguGene[start_pos].RIPS / ReguGene[start_pos].DegRatePro)
-        for i in circuit[n]["to"]:
-            queue.append(i)
 
     queue = deque(circuit[start_pos]["to"])
     while len(queue) != 0:

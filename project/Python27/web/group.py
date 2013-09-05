@@ -167,12 +167,9 @@ def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   ret["RiPs"] = rbs_info["MPRBS"] * 100
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
   ret["repress_rate"] = -1
+  ret["induce_rate"] = -1
   ret["concen"] = -1
   # following arguments are DEPRECATED
-  ret["induce_rate"] = 0
-  ret["before_regulated"] = 0
-  ret["after_regulated"] = 0
-  ret["after_induced"] = 0
   return ret
 
 def get_index_in_group(pro_name, group):
@@ -180,38 +177,18 @@ def get_index_in_group(pro_name, group):
     if group[i]["name"] == pro_name:
       return i
 
-def update_pro_info(database, protein, grp):
-  idx = get_index_in_group(protein["name"], grp)
-  concen, repress_rate = modeling.concen_without_repress(database, grp, protein["copy"], idx)
-  protein["repress_rate"] = repress_rate * 100
-  protein["concen"] = concen
-  return protein
-
 def update_proteins_repress(database, protein, groups):
   start_pos = get_start_pos(groups)
   for st in start_pos:
     origin_concen = modeling2.SteadyState_Concen(database, protein, groups, st)
     actrep_concen = modeling2.SteadyState_Concen_ActRep(database, protein,\
         groups, st)
+    corepind_concen = modeling2.SteadyState_Concen_CorepInd(database, protein,\
+        groups, {}, st)
     for i in origin_concen:
       protein[i]["repress_rate"] = log10(actrep_concen[i]) - log10(origin_concen[i])
-
-  for pro in protein:
-    pro2_grp_id = protein[pro]["grp_id"]
-    pro1_grp_id = groups[pro2_grp_id]["from"]
-    if pro1_grp_id == -1:
-      protein[pro] = update_pro_info(database, protein[pro],\
-          groups[pro2_grp_id]["sbol"])
-    else:
-      grp1 = groups[pro1_grp_id]["sbol"]
-      grp2 = groups[pro2_grp_id]["sbol"]
-      pro1 = grp1[-2]["id"]
-      copy1 = protein[pro1]["copy"]
-      copy2 = protein[pro]["copy"]
-      concen, repress_rate = modeling.repress_rate(database, grp1, copy1,\
-         grp2, copy2)
-      protein[pro]["repress_rate"] = repress_rate * 100
-      protein[pro]["concen"] = concen
+      protein[i]["induce_rate"] = log10(corepind_concen[i]) - log10(origin_concen[i])
+      protein[i]["concen"] = actrep_concen[i]
 
 def get_graph(link):
   ret = {}
@@ -336,7 +313,10 @@ def update_controller(db, update_info):
       gene_circuit["groups"][prev_grp]["sbol"][-2]["name"] = new_repressor
 
   elif detail["type"] == "repress_rate":
+    pass
     #TODO not completed yet!!!
+  elif detail["type"] == "concen":
+    pass
 
     # update promoter related to repressor
     best_promoter = db.find_promoter_with_repressor(best_repressor["Number"])
