@@ -3,7 +3,9 @@ import sequence_serializer
 import component_union
 import random
 import modeling
+import modeling2
 import database
+from math import log10
 
 prom_name = "BBa_I712074"
 rbs_name = "BBa_J61104"
@@ -37,11 +39,13 @@ data = {
         },
       { "from": 2,
         "to"  : 3,
-        "type": "repressor_protein",
+        "type": "Repressor",
+        "inducer": "Positive"
         },
       { "from": 2,
         "to"  : 4,
-        "type": "repressor_protein",
+        "type": "Repressor",
+        "inducer": "Positive"
         },
 
       ]
@@ -127,9 +131,9 @@ def work(data, database):
     if link["to"] not in groups:
       link["to"] = bound_list[link["to"]]
 
-    if link["type"] == "repressor_protein":
+    if link["type"] == "Repressor":
       groups[link["to"]] = repress(database, groups[link["from"]], groups[link["to"]])
-    if link["type"] == "activator_protein":
+    if link["type"] == "Activator":
       groups[link["to"]] = activate(database, groups[link["from"]], groups[link["to"]])
   return (groups, repressor_list, activator_list, rev_bound_list)
 
@@ -186,7 +190,12 @@ def update_pro_info(database, protein, grp):
 def update_proteins_repress(database, protein, groups):
   start_pos = get_start_pos(groups)
   for st in start_pos:
-    pass
+    origin_concen = modeling2.SteadyState_Concen(database, protein, groups, st)
+    actrep_concen = modeling2.SteadyState_Concen_ActRep(database, protein,\
+        groups, st)
+    for i in origin_concen:
+      protein[i]["repress_rate"] = log10(actrep_concen[i]) - log10(origin_concen[i])
+
   for pro in protein:
     pro2_grp_id = protein[pro]["grp_id"]
     pro1_grp_id = groups[pro2_grp_id]["from"]
@@ -212,17 +221,21 @@ def get_graph(link):
   return ret
 
 def get_graph_type(link):
-  ret = {}
+  link_type = {}
+  inducer_type = {}
   for item in link:
-    if item["type"] == "repressor_protein":
-      ret[item["to"]] = "Negative"
-    else:
-      ret[item["to"]] = "Positive"
-  return ret
+    if item["type"] == "Bound":
+      continue
+    if item["type"] == "Repressor":
+      link_type[item["to"]] = "Negative"
+    elif item["type"] == "Activator":
+      link_type[item["to"]] = "Positive"
+    inducer_type[item["to"]] = item["inducer"]
+  return link_type, inducer_type
 
 def dump_group(network, database):
   graph = get_graph(network["link"])
-  graph_type = get_graph_type(network["link"])
+  link_type, inducer_type = get_graph_type(network["link"])
   data, r_list, a_list, b_list = work(network, database)
   groups = {}
   proteins = {}
@@ -246,11 +259,13 @@ def dump_group(network, database):
       prev = -1
     if prev == -1:
       g_type = "Constitutive"
+      i_type = "None"
     else:
-      g_type = graph_type[i]
+      g_type = link_type[i]
+      i_type = inducer_type[i]
 
     # plasmids.append({"id": i, "sbol":grp, "state": "cis", "from": prev})
-    groups[i] = {"sbol":grp, "state": "cis", "type": g_type, "from": prev, "to": []}
+    groups[i] = {"sbol":grp, "state": "cis", "type": g_type, "inducer": i_type, "from": prev, "to": []}
     plasmid.append(i)
   for i in graph:
     groups[graph[i]]["to"].append(i)
