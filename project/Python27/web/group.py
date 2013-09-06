@@ -335,7 +335,7 @@ def update_controller(db, update_info):
       gene_circuit["proteins"][repressor_id]["name"] = new_repressor
       gene_circuit["groups"][prev_grp]["sbol"][-2]["name"] = new_repressor
 
-  elif detail["type"] == "repress_rate":
+  elif detail["type"] == "K1":
     #TODO not completed yet!!!
 
     # update promoter related to repressor

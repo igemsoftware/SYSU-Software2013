@@ -89,8 +89,7 @@ def SteadyState_Concen_ActRep(database, proteins, circuit, start_pos):
         objectgene = {'DegRatemRNA': 0.00288, 'DegRatePro': 0.00288}
         terminator = database.select_with_name('Terminator', cur_group[-1]['name'])
         Plasmid[n] = Struct1_SYSU_Software()
-        promoter_type = circuit[n]["type"]
-        Plasmid[n].SetData(promoter_type, proteins[n]["copy"], promoter['MPPromoter'], promoter['PoPS'], promoter['LeakageRate'], terminator['Efficiency'])
+        Plasmid[n].SetData(promoter['type'], proteins[n]["copy"], promoter['MPPromoter'], promoter['PoPS'], promoter['LeakageRate'], terminator['Efficiency'])
         ObjGene[n] = Struct2_SYSU_Software()
         ObjGene[n].SetData(rbs1['RIPS'], objectgene['DegRatemRNA'], objectgene['DegRatePro'])
         for i in circuit[n]["to"]:
@@ -163,9 +162,8 @@ def SteadyState_Concen_CorepInd(database, proteins, circuit, corepind, start_pos
         objectgene = {'DegRatemRNA': 0.00288, 'DegRatePro': 0.00288}
         terminator = database.select_with_name('Terminator', cur_group[-1]['name'])
         Plasmid[n] = Struct1_SYSU_Software()
-        promoter_type = circuit[n]["type"]
         copynumber = proteins[n]["copy"]
-        Plasmid[n].SetData(promoter_type, copynumber, promoter['MPPromoter'], promoter['PoPS'], promoter['LeakageRate'], terminator['Efficiency'])
+        Plasmid[n].SetData(promoter['type'], copynumber, promoter['MPPromoter'], promoter['PoPS'], promoter['LeakageRate'], terminator['Efficiency'])
         ObjGene[n] = Struct2_SYSU_Software()
         ObjGene[n].SetData(rbs1['RIPS'], objectgene['DegRatemRNA'], objectgene['DegRatePro'])
         for i in circuit[n]["to"]:
