@@ -168,7 +168,7 @@ def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
   ret["repress_rate"] = -1
   ret["induce_rate"] = -1
-  ret["concen"] = -1
+  ret["concen"] = 0.1
   # following arguments are DEPRECATED
   return ret
 
@@ -300,7 +300,8 @@ def update_controller(db, update_info):
       activator_list = detail["activator_list"]
     except:
       activator_list = []
-    best_promoter = db.getPromoterNearValue(promoter_value, repressor_list)
+    link_type = group["type"]
+    best_promoter = db.getPromoterNearValue(promoter_value, repressor_list, link_type)
     gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter["Number"]
     pro1_id = gene_circuit["groups"][grp_id]["sbol"][2]["id"]
     pro2_id = gene_circuit["groups"][grp_id]["sbol"][-2]["id"]
@@ -313,20 +314,17 @@ def update_controller(db, update_info):
       gene_circuit["groups"][prev_grp]["sbol"][-2]["name"] = new_repressor
 
   elif detail["type"] == "repress_rate":
-    pass
     #TODO not completed yet!!!
-  elif detail["type"] == "concen":
-    pass
 
     # update promoter related to repressor
     best_promoter = db.find_promoter_with_repressor(best_repressor["Number"])
     promoter_value = (db.select_with_name("promoter",\
       best_promoter))["MPPromoter"]
-    for i in gene_circuit["proteins"]:
-      if gene_circuit["proteins"][i]["from"] == grp_id:
-        promoter_grp = gene_circuit["proteins"][i]["grp_id"]
-        gene_circuit["proteins"][i]["PoPs"] = promoter_value
-        gene_circuit["groups"][promoter_grp][0]["name"] = best_promoter
+    for next_grp in group["to"]:
+      promoter_grp = gene_circuit["proteins"][i]["grp_id"]
+      gene_circuit["proteins"]
+      gene_circuit["proteins"][i]["PoPs"] = promoter_value
+      gene_circuit["groups"][promoter_grp][0]["name"] = best_promoter
 
   update_proteins_repress(db, gene_circuit["proteins"],\
       gene_circuit["groups"])
@@ -336,7 +334,7 @@ if __name__ == "__main__":
   db = database.SqliteDatabase()
   sbol=dump_group(data, db)
   print sbol
-  update_info = {"detail": {"type": "copy", "pro_id": 1, "new_value": 22.22,
+  update_info = {"detail": {"type": "PoPs", "pro_id": 1, "new_value": 22.22,
     "repressor_list": []},
     "gene_circuit":{'proteins': {1: {'RiPs': 11.49, 'name': 'BBa_C0060',
       'before_regulated': 0, 'concen': 7.95908853, 'grp_id': 2, 'PoPs': 94.89,

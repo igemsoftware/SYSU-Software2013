@@ -68,6 +68,21 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson
 	
+	def getUserAnswer(self,userName):
+		self.__cursor.execute('select user_list.answer from user_list where name="%s"'%(userName))		
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if len(decodejson)==0:
+			return 'no such a user'
+		else:
+			return decodejson[0]['answer']
+
+	def getUserQuestion(self,userName):
+		self.__cursor.execute('select user_list.question from user_list where name="%s"'%(userName))		
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)			
+		return decodejson[0]['question']
+
 	def getMaxUserId(self,tableName='user_list'):
 		self.__cursor.execute('select * from %s where id=(select max(id) from %s)'%(tableName,tableName))		
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
@@ -289,10 +304,10 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	def getPromoterNearValue(self, idealValue, repressor_list):
-		self.__cursor.execute('select * from promoter order by\
-        abs(promoter.MPPromoter-%f)\
-				limit 0,%d' % (idealValue, len(repressor_list)+1))
+	def getPromoterNearValue(self, idealValue, repressor_list, promoter_type):
+		self.__cursor.execute("select * from promoter WHERE type='%s' order by\
+				abs(promoter.MPPromoter-%f)\
+				limit 0,%d" % (promoter_type, idealValue, len(repressor_list)+1))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:

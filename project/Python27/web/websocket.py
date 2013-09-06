@@ -11,7 +11,7 @@ import group
 import encrypt
 import base64
 import hashlib
-# import make_graph
+import make_graph
 
 logging = mlog.logging
 
@@ -95,7 +95,10 @@ class apis():
     return ret
   def updateGeneCircuit(self, message):
     return group.update_controller(self.db, message['data'])
-
+  def getUserQuestion(self,message):
+    return user.getUserQuestion(self.db,message['userName'])
+  def isUserAnswerRight(self,message):
+    return user.isUserAnswerRight(self.db,message['userName'],message['answer'])
   def changeRBS(self,message):
     return {"sbol":"[[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': u'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}]]","PoPs":6,"RiPS":5,"copy":7,"repress_rate":0.15,"induce_rate":0.66}
   def loadSBOL(self,message):    

@@ -17,6 +17,13 @@ def userLogin(database,name,password):
     database.logger.debug(result)
     return result
 
+def getUserQuestion(database,userName):
+	if(database.isRecordExist(tableName='user_list',recs={'name':userName})):
+		return database.getUserQuestion(userName)
+	else:
+		print 'no such a user named %s'%userName
+		return 'no such a user named %s'%userName
+
 def isNameedUserLogined(database,name):
     database.logger.debug('is nameed user logined name:%s'%name)
     if not isUserLogined(database):
@@ -56,6 +63,13 @@ def getUserFileList(database):
 def getUserGroup(database,username):
 	return database.getUserGroup(username)
 
+def isUserAnswerRight(database,username,answer):
+	result=database.getUserAnswer(username)
+	if result=='no such a user':
+		return 'user not exist'
+	else:
+		return (answer==result)
+
 def saveUserData(database,datastr,fileName,fileType):
     datastr=jsonUtil.turnStringDoubleQuoteToSingleQuote(datastr)
     if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName,'fileType':fileType})):
@@ -71,7 +85,6 @@ def deleteUserData(database, fileName):
     else:
         database.logger.error("file does not exist")
         return "file does not exist!"
-
 
 def loadUserData(database,fileName, fileType):
 	fileList=getUserFileList(database)
@@ -112,7 +125,9 @@ def updateUserInfo(database, info):
 if __name__=="__main__":
     sql=SqliteDatabase()
     print userLogin(sql,'kitty','1212')
-    saveUserData(sql,'sdfsdfdaf}','default1',"default2")
+    print getUserQuestion(sql,'kitty')
+    print isUserAnswerRight(sql,'kitty','123144')
+    #saveUserData(sql,'sdfsdfdaf}','default1',"default2")
     #print getUserFileList(sql)
     #print loadUserData(sql,'filetse','data1')
     #print getLoginedUserName(sql)
