@@ -3,7 +3,6 @@
 $.fn.dashboard = function(options) {
 	options = options || {};
 	return this.each(function() {
-		/* $(this).append("aaa"); */
 		$(this).append("<div class=\"dashboard-arrow arrow1\"></div>");
 		$(this).append("<div class=\"dashboard-arrow arrow2\"></div>");
 		$(this).append("50%");
@@ -33,7 +32,6 @@ $.fn.dashboard = function(options) {
 $.fn.dashboard1 = function(options) {
 	options = options || {};
 	return this.each(function() {
-		/* $(this).append("aaa"); */
 		$(this).append("<div class=\"dashboard-arrow arrow1\"></div>");
 		$(this).append("<div class=\"dashboard-arrow arrow2\"></div>");
 		$(this).append("50%");
@@ -104,7 +102,7 @@ var protein = {
 				/* ws.send(JSON.stringify({ */
 					/* 'request': 'changeRBS', */
 				/* })); */
-				detail.type = "PoPs";
+				detail.type = "PoPS";
 				detail.pro_id = parseInt($(this).parents(".proteins").attr('id').split('-')[1]);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
@@ -219,6 +217,11 @@ var group = {
 			$("#" + aTextureId + " .sbol-components").append("<li id='" + aTextureId + "-" + i.toString() + "' class='component'><div><img src=\"../static/img/component/Promoter.PNG\"/></div><span>BBa_C0060</span></li>");
 			$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('img').attr('src', "../static/img/component/" + type);
 			$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").data('type', aData.sbol[i].type);
+			
+			if(aData.sbol[i].id) {
+				$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").data('id', aData.sbol[i].id);
+			}
+
 			$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('span').text(aData.sbol[i].name);
 			$("#" + aTextureId + " .sbol-components sbol-switch").text(aData.state);
 			if(aData.state == 'trans') {
@@ -506,6 +509,9 @@ var getDataCollection = function() {
 				dataCollection.groups[grp_id].sbol.push({'type':'','name':''});
 				dataCollection.groups[grp_id].sbol[k].name = curGroup.find("li").eq(k+1).find("span").text();
 				dataCollection.groups[grp_id].sbol[k].type = curGroup.find("li").eq(k+1).data("type");
+				if(curGroup.find("li").eq(k+1).data("id")) {
+					dataCollection.groups[grp_id].sbol[k].id = curGroup.find("li").eq(k+1).data("id");
+				}
 			}
 		}
 	}
