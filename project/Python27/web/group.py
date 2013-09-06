@@ -168,7 +168,7 @@ def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
   ret["repress_rate"] = -1
   ret["induce_rate"] = -1
-  ret["concen"] = -1
+  ret["concen"] = 0.1
   # following arguments are DEPRECATED
   return ret
 
@@ -313,20 +313,17 @@ def update_controller(db, update_info):
       gene_circuit["groups"][prev_grp]["sbol"][-2]["name"] = new_repressor
 
   elif detail["type"] == "repress_rate":
-    pass
     #TODO not completed yet!!!
-  elif detail["type"] == "concen":
-    pass
 
     # update promoter related to repressor
     best_promoter = db.find_promoter_with_repressor(best_repressor["Number"])
     promoter_value = (db.select_with_name("promoter",\
       best_promoter))["MPPromoter"]
-    for i in gene_circuit["proteins"]:
-      if gene_circuit["proteins"][i]["from"] == grp_id:
-        promoter_grp = gene_circuit["proteins"][i]["grp_id"]
-        gene_circuit["proteins"][i]["PoPs"] = promoter_value
-        gene_circuit["groups"][promoter_grp][0]["name"] = best_promoter
+    for next_grp in group["to"]:
+      promoter_grp = gene_circuit["proteins"][i]["grp_id"]
+      gene_circuit["proteins"]
+      gene_circuit["proteins"][i]["PoPs"] = promoter_value
+      gene_circuit["groups"][promoter_grp][0]["name"] = best_promoter
 
   update_proteins_repress(db, gene_circuit["proteins"],\
       gene_circuit["groups"])
