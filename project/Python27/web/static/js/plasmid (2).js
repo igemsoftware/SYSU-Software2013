@@ -26,7 +26,7 @@ var plasmidPainter = {
 		var marginLeft = 0, 
 			marginTop = 10;
 		jc.start(this.canvasId, true);
-		console.log(bioStart, bioEnd, name, color, seq);
+		console.log(color);
 		jc.rect((marginLeft + bioStart), marginTop, (bioEnd - bioStart), 25, color, true).id(name);
 		// add shadow
 		jc('#'+name).shadow({
@@ -43,10 +43,14 @@ var plasmidPainter = {
 		jc.start(this.canvasId);
 		for(var i=0;i<data2.length;i++)
 		{		
-			if(!/[A-Z]/.test(data2[i].seq[0]))//typeof(data[i].name)!=="number")
+			if(!/[A-Z]/.test(data2[i].seq[0]))
 			{				
 				var st=data2[i].start*1284/datasize;
 				var en=data2[i].end*1284/datasize;
+				if(data2[i].color=== undefined)
+				{
+					data2[i].color='#82d8ef';
+				}
 				if(data2[i].name=== undefined)
 				{				
 					this.drawSegment(st,en,i,data2[i].color,data2[i].seq);
@@ -72,14 +76,12 @@ function createTempDataForCanvas(seqText,leftTemp)
 	var templeft=0;
 	for(var i=0;i<seqText.length;i++)
 	{
-		//var patt1 = new RegExp("/[A-Z]/");
 		if(/[A-Z]/.test(seqText[i])&&!/[A-Z]/.test(seqText[i+1])&&templeft!=i+1)
 		{
 			tempdata[tempsize]={};
 			tempdata[tempsize].start=templeft;
 			tempdata[tempsize].end=i+1;
-			tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
-			console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+			tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);			
 			tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 			tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 			tempsize=tempsize+1;
@@ -103,7 +105,6 @@ function createTempDataForCanvas(seqText,leftTemp)
 					tempdata[tempsize].start=templeft;
 					tempdata[tempsize].end=j+1;
 					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
-					//console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempsize=tempsize+1;
@@ -116,8 +117,7 @@ function createTempDataForCanvas(seqText,leftTemp)
 			tempdata[tempsize]={};
 			tempdata[tempsize].start=templeft;
 			tempdata[tempsize].end=i+1;
-			tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
-			console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+			tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);			
 			tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 			tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 			tempsize=tempsize+1;
@@ -130,7 +130,6 @@ function createTempDataForCanvas(seqText,leftTemp)
 					tempdata[tempsize].start=templeft;
 					tempdata[tempsize].end=j+1;
 					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
-					//console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempsize=tempsize+1;
@@ -142,8 +141,7 @@ function createTempDataForCanvas(seqText,leftTemp)
 					tempdata[tempsize]={};
 					tempdata[tempsize].start=templeft;
 					tempdata[tempsize].end=j+1;
-					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);
-					//console.log(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
+					tempdata[tempsize].seq=seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end);					
 					tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 					tempsize=tempsize+1;
@@ -158,8 +156,7 @@ function createTempDataForCanvas(seqText,leftTemp)
 		tempdata[0]={};
 		tempdata[0].start=templeft;
 		tempdata[0].end=seqText.length+1;
-		tempdata[0].seq=seqText.substring(tempdata[0].start,tempdata[0].end);
-		//console.log(seqText.substring(tempdata[0].start,tempdata[0].end));
+		tempdata[0].seq=seqText.substring(tempdata[0].start,tempdata[0].end);		
 		tempdata[tempsize].name=findNameInDataBySeq(seqText.substring(tempdata[0].start,tempdata[0].end));
 		tempdata[tempsize].color=findColorInDataBySeq(seqText.substring(tempdata[tempsize].start,tempdata[tempsize].end));
 		tempsize=tempsize+1;
@@ -845,7 +842,11 @@ $(function(){
 	initDrawChart();	
 	document.getElementById('seqCurrentText').value=seq.substring(1,61);
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();		
-	//InitAjax();
+	var d=document.getElementById('seqCurrentText');	
+	width=d.offsetWidth/60*1.76;
+	console.log(width);
+	d.style.fontSize=width+'px';
+	console.log(d.style.fontSize);
 	testWebSocket();
 	//$("#divBody").toolTip();
 	//setUpDrag();
