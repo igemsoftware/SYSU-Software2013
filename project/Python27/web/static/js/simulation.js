@@ -18,7 +18,7 @@ $(document).ready(function () {
   // Cleanly close websocket when unload window
   window.onbeforeunload = function() {
     ws.onclose = function () {}; // disable onclose handler first
-    ws.close()
+    ws.close();
   };
 });
 
@@ -56,14 +56,16 @@ function getLabel(raw) {
 //$(function(){
 function run(){
   //ws.send(JSON.stringify({'request': 'getSimulationData'}));
+  
   data = turnRawDatatoData(raw_data);
+  console.log(data);
   labels = getLabel(raw_data);
   var chart = new iChart.LineBasic2D({
     animation:true,
     render : 'canvasDiv',//图表渲染的HTML DOM的id
     data: data,//图表的数据源
     labels: labels,
-    offsetx:-60,
+    offsetx:0,//-60,
     shadow:true,
     background_color:'#f4f4f4',
     separate_angle:10,//分离角度
@@ -92,8 +94,8 @@ function run(){
     },
     showpercent:true,
     decimalsnum:2,
-    width : 800,
-    height : 400,
+    width : document.getElementById('canvas-mask').clientWidth/3*2-50,
+    height : document.getElementById('canvas-mask').clientHeight-40,
     radius:140
   });
   chart.draw();
