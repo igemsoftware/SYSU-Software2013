@@ -11,7 +11,7 @@ import group
 import encrypt
 import base64
 import hashlib
-# import make_graph
+import make_graph
 
 logging = mlog.logging
 

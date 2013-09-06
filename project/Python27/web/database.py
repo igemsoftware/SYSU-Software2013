@@ -304,10 +304,10 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	def getPromoterNearValue(self, idealValue, repressor_list):
-		self.__cursor.execute('select * from promoter order by\
-        abs(promoter.MPPromoter-%f)\
-				limit 0,%d' % (idealValue, len(repressor_list)+1))
+	def getPromoterNearValue(self, idealValue, repressor_list, promoter_type):
+		self.__cursor.execute("select * from promoter WHERE type='%s' order by\
+				abs(promoter.MPPromoter-%f)\
+				limit 0,%d" % (promoter_type, idealValue, len(repressor_list)+1))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
