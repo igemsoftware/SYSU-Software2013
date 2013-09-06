@@ -88,7 +88,8 @@ class apis():
     ret = sequence_serializer.format_to_json(sbol)
     return ret
   def updateGeneCircuit(self, message):
-    return group.update_controller(self.db, message['data'])
+    ret = group.update_controller(self.db, message['data'])
+    return ret
   def getUserQuestion(self,message):
     return user.getUserQuestion(self.db,message['userName']) 
   def forgetPasswordAndReset(self,message):

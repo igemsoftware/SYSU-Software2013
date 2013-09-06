@@ -26,15 +26,14 @@ var genecircuitData =
             1: {
                 'RiPs': 11.49,
                 'name': 'BBa_C0060',
-                'before_regulated': 0,
+                'before_regulated': 20,
                 'concen': 7.95908853,
                 'grp_id': 2,
                 'PoPs': 94.89,
                 'repress_rate': 100,
-                'induce_rate': 0,
-                'after_induced': 0,
+                'induce_rate': 30,
                 'copy': 73.0,
-                'after_regulated': 0
+								'K1': 3.2,
             },
             2: {
                 'RiPs': 11.49,
@@ -45,9 +44,8 @@ var genecircuitData =
                 'PoPs': 94.89,
                 'repress_rate': 100,
                 'induce_rate': 0,
-                'after_induced': 0,
                 'copy': 73.0,
-                'after_regulated': 0
+								'K1': 3.2,
             },
             3: {
                 'RiPs': 11.49,
@@ -58,9 +56,8 @@ var genecircuitData =
                 'PoPs': 55.55,
                 'repress_rate': 0.2998365890589771,
                 'induce_rate': 0,
-                'after_induced': 0,
                 'copy': 73.0,
-                'after_regulated': 0
+								'K1': 3.2,
             },
             4: {
                 'RiPs': 11.49,
@@ -71,9 +68,8 @@ var genecircuitData =
                 'PoPs': 55.55,
                 'repress_rate': 0.2998365890589771,
                 'induce_rate': 0,
-                'after_induced': 0,
                 'copy': 73.0,
-                'after_regulated': 0
+								'K1': 3.2,
             }
         },
         'plasmids': [
@@ -482,18 +478,22 @@ $().ready(function() {
         });
       } else if (message.request == "loadUserFile") {
         console.log(message.result);
+			} else if (message.request == "getGroup") {
+				console.log("getGroup", message);
+				// init(genecircuitData); 
       } else if (message.request == "changeRBS") {
 				/* console.log(message.result); */
-				console.log("changeRBS", message.result);
+				console.log("changeRBS", message);
 				// console.log(genecircuitData); 
 				init(genecircuitData);  
-			} else if (message.request == "getGroup") {
-				console.log("getGroup", message.result);
-				// init(genecircuitData); 
 			} else if (message.request == "getPlasmidSbol") {
 				console.log("getPlasmidSbol", message);
 			} else if (message.request == "loadSBOL") {
 				console.log("loadSBOL", message);
+			} else if (message.request == "updateGeneCircuit") {
+				console.log("kakakakakakka");
+				console.log("updateGeneCircuit", message);
+
       }
     };
   }
@@ -505,11 +505,11 @@ $().ready(function() {
    */
   ws.onopen = function() {
     // get directory
-    //ws.send(JSON.stringify({
-      //'request': 'getDirList',
-      //'dir': 'web\\biobrick\\Protein coding sequences'
-    //}));
-
+    // ws.send(JSON.stringify({ 
+      // 'request': 'getDirList', 
+      // 'dir': 'web\\biobrick\\Protein coding sequences' 
+    // })); 
+		
     // get username
     ws.send(JSON.stringify({
       'request': 'getLoginedUserName'
@@ -519,19 +519,22 @@ $().ready(function() {
 			'request': 'changeRBS',
 		}));
 
-		ws.send(JSON.stringify({
-			'request': 'getGroup',
-		}));
-
-
-		ws.send(JSON.stringify({
-			'request': 'getPlasmidSbol',
-		}));
-
-
-		ws.send(JSON.stringify({
-			'request': 'loadSBOL',
-		}));
+		// ws.send(JSON.stringify({ 
+			// 'request': 'updateGeneCircuit', 
+		// })); 
+//  
+		// ws.send(JSON.stringify({ 
+			// 'request': 'getGroup', 
+		// })); 
+//  
+		// ws.send(JSON.stringify({ 
+			// 'request': 'getPlasmidSbol', 
+		// })); 
+//  
+//  
+		// ws.send(JSON.stringify({ 
+			// 'request': 'loadSBOL', 
+		// })); 
 
 
   }
