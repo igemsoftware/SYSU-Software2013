@@ -481,7 +481,7 @@ var getDataCollection = function() {
 		dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
 		dataCollection.proteins[pid_i].concen = p.find(".concen").slider("value");
 		dataCollection.proteins[pid_i].before_regulated = parseInt(p.find(".before-regulated .dashboard-value").text());
-		dataCollection.proteins[pid_i].after_regulated = parseInt(p.find(".repress-rate .dashboard-value").text());
+		dataCollection.proteins[pid_i].repress_rate = parseInt(p.find(".repress-rate .dashboard-value").text());
 		dataCollection.proteins[pid_i].induce_rate = parseInt(p.find(".induce-rate .dashboard-value").text());
 	}
 	var plasmidsLength = $("#plasmids-view .plasmids").length;
@@ -620,7 +620,7 @@ var randomValue = function() {
 
 }
 
-var updateGen = function() {
+var updateGen = function(genecircuitData) {
 	/* in onmessage */
 	for(var prop in genecircuitData.proteins) {
 		var tId = "protein-" + prop;
