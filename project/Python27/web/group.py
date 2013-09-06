@@ -300,7 +300,8 @@ def update_controller(db, update_info):
       activator_list = detail["activator_list"]
     except:
       activator_list = []
-    best_promoter = db.getPromoterNearValue(promoter_value, repressor_list)
+    link_type = group["type"]
+    best_promoter = db.getPromoterNearValue(promoter_value, repressor_list, link_type)
     gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter["Number"]
     pro1_id = gene_circuit["groups"][grp_id]["sbol"][2]["id"]
     pro2_id = gene_circuit["groups"][grp_id]["sbol"][-2]["id"]
@@ -333,7 +334,7 @@ if __name__ == "__main__":
   db = database.SqliteDatabase()
   sbol=dump_group(data, db)
   print sbol
-  update_info = {"detail": {"type": "copy", "pro_id": 1, "new_value": 22.22,
+  update_info = {"detail": {"type": "PoPs", "pro_id": 1, "new_value": 22.22,
     "repressor_list": []},
     "gene_circuit":{'proteins': {1: {'RiPs': 11.49, 'name': 'BBa_C0060',
       'before_regulated': 0, 'concen': 7.95908853, 'grp_id': 2, 'PoPs': 94.89,

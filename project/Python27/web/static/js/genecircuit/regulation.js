@@ -505,10 +505,10 @@ $().ready(function() {
    */
   ws.onopen = function() {
     // get directory
-    ws.send(JSON.stringify({
-      'request': 'getDirList',
-      'dir': 'web\\biobrick\\Protein coding sequences'
-    }));
+    //ws.send(JSON.stringify({
+      //'request': 'getDirList',
+      //'dir': 'web\\biobrick\\Protein coding sequences'
+    //}));
 
     // get username
     ws.send(JSON.stringify({
