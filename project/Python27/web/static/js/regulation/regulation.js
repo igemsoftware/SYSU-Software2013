@@ -86,7 +86,17 @@ $().ready(function() {
             }, 1000);
         } else {
 
-            canvasToJSON();
+            var jsonData = canvasToJSON();
+
+            ws.send({
+                'request': 'indexSaveToGeneCircuit',
+                'data': jsonData
+            });
+
+
+            //  var pngwriter = new graphiti.io.png.Writer();
+            // var png = pngwriter.marshal(app.view);
+            // $(".header img").attr('src', png);
             // ws.send({
             //   "request" : "saveUserData",
             //   "data" : filename
@@ -96,6 +106,10 @@ $().ready(function() {
             // $("#myModalInfo").html("File: " + filename + " is saved!");
             // $("#save-trigger").click();
         }
+    });
+
+    $("#clear").click(function() {
+        app.view = new g.View("canvas");
     });
 
     // save configuration of protein 
@@ -290,6 +304,8 @@ $().ready(function() {
                 });
             } else if (message.request == "loadUserFile") {
                 console.log(message.result);
+            } else if (message.request == 'indexSaveToGeneCircuit') {
+                console.log(message.result);
             }
         };
     }
@@ -353,7 +369,7 @@ $().ready(function() {
         var figures = app.view.figures.data,
             lines = app.view.lines.data;
         // console.log(figures);
-        // console.log(lines);
+        console.log(lines);
 
         var figuresCount = app.view.collection.length,
             linesCount = app.view.connections.length;
@@ -376,11 +392,12 @@ $().ready(function() {
             var line = {};
             line.from = lines[i].sourcePort.parent.id;
             line.to = lines[i].targetPort.parent.id;
-            line.type = "default";
-            line.inducer = "default";
+            line.type = lines[i].TYPE;
+            line.inducer = "none";
 
             data.links.push(line);
         };
-        console.log(JSON.stringify(data));
+        
+        return data;
     }
 });

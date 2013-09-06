@@ -71,10 +71,12 @@ graphiti.command.CommandConnect = graphiti.command.Command.extend({
         this.connection.setTargetDecorator(this.decorator);
         this.connection.setColor(new graphiti.util.Color("#0000ff"));
         this.label = new graphiti.shape.icon.Activate();
+        this.connection.TYPE = "Activator";
        }else if(this.type === "Inhibit"){
         this.connection.setTargetDecorator(this.decorator);
         this.connection.setColor(new graphiti.util.Color("#ff0000"));
         this.label = new graphiti.shape.icon.Inhibit();
+        this.connection.TYPE = "Repressor";
        }else{
         this.connection.setColor(new graphiti.util.Color("#00ff00"));
         this.label = new graphiti.shape.icon.CoExpress();
