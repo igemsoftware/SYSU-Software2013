@@ -492,7 +492,9 @@ $().ready(function() {
 				console.log("loadSBOL", message);
 			} else if (message.request == "updateGeneCircuit") {
 				console.log("kakakakakakka");
-				console.log("updateGeneCircuit", message);
+				/* console.log("updateGeneCircuit", message.result); */
+				genecircuitData = message.result;
+				updateGen(genecircuitData);
 
       }
     };

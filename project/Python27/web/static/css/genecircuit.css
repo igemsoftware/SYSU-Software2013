@@ -201,6 +201,7 @@
 }
 
 .dashboard .dashboard-arrow {
+	position: absolute;
   height: 2em;
   width: 2em;
   transform-origin: 50% 50%;
@@ -209,21 +210,38 @@
   -ms-transform-origin: 50% 50%;
   -o-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  /* -webkit-transition: all 0.5s; */
+  /* -moz-transition: all 0.5s; */
+  /* -o-transition: all 0.5s; */
+  /* transition: all 0.5s; */
 
 }
 
-.dashboard .dashboard-arrow:before {
+.dashboard .dashboard-arrow.arrow1:before {
+  content: '';
+  position: absolute;
+	bottom: 0;
+	left: 0;
+  font-size: 100%;
+  height: 2em;
+  width: 2em;
+  line-height: 1em;
+  border: 0.22em solid #f6a828;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 100%;
+  clip: rect(auto, auto, 1em, auto);
+}
+
+.dashboard .dashboard-arrow.arrow2:before {
   content: '';
   position: absolute;
   font-size: 100%;
   height: 2em;
   width: 2em;
   line-height: 1em;
-  border: 0.22em solid #f6a828;
+  border: 0.22em solid #e0dede;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

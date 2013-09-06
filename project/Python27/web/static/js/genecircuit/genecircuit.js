@@ -5,7 +5,6 @@ $.fn.dashboard = function(options) {
 	return this.each(function() {
 		$(this).append("<div class=\"dashboard-arrow arrow1\"></div>");
 		$(this).append("<div class=\"dashboard-arrow arrow2\"></div>");
-		$(this).append("50%");
 		if(options.size) {
 			$(this).css("font-size", options.size.toString() + "px");
 		}
@@ -34,7 +33,6 @@ $.fn.dashboard1 = function(options) {
 	return this.each(function() {
 		$(this).append("<div class=\"dashboard-arrow arrow1\"></div>");
 		$(this).append("<div class=\"dashboard-arrow arrow2\"></div>");
-		$(this).append("50%");
 		if(options.size) {
 			$(this).css("font-size", options.size.toString() + "px");
 		}
@@ -620,6 +618,9 @@ var randomValue = function() {
 	}));
 	/* send message */
 
+}
+
+var updateGen = function() {
 	/* in onmessage */
 	for(var prop in genecircuitData.proteins) {
 		var tId = "protein-" + prop;
