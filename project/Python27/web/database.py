@@ -22,6 +22,7 @@ class SqliteDatabase:
 	userId=-1
 	logger=None
 	encrypt=None
+	indexSave=None
 	def isDatabaseExist(self,database):
 		if os.path.exists(database):  
 			return True
@@ -312,9 +313,9 @@ class SqliteDatabase:
 		return decodejson[0]
 
 	def getPromoterNearValue(self, idealValue, repressor_list, link_type, p_type):
-		self.__cursor.execute("select * from promoter WHERE type='%s' order by\
-				abs(promoter.%s - %f)\
-				limit 0,%d" % (link_type, p_type, idealValue, len(repressor_list)+1))
+		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
+				limit 0,%d" % (link_type, p_type, idealValue, len(repressor_list)+1)
+		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
@@ -369,7 +370,7 @@ if __name__=="__main__":
 	sql=SqliteDatabase()
 	print sql.getUserGroup('Bobby')
 	#sql.addColumnToTable('part_relation','testw','integer',' 0')
-	sql.demo1()
+	
 	#print sql.isRecordExist('part_list')
 	#sql.selectAllOfTable('part_relation')
 	#sql.printAllTableNames()
