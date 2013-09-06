@@ -8,7 +8,7 @@ Copyright (C) 2013-2014 sysu-software. All Rights Reserved.
 
 from database import SqliteDatabase
 import jsonUtil
-
+import encrypt
 def userLogin(database,name,password):
     database.logger.debug('user login now: name:%s,password:%s'%(name,password))
     result=database.isUserNameAndPasswordCorrect(name,password)
@@ -70,6 +70,16 @@ def isUserAnswerRight(database,username,answer):
 	else:
 		return (answer==result)
 
+def resetUserPassword(database,username,answer,newpassword):
+	flag=isUserAnswerRight(database,username,answer)
+	if flag==True:
+		newpassword=encrypt.getPasswordSHA1(newpassword)
+		return database.resetUserPassword(username,newpassword)
+	elif flag==False:
+		return 'reset user password fail'
+	else:
+		return flag
+
 def saveUserData(database,datastr,fileName,fileType):
     datastr=jsonUtil.turnStringDoubleQuoteToSingleQuote(datastr)
     if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName,'fileType':fileType})):
@@ -126,7 +136,8 @@ if __name__=="__main__":
     sql=SqliteDatabase()
     print userLogin(sql,'kitty','1212')
     print getUserQuestion(sql,'kitty')
-    print isUserAnswerRight(sql,'kitty','123144')
+    #print isUserAnswerRight(sql,'kitty','123144')
+    print resetUserPassword(sql,'kitty','kitty','1212')
     #saveUserData(sql,'sdfsdfdaf}','default1',"default2")
     #print getUserFileList(sql)
     #print loadUserData(sql,'filetse','data1')

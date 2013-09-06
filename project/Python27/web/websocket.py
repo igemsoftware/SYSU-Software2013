@@ -11,7 +11,7 @@ import group
 import encrypt
 import base64
 import hashlib
-import make_graph
+#import make_graph
 
 logging = mlog.logging
 
@@ -26,18 +26,15 @@ class apis():
     return self.db.selectAllOfTable(tableName = message['table_name'])
   def userLogin(self,message):
     res=json.loads(self.db.encrypt.decrypt(message['data']))
-    if len(res['password'])!=40:
-      m = hashlib.sha1()
-      m.update(res['password'])
-      res['password']=m.hexdigest()
+    res['password']=encrypt.getPasswordSHA1(res['password'])
     return user.userLogin(self.db,name=res['name'],password=res['password'])
   def getDirList(self,message={'dir':'biobrick'}): 
     return xmlParse.get_allfiledirs(message['dir'])
   def getBiobrick(self,message={'path':'biobrick/Terminators/BBa_B0010.xml'}):
     return xmlParse.xmlBiobrick(message['path']).getJsonString()
   def getSimulationData(self,message):
-    content = make_graph.parse_data()
-    return content
+    #content = make_graph.parse_data()
+    return '1234'
   def saveUserData(self,message):
     message['data']=message['data'].replace('"','\'')
     if message.has_key("fileName") and message.has_key("fileType"):
@@ -52,12 +49,9 @@ class apis():
     if message['group_name']=='administrator':
       group_id=2
     elif message['group_name']=='guest':
-      group_id=1
-    if len(message['password'])!=40:
-      self.db.rememberUser(message['name'],message['password'])
-      m = hashlib.sha1()
-      m.update(message['password'])
-      message['password']=m.hexdigest()
+      group_id=1    
+    self.db.rememberUser(message['name'],message['password'])
+    message['password']=encrypt.getPasswordSHA1(message['password'])
     ret= user.registAUser(self.db,name=message['name'],password=message['password'],email=message['email'],group_id=group_id,gender=message['gender'],question=message['question'],answer=message['answer'])
     return ret
   def getLoginedUserName(self,message):
@@ -96,9 +90,10 @@ class apis():
   def updateGeneCircuit(self, message):
     return group.update_controller(self.db, message['data'])
   def getUserQuestion(self,message):
-    return user.getUserQuestion(self.db,message['userName'])
-  def isUserAnswerRight(self,message):
-    return user.isUserAnswerRight(self.db,message['userName'],message['answer'])
+    return user.getUserQuestion(self.db,message['userName']) 
+  def forgetPasswordAndReset(self,message):
+    self.db.rememberUser(message['userName'],message['password'])
+    return user.resetUserPassword(self.db,message['userName'],message['answer'],message['password'])
   def changeRBS(self,message):
     return {"sbol":"[[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': u'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}]]","PoPs":6,"RiPS":5,"copy":7,"repress_rate":0.15,"induce_rate":0.66}
   def loadSBOL(self,message):    

@@ -101,6 +101,13 @@ class SqliteDatabase:
 		self.__cx.commit()
 		return 'updateUserPassword succeed'
 
+	def resetUserPassword(self,userName,password):
+		sql_cmd='UPDATE user_list SET password_SHA1="%s" WHERE name="%s"'%(password,userName)
+		self.__cursor.execute(sql_cmd)
+		self.logger.debug('reset user password: %s'%sql_cmd)
+		self.__cx.commit()
+		return 'reset User Password succeed'
+
 	def getUserFileNameList(self):
 		if self.userId==-1:
 			self.logger.error('not login but want to get the user fileList')
