@@ -300,7 +300,8 @@ def update_controller(db, update_info):
       activator_list = detail["activator_list"]
     except:
       activator_list = []
-    best_promoter = db.getPromoterNearValue(promoter_value, repressor_list)
+    link_type = group["type"]
+    best_promoter = db.getPromoterNearValue(promoter_value, repressor_list, link_type)
     gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter["Number"]
     pro1_id = gene_circuit["groups"][grp_id]["sbol"][2]["id"]
     pro2_id = gene_circuit["groups"][grp_id]["sbol"][-2]["id"]
