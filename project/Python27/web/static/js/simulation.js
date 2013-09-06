@@ -8,6 +8,13 @@ $(document).ready(function () {
       //raw_data = JSON.parse(msg.data).result;
       data = turnRawDatatoData(raw_data);
       run(data);
+	  for(var i=0;i<data.length;i++)
+	  {
+		  var w=document.getElementById('Curve').clientWidth/data.length;
+		  var h=document.getElementById('Curve').clientHeight;
+		  document.getElementById('Curve').appendChild(createAnInputCheckBox(i,w,h));
+		 document.getElementById('Curve').appendChild(document.createTextNode('sdfsd'));
+	  }
     };
   };
 
@@ -21,9 +28,20 @@ $(document).ready(function () {
     ws.onclose = function () {}; // disable onclose handler first
     ws.close();
   };
+  
+  
 });
 
 var size=0;
+function createAnInputCheckBox(index,width,height){
+	var o=document.createElement("input");
+    o.type="checkbox";
+    o.id="protein"+index;
+    o.name="aa";
+	o.style.width=width+'px';
+	o.style.height=height+'px';		
+	return o;
+}
 function turnRawDatatoData(raw)
 {
   var ret = [];
@@ -93,8 +111,8 @@ function run(data){
     },
     showpercent:true,
     decimalsnum:2,
-    width : document.getElementById('canvas-mask').clientWidth/3*2-50,
-    height : document.getElementById('canvas-mask').clientHeight-40,
+    width : document.getElementById('canvasDiv').clientWidth,
+    height : document.getElementById('canvasDiv').clientHeight,
     radius:140
   });
   chart.draw();
