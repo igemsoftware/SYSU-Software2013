@@ -6,7 +6,8 @@ $(document).ready(function () {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function (msg) {
       //raw_data = JSON.parse(msg.data).result;
-      run();
+      data = turnRawDatatoData(raw_data);
+      run(data);
     };
   };
 
@@ -54,9 +55,9 @@ function getLabel(raw) {
 }
 
 //$(function(){
-function run(){
+function run(data){
   //ws.send(JSON.stringify({'request': 'getSimulationData'}));
-  data = turnRawDatatoData(raw_data);
+  console.log(data);
   labels = getLabel(raw_data);
   var chart = new iChart.LineBasic2D({
     animation:true,
