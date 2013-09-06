@@ -18,7 +18,7 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
-  def indexSaveToGrenCircuit(self,message):
+  def indexSaveToGeneCircuit(self,message):
     self.db.indexSave=message['data']
     return "index save success"
   def generateRandomsessionKey(self,message):   
