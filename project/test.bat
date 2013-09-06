@@ -1,3 +1,3 @@
 cd Python27
-python web/database.py
+python web/user.py
 pause
