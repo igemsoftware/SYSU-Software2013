@@ -4,7 +4,8 @@ $.fn.dashboard = function(options) {
 	options = options || {};
 	return this.each(function() {
 		/* $(this).append("aaa"); */
-		$(this).append("<div class=\"dashboard-arrow\"></div>");
+		$(this).append("<div class=\"dashboard-arrow arrow1\"></div>");
+		$(this).append("<div class=\"dashboard-arrow arrow2\"></div>");
 		$(this).append("50%");
 		if(options.size) {
 			$(this).css("font-size", options.size.toString() + "px");
@@ -17,8 +18,40 @@ $.fn.dashboard = function(options) {
 			else if (per < 0)
 				per = 0;
 			per = Math.floor(per);
-			$(this).find(".dashboard-arrow").css('transform', 'rotate(' + ((1.8 * per) - 180) + 'deg)');
+			$(this).find(".arrow1").css('transform', 'rotate(' + ((1.8 * (per+2)) - 180) + 'deg)');
+			$(this).find(".arrow2").css('transform', 'rotate(' + ((1.8 * (per-2)) - 180) + 'deg)');
 			$(this).find(".dashboard-value").text(per.toString() + "%");
+		});
+
+		$(this).trigger('update', 0);
+
+	});
+}
+})(jQuery);
+
+(function($) {
+$.fn.dashboard1 = function(options) {
+	options = options || {};
+	return this.each(function() {
+		/* $(this).append("aaa"); */
+		$(this).append("<div class=\"dashboard-arrow arrow1\"></div>");
+		$(this).append("<div class=\"dashboard-arrow arrow2\"></div>");
+		$(this).append("50%");
+		if(options.size) {
+			$(this).css("font-size", options.size.toString() + "px");
+		}
+		$(this).append("<div class=\"dashboard-value\">0%</div>");
+
+		$(this).bind("update", function(e, val){
+
+			per = ((val + 6) / 12) * 100;
+			if (per > 100)
+				per = 100;
+			else if (per < 0)
+				per = 0;
+			per = Math.floor(per);
+			$(this).find(".dashboard-arrow").css('transform', 'rotate(' + ((1.8 * per) - 180) + 'deg)');
+			$(this).find(".dashboard-value").text(val.toString() + "%");
 		});
 
 		$(this).trigger('update', 0);
@@ -51,6 +84,11 @@ var protein = {
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
 
 		$("#" + aTextureId + " .dashboard").dashboard({
+			size: 40,
+			percentage: 0,
+		});
+
+		$("#" + aTextureId + " .dashboard1").dashboard({
 			size: 40,
 			percentage: 0,
 		});
@@ -117,7 +155,7 @@ var protein = {
 				/* ws.send(JSON.stringify({ */
 					/* 'request': 'changeRBS', */
 				/* })); */
-				detail.type = "k1";
+				detail.type = "K1";
 				detail.pro_id = parseInt($(this).parents(".proteins").attr('id').split('-')[1]);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
@@ -230,18 +268,18 @@ var group = {
 	},
 	setData: function(aTextureId, aData, state) {
 		// after_connect 
-		// for(var i = 0; i < aData.sbol.length; i++) { 
-			// $("#", aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('span').text(aData.sbol[i].name); 
-		// } 
-		// if(aData.state == 'trans') { 
-			// this.turnSwitch($("#" + aTextureId + " .sbol-switch"), 'trans'); 
-		// } else { 
-			// this.turnSwitch($("#" + aTextureId + " .sbol-switch"), 'cis'); 
-		// } 
-		
 		for(var i = 0; i < aData.sbol.length; i++) { 
-			$("#" + aTextureId + " .sbol-components li.component:eq(" + i.toString() + ")").find('span').text(Math.floor(Math.random()*1000000).toString()); 
+			$("#", aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('span').text(aData.sbol[i].name); 
 		} 
+		if(aData.state == 'trans') { 
+			this.turnSwitch($("#" + aTextureId + " .sbol-switch"), 'trans'); 
+		} else { 
+			this.turnSwitch($("#" + aTextureId + " .sbol-switch"), 'cis'); 
+		} 
+		
+		// for(var i = 0; i < aData.sbol.length; i++) {  
+			// $("#" + aTextureId + " .sbol-components li.component:eq(" + i.toString() + ")").find('span').text(Math.floor(Math.random()*1000000).toString());  
+		// }  
 	},
 	turnSwitch: function(target, type) {
 		if(type == 'trans') {
@@ -430,18 +468,20 @@ var getDataCollection = function() {
 	var pLength = $("#dashboard-view .mCSB_container .proteins").length;
 	for(var i = 0; i < pLength; i++) {
 		var pid = $(".proteins:eq(" + i.toString() + ")").attr('id');
+		var pid_i = parseInt(pid.split('-')[1]);
 		var p = $("#" + pid);
-		dataCollection.proteins[i] = {};
-		dataCollection.proteins[i].grp_id = p.data('grp_id');
-		dataCollection.proteins[i].name = p.find(".module-title em").text();
-		dataCollection.proteins[i].PoPs = p.find(".pops").slider("value");
-		dataCollection.proteins[i].RiPs = p.find(".rips").slider("value");
-		dataCollection.proteins[i].copy = p.find(".copy").slider("value");
-		dataCollection.proteins[i].K1 = p.find(".k1").slider("value");
-		dataCollection.proteins[i].concen = p.find(".concen").slider("value");
-		dataCollection.proteins[i].before_regulated = parseInt(p.find(".before-regulated .dashboard-value").text());
-		dataCollection.proteins[i].after_regulated = parseInt(p.find(".repress-rate .dashboard-value").text());
-		dataCollection.proteins[i].induce_rate = parseInt(p.find(".induce-rate .dashboard-value").text());
+
+		dataCollection.proteins[pid_i] = {};
+		dataCollection.proteins[pid_i].grp_id = p.data('grp_id');
+		dataCollection.proteins[pid_i].name = p.find(".module-title em").text();
+		dataCollection.proteins[pid_i].PoPs = p.find(".pops").slider("value");
+		dataCollection.proteins[pid_i].RiPs = p.find(".rips").slider("value");
+		dataCollection.proteins[pid_i].copy = p.find(".copy").slider("value");
+		dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
+		dataCollection.proteins[pid_i].concen = p.find(".concen").slider("value");
+		dataCollection.proteins[pid_i].before_regulated = parseInt(p.find(".before-regulated .dashboard-value").text());
+		dataCollection.proteins[pid_i].after_regulated = parseInt(p.find(".repress-rate .dashboard-value").text());
+		dataCollection.proteins[pid_i].induce_rate = parseInt(p.find(".induce-rate .dashboard-value").text());
 	}
 	var plasmidsLength = $("#plasmids-view .plasmids").length;
 	var plasmidsList = $("#plasmids-view .plasmids");
