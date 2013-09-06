@@ -1,4 +1,4 @@
-var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色
+﻿var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色
 var plasmidPainter = {
 	canvas: null,
 	canvasId: null,
@@ -621,7 +621,10 @@ function testWebSocket(){
 		//ws.send(JSON.stringify({'request': 'getUserFileList'}));
 		//ws.send(JSON.stringify({'request': 'changeRBS'}));
 		//ws.send(JSON.stringify({'request': 'generateRandomsessionKey'}));
-		ws.send(JSON.stringify({'request': 'registAUser','name':'testplus1','password':'1234','email':'123456@yahoo.com','group_name':'guest','gender':1,'question':'who am i?','answer':'testplus1'}));
+		//ws.send(JSON.stringify({'request': 'registAUser','name':'testplus1','password':'1234','email':'123456@yahoo.com','group_name':'guest','gender':1,'question':'who am i?','answer':'testplus1'}));
+		ws.send(JSON.stringify({'request': 'getUserQuestion','userName':'kitty'}));
+		ws.send(JSON.stringify({'request': 'isUserAnswerRight','userName':'kitty','answer':'abcd'}));
+		ws.send(JSON.stringify({'request': 'isUserAnswerRight','userName':'kitty3','answer':'abcd'}));
 		//ws.send(JSON.stringify({'request': 'loadUserFile','fileName':'default1','fileType':'default'}));
 		//ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
 		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
