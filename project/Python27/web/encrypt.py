@@ -2,8 +2,15 @@
 import rsa
 import os,sys
 import binascii
+import hashlib
 base = [str(x) for x in range(10)] + [ chr(x) for x in range(ord('A'),ord('A')+6)]
-
+def getPasswordSHA1(pwd):
+	if len(pwd)!=40:		
+		m = hashlib.sha1()
+		m.update(pwd)
+		return m.hexdigest()
+	else:
+		return pwd
 
 def dec2hex(string_num):
 	num = int(string_num)
