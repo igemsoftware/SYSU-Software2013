@@ -809,16 +809,7 @@ function canvasMouseUp(obj,e)
 }
 function saveGraph(){
 	var _canvas=document.getElementById(chart.canvasid);
-	var data = _canvas.toDataURL("image/png");
-	Canvas2Image.saveAsPNG(_canvas);  
-	/*var b64 = data.substring(22); 
-	//console.log(b64);
-	//console.log(document.getElementById("standardSelect").value);
-	var w=window.open('about:blank','image from canvas','location=0,directories=0'); 
-	w.window.onclose=function(){
-		parent.refresh;
-	}
-	w.document.write("<img src='"+data+"' alt='from canvas'/>");*/	
+	Canvas2Image.saveAsPNG(_canvas);  	
 }
 function isPointInCircle(circle,x,y)
 {
