@@ -208,6 +208,7 @@ def get_pro_info(database, protein_idx, groups, grp_id, repressor, backbone = "p
   ret["repress_rate"] = -1
   ret["induce_rate"] = -1
   ret["concen"] = 0.1
+  ret["pos"] = protein_idx
   # following arguments are DEPRECATED
   return ret
 
@@ -356,10 +357,21 @@ def js_formatter(gene_circuit):
   for i in gene_circuit["proteins"]:
     new_proteins[int(i)] = gene_circuit["proteins"][i]
   gene_circuit["proteins"] = new_proteins
+
   new_groups = {}
   for i in gene_circuit["groups"]:
     new_groups[int(i)] = gene_circuit["groups"][i]
   gene_circuit["groups"] = new_groups
+
+  new_blist = {}
+  for i in gene_circuit["bound_list"]:
+    new_blist[int(i)] = gene_circuit["bound_list"][i]
+  gene_circuit["bound_list"] = new_blist
+
+  new_propos = {}
+  for i in gene_circuit["protein_pos"]:
+    new_propos[int(i)] = gene_circuit["protein_pos"][i]
+  gene_circuit["protein_pos"] = new_propos
   return gene_circuit
 
 
@@ -369,14 +381,15 @@ def update_controller(db, update_info):
   pro_id = detail["pro_id"]
   protein = gene_circuit["proteins"][pro_id]
   pro_name = protein["name"]
+  pro_idx = protein["pos"]
   grp_id = protein["grp_id"]
   group = gene_circuit["groups"][grp_id]
 
   if detail["type"] == "RiPs":
     rbs_value = float(detail["new_value"]) / 100
-    idx = get_index_in_group(pro_name, group["sbol"])
+    # idx = get_index_in_group(pro_name, group["sbol"])
     bestRBS = db.getRBSNearValue(rbs_value)
-    gene_circuit["groups"][grp_id]["sbol"][idx-1]["name"] = bestRBS["Number"]
+    gene_circuit["groups"][grp_id]["sbol"][pro_idx - 1]["name"] = bestRBS["Number"]
     gene_circuit["proteins"][pro_id]["RiPs"] = bestRBS["MPRBS"] * 100
 
   elif detail["type"] == "copy":
