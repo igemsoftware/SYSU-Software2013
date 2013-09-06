@@ -334,7 +334,7 @@ if __name__ == "__main__":
   db = database.SqliteDatabase()
   sbol=dump_group(data, db)
   print sbol
-  update_info = {"detail": {"type": "copy", "pro_id": 1, "new_value": 22.22,
+  update_info = {"detail": {"type": "PoPs", "pro_id": 1, "new_value": 22.22,
     "repressor_list": []},
     "gene_circuit":{'proteins': {1: {'RiPs': 11.49, 'name': 'BBa_C0060',
       'before_regulated': 0, 'concen': 7.95908853, 'grp_id': 2, 'PoPs': 94.89,
