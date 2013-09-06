@@ -131,9 +131,9 @@ def work(data, database):
     if link["to"] not in groups:
       link["to"] = bound_list[link["to"]]
 
-    if link["type"] == "Repressor":
+    if part[link["from"]]["type"] == "Repressor":
       groups[link["to"]] = repress(database, groups[link["from"]], groups[link["to"]])
-    if link["type"] == "Activator":
+    if part[link["from"]]["type"] == "Activator":
       groups[link["to"]] = activate(database, groups[link["from"]], groups[link["to"]])
   return (groups, repressor_list, activator_list, rev_bound_list)
 
@@ -337,6 +337,8 @@ def update_controller(db, update_info):
 
   elif detail["type"] == "K1":
     #TODO not completed yet!!!
+    repressor = float(detail["new_value"]) / 100
+
 
     # update promoter related to repressor
     best_promoter = db.find_promoter_with_repressor(best_repressor["Number"])
