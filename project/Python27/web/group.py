@@ -95,7 +95,6 @@ def pre_work(part):
 def bind(protein1, protein2):
   l1 = len(protein1) - 1
   l2 = len(protein2) - 1
-  print protein1[1:l1]
   return [prom_name] + protein1[1:l1] + protein2[1:l2] + [term_name]
 
 def activate(database, from_part, to_part):
@@ -183,18 +182,29 @@ def dump_sbol(network, database):
     sbol.append(sequence_serializer.format_to_json(component_union.formatter_v11(content, dna_sequence)))
   return sbol
 
-def get_pro_info(database, protein_idx, groups, grp_id, backbone = "pSB1AT3"):
+def get_pro_info(database, protein_idx, groups, grp_id, repressor, backbone = "pSB1AT3"):
   # TODO where is K1?
-  cur_group = groups[grp_id]
   ret = {}
-  ret["grp_id"] = grp_id
-  ret["name"] = cur_group[protein_idx]
-  promoter_info= database.select_with_name("promoter", cur_group[0])
-  rbs_info= database.select_with_name("RBS", cur_group[protein_idx - 1])
+  cur_group = groups[grp_id]["sbol"]
+  link_type = groups[grp_id]["type"]
+  if link_type == "Positive":
+    repressor_info = database.select_with_name("activator", repressor)
+  elif link_type == "Negative":
+    repressor_info = database.select_with_name("repressor", repressor)
+  else:
+    repressor_info = None
+  promoter_info= database.select_with_name("promoter", cur_group[0]["name"])
+  rbs_info= database.select_with_name("RBS", cur_group[protein_idx - 1]["name"])
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
+  ret["grp_id"] = grp_id
+  ret["name"] = cur_group[protein_idx]["name"]
   ret["PoPS"] = promoter_info["MPPromoter"] * 100
   ret["RiPs"] = rbs_info["MPRBS"] * 100
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
+  if repressor_info is not None:
+    ret["K1"] = log10(repressor_info["K1"])
+  else:
+    ret["K1"] = 0
   ret["repress_rate"] = -1
   ret["induce_rate"] = -1
   ret["concen"] = 0.1
@@ -248,13 +258,6 @@ def dump_group(network, database):
   groups = {}
   proteins = {}
   plasmid = []
-  print "graph: %s" % graph
-  print link_type, inducer_type
-
-  # get protein info
-  for i in b_list:
-    proteins[i] = get_pro_info(database, pro_pos[i], data, b_list[i])
-  print proteins
 
   # get group info
   for i in data:
@@ -282,11 +285,19 @@ def dump_group(network, database):
   for i in graph:
     groups[b_list[graph[i]]]["to"].append(i)
 
-  # add id of proteins in a group
   for i in b_list:
+    # add id of proteins in a group
     groups[b_list[i]]["sbol"][pro_pos[i]]["id"] = i
 
-  print groups
+    # get protein info
+    ## get coresponding repressor
+    prev_node = groups[b_list[i]]["from"]
+    if prev_node != -1:
+      prev_grp = groups[b_list[prev_node]]
+      repressor = prev_grp["sbol"][pro_pos[prev_node]]["name"]
+    else:
+      repressor = None
+    proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i], repressor)
 
   #for i in data:
     ## proteins[data[i][2]] = get_pro_info(database, 2, data[i], i)
