@@ -292,7 +292,7 @@ def update_controller(db, update_info):
   group = gene_circuit["groups"][grp_id]
 
   if detail["type"] == "RiPs":
-    rbs_value = detail["new_value"] / 100
+    rbs_value = float(detail["new_value"]) / 100
     idx = get_index_in_group(pro_name, group["sbol"])
     bestRBS = db.getRBSNearValue(rbs_value)
     gene_circuit["groups"][grp_id]["sbol"][idx-1]["name"] = bestRBS["Number"]
@@ -311,7 +311,7 @@ def update_controller(db, update_info):
 
   elif detail["type"] == "PoPS":
     prev_grp = group["from"]
-    promoter_value = detail["new_value"] / 100
+    promoter_value = float(detail["new_value"]) / 100
     try:
       repressor_list = detail["repressor_list"]
     except:
@@ -321,7 +321,6 @@ def update_controller(db, update_info):
     except:
       activator_list = []
     link_type = group["type"]
-    print "fooooo"
     p_type = get_type_of_promoter(link_type)
     best_promoter = db.getPromoterNearValue(promoter_value, repressor_list,\
         link_type, p_type)
