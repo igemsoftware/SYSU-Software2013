@@ -53,6 +53,13 @@ $().ready(function() {
         });
     });
 
+    $("#username").click(function() {
+        window.location.pathname = "/profile";
+    });
+
+    $(".avatar-container").click(function() {
+        window.location.pathname = "/profile";
+    });
 
     // logout
     $("#logout").click(function() {
@@ -63,9 +70,10 @@ $().ready(function() {
 
     // load file list
     $("#myfile").click(function() {
-        ws.send(JSON.stringify({
-            'request': 'getUserFileList'
-        }));
+        // ws.send(JSON.stringify({
+        //     'request': 'getUserFileList'
+        // }));
+        window.location.pathname = "/file_manager";
     });
 
     // save file
