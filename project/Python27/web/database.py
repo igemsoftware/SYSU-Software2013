@@ -369,7 +369,7 @@ if __name__=="__main__":
 	sql=SqliteDatabase()
 	print sql.getUserGroup('Bobby')
 	#sql.addColumnToTable('part_relation','testw','integer',' 0')
-	sql.demo1()
+	
 	#print sql.isRecordExist('part_list')
 	#sql.selectAllOfTable('part_relation')
 	#sql.printAllTableNames()
