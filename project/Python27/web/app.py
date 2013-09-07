@@ -28,12 +28,6 @@ def index():
 	else:
 		return redirect(url_for('login'))
 
-@app.errorhandler(404)
-def page_not_found(error):
-	print error
-    #return render_template('page_not_found.html'),404
-	return redirect(url_for('login'))
-
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
   if request.method == 'GET':
