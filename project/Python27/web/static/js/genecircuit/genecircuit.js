@@ -203,20 +203,22 @@ var group = {
 			}
 
 			$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('span').text(aData.sbol[i].name);
-			$("#" + aTextureId + " .sbol-components sbol-switch").text(aData.state);
-			if(aData.state == 'trans') {
-				$("#" + aTextureId + " .sbol-switch").removeClass('switch-off').addClass('switch-on');
-				$("#" + aTextureId + " .sbol-switch").text("trans");
-				$("#" + aTextureId).data("order", "trans");
-			} else if(aData.state == 'cis') {
-				$("#" + aTextureId + " .sbol-switch").removeClass('switch-on').addClass('switch-off');
-				$("#" + aTextureId + " .sbol-switch").text("cis");
-				$("#" + aTextureId).data("order", "cis");
-			}
 		}
+		$("#" + aTextureId + " .sbol-components sbol-switch").text(aData.state);
+		if(aData.state == 'trans') {
+			$("#" + aTextureId + " .sbol-switch").removeClass('switch-off').addClass('switch-on');
+			$("#" + aTextureId + " .sbol-switch").text("trans");
+			$("#" + aTextureId).data("order", "trans");
+		} else if(aData.state == 'cis') {
+			$("#" + aTextureId + " .sbol-switch").removeClass('switch-on').addClass('switch-off');
+			$("#" + aTextureId + " .sbol-switch").text("cis");
+			$("#" + aTextureId).data("order", "cis");
+		}
+
 		$("#" + aTextureId).data('from', aData.from); 
 		$("#" + aTextureId).data('type', aData.type); 
 		$("#" + aTextureId).data('to', aData.to); 
+		$("#" + aTextureId).data('induce_type', aData.induce_type); 
 		$("#" + aTextureId).data('inducer', aData.inducer); 
 		$("#" + aTextureId + " ul").prepend("<li id='" + aTextureId + "-first' style='display:none'></li>");
 		// $("#" + aTextureId + " ul").sortable({ 
@@ -235,7 +237,11 @@ var group = {
 //  
 		// }); 
 		$("#" + aTextureId + " ul .component").bind("click", function(){
-			$(this).
+			ws.send(JSON.stringify({
+				'request': 'getBiobrickPath',
+				'data': $(this).find("span").text(),
+			}));
+			console.log("kkakak");
 		});
 		that = this;
 		$("#" + aTextureId + " .sbol-switch").bind("click", function(){
@@ -413,6 +419,10 @@ $(".move-right").live("click", function(e){
 		}
 	}
 });
+// pro_id 
+// new_value 
+// type:copy 
+// repressor_list:[]
 
 /* detail */
 var detail = {
@@ -546,7 +556,8 @@ var getDataCollection = function() {
 			dataCollection.groups[grp_id].to = curGroup.data("to"); 
 			dataCollection.groups[grp_id].type = curGroup.data("type"); 
 			dataCollection.groups[grp_id].state = curGroup.data("order"); 
-			dataCollection.groups[grp_id].inducer = curGroup.data("inducer"); 
+			dataCollection.groups[grp_id].induce_type = curGroup.data("induce_type"); 
+			dataCollection.groups[grp_id].inducer = curGroup.data("inducer");
 			for(var k = 0; k < componentsLength; k++) {
 				dataCollection.groups[grp_id].sbol.push({'type':'','name':''});
 				dataCollection.groups[grp_id].sbol[k].name = curGroup.find("li").eq(k+1).find("span").text();
