@@ -99,7 +99,7 @@ def formatter_v11(content, dna_sequence):
   displayId: undefined
   name: undefined
   description: undefined
-  annotaions:[
+  annotations:[
 """
   s = header
   # indent level: 2 spaces
