@@ -270,6 +270,10 @@ def dump_group(network, database):
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
       grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
+    for idx in range(1, len(grp) - 1, 2):
+      grp[idx]["type"] = "RBS"
+    grp[0]["type"] = "Promoter"
+    grp[-1]["type"] = "Terminator"
 
     # get link type and inducer type
     prev = -1
@@ -314,7 +318,11 @@ def dump_group(network, database):
 
   # do not display regulation protein
   for part in network["part"]:
-    proteins[part["id"]]["display"] = str(part["type"] == "Protein")
+    pro_id = part["id"]
+    grp_id = proteins[pro_id]["grp_id"]
+    pos = proteins[pro_id]["pos"]
+    proteins[pro_id]["display"] = str(part["type"] == "Protein")
+    groups[grp_id]["sbol"][pos]["type"] = part["type"]
 
 
   # update_proteins_repress(database, proteins, groups)
@@ -443,7 +451,7 @@ def update_controller(db, update_info):
 if __name__ == "__main__":
   db = database.SqliteDatabase()
   sbol=dump_group(data, db)
-  #print sbol
+  print sbol
   update_info = {u'detail': {u'repressor_list': [], u'new_value': 90, u'type':
     u'PoPS', u'pro_id': 2}, u'gene_circuit': {u'proteins': {u'1': {u'RiPS': 11,
       u'name': u'BBa_C0060', u'repress_rate': -1, u'concen': 0, u'grp_id': 4,
@@ -494,4 +502,4 @@ if __name__ == "__main__":
                               u'Coding', u'name': u'BBa_C0178', u'id': 7},
                             {u'type': u'Terminator', u'name': u'BBa_B0013'}],
                         u'induce_type': u'Negative', u'type': u'Negative'}}}}
-  print update_controller(db, update_info)
+  # print update_controller(db, update_info)
