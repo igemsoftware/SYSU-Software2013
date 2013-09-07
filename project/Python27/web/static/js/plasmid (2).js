@@ -26,7 +26,7 @@ var plasmidPainter = {
 		var marginLeft = 0, 
 			marginTop = 10;
 		jc.start(this.canvasId, true);
-		console.log(color);
+		//console.log(color);
 		jc.rect((marginLeft + bioStart), marginTop, (bioEnd - bioStart), 25, color, true).id(name);
 		// add shadow
 		jc('#'+name).shadow({
@@ -58,7 +58,7 @@ var plasmidPainter = {
 				{
 					this.drawSegment(st,en,i,data2[i].color,data2[i].seq);	
 				}
-				console.log(st,en,i,data2[i].color,data2[i].seq);
+				//console.log(st,en,i,data2[i].color,data2[i].seq);
 			}
 		}
 	}
@@ -732,44 +732,44 @@ function getAngleFromLineToXAxis(circle,x,y) {
 function lengthBetweenTwoPoint(x1,y1,x2,y2) {
   return Math.sqrt((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2));
 }
+var but=0;
 function canvasMouseDown(obj,e)
 {
-	 sessionStorage.x1=e.clientX;
-	 sessionStorage.y1=e.clientY;
-	 obj.style.cursor = "hand";
+	var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());
+	sessionStorage.originAng=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));
+	but=1;
 }
-function canvasMouseUp(obj,e)
-{
-	obj.style.cursor = "default";
-	sessionStorage.x2=e.clientX;
-	sessionStorage.y2=e.clientY;
-	if (Math.abs(sessionStorage.x1-sessionStorage.x2)<3&& Math.abs(sessionStorage.y1-sessionStorage.y2)<3)
-	{
-		return;
+function canvasMouseUp(obj,event){
+	but=0;
+}
+function canvasMouseMove(obj,e)
+{		
+	if(but==1&&e.button==0){
+		var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());						
+		var a2=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));			
+		var offsetang=parseInt(sessionStorage._offsetAngle)+a2-sessionStorage.originAng;
+		console.log(offsetang);
+		if(offsetang<0)
+		{
+			offsetang=offsetang+360;
+		}else if(offsetang>360)
+		{
+			offsetang=offsetang-360;
+		}	
+		sessionStorage._offsetAngle=offsetang;
+		chart.push("offset_angle",offsetang);
+		chart.push("animation","false");
+		chart.resize(847,430);
+		var ang=270-offsetang;
+		if(ang<0)
+		{
+			ang=ang+360;
+		}
+		left=parseInt(ang/360*size);
+		updateSeqPosText();
+		show('plasmid-canvas',createTempDataForCanvas(seq.substring(left,left+60),left),60);
+		sessionStorage.originAng=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));
 	}
-	var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());	
-	a2=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));
-	a1=parseInt(getAngleFromLineToXAxis(circle,parseInt(sessionStorage.x1),parseInt(sessionStorage.y1)));		
-	var offsetang=parseInt(sessionStorage._offsetAngle)+a2-a1;
-	if(offsetang<0)
-	{
-		offsetang=offsetang+360;
-	}else if(offsetang>360)
-	{
-		offsetang=offsetang-360;
-	}	
-	sessionStorage._offsetAngle=offsetang;
-	chart.push("offset_angle",offsetang);
-	chart.push("animation","false");
-	chart.resize(847,430);
-	var ang=270-offsetang;
-	if(ang<0)
-	{
-		ang=ang+360;
-	}
-	left=parseInt(ang/360*size);
-	updateSeqPosText();
-	show('plasmid-canvas',createTempDataForCanvas(seq.substring(left,left+60),left),60);
 }
 function saveGraph(){
 	var _canvas=document.getElementById(chart.canvasid);
@@ -778,7 +778,7 @@ function saveGraph(){
 function isPointInCircle(circle,x,y)
 {
 	var lengthTemp = lengthBetweenTwoPoint(circle.x, circle.y, x, y);
-	console.log(lengthTemp,circle.getInnerRadius(),circle.getRadius());
+	//console.log(lengthTemp,circle.getInnerRadius(),circle.getRadius());
 	if (lengthTemp >= circle.getInnerRadius() && lengthTemp <= circle.getRadius()) {
 		return true;
     }
@@ -788,7 +788,7 @@ function loadData(){
 	return raw_data;
 }
 $(function(){
-	console.log(getArgs()['fjsdkfjdks']);
+	//console.log(getArgs()['fjsdkfjdks']);
 	if(getArgs()['action']!=undefined)
 	{
 		if(getArgs()['action']=='loadData')
