@@ -1,5 +1,6 @@
 import component_union
 import sequence_serializer
+import os
 
 groups = [
       {
@@ -27,6 +28,8 @@ groups = [
         }
       ]
 
+reverse = {"A":"T", "T":"A", "C":"G", "G":"C"}
+
 def find_file(name, path):
   for root, dirs, files in os.walk(path):
     if name in files:
@@ -34,13 +37,13 @@ def find_file(name, path):
 
 def plasmid_sbol(groups, rule = "RFC10"):
   for data in groups:
-    print data
     components = [cc["name"] for cc in data["sbol"]]
     file_list = [find_file(s + ".xml", ".") for s in components]
-    print file_list
     content = component_union.union(rule, file_list)
     dna_sequence = component_union.connect(rule, content)
-    print dna_sequence
+    sbol = component_union.formatter_v11(content, dna_sequence)
+    sbol2 = sequence_serializer.format_to_json(sbol)
+    print sbol2
 
 if __name__ == "__main__":
   plasmid_sbol(groups)
