@@ -340,7 +340,9 @@ function getRawData()
 function initDrawChart(){		
 	sessionStorage._offsetAngle=270;
 	
-	data=turnRawDatatoData(raw_data);		
+	data=turnRawDatatoData(raw_data);	
+	data6=data;
+	console.log(data6);	
 	chart = new iChart.Donut2D({
 		id:"ichartjs2013",
 		animation:true,
@@ -375,18 +377,10 @@ function initDrawChart(){
 							if(typeof(data[i].name)=="number")
 							{
 								str=str+"From:"+data[i].start+" To:"+data[i].end;								
-								/*if(i!==0){
-									str=str+"<br\/>"+seq.substring(data[i].start-1,data[i].end+1);
-								}
-								else
-								{
-									str=str+"<br\/>"+seq.substring(data[i].start,data[i].end+1);
-								}*/
 								return '';								
 							}else
 							{
 								str=str+"From:"+data[i].start+" To:"+data[i].end;
-								//str=str+"<br\/>"+seq.substring(data[i].start,data[i].end);
 								str=str+"<br\/>Description:"+data[i].desp;
 							}							
 							break;
@@ -431,8 +425,7 @@ function initDrawChart(){
 				}
 			}*/
 		
-		showpercent:true,
-		decimalsnum:0,
+				
 		width : 847,
 		height : 430,
 		radius:140
