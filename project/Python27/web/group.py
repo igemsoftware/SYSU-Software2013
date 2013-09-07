@@ -312,6 +312,11 @@ def dump_group(network, database):
     proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i],\
         regulator)
 
+  # do not display regulation protein
+  for part in network["part"]:
+    proteins[part["id"]]["display"] = part["type"] == "Protein"
+
+
   # update_proteins_repress(database, proteins, groups)
   return {"groups": groups, "proteins": proteins, "plasmids": [plasmid]}
 
