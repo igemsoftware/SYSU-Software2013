@@ -28,6 +28,15 @@
           filename = this.getAttribute("id");
 		  filetype = $(this).find("p").text();
 		  console.log(filetype);
+		  switch (filetype){
+			  case 'regulation':
+			  	window.location = "index?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+			  case 'simulation':
+			  	window.location = "simulation?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+		  }
+		 
         });
         // Cleanly close websocket when unload window
         window.onbeforeunload = function() {
