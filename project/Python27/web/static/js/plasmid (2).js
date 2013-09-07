@@ -507,7 +507,7 @@ function createTop(chart){
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
 			.fillText("0BP",x,y,false,'#6d869f', 'lr',26,false,0,'middle');
-		}		
+		  }		
 	});
 }
 
@@ -748,7 +748,6 @@ function canvasMouseMove(obj,e)
 		var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());						
 		var a2=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));			
 		var offsetang=parseInt(sessionStorage._offsetAngle)+a2-sessionStorage.originAng;
-		console.log(offsetang);
 		if(offsetang<0)
 		{
 			offsetang=offsetang+360;
