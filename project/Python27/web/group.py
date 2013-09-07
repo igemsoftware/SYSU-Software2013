@@ -200,9 +200,9 @@ def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "p
   ret["grp_id"] = grp_id
   ret["name"] = cur_group[protein_idx]["name"]
   ret["PoPS"] = promoter_info[get_type_of_promoter(link_type)] * 100
-  ret["RiPs"] = rbs_info["MPRBS"] * 100
+  ret["RiPS"] = rbs_info["MPRBS"] * 100
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
-  ret["before_regulated"] = ret["PoPS"] * ret["RiPs"] * ret["copy"]
+  ret["before_regulated"] = ret["PoPS"] * ret["RiPS"] * ret["copy"]
   if regulator_info is not None:
     ret["K1"] = log10(regulator_info["K1"])
   else:
@@ -365,12 +365,12 @@ def update_controller(db, update_info):
   grp_id = protein["grp_id"]
   group = gene_circuit["groups"][grp_id]
 
-  if detail["type"] == "RiPs":
+  if detail["type"] == "RiPS":
     rbs_value = float(detail["new_value"]) / 100
     # idx = get_index_in_group(pro_name, group["sbol"])
     bestRBS = db.getRBSNearValue(rbs_value)
     gene_circuit["groups"][grp_id]["sbol"][pro_idx - 1]["name"] = bestRBS["Number"]
-    gene_circuit["proteins"][pro_id]["RiPs"] = bestRBS["MPRBS"] * 100
+    gene_circuit["proteins"][pro_id]["RiPS"] = bestRBS["MPRBS"] * 100
 
   elif detail["type"] == "copy":
     for plasmid in gene_circuit["plasmids"]:
@@ -450,13 +450,13 @@ def update_controller(db, update_info):
       #gene_circuit["groups"])
   for i in gene_circuit["proteins"]:
     info = gene_circuit["proteins"][i]
-    gene_circuit["proteins"][i]["before_regulated"] = info["RiPs"] * info["PoPS"] * info["copy"]
+    print info
+    gene_circuit["proteins"][i]["before_regulated"] = info["RiPS"] * info["PoPS"] * info["copy"]
   return gene_circuit
 
 if __name__ == "__main__":
   db = database.SqliteDatabase()
   sbol=dump_group(data, db)
-  print sbol
-  update_info = {u'detail': {u'repressor_list': [], u'new_value': 89, u'type':\
-    u'copy', u'pro_id': 1}, u'gene_circuit': {'proteins': {1: {'RiPs': 11.49, 'name': 'BBa_C0060', 'concen': 0.1, 'grp_id': 4, 'pos': 2, 'PoPS': 61.019999999999996, 'repress_rate': -1, 'K1': 0, 'induce_rate': -1, 'copy': 73.0}, 2: {'RiPs': 11.49, 'name': 'BBa_C0060', 'concen': 0.1, 'grp_id': 4, 'pos': 4, 'PoPS': 61.019999999999996, 'repress_rate': -1, 'K1': 0, 'induce_rate': -1, 'copy': 73.0}, 3: {'RiPs': 11.49, 'name': 'BBa_K518003', 'concen': 0.1, 'grp_id': 4, 'pos': 6, 'PoPS': 61.019999999999996, 'repress_rate': -1, 'K1': 0, 'induce_rate': -1, 'copy': 73.0}, 4: {'RiPs': 11.49, 'name': 'BBa_K518003', 'concen': 0.1, 'grp_id': 4, 'pos': 8, 'PoPS': 61.019999999999996, 'repress_rate': -1, 'K1': 0, 'induce_rate': -1, 'copy': 73.0}, 5: {'RiPs': 11.49, 'name': 'BBa_C0160', 'concen': 0.1, 'grp_id': 5, 'pos': 2, 'PoPS': 34.23, 'repress_rate': -1, 'K1': -2.4287510356503725, 'induce_rate': -1, 'copy': 73.0}, 6: {'RiPs': 11.49, 'name': 'BBa_C0178', 'concen': 0.1, 'grp_id': 6, 'pos': 2, 'PoPS': 94.89, 'repress_rate': -1, 'K1': -2.4287510356503725, 'induce_rate': -1, 'copy': 73.0}}, 'plasmids': [[4, 5, 6]], 'groups': {4: {'from': -1, 'state': 'cis', 'inducer': 'None', 'to': [5, 6], 'sbol': [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060', 'id': 1}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060', 'id': 2}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003', 'id': 3}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003', 'id': 4}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'type': 'Constitutive'}, 5: {'from': 3, 'state': 'cis', 'inducer': 'Positive', 'to': [], 'sbol': [{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160', 'id': 5}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'type': 'Positive'}, 6: {'from': 4, 'state': 'cis', 'inducer': 'Negative', 'to': [], 'sbol': [{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178', 'id': 6}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'type': 'Negative'}}}}
+  #print sbol
+  update_info = {u'detail': {u'repressor_list': [], u'new_value': 24, u'type': u'PoPS', u'pro_id': 1}, u'gene_circuit': {u'proteins': {u'1': {u'RiPS': None, u'name': u'BBa_C0060', u'repress_rate': -1, u'concen': 0, u'grp_id': 4, u'pos': 2, u'PoPS': 24, u'before_regulated': 43917, u'K1': None, u'induce_rate': -1, u'copy': 73}, u'3': {u'RiPS': None, u'name': u'BBa_K518003', u'repress_rate': -1, u'concen': 0, u'grp_id': 4, u'pos': 6, u'PoPS': 52, u'before_regulated': 43917, u'K1': None, u'induce_rate': -1, u'copy': 73}, u'2': {u'RiPS': None, u'name': u'BBa_C0060', u'repress_rate': -1, u'concen': 0, u'grp_id': 4, u'pos': 4, u'PoPS': 52, u'before_regulated': 43917, u'K1': None, u'induce_rate': -1, u'copy': 73}, u'5': {u'RiPS': None, u'name': u'BBa_C0160', u'repress_rate': -1, u'concen': 0, u'grp_id': 5, u'pos': 2, u'PoPS': 34, u'before_regulated': 28711, u'K1': -2, u'induce_rate': -1, u'copy': 73}, u'4': {u'RiPS': None, u'name': u'BBa_K518003', u'repress_rate': -1, u'concen': 0, u'grp_id': 4, u'pos': 8, u'PoPS': 52, u'before_regulated': 43917, u'K1': None, u'induce_rate': -1, u'copy': 73}, u'7': {u'RiPS': None, u'name': u'BBa_C0178', u'repress_rate': -1, u'concen': 0, u'grp_id': 7, u'pos': 4, u'PoPS': 95, u'before_regulated': 79590, u'K1': -2, u'induce_rate': -1, u'copy': 73}, u'6': {u'RiPS': None, u'name': u'BBa_C0178', u'repress_rate': -1, u'concen': 0, u'grp_id': 7, u'pos': 2, u'PoPS': 95, u'before_regulated': 79590, u'K1': -2, u'induce_rate': -1, u'copy': 73}}, u'plasmids': [[4, 5, 7]], u'groups': {u'5': {u'from': 3, u'state': u'cis', u'to': [], u'sbol': [{u'type': u'Regulatory', u'name': u'BBa_I712074'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0160', u'id': 5}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'induce_type': u'None', u'type': u'Positive'}, u'4': {u'from': -1, u'state': u'cis', u'to': [5, 6], u'sbol': [{u'type': u'Signalling', u'name': u'BBa_K266005'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0060', u'id': 1}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0060', u'id': 2}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_K518003', u'id': 3}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_K518003', u'id': 4}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'induce_type': u'None', u'type': u'Constitutive'}, u'7': {u'from': 4, u'state': u'cis', u'inducer': u'BBa_P0140', u'to': [], u'sbol': [{u'type': u'Regulatory', u'name': u'BBa_I712074'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0178', u'id': 6}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0178', u'id': 7}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'induce_type': u'Negative', u'type': u'Negative'}}}}
   print update_controller(db, update_info)
