@@ -410,7 +410,7 @@ $().ready(function() {
         for (var i = 0; i < figuresCount; i++) {
             var figure = {};
             figure.id = i;
-            figure.name = figures[i].id;
+            figure.name = figures[i].id.split('-')[0];
             figure.type = figures[i].TYPE;
 
             data.part.push(figure);
@@ -450,6 +450,7 @@ $().ready(function() {
             figure.type = figures[i].TYPE;
             figure.xPos = figures[i].getX();
             figure.yPos = figures[i].getY();
+
 
             data.part.push(figure);
         }
