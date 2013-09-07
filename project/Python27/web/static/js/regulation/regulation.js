@@ -298,21 +298,9 @@ $().ready(function() {
             } else if (message.request == "loginOut") { // get logout info
                 window.location = "..";
             } else if (message.request == "getUserFileList") {
-                console.log(message.result);
-                $("#filelist").html("");
-                for (var i = 0; i < message.result.length; i++) {
-                    $("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
-                };
-
-                $("#filelist > a").live("click", function() {
-                    ws.send(JSON.stringify({
-                        "request": "loadUserFile",
-                        "fileName": "default1",
-                        "fileType": "data"
-                    }));
-                });
+                
             } else if (message.request == "loadUserFile") {
-                console.log(message.result);
+                // console.log(message.result);
                 repaintCanvas(message.result);
             } else if (message.request == 'indexSaveToGeneCircuit') {
                 console.log(message.result);
@@ -506,6 +494,30 @@ $().ready(function() {
         function repaintLine(link) {
             var source = app.view.getFigure(link.from);
             var target = app.view.getFigure(link.to);
+
+            var sourcePort, targetPort;
+
+            if (source.TYPE == 'Protein' || source.TYPE == 'PandP') {
+                sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
+            } else if (source.TYPE == 'PandA' || source.TYPE == 'PandR' || source.TYPE == 'PandRORA') {
+                sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(source));
+            }
+
+            if (target.TYPE == 'Protein' || target.TYPE == 'PandP') {
+                targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
+            } else if (target.TYPE == 'PandA' || target.TYPE == 'PandR' || target.TYPE == 'PandRORA') {
+                targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
+            }
+
+            if (link.type == 'Activator') {
+                var command = new graphiti.command.CommandConnect(app.view, targetPort, sourcePort, null, "Activate"); // 连接两点
+                app.view.getCommandStack().execute(command); // 添加到命令栈中
+                app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
+            } else if (link.type == 'Repressor') {
+                var command = new graphiti.command.CommandConnect(app.view, targetPort, sourcePort, null, "Inhibit"); // 连接两点
+                app.view.getCommandStack().execute(command); // 添加到命令栈中
+                app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
+            }
         };
     };
 });
