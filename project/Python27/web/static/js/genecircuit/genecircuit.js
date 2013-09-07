@@ -191,6 +191,7 @@ var group = {
 		for(var i = 0; i < aData.sbol.length; i++) {
 			var type = 'Promoter.PNG';
 			if(aData.sbol[i].type == 'Regulatory') type = 'Promoter.PNG';
+			else if(aData.sbol[i].type == 'Signalling') type = 'Promoter.PNG';
 			else if(aData.sbol[i].type == 'Intermediate') type = 'Promoter.PNG';
 			else if(aData.sbol[i].type == 'RBS') type = 'rbs.PNG';
 			else if(aData.sbol[i].type == 'Coding') type = 'Coding.PNG';
