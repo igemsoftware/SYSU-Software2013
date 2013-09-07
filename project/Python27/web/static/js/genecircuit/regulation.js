@@ -525,8 +525,15 @@ $().ready(function() {
     }));
 
 		ws.send(JSON.stringify({
-			'request': 'changeRBS',
+<<<<<<< HEAD
+=======
+			'request': 'getIndexSave',
 		}));
+
+		/*ws.send(JSON.stringify({
+>>>>>>> origin/master
+			'request': 'changeRBS',
+		}));*/
 
 		// ws.send(JSON.stringify({ 
 			// 'request': 'getIndexSave', 
