@@ -8,13 +8,26 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width">
-
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
+  <script type="text/javascript" src="../static/js/lib/ZeroClipboard.js"></script>
+  <script type="text/javascript" src="../static/js/ichartjs.v1.2/ichart.1.2.min.js"></script>  
+  <link rel="stylesheet" href="../static/css/demo.css" type="text/css"/>	
   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="../static/css/graphiti.css">
-  <script type="text/javascript" src="../static/js/ichartjs.v1.2/ichart.1.2.min.js"></script>
-	<link rel="stylesheet" href="../static/css/demo.css" type="text/css"/>
-
+  <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="../static/css/reset.css">
+  <link rel="stylesheet" href="../static/css/slider_style.css">
+  <link rel="stylesheet" href="../static/css/dtree.css">
+  <link rel="stylesheet" href="../static/css/graphiti.css"></head>  
+  <script src="../static/js/underscore-min.js"></script>
+  <script src="../static/js/jquery-1.8.0.min.js"></script>
+  <script src="../static/js/lib/canvas2image.js"></script>
+  <script src="../static/js/lib/base64.js"></script>
+  <script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>
+  <script src="../static/js/simulation.js"></script>
+  <script src="../static/js/jCanvaScript.1.5.18.js"></script>
+  
 </head>
 <body>
 	<div class="mycontainer" id="regulation-container">
@@ -37,19 +50,25 @@
         <div id="content">
             <div id="canvas-mask">                
                 	<div id='canvasDiv' style="width:66%;height:100%;float:left;left: 20px;top:0px;position:relative;"></div>                    
-                 <div id="Curve" style="margin:20px;width:30%;height:25%;float:right;border-style: outset;"> 
+                 <div id="Curve" style="width:30%;height:20%;padding-left:30px;float:left;border-style: outset;"> 
                  <label>Curve</label>               
                  </div> 
-                 <div id="Option" style="margin:20px;width:30%;height:25%;float:right;border-style: outset;"> 
+                 <div id="Option" style="width:30%;height:20%;padding-left:30px;float:left;border-style: outset;"> 
                  <label>Option</label>       
-                 <input type="checkbox" id="stochastic" style="margin:20px;">stochastic</input>        	
+                 <input type="checkbox" id="stochastic" style="margin:15px;">stochastic</input>        	
                  <br>	 
-                 <input type="checkbox" id="timedelay" style="margin:20px;">time delay</input>
-                 </div>                    
+                 <input type="checkbox" id="timedelay" style="margin:15px;">time delay</input>
+                 </div>     
+                 <div id="Inducer" style="padding-left:30px;width:30%;height:20%;float:right;border-style: outset;"> 
+                 <label>Inducer</label>
+                 </div>          
+                  <div id="buttons" style="padding-left:30px;width:30%;height:25%;float:right;border-style: outset;"> 
+                   <input id="back-botton" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back"/>
+                 <input id="save-botton" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();"/>
+                 </div>    
 			 </div>
         </div>    	
   	</div> <!-- /container -->
-  <script src="../static/js/jquery-1.8.0.min.js"></script>
-  <script src="../static/js/simulation.js"></script>
+  
 </body>
 </html>
