@@ -6,7 +6,22 @@
  *                  application, configuration window and websocket.
  *
  **/
-
+ //this function can get the param in a url
+function    getArgs()   
+   {   
+           var    args=new    Object();   
+           var    query=location.search.substring(1);//获取查询串   
+           var    pairs=query.split(",");//在逗号处断开   
+           for(var    i=0;i<pairs.length;i++)   
+           {   
+                   var    pos=pairs[i].indexOf('=');//查找name=value   
+                   if(pos==-1)    continue;//如果没有找到就跳过   
+                   var    argname=pairs[i].substring(0,pos);//提取name   
+                   var    value=pairs[i].substring(pos+1);//提取value   
+                   args[argname]=unescape(value);//存为属性   
+           }   
+           return    args;//返回对象   
+   }
 // document ready
 $().ready(function() {
     document.ontouchmove = function(e) {
@@ -68,7 +83,7 @@ $().ready(function() {
                     clearInterval(tid);
                 }
             }, 1000);
-        } else {
+        } else {//save the data into the database
 			var saveData = '';
             if(window.location.pathname==='/simulation')
 			{
@@ -86,7 +101,8 @@ $().ready(function() {
         }
     });    
     // Cleanly close websocket when unload window
-    window.onbeforeunload = function() {        
+    window.onbeforeunload = function() {  
+		      
     };
 
 });

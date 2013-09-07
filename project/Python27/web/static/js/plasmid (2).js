@@ -233,6 +233,7 @@ tip.fadeIn("slow");
 	); 
 };
 var data =  [];
+var left=1;//the int to record seq's left position
 var size=0;//整个序列的长度
 var raw_data={
     "DnaComponent": {
@@ -279,13 +280,16 @@ var raw_data={
     }
 };
 var seq=raw_data.DnaComponent.DnaSequence.nucleotides;
-var chart=null;
-function sortNumber(a, b)//用于数组排序的函数
+var chart=null;//the ichartjs object
+//the function that use to sort an array
+function sortNumber(a, b)
 {
 	return a.start - b.start;
 }
-function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形图的数组的函数
-{                               //The function that can turn raw json data to array that can generate donut
+//把原始数据json转化为可以生成环形图的数组的函数
+//The function that can turn raw json data to array that can generate donut
+function turnRawDatatoData(raw)
+{                               
 	var tempArray=[];
 	size=raw.DnaComponent.DnaSequence.nucleotides.length;
 	for(i=0;i<raw.DnaComponent.annotaions.length;i++)
@@ -326,21 +330,21 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 	tempArray=null;
 	return real_data;	
 }
-function getRawData()//to get the raw data of plasmid
+
+//to get the raw data of plasmid
+function getRawData()
 {
 		
 }
-function initDrawChart(){	
-	//if(sessionStorage._offsetAngle===undefined)
-	//{
-		sessionStorage._offsetAngle=270;
-	//}
-	getRawData();
+
+function initDrawChart(){		
+	sessionStorage._offsetAngle=270;
+	
 	data=turnRawDatatoData(raw_data);		
 	chart = new iChart.Donut2D({
 		id:"ichartjs2013",
 		animation:true,
-		render : 'canvasDiv',//图表渲染的HTML DOM的id //Chart rendering the HTML DOM id
+		render : 'canvasDiv', //Chart rendering the HTML DOM id
 		center:{
 			text:raw_data.DnaComponent.name+'\n'+seq.length+'bp',
 			shadow:true,
@@ -351,7 +355,7 @@ function initDrawChart(){
 			color:'#6f6f6f'
 		},
 		offset_angle: parseInt(sessionStorage._offsetAngle,10),
-		data: data,//图表的数据源 //Chart data source
+		data: data,//Chart data source
 		offsetx:0,
 		shadow:false,
 		background_color:'#f4f4f4',
@@ -506,11 +510,7 @@ function createTop(chart){
 		}		
 	});
 }
-var left=1;//the int to record seq's left position
-/*function seqTextOnClickHandler(obj){	
-	left=parseInt((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size,10)+1;
-	updateSeqPosText();
-}*/
+
 function copyBtnOnClick(obj)
 {
 	if(window.clipboardData) {   
@@ -593,7 +593,7 @@ function turnTheData(indexToBeFirst)
 	data=newData;
 	newData=null;
 }
-function json2str(o) {
+/*function json2str(o) {
 	var arr = [];
 	var fmt = function(s) {
 		if (typeof s == 'object' && s != null) return json2str(s);
@@ -601,7 +601,7 @@ function json2str(o) {
 	}
 	for (var i in o) arr.push("'" + i + "':" + fmt(o[i]));
 	return '{' + arr.join(',') + '}';
-}
+}*/
 function handlerWebSocket(){
 	if ("WebSocket" in window) {
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
@@ -679,7 +679,6 @@ function setUpDrag(){
 				left=parseInt(getAngleFromLineToXAxis(circle,x,y)/360*size);
 				updateSeqPosText();
 			}
-			//console.log(parseInt(getAngleFromLineToXAxis(circle,x,y)/360*size));
 			var ang=parseInt(sessionStorage._offsetAngle);
 			sessionStorage._offsetAngle=ang+20;
 			chart.push("offset_angle",ang+20);
@@ -784,8 +783,20 @@ function isPointInCircle(circle,x,y)
 		return true;
     }
     return false;
+} 
+function loadData(){
+	return raw_data;
 }
 $(function(){
+	console.log(getArgs()['fjsdkfjdks']);
+	if(getArgs()['action']!=undefined)
+	{
+		if(getArgs()['action']=='loadData')
+		{
+			raw_data=loadData();
+		}
+	}
+	getRawData();
 	window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
               window.webkitRequestAnimationFrame || 
