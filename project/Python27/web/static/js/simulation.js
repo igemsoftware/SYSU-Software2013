@@ -82,13 +82,17 @@ function getLabel(raw) {
     labels.push(raw[i][0]);
   return labels;
 }
-
-//$(function(){
+var chart=null;
+function saveGraph()
+{
+	var _canvas=document.getElementById(chart.canvasid);	
+	Canvas2Image.AsPNG(_canvas); 
+}
 function run(data){
   //ws.send(JSON.stringify({'request': 'getSimulationData'}));
   console.log(data);
   labels = getLabel(raw_data);
-  var chart = new iChart.LineBasic2D({
+    chart= new iChart.LineBasic2D({
     animation:true,
     render : 'canvasDiv',//图表渲染的HTML DOM的id
     data: data,//图表的数据源
