@@ -157,7 +157,12 @@ def work(data, database):
     if link["type"] == "Bound":
       continue
     next_grp = bound_list[link["from"]]
-    cur = data["part"][link["from"]]
+    print data["part"]
+    for p in data["part"]:
+      if p["id"] == link["from"]:
+        cur = p
+        break
+    print cur
     if cur["type"] == "Repressor":
       groups[next_grp][0] = find_promoter(database, repressor=cur["name"])
     if cur["type"] == "Activator":
@@ -411,7 +416,6 @@ def update_controller(db, update_info):
   elif detail["type"] == "K1":
     #TODO not completed yet!!!
     repressor = float(detail["new_value"]) / 100
-
 
     # update promoter related to repressor
     best_promoter = db.find_promoter_with_repressor(best_repressor["Number"])
