@@ -5,20 +5,55 @@ $(document).ready(function () {
   if ("WebSocket" in window) {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function (msg) {
-      //raw_data = JSON.parse(msg.data).result;
-      data = turnRawDatatoData(raw_data);
-      run(data);
-	  for(var i=0;i<data.length;i++)
-	  {
-		  var w=document.getElementById('Curve').clientWidth/data.length/2.5;
-		  var h=document.getElementById('Curve').clientHeight;
-		  document.getElementById('Curve').appendChild(createAnInputCheckBox(i,w,h,proteinNames[i]));
-		 document.getElementById('Curve').appendChild(document.createTextNode(proteinNames[i]));
+		var message = JSON.parse(msg.data);
+      	if (message.request == "getDirList") { // get directory
+        	if (message.result.files == 'true') {
+					
+        	} else {
+                    if (proteinList.isInit) {
+                        proteinList.parseSubTree(message.result);
+                    } else {
+                        proteinList.parseJson(message.result.files);
+                    }
+                }
+         }else if (message.request == "getLoginedUserName") { // get username
+                $("#user-view-left #username").text(message.result);
+            } else if (message.request == "loginOut") { // get logout info
+                window.location = "..";
+            } else if (message.request == "getUserFileList") {
+                console.log(message.result);
+                $("#filelist").html("");
+                for (var i = 0; i < message.result.length; i++) {
+                    $("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
+                };
+
+                $("#filelist > a").live("click", function() {
+                    ws.send(JSON.stringify({
+                        "request": "loadUserFile",
+                        "fileName": "default1",
+                        "fileType": "data"
+                    }));
+                });
+            } else if (message.request == "loadUserFile") {
+                console.log(message.result);
+            }else if (message.request == 'saveUserData') {
+                console.log(message.result);
+            }else if (message.request == 'getSimulationData'){
+			  data = turnRawDatatoData(raw_data);
+			  run(data,document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
+			  for(var i=0;i<data.length;i++)
+			  {
+				  var w=document.getElementById('Curve').clientWidth/data.length/2.5;
+				  var h=document.getElementById('Curve').clientHeight;
+				  document.getElementById('Curve').appendChild(createAnInputCheckBox(i,w,h,proteinNames[i]));
+				 document.getElementById('Curve').appendChild(document.createTextNode(proteinNames[i]));
+		  	}
 	  }
     };
   };  
   // Bind send button to websocket
   ws.onopen = function() {
+	ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
     ws.send(JSON.stringify({'request': 'getSimulationData'}));
   };
 
@@ -48,8 +83,8 @@ function createAnInputCheckBox(index,width,height,proteinName){
 			if(oi.checked){
 				newdata.push(data[i]);
 			}
-		}
-		run(newdata);
+		}		
+		run(newdata,document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
 	}
 	return o;
 }
@@ -88,7 +123,7 @@ function saveGraph()
 	var _canvas=document.getElementById(chart.canvasid);	
 	Canvas2Image.AsPNG(_canvas); 
 }
-function run(data){
+function run(data,width1,height1){
   //ws.send(JSON.stringify({'request': 'getSimulationData'}));
   console.log(data);
   labels = getLabel(raw_data);
@@ -101,6 +136,21 @@ function run(data){
     shadow:true,
     background_color:'#f4f4f4',
     separate_angle:10,//分离角度
+	/*coordinate:{
+		scale:[{
+			position:'left',	
+			scale_space:5,
+			scale_enable:false,//禁用小横线			
+			
+			},{
+			position:'bottom',	
+			start_scale:1,
+			end_scale:12,	
+			fontunit:'0.1',
+			scale_space:10,		
+			labels:labels
+		}]
+	},*/
     tip:{
       enable:true,
       showType:'fixed',
@@ -126,8 +176,8 @@ function run(data){
     },
     showpercent:true,
     decimalsnum:2,
-    width : document.getElementById('canvasDiv').clientWidth,
-    height : document.getElementById('canvasDiv').clientHeight,
+    width : width1,
+    height : height1,
     radius:140
   });
   chart.draw();
