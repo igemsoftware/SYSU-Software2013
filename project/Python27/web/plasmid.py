@@ -27,10 +27,15 @@ groups = [
         }
       ]
 
+def find_file(name, path):
+  for root, dirs, files in os.walk(path):
+    if name in files:
+      return os.path.join(root, name)
+
 def plasmid_sbol(groups, rule = "RFC10"):
   for data in groups:
-    print data[i]
-    components = [cc["name"] for cc in data[i]["sbol"]]
+    print data
+    components = [cc["name"] for cc in data["sbol"]]
     file_list = [find_file(s + ".xml", ".") for s in components]
     print file_list
     content = component_union.union(rule, file_list)
