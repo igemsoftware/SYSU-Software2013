@@ -26,7 +26,7 @@ var plasmidPainter = {
 		var marginLeft = 0, 
 			marginTop = 10;
 		jc.start(this.canvasId, true);
-		console.log(color);
+		//console.log(color);
 		jc.rect((marginLeft + bioStart), marginTop, (bioEnd - bioStart), 25, color, true).id(name);
 		// add shadow
 		jc('#'+name).shadow({
@@ -58,7 +58,7 @@ var plasmidPainter = {
 				{
 					this.drawSegment(st,en,i,data2[i].color,data2[i].seq);	
 				}
-				console.log(st,en,i,data2[i].color,data2[i].seq);
+				//console.log(st,en,i,data2[i].color,data2[i].seq);
 			}
 		}
 	}
@@ -233,6 +233,7 @@ tip.fadeIn("slow");
 	); 
 };
 var data =  [];
+var left=1;//the int to record seq's left position
 var size=0;//整个序列的长度
 var raw_data={
     "DnaComponent": {
@@ -279,13 +280,16 @@ var raw_data={
     }
 };
 var seq=raw_data.DnaComponent.DnaSequence.nucleotides;
-var chart=null;
-function sortNumber(a, b)//用于数组排序的函数
+var chart=null;//the ichartjs object
+//the function that use to sort an array
+function sortNumber(a, b)
 {
 	return a.start - b.start;
 }
-function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形图的数组的函数
-{                               //The function that can turn raw json data to array that can generate donut
+//把原始数据json转化为可以生成环形图的数组的函数
+//The function that can turn raw json data to array that can generate donut
+function turnRawDatatoData(raw)
+{                               
 	var tempArray=[];
 	size=raw.DnaComponent.DnaSequence.nucleotides.length;
 	for(i=0;i<raw.DnaComponent.annotaions.length;i++)
@@ -326,21 +330,21 @@ function turnRawDatatoData(raw)//把原始数据json转化为可以生成环形�
 	tempArray=null;
 	return real_data;	
 }
-function getRawData()//to get the raw data of plasmid
+
+//to get the raw data of plasmid
+function getRawData()
 {
 		
 }
-function initDrawChart(){	
-	//if(sessionStorage._offsetAngle===undefined)
-	//{
-		sessionStorage._offsetAngle=270;
-	//}
-	getRawData();
+
+function initDrawChart(){		
+	sessionStorage._offsetAngle=270;
+	
 	data=turnRawDatatoData(raw_data);		
 	chart = new iChart.Donut2D({
 		id:"ichartjs2013",
 		animation:true,
-		render : 'canvasDiv',//图表渲染的HTML DOM的id //Chart rendering the HTML DOM id
+		render : 'canvasDiv', //Chart rendering the HTML DOM id
 		center:{
 			text:raw_data.DnaComponent.name+'\n'+seq.length+'bp',
 			shadow:true,
@@ -351,7 +355,7 @@ function initDrawChart(){
 			color:'#6f6f6f'
 		},
 		offset_angle: parseInt(sessionStorage._offsetAngle,10),
-		data: data,//图表的数据源 //Chart data source
+		data: data,//Chart data source
 		offsetx:0,
 		shadow:false,
 		background_color:'#f4f4f4',
@@ -503,14 +507,10 @@ function createTop(chart){
 			.textBaseline('top')
 			.textFont('600 12px 微软雅黑')
 			.fillText("0BP",x,y,false,'#6d869f', 'lr',26,false,0,'middle');
-		}		
+		  }		
 	});
 }
-var left=1;//the int to record seq's left position
-/*function seqTextOnClickHandler(obj){	
-	left=parseInt((document.getElementById('seqCurrentText').scrollLeft/document.getElementById('seqCurrentText').scrollWidth)*size,10)+1;
-	updateSeqPosText();
-}*/
+
 function copyBtnOnClick(obj)
 {
 	if(window.clipboardData) {   
@@ -593,7 +593,7 @@ function turnTheData(indexToBeFirst)
 	data=newData;
 	newData=null;
 }
-function json2str(o) {
+/*function json2str(o) {
 	var arr = [];
 	var fmt = function(s) {
 		if (typeof s == 'object' && s != null) return json2str(s);
@@ -601,72 +601,37 @@ function json2str(o) {
 	}
 	for (var i in o) arr.push("'" + i + "':" + fmt(o[i]));
 	return '{' + arr.join(',') + '}';
-}
-function testWebSocket(){
+}*/
+function handlerWebSocket(){
 	if ("WebSocket" in window) {
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
-		ws.onmessage = function(msg) {
-		   var message = JSON.parse(msg.data);
-		   console.log(message);
-		   /*if(message.request==="getLoginedUserName")
-		   {			  
-			   sessionStorage.LoginedUserName=message.result;
-		   }*/
-		};
+		ws.onmessage = function (msg) {
+		var message = JSON.parse(msg.data);
+      	if (message.request == "getLoginedUserName") {
+        	$("#user-view-left #username").text(message.result);
+        } else if (message.request == "loginOut") { // get logout info
+        	window.location = "..";
+        } else if (message.request == "getUserFileList") {
+        	$("#filelist").html("");
+			for (var i = 0; i < message.result.length; i++) {
+				$("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
+			};
+			$("#filelist > a").live("click", function() {
+				ws.send(JSON.stringify({
+                        "request": "loadUserFile",
+                        "fileName": "default1",
+                        "fileType": "data"
+                    }));
+			});
+		} else if (message.request == "loadUserFile") {
+                console.log(message.result);
+		}else if (message.request == 'saveUserData') {
+			console.log(message.result);
+        }
+		}
 	}
 	ws.onopen = function() {
-		//ws.send(JSON.stringify({'request': 'getUserFileList'}));
-		//ws.send(JSON.stringify({'request': 'changeRBS'}));
-		//ws.send(JSON.stringify({'request': 'generateRandomsessionKey'}));
-		//ws.send(JSON.stringify({'request': 'registAUser','name':'testplus1','password':'1234','email':'123456@yahoo.com','group_name':'guest','gender':1,'question':'who am i?','answer':'testplus1'}));
-		ws.send(JSON.stringify({'request': 'getUserQuestion','userName':'kitty'}));		
-		ws.send(JSON.stringify({'request': 'forgetPasswordAndReset','userName':'kitty3','answer':'abcd','password':'1234'}));
-		ws.send(JSON.stringify({'request': 'forgetPasswordAndReset','userName':'testplus','answer':'testplus','password':'1234'}));
-		//ws.send(JSON.stringify({'request': 'loadUserFile','fileName':'default1','fileType':'default'}));
-		//ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
-		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
-		/*ws.send(JSON.stringify({'request': 'saveUserData',
-		'data':'web/biobrick/Terminators/BBa_B0010.xml',
-		'fileName':'test1',
-		'fileType':'youtest'
-		}));*/
-		/*datatemp = {
-    "part": [
-      { "id"  : 1,
-        "name": "BBa_C0060",
-        "type": "Protein"
-        },
-      { "id"  : 2,
-        "name": "repressor",
-        "type": "Repressor"
-        },
-      { "id"  : 3,
-        "name": "BBa_C0160",
-        "type": "Protein"
-        },
-      { "id"  : 4,
-        "name": "BBa_C0178",
-        "type": "Protein"
-        }
-
-      ],
-    "link": [
-      { "from": 1,
-        "to"  : 2,
-        "type": "Bound",
-        },
-      { "from": 2,
-        "to"  : 3,
-        "type": "repressor_protein",
-        },
-      { "from": 2,
-        "to"  : 4,
-        "type": "repressor_protein",
-        },
-      ]
-    }        
-	    datatemp=JSON.stringify(datatemp);
-		ws.send(JSON.stringify({'request': 'loadSBOL','data':datatemp}));*/
+		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));			
 	}
 }
 function CircleClass(drawArea,drawAreaToBody)
@@ -714,7 +679,6 @@ function setUpDrag(){
 				left=parseInt(getAngleFromLineToXAxis(circle,x,y)/360*size);
 				updateSeqPosText();
 			}
-			//console.log(parseInt(getAngleFromLineToXAxis(circle,x,y)/360*size));
 			var ang=parseInt(sessionStorage._offsetAngle);
 			sessionStorage._offsetAngle=ang+20;
 			chart.push("offset_angle",ang+20);
@@ -768,59 +732,70 @@ function getAngleFromLineToXAxis(circle,x,y) {
 function lengthBetweenTwoPoint(x1,y1,x2,y2) {
   return Math.sqrt((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2));
 }
+var but=0;
 function canvasMouseDown(obj,e)
 {
-	 sessionStorage.x1=e.clientX;
-	 sessionStorage.y1=e.clientY;
-	 obj.style.cursor = "hand";
+	var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());
+	sessionStorage.originAng=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));
+	but=1;
 }
-function canvasMouseUp(obj,e)
-{
-	obj.style.cursor = "default";
-	sessionStorage.x2=e.clientX;
-	sessionStorage.y2=e.clientY;
-	if (Math.abs(sessionStorage.x1-sessionStorage.x2)<3&& Math.abs(sessionStorage.y1-sessionStorage.y2)<3)
-	{
-		return;
+function canvasMouseUp(obj,event){
+	but=0;
+}
+function canvasMouseMove(obj,e)
+{		
+	if(but==1&&e.button==0){
+		var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());						
+		var a2=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));			
+		var offsetang=parseInt(sessionStorage._offsetAngle)+a2-sessionStorage.originAng;
+		if(offsetang<0)
+		{
+			offsetang=offsetang+360;
+		}else if(offsetang>360)
+		{
+			offsetang=offsetang-360;
+		}	
+		sessionStorage._offsetAngle=offsetang;
+		chart.push("offset_angle",offsetang);
+		chart.push("animation","false");
+		chart.resize(847,430);
+		var ang=270-offsetang;
+		if(ang<0)
+		{
+			ang=ang+360;
+		}
+		left=parseInt(ang/360*size);
+		updateSeqPosText();
+		show('plasmid-canvas',createTempDataForCanvas(seq.substring(left,left+60),left),60);
+		sessionStorage.originAng=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));
 	}
-	var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());	
-	a2=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));
-	a1=parseInt(getAngleFromLineToXAxis(circle,parseInt(sessionStorage.x1),parseInt(sessionStorage.y1)));		
-	var offsetang=parseInt(sessionStorage._offsetAngle)+a2-a1;
-	if(offsetang<0)
-	{
-		offsetang=offsetang+360;
-	}else if(offsetang>360)
-	{
-		offsetang=offsetang-360;
-	}	
-	sessionStorage._offsetAngle=offsetang;
-	chart.push("offset_angle",offsetang);
-	chart.push("animation","false");
-	chart.resize(847,430);
-	var ang=270-offsetang;
-	if(ang<0)
-	{
-		ang=ang+360;
-	}
-	left=parseInt(ang/360*size);
-	updateSeqPosText();
-	show('plasmid-canvas',createTempDataForCanvas(seq.substring(left,left+60),left),60);
 }
 function saveGraph(){
 	var _canvas=document.getElementById(chart.canvasid);
-	Canvas2Image.saveAsPNG(_canvas);  	
+	Canvas2Image.AsPNG(_canvas);  	
 }
 function isPointInCircle(circle,x,y)
 {
 	var lengthTemp = lengthBetweenTwoPoint(circle.x, circle.y, x, y);
-	console.log(lengthTemp,circle.getInnerRadius(),circle.getRadius());
+	//console.log(lengthTemp,circle.getInnerRadius(),circle.getRadius());
 	if (lengthTemp >= circle.getInnerRadius() && lengthTemp <= circle.getRadius()) {
 		return true;
     }
     return false;
+} 
+function loadData(){
+	return raw_data;
 }
 $(function(){
+	//console.log(getArgs()['fjsdkfjdks']);
+	if(getArgs()['action']!=undefined)
+	{
+		if(getArgs()['action']=='loadData')
+		{
+			raw_data=loadData();
+		}
+	}
+	getRawData();
 	window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
               window.webkitRequestAnimationFrame || 
@@ -836,22 +811,6 @@ $(function(){
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();		
 	var d=document.getElementById('seqCurrentText');	
 	width=d.offsetWidth/60*1.76;
-	console.log(width);
 	d.style.fontSize=width+'px';
-	console.log(d.style.fontSize);
-	testWebSocket();
-	//$("#divBody").toolTip();
-	//setUpDrag();
-	//console.log(document.getElementById());
-	//var canvas = document.getElementById(chart.canvasid);
-//	var context = chart.target.getContext();
-//	//console.log(context);
-//	//context.beginPath();
-//    //context.strokeStyle = "#000";
-//	//context.rect(150, 300, 500, 600);
-//	//context.stroke();
-//	var img=new Image();
-//	img.src="../static/img/glass.jpg";
-//	context.drawImage(img,0,0);
-//	console.log(context);	
+	handlerWebSocket();	
 });

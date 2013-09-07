@@ -282,7 +282,7 @@ class SqliteDatabase:
 			return None
 		else:
 			return decodejson[0]['Number']		
-  
+
 	def select_with_name(self, table, name):
 		self.__cursor.execute('SELECT * FROM %s WHERE Number = "%s"' % (table,\
       name))
@@ -294,17 +294,37 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_repressor(self, repressor = None):
-	  return "BBa_J64000"
+		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
 
 	def find_promoter_with_activator(self, activator = None):
-	  return "BBa_J64000"
+		self.__cursor.execute('SELECT * FROM activator ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
+	def find_inducer_with_repressor(self, repressor, induce_type):
+		return "BBa_P0140"
+
+	def find_inducer_with_activator(self, activator, induce_type):
+		return "BBa_P0140"
 
 	def find_repressor_with_promoter(self, promoter):
-		# debug purposes
-		if promoter == "BBa_I766557":
-			return "BBa_C0012"
-
-		return "BBa_C0050"
+		self.__cursor.execute('SELECT * FROM repressor ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
 	
 	def getRBSNearValue(self,idealValue):
 		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%f) limit 0,1' %idealValue)
@@ -312,7 +332,14 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	def getPromoterNearValue(self, idealValue, repressor_list, link_type, p_type):
+	def getPlasmidBackboneNearValue(self,idealValue):
+		self.__cursor.execute('select * from plasmid_backbone order by\
+        abs(CopyNumber-%f) limit 0,1' %idealValue)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
+	def getRepressedPromoterNearValue(self, idealValue, repressor_list, link_type, p_type):
 		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
 				limit 0,%d" % (link_type, p_type, idealValue, len(repressor_list)+1)
 		self.__cursor.execute(sql_cmd)
@@ -322,13 +349,34 @@ class SqliteDatabase:
 			if self.find_repressor_with_promoter(item["Number"]) not in repressor_list:
 				return item
 
+	def getActivatedPromoterNearValue(self, idealValue, activator_list, link_type, p_type):
+		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
+				limit 0,%d" % (link_type, p_type, idealValue, len(activator_list)+1)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if self.find_activator_with_promoter(item["Number"]) not in activator_list:
+				return item
+
 	def getRepressorNearValue(self, idealValue, repressor_list):
-		self.__cursor.execute('select * from repressor order by abs(repressor.K1-%f)\
+		self.__cursor.execute('select * from repressor order by abs(K1-%f)\
 				limit 0,%d' % (idealValue, len(repressor_list)+1))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
 			if item["Number"] not in repressor_list:
+				repressor_list.append(item["Number"])
+				return item
+
+	def getActivatorNearValue(self, idealValue, activator_list):
+		self.__cursor.execute('select * from activator order by abs(K1-%f)\
+				limit 0,%d' % (idealValue, len(activator_list)+1))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if item["Number"] not in activator_list:
+				activator_list.append(item["Number"])
 				return item
 
 

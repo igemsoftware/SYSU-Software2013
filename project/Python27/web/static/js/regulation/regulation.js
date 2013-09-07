@@ -109,7 +109,7 @@ $().ready(function() {
                 'request': 'saveUserData',
                 'data': saveData,
                 'fileName': filename,
-                'fileType': 'rnw'
+                'fileType': 'regulation'
             }));
 
             // ws.send({
@@ -361,7 +361,7 @@ $().ready(function() {
         
 
 
-        // return "";
+        return "";
     };
 
 
@@ -404,7 +404,7 @@ $().ready(function() {
 
         var data = {
             part: [],
-            links: []
+            link: []
         };
 
         for (var i = 0; i < figuresCount; i++) {
@@ -423,7 +423,7 @@ $().ready(function() {
             line.type = lines[i].TYPE;
             line.inducer = "none";
 
-            data.links.push(line);
+            data.link.push(line);
         };
         
         return data;
@@ -440,7 +440,7 @@ $().ready(function() {
 
         var data = {
             part: [],
-            links: []
+            link: []
         };
 
         for (var i = 0; i < figuresCount; i++) {
@@ -461,7 +461,7 @@ $().ready(function() {
             line.type = lines[i].TYPE;
             line.inducer = "none";
 
-            data.links.push(line);
+            data.link.push(line);
         };
         
         return data;

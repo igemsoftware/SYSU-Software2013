@@ -18,21 +18,21 @@ app = Flask(__name__)
 def login():
 	if user.isUserLogined(sql):
 		user.userLogout(sql)
-	return render_template('login.html')
-
-@app.route("/demo")
-def demo():
-  return render_template('demo.html')
-
-@app.route("/get_demo")
-def get_demo():
-  filename = request.args.get('file','')
-  return render_template('get_demo.html', filename=filename)
-
+	else:
+		return render_template('login.html')
 
 @app.route("/index")
 def index():
-	return render_template('index.html')
+	if user.isUserLogined(sql):
+		return render_template('index.html')
+	else:
+		return redirect(url_for('login'))
+
+@app.errorhandler(404)
+def page_not_found(error):
+	print error
+    #return render_template('page_not_found.html'),404
+	return redirect(url_for('login'))
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
@@ -51,25 +51,33 @@ def file_manager():
   filelist = sql.getUserFileNameList()
   return render_template('file_manager.html', filelist = filelist)
 
-@app.route("/getdir/<pathname>")
-def getDir(pathname):
-	return json.dumps(xmlParse.get_allfiledirs('web\\'+pathname))
-
 @app.route("/genecircuit")
 def goToGeneCircuit():
-	return render_template('genecircuit.html')
+	if user.isUserLogined(sql):
+		return render_template('genecircuit.html')
+	else:
+		return redirect(url_for('login'))
 
 @app.route("/plasmid")
 def goToPlasmid():
-	return render_template('plasmid.html')
+	if user.isUserLogined(sql):
+		return render_template('plasmid.html')
+	else:
+		return redirect(url_for('login'))
 
 @app.route("/protocol")
 def goToProtocol():
-	return render_template('protocol.html')
+	if user.isUserLogined(sql):
+		return render_template('protocol.html')
+	else:
+		return redirect(url_for('login'))
 
 @app.route("/simulation")
 def goToSimulation():
-	return render_template('simulation.html')
+	if user.isUserLogined(sql):
+		return render_template('simulation.html')
+	else:
+		return redirect(url_for('login'))
 
 @app.route("/ws")
 def webSocket():

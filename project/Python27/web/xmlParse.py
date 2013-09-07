@@ -2,6 +2,13 @@ import xml.dom.minidom
 import xmltodict
 import json
 import sys, os, stat
+#
+def findFile(rootdir="web\\biobrick\\",key="BBa_J61008"):
+	for root,dirs,files in os.walk(rootdir):
+		for file in files:
+			a,b=os.path.splitext(file)
+			if a==key:
+				return os.path.join(root,file)
 
 def list_dir(path, res):
     '''
@@ -87,23 +94,10 @@ class xmlBiobrick:
     
     def getPart(self):
         return self.data["rsbpml"]["part_list"]["part"]    
-	
-#        self.filepath=path
-#        dom = xml.dom.minidom.parse(self.filepath)        
-#        self.root = dom.documentElement     
-#        dict={}
-#        nodelist= self.root.getElementsByTagName('part_list')[0].getElementsByTagName('part')[0].childNodes
-#        for i in range(1,len(nodelist)):
-#            if(i%2!=0):
-#                if(len(nodelist[i].childNodes)!=0):
-#                    dict[nodelist[i].nodeName]=nodelist[i].childNodes[0].nodeValue
-#                else:
-#                    dict[nodelist[i].nodeName]="None"
-#        print dict    
  
-if __name__ == '__main__':  
-    xml=xmlBiobrick(path="web/biobrick/Terminators/BBa_B0010.xml")
-    print xml.getPart()
+if __name__ == '__main__':      #xml=xmlBiobrick(path="web/biobrick/Terminators/BBa_B0010.xml")
+    #print xml.getPart()
+    print findFile()
 	#print get_allfiledirs(path="web/biobrick/Plasmid backbones/Assembly")
 	#outputPathsToFile(test(path="web/biobrick/Plasmid backbones/System operation"))
     #getAllFilesInPath("biobrick")
@@ -113,10 +107,3 @@ if __name__ == '__main__':
     #print get_allfiledirs("biobrick")['child_dirs'][0]
     #print get_config_dirs()
     #print get_config_dirs(path="biobrick")
-    
-#    for item in getAllFilesInPath("biobrick"):
-#        xml= xmlBiobrick(item)
-#        print xml.getJsonString()
-#        print xml.getPart_id()
-        #print xml.getPart()
-    
