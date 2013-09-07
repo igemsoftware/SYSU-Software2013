@@ -525,13 +525,12 @@ $().ready(function() {
     }));
 
 		ws.send(JSON.stringify({
-			'request': 'getIndexSave',
-		}));
-
-		ws.send(JSON.stringify({
 			'request': 'changeRBS',
 		}));
 
+		// ws.send(JSON.stringify({ 
+			// 'request': 'getIndexSave', 
+		// })); 
 
 		// ws.send(JSON.stringify({ 
 			// 'request': 'updateGeneCircuit', 

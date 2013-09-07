@@ -219,20 +219,23 @@ var group = {
 		$("#" + aTextureId).data('to', aData.to); 
 		$("#" + aTextureId).data('inducer', aData.inducer); 
 		$("#" + aTextureId + " ul").prepend("<li id='" + aTextureId + "-first' style='display:none'></li>");
-		$("#" + aTextureId + " ul").sortable({
-			items: "li",
-			handle: "img, span",
-			update: function(event, ui) {
-				command.tempCmd.to = $(ui.item).prev().attr('id');
-				command.cmdConfirm();
-				randomValue();
-			},
-			start: function(event, ui) {
-				command.tempCmd.type = 'Move';
-				command.tempCmd.actor = $(ui.item).attr('id');
-				command.tempCmd.from = $(ui.item).prev().attr('id');
-			},
-
+		// $("#" + aTextureId + " ul").sortable({ 
+			// items: "li", 
+			// handle: "img, span", 
+			// update: function(event, ui) { 
+				// command.tempCmd.to = $(ui.item).prev().attr('id'); 
+				// command.cmdConfirm(); 
+				// randomValue(); 
+			// }, 
+			// start: function(event, ui) { 
+				// command.tempCmd.type = 'Move'; 
+				// command.tempCmd.actor = $(ui.item).attr('id'); 
+				// command.tempCmd.from = $(ui.item).prev().attr('id'); 
+			// }, 
+//  
+		// }); 
+		$("#" + aTextureId + " ul .component").bind("click", function(){
+			$(this).
 		});
 		that = this;
 		$("#" + aTextureId + " .sbol-switch").bind("click", function(){
