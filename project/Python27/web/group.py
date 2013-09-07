@@ -286,7 +286,7 @@ def dump_group(network, database):
         i_type = inducer_type[j]
         break
     groups[i] = {"sbol":grp, "state": "cis", "type": l_type,\
-        "induce_type": i_type, "from": prev, "to": []}
+        "corep_ind_type": i_type, "from": prev, "to": []}
     plasmid.append(i)
 
   # get next nodes of a group
@@ -306,12 +306,12 @@ def dump_group(network, database):
     else:
       regulator = None
     ## get inducer of a link
-    if cur_group["induce_type"] != "None" and cur_group["type"] == "Positive":
+    if cur_group["corep_ind_type"] != "None" and cur_group["type"] == "Positive":
       groups[b_list[i]]["inducer"] = \
-      database.find_inducer_with_activator(regulator, cur_group["induce_type"])
-    if cur_group["induce_type"] != "None" and cur_group["type"] == "Negative":
+      database.find_inducer_with_activator(regulator, cur_group["corep_ind_type"])
+    if cur_group["corep_ind_type"] != "None" and cur_group["type"] == "Negative":
       groups[b_list[i]]["inducer"] = \
-      database.find_inducer_with_repressor(regulator, cur_group["induce_type"])
+      database.find_inducer_with_repressor(regulator, cur_group["corep_ind_type"])
     ## get protein info
     proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i],\
         regulator)
@@ -479,7 +479,7 @@ if __name__ == "__main__":
                   u'sbol': [{u'type': u'Regulatory', u'name': u'BBa_I712074'},
                     {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type':
                       u'Coding', u'name': u'BBa_C0160', u'id': 5}, {u'type':
-                        u'Terminator', u'name': u'BBa_B0013'}], u'induce_type':
+                        u'Terminator', u'name': u'BBa_B0013'}], u'corep_ind_type':
                       u'None', u'type': u'Positive'}, u'4': {u'from': -1,
                         u'state': u'cis', u'to': [5, 6], u'sbol': [{u'type':
                           u'Signalling', u'name': u'BBa_K266005'}, {u'type':
@@ -492,7 +492,7 @@ if __name__ == "__main__":
                             {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type':
                               u'Coding', u'name': u'BBa_K518003', u'id': 4},
                             {u'type': u'Terminator', u'name': u'BBa_B0013'}],
-                        u'induce_type': u'None', u'type': u'Constitutive'},
+                        u'corep_ind_type': u'None', u'type': u'Constitutive'},
                       u'7': {u'from': 4, u'state': u'cis', u'inducer':
                         u'BBa_P0140', u'to': [], u'sbol': [{u'type':
                           u'Regulatory', u'name': u'BBa_I712074'}, {u'type':
@@ -501,5 +501,5 @@ if __name__ == "__main__":
                             {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type':
                               u'Coding', u'name': u'BBa_C0178', u'id': 7},
                             {u'type': u'Terminator', u'name': u'BBa_B0013'}],
-                        u'induce_type': u'Negative', u'type': u'Negative'}}}}
+                        u'corep_ind_type': u'Negative', u'type': u'Negative'}}}}
   # print update_controller(db, update_info)
