@@ -100,7 +100,6 @@ $().ready(function() {
                 }
             }, 1000);
         } else {
-            
             var saveData = JSON.stringify(canvasToSaveData());
             saveData.fileName = filename;
             saveData.fileType = 'rnw';
@@ -111,12 +110,6 @@ $().ready(function() {
                 'fileName': filename,
                 'fileType': 'regulation'
             }));
-
-            // ws.send({
-            //   "request" : "saveUserData",
-            //   "data" : filename
-            // });
-
 
             $("#myModalInfo").html("File: " + filename + " is saved!");
             $("#save-trigger").click();
@@ -320,10 +313,9 @@ $().ready(function() {
                 });
             } else if (message.request == "loadUserFile") {
                 console.log(message.result);
+                repaintCanvas(message.result);
             } else if (message.request == 'indexSaveToGeneCircuit') {
                 console.log(message.result);
-                ws.onclose = function() {}; // disable onclose handler first
-                ws.close();
             } else if (message.request == 'saveUserData') {
                 console.log(message.result);
             }
@@ -346,6 +338,23 @@ $().ready(function() {
         ws.send(JSON.stringify({
             'request': 'getLoginedUserName'
         }));
+
+        (function loadFile() {
+            var search = window.location.search;
+            if (search) {
+                search = search.substr(1, search.length);
+                var type = search.split('&')[0].split('=')[1];
+                var name = search.split('&')[1].split('=')[1];
+
+                ws.send(JSON.stringify({
+                    'request': 'loadUserFile',
+                    'fileType': type,
+                    'fileName': name
+                }));
+            } else {
+                return;
+            }
+        })();
     }
 
     // Cleanly close websocket when unload window
@@ -356,10 +365,8 @@ $().ready(function() {
             'data': jsonData
         }));
 
-        // ws.onclose = function() {}; // disable onclose handler first
-        // ws.close();
-        
-
+        ws.onclose = function() {}; // disable onclose handler first
+        ws.close();
 
         return "";
     };
@@ -466,5 +473,39 @@ $().ready(function() {
         };
         
         return data;
+    };
+
+    var repaintCanvas = function(msg) {
+        var model = eval('(' + msg + ')');
+        console.log(model);
+
+        for (var i = 0; i < model.part.length; i++) {
+            repaintFigure(model.part[i]);
+        };
+
+        for (var i = 0; i < model.link.length; i++) {
+            repaintLine(model.link[i]);
+        };
+        
+
+        function repaintFigure(part) {
+            var type = 'g.Shapes.' + part.type;
+
+            var figure = eval("new " + type + "()");   // 实例化对象
+
+            var command = new graphiti.command.CommandAdd(app.view, figure, part.xPos, part.yPos);
+            app.view.getCommandStack().execute(command);    // 添加到命令栈中
+
+            figure.setId(part.name);    // 设置id
+            figure.label.setText(part.name.substr(0, part.name.length - 2));    // 设置label
+
+            app.view.collection.push(part.name);    // 放入collection中
+            app.view.collection.counter += 1;
+        };
+
+        function repaintLine(link) {
+            var source = app.view.getFigure(link.from);
+            var target = app.view.getFigure(link.to);
+        };
     };
 });
