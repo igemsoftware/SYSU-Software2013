@@ -332,6 +332,13 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
+	def getPlasmidBackboneNearValue(self,idealValue):
+		self.__cursor.execute('select * from plasmid_backbone order by\
+        abs(CopyNumber-%f) limit 0,1' %idealValue)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
 	def getRepressedPromoterNearValue(self, idealValue, repressor_list, link_type, p_type):
 		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
 				limit 0,%d" % (link_type, p_type, idealValue, len(repressor_list)+1)
