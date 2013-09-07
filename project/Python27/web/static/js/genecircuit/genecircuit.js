@@ -189,8 +189,9 @@ var group = {
 							
 		$("#" + aTextureId).append("<ul class=\"sbol-components\"></ul><div class=\"move-left cmd-move\">&lt</div><div class=\"move-right cmd-move\">&gt</div><button class=\"sbol-switch switch-on\">trans</button>");
 		for(var i = 0; i < aData.sbol.length; i++) {
-			var type = '';
+			var type = 'Promoter.PNG';
 			if(aData.sbol[i].type == 'Regulatory') type = 'Promoter.PNG';
+			else if(aData.sbol[i].type == 'Intermediate') type = 'Promoter.PNG';
 			else if(aData.sbol[i].type == 'RBS') type = 'rbs.PNG';
 			else if(aData.sbol[i].type == 'Coding') type = 'Coding.PNG';
 			else if(aData.sbol[i].type == 'Terminator') type = 'Terminator.PNG';
@@ -204,6 +205,7 @@ var group = {
 
 			$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('span').text(aData.sbol[i].name);
 		}
+
 		$("#" + aTextureId + " .sbol-components sbol-switch").text(aData.state);
 		if(aData.state == 'trans') {
 			$("#" + aTextureId + " .sbol-switch").removeClass('switch-off').addClass('switch-on');
@@ -241,7 +243,6 @@ var group = {
 				'request': 'getBiobrickPath',
 				'data': $(this).find("span").text(),
 			}));
-			console.log("kkakak");
 		});
 		that = this;
 		$("#" + aTextureId + " .sbol-switch").bind("click", function(){
@@ -256,7 +257,7 @@ var group = {
 				/* $(this).data("order", "trans"); */
 				that.turnSwitch($(this), 'trans');
 			}
-			randomValue();
+			/* randomValue(); */
 		});
 	},
 	setData: function(aTextureId, aData, state) {
@@ -371,9 +372,27 @@ var checkEmptyPlasmid = function() {
 }
 var moveAndCheck = function(aGroup, fGroup, tGroup, fPlasmid, tPlasmid) {
 	aGroup.fadeOut().detach().fadeIn();
+
+	// detail.pro_id =  
+	// detail.new_value =  
+	// detail.type = "copy" 
+	var grp_id = aGroup.attr('id').split('-')[1];
+	if(tPlasmid.find(".sbol").length > 0) {
+		grp_id = parseInt(tPlasmid.find(".sbol").attr('id').split('-')[1]);
+	}
+	$(".proteins").each(function(){
+		if($(this).data('grp_id') == grp_id) {
+			detail.new_value = $(this).find(".copy").slider("value");
+		}
+	});
+	aGroup.find(".component").each(function(){
+		if($(this).data('id')) detail.pro_id = $(this).data('id');
+	})
+	detail.type = "copy";
+
+
 	tGroup.after(aGroup);
 	checkEmptyPlasmid();
-
 	command.tempCmd.type = "Move";
 	command.tempCmd.from = fGroup.attr('id');
 	command.tempCmd.actor = aGroup.attr('id');
@@ -419,10 +438,6 @@ $(".move-right").live("click", function(e){
 		}
 	}
 });
-// pro_id 
-// new_value 
-// type:copy 
-// repressor_list:[]
 
 /* detail */
 var detail = {
@@ -578,6 +593,8 @@ var randomValue = function() {
 	dataCollection = getDataCollection();
 	data.gene_circuit = dataCollection;
 	data.detail = detail;
+
+	console.log("data", data);
 
 	// console.log("data", data); 
 	// console.log("upup", JSON.stringify({ 
