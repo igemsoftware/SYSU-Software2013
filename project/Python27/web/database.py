@@ -311,6 +311,12 @@ class SqliteDatabase:
 		else:
 			return None
 
+	def find_inducer_with_repressor(self, repressor, induce_type):
+		return "BBa_P0140"
+
+	def find_inducer_with_activator(self, activator, induce_type):
+		return "BBa_P0140"
+
 	def find_repressor_with_promoter(self, promoter):
 		self.__cursor.execute('SELECT * FROM repressor ORDER BY random() LIMIT 1')
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())

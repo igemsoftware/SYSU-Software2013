@@ -60,7 +60,7 @@ data = {
       { "from": 3,
         "to"  : 5,
         "type": "Activator",
-        "inducer": "Positive"
+        "inducer": "None"
         },
       { "from": 4,
         "to"  : 6,
@@ -183,17 +183,17 @@ def dump_sbol(network, database):
     sbol.append(sequence_serializer.format_to_json(component_union.formatter_v11(content, dna_sequence)))
   return sbol
 
-def get_pro_info(database, protein_idx, groups, grp_id, repressor, backbone = "pSB1AT3"):
+def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "pSB1AT3"):
   # TODO where is K1?
   ret = {}
   cur_group = groups[grp_id]["sbol"]
   link_type = groups[grp_id]["type"]
   if link_type == "Positive":
-    repressor_info = database.select_with_name("activator", repressor)
+    regulator_info = database.select_with_name("activator", regulator)
   elif link_type == "Negative":
-    repressor_info = database.select_with_name("repressor", repressor)
+    regulator_info = database.select_with_name("repressor", regulator)
   else:
-    repressor_info = None
+    regulator_info = None
   promoter_info= database.select_with_name("promoter", cur_group[0]["name"])
   rbs_info= database.select_with_name("RBS", cur_group[protein_idx - 1]["name"])
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
@@ -202,8 +202,8 @@ def get_pro_info(database, protein_idx, groups, grp_id, repressor, backbone = "p
   ret["PoPS"] = promoter_info[get_type_of_promoter(link_type)] * 100
   ret["RiPs"] = rbs_info["MPRBS"] * 100
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
-  if repressor_info is not None:
-    ret["K1"] = log10(repressor_info["K1"])
+  if regulator_info is not None:
+    ret["K1"] = log10(regulator_info["K1"])
   else:
     ret["K1"] = "NaN"
   ret["repress_rate"] = -1
@@ -274,31 +274,43 @@ def dump_group(network, database):
     prev = -1
     l_type = "Constitutive"
     i_type = "None"
+    print graph
     for j in b_list:
       if b_list[j] == i and j in graph:
         prev = graph[j]
         l_type = link_type[j]
         i_type = inducer_type[j]
-    groups[i] = {"sbol":grp, "state": "cis", "type": l_type, "inducer": i_type, "from": prev, "to": []}
+        break
+    groups[i] = {"sbol":grp, "state": "cis", "type": l_type,\
+        "induce_type": i_type, "from": prev, "to": []}
     plasmid.append(i)
 
   # get next nodes of a group
   for i in graph:
     groups[b_list[graph[i]]]["to"].append(i)
-
   for i in b_list:
+    cur_group = groups[b_list[i]]
     # add id of proteins in a group
     groups[b_list[i]]["sbol"][pro_pos[i]]["id"] = i
 
     # get protein info
     ## get coresponding repressor
-    prev_node = groups[b_list[i]]["from"]
+    prev_node = cur_group["from"]
     if prev_node != -1:
       prev_grp = groups[b_list[prev_node]]
-      repressor = prev_grp["sbol"][pro_pos[prev_node]]["name"]
+      regulator = prev_grp["sbol"][pro_pos[prev_node]]["name"]
     else:
-      repressor = None
-    proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i], repressor)
+      regulator = None
+    ## get inducer of a link
+    if cur_group["induce_type"] != "None" and cur_group["type"] == "Positive":
+      groups[b_list[i]]["inducer"] = \
+      database.find_inducer_with_activator(regulator, cur_group["induce_type"])
+    if cur_group["induce_type"] != "None" and cur_group["type"] == "Negative":
+      groups[b_list[i]]["inducer"] = \
+      database.find_inducer_with_repressor(regulator, cur_group["induce_type"])
+    ## get protein info
+    proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i],\
+        regulator)
 
   # update_proteins_repress(database, proteins, groups)
   return {"groups": groups, "proteins": proteins, "plasmids": [plasmid]}
@@ -413,60 +425,19 @@ def update_controller(db, update_info):
       gene_circuit["proteins"][prev_node]["name"] = best_regulator
       gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"] = best_regulator
 
-    # update corresponding repressor
-    if prev_node != -1:
-      repressor_id = gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["id"]
-      new_repressor = db.find_repressor_with_promoter(best_promoter["Number"])
-      gene_circuit["proteins"][prev_node]["name"] = new_repressor
-      gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"] = new_repressor
-
       # update related promoters
+      if detail["type"] == "PoPS":
+        gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter
+        for j in range(2, len(gene_circuit["groups"][i]["sbol"]), 2):
+          pro2_id = gene_circuit["groups"][grp_id]["sbol"][j]["id"]
+          gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type] * 100
+
       for i in gene_circuit["groups"]:
         if gene_circuit["groups"][i]["from"] == prev_node:
           gene_circuit["groups"][i]["sbol"][0]["name"] = best_promoter
-          for j in range(2, len(group["sbol"]), 2):
+          for j in range(2, len(gene_circuit["groups"][i]["sbol"]), 2):
             pro2_id = gene_circuit["groups"][i]["sbol"][j]["id"]
             gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type] * 100
-
-
-  #elif detail["type"] == "K1":
-    #link_type = group["type"]
-    #if link_type == "Positive":
-      #try:
-        #activator_list = detail["activator_list"]
-      #except:
-        #activator_list = []
-      #activator_value = float(detail["new_value"]) / 100
-      #best_activator = db.getActivatorNearValue(activator, activator_list,\
-        #link_type, p_type)
-      #best_promoter = find_promoter(database, activator=best_activator["Number"])
-    #else:
-      #try:
-        #repressor_list = detail["repressor_list"]
-      #except:
-        #repressor_list = []
-      #repressor_value = float(detail["new_value"]) / 100
-      #best_repressor = db.getRepressorNearValue(repressor, repressor_list,\
-        #link_type, p_type)
-      #best_promoter = find_promoter(database, repressor=best_repressor["Number"])
-
-    ## update repressor
-    #prev_node = group["from"]
-    #prev_grp_id = gene_circuit["proteins"][prev_node]["pos"]
-    #prev_grp = gene_circuit["groups"][prev_grp_id]
-
-    ## update promoter related to repressor
-    #p_type = get_type_of_promoter(link_type)
-    #promoter_value = (db.select_with_name("promoter",\
-      #best_promoter))[p_type]
-    #for next_node in prev_group["to"]:
-      #next_grp = gene_circuit["proteins"][next_node]["pos"]
-      ## update PoPS of all group members
-      #for i in range(2, len(group["sbol"]), 2):
-        #pro2_id = gene_circuit["groups"][next_grp]["sbol"][i]["id"]
-        #gene_circuit["proteins"][pro2_id]["PoPS"] = promoter_value * 100
-        #gene_circuit["proteins"][pro2_id]["sbol"][0]["name"] = promoter_value * 100
-      #gene_circuit["groups"][next_grp][0]["name"] = best_promoter
 
   #update_proteins_repress(db, gene_circuit["proteins"],\
       #gene_circuit["groups"])
