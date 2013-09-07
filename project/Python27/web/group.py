@@ -413,7 +413,7 @@ def update_controller(db, update_info):
     regulator = None
     # update related promoters
     if detail["type"] == "PoPS":
-      gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter
+      gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter["Number"]
       for j in range(2, len(group["sbol"]), 2):
         pro2_id = gene_circuit["groups"][grp_id]["sbol"][j]["id"]
         gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type] * 100
@@ -423,12 +423,12 @@ def update_controller(db, update_info):
       prev_pos = gene_circuit["proteins"][prev_node]["pos"]
       gene_circuit["proteins"][prev_node]["K1"] = regulator_value
       gene_circuit["proteins"][prev_node]["name"] = best_regulator
-      gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"] = best_regulator
+      gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"] = best_regulator["Number"]
 
       # update related promoters
       for i in gene_circuit["groups"]:
         if gene_circuit["groups"][i]["from"] == prev_node:
-          gene_circuit["groups"][i]["sbol"][0]["name"] = best_promoter
+          gene_circuit["groups"][i]["sbol"][0]["name"] = best_promoter["Number"]
           for j in range(2, len(gene_circuit["groups"][i]["sbol"]), 2):
             pro2_id = gene_circuit["groups"][i]["sbol"][j]["id"]
             gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type] * 100
