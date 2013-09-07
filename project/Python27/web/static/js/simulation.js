@@ -85,12 +85,9 @@ function getLabel(raw) {
 var chart=null;
 function saveGraph()
 {
-	var _canvas=document.getElementById(chart.canvasid);
-	console.log(Canvas2Image);
-	Canvas2Image.saveAsPNG(_canvas); 
+	var _canvas=document.getElementById(chart.canvasid);	
+	Canvas2Image.AsPNG(_canvas); 
 }
-//$(function(){
-
 function run(data){
   //ws.send(JSON.stringify({'request': 'getSimulationData'}));
   console.log(data);
