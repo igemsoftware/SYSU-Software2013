@@ -19,14 +19,22 @@ data = {
         "type": "Protein"
         },
       { "id"  : 2,
+        "name": "BBa_C0060",
+        "type": "Protein"
+        },
+      { "id"  : 3,
+        "name": "activator",
+        "type": "Activator"
+        },
+      { "id"  : 4,
         "name": "repressor",
         "type": "Repressor"
         },
-      { "id"  : 3,
+      { "id"  : 5,
         "name": "BBa_C0160",
         "type": "Protein"
         },
-      { "id"  : 4,
+      { "id"  : 6,
         "name": "BBa_C0178",
         "type": "Protein"
         }
@@ -39,35 +47,35 @@ data = {
         },
       { "from": 2,
         "to"  : 3,
-        "type": "Repressor",
+        "type": "Bound",
+        },
+      { "from": 3,
+        "to"  : 4,
+        "type": "Bound",
+        },
+      { "from": 3,
+        "to"  : 5,
+        "type": "Activator",
         "inducer": "Positive"
         },
-      { "from": 2,
-        "to"  : 4,
+      { "from": 4,
+        "to"  : 6,
         "type": "Repressor",
-        "inducer": "Positive"
+        "inducer": "Negative"
         },
 
       ]
 }
 
-def find_repressor(item, repressor_list, database):
-  if item[3] == "repressor":
-    item[3] = database.select_row("repressor", len(repressor_list) + 1)
-    repressor_list += item[3]
-  if item[-2] == "repressor":
-    item[-2] = database.select_row("repressor", len(repressor_list) + 1)
-    repressor_list += item[-2]
-  return item
+def find_repressor(database, item, repressor_list):
+  item = database.select_row("repressor", len(repressor_list) + 1)
+  repressor_list += item
+  return str(item)
 
-def find_activator(item, activator_list, database):
-  if item[3] == "activator":
-    item[3] = database.select_row("activator", len(activator_list) + 1)
-    activator_list += item[3]
-  if item[-2] == "activator":
-    item[-2] = database.select_row("activator", len(activator_list) + 1)
-    activator_list += item[-2]
-  return item
+def find_activator(database, item, activator_list):
+  item = database.select_row("activator", len(activator_list) + 1)
+  activator_list += item
+  return str(item)
 
 def find_promoter(database, activator = None, repressor = None):
   if activator is not None:
@@ -85,7 +93,9 @@ def pre_work(part):
   return [prom_name, rbs_name, part["name"], term_name]
 
 def bind(protein1, protein2):
-  return [prom_name, rbs_name, protein1, rbs_name, protein2, term_name]
+  l1 = len(protein1) - 1
+  l2 = len(protein2) - 1
+  return [prom_name] + protein1[1:l1] + protein2[1:l2] + [term_name]
 
 def activate(database, from_part, to_part):
   ret = to_part
@@ -97,45 +107,62 @@ def repress(database, from_part, to_part):
   ret[0] = find_promoter(database, repressor = from_part[-2])
   return ret
 
+def find_bound_src(i, bound_list):
+  if bound_list[i] != i:
+    bound_list[i] = find_bound_src(bound_list[i], bound_list)
+  return bound_list[i]
 
 def work(data, database):
   groups = {}
   part_list = {}
   bound_list = {}
+  pro_pos = {}
   rev_bound_list = {}
   repressor_list = []
   activator_list = []
+  # Initialization
   for part in data["part"]:
-    groups[part["id"]] = pre_work(part)
-    part_list[part["id"]] = part["name"]
+    idx = part["id"]
+    groups[idx] = pre_work(part)
+    part_list[idx] = part["name"]
+    bound_list[idx] = idx
+    pro_pos[idx] = 2
 
   # combine bound link
   for link in data["link"]:
     if link["type"] == "Bound":
-      groups[link["to"]] = bind(part_list[link["from"]], part_list[link["to"]])
-      bound_list[link["from"]] = link["to"]
+      groups[link["to"]] = bind(groups[link["from"]], groups[link["to"]])
+      offset = len(groups[link["from"]]) - 2
+      for p in data["part"]:
+        idx = p["id"]
+        if bound_list[idx] == link["to"]:
+          pro_pos[idx] += offset
+        if bound_list[idx] == link["from"]:
+          bound_list[idx] = link["to"]
+      bound_list[link["from"]] = find_bound_src(link["to"], bound_list)
       rev_bound_list[link["to"]] = link["from"]
-      for l2 in data["link"]:
-        if l2["to"] == link["from"]:
-          l2["to"] = link["to"]
       del groups[link["from"]]
 
   # replace repressor with exact component
   for elem in groups:
-    groups[elem] = find_repressor(groups[elem], repressor_list, database)
-    groups[elem] = find_activator(groups[elem], repressor_list, database)
-  for link in data["link"]:
-    # TODO: inducer
-    if link["from"] not in groups:
-      link["from"] = bound_list[link["from"]]
-    if link["to"] not in groups:
-      link["to"] = bound_list[link["to"]]
+    for i in xrange(len(groups[elem])):
+      if groups[elem][i] == "repressor":
+        groups[elem][i] = find_repressor(database, groups[elem][i], repressor_list)
+      if groups[elem][i] == "activator":
+        groups[elem][i] = find_activator(database, groups[elem][i], activator_list)
 
-    if link["type"] == "Repressor":
-      groups[link["to"]] = repress(database, groups[link["from"]], groups[link["to"]])
-    if link["type"] == "Activator":
-      groups[link["to"]] = activate(database, groups[link["from"]], groups[link["to"]])
-  return (groups, repressor_list, activator_list, rev_bound_list)
+  for i in bound_list:
+    bound_list[i] = find_bound_src(bound_list[i], bound_list)
+  for link in data["link"]:
+    if link["type"] == "Bound":
+      continue
+    next_grp = bound_list[link["from"]]
+    cur = data["part"][link["from"]]
+    if cur["type"] == "Repressor":
+      groups[next_grp][0] = find_promoter(database, repressor=cur["name"])
+    if cur["type"] == "Activator":
+      groups[next_grp][0] = find_promoter(database, activator=cur["name"])
+  return (groups, repressor_list, activator_list, bound_list, pro_pos)
 
 def get_start_pos(groups):
   start_pos = []
@@ -155,20 +182,33 @@ def dump_sbol(network, database):
     sbol.append(sequence_serializer.format_to_json(component_union.formatter_v11(content, dna_sequence)))
   return sbol
 
-def get_pro_info(database, protein_idx, group, grp_id, backbone = "pSB1AT3"):
+def get_pro_info(database, protein_idx, groups, grp_id, repressor, backbone = "pSB1AT3"):
   # TODO where is K1?
   ret = {}
-  ret["grp_id"] = grp_id
-  ret["name"] = group[protein_idx]
-  promoter_info= database.select_with_name("promoter", group[0])
-  rbs_info= database.select_with_name("RBS", group[protein_idx - 1])
+  cur_group = groups[grp_id]["sbol"]
+  link_type = groups[grp_id]["type"]
+  if link_type == "Positive":
+    repressor_info = database.select_with_name("activator", repressor)
+  elif link_type == "Negative":
+    repressor_info = database.select_with_name("repressor", repressor)
+  else:
+    repressor_info = None
+  promoter_info= database.select_with_name("promoter", cur_group[0]["name"])
+  rbs_info= database.select_with_name("RBS", cur_group[protein_idx - 1]["name"])
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
-  ret["PoPS"] = promoter_info["MPPromoter"] * 100
+  ret["grp_id"] = grp_id
+  ret["name"] = cur_group[protein_idx]["name"]
+  ret["PoPS"] = promoter_info[get_type_of_promoter(link_type)] * 100
   ret["RiPs"] = rbs_info["MPRBS"] * 100
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
+  if repressor_info is not None:
+    ret["K1"] = log10(repressor_info["K1"])
+  else:
+    ret["K1"] = 0
   ret["repress_rate"] = -1
   ret["induce_rate"] = -1
   ret["concen"] = 0.1
+  ret["pos"] = protein_idx
   # following arguments are DEPRECATED
   return ret
 
@@ -185,10 +225,12 @@ def update_proteins_repress(database, protein, groups):
         groups, st)
     corepind_concen = modeling2.SteadyState_Concen_CorepInd(database, protein,\
         groups, {}, st)
+    print origin_concen
     for i in origin_concen:
       protein[i]["repress_rate"] = log10(actrep_concen[i]) - log10(origin_concen[i])
       protein[i]["induce_rate"] = log10(corepind_concen[i]) - log10(origin_concen[i])
       protein[i]["concen"] = actrep_concen[i]
+    print protein
 
 def get_graph(link):
   ret = {}
@@ -213,39 +255,79 @@ def get_graph_type(link):
 def dump_group(network, database):
   graph = get_graph(network["link"])
   link_type, inducer_type = get_graph_type(network["link"])
-  data, r_list, a_list, b_list = work(network, database)
+  data, r_list, a_list, b_list, pro_pos = work(network, database)
   groups = {}
   proteins = {}
   plasmid = []
+
+  # get group info
   for i in data:
-    # proteins[data[i][2]] = get_pro_info(database, 2, data[i], i)
-    proteins[i] = get_pro_info(database, -2, data[i], i)
-    if len(data[i]) == 6:
-      # proteins[data[i][4]] = get_pro_info(database, 4, data[i], i)
-      proteins[b_list[i]] = get_pro_info(database, 2, data[i], i)
     grp = []
+    # get name and type of group member
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
       grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
-    grp[-2]["id"] = i
-    if len(data[i]) == 6:
-      grp[2]["id"] = b_list[i]
+
+    # get link type and inducer type
     if i in graph:
       prev = graph[i]
     else:
       prev = -1
     if prev == -1:
-      g_type = "Constitutive"
+      l_type = "Constitutive"
       i_type = "None"
     else:
-      g_type = link_type[i]
+      l_type = link_type[i]
       i_type = inducer_type[i]
-
-    # plasmids.append({"id": i, "sbol":grp, "state": "cis", "from": prev})
-    groups[i] = {"sbol":grp, "state": "cis", "type": g_type, "inducer": i_type, "from": prev, "to": []}
+    groups[i] = {"sbol":grp, "state": "cis", "type": l_type, "inducer": i_type, "from": prev, "to": []}
     plasmid.append(i)
+
+  # get next nodes of a group
   for i in graph:
-    groups[graph[i]]["to"].append(i)
+    groups[b_list[graph[i]]]["to"].append(i)
+
+  for i in b_list:
+    # add id of proteins in a group
+    groups[b_list[i]]["sbol"][pro_pos[i]]["id"] = i
+
+    # get protein info
+    ## get coresponding repressor
+    prev_node = groups[b_list[i]]["from"]
+    if prev_node != -1:
+      prev_grp = groups[b_list[prev_node]]
+      repressor = prev_grp["sbol"][pro_pos[prev_node]]["name"]
+    else:
+      repressor = None
+    proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i], repressor)
+
+  #for i in data:
+    ## proteins[data[i][2]] = get_pro_info(database, 2, data[i], i)
+    #proteins[i] = get_pro_info(database, -2, data[i], i)
+    #if len(data[i]) == 6:
+      ## proteins[data[i][4]] = get_pro_info(database, 4, data[i], i)
+      #proteins[b_list[i]] = get_pro_info(database, 2, data[i], i)
+    #grp = []
+    #for elem in data[i]:
+      #xml_file = find_file(elem + ".xml", ".")
+      #grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
+    #grp[-2]["id"] = i
+    #if len(data[i]) == 6:
+      #grp[2]["id"] = b_list[i]
+    #if i in graph:
+      #prev = graph[i]
+    #else:
+      #prev = -1
+    #if prev == -1:
+      #g_type = "Constitutive"
+      #i_type = "None"
+    #else:
+      #g_type = link_type[i]
+      #i_type = inducer_type[i]
+
+    ## plasmids.append({"id": i, "sbol":grp, "state": "cis", "from": prev})
+    #groups[i] = {"sbol":grp, "state": "cis", "type": g_type, "inducer": i_type, "from": prev, "to": []}
+    #plasmid.append(i)
+
   update_proteins_repress(database, proteins, groups)
   return {"groups": groups, "proteins": proteins, "plasmids": [plasmid]}
 
@@ -275,10 +357,21 @@ def js_formatter(gene_circuit):
   for i in gene_circuit["proteins"]:
     new_proteins[int(i)] = gene_circuit["proteins"][i]
   gene_circuit["proteins"] = new_proteins
+
   new_groups = {}
   for i in gene_circuit["groups"]:
     new_groups[int(i)] = gene_circuit["groups"][i]
   gene_circuit["groups"] = new_groups
+
+  new_blist = {}
+  for i in gene_circuit["bound_list"]:
+    new_blist[int(i)] = gene_circuit["bound_list"][i]
+  gene_circuit["bound_list"] = new_blist
+
+  new_propos = {}
+  for i in gene_circuit["protein_pos"]:
+    new_propos[int(i)] = gene_circuit["protein_pos"][i]
+  gene_circuit["protein_pos"] = new_propos
   return gene_circuit
 
 
@@ -288,14 +381,15 @@ def update_controller(db, update_info):
   pro_id = detail["pro_id"]
   protein = gene_circuit["proteins"][pro_id]
   pro_name = protein["name"]
+  pro_idx = protein["pos"]
   grp_id = protein["grp_id"]
   group = gene_circuit["groups"][grp_id]
 
   if detail["type"] == "RiPs":
     rbs_value = float(detail["new_value"]) / 100
-    idx = get_index_in_group(pro_name, group["sbol"])
+    # idx = get_index_in_group(pro_name, group["sbol"])
     bestRBS = db.getRBSNearValue(rbs_value)
-    gene_circuit["groups"][grp_id]["sbol"][idx-1]["name"] = bestRBS["Number"]
+    gene_circuit["groups"][grp_id]["sbol"][pro_idx - 1]["name"] = bestRBS["Number"]
     gene_circuit["proteins"][pro_id]["RiPs"] = bestRBS["MPRBS"] * 100
 
   elif detail["type"] == "copy":
@@ -337,6 +431,8 @@ def update_controller(db, update_info):
 
   elif detail["type"] == "K1":
     #TODO not completed yet!!!
+    repressor = float(detail["new_value"]) / 100
+
 
     # update promoter related to repressor
     best_promoter = db.find_promoter_with_repressor(best_repressor["Number"])
@@ -348,9 +444,10 @@ def update_controller(db, update_info):
       gene_circuit["proteins"][i]["PoPS"] = promoter_value
       gene_circuit["groups"][promoter_grp][0]["name"] = best_promoter
 
+  print gene_circuit["proteins"]
   update_proteins_repress(db, gene_circuit["proteins"],\
       gene_circuit["groups"])
-  print gene_circuit
+  print gene_circuit["proteins"]
   return gene_circuit
 
 if __name__ == "__main__":

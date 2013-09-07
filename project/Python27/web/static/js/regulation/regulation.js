@@ -53,6 +53,13 @@ $().ready(function() {
         });
     });
 
+    $("#username").click(function() {
+        window.location.pathname = "/profile";
+    });
+
+    $(".avatar-container").click(function() {
+        window.location.pathname = "/profile";
+    });
 
     // logout
     $("#logout").click(function() {
@@ -63,9 +70,10 @@ $().ready(function() {
 
     // load file list
     $("#myfile").click(function() {
-        ws.send(JSON.stringify({
-            'request': 'getUserFileList'
-        }));
+        // ws.send(JSON.stringify({
+        //     'request': 'getUserFileList'
+        // }));
+        window.location.pathname = "/file_manager";
     });
 
     // save file
@@ -85,14 +93,17 @@ $().ready(function() {
                 }
             }, 1000);
         } else {
+            
+            var saveData = JSON.stringify(canvasToSaveData());
+            saveData.fileName = filename;
+            saveData.fileType = 'rnw';
 
-            var jsonData = canvasToJSON();
-
-            ws.send({
-                'request': 'indexSaveToGeneCircuit',
-                'data': jsonData
-            });
-
+            ws.send(JSON.stringify({
+                'request': 'saveUserData',
+                'data': saveData,
+                'fileName': filename,
+                'fileType': 'rnw'
+            }));
 
             //  var pngwriter = new graphiti.io.png.Writer();
             // var png = pngwriter.marshal(app.view);
@@ -306,6 +317,10 @@ $().ready(function() {
                 console.log(message.result);
             } else if (message.request == 'indexSaveToGeneCircuit') {
                 console.log(message.result);
+                ws.onclose = function() {}; // disable onclose handler first
+                ws.close();
+            } else if (message.request == 'saveUserData') {
+                console.log(message.result);
             }
         };
     }
@@ -330,8 +345,18 @@ $().ready(function() {
 
     // Cleanly close websocket when unload window
     window.onbeforeunload = function() {
-        ws.onclose = function() {}; // disable onclose handler first
-        ws.close();
+        var jsonData = JSON.stringify(canvasToJSON());
+        ws.send(JSON.stringify({
+            'request': 'indexSaveToGeneCircuit',
+            'data': jsonData
+        }));
+
+        // ws.onclose = function() {}; // disable onclose handler first
+        // ws.close();
+        
+
+
+        // return "";
     };
 
 
@@ -368,8 +393,6 @@ $().ready(function() {
     var canvasToJSON = function() {
         var figures = app.view.figures.data,
             lines = app.view.lines.data;
-        // console.log(figures);
-        console.log(lines);
 
         var figuresCount = app.view.collection.length,
             linesCount = app.view.connections.length;
@@ -399,5 +422,43 @@ $().ready(function() {
         };
         
         return data;
-    }
+    };
+
+    var canvasToSaveData = function() {
+        var figures = app.view.figures.data,
+            lines = app.view.lines.data;
+        console.log(figures);
+        console.log(lines);
+
+        var figuresCount = app.view.collection.length,
+            linesCount = app.view.connections.length;
+
+        var data = {
+            part: [],
+            links: []
+        };
+
+        for (var i = 0; i < figuresCount; i++) {
+            var figure = {};
+            figure.id = i;
+            figure.name = figures[i].id;
+            figure.type = figures[i].TYPE;
+            figure.xPos = figures[i].getX();
+            figure.yPos = figures[i].getY();
+
+            data.part.push(figure);
+        }
+
+        for (var i = 0; i < linesCount; i++) {
+            var line = {};
+            line.from = lines[i].sourcePort.parent.id;
+            line.to = lines[i].targetPort.parent.id;
+            line.type = lines[i].TYPE;
+            line.inducer = "none";
+
+            data.links.push(line);
+        };
+        
+        return data;
+    };
 });

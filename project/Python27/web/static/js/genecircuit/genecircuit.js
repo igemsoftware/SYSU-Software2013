@@ -16,8 +16,8 @@ $.fn.dashboard = function(options) {
 			else if (per < 0)
 				per = 0;
 			per = Math.floor(per);
-			$(this).find(".arrow1").css('transform', 'rotate(' + ((1.8 * (per+2)) - 180) + 'deg)');
-			$(this).find(".arrow2").css('transform', 'rotate(' + ((1.8 * (per-2)) - 180) + 'deg)');
+			$(this).find(".arrow1").css('transform', 'rotate(' + ((1.8 * (per+3)) - 180) + 'deg)');
+			$(this).find(".arrow2").css('transform', 'rotate(' + ((1.8 * (per-3)) - 180) + 'deg)');
 			$(this).find(".dashboard-value").text(per.toString() + "%");
 		});
 
@@ -57,8 +57,8 @@ $.fn.dashboard1 = function(options) {
 })(jQuery);
 
 var protein = function() {
-	this.PoPs = 0;
-	this.RiPs = 0;
+	this.PoPS = 0;
+	this.RiPS = 0;
 	this.copy = 0;
 	this.K1 = 0;
 	this.concen = 0;
@@ -74,7 +74,7 @@ var protein = {
 	},
 
 	setTexture: function(aTextureId, aData) {
-		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"slider pops\"></div><span>PoPs</span></div><div class=\"protein-range mul\"><div class=\"slider rips\"></div><span>RiPs</span></div><div class=\"protein-range mul\"><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider concen\"></div><span>concen</span></div></div>");
+		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider concen\"></div><span>concen</span></div></div>");
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
@@ -117,7 +117,7 @@ var protein = {
 				/* ws.send(JSON.stringify({ */
 					/* 'request': 'changeRBS', */
 				/* })); */
-				detail.type = "RiPs";
+				detail.type = "RiPS";
 				detail.pro_id = parseInt($(this).parents(".proteins").attr('id').split('-')[1]);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
@@ -178,16 +178,16 @@ var protein = {
 		/* this.textureId = aTextureId; */
 	},
 	setData: function(aTextureId, aData) {
-		// aData.PoPs = Math.floor(Math.random()*100); 
-		// aData.RiPs = Math.floor(Math.random()*100); 
+		// aData.PoPS = Math.floor(Math.random()*100); 
+		// aData.RiPS = Math.floor(Math.random()*100); 
 		// aData.copy = Math.floor(Math.random()*100); 
 		// aData.K1 = Math.floor(Math.random()*100); 
 		// aData.concen = Math.floor(Math.random()*100); 
 		// aData.before_regulated = Math.floor(Math.random()*100); 
 		// aData.repress_rate = Math.floor(Math.random()*100); 
 		// aData.induce_rate = Math.floor(Math.random()*100); 
-		$("#" + aTextureId + " .pops").slider("value", aData.PoPs);
-		$("#" + aTextureId + " .rips").slider("value", aData.RiPs);
+		$("#" + aTextureId + " .pops").slider("value", aData.PoPS);
+		$("#" + aTextureId + " .rips").slider("value", aData.RiPS);
 		$("#" + aTextureId + " .copy").slider("value", aData.copy);
 		$("#" + aTextureId + " .k1").slider("value", aData.K1);
 		$("#" + aTextureId + " .concen").slider("value", aData.concen);
@@ -270,7 +270,12 @@ var group = {
 	setData: function(aTextureId, aData, state) {
 		// after_connect 
 		for(var i = 0; i < aData.sbol.length; i++) { 
-			$("#", aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('span').text(aData.sbol[i].name); 
+			/* console.log(aTextureId); */
+		/* console.log('aData', aData.sbol[i].name); */
+		/* console.log($("#", aTextureId + " .sbol-components .component:eq(" + i.toString() + ")").find('span')); */
+			/* console.log(aTextureId); */
+			/* console.log($("#", aTextureId + " .sbol-components .component:eq(" + i.toString() + ")").find("span").text());  */
+			$("#" + aTextureId + " .sbol-components .component:eq(" + i.toString() + ")").find("span").text(aData.sbol[i].name); 
 		} 
 		if(aData.state == 'trans') { 
 			this.turnSwitch($("#" + aTextureId + " .sbol-switch"), 'trans'); 
@@ -475,8 +480,8 @@ var getDataCollection = function() {
 		dataCollection.proteins[pid_i] = {};
 		dataCollection.proteins[pid_i].grp_id = p.data('grp_id');
 		dataCollection.proteins[pid_i].name = p.find(".module-title em").text();
-		dataCollection.proteins[pid_i].PoPs = p.find(".pops").slider("value");
-		dataCollection.proteins[pid_i].RiPs = p.find(".rips").slider("value");
+		dataCollection.proteins[pid_i].PoPS = p.find(".pops").slider("value");
+		dataCollection.proteins[pid_i].RiPS = p.find(".rips").slider("value");
 		dataCollection.proteins[pid_i].copy = p.find(".copy").slider("value");
 		dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
 		dataCollection.proteins[pid_i].concen = p.find(".concen").slider("value");
@@ -607,11 +612,11 @@ var randomValue = function() {
 	data.gene_circuit = dataCollection;
 	data.detail = detail;
 
-	console.log("data", data);
-	console.log("upup", JSON.stringify({
-		'request': 'updateGeneCircuit',
-		'data': {'detail':detail, 'gene_circuit':dataCollection},
-	}));
+	// console.log("data", data); 
+	// console.log("upup", JSON.stringify({ 
+		// 'request': 'updateGeneCircuit', 
+		// 'data': {'detail':detail, 'gene_circuit':dataCollection}, 
+	// })); 
 	ws.send(JSON.stringify({
 		'request': 'updateGeneCircuit',
 		'data': {'detail':detail, 'gene_circuit':dataCollection},
