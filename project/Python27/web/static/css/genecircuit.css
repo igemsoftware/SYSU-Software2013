@@ -344,6 +344,7 @@
 	float: left;
 	text-align: center;
 	vertical-align: bottom;
+	cursor: pointer;
 }
 
 .sbol li div {
@@ -369,7 +370,7 @@
 }
 
 .sbol li img, .sbol li span:hover {
-	cursor: move;
+	/* cursor: move; */
 }
 
 /* .sbol-op { */

@@ -189,8 +189,10 @@ var group = {
 							
 		$("#" + aTextureId).append("<ul class=\"sbol-components\"></ul><div class=\"move-left cmd-move\">&lt</div><div class=\"move-right cmd-move\">&gt</div><button class=\"sbol-switch switch-on\">trans</button>");
 		for(var i = 0; i < aData.sbol.length; i++) {
-			var type = '';
+			var type = 'Promoter.PNG';
 			if(aData.sbol[i].type == 'Regulatory') type = 'Promoter.PNG';
+			else if(aData.sbol[i].type == 'Signalling') type = 'Promoter.PNG';
+			else if(aData.sbol[i].type == 'Intermediate') type = 'Promoter.PNG';
 			else if(aData.sbol[i].type == 'RBS') type = 'rbs.PNG';
 			else if(aData.sbol[i].type == 'Coding') type = 'Coding.PNG';
 			else if(aData.sbol[i].type == 'Terminator') type = 'Terminator.PNG';
@@ -203,36 +205,45 @@ var group = {
 			}
 
 			$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('span').text(aData.sbol[i].name);
-			$("#" + aTextureId + " .sbol-components sbol-switch").text(aData.state);
-			if(aData.state == 'trans') {
-				$("#" + aTextureId + " .sbol-switch").removeClass('switch-off').addClass('switch-on');
-				$("#" + aTextureId + " .sbol-switch").text("trans");
-				$("#" + aTextureId).data("order", "trans");
-			} else if(aData.state == 'cis') {
-				$("#" + aTextureId + " .sbol-switch").removeClass('switch-on').addClass('switch-off');
-				$("#" + aTextureId + " .sbol-switch").text("cis");
-				$("#" + aTextureId).data("order", "cis");
-			}
 		}
+
+		$("#" + aTextureId + " .sbol-components sbol-switch").text(aData.state);
+		if(aData.state == 'trans') {
+			$("#" + aTextureId + " .sbol-switch").removeClass('switch-off').addClass('switch-on');
+			$("#" + aTextureId + " .sbol-switch").text("trans");
+			$("#" + aTextureId).data("order", "trans");
+		} else if(aData.state == 'cis') {
+			$("#" + aTextureId + " .sbol-switch").removeClass('switch-on').addClass('switch-off');
+			$("#" + aTextureId + " .sbol-switch").text("cis");
+			$("#" + aTextureId).data("order", "cis");
+		}
+
 		$("#" + aTextureId).data('from', aData.from); 
 		$("#" + aTextureId).data('type', aData.type); 
 		$("#" + aTextureId).data('to', aData.to); 
+		$("#" + aTextureId).data('induce_type', aData.induce_type); 
 		$("#" + aTextureId).data('inducer', aData.inducer); 
 		$("#" + aTextureId + " ul").prepend("<li id='" + aTextureId + "-first' style='display:none'></li>");
-		$("#" + aTextureId + " ul").sortable({
-			items: "li",
-			handle: "img, span",
-			update: function(event, ui) {
-				command.tempCmd.to = $(ui.item).prev().attr('id');
-				command.cmdConfirm();
-				randomValue();
-			},
-			start: function(event, ui) {
-				command.tempCmd.type = 'Move';
-				command.tempCmd.actor = $(ui.item).attr('id');
-				command.tempCmd.from = $(ui.item).prev().attr('id');
-			},
-
+		// $("#" + aTextureId + " ul").sortable({ 
+			// items: "li", 
+			// handle: "img, span", 
+			// update: function(event, ui) { 
+				// command.tempCmd.to = $(ui.item).prev().attr('id'); 
+				// command.cmdConfirm(); 
+				// randomValue(); 
+			// }, 
+			// start: function(event, ui) { 
+				// command.tempCmd.type = 'Move'; 
+				// command.tempCmd.actor = $(ui.item).attr('id'); 
+				// command.tempCmd.from = $(ui.item).prev().attr('id'); 
+			// }, 
+//  
+		// }); 
+		$("#" + aTextureId + " ul .component").bind("click", function(){
+			ws.send(JSON.stringify({
+				'request': 'getBiobrickPath',
+				'data': $(this).find("span").text(),
+			}));
 		});
 		that = this;
 		$("#" + aTextureId + " .sbol-switch").bind("click", function(){
@@ -247,7 +258,7 @@ var group = {
 				/* $(this).data("order", "trans"); */
 				that.turnSwitch($(this), 'trans');
 			}
-			randomValue();
+			/* randomValue(); */
 		});
 	},
 	setData: function(aTextureId, aData, state) {
@@ -362,9 +373,27 @@ var checkEmptyPlasmid = function() {
 }
 var moveAndCheck = function(aGroup, fGroup, tGroup, fPlasmid, tPlasmid) {
 	aGroup.fadeOut().detach().fadeIn();
+
+	// detail.pro_id =  
+	// detail.new_value =  
+	// detail.type = "copy" 
+	var grp_id = aGroup.attr('id').split('-')[1];
+	if(tPlasmid.find(".sbol").length > 0) {
+		grp_id = parseInt(tPlasmid.find(".sbol").attr('id').split('-')[1]);
+	}
+	$(".proteins").each(function(){
+		if($(this).data('grp_id') == grp_id) {
+			detail.new_value = $(this).find(".copy").slider("value");
+		}
+	});
+	aGroup.find(".component").each(function(){
+		if($(this).data('id')) detail.pro_id = $(this).data('id');
+	})
+	detail.type = "copy";
+
+
 	tGroup.after(aGroup);
 	checkEmptyPlasmid();
-
 	command.tempCmd.type = "Move";
 	command.tempCmd.from = fGroup.attr('id');
 	command.tempCmd.actor = aGroup.attr('id');
@@ -543,7 +572,8 @@ var getDataCollection = function() {
 			dataCollection.groups[grp_id].to = curGroup.data("to"); 
 			dataCollection.groups[grp_id].type = curGroup.data("type"); 
 			dataCollection.groups[grp_id].state = curGroup.data("order"); 
-			dataCollection.groups[grp_id].inducer = curGroup.data("inducer"); 
+			dataCollection.groups[grp_id].induce_type = curGroup.data("induce_type"); 
+			dataCollection.groups[grp_id].inducer = curGroup.data("inducer");
 			for(var k = 0; k < componentsLength; k++) {
 				dataCollection.groups[grp_id].sbol.push({'type':'','name':''});
 				dataCollection.groups[grp_id].sbol[k].name = curGroup.find("li").eq(k+1).find("span").text();
@@ -564,6 +594,8 @@ var randomValue = function() {
 	dataCollection = getDataCollection();
 	data.gene_circuit = dataCollection;
 	data.detail = detail;
+
+	console.log("data", data);
 
 	// console.log("data", data); 
 	// console.log("upup", JSON.stringify({ 
