@@ -52,10 +52,9 @@ $().ready(function() {
     // load file list
     $("#myfile").click(function() {        
         window.location.pathname = "/file_manager";
-    });
-
+    });	
     // save file
-    $("#save").click(function() {
+    $("#save").click(function() {		
         var fnInput = $("#fn-input");
         var filename = fnInput.attr('value');
         if (!filename) {
@@ -70,34 +69,21 @@ $().ready(function() {
                 }
             }, 1000);
         } else {
-            
-            var saveData = JSON.stringify(canvasToSaveData());
-            saveData.fileName = filename;
-            saveData.fileType = 'rnw';
-
+			var saveData = '';
+            if(window.location.pathname==='/simulation')
+			{
+				filetype='simulationSave';
+			}else if(window.location.pathname==='/plasmid')
+			{
+				filetype='plasmidSave';
+			}            
             ws.send(JSON.stringify({
                 'request': 'saveUserData',
                 'data': saveData,
                 'fileName': filename,
-                'fileType': 'rnw'
-            }));
-
-            //  var pngwriter = new graphiti.io.png.Writer();
-            // var png = pngwriter.marshal(app.view);
-            // $(".header img").attr('src', png);
-            // ws.send({
-            //   "request" : "saveUserData",
-            //   "data" : filename
-            // });
-
-
-            // $("#myModalInfo").html("File: " + filename + " is saved!");
-            // $("#save-trigger").click();
+                'fileType': filetype
+            }));           
         }
-    });
-
-    $("#clear").click(function() {
-        app.view = new g.View("canvas");
     });    
     // Cleanly close websocket when unload window
     window.onbeforeunload = function() {        
