@@ -83,6 +83,7 @@ var protein = {
 			}
 		});
 
+		console.log($("#" + aTextureId + " .rips"));
 		$("#" + aTextureId + " .rips").slider({
 			orientation: "vertical",
 			range: "min",
@@ -546,6 +547,7 @@ var getDataCollection = function() {
 		dataCollection.proteins[pid_i].name = p.find(".module-title em").text();
 		dataCollection.proteins[pid_i].PoPS = p.find(".pops").slider("value");
 		dataCollection.proteins[pid_i].RiPS = p.find(".rips").slider("value");
+		console.log(p.find(".rips").slider("value"));
 		dataCollection.proteins[pid_i].copy = p.find(".copy").slider("value");
 		dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
 		dataCollection.proteins[pid_i].concen = p.find(".concen").slider("value");
