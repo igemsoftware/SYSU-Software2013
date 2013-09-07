@@ -20,16 +20,6 @@ def login():
 		user.userLogout(sql)
 	return render_template('login.html')
 
-@app.route("/demo")
-def demo():
-  return render_template('demo.html')
-
-@app.route("/get_demo")
-def get_demo():
-  filename = request.args.get('file','')
-  return render_template('get_demo.html', filename=filename)
-
-
 @app.route("/index")
 def index():
 	return render_template('index.html')
@@ -50,10 +40,6 @@ def file_manager():
   #TODO: pagination
   filelist = sql.getUserFileNameList()
   return render_template('file_manager.html', filelist = filelist)
-
-@app.route("/getdir/<pathname>")
-def getDir(pathname):
-	return json.dumps(xmlParse.get_allfiledirs('web\\'+pathname))
 
 @app.route("/genecircuit")
 def goToGeneCircuit():

@@ -140,6 +140,14 @@
 	text-align: center;
 }
 
+.unuse .ui-slider-range {
+	display: none;
+}
+
+.unuse .ui-slider-handle {
+	display: none;
+}
+
 .ui-slider-handle {
 	-webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -329,7 +337,7 @@
 }
 
 .sbol li {
-	width: 82px;
+	width: 80px;
 	/* height: 60px; */
 	min-height: 50px;
 	/* display: inline-block; */
