@@ -140,6 +140,14 @@
 	text-align: center;
 }
 
+.unuse .ui-slider-range {
+	display: none;
+}
+
+.unuse .ui-slider-handle {
+	display: none;
+}
+
 .ui-slider-handle {
 	-webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
