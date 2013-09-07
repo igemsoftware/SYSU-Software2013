@@ -99,7 +99,6 @@ class apis():
     return ret
   def updateGeneCircuit(self, message):
     ret = group.update_controller(self.db, message['data'])
-    print ret
     return ret
   def getUserQuestion(self,message):
     return user.getUserQuestion(self.db,message['userName']) 
