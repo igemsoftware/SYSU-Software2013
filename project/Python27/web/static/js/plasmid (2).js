@@ -602,71 +602,36 @@ function json2str(o) {
 	for (var i in o) arr.push("'" + i + "':" + fmt(o[i]));
 	return '{' + arr.join(',') + '}';
 }
-function testWebSocket(){
+function handlerWebSocket(){
 	if ("WebSocket" in window) {
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
-		ws.onmessage = function(msg) {
-		   var message = JSON.parse(msg.data);
-		   console.log(message);
-		   /*if(message.request==="getLoginedUserName")
-		   {			  
-			   sessionStorage.LoginedUserName=message.result;
-		   }*/
-		};
+		ws.onmessage = function (msg) {
+		var message = JSON.parse(msg.data);
+      	if (message.request == "getLoginedUserName") {
+        	$("#user-view-left #username").text(message.result);
+        } else if (message.request == "loginOut") { // get logout info
+        	window.location = "..";
+        } else if (message.request == "getUserFileList") {
+        	$("#filelist").html("");
+			for (var i = 0; i < message.result.length; i++) {
+				$("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
+			};
+			$("#filelist > a").live("click", function() {
+				ws.send(JSON.stringify({
+                        "request": "loadUserFile",
+                        "fileName": "default1",
+                        "fileType": "data"
+                    }));
+			});
+		} else if (message.request == "loadUserFile") {
+                console.log(message.result);
+		}else if (message.request == 'saveUserData') {
+			console.log(message.result);
+        }
+		}
 	}
 	ws.onopen = function() {
-		//ws.send(JSON.stringify({'request': 'getUserFileList'}));
-		//ws.send(JSON.stringify({'request': 'changeRBS'}));
-		//ws.send(JSON.stringify({'request': 'generateRandomsessionKey'}));
-		//ws.send(JSON.stringify({'request': 'registAUser','name':'testplus1','password':'1234','email':'123456@yahoo.com','group_name':'guest','gender':1,'question':'who am i?','answer':'testplus1'}));
-		//ws.send(JSON.stringify({'request': 'getUserQuestion','userName':'kitty'}));		
-		//ws.send(JSON.stringify({'request': 'forgetPasswordAndReset','userName':'kitty3','answer':'abcd','password':'1234'}));
-		//ws.send(JSON.stringify({'request': 'forgetPasswordAndReset','userName':'testplus','answer':'testplus','password':'1234'}));
-		//ws.send(JSON.stringify({'request': 'loadUserFile','fileName':'default1','fileType':'default'}));
-		//ws.send(JSON.stringify({'request': 'getXmlJson','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
-		//ws.send(JSON.stringify({'request': 'getUserFileList','path':'web/biobrick/Terminators/BBa_B0010.xml'}));
-		/*ws.send(JSON.stringify({'request': 'saveUserData',
-		'data':'web/biobrick/Terminators/BBa_B0010.xml',
-		'fileName':'test1',
-		'fileType':'youtest'
-		}));*/
-		/*datatemp = {
-    "part": [
-      { "id"  : 1,
-        "name": "BBa_C0060",
-        "type": "Protein"
-        },
-      { "id"  : 2,
-        "name": "repressor",
-        "type": "Repressor"
-        },
-      { "id"  : 3,
-        "name": "BBa_C0160",
-        "type": "Protein"
-        },
-      { "id"  : 4,
-        "name": "BBa_C0178",
-        "type": "Protein"
-        }
-
-      ],
-    "link": [
-      { "from": 1,
-        "to"  : 2,
-        "type": "Bound",
-        },
-      { "from": 2,
-        "to"  : 3,
-        "type": "repressor_protein",
-        },
-      { "from": 2,
-        "to"  : 4,
-        "type": "repressor_protein",
-        },
-      ]
-    }        
-	    datatemp=JSON.stringify(datatemp);
-		ws.send(JSON.stringify({'request': 'loadSBOL','data':datatemp}));*/
+		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));			
 	}
 }
 function CircleClass(drawArea,drawAreaToBody)
@@ -836,22 +801,6 @@ $(function(){
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();		
 	var d=document.getElementById('seqCurrentText');	
 	width=d.offsetWidth/60*1.76;
-	console.log(width);
 	d.style.fontSize=width+'px';
-	console.log(d.style.fontSize);
-	testWebSocket();
-	//$("#divBody").toolTip();
-	//setUpDrag();
-	//console.log(document.getElementById());
-	//var canvas = document.getElementById(chart.canvasid);
-//	var context = chart.target.getContext();
-//	//console.log(context);
-//	//context.beginPath();
-//    //context.strokeStyle = "#000";
-//	//context.rect(150, 300, 500, 600);
-//	//context.stroke();
-//	var img=new Image();
-//	img.src="../static/img/glass.jpg";
-//	context.drawImage(img,0,0);
-//	console.log(context);	
+	handlerWebSocket();	
 });

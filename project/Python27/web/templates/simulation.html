@@ -26,15 +26,13 @@
   <script src="../static/js/lib/base64.js"></script>
   <script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>
   <script src="../static/js/simulation.js"></script>
-  <script src="../static/js/jCanvaScript.1.5.18.js"></script>
-  
+  <script src="../static/js/simulation/simulationFilMenu.js"></script> 
+  <script src="../static/js/jCanvaScript.1.5.18.js"></script>  
 </head>
 <body>
 	<div class="mycontainer" id="regulation-container">
     	<div class="header">
-            <!-- logo -->
             <img src="../static/img/logo.png" alt="sysu-software">
-            <!-- navigation -->
             <div class="nav">
                 <ul>
                     <li><a href="index">Regulation network</a></li>
@@ -45,30 +43,96 @@
                 </ul>
                 <div class="pointer-arrow" style="left:613px;"></div>
             </div>
-        </div>
-        
+        </div>        
         <div id="content">
             <div id="canvas-mask">                
-                	<div id='canvasDiv' style="width:66%;height:100%;float:left;left: 20px;top:0px;position:relative;"></div>                    
-                 <div id="Curve" style="width:30%;height:20%;padding-left:30px;float:left;border-style: outset;"> 
+            	<div id='canvasDiv' style="width:66%;height:100%;float:left;left: 20px;top:0px;position:relative;"></div>                    
+                <div id="Curve" style="width:30%;height:25%;padding-left:30px;float:left;border-style: outset;"> 
                  <label>Curve</label>               
                  </div> 
-                 <div id="Option" style="width:30%;height:20%;padding-left:30px;float:left;border-style: outset;"> 
+                 <div id="Option" style="width:30%;height:25%;padding-left:30px;float:left;border-style: outset;"> 
                  <label>Option</label>       
                  <input type="checkbox" id="stochastic" style="margin:15px;">stochastic</input>        	
                  <br>	 
                  <input type="checkbox" id="timedelay" style="margin:15px;">time delay</input>
                  </div>     
-                 <div id="Inducer" style="padding-left:30px;width:30%;height:20%;float:right;border-style: outset;"> 
+                 <div id="Inducer" style="padding-left:30px;width:30%;height:25%;float:left;border-style: outset;"> 
                  <label>Inducer</label>
                  </div>          
-                  <div id="buttons" style="padding-left:30px;width:30%;height:25%;float:right;border-style: outset;"> 
+                  <div id="buttons" style="padding-left:30px;width:30%;height:20%;float:left;border-style: outset;"> 
                    <input id="back-botton" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back"/>
-                 <input id="save-button" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();"/>
+                   <input id="save-button" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();"/>
                  </div>    
 			 </div>
         </div>    	
   	</div> <!-- /container -->
   
+  
+  <div id="right-container">
+            <div class="trigger trigger-right"></div>
+
+            <!-- right menu list starts -->
+            <div class="accordion" id="accordion2">
+
+                <!-- basic menu starts -->
+                <div class="accordion-group">
+                    <!-- accordion-heading starts -->
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                            Menu
+                            <i class="icon-chevron-down" style="display: block; float: right"></i>
+                        </a>
+                    </div>
+                    <!-- accordion-heading ends -->
+
+                    <!-- accordion-body starts -->
+                    <div id="collapseOne" class="accordion-body collapse in">
+                        <!-- accordion-inner starts -->
+                        <div class="accordion-inner">
+                            <div id="menu">
+                                <!-- userview starts -->
+                                <div id="user-view" class="block">
+                                    <div id="user-view-left">
+                                        <div id="username">Nobody</div>
+                                        <div id="logout">Logout</div>
+                                    </div>
+                                    <div id="user-view-right">
+                                        <div class="avatar-container">
+                                            <img src="../static/img/avatar.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- userview ends -->
+
+                                <!-- commandmenu starts -->
+                                <div id="commandmenu" class="block">
+                                    <div id="button-group">
+                                        <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal">My Files</button>
+                                    </div>
+                                </div>
+                                <!-- commandmenu ends -->
+
+                                <!-- filemenu starts -->
+                                <div id="filemenu" class="block">
+                                    <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename">
+                                    <button class="mybtn" id="save">
+                                        <!-- <i class="icon-ok"></i> -->
+                                        √  Save
+                                    </button>
+                                    <a class="mybtn" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
+                                    <button class="mybtn" id="clear" role="button">                                        
+                                        ×  Clear
+                                    </button>
+                                </div>
+                                <!-- filemenu ends --> </div>
+                            <!-- menu ends --> </div>
+                        <!-- accordion-inner ends --> </div>
+                    <!-- accordion-body ends --> </div>
+                <!-- basic menu ends -->               
+    <!-- right menu list ends -->
+
+</div>
+<!-- right container ends -->
+
 </body>
 </html>
