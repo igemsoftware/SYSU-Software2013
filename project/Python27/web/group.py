@@ -448,6 +448,9 @@ def update_controller(db, update_info):
 
   #update_proteins_repress(db, gene_circuit["proteins"],\
       #gene_circuit["groups"])
+  for i in gene_circuit["proteins"]:
+    info = gene_circuit["proteins"][i]
+    gene_circuit["proteins"][i]["before_regulated"] = info["RiPs"] * info["PoPS"] * info["copy"]
   return gene_circuit
 
 if __name__ == "__main__":
@@ -456,4 +459,4 @@ if __name__ == "__main__":
   print sbol
   update_info = {u'detail': {u'repressor_list': [], u'new_value': 89, u'type':\
     u'copy', u'pro_id': 1}, u'gene_circuit': {'proteins': {1: {'RiPs': 11.49, 'name': 'BBa_C0060', 'concen': 0.1, 'grp_id': 4, 'pos': 2, 'PoPS': 61.019999999999996, 'repress_rate': -1, 'K1': 0, 'induce_rate': -1, 'copy': 73.0}, 2: {'RiPs': 11.49, 'name': 'BBa_C0060', 'concen': 0.1, 'grp_id': 4, 'pos': 4, 'PoPS': 61.019999999999996, 'repress_rate': -1, 'K1': 0, 'induce_rate': -1, 'copy': 73.0}, 3: {'RiPs': 11.49, 'name': 'BBa_K518003', 'concen': 0.1, 'grp_id': 4, 'pos': 6, 'PoPS': 61.019999999999996, 'repress_rate': -1, 'K1': 0, 'induce_rate': -1, 'copy': 73.0}, 4: {'RiPs': 11.49, 'name': 'BBa_K518003', 'concen': 0.1, 'grp_id': 4, 'pos': 8, 'PoPS': 61.019999999999996, 'repress_rate': -1, 'K1': 0, 'induce_rate': -1, 'copy': 73.0}, 5: {'RiPs': 11.49, 'name': 'BBa_C0160', 'concen': 0.1, 'grp_id': 5, 'pos': 2, 'PoPS': 34.23, 'repress_rate': -1, 'K1': -2.4287510356503725, 'induce_rate': -1, 'copy': 73.0}, 6: {'RiPs': 11.49, 'name': 'BBa_C0178', 'concen': 0.1, 'grp_id': 6, 'pos': 2, 'PoPS': 94.89, 'repress_rate': -1, 'K1': -2.4287510356503725, 'induce_rate': -1, 'copy': 73.0}}, 'plasmids': [[4, 5, 6]], 'groups': {4: {'from': -1, 'state': 'cis', 'inducer': 'None', 'to': [5, 6], 'sbol': [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060', 'id': 1}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060', 'id': 2}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003', 'id': 3}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_K518003', 'id': 4}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'type': 'Constitutive'}, 5: {'from': 3, 'state': 'cis', 'inducer': 'Positive', 'to': [], 'sbol': [{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160', 'id': 5}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'type': 'Positive'}, 6: {'from': 4, 'state': 'cis', 'inducer': 'Negative', 'to': [], 'sbol': [{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178', 'id': 6}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'type': 'Negative'}}}}
-  update_controller(db, update_info)
+  print update_controller(db, update_info)
