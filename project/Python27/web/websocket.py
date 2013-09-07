@@ -23,8 +23,9 @@ class apis():
     self.db.indexSave=message['data']
     return "index save success"
   def getIndexSave(self,message):
-		print json.loads(self.db.indexSave)
-		return group.dump_group(json.loads(self.db.indexSave),self.db)
+    print json.loads(self.db.indexSave)
+    print group.dump_group(json.loads(self.db.indexSave),self.db)
+    return group.dump_group(json.loads(self.db.indexSave),self.db)
   def generateRandomsessionKey(self,message):   
     if self.db.encrypt==None:     
       self.db.encrypt=encrypt.Encrypt()

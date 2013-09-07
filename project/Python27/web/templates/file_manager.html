@@ -29,11 +29,20 @@
 		  filetype = $(this).find("p").text();
 		  console.log(filetype);
 		  switch (filetype){
-			  case 'regulation':
-			  	window.location = "index?"+'filetype='+filetype+'&filename='+filename;
+			case 'regulation':
+				window.location = "index?"+'filetype='+filetype+'&filename='+filename;
 			  	break;
-			  case 'simulation':
+			case 'simulation':
 			  	window.location = "simulation?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+			case 'genecircuit':
+			  	window.location = "genecircuit?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+			case 'plasmid':
+			  	window.location = "plasmid?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+			case 'protocol':
+			  	window.location = "protocol?"+'filetype='+filetype+'&filename='+filename;
 			  	break;
 		  }
 		 

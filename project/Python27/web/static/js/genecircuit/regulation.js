@@ -528,9 +528,9 @@ $().ready(function() {
 			'request': 'getIndexSave',
 		}));
 
-		ws.send(JSON.stringify({
+		/*ws.send(JSON.stringify({
 			'request': 'changeRBS',
-		}));
+		}));*/
 
 
 		// ws.send(JSON.stringify({ 
