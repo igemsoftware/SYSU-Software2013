@@ -315,10 +315,7 @@ def dump_group(network, database):
 
   # do not display regulation protein
   for part in network["part"]:
-    if part["type"] == "Protein":
-      proteins[part["id"]]["display"] = "True"
-    else:
-      proteins[part["id"]]["display"] = "False"
+    proteins[part["id"]]["display"] = str(part["type"] == "Protein")
 
 
   # update_proteins_repress(database, proteins, groups)
