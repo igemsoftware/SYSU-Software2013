@@ -22,6 +22,8 @@ class apis():
   def indexSaveToGeneCircuit(self,message):
     self.db.indexSave=message['data']
     return "index save success"
+  def getBiobrickPath(self,message):
+    return xmlParse.findFile(rootdir="web\\biobrick\\",key=message['data'])
   def getIndexSave(self,message):
     print json.loads(self.db.indexSave)
     print group.dump_group(json.loads(self.db.indexSave),self.db)
