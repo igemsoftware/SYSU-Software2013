@@ -500,7 +500,9 @@ $().ready(function() {
          console.log("updateGeneCircuit", message.result); 
 				genecircuitData = message.result;
 				updateGen(genecircuitData);
-
+			} else if (message.request == "getIndexSave") {
+				console.log("getIndexSave", message.result); 
+				genecircuitData = message.result;
       }
     };
   }
@@ -523,8 +525,13 @@ $().ready(function() {
     }));
 
 		ws.send(JSON.stringify({
+			'request': 'getIndexSave',
+		}));
+
+		ws.send(JSON.stringify({
 			'request': 'changeRBS',
 		}));
+
 
 		// ws.send(JSON.stringify({ 
 			// 'request': 'updateGeneCircuit', 
