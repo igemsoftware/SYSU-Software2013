@@ -1,9 +1,8 @@
 import os
 import sequence_serializer
 import component_union
+import SteadyState_Rate
 import random
-import modeling
-import modeling2
 import database
 from math import log10
 
@@ -202,7 +201,6 @@ def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "p
   ret["PoPS"] = promoter_info[get_type_of_promoter(link_type)] * 100
   ret["RiPS"] = rbs_info["MPRBS"] * 100
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
-  ret["before_regulated"] = ret["PoPS"] * ret["RiPS"] * ret["copy"]
   if regulator_info is not None:
     ret["K1"] = log10(regulator_info["K1"])
   else:
@@ -219,20 +217,16 @@ def get_index_in_group(pro_name, group):
     if group[i]["name"] == pro_name:
       return i
 
-def update_proteins_repress(database, protein, groups):
-  start_pos = get_start_pos(groups)
-  for st in start_pos:
-    origin_concen = modeling2.SteadyState_Concen(database, protein, groups, st)
-    actrep_concen = modeling2.SteadyState_Concen_ActRep(database, protein,\
-        groups, st)
-    corepind_concen = modeling2.SteadyState_Concen_CorepInd(database, protein,\
-        groups, {}, st)
-    print origin_concen
-    for i in origin_concen:
-      protein[i]["repress_rate"] = log10(actrep_concen[i]) - log10(origin_concen[i])
-      protein[i]["induce_rate"] = log10(corepind_concen[i]) - log10(origin_concen[i])
-      protein[i]["concen"] = actrep_concen[i]
-    print protein
+def update_proteins_repress(database, gene_circuit):
+  repress_rates = SteadyState_Rate.ActRepRate(gene_circuit, database)
+  # induce_rates = SteadyState_Rate.CorepIndRate(gene_circuit, database)
+  print repress_rates
+  for i in repress_rates:
+    pro = gene_circuit["proteins"][i]
+    gene_circuit["proteins"][i]["before_regulated"] =\
+        pro["PoPS"] * pro["RiPS"] * pro["copy"]
+    gene_circuit["proteins"][i]["repress_rate"] = log10(repress_rates[i])
+    # gene_circuit["proteins"][i]["induce_rate"] = log10(induce_rates[i])
 
 def get_graph(link):
   ret = {}
@@ -329,7 +323,9 @@ def dump_group(network, database):
 
 
   # update_proteins_repress(database, proteins, groups)
-  return {"groups": groups, "proteins": proteins, "plasmids": [plasmid]}
+  gene_circuit = {"groups": groups, "proteins": proteins, "plasmids": [plasmid]}
+  update_proteins_repress(database, gene_circuit)
+  return gene_circuit
 
 def get_type_of_promoter(p_type):
   if p_type == "Constitutive":
@@ -444,11 +440,7 @@ def update_controller(db, update_info):
             pro2_id = gene_circuit["groups"][i]["sbol"][j]["id"]
             gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type] * 100
 
-  #update_proteins_repress(db, gene_circuit["proteins"],\
-      #gene_circuit["groups"])
-  for i in gene_circuit["proteins"]:
-    info = gene_circuit["proteins"][i]
-    gene_circuit["proteins"][i]["before_regulated"] = info["RiPS"] * info["PoPS"] * info["copy"]
+  update_proteins_repress(db, gene_circuit)
   return gene_circuit
 
 if __name__ == "__main__":
@@ -505,4 +497,4 @@ if __name__ == "__main__":
                               u'Coding', u'name': u'BBa_C0178', u'id': 7},
                             {u'type': u'Terminator', u'name': u'BBa_B0013'}],
                         u'corep_ind_type': u'Negative', u'type': u'Negative'}}}}
-  # print update_controller(db, update_info)
+  print update_controller(db, update_info)

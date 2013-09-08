@@ -67,7 +67,7 @@ def ActRepRate(circuit, database):
         Rate[DictKey[n]] = Concen_ActRep[DictKey[n]] / Concen_None[DictKey[n]]
     return Rate
 
-def CorepIndRate(circuit, corepind, database):
+def CorepIndRate(circuit, database):
     PlasID   = circuit['plasmids'][0]
     PlasSize = {}
     ProDict  = {}
@@ -108,13 +108,14 @@ def CorepIndRate(circuit, corepind, database):
             if group['corep_ind_type'] == 'Corepressor':
                 corepressor = database.select_with_name('Corepressor',\
                     circuit['groups'][PlasID[n]]['corep_ind'])
-                dataset['Corepressor'] = corepind[PlasID[n]]['concen']
+                dataset['Corepressor'] = circuit['proteins'][proid]['concen']
                 dataset['K2']          = corepressor['K2']
                 dataset['HillCoeff2']  = corepressor['HillCoeff2']
             elif group['corep_ind_type'] == 'Inducer':
                 inducer = database.select_with_name('Inducer',\
                     circuit['groups'][PlasId[n]]['corep_ind'])
-                dataset['Inducer']    = corepind[PlasID[n]]['concen']
+                dataset['Corepressor'] = circuit['proteins'][proid]['concen']
+                # dataset['Inducer']    = corepind[PlasID[n]]['concen']
                 dataset['K2']         = inducer['K2']
                 dataset['HillCoeff2'] = inducer['HillCoeff2']
             ProDict[proid] = dataset
@@ -208,4 +209,4 @@ if __name__ == "__main__":
                                               'Negative'}}}
   corepind = {1:0.1, 2:0.1, 3:0.1, 4:0.1, 5:0.1, 6:0.1, 7:0.6}
   print ActRepRate(gene_circuit, db)
-  print CorepIndRate(gene_circuit, corepind, db)
+  print CorepIndRate(gene_circuit, db)
