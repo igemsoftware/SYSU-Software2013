@@ -1,71 +1,86 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <title>Graphiti</title>
+    <title>Protocol</title>
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="rathinho">
     <meta name="viewport" content="width=device-width">
-    
-  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.css">
-  <link rel="stylesheet" href="../static/css/reset.css">
-  <link rel="stylesheet" href="../static/css/slider_style.css">
-  <link rel="stylesheet" href="../static/css/dtree.css">  
-  <link rel="stylesheet" href="../static/css/graphiti.css">
-  <link rel="stylesheet" href="../static/css/navlist.css">
-  <style>
-    li{height:45px;line-height: 28px;}
-    p{font-size:14px;line-height:20px;} 
-  </style>
-</head>
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-<body>
-  <div class="container">
-    <h1>Protocol</h1>
-    <div class="footer" align="center">
-      <button class="btn btn-primary" onclick="window.location.pathname = '/index'">Regulation network</button>
-      <button class="btn btn-primary" onclick="window.location.pathname = '/genecircuit'">Gene Circuit</button>      
-      <button class="btn btn-primary" onclick="window.location.pathname = '/plasmid'">Plasmid</button>
-      <button class="btn btn-primary" onclick="window.location.pathname = '/protocol'">Protocol</button>
-      <button class="btn btn-primary" onclick="window.location.pathname = '/simulation'">Simulation</button>
-    </div>
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <ul class="nav nav-list bs-docs-sidenav affix" id="myTab" style="background:white">
-            <li class="active"><a href="#0" data-toggle="tab">Overview<i class="icon-chevron-right"></i></a></li>
-            <li><a href="#1" data-toggle="tab">1.Obtain plasmid DNA for parts<i class="icon-chevron-right"></i></a></li>
-            <li><a href="#2" data-toggle="tab">2.Enzyme Digestion<i class="icon-chevron-right"></i></a></li>
-            <li><a href="#3" data-toggle="tab">3.Gel Electrophoresis<i class="icon-chevron-right"></i></a></li>
-            <li><a href="#4" data-toggle="tab">4.Gel Purification<i class="icon-chevron-right"></i></a></li>
-            <li><a href="#5" data-toggle="tab">5.Ligation<i class="icon-chevron-right"></i></a></li>
-            <li><a href="#6" data-toggle="tab">6.Transformation<i class="icon-chevron-right"></i></a></li>
-            <li><a href="#7" data-toggle="tab">7.Colony PCR<i class="icon-chevron-right"></i></a></li>
-            <li><a href="#8" data-toggle="tab">8.Conclusive Test<i class="icon-chevron-right"></i></a></li>
-            <li><a href="#9" data-toggle="tab">9.Glycerol Stock<i class="icon-chevron-right"></i></a></li>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/slider_style.css">
+    <link rel="stylesheet" href="../static/css/dtree.css">
+    <link rel="stylesheet" href="../static/css/graphiti.css">
+    <link rel="stylesheet" href="../static/css/navlist.css">
+    <style>
+      .list{line-height:45px;}
+      p{font-size:14px;line-height:20px;} 
+      #myTab i{position:relative;top:15px;} 
+    </style>    
+  </head>
+
+  <body>
+    <!-- regulation-container starts -->
+    <div class="mycontainer" id="regulation-container">
+
+      <!-- header starts -->
+      <div class="header">
+        <!-- logo -->
+        <img src="../static/img/logo.png" alt="sysu-software">
+        <a href="#" id="thumbnail">缩略图</a>
+        <!-- navigation -->
+        <div class="nav">
+          <ul>
+            <li><a href="index">Regulation network</a></li>
+            <li><a href="genecircuit">Gene Circuit</a></li>
+            <li><a href="plasmid">Plasmid</a></li>
+            <li class="active"><a href="protocol">Protocol</a></li>
+            <li><a href="simulation">Simulation</a></li>
+          </ul>
+          <div class="pointer-arrow" style="left:490px;"></div>
+        </div>
+      </div>
+
+      <!-- left container starts -->
+      <div id="left-container">
+        <div class="trigger trigger-left"></div>
+        <!-- Left Menu list starts-->
+        <div class="accordion" id="accordion1">
+          <ul class="nav-list bs-docs-sidenav affix accordion-group" id="myTab">
+            <li class="accordion-heading list active"><a href="#0" data-toggle="tab">Overview<i class="icon-chevron-right"></i></a></li>
+            <li class="accordion-heading list"><a href="#1" data-toggle="tab">1.Obtain plasmid DNA<i class="icon-chevron-right"></i></a></li>
+            <li class="accordion-heading list"><a href="#2" data-toggle="tab">2.Enzyme Digestion<i class="icon-chevron-right"></i></a></li>
+            <li class="accordion-heading list"><a href="#3" data-toggle="tab">3.Gel Electrophoresis<i class="icon-chevron-right"></i></a></li>
+            <li class="accordion-heading list"><a href="#4" data-toggle="tab">4.Gel Purification<i class="icon-chevron-right"></i></a></li>
+            <li class="accordion-heading list"><a href="#5" data-toggle="tab">5.Ligation<i class="icon-chevron-right"></i></a></li>
+            <li class="accordion-heading list"><a href="#6" data-toggle="tab">6.Transformation<i class="icon-chevron-right"></i></a></li>
+            <li class="accordion-heading list"><a href="#7" data-toggle="tab">7.Colony PCR<i class="icon-chevron-right"></i></a></li>
+            <li class="accordion-heading list"><a href="#8" data-toggle="tab">8.Conclusive Test<i class="icon-chevron-right"></i></a></li>
+            <li class="accordion-heading list"><a href="#9" data-toggle="tab">9.Glycerol Stock<i class="icon-chevron-right"></i></a></li>
           </ul>
         </div>
-        <div class="span9 tab-content bs-docs-sidenav affix" id="myTabContent" style="background:white;position:relative;top:0px;left:-30px;height:451px;">
-          <div class="tab-pane active" id="0"><br />
+        <!-- Left Menu list ends--> </div>
+      <!-- left container ends -->
+
+      <!-- Painting Area -->
+      <div id="content">
+        <div id="canvas-mask"> 
+          <div class="tab-content bs-docs-sidenav affix" id="myTabContent" style="background:#ccc;position:relative;top:-25px;left:26px;width:1270px;height:522px;">
+            <div class="tab-pane active" id="0"><br />
               <canvas id="myCanvas" width="800" height="400" style="border:1px;">
-                your browser does not support the canvas element.
+              your browser does not support the canvas element.
               </canvas>
-          </div>
-          <div class="tab-pane" id="1"><br />
+            </div>
+            <div class="tab-pane" id="1"><br />
               <p>&nbsp;&nbsp;When obtaining plasmid DNA for digestion and ligation, a yield of at least 15 ng/μL is desirable. 
               Also, it is helpful to miniprep more than one sample of each type of plasmid DNA every time the miniprep 
               procedure is done. Due to the overnight incubation step, minipreps are a bottleneck process, so minimize the 
               number of times you perform minipreps. Another benefit of having a large volume of DNA is that you have the 
               option of concentrating the DNA if needed.</p> 
-          </div>
+            </div>
             <div class="tab-pane" id="2"><br />
               <p><strong>&nbsp;&nbsp;Digest the plasmid DNA for the two parts with the appropriate enzymes for the desired ligation.</strong></p>
               <p><b>2.1</b> If you are digesting with EcoRI and PstI to verify the size of an insert, use 12 μL of miniprep DNA, 
@@ -229,11 +244,396 @@
               with the bacterial culture.<br /><br /></p>
               <p><b>9.7</b> Immediately after step 10.6, put the tubes into a −80°C freezer.<br /><br /><br /></p>
             </div> 
+          </div>
         </div>
       </div>
+
+      <!-- right container starts -->
+      <div id="right-container">
+        <div class="trigger trigger-right"></div>
+
+        <!-- right menu list starts -->
+        <div class="accordion" id="accordion2">
+
+          <!-- basic menu starts -->
+          <div class="accordion-group">
+            <!-- accordion-heading starts -->
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                Menu
+                <i class="icon-chevron-down" style="display: block; float: right"></i>
+              </a>
+            </div>
+            <!-- accordion-heading ends -->
+
+            <!-- accordion-body starts -->
+            <div id="collapseOne" class="accordion-body collapse in">
+              <!-- accordion-inner starts -->
+              <div class="accordion-inner">
+                <div id="menu">
+                  <!-- userview starts -->
+                  <div id="user-view" class="block">
+                    <div id="user-view-left">
+                      <div id="username">Nobody</div>
+                      <div id="logout">Logout</div>
+                    </div>
+                    <div id="user-view-right">
+                      <div class="avatar-container">
+                        <img src="../static/img/avatar.png">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- userview ends -->
+
+                  <!-- commandmenu starts -->
+                  <div id="commandmenu" class="block">
+                    <div id="button-group">
+                      <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal">My Files</button>
+                      <button class="mybtn" id="create-part">Create New Part</button>
+                    </div>
+                  </div>
+                  <!-- commandmenu ends -->
+
+                  <!-- filemenu starts -->
+                  <div id="filemenu" class="block">
+                    <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename">
+                    <button class="mybtn" id="save">
+                      <!-- <i class="icon-ok"></i> -->
+                      √  Save
+                    </button>
+                    <a class="mybtn" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
+                    <button class="mybtn" id="clear" role="button">
+                      <!-- <i class="icon-remove"></i> -->
+                      ×  Clear
+                    </button>
+                  </div>
+                  <!-- filemenu ends --> </div>
+                <!-- menu ends --> </div>
+              <!-- accordion-inner ends --> </div>
+            <!-- accordion-body ends --> </div>
+          <!-- basic menu ends -->
+
+          <!-- configuration menu starts -->
+          <div class="accordion-group">
+            <!-- accordion-group starts -->
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                Configuration
+                <i class="icon-chevron-down" style="display: block; float: right"></i>
+              </a>
+            </div>
+            <!-- accordion-group ends -->
+
+            <!-- accordion-body starts -->
+            <div id="collapseTwo" class="accordion-body collapse">
+              <!-- accordion-inner starts -->
+              <div class="accordion-inner">
+
+                <!-- exogenous-factors-config starts -->
+                <div id="exogenous-factors-config" class="block">
+                  <span class="config-header">Exogenous-factors Configuration</span>
+                  <form id="exogenous-factors-form">
+                    <span class="label">Concentration</span>
+                    <input type="text" name="ConcentrationVal"/>
+                  </form>
+                </div>
+                <!-- exogenous-factors-config ends -->
+
+                <!-- protein-config starts -->
+                <div id="protein-config" class="block">
+                  <span class="config-header">Protein Configuration</span>
+                  <form id="protein-form">
+                    <span class="label">Expression Value</span>
+                    <input type="text" name="expressionVal"/>
+                  </form>
+                  <!-- <div class="slider-div">
+                    <p>Expression Value</p>
+                    <div class="eui_slider" id="slider-1">
+                      <div class="sd_complete"></div>
+                      <div class="sd_thumb"></div>
+                    </div>
+                    <p id="slider-text-1">0.5</p>
+                  </div>
+
+                  <div class="slider-div">
+                    <p>Floating Value</p>
+                    <div class="eui_slider" id="slider-2">
+                      <div class="sd_complete"></div>
+                      <div class="sd_thumb"></div>
+                    </div>
+                    <p id="slider-text-2">0</p>
+                  </div>
+                  -->
+                </div>
+                <!-- protein-config ends -->
+
+                <!-- component-config starts -->
+                <div id="component-config" class="block" style="display: block">
+                  <span class="config-header">Component Config</span>
+                  <form id="component-form">
+                    <span class="label">Part_id</span>
+                    <input type="text" name="part_id"/>
+                    <span class="label">Part_name</span>
+                    <input type="text" name="part_name"/>
+                    <span class="label">Part_short_name</span>
+                    <input type="text" name="part_short_name"/>
+                    <span class="label">Part_short_desc</span>
+                    <input type="text" name="part_short_desc"/>
+                    <span class="label">Part_type</span>
+                    <input type="text" name="part_type"/>
+                    <span class="label">Part_status</span>
+                    <input type="text" name="part_status"/>
+                    <span class="label">Part_results</span>
+                    <input type="text" name="part_results"/>
+                    <span class="label">Part_nickname</span>
+                    <input type="text" name="part_nickname"/>
+                    <span class="label">Part_rating</span>
+                    <input type="text" name="part_rating"/>
+                    <span class="label">Part_entered</span>
+                    <input type="text" name="part_entered"/>
+                    <span class="label">Part_author</span>
+                    <input type="text" name="part_author"/>
+                    <span class="label">Part_quality</span>
+                    <input type="text" name="part_quality"/>
+                    <span class="label">twins</span>
+                    <ul id="twins"></ul>
+                  </form>
+                </div>
+                <!-- component-config ends -->
+
+                <!-- arrow-config starts -->
+                <div id="arrow-config" class="block">
+                  <span class="config-header">Arrow Configuration</span>
+                  <form id="arrow-form">
+                    <span class="label">Regulation Strength</span>
+                    <input type="text" name="regStrength"/>
+                    <!-- <div class="slider-div">
+                      <p>Regulation Strength</p>
+                      <div class="eui_slider" id="slider-3">
+                        <div class="sd_complete"></div>
+                        <div class="sd_thumb"></div>
+                      </div>
+                      <p id="slider-text-3">0.5</p>
+                    </div>
+
+                    <div class="slider-div">
+                      <p>Floating Value</p>
+                      <div class="eui_slider" id="slider-4">
+                        <div class="sd_complete"></div>
+                        <div class="sd_thumb"></div>
+                      </div>
+                      <p id="slider-text-4">0</p>
+                    </div>
+                    -->
+                  </form>
+                </div>
+                <!-- arrow-config ends --> </div>
+              <!-- accordion-inner ends --> </div>
+            <!-- accordion-body ends --> </div>
+          <!-- configuration menu ends --> </div>
+        <!-- right menu list ends -->
+
+      </div>
+      <!-- right container ends -->
+
+      <!-- save modal starts -->
+      <div id="save-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h6 id="myModalLabel">Info</h6>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+          <h4 id="myModalInfo">File Saved!</h4>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+      </div>
+      <!-- save modal ends -->
+
+      <!-- filelist modal starts -->
+      <div id="filelist-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h6>File List</h6>
+        </div>
+        <div class="modal-body">
+          <div id="filelist"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+      </div>
+      <!-- filelist modal ends -->
+
+      <!-- footer starts -->
+      <div class="footer"></div>
+      <!-- footer ends -->
+
+      <!-- command group starts-->
+      <div class="cmd-group">
+        <button class="btn" id="cmd_undo">
+          <img src="../static/img/Undo.png" width="17px" height="17px">
+          <span>Undo</span>
+        </button>
+        <button class="btn" id="cmd_redo">
+          <img src="../static/img/Redo.png" width="17px" height="17px">
+          <span>Redo</span>
+        </button>
+        <!--   
+        <a href="javascript:void(0);" id="cmd_zoom_in">zoom in</a>
+        <a href="javascript:void(0);" id="cmd_zoom_out">zoom out</a>
+        <a href="javascript:void(0);" id="cmd_zoom_reset">zoom reset</a>
+        -->
+      </div>
+      <!-- command group ends-->
+
     </div>
-    <script src="../static/js/protocol_step.js"></script>
+    <!-- regulation-container ends -->
+
+    <!-- Jquery and underscore -->
+    <script src="../static/js/regulation/function.js"></script>
+    <script src="../static/js/underscore-min.js"></script>
     <script src="../static/js/jquery-1.8.0.min.js"></script>
+    <script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>
+
+    <!-- graphiti -->
+    <script src="../static/js/lib/shifty.js"></script>
+    <script src="../static/js/lib/raphael.js"></script>
+    <script src="../static/js/lib/jquery.layout.js"></script>
+
+    <script src="../static/js/lib/rgbcolor.js"></script>
+    <script src="../static/js/lib/canvg.js"></script>
+    <script src="../static/js/lib/Class.js"></script>
+    <script src="../static/js/lib/json2.js"></script>
+
+    <script src="../static/js/graphiti/graphiti.js"></script>
+    <script src="../static/js/graphiti/SnapToHelper.js"></script>
+
+    <script src="../static/js/graphiti/util/Color.js"></script>
+    <script src="../static/js/graphiti/util/ArrayList.js"></script>
+    <script src="../static/js/graphiti/util/UUID.js"></script>
+    <script src="../static/js/graphiti/geo/PositionConstants.js"></script>
+    <script src="../static/js/graphiti/geo/Point.js"></script>
+    <script src="../static/js/graphiti/geo/Rectangle.js"></script>
+
+    <script src="../static/js/graphiti/command/CommandType.js"></script>
+    <script src="../static/js/graphiti/command/Command.js"></script>
+    <script src="../static/js/graphiti/command/CommandStack.js"></script>
+    <script src="../static/js/graphiti/command/CommandStackEvent.js"></script>
+    <script src="../static/js/graphiti/command/CommandStackEventListener.js"></script>
+    <script src="../static/js/graphiti/command/CommandMove.js"></script>
+    <script src="../static/js/graphiti/command/CommandResize.js"></script>
+    <script src="../static/js/graphiti/command/CommandConnect.js"></script>
+    <script src="../static/js/graphiti/command/CommandReconnect.js"></script>
+    <script src="../static/js/graphiti/command/CommandDelete.js"></script>
+    <script src="../static/js/graphiti/command/CommandAdd.js"></script>
+
+    <script src="../static/js/graphiti/layout/connection/ConnectionRouter.js"></script>
+    <script src="../static/js/graphiti/layout/connection/DirectRouter.js"></script>
+    <script src="../static/js/graphiti/layout/connection/ManhattanConnectionRouter.js"></script>
+
+    <script src="../static/js/graphiti/layout/mesh/MeshLayouter.js"></script>
+    <script src="../static/js/graphiti/layout/mesh/ExplodeLayouter.js"></script>
+    <script src="../static/js/graphiti/layout/mesh/ProposedMeshChange.js"></script>
+
+    <script src="../static/js/graphiti/layout/locator/Locator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/PortLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/InputPortLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/OutputPortLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/ConnectionLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/ManhattanMidpointLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/CenterLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/TopLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/RightLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/LeftLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/BottomLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/TopLeftLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/TopRightLocator.js"></script>
+    <script src="../static/js/graphiti/layout/locator/BottomRightLocator.js"></script>
+
+    <script src="../static/js/graphiti/Canvas.js"></script>
+    <script src="../static/js/graphiti/Figure.js"></script>
+    <script src="../static/js/graphiti/shape/node/Node.js"></script>
+    <script src="../static/js/graphiti/VectorFigure.js"></script>
+    <script src="../static/js/graphiti/shape/basic/Rectangle.js"></script>
+    <script src="../static/js/graphiti/SetFigure.js"></script>
+    <script src="../static/js/graphiti/SVGFigure.js"></script>
+
+    <script src="../static/js/graphiti/shape/icon/Icon.js"></script>
+    <script src="../static/js/graphiti/shape/icon/ProteinIcon.js"></script>
+    <script src="../static/js/graphiti/shape/icon/InducerIcon.js"></script>
+    <script src="../static/js/graphiti/shape/icon/MetalIonIcon.js"></script>
+    <script src="../static/js/graphiti/shape/icon/TemperatureIcon.js"></script>
+    <script src="../static/js/graphiti/shape/icon/RORAIcon.js"></script>
+    <script src="../static/js/graphiti/shape/icon/PandR.js"></script>
+    <script src="../static/js/graphiti/shape/icon/PandA.js"></script>
+    <script src="../static/js/graphiti/shape/icon/PandP.js"></script>
+    <script src="../static/js/graphiti/shape/icon/PandRORA.js"></script>
+    <script src="../static/js/graphiti/shape/icon/Remove.js"></script>
+    <script src="../static/js/graphiti/shape/icon/Activate.js"></script>
+    <script src="../static/js/graphiti/shape/icon/Inhibit.js"></script>
+    <script src="../static/js/graphiti/shape/icon/CoExpress.js"></script>
+
+    <script src="../static/js/graphiti/shape/basic/Oval.js"></script>
+    <script src="../static/js/graphiti/shape/basic/Circle.js"></script>
+    <script src="../static/js/graphiti/shape/basic/Diamond.js"></script>
+    <script src="../static/js/graphiti/shape/basic/Label.js"></script>
+    <script src="../static/js/graphiti/shape/basic/Line.js"></script>
+    <script src="../static/js/graphiti/shape/basic/PolyLine.js"></script>
+    <script src="../static/js/graphiti/Connection.js"></script>
+    <script src="../static/js/graphiti/ResizeHandle.js"></script>
+    <script src="../static/js/graphiti/LineResizeHandle.js"></script>
+    <script src="../static/js/graphiti/LineStartResizeHandle.js"></script>
+    <script src="../static/js/graphiti/LineEndResizeHandle.js"></script>
+    <script src="../static/js/graphiti/Port.js"></script>
+    <script src="../static/js/graphiti/InputPort.js"></script>
+    <script src="../static/js/graphiti/OutputPort.js"></script>
+    <script src="../static/js/graphiti/HybridPort.js"></script>
+    <script src="../static/js/graphiti/ConnectionAnchor.js"></script>
+
+    <script src="../static/js/graphiti/shape/arrow/CalligrapherArrowLeft.js"></script>
+    <script src="../static/js/graphiti/shape/arrow/CalligrapherArrowDownLeft.js"></script>
+    <script src="../static/js/graphiti/shape/node/Start.js"></script>
+    <script src="../static/js/graphiti/shape/node/End.js"></script>
+    <script src="../static/js/graphiti/shape/node/Between.js"></script>
+    <script src="../static/js/graphiti/shape/note/PostIt.js"></script>
+
+    <script src="../static/js/graphiti/shape/widget/Widget.js"></script>
+    <script src="../static/js/graphiti/shape/widget/Slider.js"></script>
+
+    <script src="../static/js/graphiti/shape/diagram/Diagram.js"></script>
+    <script src="../static/js/graphiti/shape/diagram/Pie.js"></script>
+    <script src="../static/js/graphiti/shape/diagram/Sparkline.js"></script>
+
+    <script src="../static/js/graphiti/shape/analog/OpAmp.js"></script>
+    <script src="../static/js/graphiti/shape/analog/ResistorBridge.js"></script>
+    <script src="../static/js/graphiti/shape/analog/ResistorVertical.js"></script>
+    <script src="../static/js/graphiti/shape/analog/VoltageSupplyHorizontal.js"></script>
+    <script src="../static/js/graphiti/shape/analog/VoltageSupplyVertical.js"></script>
+
+    <script src="../static/js/graphiti/ui/LabelEditor.js"></script>
+    <script src="../static/js/graphiti/ui/LabelInplaceEditor.js"></script>
+
+    <script src="../static/js/graphiti/io/Reader.js"></script>
+    <script src="../static/js/graphiti/io/Writer.js"></script>
+    <script src="../static/js/graphiti/io/png/Writer.js"></script>
+    <script src="../static/js/graphiti/io/svg/Writer.js"></script>
+    <script src="../static/js/graphiti/io/json/Writer.js"></script>
+    <script src="../static/js/graphiti/io/json/Reader.js"></script>
+
+    <script src="../static/js/graphiti/decoration/connection/Decorator.js"></script>
+    <script src="../static/js/graphiti/decoration/connection/ArrowDecorator.js"></script>
+
+    <!-- Custom js -->
+    <script src="../static/js/protocol_step.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
-</body>
-  </html>
+    <script src="../static/js/regulation/base/js/easy.js"></script>
+    <script src="../static/js/regulation/dtree.js"></script>
+    <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/js/regulation/biobrickAdder.js"></script>
+    <script src="../static/js/regulation/mytree.js"></script>
+    <script src="../static/js/regulation/graphiti.js"></script>
+    <script src="../static/js/regulation/regulation.js"></script>
+  </body>
+</html>
