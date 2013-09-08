@@ -7,7 +7,7 @@
  **/
  
  //this function can get the param in a url
-function    getArgs()   
+function getArgs()   
 {
 	var    args=new    Object();   
 	var    query=location.search.substring(1);//获取查询串   
@@ -21,7 +21,7 @@ function    getArgs()
 		var    value=pairs[i].substring(pos+1);//提取value   
 		args[argname]=unescape(value);//存为属性   
 	}   
-	return    args;//返回对象   
+	return args;//返回对象   
 }
 // document ready
 $().ready(function() {
@@ -88,10 +88,12 @@ $().ready(function() {
 			var saveData = '';
             if(window.location.pathname==='/simulation')
 			{
-				filetype='simulationSave';
+				filetype='simulation';
+				saveData=getSimulationSaveData();
 			}else if(window.location.pathname==='/plasmid')
 			{
-				filetype='plasmidSave';
+				filetype='plasmid';
+				saveData=getPlasmidSaveData();
 			}            
             ws.send(JSON.stringify({
                 'request': 'saveUserData',
@@ -100,10 +102,22 @@ $().ready(function() {
                 'fileType': filetype
             }));           
         }
-    });    
+    });    	
     // Cleanly close websocket when unload window
     window.onbeforeunload = function() {  
 		      
     };
-
 });
+function getPlasmidSaveData(){
+	return JSON.stringify(raw_data);
+}
+function getSimulationSaveData(){
+	var temp=JSON.stringify({'data':data,'proteinName':proteinNames});
+	console.log(temp);
+	return JSON.stringify({'data':temp});
+}
+function loadPlasmidSaveData(){
+}
+function loadSimulationSaveData()
+{
+}

@@ -26,7 +26,6 @@ var plasmidPainter = {
 		var marginLeft = 0, 
 			marginTop = 10;
 		jc.start(this.canvasId, true);
-		//console.log(color);
 		jc.rect((marginLeft + bioStart), marginTop, (bioEnd - bioStart), 25, color, true).id(name);
 		// add shadow
 		jc('#'+name).shadow({
@@ -58,7 +57,6 @@ var plasmidPainter = {
 				{
 					this.drawSegment(st,en,i,data2[i].color,data2[i].seq);	
 				}
-				//console.log(st,en,i,data2[i].color,data2[i].seq);
 			}
 		}
 	}
@@ -181,7 +179,6 @@ function findNameInDataBySeq(seqIn)
 			str=seq.substring(data[i].start,data[i].end);
 		}
 		var reg=new RegExp(seqIn);	
-		//console.log(str);	
 		if(reg.test(str))
 		{			
 			return data[i].name;
@@ -338,11 +335,8 @@ function getRawData()
 }
 
 function initDrawChart(){		
-	sessionStorage._offsetAngle=270;
-	
+	sessionStorage._offsetAngle=270;	
 	data=turnRawDatatoData(raw_data);	
-	data6=data;
-	console.log(data6);	
 	chart = new iChart.Donut2D({
 		id:"ichartjs2013",
 		animation:true,
@@ -454,7 +448,6 @@ function createRight(chart){
 }
 function addDegreeScale()
 {
-	//console.log(chart);
 	var centerx=parseInt(chart.getDrawingArea().width/2);
 	var centery=chart.getDrawingArea().height/2;
 	chart.target.line(centerx+13,centery+140,centerx+13,centery+140+30,3,"black",false);
@@ -586,15 +579,6 @@ function turnTheData(indexToBeFirst)
 	data=newData;
 	newData=null;
 }
-/*function json2str(o) {
-	var arr = [];
-	var fmt = function(s) {
-		if (typeof s == 'object' && s != null) return json2str(s);
-			return /^(string|number)$/.test(typeof s) ? "'" + s + "'" : s;
-	}
-	for (var i in o) arr.push("'" + i + "':" + fmt(o[i]));
-	return '{' + arr.join(',') + '}';
-}*/
 function handlerWebSocket(){
 	if ("WebSocket" in window) {
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
