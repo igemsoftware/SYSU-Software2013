@@ -3,20 +3,20 @@ import sequence_serializer
 import os
 
 groups = [
-      {
-        "sbol": [
-          {'type': 'Signalling', 'name': u'BBa_K266005'},
-          {'type': 'RBS', 'name': 'BBa_J61104'},
-          {'type': 'Coding', 'name': 'BBa_C0060', 'id': 1},
-          {'type': 'RBS', 'name': 'BBa_J61104'},
-          {'type': 'Coding', 'name': 'BBa_C0060', 'id': 2},
-          {'type': 'RBS', 'name': 'BBa_J61104'},
-          {'type': 'Coding', 'name': 'BBa_K518003', 'id': 3},
-          {'type': 'RBS', 'name': 'BBa_J61104'},
-          {'type': 'Coding', 'name': 'BBa_K518003', 'id': 4},
-          {'type': 'Terminator', 'name': 'BBa_B0013'}],
-        "state": "cis"
-        },
+      #{
+        #"sbol": [
+          #{'type': 'Signalling', 'name': u'BBa_K266005'},
+          #{'type': 'RBS', 'name': 'BBa_J61104'},
+          #{'type': 'Coding', 'name': 'BBa_C0060', 'id': 1},
+          #{'type': 'RBS', 'name': 'BBa_J61104'},
+          #{'type': 'Coding', 'name': 'BBa_C0060', 'id': 2},
+          #{'type': 'RBS', 'name': 'BBa_J61104'},
+          #{'type': 'Coding', 'name': 'BBa_K518003', 'id': 3},
+          #{'type': 'RBS', 'name': 'BBa_J61104'},
+          #{'type': 'Coding', 'name': 'BBa_K518003', 'id': 4},
+          #{'type': 'Terminator', 'name': 'BBa_B0013'}],
+        #"state": "cis"
+        #},
       {
         "sbol": [
           {'type': 'Regulatory', 'name': 'BBa_I712074'},
@@ -36,11 +36,12 @@ def find_file(name, path):
       return os.path.join(root, name)
 
 def trans(s):
-  return ''.join([reverse[i] for i in s[::-1]])
+  ret = ''.join([reverse[i] for i in s[::-1]])
+  return ret
 
 def plasmid_sbol(groups, rule = "RFC10"):
   ret = []
-  dna_sequence = ""
+  sequence = ""
   for data in groups:
     components = [cc["name"] for cc in data["sbol"]]
     file_list = [find_file(s + ".xml", ".") for s in components]
@@ -50,12 +51,12 @@ def plasmid_sbol(groups, rule = "RFC10"):
     sbol2 = sequence_serializer.format_to_json(sbol)
     ret += sbol2["DnaComponent"]["annotations"]
     if data["state"] == "trans":
-      dna_sequence += trans(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
+      sequence += trans(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
     else:
-      dna_sequence += sbol2["DnaComponent"]["DnaSequence"]["nucleotides"]
+      sequence += sbol2["DnaComponent"]["DnaSequence"]["nucleotides"]
   sbol2["DnaComponent"]["annotations"] = ret
-  sbol2["DnaComponent"]["DnaSequence"]["nucleotides"] = dna_sequence
+  sbol2["DnaComponent"]["DnaSequence"]["nucleotides"] = sequence
   return sbol2
 
 if __name__ == "__main__":
-  plasmid_sbol(groups)
+  print plasmid_sbol(groups)
