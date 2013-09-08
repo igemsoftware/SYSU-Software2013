@@ -3,20 +3,20 @@ import sequence_serializer
 import os
 
 groups = [
-      #{
-        #"sbol": [
-          #{'type': 'Signalling', 'name': u'BBa_K266005'},
-          #{'type': 'RBS', 'name': 'BBa_J61104'},
-          #{'type': 'Coding', 'name': 'BBa_C0060', 'id': 1},
-          #{'type': 'RBS', 'name': 'BBa_J61104'},
-          #{'type': 'Coding', 'name': 'BBa_C0060', 'id': 2},
-          #{'type': 'RBS', 'name': 'BBa_J61104'},
-          #{'type': 'Coding', 'name': 'BBa_K518003', 'id': 3},
-          #{'type': 'RBS', 'name': 'BBa_J61104'},
-          #{'type': 'Coding', 'name': 'BBa_K518003', 'id': 4},
-          #{'type': 'Terminator', 'name': 'BBa_B0013'}],
-        #"state": "cis"
-        #},
+      {
+        "sbol": [
+          {'type': 'Signalling', 'name': u'BBa_K266005'},
+          {'type': 'RBS', 'name': 'BBa_J61104'},
+          {'type': 'Coding', 'name': 'BBa_C0060', 'id': 1},
+          {'type': 'RBS', 'name': 'BBa_J61104'},
+          {'type': 'Coding', 'name': 'BBa_C0060', 'id': 2},
+          {'type': 'RBS', 'name': 'BBa_J61104'},
+          {'type': 'Coding', 'name': 'BBa_K518003', 'id': 3},
+          {'type': 'RBS', 'name': 'BBa_J61104'},
+          {'type': 'Coding', 'name': 'BBa_K518003', 'id': 4},
+          {'type': 'Terminator', 'name': 'BBa_B0013'}],
+        "state": "cis"
+        },
       {
         "sbol": [
           {'type': 'Regulatory', 'name': 'BBa_I712074'},
