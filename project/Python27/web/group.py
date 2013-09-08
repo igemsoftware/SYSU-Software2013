@@ -251,7 +251,10 @@ def get_graph_type(link):
       link_type[item["to"]] = "Negative"
     elif item["type"] == "Activator":
       link_type[item["to"]] = "Positive"
-    inducer_type[item["to"]] = item["inducer"]
+    if item["inducer"] == "Positive":
+      inducer_type[item["to"]] = "Corepressor"
+    else:
+      inducer_type[item["to"]] = "Inducer"
   return link_type, inducer_type
 
 def dump_group(network, database):
@@ -307,10 +310,10 @@ def dump_group(network, database):
       regulator = None
     ## get inducer of a link
     if cur_group["corep_ind_type"] != "None" and cur_group["type"] == "Positive":
-      groups[b_list[i]]["inducer"] = \
+      groups[b_list[i]]["corep_ind"] = \
       database.find_inducer_with_activator(regulator, cur_group["corep_ind_type"])
     if cur_group["corep_ind_type"] != "None" and cur_group["type"] == "Negative":
-      groups[b_list[i]]["inducer"] = \
+      groups[b_list[i]]["corep_ind"] = \
       database.find_inducer_with_repressor(regulator, cur_group["corep_ind_type"])
     ## get protein info
     proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i],\

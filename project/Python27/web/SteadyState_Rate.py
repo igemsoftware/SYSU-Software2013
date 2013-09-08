@@ -106,12 +106,14 @@ def CorepIndRate(circuit, corepind, database):
                 dataset['K1']         = repressor['K1']
                 dataset['HillCoeff1'] = repressor['HillCoeff1']
             if group['corep_ind_type'] == 'Corepressor':
-                corepressor = database.select_with_name('Corepressor', circuit['groups'][grpid]['corepressor'])
+                corepressor = database.select_with_name('Corepressor',\
+                    circuit['groups'][PlasID[n]]['corep_ind'])
                 dataset['Corepressor'] = corepind[PlasID[n]]['concen']
                 dataset['K2']          = corepressor['K2']
                 dataset['HillCoeff2']  = corepressor['HillCoeff2']
             elif group['corep_ind_type'] == 'Inducer':
-                inducer = database.select_with_name('Inducer', circuit['groups'][grpid]['inducer'])
+                inducer = database.select_with_name('Inducer',\
+                    circuit['groups'][PlasId[n]]['corep_ind'])
                 dataset['Inducer']    = corepind[PlasID[n]]['concen']
                 dataset['K2']         = inducer['K2']
                 dataset['HillCoeff2'] = inducer['HillCoeff2']
@@ -192,7 +194,7 @@ if __name__ == "__main__":
                                         'Terminator', 'name': 'BBa_B0013'}],
                                       'type': 'Positive'}, 7: {'from': 4,
                                         'state': 'cis', 'corep_ind_type':
-                                        'Negative', 'inducer': 'BBa_P0140',
+                                        'Corepressor', 'corep_ind': 'BBa_P0140',
                                         'to': [], 'sbol': [{'type': 'Promoter',
                                           'name': 'BBa_I712074'}, {'type':
                                             'RBS', 'name': 'BBa_J61104'},
@@ -204,4 +206,6 @@ if __name__ == "__main__":
                                                 'Terminator', 'name':
                                                 'BBa_B0013'}], 'type':
                                               'Negative'}}}
+  corepind = {1:0.1, 2:0.1, 3:0.1, 4:0.1, 5:0.1, 6:0.1, 7:0.6}
   print ActRepRate(gene_circuit, db)
+  print CorepIndRate(gene_circuit, corepind, db)
