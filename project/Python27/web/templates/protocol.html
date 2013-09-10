@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="../static/css/graphiti.css">
     <link rel="stylesheet" href="../static/css/navlist.css">
     <style>
-      .list{line-height:45px;}
+      .list{line-height:35px;}
       p{font-size:14px;line-height:20px;} 
-      #myTab i{position:relative;top:15px;} 
+      #myTab i{position:relative;top:10px;} 
     </style>    
   </head>
 
@@ -30,8 +30,6 @@
       <div class="header">
         <!-- logo -->
         <img src="../static/img/logo.png" alt="sysu-software">
-        <a href="#" id="thumbnail">缩略图</a>
-        <!-- navigation -->
         <div class="nav">
           <ul>
             <li><a href="index">Regulation network</a></li>
@@ -44,11 +42,11 @@
         </div>
       </div>
 
-      <!-- left container starts -->
-      <div id="left-container">
-        <div class="trigger trigger-left"></div>
-        <!-- Left Menu list starts-->
-        <div class="accordion" id="accordion1">
+      <!-- Painting Area -->
+      <div id="content">
+        <div id="canvas-mask">
+          <div class="row-fluid" style="position:relative;top:-27px;width:1500px;">
+          <div class="span3 accordion" id="accordion1" style="position:relative;left:25px;">
           <ul class="nav-list bs-docs-sidenav affix accordion-group" id="myTab">
             <li class="accordion-heading list active"><a href="#0" data-toggle="tab">Overview<i class="icon-chevron-right"></i></a></li>
             <li class="accordion-heading list"><a href="#1" data-toggle="tab">1.Obtain plasmid DNA<i class="icon-chevron-right"></i></a></li>
@@ -61,14 +59,8 @@
             <li class="accordion-heading list"><a href="#8" data-toggle="tab">8.Conclusive Test<i class="icon-chevron-right"></i></a></li>
             <li class="accordion-heading list"><a href="#9" data-toggle="tab">9.Glycerol Stock<i class="icon-chevron-right"></i></a></li>
           </ul>
-        </div>
-        <!-- Left Menu list ends--> </div>
-      <!-- left container ends -->
-
-      <!-- Painting Area -->
-      <div id="content">
-        <div id="canvas-mask"> 
-          <div class="tab-content bs-docs-sidenav affix" id="myTabContent" style="background:#ccc;position:relative;top:-25px;left:26px;width:1270px;height:522px;">
+          </div>
+          <div class="span9 tab-content bs-docs-sidenav affix" id="myTabContent" style="background:#ccc;position:relative;top:0px;left:-105px;width:1020px;height:528px;">
             <div class="tab-pane active" id="0"><br />
               <canvas id="myCanvas" width="800" height="400" style="border:1px;">
               your browser does not support the canvas element.
@@ -91,7 +83,7 @@
               to 20 μL with dH2O.Salt conditions for double digestion. Useful enzyme combinations for digesting 
               BioBrick parts with their optimal buffer and what the digestion produces. All five reactions are 
               optimal at 37°C<br /><br /></p>
-              <table class="table table-bordered table-hover" align="center" style="width:450px;">
+              <table class="table table-bordered table-hover" align="center" style="width:450px;background:white;">
                 <caption><b>Table 1</b></caption>
                 <tr>
                   <th colspan="2"><b>Restriction enzymes</b></th>
@@ -247,248 +239,7 @@
           </div>
         </div>
       </div>
-
-      <!-- right container starts -->
-      <div id="right-container">
-        <div class="trigger trigger-right"></div>
-
-        <!-- right menu list starts -->
-        <div class="accordion" id="accordion2">
-
-          <!-- basic menu starts -->
-          <div class="accordion-group">
-            <!-- accordion-heading starts -->
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                Menu
-                <i class="icon-chevron-down" style="display: block; float: right"></i>
-              </a>
-            </div>
-            <!-- accordion-heading ends -->
-
-            <!-- accordion-body starts -->
-            <div id="collapseOne" class="accordion-body collapse in">
-              <!-- accordion-inner starts -->
-              <div class="accordion-inner">
-                <div id="menu">
-                  <!-- userview starts -->
-                  <div id="user-view" class="block">
-                    <div id="user-view-left">
-                      <div id="username">Nobody</div>
-                      <div id="logout">Logout</div>
-                    </div>
-                    <div id="user-view-right">
-                      <div class="avatar-container">
-                        <img src="../static/img/avatar.png">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- userview ends -->
-
-                  <!-- commandmenu starts -->
-                  <div id="commandmenu" class="block">
-                    <div id="button-group">
-                      <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal">My Files</button>
-                      <button class="mybtn" id="create-part">Create New Part</button>
-                    </div>
-                  </div>
-                  <!-- commandmenu ends -->
-
-                  <!-- filemenu starts -->
-                  <div id="filemenu" class="block">
-                    <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename">
-                    <button class="mybtn" id="save">
-                      <!-- <i class="icon-ok"></i> -->
-                      √  Save
-                    </button>
-                    <a class="mybtn" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
-                    <button class="mybtn" id="clear" role="button">
-                      <!-- <i class="icon-remove"></i> -->
-                      ×  Clear
-                    </button>
-                  </div>
-                  <!-- filemenu ends --> </div>
-                <!-- menu ends --> </div>
-              <!-- accordion-inner ends --> </div>
-            <!-- accordion-body ends --> </div>
-          <!-- basic menu ends -->
-
-          <!-- configuration menu starts -->
-          <div class="accordion-group">
-            <!-- accordion-group starts -->
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                Configuration
-                <i class="icon-chevron-down" style="display: block; float: right"></i>
-              </a>
-            </div>
-            <!-- accordion-group ends -->
-
-            <!-- accordion-body starts -->
-            <div id="collapseTwo" class="accordion-body collapse">
-              <!-- accordion-inner starts -->
-              <div class="accordion-inner">
-
-                <!-- exogenous-factors-config starts -->
-                <div id="exogenous-factors-config" class="block">
-                  <span class="config-header">Exogenous-factors Configuration</span>
-                  <form id="exogenous-factors-form">
-                    <span class="label">Concentration</span>
-                    <input type="text" name="ConcentrationVal"/>
-                  </form>
-                </div>
-                <!-- exogenous-factors-config ends -->
-
-                <!-- protein-config starts -->
-                <div id="protein-config" class="block">
-                  <span class="config-header">Protein Configuration</span>
-                  <form id="protein-form">
-                    <span class="label">Expression Value</span>
-                    <input type="text" name="expressionVal"/>
-                  </form>
-                  <!-- <div class="slider-div">
-                    <p>Expression Value</p>
-                    <div class="eui_slider" id="slider-1">
-                      <div class="sd_complete"></div>
-                      <div class="sd_thumb"></div>
-                    </div>
-                    <p id="slider-text-1">0.5</p>
-                  </div>
-
-                  <div class="slider-div">
-                    <p>Floating Value</p>
-                    <div class="eui_slider" id="slider-2">
-                      <div class="sd_complete"></div>
-                      <div class="sd_thumb"></div>
-                    </div>
-                    <p id="slider-text-2">0</p>
-                  </div>
-                  -->
-                </div>
-                <!-- protein-config ends -->
-
-                <!-- component-config starts -->
-                <div id="component-config" class="block" style="display: block">
-                  <span class="config-header">Component Config</span>
-                  <form id="component-form">
-                    <span class="label">Part_id</span>
-                    <input type="text" name="part_id"/>
-                    <span class="label">Part_name</span>
-                    <input type="text" name="part_name"/>
-                    <span class="label">Part_short_name</span>
-                    <input type="text" name="part_short_name"/>
-                    <span class="label">Part_short_desc</span>
-                    <input type="text" name="part_short_desc"/>
-                    <span class="label">Part_type</span>
-                    <input type="text" name="part_type"/>
-                    <span class="label">Part_status</span>
-                    <input type="text" name="part_status"/>
-                    <span class="label">Part_results</span>
-                    <input type="text" name="part_results"/>
-                    <span class="label">Part_nickname</span>
-                    <input type="text" name="part_nickname"/>
-                    <span class="label">Part_rating</span>
-                    <input type="text" name="part_rating"/>
-                    <span class="label">Part_entered</span>
-                    <input type="text" name="part_entered"/>
-                    <span class="label">Part_author</span>
-                    <input type="text" name="part_author"/>
-                    <span class="label">Part_quality</span>
-                    <input type="text" name="part_quality"/>
-                    <span class="label">twins</span>
-                    <ul id="twins"></ul>
-                  </form>
-                </div>
-                <!-- component-config ends -->
-
-                <!-- arrow-config starts -->
-                <div id="arrow-config" class="block">
-                  <span class="config-header">Arrow Configuration</span>
-                  <form id="arrow-form">
-                    <span class="label">Regulation Strength</span>
-                    <input type="text" name="regStrength"/>
-                    <!-- <div class="slider-div">
-                      <p>Regulation Strength</p>
-                      <div class="eui_slider" id="slider-3">
-                        <div class="sd_complete"></div>
-                        <div class="sd_thumb"></div>
-                      </div>
-                      <p id="slider-text-3">0.5</p>
-                    </div>
-
-                    <div class="slider-div">
-                      <p>Floating Value</p>
-                      <div class="eui_slider" id="slider-4">
-                        <div class="sd_complete"></div>
-                        <div class="sd_thumb"></div>
-                      </div>
-                      <p id="slider-text-4">0</p>
-                    </div>
-                    -->
-                  </form>
-                </div>
-                <!-- arrow-config ends --> </div>
-              <!-- accordion-inner ends --> </div>
-            <!-- accordion-body ends --> </div>
-          <!-- configuration menu ends --> </div>
-        <!-- right menu list ends -->
-
       </div>
-      <!-- right container ends -->
-
-      <!-- save modal starts -->
-      <div id="save-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h6 id="myModalLabel">Info</h6>
-        </div>
-        <div class="modal-body" style="text-align: center;">
-          <h4 id="myModalInfo">File Saved!</h4>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
-      </div>
-      <!-- save modal ends -->
-
-      <!-- filelist modal starts -->
-      <div id="filelist-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h6>File List</h6>
-        </div>
-        <div class="modal-body">
-          <div id="filelist"></div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
-      </div>
-      <!-- filelist modal ends -->
-
-      <!-- footer starts -->
-      <div class="footer"></div>
-      <!-- footer ends -->
-
-      <!-- command group starts-->
-      <div class="cmd-group">
-        <button class="btn" id="cmd_undo">
-          <img src="../static/img/Undo.png" width="17px" height="17px">
-          <span>Undo</span>
-        </button>
-        <button class="btn" id="cmd_redo">
-          <img src="../static/img/Redo.png" width="17px" height="17px">
-          <span>Redo</span>
-        </button>
-        <!--   
-        <a href="javascript:void(0);" id="cmd_zoom_in">zoom in</a>
-        <a href="javascript:void(0);" id="cmd_zoom_out">zoom out</a>
-        <a href="javascript:void(0);" id="cmd_zoom_reset">zoom reset</a>
-        -->
-      </div>
-      <!-- command group ends-->
-
-    </div>
     <!-- regulation-container ends -->
 
     <!-- Jquery and underscore -->
