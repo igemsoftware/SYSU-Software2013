@@ -11,4 +11,6 @@ This project can be run in windows7 32bit and 64bit
 
 对于所有的密码传送使用rsa算法进行加密，以及sha-1算法进行摘要，不保存明文密码。
 
+如果你清除了浏览器缓存，重新打开主页时可能会报错，酸辛一下就好了。
+
 <img src="http://ww4.sinaimg.cn/mw690/b8700d2fgw1e6eirqqn66j207l0840t0.jpg" width="273" height="292" />
