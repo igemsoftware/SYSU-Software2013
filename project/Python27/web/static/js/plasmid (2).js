@@ -61,6 +61,7 @@ var plasmidPainter = {
 		}
 	}
 };
+var ws=null;
 function show(id,tempdata,datasize) {
 	plasmidPainter.bindCanvas(id);
 	plasmidPainter.init(tempdata,datasize);
@@ -235,7 +236,7 @@ var size=0;//整个序列的长度
 var raw_data={
     "DnaComponent": {
         "description": "undefined",
-        "annotaions": [{"SequenceAnnotation": {"bioStart": "49",
+        "annotations": [{"SequenceAnnotation": {"bioStart": "49",
                     "subComponent": {
                         "DnaComponent": {
                             "displayId": "4932",
@@ -288,19 +289,21 @@ function sortNumber(a, b)
 function turnRawDatatoData(raw)
 {                               
 	var tempArray=[];
-	size=raw.DnaComponent.DnaSequence.nucleotides.length;
-	for(i=0;i<raw.DnaComponent.annotaions.length;i++)
+	size=raw.DnaComponent.DnaSequence.nucleotides.length;	
+	for(i=0;i<raw.DnaComponent.annotations.length;i++)
 	{
 		tempArray[i]={};
-		tempArray[i].start=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioStart,10);
-		tempArray[i].name=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.name;
-		tempArray[i].end=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioEnd,10);
+		tempArray[i].start=parseInt(raw.DnaComponent.annotations[i].SequenceAnnotation.bioStart,10);
+		tempArray[i].name=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.name;
+		tempArray[i].end=parseInt(raw.DnaComponent.annotations[i].SequenceAnnotation.bioEnd,10);
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
-		tempArray[i].desp=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.description;
+		tempArray[i].desp=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.description;
 	}		
-	tempArray=tempArray.sort(sortNumber);	
+	console.log(tempArray);
+	//tempArray=tempArray.sort(sortNumber);	
+	//console.log(tempArray);
 	var real_data=[];
-	var start=0;
+	/*var start=0;
 	var index=0;
 	for(i=0;i<tempArray.length;i++)
 	{
@@ -311,6 +314,7 @@ function turnRawDatatoData(raw)
 		real_data[index].desp=tempArray[i].desp;
 		if(real_data[index].value===0)
 			real_data[index].value=1;
+		console.log(real_data[index]);
 		index=index+1;
 		real_data[index]=tempArray[i];
 		real_data[index].color=colors[i%2];
@@ -321,23 +325,19 @@ function turnRawDatatoData(raw)
 			real_data[index]={name:index,color:"#f4f4f4"};
 			real_data[index].start=start;
 			real_data[index].end=size-1;
-			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
+			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);			
 		}
+		
 	}		
-	tempArray=null;
+	tempArray=null;*/
 	return real_data;	
 }
-
-//to get the raw data of plasmid
-function getRawData()
-{
-		
-}
-
+var title=null;//{text : '2012年第3季度中国第三方手机浏览器市场份额',color : '#3e576f'}
 function initDrawChart(){		
 	sessionStorage._offsetAngle=270;	
-	data=turnRawDatatoData(raw_data);	
-	chart = new iChart.Donut2D({
+	data=turnRawDatatoData(raw_data);
+	//console.log(data);	
+	/*chart = new iChart.Donut2D({		
 		id:"ichartjs2013",
 		animation:true,
 		render : 'canvasDiv', //Chart rendering the HTML DOM id
@@ -350,7 +350,7 @@ function initDrawChart(){
 			shadow_color:'#b7b7b7',
 			color:'#6f6f6f'
 		},
-		offset_angle: parseInt(sessionStorage._offsetAngle,10),
+		offset_angle: 0,//parseInt(sessionStorage._offsetAngle,10),
 		data: data,//Chart data source
 		offsetx:0,
 		shadow:false,
@@ -398,38 +398,38 @@ function initDrawChart(){
 				color : '#4572a7',		
 			},
 			color_factor : 0.3
-		},
-			/*,			listeners:{
-				click:function(l,e,m){
-					if(e["event"]["button"]===0)//&&typeof(l.get('name'))!="number")
-					{
-						for(i=0;i<data.length;i++){
-							if(data[i].name==l.get('name')){
-								//window.clipboardData.setData("Text",seq.substring(data[0].start-1,data[i].end+1)); 
-								if(i==0)
-									break;
-								turnTheData(i);
-								//var chart2 = document.getElementById("ichartjs2013");//$.get('ichartjs2013');//根据ID获取图表对象
-								chart.load(data);//载入新数据
-								break;
-							}
-						}
-					}					
-
-				}
-			}*/
-		
-				
+		},					
 		width : 847,
 		height : 430,
-		radius:140
-		
-	});	
+		radius:140		
+	});		
+	if(title!=null)
+	{
+		chart.plugin(new iChart.Custom({
+					drawFn:function(){
+
+						 //*计算位置
+
+						var y = chart.get('originy');
+					
+						 //在左侧的位置，设置竖排模式渲染文字。
+
+						chart.target.textAlign('center')
+						.textBaseline('middle')
+						.textFont('600 24px 微软雅黑')
+						.fillText(title,100,y,false,'#6d869f', 'tb',26,false,0,'middle');
+						
+					}
+			}));
+	}
 	chart.plugin(createRight(chart));
 	chart.plugin(createBottom(chart));
 	chart.plugin(createLeft(chart));
-	chart.plugin(createTop(chart));
-	chart.draw();	
+	chart.plugin(createTop(chart));*/
+	//chart.draw();	
+	//chart.push("offset_angle",parseInt(sessionStorage._offsetAngle));
+	//chart.setUp();
+	//chart.draw();	
 }
 function createRight(chart){
 	return new iChart.Custom({
@@ -583,33 +583,52 @@ function handlerWebSocket(){
 	if ("WebSocket" in window) {
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
 		ws.onmessage = function (msg) {
-		var message = JSON.parse(msg.data);
-      	if (message.request == "getLoginedUserName") {
-        	$("#user-view-left #username").text(message.result);
-        } else if (message.request == "loginOut") { // get logout info
-        	window.location = "..";
-        } else if (message.request == "getUserFileList") {
-        	$("#filelist").html("");
-			for (var i = 0; i < message.result.length; i++) {
-				$("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
-			};
-			$("#filelist > a").live("click", function() {
-				ws.send(JSON.stringify({
-                        "request": "loadUserFile",
-                        "fileName": "default1",
-                        "fileType": "data"
-                    }));
-			});
-		} else if (message.request == "loadUserFile") {
-                console.log(message.result);
-		}else if (message.request == 'saveUserData') {
-			console.log(message.result);
-        }
-		}
+			var message = JSON.parse(msg.data);
+			if (message.request == "getLoginedUserName") {
+				$("#user-view-left #username").text(message.result);
+			} else if (message.request == "loginOut") { // get logout info
+				window.location = "..";
+			} else if (message.request == "getUserFileList") {
+				$("#filelist").html("");
+				for (var i = 0; i < message.result.length; i++) {
+					$("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
+				};
+				$("#filelist > a").live("click", function() {
+					ws.send(JSON.stringify({
+							"request": "loadUserFile",
+							"fileName": "default1",
+							"fileType": "data"
+						}));
+				});
+			} else if (message.request == "loadUserFile") {
+				loadUserFileWebsocket(message.result,true);
+			}else if (message.request == 'saveUserData') {
+				console.log(message.result);
+			}else if(message.request == 'getPlasmidSbol') {
+				raw_data=message.result;
+				drawThePlasmid();
+				chart.draw();
+			}
+			message=null;
+		}		
 	}
 	ws.onopen = function() {
-		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));			
+		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+		if(sessionStorage.genecircuitSave!==undefined)
+		{
+			var obj = eval('(' + sessionStorage.genecircuitSave + ')'); 			
+			ws.send(JSON.stringify({'request': 'getPlasmidSbol','data':JSON.stringify(obj['genecircuit'])}));	
+		}				
 	}
+}
+function loadUserFileWebsocket(result,needTitle)
+{	
+	raw_data= eval('(' + result + ')');
+	if (needTitle){
+		title=request('filename');
+	}
+	drawThePlasmid();
+	chart.draw();
 }
 function CircleClass(drawArea,drawAreaToBody)
 {
@@ -659,7 +678,6 @@ function setUpDrag(){
 			var ang=parseInt(sessionStorage._offsetAngle);
 			sessionStorage._offsetAngle=ang+20;
 			chart.push("offset_angle",ang+20);
-			chart.push("")
 			chart.setUp();	
 		}
 	});
@@ -709,19 +727,19 @@ function getAngleFromLineToXAxis(circle,x,y) {
 function lengthBetweenTwoPoint(x1,y1,x2,y2) {
   return Math.sqrt((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2));
 }
-var but=0;
+var buttonClickFlag=false;
 function canvasMouseDown(obj,e)
 {
 	var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());
 	sessionStorage.originAng=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));
-	but=1;
+	buttonClickFlag=true;
 }
 function canvasMouseUp(obj,event){
-	but=0;
+	buttonClickFlag=false;
 }
 function canvasMouseMove(obj,e)
 {		
-	if(but==1&&e.button==0){
+	if(buttonClickFlag&&e.button==0){
 		var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());						
 		var a2=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));			
 		var offsetang=parseInt(sessionStorage._offsetAngle)+a2-sessionStorage.originAng;
@@ -754,25 +772,21 @@ function saveGraph(){
 function isPointInCircle(circle,x,y)
 {
 	var lengthTemp = lengthBetweenTwoPoint(circle.x, circle.y, x, y);
-	//console.log(lengthTemp,circle.getInnerRadius(),circle.getRadius());
 	if (lengthTemp >= circle.getInnerRadius() && lengthTemp <= circle.getRadius()) {
 		return true;
     }
     return false;
 } 
-function loadData(){
-	return raw_data;
-}
 $(function(){
-	//console.log(getArgs()['fjsdkfjdks']);
-	if(getArgs()['action']!=undefined)
-	{
-		if(getArgs()['action']=='loadData')
-		{
-			raw_data=loadData();
+	handlerWebSocket();	
+	if(isUrlArgsExist())
+	{		
+		ws.onopen = function() {
+			ws.send(JSON.stringify({'request': 'loadUserFile','fileType':request('filetype'),'fileName':request('filename')}));
 		}
+	}else{
+		//drawThePlasmid();
 	}
-	getRawData();
 	window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
               window.webkitRequestAnimationFrame || 
@@ -782,12 +796,14 @@ $(function(){
               function(/* function */ callback, /* DOMElement */ element){
                 window.setTimeout(callback, 1000 / 60);
               };
-    })();
+    })();	
+});
+function drawThePlasmid()
+{
 	initDrawChart();	
 	document.getElementById('seqCurrentText').value=seq.substring(1,61);
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();		
 	var d=document.getElementById('seqCurrentText');	
 	width=d.offsetWidth/60*1.76;
 	d.style.fontSize=width+'px';
-	handlerWebSocket();	
-});
+}

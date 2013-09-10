@@ -36,11 +36,13 @@ def find_file(name, path):
       return os.path.join(root, name)
 
 def trans(s):
-  return ''.join([reverse[i] for i in s[::-1]])
+  ret = ''.join([reverse[i] for i in s[::-1]])
+  return ret
 
 def plasmid_sbol(groups, rule = "RFC10"):
   ret = []
-  dna_sequence = ""
+  sequence = ""
+  offset = 0
   for data in groups:
     components = [cc["name"] for cc in data["sbol"]]
     file_list = [find_file(s + ".xml", ".") for s in components]
@@ -48,14 +50,19 @@ def plasmid_sbol(groups, rule = "RFC10"):
     dna_sequence = component_union.connect(rule, content)
     sbol = component_union.formatter_v11(content, dna_sequence)
     sbol2 = sequence_serializer.format_to_json(sbol)
+    for item in sbol2["DnaComponent"]["annotations"]:
+      tmp = item["SequenceAnnotation"]
+      tmp["bioStart"] = str(int(tmp["bioStart"]) + offset)
+      tmp["bioEnd"] = str(int(tmp["bioEnd"]) + offset)
+    offset = len(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
     ret += sbol2["DnaComponent"]["annotations"]
     if data["state"] == "trans":
-      dna_sequence += trans(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
+      sequence += trans(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
     else:
-      dna_sequence += sbol2["DnaComponent"]["DnaSequence"]["nucleotides"]
+      sequence += sbol2["DnaComponent"]["DnaSequence"]["nucleotides"]
   sbol2["DnaComponent"]["annotations"] = ret
-  sbol2["DnaComponent"]["DnaSequence"]["nucleotides"] = dna_sequence
+  sbol2["DnaComponent"]["DnaSequence"]["nucleotides"] = sequence
   return sbol2
 
 if __name__ == "__main__":
-  plasmid_sbol(groups)
+  print plasmid_sbol(groups)
