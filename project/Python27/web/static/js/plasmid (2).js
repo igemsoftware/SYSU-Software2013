@@ -593,21 +593,32 @@ function handlerWebSocket(){
 						}));
 				});
 			} else if (message.request == "loadUserFile") {
-				loadUserFileWebsocket(message.result);
+				loadUserFileWebsocket(message.result,true);
 			}else if (message.request == 'saveUserData') {
 				console.log(message.result);
+			}else if(message.request == 'getPlasmidSbol') {
+				raw_data=message.result;
+				drawThePlasmid();
+				chart.draw();
 			}
 			message=null;
 		}		
 	}
 	ws.onopen = function() {
-		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));			
+		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+		if(sessionStorage.genecircuitSave!==undefined)
+		{
+			var obj = eval('(' + sessionStorage.genecircuitSave + ')'); 			
+			ws.send(JSON.stringify({'request': 'getPlasmidSbol','data':JSON.stringify(obj['genecircuit'])}));	
+		}				
 	}
 }
-function loadUserFileWebsocket(result)
+function loadUserFileWebsocket(result,needTitle)
 {	
 	raw_data= eval('(' + result + ')');
-	title=request('filename');
+	if (needTitle){
+		title=request('filename');
+	}
 	drawThePlasmid();
 	chart.draw();
 }
