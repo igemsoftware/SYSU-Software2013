@@ -61,6 +61,7 @@ var plasmidPainter = {
 		}
 	}
 };
+var ws=null;
 function show(id,tempdata,datasize) {
 	plasmidPainter.bindCanvas(id);
 	plasmidPainter.init(tempdata,datasize);
@@ -327,17 +328,11 @@ function turnRawDatatoData(raw)
 	tempArray=null;
 	return real_data;	
 }
-
-//to get the raw data of plasmid
-function getRawData()
-{
-		
-}
-
+var title=null;//{text : '2012年第3季度中国第三方手机浏览器市场份额',color : '#3e576f'}
 function initDrawChart(){		
 	sessionStorage._offsetAngle=270;	
 	data=turnRawDatatoData(raw_data);	
-	chart = new iChart.Donut2D({
+	chart = new iChart.Donut2D({		
 		id:"ichartjs2013",
 		animation:true,
 		render : 'canvasDiv', //Chart rendering the HTML DOM id
@@ -398,33 +393,30 @@ function initDrawChart(){
 				color : '#4572a7',		
 			},
 			color_factor : 0.3
-		},
-			/*,			listeners:{
-				click:function(l,e,m){
-					if(e["event"]["button"]===0)//&&typeof(l.get('name'))!="number")
-					{
-						for(i=0;i<data.length;i++){
-							if(data[i].name==l.get('name')){
-								//window.clipboardData.setData("Text",seq.substring(data[0].start-1,data[i].end+1)); 
-								if(i==0)
-									break;
-								turnTheData(i);
-								//var chart2 = document.getElementById("ichartjs2013");//$.get('ichartjs2013');//根据ID获取图表对象
-								chart.load(data);//载入新数据
-								break;
-							}
-						}
-					}					
-
-				}
-			}*/
-		
-				
+		},					
 		width : 847,
 		height : 430,
-		radius:140
-		
-	});	
+		radius:140		
+	});		
+	if(title!=null)
+	{
+		chart.plugin(new iChart.Custom({
+					drawFn:function(){
+						/**
+						 *计算位置
+						 */	
+						var y = chart.get('originy');
+						/**
+						 *在左侧的位置，设置竖排模式渲染文字。
+						 */
+						chart.target.textAlign('center')
+						.textBaseline('middle')
+						.textFont('600 24px 微软雅黑')
+						.fillText(title,100,y,false,'#6d869f', 'tb',26,false,0,'middle');
+						
+					}
+			}));
+	}
 	chart.plugin(createRight(chart));
 	chart.plugin(createBottom(chart));
 	chart.plugin(createLeft(chart));
@@ -583,33 +575,41 @@ function handlerWebSocket(){
 	if ("WebSocket" in window) {
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
 		ws.onmessage = function (msg) {
-		var message = JSON.parse(msg.data);
-      	if (message.request == "getLoginedUserName") {
-        	$("#user-view-left #username").text(message.result);
-        } else if (message.request == "loginOut") { // get logout info
-        	window.location = "..";
-        } else if (message.request == "getUserFileList") {
-        	$("#filelist").html("");
-			for (var i = 0; i < message.result.length; i++) {
-				$("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
-			};
-			$("#filelist > a").live("click", function() {
-				ws.send(JSON.stringify({
-                        "request": "loadUserFile",
-                        "fileName": "default1",
-                        "fileType": "data"
-                    }));
-			});
-		} else if (message.request == "loadUserFile") {
-                console.log(message.result);
-		}else if (message.request == 'saveUserData') {
-			console.log(message.result);
-        }
-		}
+			var message = JSON.parse(msg.data);
+			if (message.request == "getLoginedUserName") {
+				$("#user-view-left #username").text(message.result);
+			} else if (message.request == "loginOut") { // get logout info
+				window.location = "..";
+			} else if (message.request == "getUserFileList") {
+				$("#filelist").html("");
+				for (var i = 0; i < message.result.length; i++) {
+					$("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
+				};
+				$("#filelist > a").live("click", function() {
+					ws.send(JSON.stringify({
+							"request": "loadUserFile",
+							"fileName": "default1",
+							"fileType": "data"
+						}));
+				});
+			} else if (message.request == "loadUserFile") {
+				loadUserFileWebsocket(message.result);
+			}else if (message.request == 'saveUserData') {
+				console.log(message.result);
+			}
+			message=null;
+		}		
 	}
 	ws.onopen = function() {
 		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));			
 	}
+}
+function loadUserFileWebsocket(result)
+{	
+	raw_data= eval('(' + result + ')');
+	title=request('filename');
+	drawThePlasmid();
+	chart.draw();
 }
 function CircleClass(drawArea,drawAreaToBody)
 {
@@ -709,19 +709,19 @@ function getAngleFromLineToXAxis(circle,x,y) {
 function lengthBetweenTwoPoint(x1,y1,x2,y2) {
   return Math.sqrt((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2));
 }
-var but=0;
+var buttonClickFlag=false;
 function canvasMouseDown(obj,e)
 {
 	var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());
 	sessionStorage.originAng=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));
-	but=1;
+	buttonClickFlag=true;
 }
 function canvasMouseUp(obj,event){
-	but=0;
+	buttonClickFlag=false;
 }
 function canvasMouseMove(obj,e)
 {		
-	if(but==1&&e.button==0){
+	if(buttonClickFlag&&e.button==0){
 		var circle=new CircleClass(chart.getDrawingArea(),$('#drawCanvasDiv').offset());						
 		var a2=parseInt(getAngleFromLineToXAxis(circle,e.clientX,e.clientY));			
 		var offsetang=parseInt(sessionStorage._offsetAngle)+a2-sessionStorage.originAng;
@@ -754,25 +754,21 @@ function saveGraph(){
 function isPointInCircle(circle,x,y)
 {
 	var lengthTemp = lengthBetweenTwoPoint(circle.x, circle.y, x, y);
-	//console.log(lengthTemp,circle.getInnerRadius(),circle.getRadius());
 	if (lengthTemp >= circle.getInnerRadius() && lengthTemp <= circle.getRadius()) {
 		return true;
     }
     return false;
 } 
-function loadData(){
-	return raw_data;
-}
 $(function(){
-	//console.log(getArgs()['fjsdkfjdks']);
-	if(getArgs()['action']!=undefined)
-	{
-		if(getArgs()['action']=='loadData')
-		{
-			raw_data=loadData();
+	handlerWebSocket();	
+	if(isUrlArgsExist())
+	{		
+		ws.onopen = function() {
+			ws.send(JSON.stringify({'request': 'loadUserFile','fileType':request('filetype'),'fileName':request('filename')}));
 		}
+	}else{
+		drawThePlasmid();
 	}
-	getRawData();
 	window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
               window.webkitRequestAnimationFrame || 
@@ -782,12 +778,14 @@ $(function(){
               function(/* function */ callback, /* DOMElement */ element){
                 window.setTimeout(callback, 1000 / 60);
               };
-    })();
+    })();	
+});
+function drawThePlasmid()
+{
 	initDrawChart();	
 	document.getElementById('seqCurrentText').value=seq.substring(1,61);
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();		
 	var d=document.getElementById('seqCurrentText');	
 	width=d.offsetWidth/60*1.76;
 	d.style.fontSize=width+'px';
-	handlerWebSocket();	
-});
+}
