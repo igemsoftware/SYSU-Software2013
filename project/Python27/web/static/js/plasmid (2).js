@@ -571,10 +571,6 @@ function turnTheData(indexToBeFirst)
 	data=newData;
 	newData=null;
 }
-function loadFromGeneCircuit()
-{
-	
-}
 function handlerWebSocket(){
 	if ("WebSocket" in window) {
 		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
@@ -597,11 +593,13 @@ function handlerWebSocket(){
 						}));
 				});
 			} else if (message.request == "loadUserFile") {
-				loadUserFileWebsocket(message.result);
+				loadUserFileWebsocket(message.result,true);
 			}else if (message.request == 'saveUserData') {
 				console.log(message.result);
 			}else if(message.request == 'getPlasmidSbol') {
-				console.log(message.result);
+				raw_data=message.result;
+				drawThePlasmid();
+				chart.draw();
 			}
 			message=null;
 		}		
@@ -615,10 +613,12 @@ function handlerWebSocket(){
 		}				
 	}
 }
-function loadUserFileWebsocket(result)
+function loadUserFileWebsocket(result,needTitle)
 {	
 	raw_data= eval('(' + result + ')');
-	title=request('filename');
+	if (needTitle){
+		title=request('filename');
+	}
 	drawThePlasmid();
 	chart.draw();
 }
