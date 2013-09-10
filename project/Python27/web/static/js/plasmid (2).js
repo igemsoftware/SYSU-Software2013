@@ -236,7 +236,7 @@ var size=0;//整个序列的长度
 var raw_data={
     "DnaComponent": {
         "description": "undefined",
-        "annotaions": [{"SequenceAnnotation": {"bioStart": "49",
+        "annotations": [{"SequenceAnnotation": {"bioStart": "49",
                     "subComponent": {
                         "DnaComponent": {
                             "displayId": "4932",
@@ -289,19 +289,21 @@ function sortNumber(a, b)
 function turnRawDatatoData(raw)
 {                               
 	var tempArray=[];
-	size=raw.DnaComponent.DnaSequence.nucleotides.length;
-	for(i=0;i<raw.DnaComponent.annotaions.length;i++)
+	size=raw.DnaComponent.DnaSequence.nucleotides.length;	
+	for(i=0;i<raw.DnaComponent.annotations.length;i++)
 	{
 		tempArray[i]={};
-		tempArray[i].start=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioStart,10);
-		tempArray[i].name=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.name;
-		tempArray[i].end=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioEnd,10);
+		tempArray[i].start=parseInt(raw.DnaComponent.annotations[i].SequenceAnnotation.bioStart,10);
+		tempArray[i].name=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.name;
+		tempArray[i].end=parseInt(raw.DnaComponent.annotations[i].SequenceAnnotation.bioEnd,10);
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
-		tempArray[i].desp=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.description;
+		tempArray[i].desp=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.description;
 	}		
-	tempArray=tempArray.sort(sortNumber);	
+	console.log(tempArray);
+	//tempArray=tempArray.sort(sortNumber);	
+	//console.log(tempArray);
 	var real_data=[];
-	var start=0;
+	/*var start=0;
 	var index=0;
 	for(i=0;i<tempArray.length;i++)
 	{
@@ -312,6 +314,7 @@ function turnRawDatatoData(raw)
 		real_data[index].desp=tempArray[i].desp;
 		if(real_data[index].value===0)
 			real_data[index].value=1;
+		console.log(real_data[index]);
 		index=index+1;
 		real_data[index]=tempArray[i];
 		real_data[index].color=colors[i%2];
@@ -322,17 +325,19 @@ function turnRawDatatoData(raw)
 			real_data[index]={name:index,color:"#f4f4f4"};
 			real_data[index].start=start;
 			real_data[index].end=size-1;
-			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
+			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);			
 		}
+		
 	}		
-	tempArray=null;
+	tempArray=null;*/
 	return real_data;	
 }
 var title=null;//{text : '2012年第3季度中国第三方手机浏览器市场份额',color : '#3e576f'}
 function initDrawChart(){		
 	sessionStorage._offsetAngle=270;	
-	data=turnRawDatatoData(raw_data);	
-	chart = new iChart.Donut2D({		
+	data=turnRawDatatoData(raw_data);
+	//console.log(data);	
+	/*chart = new iChart.Donut2D({		
 		id:"ichartjs2013",
 		animation:true,
 		render : 'canvasDiv', //Chart rendering the HTML DOM id
@@ -345,7 +350,7 @@ function initDrawChart(){
 			shadow_color:'#b7b7b7',
 			color:'#6f6f6f'
 		},
-		offset_angle: parseInt(sessionStorage._offsetAngle,10),
+		offset_angle: 0,//parseInt(sessionStorage._offsetAngle,10),
 		data: data,//Chart data source
 		offsetx:0,
 		shadow:false,
@@ -402,13 +407,13 @@ function initDrawChart(){
 	{
 		chart.plugin(new iChart.Custom({
 					drawFn:function(){
-						/**
-						 *计算位置
-						 */	
+
+						 //*计算位置
+
 						var y = chart.get('originy');
-						/**
-						 *在左侧的位置，设置竖排模式渲染文字。
-						 */
+					
+						 //在左侧的位置，设置竖排模式渲染文字。
+
 						chart.target.textAlign('center')
 						.textBaseline('middle')
 						.textFont('600 24px 微软雅黑')
@@ -420,8 +425,11 @@ function initDrawChart(){
 	chart.plugin(createRight(chart));
 	chart.plugin(createBottom(chart));
 	chart.plugin(createLeft(chart));
-	chart.plugin(createTop(chart));
-	chart.draw();	
+	chart.plugin(createTop(chart));*/
+	//chart.draw();	
+	//chart.push("offset_angle",parseInt(sessionStorage._offsetAngle));
+	//chart.setUp();
+	//chart.draw();	
 }
 function createRight(chart){
 	return new iChart.Custom({
@@ -670,7 +678,6 @@ function setUpDrag(){
 			var ang=parseInt(sessionStorage._offsetAngle);
 			sessionStorage._offsetAngle=ang+20;
 			chart.push("offset_angle",ang+20);
-			chart.push("")
 			chart.setUp();	
 		}
 	});
@@ -778,7 +785,7 @@ $(function(){
 			ws.send(JSON.stringify({'request': 'loadUserFile','fileType':request('filetype'),'fileName':request('filename')}));
 		}
 	}else{
-		drawThePlasmid();
+		//drawThePlasmid();
 	}
 	window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
