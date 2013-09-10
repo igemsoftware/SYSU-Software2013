@@ -368,9 +368,9 @@ var plasmid =  {
 					var type = $(this).data("type");
 					var name = $(this).find("span").text();
 					curSbol.push({'type':type, 'name':name});
-				})
-			});
-			// console.log("plasmid", data); 
+				})				
+			});	
+			sessionStorage.genecircuitSave=JSON.stringify({'genecircuit':data});
 			// sendMessage 
 			window.location.href="plasmid"; 
 		});
