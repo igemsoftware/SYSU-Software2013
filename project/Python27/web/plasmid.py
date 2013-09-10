@@ -42,6 +42,7 @@ def trans(s):
 def plasmid_sbol(groups, rule = "RFC10"):
   ret = []
   sequence = ""
+  offset = 0
   for data in groups:
     components = [cc["name"] for cc in data["sbol"]]
     file_list = [find_file(s + ".xml", ".") for s in components]
@@ -49,6 +50,11 @@ def plasmid_sbol(groups, rule = "RFC10"):
     dna_sequence = component_union.connect(rule, content)
     sbol = component_union.formatter_v11(content, dna_sequence)
     sbol2 = sequence_serializer.format_to_json(sbol)
+    for item in sbol2["DnaComponent"]["annotations"]:
+      tmp = item["SequenceAnnotation"]
+      tmp["bioStart"] = str(int(tmp["bioStart"]) + offset)
+      tmp["bioEnd"] = str(int(tmp["bioEnd"]) + offset)
+    offset = len(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
     ret += sbol2["DnaComponent"]["annotations"]
     if data["state"] == "trans":
       sequence += trans(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
