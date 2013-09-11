@@ -287,7 +287,8 @@ function sortNumber(a, b)
 //把原始数据json转化为可以生成环形图的数组的函数
 //The function that can turn raw json data to array that can generate donut
 function turnRawDatatoData(raw)
-{                               
+{                   
+	seq=raw.DnaComponent.DnaSequence.nucleotides;            
 	var tempArray=[];
 	size=raw.DnaComponent.DnaSequence.nucleotides.length;	
 	for(i=0;i<raw.DnaComponent.annotations.length;i++)
@@ -299,11 +300,9 @@ function turnRawDatatoData(raw)
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
 		tempArray[i].desp=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.description;
 	}		
-	console.log(tempArray);
-	//tempArray=tempArray.sort(sortNumber);	
-	//console.log(tempArray);
+	tempArray=tempArray.sort(sortNumber);	
 	var real_data=[];
-	/*var start=0;
+	var start=0;
 	var index=0;
 	for(i=0;i<tempArray.length;i++)
 	{
@@ -312,9 +311,6 @@ function turnRawDatatoData(raw)
 		real_data[index].end=tempArray[i].start-1;		
 		real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
 		real_data[index].desp=tempArray[i].desp;
-		if(real_data[index].value===0)
-			real_data[index].value=1;
-		console.log(real_data[index]);
 		index=index+1;
 		real_data[index]=tempArray[i];
 		real_data[index].color=colors[i%2];
@@ -325,19 +321,19 @@ function turnRawDatatoData(raw)
 			real_data[index]={name:index,color:"#f4f4f4"};
 			real_data[index].start=start;
 			real_data[index].end=size-1;
-			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);			
-		}
-		
+			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
+		}		
 	}		
-	tempArray=null;*/
+	tempArray=null;
 	return real_data;	
 }
 var title=null;//{text : '2012年第3季度中国第三方手机浏览器市场份额',color : '#3e576f'}
 function initDrawChart(){		
 	sessionStorage._offsetAngle=270;	
 	data=turnRawDatatoData(raw_data);
-	//console.log(data);	
-	/*chart = new iChart.Donut2D({		
+	console.log(data.slice(0));
+	//data=data.slice(0,10);		
+	chart = new iChart.Donut2D({		
 		id:"ichartjs2013",
 		animation:true,
 		render : 'canvasDiv', //Chart rendering the HTML DOM id
@@ -407,13 +403,9 @@ function initDrawChart(){
 	{
 		chart.plugin(new iChart.Custom({
 					drawFn:function(){
-
 						 //*计算位置
-
-						var y = chart.get('originy');
-					
-						 //在左侧的位置，设置竖排模式渲染文字。
-
+						var y = chart.get('originy');					
+						 //在左侧的位置，设置竖排模式渲文字。
 						chart.target.textAlign('center')
 						.textBaseline('middle')
 						.textFont('600 24px 微软雅黑')
@@ -425,11 +417,8 @@ function initDrawChart(){
 	chart.plugin(createRight(chart));
 	chart.plugin(createBottom(chart));
 	chart.plugin(createLeft(chart));
-	chart.plugin(createTop(chart));*/
-	//chart.draw();	
-	//chart.push("offset_angle",parseInt(sessionStorage._offsetAngle));
-	//chart.setUp();
-	//chart.draw();	
+	chart.plugin(createTop(chart));
+	chart.draw();
 }
 function createRight(chart){
 	return new iChart.Custom({
@@ -787,16 +776,16 @@ $(function(){
 	}else{
 		//drawThePlasmid();
 	}
-	window.requestAnimFrame = (function(){
+	/*window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
               window.webkitRequestAnimationFrame || 
               window.mozRequestAnimationFrame    || 
               window.oRequestAnimationFrame      || 
               window.msRequestAnimationFrame     || 
-              function(/* function */ callback, /* DOMElement */ element){
+              function(/* function  callback, /* DOMElement  element){
                 window.setTimeout(callback, 1000 / 60);
               };
-    })();	
+    })();	*/
 });
 function drawThePlasmid()
 {
