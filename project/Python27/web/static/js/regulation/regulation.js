@@ -250,6 +250,7 @@ $().ready(function() {
                     if (proteinList.isInit) {
                         proteinList.parseSubTree(message.result);
                     } else {
+						console.log(message.result);
                         proteinList.parseJson(message.result.files);
                     }
                 }
@@ -319,7 +320,8 @@ $().ready(function() {
         // get directory
         ws.send(JSON.stringify({
             'request': 'getDirList',
-            'dir': 'web\\biobrick\\Protein coding sequences'
+            //'dir': 'web\\biobrick\\Protein coding sequences'
+			'dir': 'web/biobrick/Protein coding sequences'
         }));
 
         // get username
