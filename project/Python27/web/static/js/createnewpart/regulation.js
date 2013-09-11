@@ -78,9 +78,11 @@ $().ready(function() {
 
     // create new biobrick
     $("#create-part").click(function() {
-        var pngwriter = new graphiti.io.png.Writer();
-        var png = pngwriter.marshal(app.view);
-        // $(".header img").attr('src', png);
+        // var pngwriter = new graphiti.io.png.Writer();
+        // var png = pngwriter.marshal(app.view);
+        // // $(".header img").attr('src', png);
+        console.log('create');
+        window.location.pathname = "/createnewpart";
     });
 
     // save file

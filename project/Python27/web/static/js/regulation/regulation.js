@@ -257,7 +257,7 @@ $().ready(function() {
 						for (var i=0;i<message.result.files.length;i++)
 						{							
 							message.result.files[i]=message.result.files[i].replace(regS,"\\");
-							console.log(message.result.files[i]);
+							// console.log(message.result.files[i]);
 						}						 
 						message.result.path=message.result.path.replace(regS,"\\");
                         proteinList.parseJson(message.result.files);
