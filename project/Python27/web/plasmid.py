@@ -3,30 +3,102 @@ import sequence_serializer
 import os
 
 groups = [
-      {
+    {
         "sbol": [
-          {'type': 'Signalling', 'name': u'BBa_K266005'},
-          {'type': 'RBS', 'name': 'BBa_J61104'},
-          {'type': 'Coding', 'name': 'BBa_C0060', 'id': 1},
-          {'type': 'RBS', 'name': 'BBa_J61104'},
-          {'type': 'Coding', 'name': 'BBa_C0060', 'id': 2},
-          {'type': 'RBS', 'name': 'BBa_J61104'},
-          {'type': 'Coding', 'name': 'BBa_K518003', 'id': 3},
-          {'type': 'RBS', 'name': 'BBa_J61104'},
-          {'type': 'Coding', 'name': 'BBa_K518003', 'id': 4},
-          {'type': 'Terminator', 'name': 'BBa_B0013'}],
+            {
+                "type": "Signalling",
+                "name": "BBa_K266005"
+            },
+            {
+                "type": "RBS",
+                "name": "BBa_J61104"
+            },
+            {
+                "type": "Coding",
+                "name": "BBa_C0060"
+            },
+            {
+                "type": "RBS",
+                "name": "BBa_J61104"
+            },
+            {
+                "type": "Coding",
+                "name": "BBa_C0060"
+            },
+            {
+                "type": "RBS",
+                "name": "BBa_J61104"
+            },
+            {
+                "type": "Coding",
+                "name": "BBa_K518003"
+            },
+            {
+                "type": "RBS",
+                "name": "BBa_J61104"
+            },
+            {
+                "type": "Coding",
+                "name": "BBa_K518003"
+            },
+            {
+                "type": "Terminator",
+                "name": "BBa_B0013"
+            }
+        ],
         "state": "cis"
-        },
-      {
+    },
+    {
         "sbol": [
-          {'type': 'Regulatory', 'name': 'BBa_I712074'},
-          {'type': 'RBS', 'name':'BBa_J61104'},
-          {'type': 'Coding', 'name': 'BBa_C0160', 'id': 5},
-          {'type': 'Terminator', 'name': 'BBa_B0013'}
-          ],
-        "state": "trans"
-        }
-      ]
+            {
+                "type": "Regulatory",
+                "name": "BBa_I712074"
+            },
+            {
+                "type": "RBS",
+                "name": "BBa_J61104"
+            },
+            {
+                "type": "Coding",
+                "name": "BBa_C0160"
+            },
+            {
+                "type": "Terminator",
+                "name": "BBa_B0013"
+            }
+        ],
+        "state": "cis"
+    },
+    {
+        "sbol": [
+            {
+                "type": "Regulatory",
+                "name": "BBa_I712074"
+            },
+            {
+                "type": "RBS",
+                "name": "BBa_J61104"
+            },
+            {
+                "type": "Coding",
+                "name": "BBa_C0178"
+            },
+            {
+                "type": "RBS",
+                "name": "BBa_J61104"
+            },
+            {
+                "type": "Coding",
+                "name": "BBa_C0178"
+            },
+            {
+                "type": "Terminator",
+                "name": "BBa_B0013"
+            }
+        ],
+        "state": "cis"
+    }
+]
 
 reverse = {"A":"T", "T":"A", "C":"G", "G":"C", "a":"t", "t":"a", "g":"c","c":"g"}
 
@@ -54,7 +126,7 @@ def plasmid_sbol(groups, rule = "RFC10"):
       tmp = item["SequenceAnnotation"]
       tmp["bioStart"] = str(int(tmp["bioStart"]) + offset)
       tmp["bioEnd"] = str(int(tmp["bioEnd"]) + offset)
-    offset = len(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
+    offset += len(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
     ret += sbol2["DnaComponent"]["annotations"]
     if data["state"] == "trans":
       sequence += trans(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])

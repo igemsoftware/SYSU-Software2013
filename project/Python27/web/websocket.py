@@ -90,7 +90,7 @@ class apis():
       return user.loadUserData(self.db,message['fileName'],"default")
   def getGroup(self, message):
     return group.dump_group(json.loads(message["data"]), self.db)
-  def getPlasmidSbol(self, message):
+  def getPlasmidSbol_deprecated(self, message):
     if message.has_key("rule"):
       rule = message["rule"]
     else:
