@@ -319,7 +319,7 @@ $().ready(function() {
         // get directory
         ws.send(JSON.stringify({
             'request': 'getDirList',
-            'dir': 'web\\biobrick\\Protein coding sequences'
+            'dir': 'web/biobrick/Protein coding sequences'
         }));
 
         // get username

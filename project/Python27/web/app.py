@@ -80,6 +80,6 @@ def webSocket():
   return
 	
 if __name__ == "__main__":
-    http_server = WSGIServer(('',5000), app, handler_class=WebSocketHandler)
+    http_server = WSGIServer(('0.0.0.0',5000), app, handler_class=WebSocketHandler)
     http_server.serve_forever()
     #app.run(debug=True)
