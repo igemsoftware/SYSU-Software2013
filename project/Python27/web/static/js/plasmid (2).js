@@ -295,7 +295,7 @@ function turnRawDatatoData(raw)
 	{
 		tempArray[i]={};
 		tempArray[i].start=parseInt(raw.DnaComponent.annotations[i].SequenceAnnotation.bioStart,10);
-		tempArray[i].name=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.name;
+		tempArray[i].name=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.name+','+i;
 		tempArray[i].end=parseInt(raw.DnaComponent.annotations[i].SequenceAnnotation.bioEnd,10);
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
 		tempArray[i].desp=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.description;
@@ -304,6 +304,7 @@ function turnRawDatatoData(raw)
 	var real_data=[];
 	var start=0;
 	var index=0;
+	var colorIndex=0;
 	for(i=0;i<tempArray.length;i++)
 	{
 		real_data[index]={name:index,color:"#f4f4f4"};
@@ -313,7 +314,14 @@ function turnRawDatatoData(raw)
 		real_data[index].desp=tempArray[i].desp;
 		index=index+1;
 		real_data[index]=tempArray[i];
-		real_data[index].color=colors[i%2];
+		if(real_data[index].value!=0)
+		{
+			real_data[index].color=colors[colorIndex%2];
+			colorIndex+=1;
+		}else
+		{
+			real_data[index].color="#f4f4f4";
+		}
 		index=index+1;
 		start=tempArray[i].end+1;
 		if(i==tempArray.length-1)
@@ -331,7 +339,6 @@ var title=null;//{text : '2012年第3季度中国第三方手机浏览器市场�
 function initDrawChart(){		
 	sessionStorage._offsetAngle=270;	
 	data=turnRawDatatoData(raw_data);
-	console.log(data.slice(0));
 	//data=data.slice(0,10);		
 	chart = new iChart.Donut2D({		
 		id:"ichartjs2013",
@@ -360,7 +367,7 @@ function initDrawChart(){
 				parseText:function(tip,name,value,text){
                     var str= "";
 					if(typeof(name)!="number"){						
-						str=name+"<br\/>";
+						str=name.split(',')[0]+"<br\/>";
 					}
 					for(i=0;i<data.length;i++){
 						if(data[i].name==name){
@@ -595,6 +602,7 @@ function handlerWebSocket(){
 				console.log(message.result);
 			}else if(message.request == 'getPlasmidSbol') {
 				raw_data=message.result;
+				console.log(message.result);
 				drawThePlasmid();
 				chart.draw();
 			}
