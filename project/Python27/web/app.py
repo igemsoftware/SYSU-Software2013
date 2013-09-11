@@ -27,6 +27,10 @@ def index():
 		return render_template('index.html')
 	else:
 		return redirect(url_for('login'))
+		
+@app.route("/createnewpart")
+def index():
+	return render_template('createNewPart.html')
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():

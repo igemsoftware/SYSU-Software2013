@@ -78,10 +78,8 @@ $().ready(function() {
 
     // create new biobrick
     $("#create-part").click(function() {
-        //var pngwriter = new graphiti.io.png.Writer();
-		console.log('create');
-        //var png = pngwriter.marshal(app.view);
-		window.location.pathname = "/createnewpart";
+        var pngwriter = new graphiti.io.png.Writer();
+        var png = pngwriter.marshal(app.view);
         // $(".header img").attr('src', png);
     });
 
