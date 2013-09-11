@@ -251,6 +251,13 @@ $().ready(function() {
                         proteinList.parseSubTree(message.result);
                     } else {
 						console.log(message.result);
+						var regS = new RegExp("/","g");
+						for (var i=0;i<message.result.files.length;i++)
+						{							
+							message.result.files[i]=message.result.files[i].replace(regS,"\\");
+							console.log(message.result.files[i]);
+						}						 
+						message.result.path=message.result.path.replace(regS,"\\");
                         proteinList.parseJson(message.result.files);
                     }
                 }
@@ -320,7 +327,6 @@ $().ready(function() {
         // get directory
         ws.send(JSON.stringify({
             'request': 'getDirList',
-            //'dir': 'web\\biobrick\\Protein coding sequences'
 			'dir': 'web/biobrick/Protein coding sequences'
         }));
 
