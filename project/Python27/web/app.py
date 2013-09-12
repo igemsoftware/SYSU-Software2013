@@ -29,8 +29,11 @@ def index():
 		return redirect(url_for('login'))
 		
 @app.route("/createnewpart")
-def index():
-	return render_template('createNewPart.html')
+def createnewpart():
+	if user.isUserLogined(sql):
+		return render_template('createNewPart.html')
+	else:
+		return redirect(url_for('login'))	
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():

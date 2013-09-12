@@ -1,14 +1,51 @@
 /**
  *
- *    File:         regulation.js
- *    Author:       Rathinho
- *    Description:  Main entrance of this application, including initialization of graphiti
- *                  application, configuration window and websocket.
+ *    File:         createnewpart.js
+ *    Author:       Jiexin Guo
+ *    Description:  
  *
  **/
 
+
+var parts=[];
+var content=null;
+var biobrickDiv=null;
+function myInit()
+{	content=document.getElementById('canvas');
+	biobrickDiv=document.createElement("div");
+	biobrickDiv.style.width="100%";
+	biobrickDiv.style.height="50px";
+	biobrickDiv.style.overflow="auto";
+	biobrickDiv.style.backgroundColor="grey";
+	content.appendChild(biobrickDiv);
+	biobrickDivAddBiobrick('BBa_1234');
+}
+function biobrickDivAddBiobrick(name)
+{
+	var biobrick=document.createElement("div");
+	biobrick.style.width=name.length*8+'px';
+	biobrick.style.height="30px";
+	biobrick.style.backgroundColor="#4388CC";
+	biobrick.onclick=function()
+	{
+		console.log(this);
+	}
+	biobrick.style.cssFloat="left";
+	biobrick.style.marginLeft="10px";
+	biobrick.style.marginTop="10px";
+	
+	var span=document.createElement("span");
+	span.innerHTML=name;
+	span.style.color="black";
+	span.style.margin="5px";
+	biobrick.appendChild(span);
+	biobrickDiv.appendChild(biobrick);
+	parts.push(name);
+	console.log(biobrick);
+}
 // document ready
 $().ready(function() {
+	myInit();
     document.ontouchmove = function(e) {
         e.preventDefault();
     };
@@ -78,10 +115,6 @@ $().ready(function() {
 
     // create new biobrick
     $("#create-part").click(function() {
-        // var pngwriter = new graphiti.io.png.Writer();
-        // var png = pngwriter.marshal(app.view);
-        // // $(".header img").attr('src', png);
-        console.log('create');
         window.location.pathname = "/createnewpart";
     });
 
@@ -153,77 +186,7 @@ $().ready(function() {
         });
 
         E.use('slider', function() {
-            // Slider 1
-            //   var slider1 = new E.ui.Slider('#slider-1', {
-            //     min: 0,
-            //     max: 10,
-            //     value: 5,
-            //     axis: 'x',
-            //     size: '198px'
-            //   });
-
-            //   var demoText1 = E('#slider-text-1');
-            //   slider1.on('slide', function(e) {
-            //     demoText1.text(this.value / 10);
-            //   });
-
-            //   demoText1.on('click', function() {
-            //     slider1.setValue(5);
-            //   });
-
-            //   // Slider 2
-            //   var slider2 = new E.ui.Slider('#slider-2', {
-            //     min: -1,
-            //     max: 10,
-            //     value: 0,
-            //     axis: 'x',
-            //     size: '198px'
-            //   });
-
-            //   var demoText2 = E('#slider-text-2');
-            //   slider2.on('slide', function(e) {
-            //     demoText2.text(this.value);
-            //   });
-
-            //   demoText2.on('click', function() {
-            //     slider2.setValue(0);
-            //   });
-
-            //   // Slider 3
-            //   var slider3 = new E.ui.Slider('#slider-3', {
-            //     min: -10,
-            //     max: 10,
-            //     value: 0.5,
-            //     axis: 'x',
-            //     size: '198px'
-            //   });
-
-            //   var demoText3 = E('#slider-text-3');
-            //   slider3.on('slide', function(e) {
-            //     demoText3.text(this.value);
-            //   });
-
-            //   demoText3.on('click', function() {
-            //     slider3.setValue(0.5);
-            //   });
-
-            //   // Slider 4
-            //   var slider4 = new E.ui.Slider('#slider-4', {
-            //     min: -10,
-            //     max: 10,
-            //     value: 0,
-            //     axis: 'x',
-            //     size: '198px'
-            //   });
-
-            //   var demoText4 = E('#slider-text-4');
-            //   slider4.on('slide', function(e) {
-            //     demoText4.text(this.value);
-            //   });
-
-            //   demoText4.on('click', function() {
-            //     slider4.setValue(0);
-            //   });
+           
         });
 
         $("#component-config").ready(function() {
@@ -310,8 +273,7 @@ $().ready(function() {
             } else if (message.request == "getUserFileList") {
                 
             } else if (message.request == "loadUserFile") {
-                // console.log(message.result);
-                repaintCanvas(message.result);
+                  //repaintCanvas(message.result);
             } else if (message.request == 'indexSaveToGeneCircuit') {
                 console.log(message.result);
             } else if (message.request == 'saveUserData') {
@@ -319,8 +281,6 @@ $().ready(function() {
             }
         };
     }
-
-
 
     /*
      *  Websocket onopen
@@ -357,177 +317,15 @@ $().ready(function() {
 
     // Cleanly close websocket when unload window
     window.onbeforeunload = function() {
-        var jsonData = JSON.stringify(canvasToJSON());
+        /*var jsonData = JSON.stringify(canvasToJSON());
         ws.send(JSON.stringify({
             'request': 'indexSaveToGeneCircuit',
             'data': jsonData
-        }));
+        }));*/
 
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();
 
         return "";
-    };
-
-
-
-    // Create graphiti application
-    app = new g.Application();
-
-    $('#cmd_undo').click(function(ev) {
-        app.undo();
-    });
-
-    $('#cmd_redo').click(function(ev) {
-        app.redo();
-    });
-
-    $('#cmd_zoom_in').click(function(ev) {
-        app.zoom(ev.clientX, ev.clientY, 0.9);
-    });
-
-    $('#cmd_zoom_out').click(function(ev) {
-        app.zoom(ev.clientX, ev.clientY, 1.1);
-    });
-
-    $('#cmd_zoom_reset').click(function(ev) {
-        app.zoomReset();
-    });
-
-    $('#cmd_snap_to_grid').click(function(ev) {
-        app.toggleSnapToGrid();
-    });
-
-
-
-    var canvasToJSON = function() {
-        var figures = app.view.figures.data,
-            lines = app.view.lines.data;
-
-        var figuresCount = app.view.collection.length,
-            linesCount = app.view.connections.length;
-
-        var data = {
-            part: [],
-            link: []
-        };
-
-        for (var i = 0; i < figuresCount; i++) {
-            var figure = {};
-            figure.id = i;
-            figure.name = figures[i].id.split('-')[0];
-            figure.type = figures[i].TYPE;
-
-            data.part.push(figure);
-        }
-
-        for (var i = 0; i < linesCount; i++) {
-            var line = {};
-            line.from = lines[i].sourcePort.parent.id;
-            line.to = lines[i].targetPort.parent.id;
-            line.type = lines[i].TYPE;
-            line.inducer = "none";
-
-            data.link.push(line);
-        };
-        
-        return data;
-    };
-
-    var canvasToSaveData = function() {
-        var figures = app.view.figures.data,
-            lines = app.view.lines.data;
-        console.log(figures);
-        console.log(lines);
-
-        var figuresCount = app.view.collection.length,
-            linesCount = app.view.connections.length;
-
-        var data = {
-            part: [],
-            link: []
-        };
-
-        for (var i = 0; i < figuresCount; i++) {
-            var figure = {};
-            figure.id = i;
-            figure.name = figures[i].id;
-            figure.type = figures[i].TYPE;
-            figure.xPos = figures[i].getX();
-            figure.yPos = figures[i].getY();
-
-
-            data.part.push(figure);
-        }
-
-        for (var i = 0; i < linesCount; i++) {
-            var line = {};
-            line.from = lines[i].sourcePort.parent.id;
-            line.to = lines[i].targetPort.parent.id;
-            line.type = lines[i].TYPE;
-            line.inducer = "none";
-
-            data.link.push(line);
-        };
-        
-        return data;
-    };
-
-    var repaintCanvas = function(msg) {
-        var model = eval('(' + msg + ')');
-        console.log(model);
-
-        for (var i = 0; i < model.part.length; i++) {
-            repaintFigure(model.part[i]);
-        };
-
-        for (var i = 0; i < model.link.length; i++) {
-            repaintLine(model.link[i]);
-        };
-        
-
-        function repaintFigure(part) {
-            var type = 'g.Shapes.' + part.type;
-
-            var figure = eval("new " + type + "()");   // 实例化对象
-
-            var command = new graphiti.command.CommandAdd(app.view, figure, part.xPos, part.yPos);
-            app.view.getCommandStack().execute(command);    // 添加到命令栈中
-
-            figure.setId(part.name);    // 设置id
-            figure.label.setText(part.name.substr(0, part.name.length - 2));    // 设置label
-
-            app.view.collection.push(part.name);    // 放入collection中
-            app.view.collection.counter += 1;
-        };
-
-        function repaintLine(link) {
-            var source = app.view.getFigure(link.from);
-            var target = app.view.getFigure(link.to);
-
-            var sourcePort, targetPort;
-
-            if (source.TYPE == 'Protein' || source.TYPE == 'PandP') {
-                sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
-            } else if (source.TYPE == 'PandA' || source.TYPE == 'PandR' || source.TYPE == 'PandRORA') {
-                sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(source));
-            }
-
-            if (target.TYPE == 'Protein' || target.TYPE == 'PandP') {
-                targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
-            } else if (target.TYPE == 'PandA' || target.TYPE == 'PandR' || target.TYPE == 'PandRORA') {
-                targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
-            }
-
-            if (link.type == 'Activator') {
-                var command = new graphiti.command.CommandConnect(app.view, targetPort, sourcePort, null, "Activate"); // 连接两点
-                app.view.getCommandStack().execute(command); // 添加到命令栈中
-                app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
-            } else if (link.type == 'Repressor') {
-                var command = new graphiti.command.CommandConnect(app.view, targetPort, sourcePort, null, "Inhibit"); // 连接两点
-                app.view.getCommandStack().execute(command); // 添加到命令栈中
-                app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
-            }
-        };
     };
 });
