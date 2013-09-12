@@ -5,25 +5,51 @@
  *    Description:  
  *
  **/
-
-
 var parts=[];
-var content=null;
-var biobrickDiv=null;
+var userDefineSize=0;
+var step=0;
 function myInit()
-{	content=document.getElementById('canvas');
-	biobrickDiv=document.createElement("div");
-	biobrickDiv.style.width="100%";
-	biobrickDiv.style.height="50px";
-	biobrickDiv.style.overflow="auto";
-	biobrickDiv.style.backgroundColor="grey";
-	content.appendChild(biobrickDiv);
-	biobrickDivAddBiobrick('BBa_1234');
+{	
+	
+}
+function addSeqPartButtonOnclick(obj)
+{
+	var textareaDiv=document.getElementById('textareaDiv');
+	if(textareaDiv.style.display=='none')
+	{
+		document.getElementById('optionDiv').style.width="40%";
+		document.getElementById('optionDiv').style.height="100px";
+		document.getElementById('optionDiv').style.height="100px";
+		textareaDiv.style.display='block';
+	}else{//when the seqtextArea is shown
+		var seq=document.getElementById('seqInput').value;
+		if (seq.length!=0)		
+		{
+			var re=/^[actg]+$/gim;
+			if(re.test(seq))
+			{
+				name='seq'+userDefineSize;
+				item={};
+				item[name]=seq;
+				parts.push(item);
+				biobrickDivAddBiobrick(name);
+				userDefineSize++;
+			}else{
+				alert('you have illegal chars in the sequence!');
+			}
+		}else{
+			alert('Cannot add an empty sequence!');
+		}
+	}
+}
+function addPartFromRegButtonOnclick(obj)
+{
+	$(".trigger-left").click();
 }
 function biobrickDivAddBiobrick(name)
 {
 	var biobrick=document.createElement("div");
-	biobrick.style.width=name.length*8+'px';
+	biobrick.style.width=name.length*9+'px';
 	biobrick.style.height="30px";
 	biobrick.style.backgroundColor="#4388CC";
 	biobrick.onclick=function()
@@ -31,25 +57,22 @@ function biobrickDivAddBiobrick(name)
 		console.log(this);
 	}
 	biobrick.style.cssFloat="left";
-	biobrick.style.marginLeft="10px";
-	biobrick.style.marginTop="10px";
-	
+	biobrick.style.marginLeft="15px";
+	biobrick.style.marginTop="10px";	
 	var span=document.createElement("span");
 	span.innerHTML=name;
 	span.style.color="black";
 	span.style.margin="5px";
 	biobrick.appendChild(span);
 	biobrickDiv.appendChild(biobrick);
-	parts.push(name);
-	console.log(biobrick);
+	//parts.push(name);
 }
 // document ready
-$().ready(function() {
-	myInit();
+$().ready(function() {	
+	myInit();	
     document.ontouchmove = function(e) {
         e.preventDefault();
-    };
-
+    };	
     // toggle left-container
     $(".trigger-left").click(function() {
         var left = $("#left-container").css("left");
@@ -61,8 +84,9 @@ $().ready(function() {
         } else {
             $("#left-container").css({
                 left: '0px'
-            });
+            });			
         }
+		
     });
 
     // toggle right-container
@@ -149,12 +173,7 @@ $().ready(function() {
             $("#myModalInfo").html("File: " + filename + " is saved!");
             $("#save-trigger").click();
         }
-    });
-    
-    // clear the canvas
-    $("#clear").click(function() {
-        app.view = new g.View("canvas");
-    });
+    });    
 
     // save configuration of protein 
     $("#save-protein").click(function(e) {
@@ -316,16 +335,11 @@ $().ready(function() {
     }
 
     // Cleanly close websocket when unload window
-    window.onbeforeunload = function() {
-        /*var jsonData = JSON.stringify(canvasToJSON());
-        ws.send(JSON.stringify({
-            'request': 'indexSaveToGeneCircuit',
-            'data': jsonData
-        }));*/
-
+    /*window.onbeforeunload = function() {      
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();
 
         return "";
-    };
+    };*/
+	
 });

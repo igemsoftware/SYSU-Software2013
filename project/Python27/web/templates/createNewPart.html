@@ -38,7 +38,7 @@
         </div>
 
         <!-- left container starts -->
-        <div id="left-container">
+        <div id="left-container" >
             <div class="trigger trigger-left"></div>
 
             <!-- Left Menu list starts-->
@@ -78,7 +78,17 @@
         <!-- Painting Area -->
         <div id="content">
             <div id="canvas-mask">
-                <div id="canvas"></div>
+                <div id="canvas" style="background-color:#F0F0F0;">
+               	    <div id='biobrickDiv' style="width:100%;height:50px;overflow:auto;">
+                    </div>
+                	<div id='optionDiv' style="width:100%;height:100px;overflow:auto;float:left;">
+                    <input id='buttonReg' type="button" value="Add a part from registry" style="margin-left:15%;width:35%;height:50px;float:left;margin-top:15px;" onClick="addPartFromRegButtonOnclick(this);"></input>                    
+                    <input id='buttonSeq' type="button" value="Add a part from sequence" style="margin-left:15px;width:35%;height:50px;float:left;margin-top:15px;" onClick="addSeqPartButtonOnclick(this);"></input>                    
+                    </div>
+                    <div id='textareaDiv' style="width:60%;height:100px;float:left;display:none;">
+                    <textarea id='seqInput' style="font-size:20px;width:100%;height:100%;"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -304,8 +314,9 @@
 <script src="../static/js/createnewpart/base/js/easy.js"></script>
 <script src="../static/js/createnewpart/dtree.js"></script>
 <script src="../static/js/createnewpart/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../static/js/createnewpart/createnewpart.js"></script>
 <script src="../static/js/createnewpart/biobrickAdder.js"></script>
 <script src="../static/js/createnewpart/mytree.js"></script>
-<script src="../static/js/createnewpart/createnewpart.js"></script>
+
 </body>
 </html>

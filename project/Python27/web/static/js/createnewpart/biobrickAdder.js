@@ -49,5 +49,6 @@ BiobrickAdder.prototype = {
 	{
 		console.log('click');
 		biobrickDivAddBiobrick(this.name);
+		parts.push(this.name);
 	}
 };
