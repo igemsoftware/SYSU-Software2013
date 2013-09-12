@@ -8,6 +8,7 @@
 var parts=[];
 var userDefineSize=0;
 var step=0;
+var partInformation={};
 function myInit()
 {	
 	
@@ -34,6 +35,8 @@ function addSeqPartButtonOnclick(obj)
 				parts.push(item);
 				biobrickDivAddBiobrick(name);
 				userDefineSize++;
+				if(document.getElementById('buttonAccept').style.display=='none')
+					document.getElementById('buttonAccept').style.display='block';
 			}else{
 				alert('you have illegal chars in the sequence!');
 			}
@@ -46,8 +49,26 @@ function addPartFromRegButtonOnclick(obj)
 {
 	$(".trigger-left").click();
 }
+function acButtonOnclick(obj)
+{
+	if(step==0)
+	{
+		step+=1;
+		$("#optionDiv").hide();
+		$("#textareaDiv").hide();
+		$("#step2").show();
+		return;
+	}else if(step==1)
+	{
+		step+=1;
+		$("#step3").show();
+		return;
+	}
+}
 function biobrickDivAddBiobrick(name)
 {
+	if(document.getElementById('buttonAccept').style.display=='none')
+		document.getElementById('buttonAccept').style.display='block';
 	var biobrick=document.createElement("div");
 	biobrick.style.width=name.length*9+'px';
 	biobrick.style.height="30px";
