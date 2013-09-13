@@ -23,6 +23,19 @@ class SqliteDatabase:
 	logger=None
 	encrypt=None
 	indexSave=None
+	def getCx(self):
+		return self.__cx
+	def getCuror(self):
+		return self.__cursor
+	def updateUserLoginRememberTime(self):
+		if self.userId==-1:
+			self.logger.error('not login but want to remember the user login time')
+			return 'updateUserLoginRememberTime failed'
+		sql_cmd='UPDATE user_list SET rememberTime=datetime("now") WHERE id=%d'%(self.userId)
+		self.__cursor.execute(sql_cmd)
+		self.logger.debug('updateUserLoginRememberTime: %s'%sql_cmd)
+		self.__cx.commit()		
+		return 'updateUserPassword succeed'
 	def isDatabaseExist(self,database):
 		if os.path.exists(database):  
 			return True
@@ -170,7 +183,7 @@ class SqliteDatabase:
 
 	def insertAUser(self,name,password,email,group_id,gender,question,answer):
 		nextId=self.getMaxUserId()+1
-		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d,"%s","%s");'%(nextId,name,email,password,group_id,gender,question,answer)
+		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d,"%s","%s",NULL);'%(nextId,name,email,password,group_id,gender,question,answer)
 		self.logger.debug('insert a user: %s ' %excuteString)
 		self.__cursor.execute(excuteString)
 		self.__cx.commit()
@@ -424,9 +437,10 @@ class SqliteDatabase:
 		
 if __name__=="__main__":
 	sql=SqliteDatabase()
-	print sql.getUserGroup('Bobby')
-	#sql.addColumnToTable('part_relation','testw','integer',' 0')
-	
+	print sql.getUserGroup('Bobby')	
+	sql.updateUserLoginRememberTime()
+	sql.insertAUser('name','password','email',1,1,'question','answer')
+	#sql.addColumnToTable('part_relation','testw','integer',' 0')	
 	#print sql.isRecordExist('part_list')
 	#sql.selectAllOfTable('part_relation')
 	#sql.printAllTableNames()

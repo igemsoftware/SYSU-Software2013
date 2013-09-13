@@ -1,3 +1,3 @@
 cd Python27
-python web/xmlParse.py
+python web/sharedFile.py
 pause
