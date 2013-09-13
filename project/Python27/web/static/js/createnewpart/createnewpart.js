@@ -8,7 +8,6 @@
 var parts=[];
 var userDefineSize=0;
 var step=0;
-var partInformation={};
 function myInit()
 {	
 	
@@ -35,6 +34,7 @@ function addSeqPartButtonOnclick(obj)
 				parts.push(item);
 				biobrickDivAddBiobrick(name);
 				userDefineSize++;
+				document.getElementById('seqInput').value='';
 				if(document.getElementById('buttonAccept').style.display=='none')
 					document.getElementById('buttonAccept').style.display='block';
 			}else{
@@ -60,17 +60,66 @@ function addPartFromRegButtonOnclick(obj)
 			console.log($("#left-container").css('left','0px'));	
         }
 }
-function acButtonOnclick(obj)
+function step0()
 {
-	if(step==0)
-	{
+	var seq=document.getElementById('seqInput').value;
+		if (seq.length!=0)		
+		{
+			var re=/^[actg]+$/gim;
+			if(re.test(seq))
+			{
+				name='seq'+userDefineSize;
+				item={};
+				item[name]=seq;
+				parts.push(item);
+				biobrickDivAddBiobrick(name);
+				userDefineSize++;				
+			}else{
+				alert('You have illegal chars in the sequence!Or you can leave this text area blank.');
+			}
+		}
 		step+=1;
 		$("#optionDiv").hide();
 		$("#textareaDiv").hide();
 		$("#step2").show();
 		return;
+}
+function getRBS()
+{
+	var data={};
+	data['Name']=$('#RBSName').val();
+	data['Number']=$('#RBSNumber').val();
+	data['MPRBS']=$('#RBSMPRBS').val();
+	data['RIPS']=$('#RBSRIPS').val();
+	return data;	
+}
+function getActivator()
+{
+	var data={};
+	data['Name']=$('#ActName').val();
+	data['Number']=$('#ActNumber').val();
+	data['HillCoeff1']=$('#HillCoeff1').val();
+	data['K1']=$('#ActK1').val();
+	data['K2']=$('#ActK2').val();
+	return data;
+}
+function getTerminater()
+{
+	var data={};
+	data['Name']=$('#terminatorName').val();
+	data['Number']=$('#terminatorNumber').val();
+	data['Efficiency']=$('#Efficiency').val();
+	return data;
+}
+function acButtonOnclick(obj)
+{
+	if(step==0)
+	{
+		step0();
+		return;
 	}else if(step==1)
 	{				
+		sessionStorage.basicInfomation=JSON.stringify(getBasicInfomation());
 		var type=document.getElementById('typeSelect').value;
 		if(type=='Regulatory')
 		{
@@ -83,22 +132,26 @@ function acButtonOnclick(obj)
 		}
 		else if(type=='Coding')
 		{
-			//$("#step3").show();
+			step+=2;	
+			$("#step4").css('display','block');
+			return;
 		}else if(type=='Terminator')
-		{
+		{			
+			$('#step3').css('display','inline-block');
 			$('#terminatorForm').show();
 		}else if(type=='Repressor')
 		{
 			$('#step3').css('display','inline-block');
 			$('#ActRep').show();
-		}else if(type=='Inducer')
+				
+		}else if(type=='Inducer'||type=='Corepressor')
 		{
-		}else if(type=='Corepressor')
-		{
+			$('#step3').css('display','inline-block');
+			$('#Inducer').show();
 		}else if (type=='Plasmid backbone')
 		{
 			$('#step3').css('display','inline-block');
-			$('#terminatorForm').show();
+			$('#plasmid_backboneForm').show();
 		}else{
 			alert('You have not select the type!');
 			return;
@@ -109,7 +162,95 @@ function acButtonOnclick(obj)
 	{
 		step+=1;	
 		$("#step4").css('display','block');
+		var sendData=JSON.stringify(parts);
+		console.log(sendData);
+		var type=document.getElementById('typeSelect').value;
+		if(type=='Regulatory')
+		{
+			sessionStorage.ModelingParameters=JSON.stringify(getPromoter());	
+		}else if(type=='RBS')
+		{					 
+			sessionStorage.ModelingParameters=JSON.stringify(getRBS());				
+		}
+		else if(type=='Coding')
+		{			
+		}else if(type=='Terminator')
+		{			
+			sessionStorage.ModelingParameters=JSON.stringify(getTerminater());	
+		}else if(type=='Repressor')
+		{
+			sessionStorage.ModelingParameters=JSON.stringify(getActivator());
+		}else if(type=='Inducer'||type=='Corepressor')
+		{
+			sessionStorage.ModelingParameters=JSON.stringify(getInducer());
+		}else if (type=='Plasmid backbone')
+		{
+			sessionStorage.ModelingParameters=JSON.stringify(getPlasmidBackbone());
+		}else{
+			alert('You have not select the type!');
+			return;
+		}
+		//ws.send(JSON.stringify({'request': 'loginOut'}));
+	}else if(step==3){
+		var seqData=document.getElementById('finalSeq').value;
+		var re=/^[actg]+$/gim;
+		if(seqData.length!=0&&!re.test(seqData))
+		{				
+			alert('You have illegal chars in the sequence!Or you can leave this text area blank.');
+			return;
+		}
+		var standard=document.getElementById('standardSelect').value;
+		if(standard.length==0)
+			standard="RFC 10";
+		sendData=JSON.stringify({'seq':seqData,'standard':standard});
+		console.log(sendData);
 	}
+}
+function standardChange(obj)
+{
+}
+function getPlasmidBackbone()
+{
+	var data={};
+	data['Name']=$('#plasmid_backboneName').val();
+	data['Number']=$('#plasmid_backboneNumber').val();
+	data['CopyNumber']=$('#CopyNumber').val();
+	return data;	
+}
+function getInducer()
+{
+	var data={};
+	data['Name']=$('#InducerName').val();
+	data['Number']=$('#InducerNumber').val();
+	data['HillCoeff2']=$('#HillCoeff2').val();
+	data['K2']=$('#InducerK2').val();
+	return data;
+}
+function getBasicInfomation()
+{
+	var data={};
+	data['type']=$('#typeSelect').val();
+	data['shortDesp']=$('#shortDesp').val();
+	data['name']=$('#name').val();
+	data['nickname']=$('#nickname').val();
+	data['shortname']=$('#ShortName').val();
+	data['author']=$('#Author').val();
+	return data;
+}
+function getPromoter()
+{
+	var data={};
+	data['name']=$('#PromoterName').val();
+	data['Number']=$('#PromoterNumber').val();
+	data['PoPS']=$('#PromoterPoPS').val();
+	data['MPPromoter']=$('#PromoterMPPromoter').val();
+	data['LeakageRate']=$('#PromoterLeakageRate').val();
+	data['Type']=$('#PromoterType').val();
+	data['K1']=$('#PromoterK1').val();
+	data['Activator']=$('#PromoterActivator').val();
+	data['Repressor']=$('#PromoterRepressor').val();
+	data['Source']=$('#PromoterSource').val();
+	return data;
 }
 function biobrickDivAddBiobrick(name)
 {
