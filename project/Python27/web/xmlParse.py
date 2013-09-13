@@ -53,6 +53,10 @@ def get_allfiledirs(path="biobrick"):
     dict={}
     dict['path']=path
     dict['files']=getAllInPath(path,res)
+    for i in xrange(len(dict['files'])):
+      dict['files'][i] = dict['files'][i].replace('/', '\\')
+    dict['path'] = dict['path'].replace('/', '\\')
+    print dict['files']
     dict['pathIsAFile']='false'
     return dict
     
