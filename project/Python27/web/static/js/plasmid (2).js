@@ -1,4 +1,5 @@
-﻿var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色
+﻿//var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
+var colors={'regulatory':"#89c997",'coding': "#ffbf43",'promoter':"#89c997",'rbs':'#2ec6b7','terminator':"#f95f53"};
 var plasmidPainter = {
 	canvas: null,
 	canvasId: null,
@@ -299,6 +300,11 @@ function turnRawDatatoData(raw)
 		tempArray[i].end=parseInt(raw.DnaComponent.annotations[i].SequenceAnnotation.bioEnd,10);
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
 		tempArray[i].desp=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.description;
+		tempArray[i].type=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.type;
+		/*if(tempArray[i].type=='Coding')
+		{
+			tempArray[i].value=tempArray[i].value*0.01;
+		}*/
 	}		
 	tempArray=tempArray.sort(sortNumber);	
 	var real_data=[];
@@ -309,21 +315,22 @@ function turnRawDatatoData(raw)
 	{
 		real_data[index]={name:index,color:"#f4f4f4"};
 		real_data[index].start=start;
-		real_data[index].end=tempArray[i].start-1;		
+		real_data[index].end=tempArray[i].start;		
 		real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
 		real_data[index].desp=tempArray[i].desp;
 		index=index+1;
 		real_data[index]=tempArray[i];
+
 		if(real_data[index].value!=0)
 		{
-			real_data[index].color=colors[colorIndex%2];
+			real_data[index].color=colors[tempArray[i].type.toLowerCase()];
 			colorIndex+=1;
 		}else
 		{
 			real_data[index].color="#f4f4f4";
 		}
 		index=index+1;
-		start=tempArray[i].end+1;
+		start=real_data[index-1].end;
 		if(i==tempArray.length-1)
 		{
 			real_data[index]={name:index,color:"#f4f4f4"};
@@ -424,8 +431,10 @@ function initDrawChart(){
 	chart.plugin(createRight(chart));
 	chart.plugin(createBottom(chart));
 	chart.plugin(createLeft(chart));
-	chart.plugin(createTop(chart));
-	chart.draw();
+	chart.plugin(createTop(chart));	
+	//chart.draw();
+	chart.bound(3);
+	
 }
 function createRight(chart){
 	return new iChart.Custom({
@@ -538,13 +547,14 @@ function createDivStrByData()
 		{
 			if(i===0)
 			{
-				str=str+'<span style="color:black;">'+seq.substring(data[i].start,data[i].end+1)+"</span>";
+				str=str+'<span style="color:black;">'+seq.substring(data[i].start,data[i].end)+"</span>";
 			}else
 			{
-				str=str+'<span style="color:black;">'+seq.substring(data[i-1].end,data[i].end+1)+"</span>";
+				str=str+'<span style="color:black;">'+seq.substring(data[i].start,data[i].end)+"</span>";
+				console.log(str);
 			}
 		}else{			
-			str=str+'<span style="color:'+colors[temp%2]+';">'+seq.substring(data[i].start,data[i].end)+"</span>";
+			str=str+'<span style="color:'+findColorInDataBySeq(seq.substring(data[i].start,data[i].end))+';">'+seq.substring(data[i].start,data[i].end)+"</span>";
 			temp=temp+1;
 		}
 	}
@@ -604,7 +614,7 @@ function handlerWebSocket(){
 				raw_data=message.result;
 				console.log(message.result);
 				drawThePlasmid();
-				chart.draw();
+				//chart.draw();
 			}
 			message=null;
 		}		
