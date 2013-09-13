@@ -484,13 +484,13 @@ $().ready(function() {
         console.log(message.result);
 			} else if (message.request == "getGroup") {
 				console.log("getGroup", message);
-				genecircuitData = message.result;
-				init(genecircuitData); 
+				// genecircuitData = message.result; 
+				// init(genecircuitData);  
       } else if (message.request == "changeRBS") {
 				/* console.log(message.result); */
 				console.log("changeRBS", message);
 				// console.log(genecircuitData); 
-				// init(genecircuitData);   
+				init(genecircuitData);   
 			} else if (message.request == "getPlasmidSbol") {
 				console.log("getPlasmidSbol", message);
 			} else if (message.request == "loadSBOL") {
@@ -544,16 +544,18 @@ $().ready(function() {
       'request': 'getLoginedUserName'
     }));
 
-		// ws.send(JSON.stringify({ 
-			// 'request': 'getIndexSave', 
-		// })); 
-		ws.send(JSON.stringify({ 
-			'request': 'getGroup', 
-		})); 
-
 		// ws.send(JSON.stringify({  
-			// 'request': 'changeRBS',  
+			// 'request': 'getIndexSave',  
 		// }));  
+
+		// ws.send(JSON.stringify({   
+			// 'request': 'getGroup',   
+			// 'data': sessionStorage.regulationSave,   
+		// }));   
+
+		ws.send(JSON.stringify({    
+			'request': 'changeRBS',    
+		}));    
 
 		// ws.send(JSON.stringify({ 
 			// 'request': 'getIndexSave', 
@@ -594,6 +596,8 @@ $().ready(function() {
   $('#cmd_redo').click(function(ev) {
     historyStack.redo();
   });
+
+	console.log("aa", sessionStorage);
 
 	// a_why_end 
 
