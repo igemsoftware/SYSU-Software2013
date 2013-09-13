@@ -26,8 +26,6 @@ class apis():
   def getBiobrickPath(self,message):
     return xmlParse.findFile(rootdir="web\\biobrick\\",key=message['data'])
   def getIndexSave(self,message):
-    print json.loads(self.db.indexSave)
-    print group.dump_group(json.loads(self.db.indexSave),self.db)
     return group.dump_group(json.loads(self.db.indexSave),self.db)
   def generateRandomsessionKey(self,message):   
     if self.db.encrypt==None:     
@@ -99,7 +97,7 @@ class apis():
     ret = sequence_serializer.format_to_json(sbol)
     return ret
   def updateGeneCircuit(self, message):
-    ret = group.update_controller(self.db, message['data'])
+    ret = group.update_controller(self.db, message["data"])
     return ret
   def getUserQuestion(self,message):
     return user.getUserQuestion(self.db,message['userName']) 
@@ -125,7 +123,11 @@ def handle_websocket(ws, db):
       message = json.loads(message)
       print message
       api = apis(db)
-      result = getattr(api, message['request'])(message)
+      try:
+        result = getattr(api, message['request'])(message)
+      except Exception as e:
+        print e
+        result = "ERROR!"
       logging.info("message is %s" % message)
       ret = json.dumps({'request':message['request'],'result': result})
       print ret
