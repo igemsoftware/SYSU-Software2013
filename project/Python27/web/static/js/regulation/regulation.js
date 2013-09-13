@@ -253,10 +253,10 @@ $().ready(function() {
 						console.log(message.result);
 						var regS = new RegExp("/","g");
 						for (var i=0;i<message.result.files.length;i++)
-						{							
+						{
 							message.result.files[i]=message.result.files[i].replace(regS,"\\");
 							console.log(message.result.files[i]);
-						}						 
+						}
 						message.result.path=message.result.path.replace(regS,"\\");
                         proteinList.parseJson(message.result.files);
                     }
@@ -360,6 +360,7 @@ $().ready(function() {
             'request': 'indexSaveToGeneCircuit',
             'data': jsonData
         }));
+        sessionStorage.regulation = jsonData;
 
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();

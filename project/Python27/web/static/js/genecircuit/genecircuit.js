@@ -165,7 +165,7 @@ var protein = {
 		$("#" + aTextureId + " .pops").slider("value", aData.PoPS);
 		$("#" + aTextureId + " .rips").slider("value", aData.RiPS);
 		$("#" + aTextureId + " .copy").slider("value", aData.copy);
-		if(aData.K1 == "NaN") {
+		if(aData.K1 == null) {
 			$("#" + aTextureId + " .k1").addClass("unuse");
 		} else {
 			$("#" + aTextureId + " .k1").removeClass("unuse");
@@ -573,7 +573,10 @@ var getDataCollection = function() {
 		dataCollection.proteins[pid_i].RiPS = p.find(".rips").slider("value");
 		console.log(p.find(".rips").slider("value"));
 		dataCollection.proteins[pid_i].copy = p.find(".copy").slider("value");
-		dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
+    if (p.find(".k1").hasClass("unuse"))
+		  dataCollection.proteins[pid_i].K1 = null;
+    else
+      dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
 		dataCollection.proteins[pid_i].concen = p.find(".concen").slider("value");
 		dataCollection.proteins[pid_i].before_regulated = parseInt(p.find(".before-regulated .dashboard-value").text());
 		dataCollection.proteins[pid_i].repress_rate = parseInt(p.find(".repress-rate .dashboard-value").text());
