@@ -60,9 +60,25 @@ function acButtonOnclick(obj)
 		return;
 	}else if(step==1)
 	{
-		step+=1;
-		$("#step3").show();
+		step+=1;		
+		var type=document.getElementById('typeSelect').value;
+		if(type=='Coding')
+		{
+			//$("#step3").show();
+		}else if(type=='RBS')
+		{
+			$("#step3").css('display','inline-block');
+			//$("#step3").show();
+			$('#RBSForm').show();			
+		}else if(type=='Terminator')
+		{
+			$('#terminatorForm').show();
+		}
 		return;
+	}else if(step==2)
+	{
+		step+=1;	
+		$("#step4").show();
 	}
 }
 function biobrickDivAddBiobrick(name)

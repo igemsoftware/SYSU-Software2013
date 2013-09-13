@@ -87,7 +87,7 @@
 					<div id='textareaDiv' style="width:57%;height:100px;float:left;display:none;">
                     	<textarea id='seqInput' style="font-size:20px;width:100%;height:100%;"></textarea>
                     </div>
-                    <div id='step2' style="margin-left:2%;width:98%;height:120px;display:none">
+                    <div id='step2' style="margin-left:2%;width:98%;display:none">
                     	<h6>Basic information</h6><br>
                     	<label style="vertical-align:bottom;width:10%;height:30px;float:left;position:relative;">Type:</label>
                         <select id='typeSelect' style="width:36%;height:40px;float:left;position:relative;">
@@ -112,10 +112,10 @@
                         <label style="vertical-align:bottom;margin-left:2px;width:10%;height:30px;float:left;position:relative;">Author:</label>
                         <input id='Author' type="text" style="width:35%;height:30px;float:left;position:relative;"></input>
                     </div>
-                    <div id='step3' style="margin-left:2%;width:98%;height:250px;display:none;float:left;">
+                    <div id='step3' style="margin-left:2%;width:98%;display:none;">
                     	<br><h6>Modeling parameters</h6>
-                        <form>
-                        	Promoter<br>
+                        <form id='PromoterFrom' style="display:none;"> 
+                        	<h1>Promoter</h1><br>
                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
                             <input type="text" id="PromoterName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
@@ -127,17 +127,72 @@
                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> LeakageRate:</label>
                             <input type="text" id="PromoterLeakageRate" style="width:35%;height:30px;float:left;position:relative;"/>
                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Type:</label>
-                            <input type="text" id="PromoterType" style="width:35%;height:30px;float:left;position:relative;" list="Type_list"/>
-                            	<datalist id="Type_list">
-                                    <option label="Negative" value="Negative" />
-                                    <option label="Positive" value="Positive" />
-                                    <option label="Constitutive" value="Constitutive" />
-                                </datalist>
+                            <input type="text" id="PromoterType" style="width:35%;height:30px;float:left;position:relative;" />                            	
                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;">K1:</label>
                             <input type="text" id="PromoterK1" style="width:35%;height:30px;float:left;position:relative;"/>
                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Activator:</label>
                             <input type="text" id="PromoterActivator" style="width:35%;height:30px;float:left;position:relative;"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Repressor:</label>
+                            <input type="text" id="PromoterRepressor" style="width:35%;height:30px;float:left;position:relative;"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Source:</label>
+                            <input type="text" id="PromoterSource" style="width:35%;height:30px;float:left;position:relative;"/>
                         </form>
+                        <form id='RBSForm' style="display:none;">
+                        	<h1>RBS</h1><br>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
+                            <input type="text" id="RBSName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
+                            <input type="text" id="RBSNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> MPRBS:</label>
+                            <input type="text" id="RBSMPRBS" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> RIPS:</label>
+                            <input type="text" id="RBSRIPS" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>                            
+                        </form>
+                        <form id='ActRep' style="display:none;">
+                        	<h1>Activator/Repressor</h1><br>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
+                            <input type="text" id="ActName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
+                            <input type="text" id="ActNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> HillCoeff1:</label>
+                            <input type="text" id="HillCoeff1" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> K1:</label>
+                            <input type="text" id="ActK1" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/> 
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> K2:</label>
+                            <input type="text" id="ActK2" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>                             
+                        </form>
+                        <form id='terminatorForm' style="display:none;">
+                        	<h1>Terminator</h1><br>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
+                            <input type="text" id="terminatorName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
+                            <input type="text" id="terminatorNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Efficiency:</label>
+                            <input type="text" id="Efficiency" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>
+                        </form>
+                        <form id='plasmid_backboneForm'  style="display:none;">
+                        	<h1>Plasmid_backbone</h1><br>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
+                            <input type="text" id="plasmid_backboneName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
+                            <input type="text" id="plasmid_backboneNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> CopyNumber:</label>
+                            <input type="text" id="CopyNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>
+                        </form>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div id='step4' style="margin-left:2%;width:98%;height:200px;display:none;float:left;">
+                    	<h6>Sequence</h6>                        
+                        <label style=style="margin-left:2px;width:10%;height:30px;float:left;position:relative;">Assembly Standard</label>
+                        <select id='standardSelect' name="standard" style="margin-left:2px;width:10%;height:30px;float:left;position:relative;">
+                            <option selected="selected" value="">Assembly Standard</option>
+                            <option value="RFC 10">RFC 10</option>
+                            <option value="RFC 20">RFC 20</option>
+                            <option value="RFC 21">RFC 21</option>
+                            <option value="RFC 23">RFC 23</option>
+                        </select>
+                        <textarea id='finalSeq' style="font-size:20px;width:100%;height:50px;"></textarea>
                     </div>
                     <input id='buttonAccept' type="button" value="Accept" style="display:none;margin-left:35%;width:30%;height:40px;float:left;margin-top:15px;" onClick="acButtonOnclick(this);"></input>
                 </div>
