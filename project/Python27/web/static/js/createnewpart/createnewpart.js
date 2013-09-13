@@ -78,7 +78,7 @@ function acButtonOnclick(obj)
 	}else if(step==2)
 	{
 		step+=1;	
-		$("#step4").show();
+		$("#step4").css('display','block');
 	}
 }
 function biobrickDivAddBiobrick(name)
@@ -86,7 +86,7 @@ function biobrickDivAddBiobrick(name)
 	if(document.getElementById('buttonAccept').style.display=='none')
 		document.getElementById('buttonAccept').style.display='block';
 	var biobrick=document.createElement("div");
-	biobrick.style.width=name.length*9+'px';
+	biobrick.style.width=name.length*10+'px';
 	biobrick.style.height="30px";
 	biobrick.style.backgroundColor="#4388CC";
 	biobrick.onclick=function()
