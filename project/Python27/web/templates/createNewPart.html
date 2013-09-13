@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Create New Part</title>
+    <meta name="description" content="">
+    <meta name="author" content="Jiexin Guo">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/slider_style.css">
+    <link rel="stylesheet" href="../static/css/dtree.css">
+    <link rel="stylesheet" href="../static/css/graphiti.css"></head>
+
+<body>
+    <!-- regulation-container starts -->
+    <div class="mycontainer" id="regulation-container">
+
+        <!-- header starts -->
+        <div class="header">
+            <!-- logo -->
+            <img src="../static/img/logo.png" alt="sysu-software">
+            <!--<a href="#" id="thumbnail">缩略图</a>-->
+            <!-- navigation -->
+            <div class="nav">
+                <ul>
+                    <li class="active"><a href="index">Regulation network</a></li>
+                    <li><a href="genecircuit">Gene Circuit</a></li>
+                    <li><a href="plasmid">Plasmid</a></li>
+                    <li><a href="protocol">Protocol</a></li>
+                    <li><a href="simulation">Simulation</a></li>
+                </ul>
+                <div class="pointer-arrow"></div>
+            </div>
+        </div>
+
+        <!-- left container starts -->
+        <div id="left-container" >
+            <div class="trigger trigger-left"></div>
+
+            <!-- Left Menu list starts-->
+            <div class="accordion" id="accordion1">
+                <!-- Exogenous Factors starts-->
+                <div class="accordion-group">
+                    <!--<div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1One">
+                            Regulatory Factors <i class="icon-chevron-down" style="display: block; float: right"></i>
+                        </a>
+                    </div>-->
+                    <div id="collapse1One" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            <div id="eFactors"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Exogenous Factors ends -->
+
+                <!-- Protein starts-->
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1Two">
+                            Protein <i class="icon-chevron-down" style="display: block; float: right"></i>
+                        </a>
+                    </div>
+                    <div id="collapse1Two" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                            <div id="pFactors"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Protein ends --> </div>
+            <!-- Left Menu list ends--> </div>
+        <!-- left container ends -->
+
+        <!-- Painting Area -->
+        <div id="content">
+            <div id="canvas-mask">
+                <div id="canvas" style="background-color:#F0F0F0;overflow:auto;overflow-x:hidden;">
+               	    <div id='biobrickDiv' style="width:100%;height:50px;overflow:auto;"></div>
+                	<div id='optionDiv' style="width:100%;height:100px;overflow:auto;float:left;">
+                    	<input id='buttonReg' type="button" value="Add a part from registry" style="margin-left:15%;width:35%;height:50px;float:left;margin-top:15px;" onClick="addPartFromRegButtonOnclick(this);"></input>                    
+                        <input id='buttonSeq' type="button" value="Add a part from sequence" style="margin-left:15px;width:35%;height:50px;float:left;margin-top:15px;" onClick="addSeqPartButtonOnclick(this);"></input>                    
+                    </div>
+					<div id='textareaDiv' style="width:57%;height:100px;float:left;display:none;">
+                    	<textarea id='seqInput' style="font-size:20px;width:100%;height:100%;"></textarea>
+                    </div>
+                    <div id='step2' style="margin-left:2%;width:98%;display:none">
+                    	<h6>Basic information</h6><br>
+                    	<label style="vertical-align:bottom;width:10%;height:30px;float:left;position:relative;">Type:</label>
+                        <select id='typeSelect' style="width:36%;height:40px;float:left;position:relative;">
+                            <option selected="selected" value="">Basic Type</option>
+                            <option value="Regulatory">Regulatory</option>
+                            <option value="RBS">RBS</option>
+                            <option value="Coding">Coding</option>
+                            <option value="Terminator">Terminator</option>
+                            <option value="Repressor">Repressor</option>
+                            <option value="Inducer">Inducer</option>
+                            <option value="Corepressor">Corepressor</option>
+                            <option value="Plasmid backbone">Plasmid backbone</option>
+                        </select>
+                        <label style="vertical-align:bottom;width:10%;height:30px;float:left;position:relative;">Short description:</label>
+                        <input id='shortDesp' type="text" style="width:35%;height:30px;float:left;position:relative;"></input>
+                        <label style="vertical-align:bottom;width:10%;height:30px;float:left;position:relative;">Name:</label>
+                        <input id='name' type="text" style="width:35%;height:30px;float:left;position:relative;"></input>
+                        <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;">Nick name:</label>
+                        <input id='nickname' type="text" style="width:35%;height:30px;float:left;position:relative;"></input>
+                        <label style="vertical-align:bottom;width:10%;height:30px;float:left;position:relative;">Short name:</label>
+                        <input id='ShortName' type="text" style="width:35%;height:30px;float:left;position:relative;"></input>
+                        <label style="vertical-align:bottom;margin-left:2px;width:10%;height:30px;float:left;position:relative;">Author:</label>
+                        <input id='Author' type="text" style="width:35%;height:30px;float:left;position:relative;"></input>
+                    </div>
+                    <div id='step3' style="margin-left:2%;width:98%;display:none;">
+                    	<br><h6>Modeling parameters</h6>
+                        <form id='PromoterFrom' style="display:none;"> 
+                        	<h1>Promoter</h1><br>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
+                            <input type="text" id="PromoterName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
+                            <input type="text" id="PromoterNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="BBa_I1051"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> PoPS:</label>
+                            <input type="text" id="PromoterPoPS" style="width:35%;height:30px;float:left;position:relative;"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> MPPromoter:</label>
+                            <input type="text" id="PromoterMPPromoter" style="width:35%;height:30px;float:left;position:relative;"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> LeakageRate:</label>
+                            <input type="text" id="PromoterLeakageRate" style="width:35%;height:30px;float:left;position:relative;"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Type:</label>
+                            <input type="text" id="PromoterType" style="width:35%;height:30px;float:left;position:relative;" />                            	
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;">K1:</label>
+                            <input type="text" id="PromoterK1" style="width:35%;height:30px;float:left;position:relative;"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Activator:</label>
+                            <input type="text" id="PromoterActivator" style="width:35%;height:30px;float:left;position:relative;"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Repressor:</label>
+                            <input type="text" id="PromoterRepressor" style="width:35%;height:30px;float:left;position:relative;"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Source:</label>
+                            <input type="text" id="PromoterSource" style="width:35%;height:30px;float:left;position:relative;"/>
+                        </form>
+                        <form id='RBSForm' style="display:none;">
+                        	<h1>RBS</h1><br>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
+                            <input type="text" id="RBSName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
+                            <input type="text" id="RBSNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> MPRBS:</label>
+                            <input type="text" id="RBSMPRBS" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> RIPS:</label>
+                            <input type="text" id="RBSRIPS" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>                            
+                        </form>
+                        <form id='ActRep' style="display:none;">
+                        	<h1>Activator/Repressor</h1><br>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
+                            <input type="text" id="ActName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
+                            <input type="text" id="ActNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> HillCoeff1:</label>
+                            <input type="text" id="HillCoeff1" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> K1:</label>
+                            <input type="text" id="ActK1" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/> 
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> K2:</label>
+                            <input type="text" id="ActK2" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>                             
+                        </form>
+                        <form id='terminatorForm' style="display:none;">
+                        	<h1>Terminator</h1><br>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
+                            <input type="text" id="terminatorName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
+                            <input type="text" id="terminatorNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Efficiency:</label>
+                            <input type="text" id="Efficiency" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>
+                        </form>
+                        <form id='plasmid_backboneForm'  style="display:none;">
+                        	<h1>Plasmid_backbone</h1><br>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Name:</label>
+                            <input type="text" id="plasmid_backboneName" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                             <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> Number:</label>
+                            <input type="text" id="plasmid_backboneNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="LuxR"/>
+                            <label style="margin-left:2px;width:10%;height:30px;float:left;position:relative;"> CopyNumber:</label>
+                            <input type="text" id="CopyNumber" style="width:35%;height:30px;float:left;position:relative;" placeholder="0.12"/>
+                        </form>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div id='step4' style="margin-left:2%;width:98%;display:none;">
+                    	<h6>Sequence</h6>                        
+                        <label style="width:46%;height:30px;float:left;position:relative;">Assembly Standard</label>
+                        <select id='standardSelect' style="width:46%;height:40px;float:left;position:relative;">
+                            <option selected="selected" value="">Assembly Standard</option>
+                            <option value="RFC 10">RFC 10</option>
+                            <option value="RFC 20">RFC 20</option>
+                            <option value="RFC 21">RFC 21</option>
+                            <option value="RFC 23">RFC 23</option>
+                        </select>  
+                        <textarea id='finalSeq' style="font-size:20px;width:92%;height:80px;"></textarea>
+                    </div>
+                    <input id='buttonAccept' type="button" value="Accept" style="display:none;margin-left:35%;width:30%;height:40px;float:left;margin-top:15px;" onClick="acButtonOnclick(this);"></input>
+                </div>
+            </div>
+        </div>
+
+        <!-- right container starts -->
+        <div id="right-container">
+            <div class="trigger trigger-right"></div>
+
+            <!-- right menu list starts -->
+            <div class="accordion" id="accordion2">
+
+                <!-- basic menu starts -->
+                <div class="accordion-group">
+                    <!-- accordion-heading starts -->
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                            Menu
+                            <i class="icon-chevron-down" style="display: block; float: right"></i>
+                        </a>
+                    </div>
+                    <!-- accordion-heading ends -->
+
+                    <!-- accordion-body starts -->
+                    <div id="collapseOne" class="accordion-body collapse in">
+                        <!-- accordion-inner starts -->
+                        <div class="accordion-inner">
+                            <div id="menu">
+                                <!-- userview starts -->
+                                <div id="user-view" class="block">
+                                    <div id="user-view-left">
+                                        <div id="username">Nobody</div>
+                                        <div id="logout">Logout</div>
+                                    </div>
+                                    <div id="user-view-right">
+                                        <div class="avatar-container">
+                                            <img src="../static/img/avatar.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- userview ends -->
+
+                                <!-- commandmenu starts -->
+                                <div id="commandmenu" class="block">
+                                    <div id="button-group">
+                                        <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal">My Files</button>
+                                        <button class="mybtn" id="create-part">Create New Part</button>
+                                    </div>
+                                </div>
+                                <!-- commandmenu ends -->
+
+                                <!-- filemenu starts -->
+                                <div id="filemenu" class="block">
+                                    <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename">
+                                    <button class="mybtn" id="save">
+                                        <!-- <i class="icon-ok"></i> -->
+                                        √  Save
+                                    </button>
+                                    <a class="mybtn" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
+                                    <button class="mybtn" id="clear" role="button">
+                                        <!-- <i class="icon-remove"></i> -->
+                                        ×  Clear
+                                    </button>
+                                </div>
+                                <!-- filemenu ends --> </div>
+                            <!-- menu ends --> </div>
+                        <!-- accordion-inner ends --> </div>
+                    <!-- accordion-body ends --> </div>
+                <!-- basic menu ends -->
+
+                <!-- configuration menu starts -->
+                <div class="accordion-group">
+                    <!-- accordion-group starts -->
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                            Configuration
+                            <i class="icon-chevron-down" style="display: block; float: right"></i>
+                        </a>
+                    </div>
+                    <!-- accordion-group ends -->
+
+                    <!-- accordion-body starts -->
+                    <div id="collapseTwo" class="accordion-body collapse">
+                        <!-- accordion-inner starts -->
+                        <div class="accordion-inner">
+
+                            <!-- exogenous-factors-config starts -->
+                            <div id="exogenous-factors-config" class="block">
+                                <span class="config-header">Exogenous-factors Configuration</span>
+                                <form id="exogenous-factors-form">
+                                    <span class="label">Concentration</span>
+                                    <input type="text" name="ConcentrationVal"/>
+                                </form>
+                            </div>
+                            <!-- exogenous-factors-config ends -->
+
+                            <!-- protein-config starts -->
+                            <div id="protein-config" class="block">
+                                <span class="config-header">Protein Configuration</span>
+                                <form id="protein-form">
+                                    <span class="label">Expression Value</span>
+                                    <input type="text" name="expressionVal"/>
+                                </form>                                
+                        </div>
+                        <!-- protein-config ends -->
+
+                        <!-- component-config starts -->
+                        <div id="component-config" class="block" style="display: block">
+                            <span class="config-header">Component Config</span>
+                            <form id="component-form">
+                                <span class="label">Part_id</span>
+                                <input type="text" name="part_id"/>
+                                <span class="label">Part_name</span>
+                                <input type="text" name="part_name"/>
+                                <span class="label">Part_short_name</span>
+                                <input type="text" name="part_short_name"/>
+                                <span class="label">Part_short_desc</span>
+                                <input type="text" name="part_short_desc"/>
+                                <span class="label">Part_type</span>
+                                <input type="text" name="part_type"/>
+                                <span class="label">Part_status</span>
+                                <input type="text" name="part_status"/>
+                                <span class="label">Part_results</span>
+                                <input type="text" name="part_results"/>
+                                <span class="label">Part_nickname</span>
+                                <input type="text" name="part_nickname"/>
+                                <span class="label">Part_rating</span>
+                                <input type="text" name="part_rating"/>
+                                <span class="label">Part_entered</span>
+                                <input type="text" name="part_entered"/>
+                                <span class="label">Part_author</span>
+                                <input type="text" name="part_author"/>
+                                <span class="label">Part_quality</span>
+                                <input type="text" name="part_quality"/>
+                                <span class="label">twins</span>
+                                <ul id="twins"></ul>
+                            </form>
+                        </div>
+                        <!-- component-config ends -->
+
+                        <!-- arrow-config starts -->
+                        <div id="arrow-config" class="block">
+                            <span class="config-header">Arrow Configuration</span>
+                            <form id="arrow-form">
+                                <span class="label">Regulation Strength</span>
+                                <input type="text" name="regStrength"/>                                
+                        </form>
+                    </div>
+                    <!-- arrow-config ends --> </div>
+                <!-- accordion-inner ends --> </div>
+            <!-- accordion-body ends --> </div>
+        <!-- configuration menu ends --> </div>
+    <!-- right menu list ends -->
+
+</div>
+<!-- right container ends -->
+
+<!-- save modal starts -->
+<div id="save-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h6 id="myModalLabel">Info</h6>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+        <h4 id="myModalInfo">File Saved!</h4>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+<!-- save modal ends -->
+
+<!-- filelist modal starts -->
+<div id="filelist-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h6>File List</h6>
+    </div>
+    <div class="modal-body">
+        <div id="filelist"></div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+<!-- filelist modal ends -->
+
+<!-- footer starts -->
+<div class="footer"></div>
+<!-- footer ends -->
+
+<!-- command group starts-->
+<!--<div class="cmd-group">
+    <button class="btn" id="cmd_undo">
+        <img src="../static/img/Undo.png" width="17px" height="17px">
+        <span>Undo</span>
+    </button>
+    <button class="btn" id="cmd_redo">
+        <img src="../static/img/Redo.png" width="17px" height="17px">
+        <span>Redo</span>
+    </button>    
+</div>-->
+<!-- command group ends-->
+
+</div>
+<div align="left"><!-- regulation-container ends -->
+      
+  <!-- Jquery and underscore -->
+  <script src="../static/js/createnewpart/function.js"></script>
+  <script src="../static/js/underscore-min.js"></script>
+  <script src="../static/js/jquery-1.8.0.min.js"></script>
+  <script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>
+      
+  <!-- graphiti -->
+  <script src="../static/js/lib/shifty.js"></script>
+  <script src="../static/js/lib/raphael.js"></script>
+  <script src="../static/js/lib/jquery.layout.js"></script>
+      
+  <script src="../static/js/lib/rgbcolor.js"></script>
+  <script src="../static/js/lib/canvg.js"></script>
+  <script src="../static/js/lib/Class.js"></script>
+  <script src="../static/js/lib/json2.js"></script>
+      
+  <!-- Custom js -->
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/createnewpart/base/js/easy.js"></script>
+  <script src="../static/js/createnewpart/dtree.js"></script>
+  <script src="../static/js/createnewpart/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../static/js/createnewpart/createnewpart.js"></script>
+  <script src="../static/js/createnewpart/biobrickAdder.js"></script>
+  <script src="../static/js/createnewpart/mytree.js"></script>
+</div>
+
+</body>
+</html>

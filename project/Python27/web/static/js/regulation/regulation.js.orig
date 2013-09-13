@@ -78,8 +78,10 @@ $().ready(function() {
 
     // create new biobrick
     $("#create-part").click(function() {
-        var pngwriter = new graphiti.io.png.Writer();
-        var png = pngwriter.marshal(app.view);
+        //var pngwriter = new graphiti.io.png.Writer();
+		console.log('create');
+        //var png = pngwriter.marshal(app.view);
+		window.location.pathname = "/createnewpart";
         // $(".header img").attr('src', png);
     });
 
@@ -251,6 +253,18 @@ $().ready(function() {
                         proteinList.parseSubTree(message.result);
                     } else {
 						console.log(message.result);
+						var regS = new RegExp("/","g");
+						for (var i=0;i<message.result.files.length;i++)
+						{
+							message.result.files[i]=message.result.files[i].replace(regS,"\\");
+<<<<<<< HEAD
+							console.log(message.result.files[i]);
+						}
+=======
+							// console.log(message.result.files[i]);
+						}						 
+>>>>>>> 19b9417f5965baf508a191008a0ef07eb3d6887e
+						message.result.path=message.result.path.replace(regS,"\\");
                         proteinList.parseJson(message.result.files);
                     }
                 }
@@ -320,7 +334,6 @@ $().ready(function() {
         // get directory
         ws.send(JSON.stringify({
             'request': 'getDirList',
-            //'dir': 'web\\biobrick\\Protein coding sequences'
 			'dir': 'web/biobrick/Protein coding sequences'
         }));
 
@@ -354,6 +367,7 @@ $().ready(function() {
             'request': 'indexSaveToGeneCircuit',
             'data': jsonData
         }));
+        sessionStorage.regulation = jsonData;
 
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();

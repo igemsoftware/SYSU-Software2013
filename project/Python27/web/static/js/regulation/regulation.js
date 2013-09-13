@@ -78,8 +78,10 @@ $().ready(function() {
 
     // create new biobrick
     $("#create-part").click(function() {
-        var pngwriter = new graphiti.io.png.Writer();
-        var png = pngwriter.marshal(app.view);
+        //var pngwriter = new graphiti.io.png.Writer();
+		console.log('create');
+        //var png = pngwriter.marshal(app.view);
+		window.location.pathname = "/createnewpart";
         // $(".header img").attr('src', png);
     });
 
@@ -255,8 +257,8 @@ $().ready(function() {
 						for (var i=0;i<message.result.files.length;i++)
 						{
 							message.result.files[i]=message.result.files[i].replace(regS,"\\");
-							console.log(message.result.files[i]);
-						}
+							// console.log(message.result.files[i]);
+						}						 
 						message.result.path=message.result.path.replace(regS,"\\");
                         proteinList.parseJson(message.result.files);
                     }
