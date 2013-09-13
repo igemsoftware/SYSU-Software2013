@@ -47,7 +47,18 @@ function addSeqPartButtonOnclick(obj)
 }
 function addPartFromRegButtonOnclick(obj)
 {
-	$(".trigger-left").click();
+	console.log('here');
+	var left = $("#left-container").css("left");
+
+        if (parseInt(left) == 0) {
+            $("#left-container").css({
+                left: '-270px'
+            });
+			console.log('bbb');
+        } else {
+			console.log('aaa');
+			console.log($("#left-container").css('left','0px'));	
+        }
 }
 function acButtonOnclick(obj)
 {
@@ -59,21 +70,40 @@ function acButtonOnclick(obj)
 		$("#step2").show();
 		return;
 	}else if(step==1)
-	{
-		step+=1;		
+	{				
 		var type=document.getElementById('typeSelect').value;
-		if(type=='Coding')
+		if(type=='Regulatory')
 		{
-			//$("#step3").show();
+			$("#step3").css('display','inline-block');
+			$('#PromoterForm').show();	
 		}else if(type=='RBS')
 		{
 			$("#step3").css('display','inline-block');
-			//$("#step3").show();
 			$('#RBSForm').show();			
+		}
+		else if(type=='Coding')
+		{
+			//$("#step3").show();
 		}else if(type=='Terminator')
 		{
 			$('#terminatorForm').show();
+		}else if(type=='Repressor')
+		{
+			$('#step3').css('display','inline-block');
+			$('#ActRep').show();
+		}else if(type=='Inducer')
+		{
+		}else if(type=='Corepressor')
+		{
+		}else if (type=='Plasmid backbone')
+		{
+			$('#step3').css('display','inline-block');
+			$('#terminatorForm').show();
+		}else{
+			alert('You have not select the type!');
+			return;
 		}
+		step+=1;
 		return;
 	}else if(step==2)
 	{
@@ -102,7 +132,6 @@ function biobrickDivAddBiobrick(name)
 	span.style.margin="5px";
 	biobrick.appendChild(span);
 	biobrickDiv.appendChild(biobrick);
-	//parts.push(name);
 }
 // document ready
 $().ready(function() {	
@@ -142,9 +171,9 @@ $().ready(function() {
     });
 
     $("#content").click(function() {
-        $("#left-container").css({
+        /*$("#left-container").css({
             left: '-270px'
-        });
+        });*/
 
         $("#right-container").css({
             right: '-270px'
@@ -168,9 +197,6 @@ $().ready(function() {
 
     // load file list
     $("#myfile").click(function() {
-        // ws.send(JSON.stringify({
-        //     'request': 'getUserFileList'
-        // }));
         window.location.pathname = "/file_manager";
     });
 
