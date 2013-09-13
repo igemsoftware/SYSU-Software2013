@@ -325,6 +325,15 @@ class SqliteDatabase:
 			return decodejson[0]
 		else:
 			return None
+
+	def find_activator_with_promoter(self, promoter):
+		self.__cursor.execute('SELECT * FROM activator ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
 	
 	def getRBSNearValue(self,idealValue):
 		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%f) limit 0,1' %idealValue)
@@ -399,7 +408,6 @@ class SqliteDatabase:
 		self.logger.debug(recs)
 		whereCommand=jsonUtil.changeADictToStringThatCanUseBySql(recs)		
 		sql_cmd="select * from %s where %s ;"%(tableName,whereCommand)
-		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug(sql_cmd)
 		res = self.__cursor.fetchall()		

@@ -31,11 +31,11 @@ def ActRepRate(circuit, database):
             dataset['DegRatemRNA'] = 0.00288
             dataset['DegRatePro']  = 0.00288
             if dataset['Type'] == 'Positive':
-                activator = database.select_with_name('Activator', circuit['proteins'][dataset['From']]['name'])
+                activator = database.select_with_name('activator', circuit['proteins'][dataset['From']]['name'])
                 dataset['K1']         = activator['K1']
                 dataset['HillCoeff1'] = activator['HillCoeff1']
             elif dataset['Type'] == 'Negative':
-                repressor = database.select_with_name('Repressor', circuit['proteins'][dataset['From']]['name'])
+                repressor = database.select_with_name('repressor', circuit['proteins'][dataset['From']]['name'])
                 dataset['K1']         = repressor['K1']
                 dataset['HillCoeff1'] = repressor['HillCoeff1']
             ProDict[proid] = dataset
@@ -98,11 +98,11 @@ def CorepIndRate(circuit, database):
             dataset['DegRatemRNA'] = 0.00288
             dataset['DegRatePro']  = 0.00288
             if dataset['Type'] == 'Positive':
-                activator = database.select_with_name('Activator', circuit['proteins'][dataset['From']]['name'])
+                activator = database.select_with_name('activator', circuit['proteins'][dataset['From']]['name'])
                 dataset['K1']         = activator['K1']
                 dataset['HillCoeff1'] = activator['HillCoeff1']
             elif dataset['Type'] == 'Negative':
-                repressor = database.select_with_name('Repressor', circuit['proteins'][dataset['From']]['name'])
+                repressor = database.select_with_name('repressor', circuit['proteins'][dataset['From']]['name'])
                 dataset['K1']         = repressor['K1']
                 dataset['HillCoeff1'] = repressor['HillCoeff1']
             if group['corep_ind_type'] == 'Corepressor':
