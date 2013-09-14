@@ -10,7 +10,7 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
     try:
         if time <=0 or dt <= 0:
             raise InvalidParameter
-        timelen  = ceil(time / dt) + 1
+        timelen  = int(ceil(time / dt) + 1)
         timeaxis = [None] * timelen
         operate  = {'grp_id':[], 'index':[]}
         DNAdict  = {}
@@ -18,6 +18,7 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         Prodict  = {}
         dictkey  = []
         plasid   = circuit['plasmids'][0]
+        # the number of proteins in a group
         plassize = {}
         plaspro  = {}
         for n in range(len(plasid)):
@@ -25,7 +26,7 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         for n in range(len(plasid)):
             group      = circuit['groups'][plasid[n]]
             promoter   = database.select_with_name('Promoter', group['sbol'][0]['name'])
-            terminator = database.select_with_name('Terminator', group['abol'][-1]['name'])
+            terminator = database.select_with_name('Terminator', group['sbol'][-1]['name'])
             plaspro[plasid[n]] = []
             for k in range(plassize[plasid[n]]):
                 rbs   = database.select_with_name('RBS', group['sbol'][2*k+1]['name'])
@@ -38,7 +39,7 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
                 DNAdict [proid].SetData(ty = group['type'], copynumber = circuit['proteins'][proid]['copy'],
                                         tspromoter = promoter['MPPromoter'], leakagerate = promoter['LeakageRate'],
                                         tere = terminator['Efficiency'])
-                mRNAdict[proid].SetData(transle = rbs['TranslE'], degrate = 0.00288)
+                mRNAdict[proid].SetData(transle = rbs['MPRBS'], degrate = 0.00288)
                 Prodict [proid].SetData(degrate = 0.00288)
                 mRNAdict[proid].IniConcen(timelen, dt, ini = 0)
                 Prodict [proid].IniConcen(timelen, dt, ini = 0)
@@ -53,10 +54,10 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
             iden = circuit['groups'][grpid]['from']
             if iden in dictkey:
                 if Type == 'Positive':
-                    activator = database.select_with_name('Activator', circuit['proteins'][dictkey[n]]['name'])
+                    activator = database.select_with_name('Activator', circuit['proteins'][iden]['name'])
                     DNAdict[dictkey[n]].SetActivator(Prodict[iden], activator['K1'], activator['HillCoeff1'])
                 elif Type == 'Negative':
-                    repressor = database.select_with_name('Repressor', circuit['proteins'][dictkey[n]]['name'])
+                    repressor = database.select_with_name('Repressor', circuit['proteins'][iden]['name'])
                     DNAdict[dictkey[n]].SetRepressor(Prodict[iden], repressor['K1'], repressor['HillCoeff1'])
         for t in range(timelen):
             for n in range(len(operate['index'])):
@@ -67,12 +68,12 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
                     corepressor = database.select_with_name('Corepressor', circuit['groups'][grpid]['corepressor'])
                     for k in range(plassize[grpid]):
                         proid = plaspro[grpid][k]
-                        DNAdict[proid].SetCorepressor(corepind[grpid]['concen'], corepressor['K2'], corepressor['HillCoeff2'])
+                        DNAdict[proid].SetCorepressor(circuit['proteins'][proid]['concen'], corepressor['K2'], corepressor['HillCoeff2'])
                 elif Type == 'Inducer':
                     inducer = database.select_with_name('Inducer', circuit['groups'][grpid]['inducer'])
                     for k in range(plassize[grpid]):
                         proid = plaspro[grpid][k]
-                        DNAdict[proid].SetInducer(corepind[grpid]['concen'], inducer['K2'], inducer['HillCoeff2'])
+                        DNAdict[proid].SetInducer(circuit[proid]['concen'], inducer['K2'], inducer['HillCoeff2'])
             timeaxis[t] = t * dt
             if t == 0: continue
             for n in range(len(dictkey)):
@@ -91,12 +92,16 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         return 'Invalid Paramter!'
     except IllegalSetting:
         return 'Illegal Setting!'
-    except Exception:
-        return 'Something Unexpected Happened!'
+    #except Exception as e:
+    #    print e
+    #    return 'Something Unexpected Happened!'
 
-if __name__ == "__main":
-  gene_circuit = {u'proteins': {1: {u'concen': 0, u'grp_id': 4, u'pos': 2, u'repress_rate': 0.0, u'K1': None, u'copy': 73, u'PoPS': 93.08, u'name': u'BBa_C0060', u'before_regulated': 74743.24, u'RiPS': 11, u'induce_rate': -1}, 2: {u'concen': 0, u'grp_id': 4, u'pos': 4, u'repress_rate': 0.0, u'K1': None, u'copy': 73, u'PoPS': 93.08, u'name': u'BBa_C0060', u'before_regulated': 74743.24, u'RiPS': 11, u'induce_rate': -1}, 3: {u'concen': 0, u'grp_id': 4, u'pos': 6, u'repress_rate': 0.0, u'K1': None, u'copy': 73, u'PoPS': 93.08, u'name': u'BBa_K518003', u'before_regulated': 74743.24, u'RiPS': 11, u'induce_rate': -1}, 4: {u'concen': 0, u'grp_id': 4, u'pos': 8, u'repress_rate': 0.0, u'K1': None, u'copy': 73, u'PoPS': 93.08, u'name': u'BBa_K518003', u'before_regulated': 74743.24, u'RiPS': 11, u'induce_rate': -1}, 5: {u'concen': 0, u'grp_id': 5, u'pos': 2, u'repress_rate': 0.4428135474975083, u'K1': -2, u'copy': 73, u'PoPS': 34, u'name': u'BBa_C0160', u'before_regulated': 27302, u'RiPS': 11, u'induce_rate': -1}, 6: {u'concen': 0, u'grp_id': 7, u'pos': 2, u'repress_rate': -0.44281354749750823, u'K1': -2, u'copy': 73, u'PoPS': 95, u'name': u'BBa_C0178', u'before_regulated': 76285, u'RiPS': 11, u'induce_rate': -1}, 7: {u'concen': 0, u'grp_id': 7, u'pos': 4, u'repress_rate': -0.44281354749750823, u'K1': -2, u'copy': 73, u'PoPS': 95, u'name': u'BBa_C0178', u'before_regulated': 76285, u'RiPS': 11, u'induce_rate': -1}}, u'plasmids': [[4, 5, 7]], u'groups': {4: {u'from': -1, u'sbol': [{u'type': u'Signalling', u'name': u'BBa_K091117'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0060', u'id': 1}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0060', u'id': 2}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_K518003', u'id': 3}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_K518003', u'id': 4}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'corep_ind_type': u'None', u'to': [5, 6], u'state': u'cis', u'type': u'Constitutive'}, 5: {u'from': 3, u'sbol': [{u'type': u'Regulatory', u'name': u'BBa_I712074'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0160', u'id': 5}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'corep_ind_type': u'None', u'to': [], u'state': u'cis', u'type': u'Positive'}, 7: {u'from': 4, u'sbol': [{u'type': u'Regulatory', u'name': u'BBa_I712074'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0178', u'id': 6}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Coding', u'name': u'BBa_C0178', u'id': 7}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'corep_ind_type': u'Negative', u'inducer': u'BBa_P0140', u'to': [], u'state': u'cis', u'type': u'Negative'}}}
+if __name__ == "__main__":
+    gene_circuit = {'proteins': {1: {'RiPS': 11.49, 'name': 'BBa_C0060', 'before_regulated': 48564.782999999996, 'concen': 0.1, 'grp_id': 4, 'pos': 2, 'PoPS': 57.9, 'repress_rate': 0.0, 'K1': None, 'induce_rate': -1, 'copy': 73.0, 'display': 'True'}, 2: {'RiPS': 11.49, 'name': 'BBa_C0060', 'before_regulated': 48564.782999999996, 'concen': 0.1, 'grp_id': 4, 'pos': 4, 'PoPS': 57.9, 'repress_rate': 0.0, 'K1': None, 'induce_rate': -1, 'copy': 73.0, 'display': 'True'}, 3: {'RiPS': 11.49, 'name': 'BBa_K518003', 'before_regulated': 48564.782999999996, 'concen': 0.1, 'grp_id': 4, 'pos': 6, 'PoPS': 57.9, 'repress_rate': 0.0, 'K1': None, 'induce_rate': -1, 'copy': 73.0, 'display': 'False'}, 4: {'RiPS': 11.49, 'name': 'BBa_K142002', 'before_regulated': 48564.782999999996, 'concen': 0.1, 'grp_id': 4, 'pos': 8, 'PoPS': 57.9, 'repress_rate': 0.0, 'K1': None, 'induce_rate': -1, 'copy': 73.0, 'display': 'False'}, 5: {'RiPS': 11.49, 'name': 'BBa_C0160', 'before_regulated': 28711.097099999995, 'concen': 0.1, 'grp_id': 5, 'pos': 2, 'PoPS': 34.23, 'repress_rate': 0.4428135474975083, 'K1': -2.4287510356503725, 'induce_rate': -1, 'copy': 73.0, 'display': 'True'}, 6: {'RiPS': 11.49, 'name': 'BBa_C0178', 'before_regulated': 79590.88530000001, 'concen': 0.1, 'grp_id': 7, 'pos': 2, 'PoPS': 94.89, 'repress_rate': -0.442813547497508, 'K1': -2.451703061628793, 'induce_rate': -1, 'copy': 73.0, 'display': 'True'}, 7: {'RiPS': 11.49, 'name': 'BBa_C0178', 'before_regulated': 79590.88530000001, 'concen': 0.1, 'grp_id': 7, 'pos': 4, 'PoPS': 94.89, 'repress_rate': -0.442813547497508, 'K1': -2.451703061628793, 'induce_rate': -1, 'copy': 73.0, 'display': 'True'}}, 'plasmids': [[4, 5, 7]], 'groups': {4: {'from': -1, 'state': 'cis', 'corep_ind_type': 'None', 'to': [5, 6], 'sbol': [{'type': 'Promoter', 'name': u'BBa_I14015'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0060', 'id': 1}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0060', 'id': 2}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Activator', 'name': 'BBa_K518003', 'id': 3}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Repressor', 'name': 'BBa_K142002', 'id': 4}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'type': 'Constitutive'}, 5: {'from': 3, 'state': 'cis', 'corep_ind_type': 'Inducer', 'to': [], 'sbol': [{'type': 'Promoter', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0160', 'id': 5}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'corep_ind': 'BBa_P0140', 'type': 'Positive'}, 7: {'from': 4, 'state': 'cis', 'corep_ind_type': 'Inducer', 'to': [], 'sbol': [{'type': 'Promoter', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0178', 'id': 6}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0178', 'id': 7}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'corep_ind': 'BBa_P0140', 'type': 'Negative'}}}
 
-  import database
-  db = database.SqliteDatabase()
-  Simulate(isStochastic = False, circuit = gene_circuit, corepind, db)
+    import database
+    db = database.SqliteDatabase()
+    corepind = {5: {"concen": 0.1, "time": 3},
+                7: {"concen": 0.2, "time": 6}}
+
+    print Simulate(False, gene_circuit, corepind, db, 6, 0.1)

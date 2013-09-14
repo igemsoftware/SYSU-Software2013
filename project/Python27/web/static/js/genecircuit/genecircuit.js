@@ -42,6 +42,7 @@ var protein = {
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
+		$("#" + aTextureId).data("display", aData['display']);
 		$("#" + aTextureId).data("pos", aData['pos']);
 
 		$("#" + aTextureId + " .before-regulated").dashboard({
@@ -472,13 +473,12 @@ var detail = {
 	type: "",
 	pro_id: 0,
 	new_value: 0,
-	repressor_list: [],
 }
 
 /* command */
 var command = {
 	tempCmd: {
-		type: '',				 
+		type: '',
 		from: '',
 		to: '',
 		newAt: '',
@@ -487,7 +487,7 @@ var command = {
 	},
 	cmd: {},
 	cmdConfirm: function() {
-		this.cmd = this.tempCmd;						
+		this.cmd = this.tempCmd;
 		this.cmd = $.extend({}, this.tempCmd, true);
 	}
 }
@@ -569,6 +569,7 @@ var getDataCollection = function() {
 
 		dataCollection.proteins[pid_i] = {};
 		dataCollection.proteins[pid_i].grp_id = p.data('grp_id');
+		dataCollection.proteins[pid_i].display = p.data('display');
 		dataCollection.proteins[pid_i].pos = p.data('pos');
 		dataCollection.proteins[pid_i].name = p.find(".module-title em").text();
 		dataCollection.proteins[pid_i].PoPS = p.find(".pops").slider("value");
