@@ -8,10 +8,16 @@ $(document).ready(function () {
     ws.onmessage = function (msg) {
       var message = JSON.parse(msg.data);
       if (message.request == "Simulate") {
-        raw_data = message.result;
-        proteinNames = message.result.keys;
+        console.log(message.result);
+        raw_data = message.result.data;
+        console.log(raw_data);
+        proteinNames = Object.keys(message.result.data);
         data = turnRawDatatoData(raw_data);
-        run(data,document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
+        var canvasWidth = document.getElementById('canvasDiv').clientWidth;
+        var canvasHeight = document.getElementById('canvasDiv').clientHeight;
+        var time = message.result.time;
+        var dt = message.result.dt;
+        run(data,canvasWidth, canvasHeight, time, dt);
         for(var i=0;i<data.length;i++)
         {
           var w=document.getElementById('Curve').clientWidth/data.length/2.5;
@@ -64,7 +70,7 @@ $(document).ready(function () {
   // Bind send button to websocket
   ws.onopen = function() {
 	  ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-    isStochastic = true;
+    isStochastic = false;
     //gene_circuit = sessionStorage.gene_circuit;
     gene_circuit = raw;
     corepind = {};
@@ -110,28 +116,24 @@ function createAnInputCheckBox(index,width,height,proteinName){
 function turnRawDatatoData(raw)
 {
   var ret = [];
-  var LineNum = Object.keys(raw).length - 2;
+  var LineNum = Object.keys(raw).length;
   var iter = 0;
   var colors = ["#44f4f4", "#80bd91", "#8fd8ef"];
   var color_cnt = colors.length;
   for (var key in raw) {
-    if (key == "time" || key == "dt")
-      continue;
     ret[iter] = {};
     ret[iter]["color"] = colors[iter % color_cnt];
     ret[iter]["value"] = raw[key];
     ret[iter]["name"]  = key;
     iter++;
   }
-  console.log(ret);
   return ret;
 }
 
-function getLabel(raw) {
+function getLabel(time, dt) {
   var labels = [];
-  for (var i = 0; i < raw.time; i += raw.dt * 3)
+  for (var i = 0; i < time; i += dt * 3)
     labels.push((Math.round(i*10)/10.0).toFixed(1));
-  console.log(labels);
   return labels;
 }
 
@@ -141,9 +143,9 @@ function saveGraph()
 	var _canvas=document.getElementById(chart.canvasid);	
 	Canvas2Image.AsPNG(_canvas); 
 }
-function run(data,width1,height1){
+function run(data, width1, height1, time, dt){
   //ws.send(JSON.stringify({'request': 'getSimulationData'}));
-    labels = getLabel(raw_data);
+    labels = getLabel(time, dt);
     chart= new iChart.LineBasic2D({
     animation:true,
     render : 'canvasDiv',//图表渲染的HTML DOM的id

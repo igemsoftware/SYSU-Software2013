@@ -91,8 +91,9 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         data = {}
         data['time'] = time
         data['dt'] = dt
+        data['data'] = {}
         for n in range(len(dictkey)):
-            data[pro_name[n] + "," + str(dictkey[n])] = Prodict[dictkey[n]].Concen
+            data['data'][pro_name[n] + "," + str(dictkey[n])] = Prodict[dictkey[n]].Concen
         return data
     except InvalidParameter:
         return 'Invalid Paramter!'
@@ -110,4 +111,4 @@ if __name__ == "__main__":
     #corepind = {5: {"concen": 0.1, "time": 20},
     #            7: {"concen": 0.2, "time": 60}}
     corepind = {}
-    print Simulate(True, gene_circuit, corepind, db, 6000, 100)
+    print Simulate(False, gene_circuit, corepind, db, 6000, 100)
