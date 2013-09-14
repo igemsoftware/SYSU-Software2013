@@ -1,60 +1,78 @@
 var data =  [];
-var raw_data= {1: [0, 0.0, 0.00074144919444, 0.002223920508584003, 0.004446987052192297, 0.007410222119450609, 0.011113199188899286, 0.015555491923362499, 0.020736674169877466, 0.02665631995962372, 0.03331400350785237, 0.04070929921381545, 0.04884178166069518, 0.0577110256155334, 0.0673166060291609, 0.07765809803612683, 0.08873507695462818, 0.10054711828643918, 0.11309379771684086, 0.12637469111455044, 0.14038937453165098, 0.1551374242035209, 0.17061841654876353, 0.1868319281691368, 0.2037775358494828, 0.22145481655765745, 0.23986334744446025, 0.25900270584356394, 0.27887246927144427, 0.29947221542730973, 0.3208015221930313, 0.3428599676330724, 0.3656471299944186, 0.38916258770650747, 0.4134059193811586, 0.43837670381250354, 0.46407451997691546, 0.4904989470329393, 0.5176495643212219, 0.5455259513644417, 0.5741276878672392, 0.6034543537161466, 0.6335055289795182, 0.66428079390746, 0.6957797289317608, 0.7280019146658213, 0.7609469319045853, 0.794614361624469, 0.8290037849832916, 0.8641147833202061, 0.8999469381556284, 0.936499831191169, 0.9737730443095622, 1.0117661595745973, 1.0504787592310483, 1.0899104257046048, 1.1300607416018025, 1.1709292897099528, 1.2125156529970746, 1.2548194146118243, 1.2978401578834255], 2: [0, 0.0, 0.00074144919444, 0.002223920508584003, 0.004446987052192297, 0.007410222119450609, 0.011113199188899286, 0.015555491923362499, 0.020736674169877466, 0.02665631995962372, 0.03331400350785237, 0.04070929921381545, 0.04884178166069518, 0.0577110256155334, 0.0673166060291609, 0.07765809803612683, 0.08873507695462818, 0.10054711828643918, 0.11309379771684086, 0.12637469111455044, 0.14038937453165098, 0.1551374242035209, 0.17061841654876353, 0.1868319281691368, 0.2037775358494828, 0.22145481655765745, 0.23986334744446025, 0.25900270584356394, 0.27887246927144427, 0.29947221542730973, 0.3208015221930313, 0.3428599676330724, 0.3656471299944186, 0.38916258770650747, 0.4134059193811586, 0.43837670381250354, 0.46407451997691546, 0.4904989470329393, 0.5176495643212219, 0.5455259513644417, 0.5741276878672392, 0.6034543537161466, 0.6335055289795182, 0.66428079390746, 0.6957797289317608, 0.7280019146658213, 0.7609469319045853, 0.794614361624469, 0.8290037849832916, 0.8641147833202061, 0.8999469381556284, 0.936499831191169, 0.9737730443095622, 1.0117661595745973, 1.0504787592310483, 1.0899104257046048, 1.1300607416018025, 1.1709292897099528, 1.2125156529970746, 1.2548194146118243, 1.2978401578834255], 3: [0, 0.0, 0.00074144919444, 0.002223920508584003, 0.004446987052192297, 0.007410222119450609, 0.011113199188899286, 0.015555491923362499, 0.020736674169877466, 0.02665631995962372, 0.03331400350785237, 0.04070929921381545, 0.04884178166069518, 0.0577110256155334, 0.0673166060291609, 0.07765809803612683, 0.08873507695462818, 0.10054711828643918, 0.11309379771684086, 0.12637469111455044, 0.14038937453165098, 0.1551374242035209, 0.17061841654876353, 0.1868319281691368, 0.2037775358494828, 0.22145481655765745, 0.23986334744446025, 0.25900270584356394, 0.27887246927144427, 0.29947221542730973, 0.3208015221930313, 0.3428599676330724, 0.3656471299944186, 0.38916258770650747, 0.4134059193811586, 0.43837670381250354, 0.46407451997691546, 0.4904989470329393, 0.5176495643212219, 0.5455259513644417, 0.5741276878672392, 0.6034543537161466, 0.6335055289795182, 0.66428079390746, 0.6957797289317608, 0.7280019146658213, 0.7609469319045853, 0.794614361624469, 0.8290037849832916, 0.8641147833202061, 0.8999469381556284, 0.936499831191169, 0.9737730443095622, 1.0117661595745973, 1.0504787592310483, 1.0899104257046048, 1.1300607416018025, 1.1709292897099528, 1.2125156529970746, 1.2548194146118243, 1.2978401578834255], 4: [0, 0.0, 0.00074144919444, 0.002223920508584003, 0.004446987052192297, 0.007410222119450609, 0.011113199188899286, 0.015555491923362499, 0.020736674169877466, 0.02665631995962372, 0.03331400350785237, 0.04070929921381545, 0.04884178166069518, 0.0577110256155334, 0.0673166060291609, 0.07765809803612683, 0.08873507695462818, 0.10054711828643918, 0.11309379771684086, 0.12637469111455044, 0.14038937453165098, 0.1551374242035209, 0.17061841654876353, 0.1868319281691368, 0.2037775358494828, 0.22145481655765745, 0.23986334744446025, 0.25900270584356394, 0.27887246927144427, 0.29947221542730973, 0.3208015221930313, 0.3428599676330724, 0.3656471299944186, 0.38916258770650747, 0.4134059193811586, 0.43837670381250354, 0.46407451997691546, 0.4904989470329393, 0.5176495643212219, 0.5455259513644417, 0.5741276878672392, 0.6034543537161466, 0.6335055289795182, 0.66428079390746, 0.6957797289317608, 0.7280019146658213, 0.7609469319045853, 0.794614361624469, 0.8290037849832916, 0.8641147833202061, 0.8999469381556284, 0.936499831191169, 0.9737730443095622, 1.0117661595745973, 1.0504787592310483, 1.0899104257046048, 1.1300607416018025, 1.1709292897099528, 1.2125156529970746, 1.2548194146118243, 1.2978401578834255], 5: [0, 0.0, 0.00569053944522, 0.017068340584939553, 0.034130127084426524, 0.056872624024393345, 0.08529255790045348, 0.11938665662257811, 0.15915164951455285, 0.20458426731343501, 0.25568124216901067, 0.3124393076432522, 0.37485519870977585, 0.4429256517532998, 0.516647404569102, 0.5960171963624784, 0.6810317677482018, 0.7716878607499803, 0.8679822187999161, 0.969911586737965, 1.0774727108113953, 1.1906623386742479, 1.3094772193867958, 1.4339141034150047, 1.5639697426299926, 1.6996408903074904, 1.840924301127304, 1.9878167311727737, 2.140314937930236, 2.2984156802884876, 2.4621157185382425, 2.631411814371599, 2.8063007308814996, 2.986779232561194, 3.1728440853037037, 3.3644920564012835, 3.5617199145448866, 3.764524429823628, 3.9729023737242497, 4.186850519130584, 4.406365640323021, 4.631444512977972, 4.862083914167336, 5.098280622357966, 5.3400314174111365, 5.58733308058201, 5.840182394519101, 6.098576143263754, 6.3625111122496, 6.6319840883020325, 6.906991859637673, 7.187531215863844, 7.473598947978039, 7.765191848367389, 8.062306710808139, 8.364940330465117, 8.67308950389121, 8.986751029026827, 9.305921705199385, 9.630598333122775, 9.960777714896835], 6: [0, 0.0, 0.01577491346646, 0.047315654049223325, 0.09418801841496408, 0.1539479219178595, 0.22326775407575356, 0.30010700751594477, 0.38351876081116465, 0.4730679958850093, 0.568540819906944, 0.6698233622833057, 0.7768502932637225, 0.8895814993729202, 1.0079907754226143, 1.1320599924014059, 1.2617759219694396, 1.3971284242143986, 1.5381093703704127, 1.6847119792726637, 1.8369303957220802, 1.9947594151037051, 2.1581942990864973, 2.3272306495633353, 2.501864320723356, 2.682091356629, 2.867907946184046, 3.059310390169877, 3.256295076791446, 3.458858463312371, 3.666997062106283, 3.8807074299512574, 4.099986159733398, 4.324829873959318, 4.5552352196403945, 4.791198864227022, 5.032717492353548, 5.279787803214251, 5.53240650843429, 5.790570330331687, 6.054276000490342, 6.323520258582017, 6.598299851388841, 6.8786115319882155, 7.164452059069992, 7.455818196361922, 7.752706712144166, 8.055114378837422, 8.363037972652156, 8.676474273288795, 8.995420063680546, 9.31987212977207, 9.64982726032838, 9.985282246769318, 10.326233883025793, 10.67267896541451, 11.024614292528545, 11.382036665141506, 11.744942886123349, 12.113329760366284, 12.487194094719367], 7: [0, 0.0, 0.01577491346646, 0.047315654049223325, 0.09418801841496408, 0.1539479219178595, 0.22326775407575356, 0.30010700751594477, 0.38351876081116465, 0.4730679958850093, 0.568540819906944, 0.6698233622833057, 0.7768502932637225, 0.8895814993729202, 1.0079907754226143, 1.1320599924014059, 1.2617759219694396, 1.3971284242143986, 1.5381093703704127, 1.6847119792726637, 1.8369303957220802, 1.9947594151037051, 2.1581942990864973, 2.3272306495633353, 2.501864320723356, 2.682091356629, 2.867907946184046, 3.059310390169877, 3.256295076791446, 3.458858463312371, 3.666997062106283, 3.8807074299512574, 4.099986159733398, 4.324829873959318, 4.5552352196403945, 4.791198864227022, 5.032717492353548, 5.279787803214251, 5.53240650843429, 5.790570330331687, 6.054276000490342, 6.323520258582017, 6.598299851388841, 6.8786115319882155, 7.164452059069992, 7.455818196361922, 7.752706712144166, 8.055114378837422, 8.363037972652156, 8.676474273288795, 8.995420063680546, 9.31987212977207, 9.64982726032838, 9.985282246769318, 10.326233883025793, 10.67267896541451, 11.024614292528545, 11.382036665141506, 11.744942886123349, 12.113329760366284, 12.487194094719367], 'time': [0.0, 0.1, 0.2, 0.30000000000000004, 0.4, 0.5, 0.6000000000000001, 0.7000000000000001, 0.8, 0.9, 1.0, 1.1, 1.2000000000000002, 1.3, 1.4000000000000001, 1.5, 1.6, 1.7000000000000002, 1.8, 1.9000000000000001, 2.0, 2.1, 2.2, 2.3000000000000003, 2.4000000000000004, 2.5, 2.6, 2.7, 2.8000000000000003, 2.9000000000000004, 3.0, 3.1, 3.2, 3.3000000000000003, 3.4000000000000004, 3.5, 3.6, 3.7, 3.8000000000000003, 3.9000000000000004, 4.0, 4.1000000000000005, 4.2, 4.3, 4.4, 4.5, 4.6000000000000005, 4.7, 4.800000000000001, 4.9, 5.0, 5.1000000000000005, 5.2, 5.300000000000001, 5.4, 5.5, 5.6000000000000005, 5.7, 5.800000000000001, 5.9, 6.0]};
-proteinNames=['protein1','protein2','protein3','protein4']
+var raw =
+{"proteins": {1: {"RiPS": 11.49, "name": "BBa_C0060", "before_regulated": 28023.305700000004, "concen": 0.1, "grp_id": 4, "pos": 2, "PoPS": 33.410000000000004, "repress_rate": 0.0, "K1": null, "induce_rate": 0.0, "copy": 73.0, "display": "True"}, 2: {"RiPS": 11.49, "name": "BBa_C0060", "before_regulated": 28023.305700000004, "concen": 0.1, "grp_id": 4, "pos": 4, "PoPS": 33.410000000000004, "repress_rate": 0.0, "K1": null, "induce_rate": 0.0, "copy": 73.0, "display": "True"}, 3: {"RiPS": 11.49, "name": "BBa_K518003", "before_regulated": 28023.305700000004, "concen": 0.1, "grp_id": 4, "pos": 6, "PoPS": 33.410000000000004, "repress_rate": 0.0, "K1": null, "induce_rate": 0.0, "copy": 73.0, "display": "False"}, 4: {"RiPS": 11.49, "name": "BBa_K142002", "before_regulated": 28023.305700000004, "concen": 0.1, "grp_id": 4, "pos": 8, "PoPS": 33.410000000000004, "repress_rate": 0.0, "K1": null, "induce_rate": 0.0, "copy": 73.0, "display": "False"}, 5: {"RiPS": 11.49, "name": "BBa_C0160", "before_regulated": 28711.097099999995, "concen": 0.1, "grp_id": 5, "pos": 2, "PoPS": 34.23, "repress_rate": 0.44281337550618577, "K1": 3.041392685158225, "induce_rate": 0.44281337550618577, "copy": 73.0, "display": "True"}, 6: {"RiPS": 11.49, "name": "BBa_C0178", "before_regulated": 79590.88530000001, "concen": 0.1, "grp_id": 7, "pos": 2, "PoPS": 94.89, "repress_rate": -0.4428135474975077, "K1": -2.451703061628793, "induce_rate": -0.44281354749735624, "copy": 73.0, "display": "True"}, 7: {"RiPS": 11.49, "name": "BBa_C0178", "before_regulated": 79590.88530000001, "concen": 0.1, "grp_id": 7, "pos": 4, "PoPS": 94.89, "repress_rate": -0.4428135474975077, "K1": -2.451703061628793, "induce_rate": -0.44281354749735624, "copy": 73.0, "display": "True"}}, "plasmids": [[4, 5, 7]], "groups": {4: {"from": -1, "state": "cis", "corep_ind_type": "null", "to": [5, 6], "sbol": [{"type": "Promoter", "name": "BBa_I14033"}, {"type": "RBS", "name": "BBa_J61104"}, {"type": "Protein", "name": "BBa_C0060", "id": 1}, {"type": "RBS", "name": "BBa_J61104"}, {"type": "Protein", "name": "BBa_C0060", "id": 2}, {"type": "RBS", "name": "BBa_J61104"}, {"type": "Activator", "name": "BBa_K518003", "id": 3}, {"type": "RBS", "name": "BBa_J61104"}, {"type": "Repressor", "name": "BBa_K142002", "id": 4}, {"type": "Terminator", "name": "BBa_B0013"}], "type": "Constitutive"}, 5: {"from": 3, "state": "cis", "corep_ind_type": "null", "to": [], "sbol": [{"type": "Promoter", "name": "BBa_I712074"}, {"type": "RBS", "name": "BBa_J61104"}, {"type": "Protein", "name": "BBa_C0160", "id": 5}, {"type": "Terminator", "name": "BBa_B0013"}], "type": "Positive"}, 7: {"from": 4, "state": "cis", "corep_ind_type": "Inducer", "to": [], "sbol": [{"type": "Promoter", "name": "BBa_I712074"}, {"type": "RBS", "name": "BBa_J61104"}, {"type": "Protein", "name": "BBa_C0178", "id": 6}, {"type": "RBS", "name": "BBa_J61104"}, {"type": "Protein", "name": "BBa_C0178", "id": 7}, {"type": "Terminator", "name": "BBa_B0013"}], "corep_ind": "Ind_0140", "type": "Negative"}}};
+proteinNames=[];
 $(document).ready(function () {
   if ("WebSocket" in window) {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function (msg) {
-		var message = JSON.parse(msg.data);
-      	if (message.request == "getDirList") { // get directory
-        	if (message.result.files == 'true') {
-					
-        	} else {
-                    if (proteinList.isInit) {
-                        proteinList.parseSubTree(message.result);
-                    } else {
-                        proteinList.parseJson(message.result.files);
-                    }
-                }
-         }else if (message.request == "getLoginedUserName") { // get username
-                $("#user-view-left #username").text(message.result);
-            } else if (message.request == "loginOut") { // get logout info
-                window.location = "..";
-            } else if (message.request == "getUserFileList") {
-                console.log(message.result);
-                $("#filelist").html("");
-                for (var i = 0; i < message.result.length; i++) {
-                    $("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
-                };
+      var message = JSON.parse(msg.data);
+      if (message.request == "Simulate") {
+        raw_data = message.result;
+        proteinNames = message.result.keys;
+        data = turnRawDatatoData(raw_data);
+        run(data,document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
+        for(var i=0;i<data.length;i++)
+        {
+          var w=document.getElementById('Curve').clientWidth/data.length/2.5;
+          var h=document.getElementById('Curve').clientHeight;
+          document.getElementById('Curve').appendChild(createAnInputCheckBox(i,w,h,proteinNames[i]));
+          document.getElementById('Curve').appendChild(document.createTextNode(proteinNames[i]));
+        }
+      }
+      else if (message.request == "getDirList") { // get directory
+        if (message.result.files == 'true') {
 
-                $("#filelist > a").live("click", function() {
-                    ws.send(JSON.stringify({
-                        "request": "loadUserFile",
-                        "fileName": "default1",
-                        "fileType": "data"
-                    }));
-                });
-            }else if (message.request == "loadUserFile") {
-                console.log(message.result);
-            }else if (message.request == 'saveUserData') {
-                console.log(message.result);
-            }else if (message.request == 'getSimulationData'){
-				data = turnRawDatatoData(raw_data);
-				run(data,document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
-				for(var i=0;i<data.length;i++)
-			  	{
-				  	var w=document.getElementById('Curve').clientWidth/data.length/2.5;
-				  	var h=document.getElementById('Curve').clientHeight;
-				  	document.getElementById('Curve').appendChild(createAnInputCheckBox(i,w,h,proteinNames[i]));
-				  	document.getElementById('Curve').appendChild(document.createTextNode(proteinNames[i]));
-		  		}
-	  		}
+        } else {
+          if (proteinList.isInit) {
+            proteinList.parseSubTree(message.result);
+          } else {
+            proteinList.parseJson(message.result.files);
+          }
+        }
+      }
+      else if (message.request == "getLoginedUserName") { // get username
+        $("#user-view-left #username").text(message.result);
+      }
+      else if (message.request == "loginOut") { // get logout info
+        window.location = "..";
+      }
+      else if (message.request == "getUserFileList") {
+        console.log(message.result);
+        $("#filelist").html("");
+        for (var i = 0; i < message.result.length; i++) {
+          $("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
+        };
+
+        $("#filelist > a").live("click", function() {
+          ws.send(JSON.stringify({
+            "request": "loadUserFile",
+            "fileName": "default1",
+            "fileType": "data"
+          }));
+        });
+      }
+      else if (message.request == "loadUserFile") {
+        console.log(message.result);
+      }
+      else if (message.request == 'saveUserData') {
+        console.log(message.result);
+      }
     };
-  };  
+  };
+
   // Bind send button to websocket
   ws.onopen = function() {
-	ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-    ws.send(JSON.stringify({'request': 'getSimulationData'}));
+	  ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+    isStochastic = true;
+    //gene_circuit = sessionStorage.gene_circuit;
+    gene_circuit = raw;
+    corepind = {};
+    ws.send(JSON.stringify({'request'     : 'Simulate',
+                            'isStochastic': isStochastic,
+                            'gene_circuit': gene_circuit,
+                            'corepind'    : corepind
+    }));
   };
 
   // Cleanly close websocket when unload window
@@ -62,8 +80,8 @@ $(document).ready(function () {
     ws.onclose = function () {}; // disable onclose handler first
     ws.close();
   };
-  
-  
+
+
 });
 var size=0;
 function createAnInputCheckBox(index,width,height,proteinName){
@@ -92,32 +110,31 @@ function createAnInputCheckBox(index,width,height,proteinName){
 function turnRawDatatoData(raw)
 {
   var ret = [];
-  var LineNum = raw[0].length;
-  var PointNum = raw.length;
-  for (var i = 1; i < LineNum; i++) {
-    ret[i-1] = {};
-    ret[i-1].name = i;
-    ret[i-1].value = [];
-    ret[i-1].line_width = 2;
+  var LineNum = Object.keys(raw).length - 2;
+  var iter = 0;
+  var colors = ["#44f4f4", "#80bd91", "#8fd8ef"];
+  var color_cnt = colors.length;
+  for (var key in raw) {
+    if (key == "time" || key == "dt")
+      continue;
+    ret[iter] = {};
+    ret[iter]["color"] = colors[iter % color_cnt];
+    ret[iter]["value"] = raw[key];
+    ret[iter]["name"]  = key;
+    iter++;
   }
-  ret[0]["color"] = '#44f4f4';
-  ret[1]["color"] = '#8fd8ef';
-  ret[2]["color"] = '#237e90';
-  ret[3]["color"] = '#80bd91';
-  for (var i = 0; i < PointNum; i++)
-  for (var j = 1; j < LineNum; j++)
-  ret[j-1]["value"].push(raw[i][j]);
+  console.log(ret);
   return ret;
 }
 
 function getLabel(raw) {
-  var PointNum = raw.length;
   var labels = [];
-  for (var i = 0; i < PointNum; i++)
-  if (i % 10 == 0)
-    labels.push(raw[i][0]);
+  for (var i = 0; i < raw.time; i += raw.dt * 3)
+    labels.push((Math.round(i*10)/10.0).toFixed(1));
+  console.log(labels);
   return labels;
 }
+
 var chart=null;
 function saveGraph()
 {
@@ -127,7 +144,6 @@ function saveGraph()
 function run(data,width1,height1){
   //ws.send(JSON.stringify({'request': 'getSimulationData'}));
     labels = getLabel(raw_data);
-	console.log(data);
     chart= new iChart.LineBasic2D({
     animation:true,
     render : 'canvasDiv',//图表渲染的HTML DOM的id
@@ -159,7 +175,7 @@ function run(data,width1,height1){
       //fade_duration:700,
       listeners:{
         parseText:function(tip,name,value,text){
-          var str= name;
+          var str = name;
           return str;
         }
       }
