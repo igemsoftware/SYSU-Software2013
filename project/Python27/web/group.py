@@ -220,14 +220,14 @@ def get_index_in_group(pro_name, group):
 
 def update_proteins_repress(database, gene_circuit):
   repress_rates = SteadyState_Rate.ActRepRate(gene_circuit, database)
-  # induce_rates = SteadyState_Rate.CorepIndRate(gene_circuit, database)
+  induce_rates = SteadyState_Rate.CorepIndRate(gene_circuit, database)
   print repress_rates
   for i in repress_rates:
     pro = gene_circuit["proteins"][i]
     gene_circuit["proteins"][i]["before_regulated"] =\
         pro["PoPS"] * pro["RiPS"] * pro["copy"]
     gene_circuit["proteins"][i]["repress_rate"] = log10(repress_rates[i])
-    # gene_circuit["proteins"][i]["induce_rate"] = log10(induce_rates[i])
+    gene_circuit["proteins"][i]["induce_rate"] = log10(induce_rates[i])
 
 def get_graph(link):
   ret = {}

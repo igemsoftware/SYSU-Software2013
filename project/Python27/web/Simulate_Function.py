@@ -17,6 +17,7 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         mRNAdict = {}
         Prodict  = {}
         dictkey  = []
+        pro_name = []
         plasid   = circuit['plasmids'][0]
         # the number of proteins in a group
         plassize = {}
@@ -33,6 +34,7 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
                 proid = group['sbol'][2*k+2]['id']
                 plaspro[plasid[n]].append(proid)
                 dictkey.append(proid)
+                pro_name.append(circuit['proteins'][proid]['name'])
                 DNAdict [proid] = DNA_Simulate()
                 mRNAdict[proid] = mRNA_Simulate()
                 Prodict [proid] = Protein_Simulate()
@@ -71,7 +73,6 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
                         DNAdict[proid].SetCorepressor(circuit['proteins'][proid]['concen'], corepressor['K2'], corepressor['HillCoeff2'])
                 elif Type == 'Inducer':
                     inducer = database.select_with_name('Inducer', circuit['groups'][grpid]['corep_ind'])
-                    print circuit['groups'][grpid]['corep_ind']
                     for k in range(plassize[grpid]):
                         proid = plaspro[grpid][k]
                         DNAdict[proid].SetInducer(circuit['proteins'][proid]['concen'], inducer['K2'], inducer['HillCoeff2'])
@@ -85,9 +86,9 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
                     mRNAdict[dictkey[n]].Compute_Concen(t, False)
                     Prodict [dictkey[n]].Compute_Concen(t, False)
         data = {}
-        data['time'] = timeaxis
+        # data['time'] = timeaxis
         for n in range(len(dictkey)):
-            data[dictkey[n]] = Prodict[dictkey[n]].Concen
+            data[pro_name[n]] = Prodict[dictkey[n]].Concen
         return data
     except InvalidParameter:
         return 'Invalid Paramter!'
