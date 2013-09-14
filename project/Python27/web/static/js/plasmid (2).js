@@ -1,5 +1,5 @@
 ﻿//var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
-var colors={'regulatory':"#89c997",'coding': "#ffbf43",'promoter':"#89c997",'rbs':'#2ec6b7','terminator':"#f95f53"};
+var colors={'Promoter':"#89c997",'Protein': "#ffbf43",'Activator': "#ffbf43", 'Repressor': "#ffbf43", 'RBS':'#2ec6b7','Terminator':"#f95f53"};
 var plasmidPainter = {
 	canvas: null,
 	canvasId: null,
