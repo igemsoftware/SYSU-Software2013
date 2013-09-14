@@ -18,14 +18,24 @@ class sharedFiles:
 		self.db=database
 		self.__cx=self.db.getCx()
 		self.__cursor=self.db.getCuror()	
+	def getFileByExtractCode(self,code):
+		self.__cursor.execute('SELECT [user_save].[fileType],  [user_save].[fileName],  [user_list].[name] AS user_name FROM user_save,user_list WHERE user_list.id=user_save.user_id AND user_save.[extractCode]="%s"'%(code))	
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
 	def isAFileShared(self,user_id,filename,filetype):
 		self.__cursor.execute('SELECT user_save.shared FROM user_save where user_id="%i" AND fileName="%s" AND fileType="%s"'%(user_id,filename,filetype))		
 		if self.__cursor.fetchall()==0:
 			return False
 		else:
 			return True
-	def unsharedAFile(self,user_id,file):
-		pass
+	def unsharedAFile(self,user_id,filename,filetype):
+		if self.isAFileShared(user_id,filename,filetype):
+			self.__cursor.execute('UPDATE user_save SET shared=0, extractCode="" WHERE user_id=%i AND fileName="%s" AND fileType="%s"' %(user_id,filename,filetype))
+			self.__cx.commit()
+			return "unshared file success!"
+		else:
+			return "This file isn't shared!"
 	def setFileShared(self,user_id,filename,filetype):
 		code=self.getExtractCode(user_id,filename,filetype)
 		self.__cursor.execute('UPDATE user_save SET shared=1, extractCode="%s" WHERE user_id=%i AND fileName="%s" AND fileType="%s"' %(code,user_id,filename,filetype))
@@ -35,11 +45,10 @@ class sharedFiles:
 		return self.__cursor.fetchall()
 	def getExtractCode(self,user_id,filename,filetype):
 		str='%i%s%s'%(user_id,filename,filetype)
-		print str
 		return encrypt.getPasswordSHA1(str)
 	def getSharedFileList(self):		
 		self.__cursor.execute('SELECT user_save.fileName,user_save.fileType,user_list.name FROM user_save,user_list where user_save.shared=1 AND user_list.id=user_save.user_id')	
-		print self.__cursor.fetchall()
+		#print self.__cursor.fetchall()
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson
@@ -47,5 +56,7 @@ if __name__=="__main__":
 	sql=SqliteDatabase()
 	shared=sharedFiles(sql)	
 	print shared.getSharedFileList()	
-	print shared.setFileShared(0,'test','test')
-	print shared.isAFileShared(0,'guotest','plasmid')
+	print shared.isAFileShared(0,'test','test')
+	#print shared.setFileShared(0,'test','test')
+	print shared.getFileByExtractCode('3a679784c6b6ad2b82990323272d40a1d604ba65')
+	#print shared.unsharedAFile(0,'test','test')
