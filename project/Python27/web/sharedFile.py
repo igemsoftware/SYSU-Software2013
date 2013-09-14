@@ -53,15 +53,20 @@ class sharedFiles:
 	def getExtractCode(self,user_id,filename,filetype):
 		str='%i%s%s'%(user_id,filename,filetype)
 		return encrypt.getPasswordSHA1(str)
+	def getUserSharedFileList(self,username):
+		self.__cursor.execute('SELECT user_save.fileName,user_save.fileType,user_list.name FROM user_save,user_list where user_save.shared=1 AND user_list.id=user_save.user_id AND user_list.name="%s"'%username)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson		
 	def getSharedFileList(self):		
 		self.__cursor.execute('SELECT user_save.fileName,user_save.fileType,user_list.name FROM user_save,user_list where user_save.shared=1 AND user_list.id=user_save.user_id')	
-		#print self.__cursor.fetchall()
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson
 if __name__=="__main__":
 	sql=SqliteDatabase()
 	shared=sharedFiles(sql)	
+	print shared.getUserSharedFileList('Bobby')
 	print shared.getSharedFileList()	
 	print shared.isAFileShared(0,'test','test')
 	#print shared.setFileShared(0,'test','test')
