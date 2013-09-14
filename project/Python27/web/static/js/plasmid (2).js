@@ -320,15 +320,8 @@ function turnRawDatatoData(raw)
 		real_data[index].desp=tempArray[i].desp;
 		index=index+1;
 		real_data[index]=tempArray[i];
-
-		if(real_data[index].value!=0)
-		{
 			real_data[index].color=colors[tempArray[i].type.toLowerCase()];
 			colorIndex+=1;
-		}else
-		{
-			real_data[index].color="#f4f4f4";
-		}
 		index=index+1;
 		start=real_data[index-1].end;
 		if(i==tempArray.length-1)

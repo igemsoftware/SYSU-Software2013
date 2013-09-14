@@ -112,6 +112,49 @@ var horizon = 50;
 var img = parse_data();
 function draw(cxt, horizon) {
 }
+function handlerWebSocket(){
+	if ("WebSocket" in window) {
+		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
+		ws.onmessage = function (msg) {
+			var message = JSON.parse(msg.data);
+			if (message.request == "getLoginedUserName") {
+				$("#user-view-left #username").text(message.result);
+			} else if (message.request == "loginOut") { // get logout info
+				window.location = "..";
+			} else if (message.request == "getUserFileList") {
+				$("#filelist").html("");
+				for (var i = 0; i < message.result.length; i++) {
+					$("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
+				};
+				$("#filelist > a").live("click", function() {
+					ws.send(JSON.stringify({
+							"request": "loadUserFile",
+							"fileName": "default1",
+							"fileType": "data"
+						}));
+				});
+			} else if (message.request == "loadUserFile") {
+				loadUserFileWebsocket(message.result,true);
+			}else if (message.request == 'saveUserData') {
+				console.log(message.result);
+			}else if(message.request == 'getPlasmidSbol') {
+				raw_data=message.result;
+				console.log(message.result);
+				drawThePlasmid();
+				//chart.draw();
+			}
+			message=null;
+		}		
+	}
+	ws.onopen = function() {
+		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+		if(sessionStorage.genecircuitSave!==undefined)
+		{
+			var obj = eval('(' + sessionStorage.genecircuitSave + ')'); 			
+			ws.send(JSON.stringify({'request': 'getPlasmidSbol','data':JSON.stringify(obj['genecircuit'])}));	
+		}				
+	}
+}
 window.onload=function() {
   var c=document.getElementById("myCanvas");
   var cxt=c.getContext("2d");
