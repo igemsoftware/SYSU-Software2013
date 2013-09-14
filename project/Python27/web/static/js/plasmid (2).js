@@ -1,5 +1,14 @@
 ﻿//var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
 var colors={'promoter':"#89c997",'protein': "#ffbf43",'activator': "#ffbf43", 'repressor': "#ffbf43", 'rbs':'#2ec6b7','terminator':"#f95f53"};
+String.prototype.startWith=function(str){
+			if(str==null||str==""||this.length==0||str.length>this.length)
+			  return false;
+			if(this.substr(0,str.length)==str)
+			  return true;
+			else
+			  return false;
+			return true;
+		}
 var plasmidPainter = {
 	canvas: null,
 	canvasId: null,
@@ -168,7 +177,7 @@ function findNameInDataBySeq(seqIn)
 	for(var i=0;i<data.length;i++)
 	{
 		var str="";
-		if(typeof(data[i].name)=="number")
+		if(/*typeof(data[i].name)=="number"*/data[i].name.startWith('scar'))
 		{
 			if(i===0)
 			{
@@ -192,7 +201,7 @@ function findColorInDataBySeq(seqIn)
 	for(var i=0;i<data.length;i++)
 	{
 		var str="";
-		if(typeof(data[i].name)=="number")
+		if(/*typeof(data[i].name)=="number"*/data[i].name.startWith('scar'))
 		{
 			if(i===0)
 			{
@@ -310,10 +319,12 @@ function turnRawDatatoData(raw)
 	var real_data=[];
 	var start=0;
 	var index=0;
+	var scarIndex=1;
 	var colorIndex=0;
 	for(i=0;i<tempArray.length;i++)
 	{
-		real_data[index]={name:index,color:"#f4f4f4"};
+		real_data[index]={name:'scar'+scarIndex,color:"#f4f4f4"};
+		scarIndex+=1;
 		real_data[index].start=start;
 		real_data[index].end=tempArray[i].start;		
 		real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
@@ -325,7 +336,8 @@ function turnRawDatatoData(raw)
 		start=real_data[index-1].end;
 		if(i==tempArray.length-1)
 		{
-			real_data[index]={name:index,color:"#f4f4f4"};
+			real_data[index]={name:'scar'+scarIndex,color:"#f4f4f4"};
+			scarIndex+=1;
 			real_data[index].start=start;
 			real_data[index].end=size-1;
 			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
@@ -365,12 +377,12 @@ function initDrawChart(){
 			listeners:{
 				parseText:function(tip,name,value,text){
                     var str= "";
-					if(typeof(name)!="number"){						
+					if(/*typeof(name)!="number"*/!name.startWith('scar')){						
 						str=name.split(',')[0]+"<br\/>";
 					}
 					for(i=0;i<data.length;i++){
 						if(data[i].name==name){
-							if(typeof(data[i].name)=="number")
+							if(/*typeof(data[i].name)=="number"*/name.startWith('scar'))
 							{
 								str=str+"From:"+data[i].start+" To:"+data[i].end;								
 								return '';								
@@ -535,7 +547,7 @@ function createDivStrByData()
 	var str='';
 	var temp=0;
 	for(i=0;i<data.length;i++){
-		if(typeof(data[i].name)=="number")
+		if(/*typeof(data[i].name)=="number"*/data[i].name.startWith('scar') )
 		{
 			if(i===0)
 			{
