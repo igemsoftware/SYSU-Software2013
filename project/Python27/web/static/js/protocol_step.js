@@ -1,103 +1,5 @@
-function parse_data() {
-  var data = {
-    "DnaComponent": {
-      "description": "undefined",
-      "annotaions": [
-        {
-        "SequenceAnnotation": {
-          "bioStart": "29",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "144",
-              "uri": "http://partsregistry.org/Part:BBa_B0011",
-              "type": "Terminator",
-              "description": "LuxICDABEG (+/-)",
-              "name": "BBa_B0011"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "75"
-        }
-      },
-      {
-        "SequenceAnnotation": {
-          "bioStart": "101",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "4932",
-              "uri": "http://partsregistry.org/Part:BBa_E1010",
-              "type": "Coding",
-              "description": "**highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)",
-              "name": "BBa_E1010"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "782"
-        }
-      },
-      {
-        "SequenceAnnotation": {
-          "bioStart": "788",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "4955",
-              "uri": "http://partsregistry.org/Part:BBa_I14016",
-              "type": "operator",
-              "description": "P(Las) CIO",
-              "name": "BBa_I14016"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "956"
-        }
-      },
-      {
-        "SequenceAnnotation": {
-          "bioStart": "962",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "8042",
-              "uri": "http://partsregistry.org/Part:BBa_J61101",
-              "type": "RBS",
-              "description": "Ribosome Binding Site Family Member",
-              "name": "BBa_J61101"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "974"
-        }
-      },
-      {
-        "SequenceAnnotation": {
-          "bioStart": "980",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "7587",
-              "uri": "http://partsregistry.org/Part:pSB1A7",
-              "type": "stickyends",
-              "description": "Transcriptionally insulated high copy BioBrick plasmid",
-              "name": "pSB1A7"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "3411"
-        }
-      }
-      ],
-      "uri": "http://sbol.org/",
-      "DnaSequence": {
-        "nucleotides": "GAATTCG",
-        "uri": "http://sbols.org/"
-      },
-      "displayId": "undefined",
-      "name": "undefined"
-    }
-  };
+var data=null;
+function parse_data() {  
   var img = new Array();
   for (var i = 0; i < data.DnaComponent.annotaions.length; i++) {
     img[i] = new Image();
@@ -109,53 +11,19 @@ function parse_data() {
 
 var interval = 50;
 var horizon = 50;
-var img = parse_data();
+//var img = parse_data();
 function draw(cxt, horizon) {
 }
-function handlerWebSocket(){
-	if ("WebSocket" in window) {
-		ws = new WebSocket("ws://" + document.domain + ":5000/ws");
-		ws.onmessage = function (msg) {
-			var message = JSON.parse(msg.data);
-			if (message.request == "getLoginedUserName") {
-				$("#user-view-left #username").text(message.result);
-			} else if (message.request == "loginOut") { // get logout info
-				window.location = "..";
-			} else if (message.request == "getUserFileList") {
-				$("#filelist").html("");
-				for (var i = 0; i < message.result.length; i++) {
-					$("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
-				};
-				$("#filelist > a").live("click", function() {
-					ws.send(JSON.stringify({
-							"request": "loadUserFile",
-							"fileName": "default1",
-							"fileType": "data"
-						}));
-				});
-			} else if (message.request == "loadUserFile") {
-				loadUserFileWebsocket(message.result,true);
-			}else if (message.request == 'saveUserData') {
-				console.log(message.result);
-			}else if(message.request == 'getPlasmidSbol') {
-				raw_data=message.result;
-				console.log(message.result);
-				drawThePlasmid();
-				//chart.draw();
-			}
-			message=null;
-		}		
-	}
-	ws.onopen = function() {
-		ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-		if(sessionStorage.genecircuitSave!==undefined)
-		{
-			var obj = eval('(' + sessionStorage.genecircuitSave + ')'); 			
-			ws.send(JSON.stringify({'request': 'getPlasmidSbol','data':JSON.stringify(obj['genecircuit'])}));	
-		}				
+function handlerData(){
+	if(sessionStorage.genecircuitSave!==undefined)
+	{
+		data = eval('(' + sessionStorage.genecircuitSave + ')'); 
+		console.log(data['genecircuit']);
+		data=data['genecircuit'];
 	}
 }
 window.onload=function() {
+  handlerData();
   var c=document.getElementById("myCanvas");
   var cxt=c.getContext("2d");
   var tot = img.length;
