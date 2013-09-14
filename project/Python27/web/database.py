@@ -163,7 +163,7 @@ class SqliteDatabase:
 		if self.userId==-1:
 			self.logger.error('not login but want to save the user data')
 			return 'updateUserData failed'
-		sql_cmd='INSERT INTO user_save (user_id,data,fileName,fileType) VALUES (%d,"%s","%s","%s")'%(self.userId,data,fileName,fileType)
+		sql_cmd='INSERT INTO user_save (user_id,data,fileName,fileType,extractCode,shared) VALUES (%d,"%s","%s","%s",NULL,0)'%(self.userId,data,fileName,fileType)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
