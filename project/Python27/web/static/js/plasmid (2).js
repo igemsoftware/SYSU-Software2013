@@ -1,5 +1,5 @@
 ﻿//var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
-var colors={'Promoter':"#89c997",'Protein': "#ffbf43",'Activator': "#ffbf43", 'Repressor': "#ffbf43", 'RBS':'#2ec6b7','Terminator':"#f95f53"};
+var colors={'promoter':"#89c997",'protein': "#ffbf43",'activator': "#ffbf43", 'repressor': "#ffbf43", 'rbs':'#2ec6b7','terminator':"#f95f53"};
 var plasmidPainter = {
 	canvas: null,
 	canvasId: null,
@@ -323,6 +323,7 @@ function turnRawDatatoData(raw)
 
 		if(real_data[index].value!=0)
 		{
+      console.log(tempArray[i].type.toLowerCase());
 			real_data[index].color=colors[tempArray[i].type.toLowerCase()];
 			colorIndex+=1;
 		}else
@@ -551,7 +552,7 @@ function createDivStrByData()
 			}else
 			{
 				str=str+'<span style="color:black;">'+seq.substring(data[i].start,data[i].end)+"</span>";
-				console.log(str);
+				//console.log(str);
 			}
 		}else{			
 			str=str+'<span style="color:'+findColorInDataBySeq(seq.substring(data[i].start,data[i].end))+';">'+seq.substring(data[i].start,data[i].end)+"</span>";
