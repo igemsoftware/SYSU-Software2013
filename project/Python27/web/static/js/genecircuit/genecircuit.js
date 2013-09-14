@@ -380,10 +380,11 @@ var plasmid =  {
 			});	
       data.circuit = circuit;
 			sessionStorage.genecircuitSave=JSON.stringify({'genecircuit':data});
+			sessionStorage.gene_circuit = JSON.stringify(getDataCollection());
 			// console.log(data); 
 			// sendMessage 
-			// console.log(sessionStorage); 
-			window.location.href="plasmid";   
+			// console.log(sessionStorage);  
+			window.location.href="plasmid";    
 		});
 					
 	}
