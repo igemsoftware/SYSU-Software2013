@@ -105,7 +105,7 @@ class apis():
     return Simulate_Function.Simulate(isStochastic,\
         gene_circuit, corepind, self.db, time, dt)
   def getGroup(self, message):
-    return group.dump_group(json.loads(message["data"]), self.db)
+    return group.dump_group(message["data"], self.db)
   def getPlasmidSbol_deprecated(self, message):
     if message.has_key("rule"):
       rule = message["rule"]
@@ -131,7 +131,6 @@ class apis():
 
 def handle_websocket(ws, db):
   logging.info("start handling websocket...")
-  #db = SqliteDatabase()
   while True:
     message = ws.receive()
     if message is None:
