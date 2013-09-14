@@ -91,7 +91,7 @@ class apis():
       return user.loadUserData(self.db,message['fileName'],"default")
   def Simulate(self, message):
     isStochastic = message["isStochastic"]
-    gene_circuit = group.js_formatter(message["gene_circuit"])
+    gene_circuit = group.js_formatter(json.loads(message["gene_circuit"]))
     corepind = message["corepind"]
     time = 6000
     if message.has_key("time"):
