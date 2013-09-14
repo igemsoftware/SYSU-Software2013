@@ -69,8 +69,7 @@ window.onload=function() {
   var comp_name = get_name(data);
   preloadimages(img_path).done( function(img) {
     var c=document.getElementById("myCanvas");
-    interval = c.width / (1.8 * img.length);
-    horizon = c.width / (1.8 * img.length);
+    c.width = interval * img.length * 2;
     var cxt=c.getContext("2d");
     var tot = img.length;
     var k = 2;
@@ -80,30 +79,23 @@ window.onload=function() {
     for (var l = 0; l < Math.log(tot)/Math.LN2; l++) {
       var tot = img.length;
       var bgn = 30;
+      cxt.font="20px Helvetica";
+      cxt.textAlign="left";
+      cxt.fillText("Step " + step, bgn, cur_hor);
+      bgn += 100;
+
+
       for (var i = 0; i < tot; i++) {
         var height = img[i].height * interval / img[i].width;
         cxt.drawImage(img[i], bgn, cur_hor - height, interval, height);
         cxt.font="10px Helvetica";
-        cxt.fillText(comp_name[i], bgn, cur_hor + 10);
+        cxt.textAlign="center";
+        cxt.fillText(comp_name[i], bgn + interval / 2, cur_hor + 10);
         var j = 2;
         if ((i+1) % k != 0 && i < tot - 1)
           j = 1;
         bgn += j * interval;
       }
-      if (text_pos == -1)
-        text_pos = bgn;
-      cxt.font="20px Helvetica";
-      cxt.fillText("Step " + step, text_pos, cur_hor);
-      var pos = interval;
-      /*
-         for (var j = 0; j < tot - 1; j++) {
-         if ((j+1) % k != 0) {
-         cxt.fillStyle="#000000";
-         cxt.fillRect(pos, hor - 8, interval, 2);
-         }
-         pos += interval * 2;
-         }
-         */
       k *= 2;
       cur_hor += horizon;
       step++;
