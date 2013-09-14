@@ -47,9 +47,6 @@ class apis():
     return xmlParse.get_allfiledirs(message['dir'])
   def getBiobrick(self,message={'path':'biobrick/Terminators/BBa_B0010.xml'}):
     return xmlParse.xmlBiobrick(message['path']).getJsonString()
-  def getSimulationData(self,message):
-    #content = make_graph.parse_data()
-    return '1234'
   def saveUserData(self,message):
     message['data']=message['data'].replace('"','\'')
     if message.has_key("fileName") and message.has_key("fileType"):
