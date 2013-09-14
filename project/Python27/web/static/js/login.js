@@ -29,8 +29,8 @@ $(document).ready(function() {
 			} else if (message.request === "registAUser") {
 				console.log(message.result);
 			}else if(message.request==="getRememberMeTicket"){
-				sessionStorage.userName=$("#username").attr('value');
-				sessionStorage.rememberTicket=message.result;
+				localStorage.userName=$("#username").attr('value');
+				localStorage.rememberTicket=message.result;
 				window.location = location.href + "index";
 			}else if(message.request==="userLoginByTicket")
 			{
@@ -39,8 +39,8 @@ $(document).ready(function() {
 					sessionStorage.rememberTicket=message.result;
 				}else{
 					alert('Login by remember me ticket error!');
-					sessionStorage.removeItem("rememberTicket"); 
-					sessionStorage.removeItem("userName"); 
+					localStorage.removeItem("rememberTicket"); 
+					localStorage.removeItem("userName"); 
 				}
 			}
 		};
