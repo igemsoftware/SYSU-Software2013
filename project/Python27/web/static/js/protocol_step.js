@@ -1,63 +1,98 @@
-var data=null;
-function parse_data() {  
-  var img = new Array();
-  for (var i = 0; i < data.DnaComponent.annotaions.length; i++) {
-    img[i] = new Image();
-    img[i].src =
-      "../static/img/component/"+data.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.type+".PNG" 
-  }
-  return img;
+function preloadimages(arr){
+    var newimages=[], loadedimages=0;
+    var postaction = function(){}
+    var arr=(typeof arr!="object")? [arr] : arr
+    function imageloadpost() {
+        loadedimages++
+        if (loadedimages==arr.length){
+            postaction(newimages)
+        }
+    }
+    for (var i=0; i<arr.length; i++){
+        newimages[i]=new Image()
+        newimages[i].src=arr[i]
+        newimages[i].onload=function(){
+            imageloadpost()
+        }
+        newimages[i].onerror=function(){
+            imageloadpost()
+        }
+    }
+    return {
+        done:function(f){
+            postaction=f || postaction
+        }
+    }
 }
 
-var interval = 50;
-var horizon = 50;
-//var img = parse_data();
+function parse_data(data) {
+  var img_path = [];
+  for (var i = 0; i < data.circuit.length; i++)
+  for (var j = 0; j < data.circuit[i].sbol.length; j++) {
+    var img_name = 'Promoter.PNG';
+    var pro_type = data.circuit[i].sbol[j].type;
+    if      (pro_type == 'Promoter') img_name = 'Promoter.PNG';
+    else if (pro_type == 'RBS') img_name = 'rbs.PNG';
+    else if (pro_type == 'Protein') img_name = 'Coding.PNG';
+    else if (pro_type == 'Repressor') img_name = 'Coding.PNG';
+    else if (pro_type == 'Activator') img_name = 'Coding.PNG';
+    else if (pro_type == 'Terminator') img_name = 'Terminator.PNG';
+    img_path.push("../static/img/component/" + img_name);
+  }
+  return img_path;
+}
+
+var interval = 70;
+var horizon = 70;
 function draw(cxt, horizon) {
 }
 function handlerData(){
 	if(sessionStorage.genecircuitSave!==undefined)
 	{
 		data = eval('(' + sessionStorage.genecircuitSave + ')'); 
-		console.log(data['genecircuit']);
-		data=data['genecircuit'];
+		return data['genecircuit'];
 	}
 }
 window.onload=function() {
-  handlerData();
-  var c=document.getElementById("myCanvas");
-  var cxt=c.getContext("2d");
-  var tot = img.length;
-  var k = 2;
-  var hor = 50;
-  var step = 1;
-  var text_pos = -1;
-  for (var l = 0; l < Math.log(tot)/Math.LN2; l++) {
+  var data = handlerData();
+  console.log(data);
+  var img_path = parse_data(data);
+  preloadimages(img_path).done( function(img) {
+    var c=document.getElementById("myCanvas");
+    var cxt=c.getContext("2d");
     var tot = img.length;
-    var bgn = 30;
-    for (var i = 0; i < tot; i++) {
-      var height = img[i].height * interval /img[i].width;
-      cxt.drawImage(img[i], bgn, hor - height, interval, height);
-      var j = 2;
-      if ((i+1)%k != 0 && i < tot - 1)
-        j = 1;
-      bgn += j * interval;
+    var k = 2;
+    var hor = 50;
+    var step = 1;
+    var text_pos = -1;
+    for (var l = 0; l < Math.log(tot)/Math.LN2; l++) {
+      var tot = img.length;
+      var bgn = 30;
+      for (var i = 0; i < tot; i++) {
+        var height = img[i].height * interval / img[i].width;
+        cxt.drawImage(img[i], bgn, hor - height, interval, height);
+        var j = 2;
+        if ((i+1) % k != 0 && i < tot - 1)
+          j = 1;
+        bgn += j * interval;
+      }
+      if (text_pos == -1)
+        text_pos = bgn;
+      cxt.font="20px Arial";
+      cxt.fillText("Step " + step, text_pos, hor);
+      var pos = interval;
+      /*
+         for (var j = 0; j < tot - 1; j++) {
+         if ((j+1) % k != 0) {
+         cxt.fillStyle="#000000";
+         cxt.fillRect(pos, hor - 8, interval, 2);
+         }
+         pos += interval * 2;
+         }
+         */
+      k *= 2;
+      hor += horizon;
+      step++;
     }
-    if (text_pos == -1)
-      text_pos = bgn;
-    cxt.font="20px Arial";
-    cxt.fillText("Step " + step, text_pos, hor);
-    var pos = interval;
-    /*
-       for (var j = 0; j < tot - 1; j++) {
-       if ((j+1) % k != 0) {
-       cxt.fillStyle="#000000";
-       cxt.fillRect(pos, hor - 8, interval, 2);
-       }
-       pos += interval * 2;
-       }
-       */
-    k *= 2;
-    hor += horizon;
-    step++;
-  }
+  });
 }
