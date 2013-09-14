@@ -413,7 +413,7 @@ class SqliteDatabase:
 		self.__cursor.execute('SELECT user_list.rememberTime FROM user_list WHERE name="%s"' % (username))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
-		return decodejson
+		return decodejson[0]['rememberTime']
 				
 	def getActivatorNearValue(self, idealValue, activator_list):
 		self.__cursor.execute('select * from activator order by abs(K1-%f)\

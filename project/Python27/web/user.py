@@ -136,8 +136,18 @@ def updateUserInfo(database, info):
 		return database.updateUserInfo(info, database.userId)
 	else:
 		return "NULL"
-def getRememberMeTicket(database,username):
-	str=getLoginedUserName(sql)+username
+		
+def userLoginByTicket(database,username,ticket):
+	database.logger.debug('user login now: name:%s,ticket:%s'%(username,ticket))
+	if getRememberMeTicket(database,username)==ticket:
+		database.userId=database.getUserIdByName(username)
+		userSetRememberMe(database)
+		return getRememberMeTicket(database,username)
+	else:
+		return 'Ticket error!'
+		
+def getRememberMeTicket(database,username):	
+	str=database.getUserRememberMeTime(username)+username
 	return encrypt.getPasswordSHA1(str)
 
 if __name__=="__main__":

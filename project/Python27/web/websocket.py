@@ -20,6 +20,11 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+  def getRememberMeTicket(self,message):
+    user.userSetRememberMe(self.db)
+    return user.getRememberMeTicket(self.db,user.getLoginedUserName(self.db))
+  def userLoginByTicket(self,message):
+	return user.userLoginByTicket(self.db,message['username'],message['ticket'])
   def indexSaveToGeneCircuit(self,message):
     self.db.indexSave=message['data']
     return "index save success"

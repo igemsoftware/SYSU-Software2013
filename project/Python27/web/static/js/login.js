@@ -21,12 +21,27 @@ $(document).ready(function() {
 			}					
 			if (message.request === "userLogin"){
 				if(message.result === "Password correct!") {
+					ws.send(JSON.stringify({'request': 'getRememberMeTicket'}));
 					window.location = location.href + "index";
 				} else {
 					alert(message.result);
 				}
 			} else if (message.request === "registAUser") {
 				console.log(message.result);
+			}else if(message.request==="getRememberMeTicket"){
+				sessionStorage.userName=$("#username").attr('value');
+				sessionStorage.rememberTicket=message.result;
+				window.location = location.href + "index";
+			}else if(message.request==="userLoginByTicket")
+			{
+				if(message.result!='Ticket error!')
+				{
+					sessionStorage.rememberTicket=message.result;
+				}else{
+					alert('Login by remember me ticket error!');
+					sessionStorage.removeItem("rememberTicket"); 
+					sessionStorage.removeItem("userName"); 
+				}
 			}
 		};
 	};
@@ -47,6 +62,7 @@ $(document).ready(function() {
 			enstr=sendstr;
 			var res = rsa.encrypt(sendstr);
 			ws.send(JSON.stringify({'request': 'userLogin','data':res}));
+			//ws.send(JSON.stringify({'request': 'userLoginByTicket','username':sessionStorage.userName,'ticket':sessionStorage.rememberTicket}));
 		}
 	});
 
