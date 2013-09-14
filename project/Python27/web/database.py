@@ -316,7 +316,7 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_activator(self, activator = None):
-		self.__cursor.execute('SELECT * FROM activator ORDER BY random() LIMIT 1')
+		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -324,11 +324,29 @@ class SqliteDatabase:
 		else:
 			return None
 
-	def find_inducer_with_repressor(self, repressor, induce_type):
-		return "BBa_P0140"
+	def find_inducer_with_repressor(self, repressor, corep_ind_type):
+		if corep_ind_type == "Corepressor":
+			self.__cursor.execute('SELECT * FROM Corepressor ORDER BY random() LIMIT 1')
+		elif corep_ind_type == "Inducer":
+			self.__cursor.execute('SELECT * FROM Inducer ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
 
-	def find_inducer_with_activator(self, activator, induce_type):
-		return "BBa_P0140"
+	def find_inducer_with_activator(self, activator, corep_ind_type):
+		if corep_ind_type == "Corepressor":
+			self.__cursor.execute('SELECT * FROM Corepressor ORDER BY random() LIMIT 1')
+		elif corep_ind_type == "Inducer":
+			self.__cursor.execute('SELECT * FROM Inducer ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
 
 	def find_repressor_with_promoter(self, promoter):
 		self.__cursor.execute('SELECT * FROM repressor ORDER BY random() LIMIT 1')
