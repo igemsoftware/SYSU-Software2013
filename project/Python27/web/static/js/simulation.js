@@ -70,7 +70,7 @@ $(document).ready(function () {
   // Bind send button to websocket
   ws.onopen = function() {
 	  ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-    isStochastic = true;
+    isStochastic = false;
     //gene_circuit = sessionStorage.gene_circuit;
     gene_circuit = raw;
     corepind = {};
@@ -189,7 +189,7 @@ function run(data, width1, height1, time, dt){
       smooth: true,
       listeners:{
         click:function(r,e,m){
-          console.log(e.x-r.x);
+          console.log((e.x-r.x)/(r.options.width) * 6000);
         }
       }
     },

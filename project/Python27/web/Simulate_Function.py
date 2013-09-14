@@ -108,7 +108,7 @@ if __name__ == "__main__":
 
     import database
     db = database.SqliteDatabase()
-    #corepind = {5: {"concen": 0.1, "time": 20},
-    #            7: {"concen": 0.2, "time": 60}}
+    #corepind = {5: {"time": 20},
+    #            7: {"time": 60}}
     corepind = {}
     print Simulate(False, gene_circuit, corepind, db, 6000, 100)
