@@ -107,10 +107,6 @@ class apis():
   def getGroup(self, message):
     return group.dump_group(message["data"], self.db)
   def getPlasmidSbol_deprecated(self, message):
-    if message.has_key("rule"):
-      rule = message["rule"]
-    else:
-      rule = "RFC10"
     sbol = component_union.get_sbol(message["component"], rule)
     ret = sequence_serializer.format_to_json(sbol)
     return ret
@@ -123,7 +119,11 @@ class apis():
     self.db.rememberUser(message['userName'],message['password'])
     return user.resetUserPassword(self.db,message['userName'],message['answer'],message['password'])
   def getPlasmidSbol(self, message):
-    return plasmid.plasmid_sbol(self.db, message['data'], message['rule'])
+    if message.has_key("rule"):
+      rule = message["rule"]
+    else:
+      rule = "RFC10"
+    return plasmid.plasmid_sbol(self.db, json.loads(message['data']), rule)
   def changeRBS(self,message):
     return {"sbol":"[[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': u'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}]]","PoPs":6,"RiPS":5,"copy":7,"repress_rate":0.15,"induce_rate":0.66}
   def loadSBOL(self,message):    

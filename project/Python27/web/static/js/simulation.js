@@ -70,7 +70,7 @@ $(document).ready(function () {
   // Bind send button to websocket
   ws.onopen = function() {
 	  ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-    isStochastic = false;
+    isStochastic = true;
     //gene_circuit = sessionStorage.gene_circuit;
     gene_circuit = raw;
     corepind = {};

@@ -131,10 +131,13 @@ def plasmid_sbol(db, groups, rule = "RFC10"):
     dna_sequence = component_union.connect(rule, content)
     sbol = component_union.formatter_v11(content, dna_sequence)
     sbol2 = sequence_serializer.format_to_json(sbol)
+    idx = 0
     for item in sbol2["DnaComponent"]["annotations"]:
       tmp = item["SequenceAnnotation"]
+      tmp["subComponent"]["DnaComponent"]["type"] = data["sbol"][idx]["type"]
       tmp["bioStart"] = str(int(tmp["bioStart"]) + offset)
       tmp["bioEnd"] = str(int(tmp["bioEnd"]) + offset)
+      idx += 1
     offset += len(sbol2["DnaComponent"]["DnaSequence"]["nucleotides"])
     components += sbol2["DnaComponent"]["annotations"]
     if data["state"] == "trans":
