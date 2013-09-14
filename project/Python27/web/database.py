@@ -391,6 +391,12 @@ class SqliteDatabase:
 				repressor_list.append(item["Number"])
 				return item
 
+	def getUserRememberMeTime(self,username):
+		self.__cursor.execute('SELECT user_list.rememberTime FROM user_list WHERE name="%s"' % (username))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+				
 	def getActivatorNearValue(self, idealValue, activator_list):
 		self.__cursor.execute('select * from activator order by abs(K1-%f)\
 				limit 0,%d' % (idealValue, len(activator_list)+1))

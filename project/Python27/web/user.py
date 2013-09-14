@@ -9,6 +9,12 @@ Copyright (C) 2013-2014 sysu-software. All Rights Reserved.
 from database import SqliteDatabase
 import jsonUtil
 import encrypt
+def userSetRememberMe(database):
+	if(isUserLogined(database)):
+		database.updateUserLoginRememberTime()
+		return 'rememberSuccess'
+	else:
+		return 'Not login but want to remember'
 def userLogin(database,name,password):
     database.logger.debug('user login now: name:%s,password:%s'%(name,password))
     result=database.isUserNameAndPasswordCorrect(name,password)
@@ -130,14 +136,19 @@ def updateUserInfo(database, info):
 		return database.updateUserInfo(info, database.userId)
 	else:
 		return "NULL"
-
+def getRememberMeTicket(database,username):
+	str=getLoginedUserName(sql)+username
+	return encrypt.getPasswordSHA1(str)
 
 if __name__=="__main__":
     sql=SqliteDatabase()
-    print userLogin(sql,'kitty','1212')
+    print userLogin(sql,'kitty',encrypt.getPasswordSHA1('1212'))
+    print userSetRememberMe(sql)
     print getUserQuestion(sql,'kitty')
     #print isUserAnswerRight(sql,'kitty','123144')
     print resetUserPassword(sql,'kitty','kitty','1212')
+    print sql.getUserRememberMeTime(getLoginedUserName(sql))
+    print getRememberMeTicket(sql,getLoginedUserName(sql))
     #saveUserData(sql,'sdfsdfdaf}','default1',"default2")
     #print getUserFileList(sql)
     #print loadUserData(sql,'filetse','data1')
