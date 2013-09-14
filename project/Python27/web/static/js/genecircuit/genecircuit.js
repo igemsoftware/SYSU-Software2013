@@ -359,23 +359,31 @@ var plasmid =  {
 	},
 	viewPlasmid: function(aTextureId) {
 		$("#" + aTextureId + " div .label .view-plasmid").click(function(){
+      var data = {};
 			var circuit = [];
 			$("#" + aTextureId + " .sbol").each(function(){
 				circuit.push({"sbol":[],"state":""});
 				circuit[circuit.length-1].state = $(this).data("order");
 				curSbolId = $(this).attr('id');
 				curSbol = circuit[circuit.length-1].sbol;
+
+				$('.proteins').each(function(){
+					if($(this).data('grp_id') == parseInt(curSbolId.split('-')[1])) {
+						data.copy = $(this).find('.copy').slider("value");
+					}
+				});
 				$("#" + curSbolId + " .component").each(function(){
 					var type = $(this).data("type");
 					var name = $(this).find("span").text();
 					curSbol.push({'type':type, 'name':name});
 				})				
 			});	
-      var data;
       data.circuit = circuit;
 			sessionStorage.genecircuitSave=JSON.stringify({'genecircuit':data});
+			// console.log(data); 
 			// sendMessage 
-			window.location.href="plasmid"; 
+			// console.log(sessionStorage); 
+			window.location.href="plasmid";   
 		});
 					
 	}
