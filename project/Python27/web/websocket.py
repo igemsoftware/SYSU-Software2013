@@ -20,14 +20,17 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+  def getRememberMeTicket(self,message):
+    user.userSetRememberMe(self.db)
+    return user.getRememberMeTicket(self.db,user.getLoginedUserName(self.db))
+  def userLoginByTicket(self,message):
+	return user.userLoginByTicket(self.db,message['username'],message['ticket'])
   def indexSaveToGeneCircuit(self,message):
     self.db.indexSave=message['data']
     return "index save success"
   def getBiobrickPath(self,message):
     return xmlParse.findFile(rootdir="web\\biobrick\\",key=message['data'])
   def getIndexSave(self,message):
-    print json.loads(self.db.indexSave)
-    print group.dump_group(json.loads(self.db.indexSave),self.db)
     return group.dump_group(json.loads(self.db.indexSave),self.db)
   def generateRandomsessionKey(self,message):   
     if self.db.encrypt==None:     
@@ -90,7 +93,7 @@ class apis():
       return user.loadUserData(self.db,message['fileName'],"default")
   def getGroup(self, message):
     return group.dump_group(json.loads(message["data"]), self.db)
-  def getPlasmidSbol(self, message):
+  def getPlasmidSbol_deprecated(self, message):
     if message.has_key("rule"):
       rule = message["rule"]
     else:
@@ -99,7 +102,7 @@ class apis():
     ret = sequence_serializer.format_to_json(sbol)
     return ret
   def updateGeneCircuit(self, message):
-    ret = group.update_controller(self.db, message['data'])
+    ret = group.update_controller(self.db, message["data"])
     return ret
   def getUserQuestion(self,message):
     return user.getUserQuestion(self.db,message['userName']) 
@@ -107,8 +110,7 @@ class apis():
     self.db.rememberUser(message['userName'],message['password'])
     return user.resetUserPassword(self.db,message['userName'],message['answer'],message['password'])
   def getPlasmidSbol(self, message):
-    #groups =     
-    return plasmid.plasmid_sbol(json.loads(message['data']))
+    return plasmid.plasmid_sbol(self.db, message['data'], message['rule'])
   def changeRBS(self,message):
     return {"sbol":"[[{'type': 'Regulatory', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0060'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': u'BBa_K518003'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0160'}, {'type': 'Terminator', 'name': 'BBa_B0013'}], [{'type': 'Regulatory', 'name': 'BBa_J64000'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Coding', 'name': 'BBa_C0178'}, {'type': 'Terminator', 'name': 'BBa_B0013'}]]","PoPs":6,"RiPS":5,"copy":7,"repress_rate":0.15,"induce_rate":0.66}
   def loadSBOL(self,message):    
@@ -126,7 +128,11 @@ def handle_websocket(ws, db):
       message = json.loads(message)
       print message
       api = apis(db)
-      result = getattr(api, message['request'])(message)
+      try:
+        result = getattr(api, message['request'])(message)
+      except Exception as e:
+        print e
+        result = "ERROR!"
       logging.info("message is %s" % message)
       ret = json.dumps({'request':message['request'],'result': result})
       print ret

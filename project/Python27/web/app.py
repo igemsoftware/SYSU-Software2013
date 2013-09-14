@@ -27,6 +27,13 @@ def index():
 		return render_template('index.html')
 	else:
 		return redirect(url_for('login'))
+		
+@app.route("/createnewpart")
+def createnewpart():
+	if user.isUserLogined(sql):
+		return render_template('createNewPart.html')
+	else:
+		return redirect(url_for('login'))	
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
@@ -80,6 +87,6 @@ def webSocket():
   return
 	
 if __name__ == "__main__":
-    http_server = WSGIServer(('',5000), app, handler_class=WebSocketHandler)
+    http_server = WSGIServer(('0.0.0.0',5000), app, handler_class=WebSocketHandler)
     http_server.serve_forever()
     #app.run(debug=True)

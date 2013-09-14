@@ -23,6 +23,19 @@ class SqliteDatabase:
 	logger=None
 	encrypt=None
 	indexSave=None
+	def getCx(self):
+		return self.__cx
+	def getCuror(self):
+		return self.__cursor
+	def updateUserLoginRememberTime(self):
+		if self.userId==-1:
+			self.logger.error('not login but want to remember the user login time')
+			return 'updateUserLoginRememberTime failed'
+		sql_cmd='UPDATE user_list SET rememberTime=datetime("now") WHERE id=%d'%(self.userId)
+		self.__cursor.execute(sql_cmd)
+		self.logger.debug('updateUserLoginRememberTime: %s'%sql_cmd)
+		self.__cx.commit()		
+		return 'updateUserPassword succeed'
 	def isDatabaseExist(self,database):
 		if os.path.exists(database):  
 			return True
@@ -150,7 +163,7 @@ class SqliteDatabase:
 		if self.userId==-1:
 			self.logger.error('not login but want to save the user data')
 			return 'updateUserData failed'
-		sql_cmd='INSERT INTO user_save (user_id,data,fileName,fileType) VALUES (%d,"%s","%s","%s")'%(self.userId,data,fileName,fileType)
+		sql_cmd='INSERT INTO user_save (user_id,data,fileName,fileType,extractCode,shared) VALUES (%d,"%s","%s","%s",NULL,0)'%(self.userId,data,fileName,fileType)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
@@ -170,7 +183,7 @@ class SqliteDatabase:
 
 	def insertAUser(self,name,password,email,group_id,gender,question,answer):
 		nextId=self.getMaxUserId()+1
-		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d,"%s","%s");'%(nextId,name,email,password,group_id,gender,question,answer)
+		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d,"%s","%s",NULL);'%(nextId,name,email,password,group_id,gender,question,answer)
 		self.logger.debug('insert a user: %s ' %excuteString)
 		self.__cursor.execute(excuteString)
 		self.__cx.commit()
@@ -303,7 +316,7 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_activator(self, activator = None):
-		self.__cursor.execute('SELECT * FROM activator ORDER BY random() LIMIT 1')
+		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -311,14 +324,41 @@ class SqliteDatabase:
 		else:
 			return None
 
-	def find_inducer_with_repressor(self, repressor, induce_type):
-		return "BBa_P0140"
+	def find_inducer_with_repressor(self, repressor, corep_ind_type):
+		if corep_ind_type == "Corepressor":
+			self.__cursor.execute('SELECT * FROM Corepressor ORDER BY random() LIMIT 1')
+		elif corep_ind_type == "Inducer":
+			self.__cursor.execute('SELECT * FROM Inducer ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
 
-	def find_inducer_with_activator(self, activator, induce_type):
-		return "BBa_P0140"
+	def find_inducer_with_activator(self, activator, corep_ind_type):
+		if corep_ind_type == "Corepressor":
+			self.__cursor.execute('SELECT * FROM Corepressor ORDER BY random() LIMIT 1')
+		elif corep_ind_type == "Inducer":
+			self.__cursor.execute('SELECT * FROM Inducer ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
 
 	def find_repressor_with_promoter(self, promoter):
 		self.__cursor.execute('SELECT * FROM repressor ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
+	def find_activator_with_promoter(self, promoter):
+		self.__cursor.execute('SELECT * FROM activator ORDER BY random() LIMIT 1')
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -369,6 +409,12 @@ class SqliteDatabase:
 				repressor_list.append(item["Number"])
 				return item
 
+	def getUserRememberMeTime(self,username):
+		self.__cursor.execute('SELECT user_list.rememberTime FROM user_list WHERE name="%s"' % (username))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]['rememberTime']
+				
 	def getActivatorNearValue(self, idealValue, activator_list):
 		self.__cursor.execute('select * from activator order by abs(K1-%f)\
 				limit 0,%d' % (idealValue, len(activator_list)+1))
@@ -399,7 +445,6 @@ class SqliteDatabase:
 		self.logger.debug(recs)
 		whereCommand=jsonUtil.changeADictToStringThatCanUseBySql(recs)		
 		sql_cmd="select * from %s where %s ;"%(tableName,whereCommand)
-		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug(sql_cmd)
 		res = self.__cursor.fetchall()		
@@ -416,9 +461,10 @@ class SqliteDatabase:
 		
 if __name__=="__main__":
 	sql=SqliteDatabase()
-	print sql.getUserGroup('Bobby')
-	#sql.addColumnToTable('part_relation','testw','integer',' 0')
-	
+	print sql.getUserGroup('Bobby')	
+	sql.updateUserLoginRememberTime()
+	sql.insertAUser('name','password','email',1,1,'question','answer')
+	#sql.addColumnToTable('part_relation','testw','integer',' 0')	
 	#print sql.isRecordExist('part_list')
 	#sql.selectAllOfTable('part_relation')
 	#sql.printAllTableNames()

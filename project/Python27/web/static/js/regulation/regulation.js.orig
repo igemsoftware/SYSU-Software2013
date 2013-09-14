@@ -257,8 +257,13 @@ $().ready(function() {
 						for (var i=0;i<message.result.files.length;i++)
 						{
 							message.result.files[i]=message.result.files[i].replace(regS,"\\");
+<<<<<<< HEAD
+							console.log(message.result.files[i]);
+						}
+=======
 							// console.log(message.result.files[i]);
 						}						 
+>>>>>>> 19b9417f5965baf508a191008a0ef07eb3d6887e
 						message.result.path=message.result.path.replace(regS,"\\");
                         proteinList.parseJson(message.result.files);
                     }
@@ -358,7 +363,6 @@ $().ready(function() {
     // Cleanly close websocket when unload window
     window.onbeforeunload = function() {
         var jsonData = JSON.stringify(canvasToJSON());
-        console.log(jsonData);
         ws.send(JSON.stringify({
             'request': 'indexSaveToGeneCircuit',
             'data': jsonData

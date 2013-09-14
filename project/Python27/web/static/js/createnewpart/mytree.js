@@ -102,7 +102,7 @@ Tree.prototype = {
 					} else {	// else load subtree and add it to tree						
 						ws.send(JSON.stringify({
 							'request': 'getDirList',
-					      	'dir': node.path.replace(/\\/g,"/")
+					      	'dir': node.path
 						}));
 					}
 				} else {	// if type is "file"					

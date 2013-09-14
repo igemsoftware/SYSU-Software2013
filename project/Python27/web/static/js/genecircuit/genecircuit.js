@@ -42,6 +42,7 @@ var protein = {
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
+		$("#" + aTextureId).data("display", aData['display']);
 		$("#" + aTextureId).data("pos", aData['pos']);
 
 		$("#" + aTextureId + " .before-regulated").dashboard({
@@ -165,7 +166,7 @@ var protein = {
 		$("#" + aTextureId + " .pops").slider("value", aData.PoPS);
 		$("#" + aTextureId + " .rips").slider("value", aData.RiPS);
 		$("#" + aTextureId + " .copy").slider("value", aData.copy);
-		if(aData.K1 == "NaN") {
+		if(aData.K1 == null) {
 			$("#" + aTextureId + " .k1").addClass("unuse");
 		} else {
 			$("#" + aTextureId + " .k1").removeClass("unuse");
@@ -190,11 +191,11 @@ var group = {
 		$("#" + aTextureId).append("<ul class=\"sbol-components\"></ul><div class=\"move-left cmd-move\">&lt</div><div class=\"move-right cmd-move\">&gt</div><button class=\"sbol-switch switch-on\">trans</button>");
 		for(var i = 0; i < aData.sbol.length; i++) {
 			var type = 'Promoter.PNG';
-			if(aData.sbol[i].type == 'Regulatory') type = 'Promoter.PNG';
-			else if(aData.sbol[i].type == 'Signalling') type = 'Promoter.PNG';
-			else if(aData.sbol[i].type == 'Intermediate') type = 'Promoter.PNG';
+			if(aData.sbol[i].type == 'Promoter') type = 'Promoter.PNG';
 			else if(aData.sbol[i].type == 'RBS') type = 'rbs.PNG';
-			else if(aData.sbol[i].type == 'Coding') type = 'Coding.PNG';
+			else if(aData.sbol[i].type == 'Protein') type = 'Coding.PNG';
+			else if(aData.sbol[i].type == 'Repressor') type = 'Coding.PNG';
+			else if(aData.sbol[i].type == 'Activator') type = 'Coding.PNG';
 			else if(aData.sbol[i].type == 'Terminator') type = 'Terminator.PNG';
 			$("#" + aTextureId + " .sbol-components").append("<li id='" + aTextureId + "-" + i.toString() + "' class='component'><div><img src=\"../static/img/component/Promoter.PNG\"/></div><span>BBa_C0060</span></li>");
 			$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('img').attr('src', "../static/img/component/" + type);
@@ -358,18 +359,20 @@ var plasmid =  {
 	},
 	viewPlasmid: function(aTextureId) {
 		$("#" + aTextureId + " div .label .view-plasmid").click(function(){
-			var data = [];
+			var circuit = [];
 			$("#" + aTextureId + " .sbol").each(function(){
-				data.push({"sbol":[],"state":""});
-				data[data.length-1].state = $(this).data("order");
+				circuit.push({"sbol":[],"state":""});
+				circuit[circuit.length-1].state = $(this).data("order");
 				curSbolId = $(this).attr('id');
-				curSbol = data[data.length-1].sbol;
+				curSbol = circuit[circuit.length-1].sbol;
 				$("#" + curSbolId + " .component").each(function(){
 					var type = $(this).data("type");
 					var name = $(this).find("span").text();
 					curSbol.push({'type':type, 'name':name});
 				})				
 			});	
+      var data;
+      data.circuit = circuit;
 			sessionStorage.genecircuitSave=JSON.stringify({'genecircuit':data});
 			// sendMessage 
 			window.location.href="plasmid"; 
@@ -470,13 +473,12 @@ var detail = {
 	type: "",
 	pro_id: 0,
 	new_value: 0,
-	repressor_list: [],
 }
 
 /* command */
 var command = {
 	tempCmd: {
-		type: '',				 
+		type: '',
 		from: '',
 		to: '',
 		newAt: '',
@@ -485,7 +487,7 @@ var command = {
 	},
 	cmd: {},
 	cmdConfirm: function() {
-		this.cmd = this.tempCmd;						
+		this.cmd = this.tempCmd;
 		this.cmd = $.extend({}, this.tempCmd, true);
 	}
 }
@@ -567,13 +569,17 @@ var getDataCollection = function() {
 
 		dataCollection.proteins[pid_i] = {};
 		dataCollection.proteins[pid_i].grp_id = p.data('grp_id');
+		dataCollection.proteins[pid_i].display = p.data('display');
 		dataCollection.proteins[pid_i].pos = p.data('pos');
 		dataCollection.proteins[pid_i].name = p.find(".module-title em").text();
 		dataCollection.proteins[pid_i].PoPS = p.find(".pops").slider("value");
 		dataCollection.proteins[pid_i].RiPS = p.find(".rips").slider("value");
 		console.log(p.find(".rips").slider("value"));
 		dataCollection.proteins[pid_i].copy = p.find(".copy").slider("value");
-		dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
+    if (p.find(".k1").hasClass("unuse"))
+		  dataCollection.proteins[pid_i].K1 = null;
+    else
+      dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
 		dataCollection.proteins[pid_i].concen = p.find(".concen").slider("value");
 		dataCollection.proteins[pid_i].before_regulated = parseInt(p.find(".before-regulated .dashboard-value").text());
 		dataCollection.proteins[pid_i].repress_rate = parseInt(p.find(".repress-rate .dashboard-value").text());

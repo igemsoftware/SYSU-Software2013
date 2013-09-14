@@ -1,4 +1,5 @@
-﻿var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色
+﻿//var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
+var colors={'regulatory':"#89c997",'coding': "#ffbf43",'promoter':"#89c997",'rbs':'#2ec6b7','terminator':"#f95f53"};
 var plasmidPainter = {
 	canvas: null,
 	canvasId: null,
@@ -236,7 +237,7 @@ var size=0;//整个序列的长度
 var raw_data={
     "DnaComponent": {
         "description": "undefined",
-        "annotaions": [{"SequenceAnnotation": {"bioStart": "49",
+        "annotations": [{"SequenceAnnotation": {"bioStart": "49",
                     "subComponent": {
                         "DnaComponent": {
                             "displayId": "4932",
@@ -287,43 +288,56 @@ function sortNumber(a, b)
 //把原始数据json转化为可以生成环形图的数组的函数
 //The function that can turn raw json data to array that can generate donut
 function turnRawDatatoData(raw)
-{                               
+{                   
+	seq=raw.DnaComponent.DnaSequence.nucleotides;            
 	var tempArray=[];
-	size=raw.DnaComponent.DnaSequence.nucleotides.length;
-	for(i=0;i<raw.DnaComponent.annotaions.length;i++)
+	size=raw.DnaComponent.DnaSequence.nucleotides.length;	
+	for(i=0;i<raw.DnaComponent.annotations.length;i++)
 	{
 		tempArray[i]={};
-		tempArray[i].start=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioStart,10);
-		tempArray[i].name=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.name;
-		tempArray[i].end=parseInt(raw.DnaComponent.annotaions[i].SequenceAnnotation.bioEnd,10);
+		tempArray[i].start=parseInt(raw.DnaComponent.annotations[i].SequenceAnnotation.bioStart,10);
+		tempArray[i].name=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.name+','+i;
+		tempArray[i].end=parseInt(raw.DnaComponent.annotations[i].SequenceAnnotation.bioEnd,10);
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
-		tempArray[i].desp=raw.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.description;
+		tempArray[i].desp=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.description;
+		tempArray[i].type=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.type;
+		/*if(tempArray[i].type=='Coding')
+		{
+			tempArray[i].value=tempArray[i].value*0.01;
+		}*/
 	}		
 	tempArray=tempArray.sort(sortNumber);	
 	var real_data=[];
 	var start=0;
 	var index=0;
+	var colorIndex=0;
 	for(i=0;i<tempArray.length;i++)
 	{
 		real_data[index]={name:index,color:"#f4f4f4"};
 		real_data[index].start=start;
-		real_data[index].end=tempArray[i].start-1;		
+		real_data[index].end=tempArray[i].start;		
 		real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
 		real_data[index].desp=tempArray[i].desp;
-		if(real_data[index].value===0)
-			real_data[index].value=1;
 		index=index+1;
 		real_data[index]=tempArray[i];
-		real_data[index].color=colors[i%2];
+
+		if(real_data[index].value!=0)
+		{
+			real_data[index].color=colors[tempArray[i].type.toLowerCase()];
+			colorIndex+=1;
+		}else
+		{
+			real_data[index].color="#f4f4f4";
+		}
 		index=index+1;
-		start=tempArray[i].end+1;
+		start=real_data[index-1].end;
 		if(i==tempArray.length-1)
 		{
 			real_data[index]={name:index,color:"#f4f4f4"};
 			real_data[index].start=start;
 			real_data[index].end=size-1;
 			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
-		}
+		}		
 	}		
 	tempArray=null;
 	return real_data;	
@@ -331,7 +345,8 @@ function turnRawDatatoData(raw)
 var title=null;//{text : '2012年第3季度中国第三方手机浏览器市场份额',color : '#3e576f'}
 function initDrawChart(){		
 	sessionStorage._offsetAngle=270;	
-	data=turnRawDatatoData(raw_data);	
+	data=turnRawDatatoData(raw_data);
+	//data=data.slice(0,10);		
 	chart = new iChart.Donut2D({		
 		id:"ichartjs2013",
 		animation:true,
@@ -345,7 +360,7 @@ function initDrawChart(){
 			shadow_color:'#b7b7b7',
 			color:'#6f6f6f'
 		},
-		offset_angle: parseInt(sessionStorage._offsetAngle,10),
+		offset_angle: 0,//parseInt(sessionStorage._offsetAngle,10),
 		data: data,//Chart data source
 		offsetx:0,
 		shadow:false,
@@ -359,7 +374,7 @@ function initDrawChart(){
 				parseText:function(tip,name,value,text){
                     var str= "";
 					if(typeof(name)!="number"){						
-						str=name+"<br\/>";
+						str=name.split(',')[0]+"<br\/>";
 					}
 					for(i=0;i<data.length;i++){
 						if(data[i].name==name){
@@ -402,13 +417,9 @@ function initDrawChart(){
 	{
 		chart.plugin(new iChart.Custom({
 					drawFn:function(){
-						/**
-						 *计算位置
-						 */	
-						var y = chart.get('originy');
-						/**
-						 *在左侧的位置，设置竖排模式渲染文字。
-						 */
+						 //*计算位置
+						var y = chart.get('originy');					
+						 //在左侧的位置，设置竖排模式渲文字。
 						chart.target.textAlign('center')
 						.textBaseline('middle')
 						.textFont('600 24px 微软雅黑')
@@ -420,8 +431,10 @@ function initDrawChart(){
 	chart.plugin(createRight(chart));
 	chart.plugin(createBottom(chart));
 	chart.plugin(createLeft(chart));
-	chart.plugin(createTop(chart));
-	chart.draw();	
+	chart.plugin(createTop(chart));	
+	//chart.draw();
+	chart.bound(3);
+	
 }
 function createRight(chart){
 	return new iChart.Custom({
@@ -534,13 +547,14 @@ function createDivStrByData()
 		{
 			if(i===0)
 			{
-				str=str+'<span style="color:black;">'+seq.substring(data[i].start,data[i].end+1)+"</span>";
+				str=str+'<span style="color:black;">'+seq.substring(data[i].start,data[i].end)+"</span>";
 			}else
 			{
-				str=str+'<span style="color:black;">'+seq.substring(data[i-1].end,data[i].end+1)+"</span>";
+				str=str+'<span style="color:black;">'+seq.substring(data[i].start,data[i].end)+"</span>";
+				console.log(str);
 			}
 		}else{			
-			str=str+'<span style="color:'+colors[temp%2]+';">'+seq.substring(data[i].start,data[i].end)+"</span>";
+			str=str+'<span style="color:'+findColorInDataBySeq(seq.substring(data[i].start,data[i].end))+';">'+seq.substring(data[i].start,data[i].end)+"</span>";
 			temp=temp+1;
 		}
 	}
@@ -598,8 +612,9 @@ function handlerWebSocket(){
 				console.log(message.result);
 			}else if(message.request == 'getPlasmidSbol') {
 				raw_data=message.result;
+				console.log(message.result);
 				drawThePlasmid();
-				chart.draw();
+				//chart.draw();
 			}
 			message=null;
 		}		
@@ -670,7 +685,6 @@ function setUpDrag(){
 			var ang=parseInt(sessionStorage._offsetAngle);
 			sessionStorage._offsetAngle=ang+20;
 			chart.push("offset_angle",ang+20);
-			chart.push("")
 			chart.setUp();	
 		}
 	});
@@ -778,18 +792,18 @@ $(function(){
 			ws.send(JSON.stringify({'request': 'loadUserFile','fileType':request('filetype'),'fileName':request('filename')}));
 		}
 	}else{
-		drawThePlasmid();
+		//drawThePlasmid();
 	}
-	window.requestAnimFrame = (function(){
+	/*window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
               window.webkitRequestAnimationFrame || 
               window.mozRequestAnimationFrame    || 
               window.oRequestAnimationFrame      || 
               window.msRequestAnimationFrame     || 
-              function(/* function */ callback, /* DOMElement */ element){
+              function(/* function  callback, /* DOMElement  element){
                 window.setTimeout(callback, 1000 / 60);
               };
-    })();	
+    })();	*/
 });
 function drawThePlasmid()
 {

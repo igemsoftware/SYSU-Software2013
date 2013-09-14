@@ -31,11 +31,11 @@ def ActRepRate(circuit, database):
             dataset['DegRatemRNA'] = 0.00288
             dataset['DegRatePro']  = 0.00288
             if dataset['Type'] == 'Positive':
-                activator = database.select_with_name('Activator', circuit['proteins'][dataset['From']]['name'])
+                activator = database.select_with_name('activator', circuit['proteins'][dataset['From']]['name'])
                 dataset['K1']         = activator['K1']
                 dataset['HillCoeff1'] = activator['HillCoeff1']
             elif dataset['Type'] == 'Negative':
-                repressor = database.select_with_name('Repressor', circuit['proteins'][dataset['From']]['name'])
+                repressor = database.select_with_name('repressor', circuit['proteins'][dataset['From']]['name'])
                 dataset['K1']         = repressor['K1']
                 dataset['HillCoeff1'] = repressor['HillCoeff1']
             ProDict[proid] = dataset
@@ -98,11 +98,11 @@ def CorepIndRate(circuit, database):
             dataset['DegRatemRNA'] = 0.00288
             dataset['DegRatePro']  = 0.00288
             if dataset['Type'] == 'Positive':
-                activator = database.select_with_name('Activator', circuit['proteins'][dataset['From']]['name'])
+                activator = database.select_with_name('activator', circuit['proteins'][dataset['From']]['name'])
                 dataset['K1']         = activator['K1']
                 dataset['HillCoeff1'] = activator['HillCoeff1']
             elif dataset['Type'] == 'Negative':
-                repressor = database.select_with_name('Repressor', circuit['proteins'][dataset['From']]['name'])
+                repressor = database.select_with_name('repressor', circuit['proteins'][dataset['From']]['name'])
                 dataset['K1']         = repressor['K1']
                 dataset['HillCoeff1'] = repressor['HillCoeff1']
             if group['corep_ind_type'] == 'Corepressor':
@@ -113,9 +113,9 @@ def CorepIndRate(circuit, database):
                 dataset['HillCoeff2']  = corepressor['HillCoeff2']
             elif group['corep_ind_type'] == 'Inducer':
                 inducer = database.select_with_name('Inducer',\
-                    circuit['groups'][PlasId[n]]['corep_ind'])
-                dataset['Corepressor'] = circuit['proteins'][proid]['concen']
+                    circuit['groups'][PlasID[n]]['corep_ind'])
                 # dataset['Inducer']    = corepind[PlasID[n]]['concen']
+                dataset['Inducer'] = circuit['proteins'][proid]['concen']
                 dataset['K2']         = inducer['K2']
                 dataset['HillCoeff2'] = inducer['HillCoeff2']
             ProDict[proid] = dataset
@@ -150,63 +150,7 @@ def CorepIndRate(circuit, database):
 if __name__ == "__main__":
   import database
   db = database.SqliteDatabase()
-  gene_circuit = {'proteins': {1: {'RiPS': 11.49, 'name': 'BBa_C0060',
-    'repress_rate': -1, 'concen': 0.1, 'grp_id': 4, 'pos': 2, 'PoPS':
-    74.11999999999999, 'before_regulated': 62169.632399999995, 'K1': 'NaN',
-    'induce_rate': -1, 'copy': 73.0, 'display': 'True'}, 2: {'RiPS': 11.49,
-      'name': 'BBa_C0060', 'repress_rate': -1, 'concen': 0.1, 'grp_id': 4,
-      'pos': 4, 'PoPS': 74.11999999999999, 'before_regulated':
-      62169.632399999995, 'K1': 'NaN', 'induce_rate': -1, 'copy': 73.0,
-      'display': 'True'}, 3: {'RiPS': 11.49, 'name': 'BBa_K518003',
-        'repress_rate': -1, 'concen': 0.1, 'grp_id': 4, 'pos': 6, 'PoPS':
-        74.11999999999999, 'before_regulated': 62169.632399999995, 'K1': 'NaN',
-        'induce_rate': -1, 'copy': 73.0, 'display': 'False'}, 4: {'RiPS': 11.49,
-          'name': 'BBa_K518003', 'repress_rate': -1, 'concen': 0.1, 'grp_id': 4,
-          'pos': 8, 'PoPS': 74.11999999999999, 'before_regulated':
-          62169.632399999995, 'K1': 'NaN', 'induce_rate': -1, 'copy': 73.0,
-          'display': 'False'}, 5: {'RiPS': 11.49, 'name': 'BBa_C0160',
-            'repress_rate': -1, 'concen': 0.1, 'grp_id': 5, 'pos': 2, 'PoPS':
-            34.23, 'before_regulated': 28711.097099999995, 'K1':
-            -2.4287510356503725, 'induce_rate': -1, 'copy': 73.0, 'display':
-            'True'}, 6: {'RiPS': 11.49, 'name': 'BBa_C0178', 'repress_rate': -1,
-              'concen': 0.1, 'grp_id': 7, 'pos': 2, 'PoPS': 94.89,
-              'before_regulated': 79590.88530000001, 'K1': -2.4287510356503725,
-              'induce_rate': -1, 'copy': 73.0, 'display': 'True'}, 7: {'RiPS':
-                11.49, 'name': 'BBa_C0178', 'repress_rate': -1, 'concen': 0.1,
-                'grp_id': 7, 'pos': 4, 'PoPS': 94.89, 'before_regulated':
-                79590.88530000001, 'K1': -2.4287510356503725, 'induce_rate': -1,
-                'copy': 73.0, 'display': 'True'}}, 'plasmids': [[4, 5, 7]],
-              'groups': {4: {'from': -1, 'state': 'cis', 'corep_ind_type':
-                'None', 'to': [5, 6], 'sbol': [{'type': 'Promoter', 'name':
-                  u'BBa_I732021'}, {'type': 'RBS', 'name': 'BBa_J61104'},
-                  {'type': 'Protein', 'name': 'BBa_C0060', 'id': 1}, {'type':
-                    'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name':
-                      'BBa_C0060', 'id': 2}, {'type': 'RBS', 'name':
-                        'BBa_J61104'}, {'type': 'Activator', 'name':
-                          'BBa_K518003', 'id': 3}, {'type': 'RBS', 'name':
-                            'BBa_J61104'}, {'type': 'Repressor', 'name':
-                              'BBa_K518003', 'id': 4}, {'type': 'Terminator',
-                                'name': 'BBa_B0013'}], 'type': 'Constitutive'},
-                              5: {'from': 3, 'state': 'cis', 'corep_ind_type':
-                                'None', 'to': [], 'sbol': [{'type': 'Promoter',
-                                  'name': 'BBa_I712074'}, {'type': 'RBS',
-                                    'name': 'BBa_J61104'}, {'type': 'Protein',
-                                      'name': 'BBa_C0160', 'id': 5}, {'type':
-                                        'Terminator', 'name': 'BBa_B0013'}],
-                                      'type': 'Positive'}, 7: {'from': 4,
-                                        'state': 'cis', 'corep_ind_type':
-                                        'Corepressor', 'corep_ind': 'BBa_P0140',
-                                        'to': [], 'sbol': [{'type': 'Promoter',
-                                          'name': 'BBa_I712074'}, {'type':
-                                            'RBS', 'name': 'BBa_J61104'},
-                                          {'type': 'Protein', 'name':
-                                            'BBa_C0178', 'id': 6}, {'type':
-                                              'RBS', 'name': 'BBa_J61104'},
-                                            {'type': 'Protein', 'name':
-                                              'BBa_C0178', 'id': 7}, {'type':
-                                                'Terminator', 'name':
-                                                'BBa_B0013'}], 'type':
-                                              'Negative'}}}
+  gene_circuit = {'proteins': {1: {'concen': 0.1, 'grp_id': 4, 'pos': 2, 'before_regulated': 38256.2997, 'K1': None, 'copy': 73.0, 'PoPS': 45.61, 'name': 'BBa_C0060', 'repress_rate': 0.0, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}, 2: {'concen': 0.1, 'grp_id': 4, 'pos': 4, 'before_regulated': 38256.2997, 'K1': None, 'copy': 73.0, 'PoPS': 45.61, 'name': 'BBa_C0060', 'repress_rate': 0.0, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}, 3: {'concen': 0.1, 'grp_id': 4, 'pos': 6, 'before_regulated': 38256.2997, 'K1': None, 'copy': 73.0, 'PoPS': 45.61, 'name': 'BBa_K518003', 'repress_rate': 0.0, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'False'}, 4: {'concen': 0.1, 'grp_id': 4, 'pos': 8, 'before_regulated': 38256.2997, 'K1': None, 'copy': 73.0, 'PoPS': 45.61, 'name': 'BBa_K142002', 'repress_rate': 0.0, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'False'}, 5: {'concen': 0.1, 'grp_id': 5, 'pos': 2, 'before_regulated': 28711.097099999995, 'K1': -2.4287510356503725, 'copy': 73.0, 'PoPS': 34.23, 'name': 'BBa_C0160', 'repress_rate': 0.4428135474975083, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}, 6: {'concen': 0.1, 'grp_id': 7, 'pos': 2, 'before_regulated': 79590.88530000001, 'K1': -2.451703061628793, 'copy': 73.0, 'PoPS': 94.89, 'name': 'BBa_C0178', 'repress_rate': -0.44281354749738794, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}, 7: {'concen': 0.1, 'grp_id': 7, 'pos': 4, 'before_regulated': 79590.88530000001, 'K1': -2.451703061628793, 'copy': 73.0, 'PoPS': 94.89, 'name': 'BBa_C0178', 'repress_rate': -0.44281354749738794, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}}, 'plasmids': [[4, 5, 7]], 'groups': {4: {'from': -1, 'sbol': [{'type': 'Promoter', 'name': u'BBa_J23150'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0060', 'id': 1}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0060', 'id': 2}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Activator', 'name': 'BBa_K518003', 'id': 3}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Repressor', 'name': 'BBa_K142002', 'id': 4}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'corep_ind_type': 'None', 'to': [5, 6], 'state': 'cis', 'type': 'Constitutive'}, 5: {'from': 3, 'sbol': [{'type': 'Promoter', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0160', 'id': 5}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'corep_ind_type': 'None', 'to': [], 'state': 'cis', 'type': 'Positive'}, 7: {'from': 4, 'sbol': [{'type': 'Promoter', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0178', 'id': 6}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0178', 'id': 7}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'corep_ind_type': 'Inducer', 'to': [], 'state': 'cis', 'corep_ind': u'Ind_0140', 'type': 'Negative'}}}
   corepind = {1:0.1, 2:0.1, 3:0.1, 4:0.1, 5:0.1, 6:0.1, 7:0.6}
   print ActRepRate(gene_circuit, db)
   print CorepIndRate(gene_circuit, db)

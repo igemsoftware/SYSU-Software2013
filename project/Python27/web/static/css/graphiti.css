@@ -1,4 +1,3 @@
-
 /* 
  * regulation styles
  */
@@ -279,12 +278,13 @@ body {
   background-image: url(../img/painterbg.png);
 }
 
-#canvas {	
-  margin: 0 auto;
-  width: 1284px;
-  height: 534px;
-  border-radius: 6px;
-  background-color: #ebebeb;
+#canvas {
+	margin: 0 auto;
+	width: 1284px;
+	height: 534px;
+	border-radius: 6px;
+	background-color: #ebebeb;
+	color: #4388CC;
 }
 
 
@@ -520,14 +520,3 @@ body {
   right: 100px;
   bottom: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
