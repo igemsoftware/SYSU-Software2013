@@ -18,11 +18,18 @@ class sharedFiles:
 		self.db=database
 		self.__cx=self.db.getCx()
 		self.__cursor=self.db.getCuror()	
+	def getSharedFileData(self,code):
+		self.__cursor.execute('SELECT data FROM user_save WHERE user_save.extractCode="%s"'%(code))
+		result=self.__cursor.fetchone()
+		if len(result)==0:
+			return 'Non such shared file'
+		else: 
+			return result[0]
 	def getFileByExtractCode(self,code):
 		self.__cursor.execute('SELECT [user_save].[fileType],  [user_save].[fileName],  [user_list].[name] AS user_name FROM user_save,user_list WHERE user_list.id=user_save.user_id AND user_save.[extractCode]="%s"'%(code))	
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
-		return decodejson
+		return decodejson[0]
 	def isAFileShared(self,user_id,filename,filetype):
 		self.__cursor.execute('SELECT user_save.shared FROM user_save where user_id="%i" AND fileName="%s" AND fileType="%s"'%(user_id,filename,filetype))		
 		if self.__cursor.fetchall()==0:
@@ -58,5 +65,6 @@ if __name__=="__main__":
 	print shared.getSharedFileList()	
 	print shared.isAFileShared(0,'test','test')
 	#print shared.setFileShared(0,'test','test')
-	print shared.getFileByExtractCode('3a679784c6b6ad2b82990323272d40a1d604ba65')
+	#print shared.getFileByExtractCode('3a679784c6b6ad2b82990323272d40a1d604ba65')
+	print shared. getSharedFileData('3a679784c6b6ad2b82990323272d40a1d604ba65')
 	#print shared.unsharedAFile(0,'test','test')
