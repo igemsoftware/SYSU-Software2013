@@ -618,6 +618,7 @@ function handlerWebSocket(){
 				raw_data=message.result;
 				console.log(message.result);
 				drawThePlasmid();
+				$('#mymodal').modal('hide');
 				//chart.draw();
 			}
 			message=null;
@@ -629,6 +630,8 @@ function handlerWebSocket(){
 		{
 			var obj = eval('(' + sessionStorage.genecircuitSave + ')'); 			
 			ws.send(JSON.stringify({'request': 'getPlasmidSbol','data':JSON.stringify(obj['genecircuit'])}));	
+			$('#mymodal').modal({keyboard:false}); 
+			
 		}				
 	}
 }
