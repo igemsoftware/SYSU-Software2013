@@ -18,6 +18,9 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         Prodict  = {}
         dictkey  = []
         pro_name = []
+        for i in circuit["proteins"]:
+          if i not in corepind:
+            corepind[i] = {"time": time}
         plasid   = circuit['plasmids'][0]
         # the number of proteins in a group
         plassize = {}
@@ -86,9 +89,10 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
                     mRNAdict[dictkey[n]].Compute_Concen(t, False)
                     Prodict [dictkey[n]].Compute_Concen(t, False)
         data = {}
-        # data['time'] = timeaxis
+        data['time'] = time
+        data['dt'] = dt
         for n in range(len(dictkey)):
-            data[pro_name[n]] = Prodict[dictkey[n]].Concen
+            data[pro_name[n] + "," + str(dictkey[n])] = Prodict[dictkey[n]].Concen
         return data
     except InvalidParameter:
         return 'Invalid Paramter!'
@@ -99,11 +103,11 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
     #    return 'Something Unexpected Happened!'
 
 if __name__ == "__main__":
-    gene_circuit = {'proteins': {1: {'concen': 0.1, 'grp_id': 4, 'pos': 2, 'before_regulated': 38256.2997, 'K1': None, 'copy': 73.0, 'PoPS': 45.61, 'name': 'BBa_C0060', 'repress_rate': 0.0, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}, 2: {'concen': 0.1, 'grp_id': 4, 'pos': 4, 'before_regulated': 38256.2997, 'K1': None, 'copy': 73.0, 'PoPS': 45.61, 'name': 'BBa_C0060', 'repress_rate': 0.0, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}, 3: {'concen': 0.1, 'grp_id': 4, 'pos': 6, 'before_regulated': 38256.2997, 'K1': None, 'copy': 73.0, 'PoPS': 45.61, 'name': 'BBa_K518003', 'repress_rate': 0.0, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'False'}, 4: {'concen': 0.1, 'grp_id': 4, 'pos': 8, 'before_regulated': 38256.2997, 'K1': None, 'copy': 73.0, 'PoPS': 45.61, 'name': 'BBa_K142002', 'repress_rate': 0.0, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'False'}, 5: {'concen': 0.1, 'grp_id': 5, 'pos': 2, 'before_regulated': 28711.097099999995, 'K1': -2.4287510356503725, 'copy': 73.0, 'PoPS': 34.23, 'name': 'BBa_C0160', 'repress_rate': 0.4428135474975083, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}, 6: {'concen': 0.1, 'grp_id': 7, 'pos': 2, 'before_regulated': 79590.88530000001, 'K1': -2.451703061628793, 'copy': 73.0, 'PoPS': 94.89, 'name': 'BBa_C0178', 'repress_rate': -0.44281354749738794, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}, 7: {'concen': 0.1, 'grp_id': 7, 'pos': 4, 'before_regulated': 79590.88530000001, 'K1': -2.451703061628793, 'copy': 73.0, 'PoPS': 94.89, 'name': 'BBa_C0178', 'repress_rate': -0.44281354749738794, 'RiPS': 11.49, 'induce_rate': -1, 'display': 'True'}}, 'plasmids': [[4, 5, 7]], 'groups': {4: {'from': -1, 'sbol': [{'type': 'Promoter', 'name': u'BBa_J23150'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0060', 'id': 1}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0060', 'id': 2}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Activator', 'name': 'BBa_K518003', 'id': 3}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Repressor', 'name': 'BBa_K142002', 'id': 4}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'corep_ind_type': 'None', 'to': [5, 6], 'state': 'cis', 'type': 'Constitutive'}, 5: {'from': 3, 'sbol': [{'type': 'Promoter', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0160', 'id': 5}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'corep_ind_type': 'None', 'to': [], 'state': 'cis', 'type': 'Positive'}, 7: {'from': 4, 'sbol': [{'type': 'Promoter', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0178', 'id': 6}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0178', 'id': 7}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'corep_ind_type': 'Inducer', 'to': [], 'state': 'cis', 'corep_ind': u'Ind_0140', 'type': 'Negative'}}}
+    gene_circuit = {'proteins': {1: {'RiPS': 11.49, 'name': 'BBa_C0060', 'before_regulated': 27889.1025, 'concen': 0.1, 'grp_id': 4, 'pos': 2, 'PoPS': 33.25, 'repress_rate': 0.0, 'K1': None, 'induce_rate': 0.0, 'copy': 73.0, 'display': 'True'}, 2: {'RiPS': 11.49, 'name': 'BBa_C0060', 'before_regulated': 27889.1025, 'concen': 0.1, 'grp_id': 4, 'pos': 4, 'PoPS': 33.25, 'repress_rate': 0.0, 'K1': None, 'induce_rate': 0.0, 'copy': 73.0, 'display': 'True'}, 3: {'RiPS': 11.49, 'name': 'BBa_K518003', 'before_regulated': 27889.1025, 'concen': 0.1, 'grp_id': 4, 'pos': 6, 'PoPS': 33.25, 'repress_rate': 0.0, 'K1': None, 'induce_rate': 0.0, 'copy': 73.0, 'display': 'False'}, 4: {'RiPS': 11.49, 'name': 'BBa_K142002', 'before_regulated': 27889.1025, 'concen': 0.1, 'grp_id': 4, 'pos': 8, 'PoPS': 33.25, 'repress_rate': 0.0, 'K1': None, 'induce_rate': 0.0, 'copy': 73.0, 'display': 'False'}, 5: {'RiPS': 11.49, 'name': 'BBa_C0160', 'before_regulated': 28711.097099999995, 'concen': 0.1, 'grp_id': 5, 'pos': 2, 'PoPS': 34.23, 'repress_rate': 0.44273640573799977, 'K1': 3.041392685158225, 'induce_rate': 0.44273640573799977, 'copy': 73.0, 'display': 'True'}, 6: {'RiPS': 11.49, 'name': 'BBa_C0178', 'before_regulated': 79590.88530000001, 'concen': 0.1, 'grp_id': 7, 'pos': 2, 'PoPS': 94.89, 'repress_rate': -0.4428135474974744, 'K1': -2.451703061628793, 'induce_rate': -0.4428135474886069, 'copy': 73.0, 'display': 'True'}, 7: {'RiPS': 11.49, 'name': 'BBa_C0178', 'before_regulated': 79590.88530000001, 'concen': 0.1, 'grp_id': 7, 'pos': 4, 'PoPS': 94.89, 'repress_rate': -0.4428135474974744, 'K1': -2.451703061628793, 'induce_rate': -0.4428135474886069, 'copy': 73.0, 'display': 'True'}}, 'plasmids': [[4, 5, 7]], 'groups': {4: {'from': -1, 'state': 'cis', 'corep_ind_type': 'None', 'to': [5, 6], 'sbol': [{'type': 'Promoter', 'name': u'BBa_K091146'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0060', 'id': 1}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0060', 'id': 2}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Activator', 'name': 'BBa_K518003', 'id': 3}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Repressor', 'name': 'BBa_K142002', 'id': 4}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'type': 'Constitutive'}, 5: {'from': 3, 'state': 'cis', 'corep_ind_type': 'None', 'to': [], 'sbol': [{'type': 'Promoter', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0160', 'id': 5}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'type': 'Positive'}, 7: {'from': 4, 'state': 'cis', 'corep_ind_type': 'Inducer', 'to': [], 'sbol': [{'type': 'Promoter', 'name': 'BBa_I712074'}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0178', 'id': 6}, {'type': 'RBS', 'name': 'BBa_J61104'}, {'type': 'Protein', 'name': 'BBa_C0178', 'id': 7}, {'type': 'Terminator', 'name': 'BBa_B0013'}], 'corep_ind': u'Ind_0140', 'type': 'Negative'}}}
 
     import database
     db = database.SqliteDatabase()
-    corepind = {5: {"concen": 0.1, "time": 3},
-                7: {"concen": 0.2, "time": 6}}
-
-    print Simulate(False, gene_circuit, corepind, db, 6, 0.1)
+    #corepind = {5: {"concen": 0.1, "time": 20},
+    #            7: {"concen": 0.2, "time": 60}}
+    corepind = {}
+    print Simulate(True, gene_circuit, corepind, db, 6000, 100)

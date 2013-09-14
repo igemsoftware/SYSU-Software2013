@@ -3,6 +3,7 @@ import json
 from database import SqliteDatabase
 import component_union
 import sequence_serializer
+import Simulate_Function
 import user
 import mlog
 import xmlParse
@@ -91,6 +92,18 @@ class apis():
   	  return user.loadUserData(self.db,message['fileName'],message['fileType'])
     else:
       return user.loadUserData(self.db,message['fileName'],"default")
+  def Simulate(self, message):
+    isStochastic = message["isStochastic"]
+    gene_circuit = group.js_formatter(message["gene_circuit"])
+    corepind = message["corepind"]
+    time = 6000
+    if message.has_key("time"):
+      time = message["time"]
+    dt = 100
+    if message.has_key("dt"):
+      time = message["dt"]
+    return Simulate_Function.Simulate(isStochastic,\
+        gene_circuit, corepind, self.db, time, dt)
   def getGroup(self, message):
     return group.dump_group(json.loads(message["data"]), self.db)
   def getPlasmidSbol_deprecated(self, message):
