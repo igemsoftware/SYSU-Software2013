@@ -222,8 +222,8 @@ var group = {
 		$("#" + aTextureId).data('from', aData.from); 
 		$("#" + aTextureId).data('type', aData.type); 
 		$("#" + aTextureId).data('to', aData.to); 
-		$("#" + aTextureId).data('induce_type', aData.induce_type); 
-		$("#" + aTextureId).data('inducer', aData.inducer); 
+		$("#" + aTextureId).data('corep_ind_type', aData.corep_ind_type); 
+		$("#" + aTextureId).data('corep_ind', aData.corep_ind); 
 		$("#" + aTextureId + " ul").prepend("<li id='" + aTextureId + "-first' style='display:none'></li>");
 		// $("#" + aTextureId + " ul").sortable({ 
 			// items: "li", 
@@ -612,8 +612,8 @@ var getDataCollection = function() {
 			dataCollection.groups[grp_id].to = curGroup.data("to"); 
 			dataCollection.groups[grp_id].type = curGroup.data("type"); 
 			dataCollection.groups[grp_id].state = curGroup.data("order"); 
-			dataCollection.groups[grp_id].induce_type = curGroup.data("induce_type"); 
-			dataCollection.groups[grp_id].inducer = curGroup.data("inducer");
+			dataCollection.groups[grp_id].corep_ind_type = curGroup.data("corep_ind_type"); 
+			dataCollection.groups[grp_id].corep_ind = curGroup.data("corep_ind");
 			for(var k = 0; k < componentsLength; k++) {
 				dataCollection.groups[grp_id].sbol.push({'type':'','name':''});
 				dataCollection.groups[grp_id].sbol[k].name = curGroup.find("li").eq(k+1).find("span").text();
