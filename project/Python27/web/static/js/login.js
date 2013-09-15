@@ -66,15 +66,23 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#reg").click(function() {
-			var username = $("input[name=user]").val(),
-			pw = $("input[name=pw]").val(),
+	//注册页面
+	$("#reset").click(function() {
+		$('input[name=username]').val("");
+		$('input[name=password]').val("");
+		$('input[name=email]').val("");
+		$('input[name=question]').val("");
+		$('input[name=answer]').val("");
+		$('input[name=gender]').val("");
+	});
+
+	$("#register").click(function() {
+			var username = $("input[name=username]").val(),
+			pw = $("input[name=password]").val(),
 			email = $("input[name=email]").val(),
 			gender = $("select[name=gender]").val(),
 			question = $("input[name=question]").val(),
 			answer = $("input[name=answer]").val();
-
-			// console.log(username + " " + pw + " " + email + " " + gender);
 
 			ws.send(JSON.stringify({
 				'request'		:	'registAUser',

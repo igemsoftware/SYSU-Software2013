@@ -143,3 +143,81 @@ body {
 .contact-us a#twitter {
 	margin: 0 39px;
 }
+
+
+
+/*
+ *  register
+ */
+
+ .reg-part {
+	position: absolute;
+	left: 500px;
+	top: 50%;
+	width: 403px;
+	height: 614px;
+	margin-top: -307px;
+	background-image: url(../img/login/registerbg.png);
+}
+
+.reg-part form {
+	position: relative;
+	overflow: hidden;
+	top: 165px;
+	width: 403px;
+	height: 450px;
+}
+
+.input-line {
+	height: 43px;
+	width: 296px;
+	margin: 0 auto 17px;
+}
+
+.input-line img {
+	display: inline-block;
+	float: left;
+	margin-right: 33px;
+}
+
+.reg-part form input {
+	width: 200px;
+	height: 43px;
+	padding: 0 0 0 10px; 
+	margin-right: 14px;
+	border: none;
+	background-color: #d7ffff;
+	font-size: 20px;
+}
+
+input[name=gender] {
+	width: 110px !important;
+}
+
+#reset {
+	position: absolute;
+	display: block;
+	top: 310px;
+	left: 255px;
+	width: 80px;
+	height: 27px;
+	margin: 0 auto;
+	background-image: url(../img/login/reset.png);
+	cursor: pointer;
+}
+
+#register {
+	position: relative;
+	display: block;
+	width: 280px;
+	height: 57px;
+	margin: 0 auto;
+	background-image: url(../img/login/register.png);
+	cursor: pointer;	
+}
+
+#register:active {
+	position: relative;
+	top: 1px;
+	left: 1px;
+}
