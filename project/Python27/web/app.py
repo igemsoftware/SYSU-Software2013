@@ -20,7 +20,11 @@ def login():
 		user.userLogout(sql)
 	else:
 		return render_template('login.html')
-
+		
+@app.route("/register")
+def login():	
+	return render_template('register.html')
+	
 @app.route("/index")
 def index():
 	if user.isUserLogined(sql):
