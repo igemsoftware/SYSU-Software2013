@@ -19,10 +19,11 @@ $(document).ready(function () {
         run(data,canvasWidth, canvasHeight, time, dt);
         for(var i=0;i<data.length;i++)
         {
-          var w=document.getElementById('Curve').clientWidth/data.length/2.5;
-          var h=document.getElementById('Curve').clientHeight;
+          var w=document.getElementById('Curve').clientWidth/3/6;
+          //var h=document.getElementById('Curve').clientHeight/(data.length/3);
+		  h=100/(data.length/3+1);
           document.getElementById('Curve').appendChild(createAnInputCheckBox(i,w,h,proteinNames[i]));
-          document.getElementById('Curve').appendChild(document.createTextNode(proteinNames[i]));
+          //document.getElementById('Curve').appendChild(document.createTextNode(proteinNames[i]));
         }
       }
       else if (message.request == "getDirList") { // get directory
@@ -90,13 +91,15 @@ $(document).ready(function () {
 });
 var size=0;
 function createAnInputCheckBox(index,width,height,proteinName){
+	var div=document.createElement("div");
 	var o=document.createElement("input");
     o.type="checkbox";
     o.id=proteinName;
     o.name="aa";
 	o.value=proteinName;
-	o.style.width=width+'px';
-	o.style.height=height+'px';
+	div.style.width='30%';
+	div.style.height=height+'%';
+	div.style.display='inline-block';
 	o.checked=true;
 	o.onclick = function() {
 		var newdata=new Array();
@@ -110,7 +113,9 @@ function createAnInputCheckBox(index,width,height,proteinName){
 		run(newdata,document.getElementById('canvasDiv').clientWidth-15,document.getElementById('canvasDiv').clientHeight-15);
 		chart.resize(document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
 	}
-	return o;
+	div.appendChild(o);
+	div.appendChild(document.createTextNode(proteinName));
+	return div;
 }
 function turnRawDatatoData(raw)
 {
