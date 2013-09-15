@@ -547,73 +547,84 @@ $().ready(function() {
 			// 'request': 'getIndexSave',  
 		// }));
     //var regulationData = sessionStorage.regulation;
-    var regulationData = {
-      "part": [
-        { "id"  : 1,
-          "name": "BBa_C0060",
-          "type": "Protein"
-      },
-      { "id"  : 2,
-        "name": "BBa_C0060",
-        "type": "Protein"
-      },
-      { "id"  : 3,
-        "name": "activator",
-        "type": "Activator"
-      },
-      { "id"  : 4,
-        "name": "repressor",
-        "type": "Repressor"
-      },
-      { "id"  : 5,
-        "name": "BBa_C0160",
-        "type": "Protein"
-      },
-      { "id"  : 6,
-        "name": "BBa_C0178",
-        "type": "Protein"
-      },
-      { "id"  : 7,
-        "name": "BBa_C0178",
-        "type": "Protein"
-      }
-
-      ],
-      "link": [
-        { "from": 1,
-          "to"  : 2,
-          "type": "Bound",
-      },
-      { "from": 2,
-        "to"  : 3,
-        "type": "Bound",
-      },
-      { "from": 3,
-        "to"  : 4,
-        "type": "Bound",
-      },
-      { "from": 3,
-        "to"  : 5,
-        "type": "Activator",
-        "inducer": "None"
-      },
-      { "from": 4,
-        "to"  : 6,
-        "type": "Repressor",
-        "inducer": "Positive"
-        },
-      { "from": 6,
-        "to"  : 7,
-        "type": "Bound",
-        },
-
-      ]
-};
-     console.log(regulationData);
-     ws.send(JSON.stringify({
-       'request': 'getGroup',
-       'data': regulationData,
-     }));
+    var regulationData = { 
+      "part": [ 
+			{ "id"  : 1, 
+				"name": "BBa_C0060", 
+				"type": "Protein" 
+      }, 
+      { "id"  : 2, 
+        "name": "BBa_C0060", 
+        "type": "Protein" 
+      }, 
+      { "id"  : 3, 
+        "name": "activator", 
+        "type": "Activator" 
+      }, 
+      { "id"  : 4, 
+        "name": "repressor", 
+        "type": "Repressor" 
+      }, 
+      { "id"  : 5, 
+        "name": "BBa_C0160", 
+        "type": "Protein" 
+      }, 
+      { "id"  : 6, 
+        "name": "BBa_C0178", 
+        "type": "Protein" 
+      }, 
+      { "id"  : 7, 
+        "name": "BBa_C0178", 
+        "type": "Protein" 
+      } 
+ 
+      ], 
+      "link": [ 
+        { "from": 1, 
+          "to"  : 2, 
+          "type": "Bound", 
+      }, 
+      { "from": 2, 
+        "to"  : 3, 
+        "type": "Bound", 
+      }, 
+      { "from": 3, 
+        "to"  : 4, 
+        "type": "Bound", 
+      }, 
+      { "from": 3, 
+        "to"  : 5, 
+        "type": "Activator", 
+        "inducer": "None" 
+      }, 
+      { "from": 4, 
+        "to"  : 6, 
+        "type": "Repressor", 
+        "inducer": "Positive" 
+        }, 
+      { "from": 6, 
+        "to"  : 7, 
+        "type": "Bound", 
+        }, 
+ 
+      ] 
+		}; 
+     // console.log(regulationData); 
+		 
+		if(sessionStorage.regulation) {
+			ws.send(JSON.stringify({
+				'request': 'getGroup',
+				// 'data': regulationData, 
+				'data': eval('(' + sessionStorage.regulation + ')'),
+			}));
+		} else {
+			ws.send(JSON.stringify({
+				'request': 'getGroup',
+				'data': regulationData, 
+				// 'data': eval('(' + sessionStorage.regulation + ')'), 
+			}));
+		
+		}
 
 		//ws.send(JSON.stringify({     
 			//'request': 'changeRBS',     
