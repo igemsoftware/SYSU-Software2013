@@ -2,15 +2,32 @@ var data =  [];
 
 var proteinNames=[];
 var inducerList=[[2,'inducer1'],[7,'inducer2']];
+var corepind ={}; //{5: {"time": 20},7: {"time": 60}}
+function stochasticOnChange(obj)
+{
+	ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+	if($('#stochastic').attr("checked")==true)
+	{
+		isStochastic = true;
+	}else{
+    	isStochastic = false;
+	}
+    gene_circuit = sessionStorage.gene_circuit;
+    //corepind = {};
+    ws.send(JSON.stringify({'request'     : 'Simulate',
+                            'isStochastic': isStochastic,
+                            'gene_circuit': gene_circuit,
+                            'corepind'    : corepind
+    }));
+	console.log(isStochastic);
+}
 $(document).ready(function () {
   if ("WebSocket" in window) {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function (msg) {
       var message = JSON.parse(msg.data);
       if (message.request == "Simulate") {
-        //console.log(message.result);
         raw_data = message.result.data;
-        //console.log(raw_data);
         proteinNames = Object.keys(message.result.data);
         data = turnRawDatatoData(raw_data);
         var canvasWidth = document.getElementById('canvasDiv').clientWidth;
@@ -97,7 +114,6 @@ $(document).ready(function () {
     ws.close();
   };
 });
-var corepind ={}; //{5: {"time": 20},7: {"time": 60}}
 var size=0;
 function getinducerList(circuit)
 {
