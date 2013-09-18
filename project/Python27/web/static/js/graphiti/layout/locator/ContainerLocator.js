@@ -55,6 +55,6 @@ graphiti.layout.locator.ContainerLocator = graphiti.layout.locator.Locator.exten
        var boundingBox = parent.getBoundingBox();
     
        var targetBoundingBox = target.getBoundingBox();
-       target.setPosition(boundingBox.w/2+2*(targetBoundingBox.w/2),-(targetBoundingBox.h+2));
+       target.setPosition(boundingBox.w/2+50), boundingBox.h/2);
     }
 });
