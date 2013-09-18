@@ -27,6 +27,16 @@ class SqliteDatabase:
 		return self.__cx
 	def getCuror(self):
 		return self.__cursor
+	def addATerminator(self,name,number,Efficiency):
+		sql_cmd='INSERT INTO terminator (Name,Number,Efficiency) VALUES ("%s","%s",%f)'%(name,number,Efficiency)
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()	
+		return 'add terminator success!'
+	def addAnInducer(self,name,number,HillCoeff2,K2):
+		sql_cmd='INSERT INTO Inducer (Name,Number,HillCoeff2,K2) VALUES ("%s","%s",%d,%f)'%(name,number,HillCoeff2,K2)
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()	
+		return 'add Inducer success!'
 	def updateUserLoginRememberTime(self):
 		if self.userId==-1:
 			self.logger.error('not login but want to remember the user login time')
@@ -463,7 +473,10 @@ if __name__=="__main__":
 	sql=SqliteDatabase()
 	print sql.getUserGroup('Bobby')	
 	sql.updateUserLoginRememberTime()
-	sql.insertAUser('name','password','email',1,1,'question','answer')
+	# sql.insertAUser('name','password','email',1,1,'question','answer')
+	#sql.addATerminator('test','BBa_12345',0.358)
+	sql.addAnInducer('test','BBa-tst',3,0.123)
+	# addATerminator(self,name,number,Efficiency)
 	#sql.addColumnToTable('part_relation','testw','integer',' 0')	
 	#print sql.isRecordExist('part_list')
 	#sql.selectAllOfTable('part_relation')
