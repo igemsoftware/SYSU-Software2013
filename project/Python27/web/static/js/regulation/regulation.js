@@ -425,13 +425,15 @@ $().ready(function() {
 
         for (var i = 0; i < linesCount; i++) {
             var line = {};
-            line.from = lines[i].sourcePort.parent.id;
-            line.to = lines[i].targetPort.parent.id;
+            line.from = lines[i].sourcePort.parent.id.split('-')[0];
+            line.to = lines[i].targetPort.parent.id.split('-')[0];
             line.type = lines[i].TYPE;
             line.inducer = "none";
 
             data.link.push(line);
         };
+
+        console.log(data);
         
         return data;
     };
