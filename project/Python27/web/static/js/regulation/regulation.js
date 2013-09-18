@@ -368,7 +368,7 @@ $().ready(function() {
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();
 
-        return "";
+        // return "";
     };
 
 
@@ -433,7 +433,6 @@ $().ready(function() {
             data.link.push(line);
         };
 
-        console.log(data);
         
         return data;
     };
