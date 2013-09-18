@@ -28,16 +28,15 @@ $(document).ready(function() {
 				}
 			} else if (message.request === "registAUser") {
 				console.log(message.result);
-			}else if(message.request==="getRememberMeTicket"){
+			} else if (message.request==="getRememberMeTicket") {
 				localStorage.userName=$("#username").attr('value');
 				localStorage.rememberTicket=message.result;
 				window.location = location.href + "index";
-			}else if(message.request==="userLoginByTicket")
-			{
-				if(message.result!='Ticket error!')
+			} else if (message.request==="userLoginByTicket"){
+				if (message.result!='Ticket error!')
 				{
 					sessionStorage.rememberTicket=message.result;
-				}else{
+				} else {
 					alert('Login by remember me ticket error!');
 					localStorage.removeItem("rememberTicket"); 
 					localStorage.removeItem("userName"); 
