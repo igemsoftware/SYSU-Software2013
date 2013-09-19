@@ -19,6 +19,7 @@ graphiti.decoration.connection.TDecorator = graphiti.decoration.connection.Decor
     init : function(width, height)
     {   
         this._super( width, height);
+        this.color = new graphiti.util.Color(255, 0, 0);
     },
 
 	/**
@@ -47,7 +48,7 @@ graphiti.decoration.connection.TDecorator = graphiti.decoration.connection.Decor
 		st.push(
 	        paper.path(path.join(""))
 		);
-        st.attr({fill:this.backgroundColor.getHashStyle()});
+        st.attr({fill:this.backgroundColor.getHashStyle(), stroke: this.color.getHashStyle()});
 		return st;
 	}
 });

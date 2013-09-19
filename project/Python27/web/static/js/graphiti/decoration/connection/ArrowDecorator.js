@@ -38,6 +38,7 @@ graphiti.decoration.connection.ArrowDecorator = graphiti.decoration.connection.D
     init : function(width, height)
     {   
         this._super( width, height);
+        this.color = new graphiti.util.Color(0, 0, 255);
     },
 
 	/**
@@ -60,13 +61,14 @@ graphiti.decoration.connection.ArrowDecorator = graphiti.decoration.connection.D
 	{
 		var st = paper.set();
 		var path = ["M0 0"];  
-		path.push(  "L", this.width, " ", -this.height/2); 
-		path.push(  "L", this.width, " ", this.height/2);
+		path.push(  "L", this.width/2, " ", -this.height/2); 
+		path.push(  "M0 0");
+		path.push(  "L", this.width/2, " ", this.height/2);
 		path.push(  "L0 0");
 		st.push(
 	        paper.path(path.join(""))
 		);
-        st.attr({fill:this.backgroundColor.getHashStyle()});
+        st.attr({fill:this.backgroundColor.getHashStyle(), stroke: this.color.getHashStyle()});
 		return st;
 	}
 });
