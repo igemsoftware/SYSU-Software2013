@@ -483,7 +483,7 @@ $().ready(function() {
         console.log(message.result);
 			} else if (message.request == "getGroup") {
 				console.log("getGroup", message);
-        if(mesasage.result==='ERROR!'){
+        if(message.result==='ERROR!'){
           ws.send(JSON.stringify({
             'request': 'getGroup',
             // 'data': regulationData, 

@@ -11,7 +11,7 @@ rbs_name = "BBa_J61104"
 term_name = "BBa_B0013"
 
 
-#data = {"part":[{"id":0,"name":"BBa_I752001","type":"Protein"},{"id":1,"name":"BBa_K108020","type":"PandR"},{"id":2,"name":"BBa_K091002","type":"PandR"}],"link":[{"from":"BBa_K108020","to":"BBa_K091002","type":"Repressor","inducer":"none"},{"from":"BBa_K091002","to":"BBa_I752001","type":"Repressor","inducer":"none"}]} 
+#data = {"part":[{"id":0,"name":"BBa_J58105","type":"Protein"},{"id":1,"name":"BBa_K091002","type":"PandA"}],"link":[{"from":"BBa_K091002","to":"BBa_J58105","type":"Activator","inducer":"none"}]}
 data = {u'part': [{u'type': u'Protein', u'id': 1, u'name': u'BBa_C0060'}, {u'type': u'Protein', u'id': 2, u'name': u'BBa_C0060'}, {u'type': u'Activator', u'id': 3, u'name': u'activator'}, {u'type': u'Repressor', u'id': 4, u'name': u'repressor'}, {u'type': u'Protein', u'id': 5, u'name': u'BBa_C0160'}, {u'type': u'Protein', u'id': 6, u'name': u'BBa_C0178'}, {u'type': u'Protein', u'id': 7, u'name': u'BBa_C0178'}], u'link': [{u'to': 2, u'from': 1, u'type': u'Bound'}, {u'to': 3, u'from': 2, u'type': u'Bound'}, {u'to': 4, u'from': 3, u'type': u'Bound'}, {u'to': 5, u'from': 3, u'inducer': u'None', u'type': u'Activator'}, {u'to': 6, u'from': 4, u'inducer': u'Positive', u'type': u'Repressor'}, {u'to': 7, u'from': 6, u'type': u'Bound'}]}
 #data = {
     #"part": [
