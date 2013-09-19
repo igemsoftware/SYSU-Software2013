@@ -149,6 +149,30 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
     }
 });
 
+// button container
+g.Shapes.btnContainer = graphiti.shape.basic.Rectangle.extend({
+    NAME: "g.Shapes.btnContainer",
+
+    init: function(width, height) {
+        this._super(); 
+
+        if (typeof radius === "number") {
+            this.setDimension(radius, radius);
+        } else {
+            this.setDimension(60, 30);
+        }
+
+        this.TYPE = "btnContainer";
+        this.setAlpha(0.1);
+
+        // Buttons
+        this.Activate = new g.Buttons.Activate();
+        this.Inhibit = new g.Buttons.Inhibit();
+        this.addFigure(this.Activate, new graphiti.layout.locator.ContainerLocator(this, 0, 30));
+        this.addFigure(this.Inhibit, new graphiti.layout.locator.ContainerLocator(this, 1, 30));
+    }
+});
+
 
 // Protein component
 g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
@@ -727,7 +751,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             // create a command for the undo/redo support            
             var command = new graphiti.command.CommandAdd(app.view, container, srcPosX, srcPosY);
             app.view.getCommandStack().execute(command);
-            container.addFigure(source, new graphiti.layout.locator.ContainerLocator(container, container.count));
+            container.addFigure(source, new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
             source.resetChildren();
             container.count += 1;
             container.setDimension(container.count * 100 + 100, 100);
@@ -735,16 +759,16 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
        
 
         if (type == "Protein") {
-            container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count));
+            container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
             container.count += 1;
             target.resetChildren();
         } else if (type == "RORA") {
-            container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count));
+            container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
         } else if (type == "R") {
-            container.addFigure(new g.Shapes.R(), new graphiti.layout.locator.ContainerLocator(container, container.count));
+            container.addFigure(new g.Shapes.R(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
             container.count += 1;
         } else if (type == "A") {
-            container.addFigure(new g.Shapes.A(), new graphiti.layout.locator.ContainerLocator(container, container.count));
+            container.addFigure(new g.Shapes.A(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
             container.count += 1;
         }
         console.log(container.getChildren());
@@ -920,7 +944,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 
             for (var i = 0; i < connections.size; i++) {
                 connection = connections.get(i);
-                connection.addFigure(new g.Buttons.Activate(), new graphiti.layout.locator.ManhattanMidpointLocator(connection));
+                connection.addFigure(new g.Shapes.btnContainer(), new graphiti.layout.locator.ManhattanMidpointLocator(connection));
             };
 
             // show exogenous-factors configuration
