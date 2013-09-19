@@ -27,6 +27,11 @@ class SqliteDatabase:
 		return self.__cx
 	def getCuror(self):
 		return self.__cursor
+	def addARBS(self,name,number,MBPRS,RIPS):
+		sql_cmd='INSERT INTO RBS (Name,Number,MPRBS,RIPS) VALUES ("%s","%s",%f,%f)'%(name,number,MBPRS,RIPS)
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()	
+		return 'add RBS success!'
 	def addATerminator(self,name,number,Efficiency):
 		sql_cmd='INSERT INTO terminator (Name,Number,Efficiency) VALUES ("%s","%s",%f)'%(name,number,Efficiency)
 		self.__cursor.execute(sql_cmd)
@@ -473,9 +478,10 @@ if __name__=="__main__":
 	sql=SqliteDatabase()
 	print sql.getUserGroup('Bobby')	
 	sql.updateUserLoginRememberTime()
+	print sql.addARBS('test1','BBa-tst',1.0123,0.1234)
 	# sql.insertAUser('name','password','email',1,1,'question','answer')
 	#sql.addATerminator('test','BBa_12345',0.358)
-	sql.addAnInducer('test','BBa-tst',3,0.123)
+	# sql.addAnInducer('test','BBa-tst',3,0.123)
 	# addATerminator(self,name,number,Efficiency)
 	#sql.addColumnToTable('part_relation','testw','integer',' 0')	
 	#print sql.isRecordExist('part_list')
