@@ -112,18 +112,40 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
         if (typeof radius === "number") {
             this.setDimension(radius, radius);
         } else {
-            this.setDimension(200, 100);
+            this.setDimension(100, 100);
         }
 
-        this.setAlpha(0.05);
-        // this.setBackgroundColor("#EBEBEB");
-        this.setResizeable(false);
+        this.TYPE = "Container";
+        this.count = 0;
+
+        this.boundElements = new Array();
+        this.setAlpha(0.02);
+
+        // Buttons
+        this.remove = new g.Buttons.Remove();
+        this.Activate = new g.Buttons.Activate();
+        this.Inhibit = new g.Buttons.Inhibit();
+        this.CoExpress = new g.Buttons.CoExpress();
     },
 
     onClick: function() {
-        var width = this.getWidth();
-        // this.setDimension(width * 2, this.getHeight());
-        console.log(this.getWidth());
+        g.toolbar(this);
+    },
+
+    onDoubleClick: function() {
+        g.closeToolbar(this);
+    },
+
+    resetChildren: function() {
+        console.log("haha");
+        var that = this;
+        this.children.each(function(i, e) {
+            if (!e.figure.TYPE) {
+                e.figure.setCanvas(null);
+                that.children.remove(e.figure);
+            }
+        });
+        this.repaint();
     }
 });
 
@@ -151,8 +173,8 @@ g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
         this.CoExpress = new g.Buttons.CoExpress();
 
         // Label
-        this.label = new graphiti.shape.basic.Label("PCS");
-        this.label.setFontColor("#000000");
+        // this.label = new graphiti.shape.basic.Label("PCS");
+        // this.label.setFontColor("#000000");
     },
 
     onClick: function() {
@@ -160,9 +182,7 @@ g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
     },
 
     onDoubleClick: function() {
-        if (this.remove || this.label) {
-            this.resetChildren();
-        }
+        g.closeToolbar(this);
     }
 });
 
@@ -198,9 +218,7 @@ g.Shapes.Inducer = graphiti.shape.icon.InducerIcon.extend({
     },
 
     onDoubleClick: function() {
-        if (this.remove || this.label) {
-            this.resetChildren();
-        }
+        g.closeToolbar(this);
     }
 });
 
@@ -237,9 +255,7 @@ g.Shapes.MetalIon = graphiti.shape.icon.MetalIonIcon.extend({
     },
 
     onDoubleClick: function() {
-        if (this.remove || this.label) {
-            this.resetChildren();
-        }
+        g.closeToolbar(this);
     }
 });
 
@@ -276,9 +292,7 @@ g.Shapes.Temperature = graphiti.shape.icon.TemperatureIcon.extend({
     },
 
     onDoubleClick: function() {
-        if (this.remove || this.label) {
-            this.resetChildren();
-        }
+        g.closeToolbar(this);
     }
 });
 
@@ -627,7 +641,7 @@ g.Buttons.CoExpress = graphiti.shape.icon.CoExpress.extend({
         var target = this.getParent();
         var source = this.getCanvas().getFigure(app.view.currentSelected);
 
-        if (source.TYPE == "Protein") {
+        if (source.TYPE == "Protein" || source.TYPE == "Container") {
             g.bind(source, target, "Protein");
         } else if (source.TYPE == "RORA") {
             g.bind(source, target, "RORA")
@@ -664,46 +678,53 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         var srcPosX = source.getX(),
             srcPosY = source.getY();
         var canvas = source.getCanvas();
+        
 
-        var container;
-
-        console.log(source.getParent());
-
-        if (source.getParent() && source.getParent().TYPE === "container") {
-            container = source.getParent();
+        if (source.TYPE === "Container") {
+            console.log("has container");
+            container = source;
+            // console.log(container);
+            container.setDimension(source.count * 100 + 100, 100);            
         } else {
+            console.log("new container");
             // 测试用
             container = new g.Shapes.Container();
-
+            app.view.collection.push(container.getId());
             // create a command for the undo/redo support            
             var command = new graphiti.command.CommandAdd(app.view, container, srcPosX, srcPosY);
             app.view.getCommandStack().execute(command);
-            // this.addFigure(figure, new graphiti.layout.locator.CenterLocator(figure));
+            container.addFigure(source, new graphiti.layout.locator.ContainerLocator(container, container.count));
+            source.resetChildren();
+            container.count += 1;
+            container.setDimension(container.count * 100 + 100, 100);
         }
 
-        container.addFigure(source, new graphiti.layout.locator.LeftLocator(container));
-            // container.addFigure(target, new graphiti.layout.locator.CenterLocator(container));
+        
 
         // var bindedFigure;
         if (type == "Protein") {
             // bindedFigure = new g.Shapes.PandP();
             // bindedFigure.sourceName = source.getId();
             // bindedFigure.targetName = target.getId();
-            container.addFigure(target, new graphiti.layout.locator.RightLocator(container));
+            container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count));
+            container.count += 1;
+            target.resetChildren();
         } else if (type == "RORA") {
             // bindedFigure = new g.Shapes.PandRORA();
             // bindedFigure.sourceName = source.getId();
             // bindedFigure.targetName = target.getId();
-            container.addFigure(target, new graphiti.layout.locator.RightLocator(container));
+            container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count));
         } else if (type == "R") {
             // bindedFigure = new g.Shapes.PandR();
             // bindedFigure.sourceName = source.getId();
             // container.addFigure(new g.Shapes.P(), new graphiti.layout.locator.RightLocator(container));
+            // g.cache = bindedFigure;
         } else if (type == "A") {
             // bindedFigure = new g.Shapes.PandA();
             // bindedFigure.sourceName = source.getId();
             // container.addFigure(new g.Shapes.A(), new graphiti.layout.locator.RightLocator(container));
         }
+        console.log(container.getChildren());
 
         // var command = new graphiti.command.CommandAdd(app.view, bindedFigure, srcPosX, srcPosY);
         // app.view.getCommandStack().execute(command); // 添加到命令栈中
@@ -732,7 +753,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         //     canvas.removeFigure(target);
         // }
 
-        g.cache = bindedFigure;
+        
     };
 })(g);
 
@@ -867,13 +888,14 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         app.view.currentSelected = ctx.getId();
 
         // remove all children nodes
-        if (ctx.remove || this.label) {
+        if (ctx.remove || ctx.label) {
             ctx.resetChildren();
+            console.log(ctx);
         }
 
         // add remove button and label
         ctx.addFigure(ctx.remove, new graphiti.layout.locator.TopLocator(ctx));
-        ctx.addFigure(ctx.label, new graphiti.layout.locator.BottomLocator(ctx));
+        // ctx.addFigure(ctx.label, new graphiti.layout.locator.BottomLocator(ctx));
 
         // get this canvas
         var canvas = ctx.getCanvas();
@@ -883,7 +905,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         if (ctx.TYPE == "Protein") {
             for (var i = 0; i < canvas.collection.length; i++) {
                 var figure = canvas.getFigure(canvas.collection[i]);
-                if (figure != null && ctx.getId() !== figure.getId() && figure.TYPE == "Protein") {
+                if (figure != null && ctx.getId() !== figure.getId() && !figure.getParent()) {
                     figure.resetChildren();
                     figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
                     figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
@@ -920,8 +942,27 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                     figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
                 }
             };
+        } else if (ctx.TYPE == "Container") {
+            for (var i = 0; i < canvas.collection.length; i++) {
+                var figure = canvas.getFigure(canvas.collection[i]);
+                if (figure != null && ctx.getId() !== figure.getId() && !figure.getParent()) {
+                    figure.resetChildren();
+                    figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
+                    figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
+                    figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
+                }
+            };
         }
 
+    };
+})(g);
+
+(function(ex) {
+    ex.closeToolbar = function(ctx) {
+        // remove all children nodes
+        if (ctx.remove || ctx.label) {
+            ctx.resetChildren();
+        }
     };
 })(g);
 

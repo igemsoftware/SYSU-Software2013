@@ -35,9 +35,10 @@ graphiti.layout.locator.ContainerLocator = graphiti.layout.locator.Locator.exten
      * 
      * @param {graphiti.Figure} parent the parent associated with the locator
      */
-    init: function(parent)
+    init: function(parent, n)
     {
       this._super(parent);
+      this.no = n;
     },
     
     
@@ -55,6 +56,6 @@ graphiti.layout.locator.ContainerLocator = graphiti.layout.locator.Locator.exten
        var boundingBox = parent.getBoundingBox();
     
        var targetBoundingBox = target.getBoundingBox();
-       target.setPosition(boundingBox.w/2+50), boundingBox.h/2);
+       target.setPosition(this.no * 100, 0);
     }
 });
