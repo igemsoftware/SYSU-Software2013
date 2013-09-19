@@ -24,7 +24,7 @@ $(document).ready(function () {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function (msg) {
       var message = JSON.parse(msg.data);
-      if (message.request == "Simulate") {
+      if (message.request == "Simulate") {        
         raw_data = message.result.data;
         proteinNames = Object.keys(message.result.data);
         data = turnRawDatatoData(raw_data);
@@ -33,17 +33,17 @@ $(document).ready(function () {
         var time = message.result.time;
         var dt = message.result.dt;
         run(data,canvasWidth, canvasHeight, time, dt);
-		inducerList=getinducerList(sessionStorage.gene_circuit);
+		    inducerList=getinducerList(sessionStorage.gene_circuit);
         for(var i=0;i<data.length;i++)
         {
           var w=document.getElementById('Curve').clientWidth/3/6;
-		  h=100/(data.length/3+1);
+		      h=100/(data.length/3+1);
           document.getElementById('Curve').appendChild(createAnInputCheckBox(i,w,h,proteinNames[i]));          
         }		
-		for(var i=0;i<inducerList.length;i++)
+		    for(var i=0;i<inducerList.length;i++)
         {			
           var w=document.getElementById('Inducer').clientWidth/3/6;
-		  h=100/(data.length/3+1);		  
+		      h=100/(data.length/3+1);		  
           document.getElementById('Inducer').appendChild(createAnInputCheckBoxForInducer(i,w,h,inducerList[i][0],inducerList[i][1]));   
         }
       }
@@ -258,6 +258,7 @@ function run(data, width1, height1, time, dt){
 					isStochastic = false;
 				}
 				gene_circuit = sessionStorage.gene_circuit;
+        console.log($('#stochastic').attr("checked"));
 				$("#Curve").empty();
 				$("#Inducer").empty();
 				ws.send(JSON.stringify({'request'     : 'Simulate',

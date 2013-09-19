@@ -1,4 +1,4 @@
-﻿//var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
+//var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
 var colors={'promoter':"#89c997",'protein': "#ffbf43",'activator': "#ffbf43", 'repressor': "#ffbf43", 'rbs':'#2ec6b7','terminator':"#f95f53"};
 String.prototype.startWith=function(str){
 			if(str==null||str==""||this.length==0||str.length>this.length)
@@ -364,7 +364,7 @@ function initDrawChart(){
 			shadow_color:'#b7b7b7',
 			color:'#6f6f6f'
 		},
-		offset_angle: 0,//parseInt(sessionStorage._offsetAngle,10),
+		offset_angle: parseInt(sessionStorage._offsetAngle,10),
 		data: data,//Chart data source
 		offsetx:0,
 		shadow:false,
@@ -615,10 +615,10 @@ function handlerWebSocket(){
 			}else if (message.request == 'saveUserData') {
 				console.log(message.result);
 			}else if(message.request == 'getPlasmidSbol') {
+				$('#mymodal').modal('hide');
 				raw_data=message.result;
 				console.log(message.result);
-				drawThePlasmid();
-				$('#mymodal').modal('hide');
+				drawThePlasmid();				
 				//chart.draw();
 			}
 			message=null;
@@ -783,6 +783,13 @@ function saveGraph(){
 	var _canvas=document.getElementById(chart.canvasid);
 	Canvas2Image.AsPNG(_canvas);  	
 }
+/**
+ * [isPointInCircle return if a point is in a circle]
+ * @param  {[type]}  circle [description]
+ * @param  double  x      [description]
+ * @param  double  y      [description]
+ * @return {Boolean}        [description]
+ */
 function isPointInCircle(circle,x,y)
 {
 	var lengthTemp = lengthBetweenTwoPoint(circle.x, circle.y, x, y);
@@ -791,7 +798,7 @@ function isPointInCircle(circle,x,y)
     }
     return false;
 } 
-$(function(){
+$(function(){	
 	handlerWebSocket();	
 	if(isUrlArgsExist())
 	{		
@@ -813,7 +820,7 @@ $(function(){
     })();	*/
 });
 function drawThePlasmid()
-{
+{	
 	initDrawChart();	
 	document.getElementById('seqCurrentText').value=seq.substring(1,61);
 	document.getElementById('sequenceDiv').innerHTML=createDivStrByData();		
