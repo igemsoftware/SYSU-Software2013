@@ -713,6 +713,11 @@ var setContentSize = function() {
 	/* $("#content").css("height", Math.floor(conH * scale).toString() + "px"); */
 }
 
+var jumpToSimulation = function() {
+	sessionStorage.gene_circuit = JSON.stringify(getDataCollection());
+  window.location.pathname = "/simulation";
+}
+
 $(window).resize(function() {
 	/* setContentSize(); */
 });
