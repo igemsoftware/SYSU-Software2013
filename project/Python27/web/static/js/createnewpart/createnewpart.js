@@ -28,7 +28,7 @@ function addSeqPartButtonOnclick(obj)
 			var re=/^[actg]+$/gim;
 			if(re.test(seq))
 			{
-				name='seq'+userDefineSize;
+				name='seq'+(userDefineSize+1);
 				item={};
 				item[name]=seq;
 				parts.push(item);
@@ -190,7 +190,6 @@ function acButtonOnclick(obj)
 			alert('You have not select the type!');
 			return;
 		}
-		//ws.send(JSON.stringify({'request': 'loginOut'}));
 	}else if(step==3){
 		var seqData=document.getElementById('finalSeq').value;
 		var re=/^[actg]+$/gim;
@@ -208,6 +207,7 @@ function acButtonOnclick(obj)
 }
 function standardChange(obj)
 {
+	//ws.send(JSON.stringify({'request': 'loginOut'}));
 }
 function getPlasmidBackbone()
 {

@@ -346,7 +346,7 @@ function turnRawDatatoData(raw)
 	tempArray=null;
 	return real_data;	
 }
-var title=null;//{text : '2012年第3季度中国第三方手机浏览器市场份额',color : '#3e576f'}
+var title=null;
 function initDrawChart(){		
 	sessionStorage._offsetAngle=270;	
 	data=turnRawDatatoData(raw_data);
@@ -555,7 +555,7 @@ function createDivStrByData()
 			}else
 			{
 				str=str+'<span style="color:black;">'+seq.substring(data[i].start,data[i].end)+"</span>";
-				console.log(str);
+				//console.log(str);
 			}
 		}else{			
 			str=str+'<span style="color:'+findColorInDataBySeq(seq.substring(data[i].start,data[i].end))+';">'+seq.substring(data[i].start,data[i].end)+"</span>";
@@ -617,7 +617,7 @@ function handlerWebSocket(){
 			}else if(message.request == 'getPlasmidSbol') {
 				$('#mymodal').modal('hide');
 				raw_data=message.result;
-				console.log(message.result);
+				//console.log(message.result);
 				drawThePlasmid();				
 				//chart.draw();
 			}

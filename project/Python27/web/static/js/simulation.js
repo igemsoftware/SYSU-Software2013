@@ -5,7 +5,7 @@ var inducerList=[[2,'inducer1'],[7,'inducer2']];
 var corepind ={}; //{5: {"time": 20},7: {"time": 60}}
 function stochasticOnChange(obj)
 {
-	ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+	//ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
 	if($('#stochastic').attr("checked")==true)
 	{
 		isStochastic = true;
@@ -146,6 +146,14 @@ function createAnInputCheckBoxForInducer(index,width,height,inducerIndex,inducer
 	div.appendChild(document.createTextNode(inducerName));
 	return div;
 }
+/**
+ * [createAnInputCheckBox description]
+ * @param  {[type]} index       [description]
+ * @param  {[type]} width       [description]
+ * @param  {[type]} height      [description]
+ * @param  {[type]} proteinName [description]
+ * @return {[type]}             [description]
+ */
 function createAnInputCheckBox(index,width,height,proteinName){
 	var div=document.createElement("div");
 	var o=document.createElement("input");
@@ -249,24 +257,23 @@ function run(data, width1, height1, time, dt){
       smooth: true,
       listeners:{
         click:function(r,e,m){
-			if($('#timedelay').attr('checked')==true)
-			{
-				if($('#stochastic').attr("checked")==true)
-				{
-					isStochastic = true;
-				}else{
-					isStochastic = false;
-				}
-				gene_circuit = sessionStorage.gene_circuit;
-        console.log($('#stochastic').attr("checked"));
-				$("#Curve").empty();
-				$("#Inducer").empty();
-				ws.send(JSON.stringify({'request'     : 'Simulate',
-										'isStochastic': isStochastic,
-										'gene_circuit': gene_circuit,
-										'corepind'    : corepind
-				}));
-			}
+			// if($('#timedelay').attr('checked')==true)
+			// {
+			// 	if($('#stochastic').attr("checked")==true)
+			// 	{
+			// 		isStochastic = true;
+			// 	}else{
+			// 		isStochastic = false;
+			// 	}
+			// 	gene_circuit = sessionStorage.gene_circuit;        
+			// 	$("#Curve").empty();
+			// 	$("#Inducer").empty();
+			// 	ws.send(JSON.stringify({'request'     : 'Simulate',
+			// 							'isStochastic': isStochastic,
+			// 							'gene_circuit': gene_circuit,
+			// 							'corepind'    : corepind
+			// 	}));
+			// }
 			if($("input[name='inducerRadio']:checked").val()!==undefined)
 			{
 				corepind[$("input[name='inducerRadio']:checked").attr('id')]={"time": (e.x-r.x)/(r.options.width) * 6000};
