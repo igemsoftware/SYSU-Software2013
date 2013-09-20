@@ -617,8 +617,10 @@ function handlerWebSocket(){
 			}else if(message.request == 'getPlasmidSbol') {
 				$('#mymodal').modal('hide');
 				raw_data=message.result;
-				//console.log(message.result);
-				drawThePlasmid();				
+				drawThePlasmid();	
+				document.body.style.zoom=1.5;
+				chart.draw();
+				document.body.style.zoom=1;			
 				//chart.draw();
 			}
 			message=null;

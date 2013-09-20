@@ -48,12 +48,12 @@ function addSeqPartButtonOnclick(obj)
 function addPartFromRegButtonOnclick(obj)
 {
 	var left = $("#left-container").css("left");
-
         if (parseInt(left) == 0) {
             $("#left-container").css({
                 left: '-270px'
             });
-        } else {	
+        } else {
+        	$("#left-container").css('left','0px')	;
         }
 }
 function step0()
@@ -202,7 +202,34 @@ function acButtonOnclick(obj)
 			standard="RFC 10";
 		sendData=JSON.stringify({'seq':seqData,'standard':standard});
 		console.log(sendData);
+		sendYourdata();
 	}
+}
+function sendYourdata()
+{
+	basic=eval('(' + sessionStorage.basicInfomation + ')');
+	parameters=eval('(' + sessionStorage.ModelingParameters + ')');
+	console.log(basic);
+	console.log(parameters);
+	var type=basic.type;
+	console.log(type);
+	if(type=='Regulatory'){
+				
+		}else if(type=='RBS'){					 
+			
+		}
+		else if(type=='Coding'){
+
+		}else if(type=='Terminator'){		
+
+		}else if(type=='Repressor'){
+
+		}else if(type=='Inducer'||type=='Corepressor')
+		{
+
+		}else if (type=='Plasmid backbone'){	
+				
+		}
 }
 function standardChange(obj)
 {
