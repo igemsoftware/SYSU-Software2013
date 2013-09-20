@@ -212,7 +212,6 @@ function sendYourdata()
 	console.log(basic);
 	console.log(parameters);
 	var type=basic.type;
-	console.log(type);
 // 	 Object {author: "asda"
 // name: "asd"
 // nickname: "sasdasd"
@@ -220,6 +219,8 @@ function sendYourdata()
 // shortname: "asdas"
 // type: "Inducer"} 
 // Object {Name: "asdas", Number: "sdfsdf", HillCoeff2: "0.125", K2: "0.125"} 
+// 
+	ws.send(JSON.stringify({'request': 'addAUserPart','part_id':parameters.Number,'part_name':basic.name,'part_short_name':basic.shortname,'part_short_desc':basic.shortDesp,'part_type':basic.type,'part_nickname':basic.nickname,'part_author':basic.author,'sequence':$('#finalSeq').val()}));
 	if(type=='Regulatory'){
 				
 		}else if(type=='RBS'){					 

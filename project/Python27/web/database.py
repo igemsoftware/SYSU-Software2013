@@ -26,7 +26,12 @@ class SqliteDatabase:
 	def getCx(self):
 		return self.__cx
 	def getCuror(self):
-		return self.__cursor
+		return self.__cursor	
+	def addAUserPart(self,part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence):
+		sql_cmd='INSERT INTO userPart (part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,uploadUser) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s")'%(part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,self.getUserNameById(self.userId))
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()	
+		return 'add user part success!'
 	def addAplasmidBackbone(self,name,number,CopyNumber):
 		sql_cmd='INSERT INTO plasmid_backbone (Name,Number,CopyNumber) VALUES ("%s","%s",%d)'%(name,number,CopyNumber)
 		self.__cursor.execute(sql_cmd)
@@ -486,11 +491,13 @@ class SqliteDatabase:
 		
 if __name__=="__main__":
 	sql=SqliteDatabase()
-	print sql.getUserGroup('Bobby')	
-	sql.updateUserLoginRememberTime()
+	# print sql.getUserGroup('Bobby')	
+	# sql.updateUserLoginRememberTime()
+	sql.userId=1
+	print sql.addAUserPart(part_id='test',part_name='test',part_short_name='set',part_short_desc='sets',part_type='terminater',part_nickname='sdfhsdjf',part_author='huangjunyong',sequence='actga')
 	# print sql.addARBS('test1','BBa-tst',1.0123,0.1234)
 	# print sql.addARepressor('test1','BBa-tst',2,0.1234,0.123)
-	print sql.addAplasmidBackbone('testw','BBa-tst',5)
+	#print sql.addAplasmidBackbone('testw','BBa-tst',5)
 	# sql.insertAUser('name','password','email',1,1,'question','answer')
 	#sql.addATerminator('test','BBa_12345',0.358)
 	# sql.addAnInducer('test','BBa-tst',3,0.123)
