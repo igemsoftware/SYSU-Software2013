@@ -717,9 +717,7 @@ $(window).resize(function() {
 	/* setContentSize(); */
 });
 
-
 $(function(){
-
 	$("#dashboard-view").mCustomScrollbar({
 		/* autoHideScrollbar: true, */
 		theme: "light",
@@ -741,38 +739,5 @@ $(function(){
 	$("#cmd-new-plasmid").click(function(){
 		plasmid.addPlasmid();
 	});
-
-	// var chart = new iChart.LineBasic2D({ 
-		// animation: true, 
-		// render: 'simulation', 
-		// data: [2,4,2,1,6,3], 
-	// }) 
-	
-	
-	
-	// var data = [ 
-						// { 
-							// name : 'aa', 
-							// value:[-9,1,12,20,26,30,32,29,22,12,0,-6], 
-							// color:'#1f7e92', 
-							// line_width:2 
-						// } 
-				//  ]; 
-			//   
-	// var chart = new iChart.Area2D({ 
-			// render : 'simulation', 
-			// data: data, 
-			// title : 'xxx', 
-			// width : 267, 
-			// height : 220, 
-			// coordinate:{height:'80%',background_color:'#edf8fa'}, 
-			// sub_option:{ 
-				// hollow_inside:false,//设置一个点的亮色在外环的效果 
-				// point_size:10 
-			// }, 
-			// labels:["1","2","3","4","5","6","7","8","9","10","11","12"] 
-		// }); 
-	// chart.draw(); 
-
 });
 
