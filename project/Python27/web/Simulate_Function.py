@@ -111,4 +111,5 @@ if __name__ == "__main__":
     #corepind = {5: {"time": 20},
     #            7: {"time": 60}}
     corepind = {}
+    gene_circuit = {"proteins":{0:{"grp_id":0,"display":"True","pos":2,"name":"BBa_C0060","PoPS":37,"RiPS":11,"copy":73,"K1":None,"concen":0,"before_regulated":30917,"repress_rate":0,"induce_rate":0},1:{"grp_id":1,"display":"True","pos":2,"name":"BBa_C0061","PoPS":37,"RiPS":11,"copy":73,"K1":None,"concen":0,"before_regulated":30917,"repress_rate":0,"induce_rate":0}},"plasmids":[[0,1]],"groups":{0:{"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0060","id": 0},{"type":"Terminator","name":"BBa_B0013"}],"state":"cis","from":-1,"to":[],"type":"Constitutive","corep_ind_type":"None"},1:{"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0061","id":1},{"type":"Terminator","name":"BBa_B0013"}],"state":"cis","from":-1,"to":[],"type":"Constitutive","corep_ind_type":"None"}}}
     print Simulate(False, gene_circuit, corepind, db, 6000, 100)
