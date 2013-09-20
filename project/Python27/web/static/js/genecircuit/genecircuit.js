@@ -201,7 +201,7 @@ var group = {
 			$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").find('img').attr('src', "../static/img/component/" + type);
 			$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").data('type', aData.sbol[i].type);
 			
-			if(aData.sbol[i].id) {
+			if('id' in aData.sbol[i]) {
 				$("#" + aTextureId + " .sbol-components li:eq(" + i.toString() + ")").data('id', aData.sbol[i].id);
 			}
 
@@ -619,7 +619,7 @@ var getDataCollection = function() {
 				dataCollection.groups[grp_id].sbol.push({'type':'','name':''});
 				dataCollection.groups[grp_id].sbol[k].name = curGroup.find("li").eq(k+1).find("span").text();
 				dataCollection.groups[grp_id].sbol[k].type = curGroup.find("li").eq(k+1).data("type");
-				if(curGroup.find("li").eq(k+1).data("id")) {
+				if('id' in curGroup.find("li").eq(k+1).data()) {
 					dataCollection.groups[grp_id].sbol[k].id = curGroup.find("li").eq(k+1).data("id");
 				}
 			}
