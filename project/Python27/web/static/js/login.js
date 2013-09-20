@@ -22,7 +22,7 @@ $(document).ready(function() {
 			if (message.request === "userLogin"){
 				if(message.result === "Password correct!") {
 					ws.send(JSON.stringify({'request': 'getRememberMeTicket'}));
-					window.location = location.href + "index";
+					self.location='index';
 				} else {
 					alert(message.result);
 				}
