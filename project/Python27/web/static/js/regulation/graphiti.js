@@ -137,7 +137,6 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
     },
 
     resetChildren: function() {
-        console.log("haha");
         var that = this;
         this.children.each(function(i, e) {
             if (!e.figure.TYPE) {
@@ -150,7 +149,7 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
 });
 
 // button container
-g.Shapes.btnContainer = graphiti.shape.basic.Rectangle.extend({
+g.Shapes.btnContainer = graphiti.shape.icon.ProteinIcon.extend({
     NAME: "g.Shapes.btnContainer",
 
     init: function(width, height) {
@@ -159,17 +158,17 @@ g.Shapes.btnContainer = graphiti.shape.basic.Rectangle.extend({
         if (typeof radius === "number") {
             this.setDimension(radius, radius);
         } else {
-            this.setDimension(60, 30);
+            this.setDimension(5, 30);
         }
 
         this.TYPE = "btnContainer";
-        this.setAlpha(0.1);
+        // this.setAlpha(0.1);
 
         // Buttons
         this.Activate = new g.Buttons.Activate();
         this.Inhibit = new g.Buttons.Inhibit();
-        this.addFigure(this.Activate, new graphiti.layout.locator.ContainerLocator(this, 0, 30));
-        this.addFigure(this.Inhibit, new graphiti.layout.locator.ContainerLocator(this, 1, 30));
+        this.addFigure(this.Activate, new graphiti.layout.locator.LeftLocator(this));
+        this.addFigure(this.Inhibit, new graphiti.layout.locator.RightLocator(this));
     }
 });
 
@@ -231,6 +230,7 @@ g.Shapes.Inducer = graphiti.shape.icon.InducerIcon.extend({
         this.Activate = new g.Buttons.Activate();
         this.Inhibit = new g.Buttons.Inhibit();
         this.CoExpress = new g.Buttons.CoExpress();
+        this.btnContainer = new g.Shapes.btnContainer();
 
         // Label
         this.label = new graphiti.shape.basic.Label("Inducer");
@@ -633,7 +633,7 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
             var sourcePort = new graphiti.HybridPort();
             source.addFigure(sourcePort, new graphiti.layout.locator.ManhattanMidpointLocator(source));
 
-            var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, null, "Activate");
+            var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate");
             app.view.getCommandStack().execute(command); // 添加到命令栈中
             app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
         }
@@ -657,7 +657,7 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
     onClick: function() {
         var canvas = this.getCanvas();
         var source = this.getParent();
-
+        console.log("Click Inhibit");
         if (canvas.getFigure(app.view.currentSelected).TYPE == "Protein" || canvas.getFigure(app.view.currentSelected).TYPE == "Container") {
             g.bind(canvas.getFigure(app.view.currentSelected), null, "R");
             var target = g.cache;
@@ -675,6 +675,16 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
             var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
 
             var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.TDecorator(), "Inhibit"); // 连接两点
+            app.view.getCommandStack().execute(command); // 添加到命令栈中
+            app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
+        } else if (canvas.getFigure(app.view.currentSelected).TYPE == "Inducer") {
+            var target = canvas.getFigure(app.view.currentSelected);
+            // var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
+            var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
+            var sourcePort = new graphiti.HybridPort();
+            source.addFigure(sourcePort, new graphiti.layout.locator.ManhattanMidpointLocator(source));
+
+            var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.TDecorator(), "Inhibit");
             app.view.getCommandStack().execute(command); // 添加到命令栈中
             app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
         }
@@ -910,7 +920,6 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         // remove all children nodes
         if (ctx.remove || ctx.label) {
             ctx.resetChildren();
-            console.log(ctx);
         }
 
         // add remove button and label
@@ -944,7 +953,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 
             for (var i = 0; i < connections.size; i++) {
                 connection = connections.get(i);
-                connection.addFigure(new g.Shapes.btnContainer(), new graphiti.layout.locator.ManhattanMidpointLocator(connection));
+                connection.addFigure(new g.Buttons.Activate(), new graphiti.layout.locator.ManhattanMidpointLocator(connection));
+                connection.addFigure(new g.Buttons.Inhibit(), new graphiti.layout.locator.MidpointLocator(connection));
             };
 
             // show exogenous-factors configuration
