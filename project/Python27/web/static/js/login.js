@@ -21,8 +21,11 @@ $(document).ready(function() {
 			}					
 			if (message.request === "userLogin"){
 				if(message.result === "Password correct!") {
-					ws.send(JSON.stringify({'request': 'getRememberMeTicket'}));
-					self.location='index';
+					if($('#remember').attr('checked')===true){
+						ws.send(JSON.stringify({'request': 'getRememberMeTicket'}));
+					}else{
+						self.location='index';
+					}
 				} else {
 					alert(message.result);
 				}
