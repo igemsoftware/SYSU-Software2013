@@ -24,6 +24,8 @@ class apis():
     self.db = db
   def addAnInducer(self,message):
     return self.db.addAnInducer(message['name'],message['number'],string.atoi(message['HillCoeff2']),string.atof(message['K2']))
+  def addARepressor(self,message):
+    return self.db.addARepressor(message['name'],message['number'],string.atoi(message['HillCoeff1']),string.atof(message['K1']),string.atof(message['K2']))
   def getRememberMeTicket(self,message):
     user.userSetRememberMe(self.db)
     return user.getRememberMeTicket(self.db,user.getLoginedUserName(self.db))

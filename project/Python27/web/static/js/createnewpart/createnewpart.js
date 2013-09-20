@@ -230,7 +230,7 @@ function sendYourdata()
 		}else if(type=='Terminator'){		
 
 		}else if(type=='Repressor'){
-
+			ws.send(JSON.stringify({'request': 'addARepressor','name':parameters.Name,'number':parameters.Number,'HillCoeff1':parameters.HillCoeff1,'K2':parameters.K2,'K1':parameters.K1}));
 		}else if(type=='Inducer'||type=='Corepressor')
 		{
 			ws.send(JSON.stringify({'request': 'addAnInducer','name':parameters.Name,'number':parameters.Number,'HillCoeff2':parameters.HillCoeff2,'K2':parameters.K2}));
