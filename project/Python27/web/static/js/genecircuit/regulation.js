@@ -483,7 +483,29 @@ $().ready(function() {
         console.log(message.result);
 			} else if (message.request == "getGroup") {
 				console.log("getGroup", message);
-				genecircuitData = message.result; 
+        if(message.result==='ERROR!'){
+          ws.send(JSON.stringify({
+            'request': 'getGroup',
+            // 'data': regulationData, 
+            'data': {"part": [{"type": "Protein", 
+            "id": 1, "name": "BBa_C0060"}, 
+            {"type": "Protein", "id": 2, "name": "BBa_C0060"}, 
+            {"type": "Activator", "id": 3, "name": "activator"}, 
+            {"type": "Repressor", "id": 4, "name": "repressor"}, 
+            {"type": "Protein", "id": 5, "name": "BBa_C0160"}, 
+            {"type": "Protein", "id": 6, "name": "BBa_C0178"}, 
+            {"type": "Protein", "id": 7, "name": "BBa_C0178"}], 
+            "link": [{"to": 2, "from": 1, "type": "Bound"}, 
+            {"to": 3, "from": 2, "type": "Bound"}, 
+            {"to": 4, "from": 3, "type": "Bound"},
+            {"to": 5, "from": 3, "inducer": "None", "type": "Activator"}, 
+            {"to": 6, "from": 4, "inducer": "Positive", "type": "Repressor"}, 
+            {"to": 7, "from": 6, "type": "Bound"}]},
+          }));
+          return;
+        }else{
+          genecircuitData = message.result; 
+        }				
 				init(genecircuitData);  
       } else if (message.request == "changeRBS") {
 				/* console.log(message.result); */

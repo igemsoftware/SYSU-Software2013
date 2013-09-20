@@ -823,12 +823,11 @@ function run(data,width1,height1){
     shadow:true,
     background_color:'#f4f4f4',
     separate_angle:10,//分离角度
-	/*coordinate:{
+	coordinate:{
 		scale:[{
 			position:'left',	
 			scale_space:5,
-			scale_enable:false,//禁用小横线			
-			
+			scale_enable:false,//禁用小横线	
 			},{
 			position:'bottom',	
 			start_scale:1,
@@ -837,7 +836,7 @@ function run(data,width1,height1){
 			scale_space:10,		
 			labels:labels
 		}]
-	},*/
+	},
     tip:{
       enable:true,
       showType:'fixed',
