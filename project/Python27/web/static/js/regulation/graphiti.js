@@ -94,6 +94,62 @@ g.View = graphiti.Canvas.extend({
         // create a command for the undo/redo support
         var command = new graphiti.command.CommandAdd(this, figure, x, y);
         this.getCommandStack().execute(command);
+    },
+
+    onMouseDown : function(/* :int */x, /* :int */y)
+    {
+        var canDragStart = true;
+
+        var figure = this.getBestFigure(x, y);
+
+        // check if the user click on a child shape. DragDrop and movement must redirect
+        // to the parent
+        // Exception: Port's
+        if((figure!==null && figure.getParent()!==null) && !(figure instanceof graphiti.Port)){
+            figure = figure.getParent();
+        }
+        
+        if (figure !== null && figure.isDraggable()) {
+            canDragStart = figure.onDragStart(x - figure.getAbsoluteX(), y - figure.getAbsoluteY());
+            // Element send a veto about the drag&drop operation
+            if (canDragStart === false) {
+                this.mouseDraggingElement = null;
+                this.mouseDownElement = figure;
+            }
+            else {
+                this.mouseDraggingElement = figure;
+                this.mouseDownElement = figure;
+            }
+        }
+
+        if (figure !== this.currentSelection && figure !== null && figure.isSelectable() === true) {
+
+            this.hideResizeHandles();
+            this.setCurrentSelection(figure);
+
+            // its a line
+            if (figure instanceof graphiti.shape.basic.Line) {
+                // you can move a line with Drag&Drop...but not a connection.
+                // A Connection is fixed linked with the corresponding ports.
+                //
+                if (!(figure instanceof graphiti.Connection)) {
+                    this.draggingLineCommand = figure.createCommand(new graphiti.command.CommandType(graphiti.command.CommandType.MOVE));
+                    if (this.draggingLineCommand !== null) {
+                        this.draggingLine = figure;
+                    }
+                }
+            }
+            else if (canDragStart === false) {
+                this.setCurrentSelection(null);
+            }
+        }
+        else if (figure === null) {
+            this.setCurrentSelection(null);
+        }
+
+        if (figure == null) {
+            g.hideAllToolbar();
+        }
     }
 });
 
@@ -126,6 +182,8 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
         this.Activate = new g.Buttons.Activate();
         this.Inhibit = new g.Buttons.Inhibit();
         this.CoExpress = new g.Buttons.CoExpress();
+
+        this.addFigure(new g.Shapes.Protein(), new graphiti.layout.locator.LeftLocator(this));
     },
 
     onClick: function() {
@@ -394,171 +452,6 @@ g.Shapes.A = graphiti.shape.icon.A.extend({
 });
 
 
-// Protein-Repressor component
-g.Shapes.PandR = graphiti.shape.icon.PandR.extend({
-    NAME: "g.Shapes.PandR",
-
-    init: function(width, height) {
-        this._super();
-
-        if (typeof radius === "number") {
-            this.setDimension(radius, radius);
-        } else {
-            this.setDimension(100, 100);
-        }
-
-        this.setColor("#339BB9");
-        this.TYPE = "PandR";
-
-        // Buttons
-        this.Unbind = new g.Buttons.Unbind();
-        this.remove = new g.Buttons.Remove();
-        this.Activate = new g.Buttons.Activate();
-        this.Inhibit = new g.Buttons.Inhibit();
-        this.CoExpress = new g.Buttons.CoExpress();
-
-        // Label
-        this.label = new graphiti.shape.basic.Label("PandR");
-        this.label.setFontColor("#000000");
-
-        // Unbinder
-        this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
-    },
-
-    onClick: function() {
-        g.toolbar(this);
-    },
-
-    onDoubleClick: function() {
-        g.unbind(this);
-    }
-});
-
-
-// Protein-Activator component
-g.Shapes.PandA = graphiti.shape.icon.PandA.extend({
-    NAME: "g.Shapes.PandA",
-
-    init: function(width, height) {
-        this._super();
-
-        if (typeof radius === "number") {
-            this.setDimension(radius, radius);
-        } else {
-            this.setDimension(100, 100);
-        }
-
-        this.setColor("#339BB9");
-        this.TYPE = "PandA";
-
-        // Buttons
-        this.Unbind = new g.Buttons.Unbind();
-        this.remove = new g.Buttons.Remove();
-        this.Activate = new g.Buttons.Activate();
-        this.Inhibit = new g.Buttons.Inhibit();
-        this.CoExpress = new g.Buttons.CoExpress();
-
-        // Label
-        this.label = new graphiti.shape.basic.Label("PandA");
-        this.label.setFontColor("#000000");
-
-        // Unbinder
-        this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
-    },
-
-    onClick: function() {
-        g.toolbar(this);
-    },
-
-    onDoubleClick: function() {
-        g.unbind(this);
-    }
-});
-
-
-// Protein-Protein component
-g.Shapes.PandP = graphiti.shape.icon.PandP.extend({
-    NAME: "g.Shapes.PandP",
-
-    init: function(width, height) {
-        this._super();
-
-        if (typeof radius === "number") {
-            this.setDimension(radius, radius);
-        } else {
-            this.setDimension(100, 100);
-        }
-
-        this.setColor("#339BB9");
-        this.TYPE = "PandP";
-
-        // Buttons
-        this.Unbind = new g.Buttons.Unbind();
-        this.remove = new g.Buttons.Remove();
-        this.Activate = new g.Buttons.Activate();
-        this.Inhibit = new g.Buttons.Inhibit();
-        this.CoExpress = new g.Buttons.CoExpress();
-
-        // Label
-        this.label = new graphiti.shape.basic.Label("PandP");
-        this.label.setFontColor("#000000");
-
-
-        // Unbinder
-        this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
-    },
-
-    onClick: function() {
-        g.toolbar(this);
-    },
-
-    onDoubleClick: function() {
-        g.unbind(this);
-    }
-});
-
-
-// Protein-R/A component
-g.Shapes.PandRORA = graphiti.shape.icon.PandRORA.extend({
-    NAME: "g.Shapes.PandRORA",
-
-    init: function(width, height) {
-        this._super();
-
-        if (typeof radius === "number") {
-            this.setDimension(radius, radius);
-        } else {
-            this.setDimension(100, 100);
-        }
-
-        this.setColor("#339BB9");
-        this.TYPE = "PandRORA";
-
-        // Buttons
-        this.Unbind = new g.Buttons.Unbind();
-        this.remove = new g.Buttons.Remove();
-        this.Activate = new g.Buttons.Activate();
-        this.Inhibit = new g.Buttons.Inhibit();
-        this.CoExpress = new g.Buttons.CoExpress();
-
-        // Label
-        this.label = new graphiti.shape.basic.Label("PandRORA");
-        this.label.setFontColor("#000000");
-
-        // Unbinder
-        this.addFigure(this.Unbind, new graphiti.layout.locator.CenterLocator(this));
-    },
-
-    onClick: function() {
-        g.toolbar(this);
-    },
-
-    onDoubleClick: function() {
-        g.unbind(this);
-    }
-});
-
-
 
 // Buttons
 g.Buttons = {};
@@ -793,86 +686,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
  */
 (function(ex) {
     ex.unbind = function(figure) {
-        if (figure.TYPE == "PandP") {
-            var posX = figure.getX(),
-                posY = figure.getY();
-            var p1 = new g.Shapes.Protein(),
-                p2 = new g.Shapes.Protein();
-
-            var command = new graphiti.command.CommandAdd(app.view, p1, posX, posY),
-                command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
-            app.view.getCommandStack().execute(command); // 添加到命令栈中
-            app.view.getCommandStack().execute(command2);
-
-            app.view.collection.remove(figure.getId()); // 删除绑定体的id
-
-            p1.setId(figure.sourceName);
-            p1.label.setText(figure.sourceName);
-            app.view.collection.push(figure.sourceName); // 将拆分后的source id放入collection中
-
-            p2.setId(figure.targetName);
-            p2.label.setText(figure.targetName);
-            app.view.collection.push(figure.targetName); // 将拆分后的target id放入collection中
-
-            figure.getCanvas().removeFigure(figure);
-
-        } else if (figure.TYPE == "PandRORA") {
-            var posX = figure.getX(),
-                posY = figure.getY();
-            var p1 = new g.Shapes.Protein(),
-                p2 = new g.Shapes.RORA();
-
-            var command = new graphiti.command.CommandAdd(app.view, p1, posX, posY),
-                command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
-            app.view.getCommandStack().execute(command); // 添加到命令栈中
-            app.view.getCommandStack().execute(command2);
-
-            // 设置p1
-            p1.setId(figure.sourceName);
-            p1.label.setText(figure.sourceName);
-            app.view.collection.push(figure.sourceName); // 将拆分后的source id放入collection中
-
-            // 设置p2
-            p2.setId(p2.TYPE + "-" + app.view.collection.counter);
-            app.view.collection.counter += 1;
-            p2.label.setText(p2.TYPE);
-            app.view.collection.push(p2.getId()); // 将拆分后的target id放入collection中
-
-            // 删除原绑定体
-            app.view.collection.remove(figure.getId()); // 删除绑定体的id
-            figure.getCanvas().removeFigure(figure);
-
-        } else if (figure.TYPE == "PandR" || figure.TYPE == "PandA") {
-            var posX = figure.getX(),
-                posY = figure.getY();
-            var p1 = new g.Shapes.Protein(),
-                p2 = new g.Shapes.RORA();
-
-            var command = new graphiti.command.CommandAdd(app.view, p1, posX, posY),
-                command2 = new graphiti.command.CommandAdd(app.view, p2, posX + p1.getWidth() + 10, posY);
-            app.view.getCommandStack().execute(command); // 添加到命令栈中
-            app.view.getCommandStack().execute(command2);
-
-            // 设置p1
-            p1.setId(figure.sourceName);
-            p1.label.setText(figure.sourceName);
-            app.view.collection.push(figure.sourceName); // 将拆分后的source id放入collection中
-
-            // 设置p2
-            p2.setId(p2.TYPE + "-" + app.view.collection.counter);
-            app.view.collection.counter += 1;
-            p2.label.setText(p2.TYPE);
-            app.view.collection.push(p2.getId()); // 将拆分后的target id放入collection中
-
-            // 删除原绑定体
-            app.view.collection.remove(figure.getId()); // 删除绑定体的id
-            figure.getCanvas().removeFigure(figure.getConnections().data[0]);
-            figure.getCanvas().removeFigure(figure);
-            // console.log(figure.getConnections().data);
-        }
-
-        console.log("解绑定后");
-        console.log(app.view.collection);
+        
     }
 })(g);
 
@@ -934,7 +748,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         if (ctx.TYPE == "Protein") {
             for (var i = 0; i < canvas.collection.length; i++) {
                 var figure = canvas.getFigure(canvas.collection[i]);
-                if (figure != null && ctx.getId() !== figure.getId() && !figure.getParent()) {
+                if (figure != null && ctx.getId() !== figure.getId() && (figure.TYPE == "Protein" || figure.TYPE == "Container")) {
                     figure.resetChildren();
                     figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
                     figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
@@ -947,7 +761,6 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 "display": "block"
             });
         } else if (ctx.TYPE == "Inducer") {
-
             var connections, connection;
             connections = canvas.getLines();
 
@@ -975,7 +788,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         } else if (ctx.TYPE == "Container") {
             for (var i = 0; i < canvas.collection.length; i++) {
                 var figure = canvas.getFigure(canvas.collection[i]);
-                if (figure != null && ctx.getId() !== figure.getId() && !figure.getParent()) {
+                if (figure != null && ctx.getId() !== figure.getId() && (figure.TYPE == "Protein" || figure.TYPE == "Container")) {
                     figure.resetChildren();
                     figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
                     figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
@@ -996,6 +809,24 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
     };
 })(g);
 
+
+(function(ex) {
+    ex.hideAllToolbar = function() {
+        var canvas = app.view;
+
+        for (var i = 0; i < canvas.collection.length; i++) {
+            var figure = canvas.getFigure(canvas.collection[i]);
+            g.closeToolbar(figure);
+        };
+
+        var connections, connection;
+        connections = canvas.getLines();
+        for (var i = 0; i < connections.size; i++) {
+            connection = connections.get(i);
+            g.closeToolbar(connection);
+        };
+    }
+})(g);
 
 // remove all lines that can be traversed along the path starting from "startNode"
 (function(ex) {
