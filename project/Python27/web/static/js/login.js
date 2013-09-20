@@ -31,7 +31,8 @@ $(document).ready(function() {
 			} else if (message.request==="getRememberMeTicket") {
 				localStorage.userName=$("#username").attr('value');
 				localStorage.rememberTicket=message.result;
-				window.location = location.href + "index";
+				//window.location = location.href + "index";
+				self.location='index'; 
 			} else if (message.request==="userLoginByTicket"){
 				if (message.result!='Ticket error!')
 				{
