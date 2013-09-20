@@ -47,17 +47,13 @@ function addSeqPartButtonOnclick(obj)
 }
 function addPartFromRegButtonOnclick(obj)
 {
-	console.log('here');
 	var left = $("#left-container").css("left");
 
         if (parseInt(left) == 0) {
             $("#left-container").css({
                 left: '-270px'
             });
-			console.log('bbb');
-        } else {
-			console.log('aaa');
-			console.log($("#left-container").css('left','0px'));	
+        } else {	
         }
 }
 function step0()
@@ -118,8 +114,11 @@ function acButtonOnclick(obj)
 		step0();
 		return;
 	}else if(step==1)
-	{				
-		sessionStorage.basicInfomation=JSON.stringify(getBasicInfomation());
+	{	
+		ret=getBasicInfomation();
+		if(ret==false)
+			{return;}
+		sessionStorage.basicInfomation=JSON.stringify(ret);
 		var type=document.getElementById('typeSelect').value;
 		if(type=='Regulatory')
 		{
@@ -133,7 +132,7 @@ function acButtonOnclick(obj)
 		else if(type=='Coding')
 		{
 			step+=2;	
-			$("#step4").css('display','block');
+			$("#step4").css('display','inline-block');
 			return;
 		}else if(type=='Terminator')
 		{			
@@ -229,6 +228,11 @@ function getInducer()
 function getBasicInfomation()
 {
 	var data={};
+	if($('#typeSelect').val()===''||$('#shortDesp').val()===''||$('#name').val()===''||$('#nickname').val()===''||$('#ShortName').val()===''||$('#ShortName').val()===''||$('#Author').val()==='')	
+	{
+		alert ('Please fill in all the blanks!');
+		return false;
+	}
 	data['type']=$('#typeSelect').val();
 	data['shortDesp']=$('#shortDesp').val();
 	data['name']=$('#name').val();

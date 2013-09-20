@@ -10,7 +10,7 @@ function stochasticOnChange(obj)
 	{
 		isStochastic = true;
 	}else{
-    	isStochastic = false;
+    isStochastic = false;
 	}
     gene_circuit = sessionStorage.gene_circuit;
     ws.send(JSON.stringify({'request'     : 'Simulate',
@@ -65,7 +65,7 @@ $(document).ready(function () {
         window.location = "..";
       }
       else if (message.request == "getUserFileList") {
-        console.log(message.result);
+        //console.log(message.result);
         $("#filelist").html("");
         for (var i = 0; i < message.result.length; i++) {
           $("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
@@ -117,7 +117,7 @@ function getinducerList(circuit)
 {
 	var ret=[]	
     var obj = eval('(' + circuit + ')'); 
-	console.log(obj);
+	//console.log(obj);
 	for (x in obj['groups'])
 	{
 		
@@ -286,6 +286,7 @@ function run(data, width1, height1, time, dt){
 				gene_circuit = sessionStorage.gene_circuit;
 				$("#Curve").empty();
 				$("#Inducer").empty();
+                console.log(corepind);
 				ws.send(JSON.stringify({'request'     : 'Simulate',
 										'isStochastic': isStochastic,
 										'gene_circuit': gene_circuit,
