@@ -502,11 +502,28 @@ $().ready(function() {
             {"to": 6, "from": 4, "inducer": "Positive", "type": "Repressor"}, 
             {"to": 7, "from": 6, "type": "Bound"}]},
           }));
+				ws.send(JSON.stringify({'request'     : 'Simulate',
+										'isStochastic': false,
+										'gene_circuit':JSON.stringify(genecircuitData),
+										'corepind':{},
+				}));
           return;
         }else{
-          genecircuitData = message.result; 
-        }				
-				init(genecircuitData);  
+          genecircuitData = message.result;
+        }
+				ws.send(JSON.stringify({'request'     : 'Simulate',
+										'isStochastic': false,
+										'gene_circuit':JSON.stringify(genecircuitData),
+										'corepind':{},
+				}));
+				init(genecircuitData);
+			} else if (message.request == "Simulate") {
+        var raw_data = message.result.data;
+        var data = turnRawDatatoData(raw_data);
+        var time = message.result.time;
+        var dt = message.result.dt;
+	      $("#canvasDiv div").css("margin", "auto");
+        run(data,'canvasDiv', 267, 200, time, dt * 2);
       } else if (message.request == "changeRBS") {
 				/* console.log(message.result); */
 				console.log("changeRBS", message);

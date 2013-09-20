@@ -1,4 +1,5 @@
 var data =  [];
+var time, dt;
 
 var proteinNames=[];
 var inducerList=[[2,'inducer1'],[7,'inducer2']];
@@ -10,7 +11,7 @@ function stochasticOnChange(obj)
 	{
 		isStochastic = true;
 	}else{
-    	isStochastic = false;
+    isStochastic = false;
 	}
     gene_circuit = sessionStorage.gene_circuit;
     ws.send(JSON.stringify({'request'     : 'Simulate',
@@ -28,11 +29,11 @@ $(document).ready(function () {
         raw_data = message.result.data;
         proteinNames = Object.keys(message.result.data);
         data = turnRawDatatoData(raw_data);
-        var canvasWidth = document.getElementById('canvasDiv').clientWidth;
-        var canvasHeight = document.getElementById('canvasDiv').clientHeight;
-        var time = message.result.time;
-        var dt = message.result.dt;
-        run(data,canvasWidth, canvasHeight, time, dt);
+        time = message.result.time;
+        dt = message.result.dt;
+        var width1 = document.getElementById('canvasDiv').clientWidth - 15;
+        var height1 = document.getElementById('canvasDiv').clientHeight - 15;
+        run(data,'canvasDiv', width1, height1, time, dt);
 		    inducerList=getinducerList(sessionStorage.gene_circuit);
         for(var i=0;i<data.length;i++)
         {
@@ -65,7 +66,7 @@ $(document).ready(function () {
         window.location = "..";
       }
       else if (message.request == "getUserFileList") {
-        console.log(message.result);
+        //console.log(message.result);
         $("#filelist").html("");
         for (var i = 0; i < message.result.length; i++) {
           $("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
@@ -117,7 +118,7 @@ function getinducerList(circuit)
 {
 	var ret=[]	
     var obj = eval('(' + circuit + ')'); 
-	console.log(obj);
+	//console.log(obj);
 	for (x in obj['groups'])
 	{
 		
@@ -168,36 +169,23 @@ function createAnInputCheckBox(index,width,height,proteinName){
 	o.onclick = function() {
 		var newdata=new Array();
 		for(var i=0;i<data.length;i++)
-		{			
+		{
 			var oi=document.getElementById(proteinNames[i]);
 			if(oi.checked){
 				newdata.push(data[i]);
 			}
-		}		
-		run(newdata,document.getElementById('canvasDiv').clientWidth-15,document.getElementById('canvasDiv').clientHeight-15);
+		}
+    var width1 = document.getElementById('canvasDiv').clientWidth;
+    var height1 = document.getElementById('canvasDiv').clientHeight;
+		run(newdata, 'canvasDiv', width1, height1, time, dt);
 		chart.resize(document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
 	}
 	div.appendChild(o);
 	div.appendChild(document.createTextNode(proteinName));
 	return div;
 }
-function turnRawDatatoData(raw)
-{
-  var ret = [];
-  var LineNum = Object.keys(raw).length;
-  var iter = 0;
-  var colors = ["#44f4f4", "#80bd91", "#8fd8ef"];
-  var color_cnt = colors.length;
-  for (var key in raw) {
-    ret[iter] = {};
-    ret[iter]["color"] = colors[iter % color_cnt];
-    ret[iter]["value"] = raw[key];
-    ret[iter]["name"]  = key;
-    iter++;
-  }
-  return ret;
-}
 
+/*
 function getLabel(time, dt) {
   var labels = [];
   for (var i = 0; i < time; i += dt * 3)
@@ -211,8 +199,10 @@ function saveGraph()
 	var _canvas=document.getElementById(chart.canvasid);	
 	Canvas2Image.AsPNG(_canvas); 
 }
-function run(data, width1, height1, time, dt){
+function run(data, canvasId, time, dt){
   //ws.send(JSON.stringify({'request': 'getSimulationData'}));
+    var width1 = document.getElementById(canvasId).clientWidth - 15;
+    var height1 = document.getElementById(canvasId).clientHeight - 15;
     labels = getLabel(time, dt);
     chart= new iChart.LineBasic2D({
     animation:true,
@@ -223,12 +213,13 @@ function run(data, width1, height1, time, dt){
     shadow:true,
     background_color:'#f4f4f4',
     separate_angle:10,//分离角度
-	/*coordinate:{
+  -------
+	coordinate:{
 		scale:[{
 			position:'left',	
 			scale_space:5,
 			scale_enable:false,//禁用小横线			
-			
+
 			},{
 			position:'bottom',	
 			start_scale:1,
@@ -237,7 +228,8 @@ function run(data, width1, height1, time, dt){
 			scale_space:10,		
 			labels:labels
 		}]
-	},*/
+	},
+  -------
     tip:{
       enable:true,
       showType:'fixed',
@@ -286,6 +278,7 @@ function run(data, width1, height1, time, dt){
 				gene_circuit = sessionStorage.gene_circuit;
 				$("#Curve").empty();
 				$("#Inducer").empty();
+                console.log(corepind);
 				ws.send(JSON.stringify({'request'     : 'Simulate',
 										'isStochastic': isStochastic,
 										'gene_circuit': gene_circuit,
@@ -306,3 +299,4 @@ function run(data, width1, height1, time, dt){
   chart.draw();
   document.body.style.zoom=1;
 };
+*/
