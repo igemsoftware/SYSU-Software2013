@@ -45,19 +45,23 @@
         </div>        
         <div id="content">
             <div id="canvas-mask">                
-            	<div id='canvasDiv' style="padding-left:30px;width:60%;height:100%;float:left;left:30px;top:30px;"></div>                    
-                <div id="Curve" style="width:30%;height:25%;padding-left:35px;float:left;border-style: outset;"> 
-                 <label>Curve</label>               
-                 </div> 
+            	<div id='canvasDiv' style="padding-left:30px;width:60%;height:100%;float:left;left:30px;top:30px;"></div>   
+                <div style="width:30%;height:25%;padding-left:35px;float:left;border-style: outset;">  
+                <label>Curve</label>                  
+                  <div id="Curve" >
+                  </div> 
+                 </div>
                  <div id="Option" style="width:30%;height:25%;padding-left:35px;float:left;border-style: outset;"> 
                  <label>Option</label>       
                  <input type="checkbox" id="stochastic" style="margin:15px;" onChange="stochasticOnChange(this);">stochastic</input>        	
                  <br>	 
                  <input type="checkbox" id="timedelay" style="margin:15px;">time delay</input>
-                 </div>     
-                 <div id="Inducer" style="padding-left:35px;width:30%;height:25%;float:left;border-style: outset;"> 
-                 <label>Inducer</label>
-                 </div>          
+                 </div>    
+                 <div style="padding-left:35px;width:30%;height:25%;float:left;border-style: outset;">
+                 <label>Inducer</label> 
+                 <div id="Inducer" >                  
+                 </div>    
+                 </div>      
                   <div id="buttons" style="padding-left:35px;width:30%;height:20%;float:left;border-style: outset;"> 
                    <input id="back-botton" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back" onClick="window.history.back(-1);"/>
                    <input id="save-button" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();"/>
