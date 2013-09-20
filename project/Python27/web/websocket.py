@@ -14,6 +14,7 @@ import encrypt
 import base64
 import hashlib
 import json
+import string
 #import make_graph
 
 logging = mlog.logging
@@ -21,6 +22,8 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+  def addAnInducer(self,message):
+    return self.db.addAnInducer(message['name'],message['number'],string.atoi(message['HillCoeff2']),string.atof(message['K2']))
   def getRememberMeTicket(self,message):
     user.userSetRememberMe(self.db)
     return user.getRememberMeTicket(self.db,user.getLoginedUserName(self.db))

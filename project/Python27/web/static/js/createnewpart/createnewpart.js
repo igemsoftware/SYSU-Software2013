@@ -213,6 +213,13 @@ function sendYourdata()
 	console.log(parameters);
 	var type=basic.type;
 	console.log(type);
+// 	 Object {author: "asda"
+// name: "asd"
+// nickname: "sasdasd"
+// shortDesp: "asdasd"
+// shortname: "asdas"
+// type: "Inducer"} 
+// Object {Name: "asdas", Number: "sdfsdf", HillCoeff2: "0.125", K2: "0.125"} 
 	if(type=='Regulatory'){
 				
 		}else if(type=='RBS'){					 
@@ -226,9 +233,9 @@ function sendYourdata()
 
 		}else if(type=='Inducer'||type=='Corepressor')
 		{
-
+			ws.send(JSON.stringify({'request': 'addAnInducer','name':parameters.Name,'number':parameters.Number,'HillCoeff2':parameters.HillCoeff2,'K2':parameters.K2}));
 		}else if (type=='Plasmid backbone'){	
-				
+
 		}
 }
 function standardChange(obj)
