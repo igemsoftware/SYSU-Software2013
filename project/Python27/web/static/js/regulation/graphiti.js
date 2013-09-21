@@ -523,6 +523,7 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
             // var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
             var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
             var sourcePort = new graphiti.HybridPort();
+            sourcePort.decorator = "A";
             source.addFigure(sourcePort, new graphiti.layout.locator.ManhattanMidpointLocator(source));
 
             var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate");
@@ -574,6 +575,7 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
             // var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
             var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
             var sourcePort = new graphiti.HybridPort();
+            sourcePort.decorator = "T";
             source.addFigure(sourcePort, new graphiti.layout.locator.ManhattanMidpointLocator(source));
 
             var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.TDecorator(), "Inhibit");
