@@ -26,7 +26,12 @@ class SqliteDatabase:
 	def getCx(self):
 		return self.__cx
 	def getCuror(self):
-		return self.__cursor	
+		return self.__cursor
+	def addAPromoter(self,name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS):
+		sql_cmd='INSERT INTO promoter (Name,Number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS) VALUES ("%s","%s",%f,%f,%f,"%s","%s","%s","%s",%f)'%(name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS)		
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()		
+		return 'add promoter success!'
 	def addAUserPart(self,part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence):
 		sql_cmd='INSERT INTO userPart (part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,uploadUser) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s")'%(part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,self.getUserNameById(self.userId))
 		self.__cursor.execute(sql_cmd)
@@ -37,10 +42,10 @@ class SqliteDatabase:
 		self.__cursor.execute(sql_cmd)
 		self.__cx.commit()	
 		return 'add plasmidBackbone success!'
-	def addARBS(self,name,number,MBPRS,RIPS):
-		sql_cmd='INSERT INTO RBS (Name,Number,MPRBS,RIPS) VALUES ("%s","%s",%f,%f)'%(name,number,MBPRS,RIPS)
+	def addARBS(self,name,number,MPRBS,RIPS):
+		sql_cmd='INSERT INTO RBS (Name,Number,MPRBS,RIPS) VALUES ("%s","%s",%f,%f)'%(name,number,MPRBS,RIPS)
 		self.__cursor.execute(sql_cmd)
-		self.__cx.commit()	
+		self.__cx.commit()
 		return 'add RBS success!'
 	def addARepressor(self,name,number,HillCoeff1,K1,K2):
 		sql_cmd='INSERT INTO repressor (Name,Number,HillCoeff1,K1,K2) VALUES ("%s","%s",%d,%f,%f)'%(name,number,HillCoeff1,K1,K2)
@@ -494,8 +499,8 @@ if __name__=="__main__":
 	# print sql.getUserGroup('Bobby')	
 	# sql.updateUserLoginRememberTime()
 	sql.userId=1
-	print sql.addAUserPart(part_id='test',part_name='test',part_short_name='set',part_short_desc='sets',part_type='terminater',part_nickname='sdfhsdjf',part_author='huangjunyong',sequence='actga')
-	# print sql.addARBS('test1','BBa-tst',1.0123,0.1234)
+	#print sql.addAUserPart(part_id='test',part_name='test',part_short_name='set',part_short_desc='sets',part_type='terminater',part_nickname='sdfhsdjf',part_author='huangjunyong',sequence='actga')
+	print sql.addARBS('test1','BBa-tst',1.0123,0.1234)
 	# print sql.addARepressor('test1','BBa-tst',2,0.1234,0.123)
 	#print sql.addAplasmidBackbone('testw','BBa-tst',5)
 	# sql.insertAUser('name','password','email',1,1,'question','answer')

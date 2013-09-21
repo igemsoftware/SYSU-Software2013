@@ -1,5 +1,5 @@
 import os
-import sequence_serializer
+from sbol2json import format_to_json
 import component_union
 import SteadyState_Rate
 import random
@@ -182,7 +182,7 @@ def dump_sbol(network, database):
     data[i] = [find_file(s + ".xml", ".") for s in data[i]]
     content = component_union.union(rule, data[i])
     dna_sequence = component_union.connect(rule, content)
-    sbol.append(sequence_serializer.format_to_json(component_union.formatter_v11(content, dna_sequence)))
+    sbol.append(format_to_json(component_union.formatter_v11(content, dna_sequence)))
   return sbol
 
 def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "pSB1AT3"):

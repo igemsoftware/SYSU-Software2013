@@ -73,7 +73,8 @@ $().ready(function() {
         // ws.send(JSON.stringify({
         //     'request': 'getUserFileList'
         // }));
-        window.location.pathname = "/file_manager";
+        // window.location.pathname = "/file_manager";
+        canvasToJSON();
     });
 
     // create new biobrick
@@ -406,6 +407,8 @@ $().ready(function() {
         var figures = app.view.figures.data,
             lines = app.view.lines.data;
 
+        console.log(figures);
+        console.log(lines);
         var figuresCount = app.view.collection.length,
             linesCount = app.view.connections.length;
 
@@ -416,24 +419,41 @@ $().ready(function() {
 
         for (var i = 0; i < figuresCount; i++) {
             var figure = {};
-            figure.id = i;
-            figure.name = figures[i].id.split('-')[0];
-            figure.type = figures[i].TYPE;
-
-            data.part.push(figure);
+            if (figures[i].TYPE == "Protein") {
+                figure.id = figures[i].getId();
+                figure.name = figures[i].name;
+                figure.type = figures[i].TYPE;
+                data.part.push(figure);
+            }            
         }
 
         for (var i = 0; i < linesCount; i++) {
             var line = {};
-            line.from = lines[i].sourcePort.parent.id.split('-')[0];
-            line.to = lines[i].targetPort.parent.id.split('-')[0];
-            line.type = lines[i].TYPE;
-            line.inducer = "none";
+            if (lines[i].sourcePort.parent.TYPE == "Protein" || lines[i].sourcePort.parent.TYPE == "Container") {
+                line.from = lines[i].sourcePort.parent.id;
+                line.to = lines[i].targetPort.parent.id;
+                line.type = lines[i].TYPE;
+                line.inducer = "none";
+                var lineChildren = lines[i].getChildren();
+                for (var j = 0; j < lineChildren.size; j++) {
+                    if (lineChildren.get(j).TYPE == "HybridPort") {
+                        var lineType = lineChildren.get(j).decorator;
 
-            data.link.push(line);
+                        if (lineType == "T") {
+                            line.inducer = "Repressor";
+                        } else if (lineType == "A") {
+                            line.inducer = "Activator";
+                        }
+                        break;
+                    }
+                   
+                };
+
+                data.link.push(line);
+            }
         };
 
-        
+        console.log(data);
         return data;
     };
 

@@ -99,10 +99,11 @@ Tree.prototype = {
 						$("#level-" + (node.level + 1) + "-" + node.name).css("display", "block");
 						$("#level-" + (node.level + 1) + "-" + node.name).mCustomScrollbar("update");
 
-					} else {	// else load subtree and add it to tree						
+					} else {	// else load subtree and add it to tree
+
 						ws.send(JSON.stringify({
 							'request': 'getDirList',
-					      	'dir': node.path
+					      	'dir': node.path.replace(/\\/g,"/")
 						}));
 					}
 				} else {	// if type is "file"					

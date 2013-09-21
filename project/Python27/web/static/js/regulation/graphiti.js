@@ -183,11 +183,17 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
         this.Inhibit = new g.Buttons.Inhibit();
         this.CoExpress = new g.Buttons.CoExpress();
 
-        this.addFigure(new g.Shapes.Protein(), new graphiti.layout.locator.LeftLocator(this));
+        // this.addFigure(new g.Shapes.Protein(), new graphiti.layout.locator.LeftLocator(this));
     },
 
-    onClick: function() {
-        g.toolbar(this);
+    onClick: function(x, y) {
+        // g.toolbar(this);
+        console.log(x);
+        console.log(y);
+
+        var figure = this.getBestFigure(x, y);
+        console.log(figure);
+        g.toolbar(figure);
     },
 
     onDoubleClick: function() {
@@ -203,32 +209,29 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
             }
         });
         this.repaint();
+    },
+
+    getBestFigure: function(x, y, ignoreType) {
+        var result = null;
+
+        for (var i = 0; i < this.getChildren().getSize(); i++) {
+            var figure = this.getChildren().get(i);
+            if (figure.hitTest(x, y) == true && figure.TYPE !== ignoreType) {
+                if (result === null) {
+                    result = figure;
+                } else if (result.getZOrder() < figure.getZOrder()) {
+                    result = figure;
+                }
+            }
+        };
+
+        if (result !== null) 
+            return result;
     }
+
+    // onMouseDown : function(/* :int */x, /* :int */y)
 });
 
-// button container
-g.Shapes.btnContainer = graphiti.shape.icon.ProteinIcon.extend({
-    NAME: "g.Shapes.btnContainer",
-
-    init: function(width, height) {
-        this._super(); 
-
-        if (typeof radius === "number") {
-            this.setDimension(radius, radius);
-        } else {
-            this.setDimension(5, 30);
-        }
-
-        this.TYPE = "btnContainer";
-        // this.setAlpha(0.1);
-
-        // Buttons
-        this.Activate = new g.Buttons.Activate();
-        this.Inhibit = new g.Buttons.Inhibit();
-        this.addFigure(this.Activate, new graphiti.layout.locator.LeftLocator(this));
-        this.addFigure(this.Inhibit, new graphiti.layout.locator.RightLocator(this));
-    }
-});
 
 
 // Protein component
@@ -640,12 +643,12 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             srcPosY = source.getY();
         var canvas = source.getCanvas();
         
-
-        if (source.TYPE === "Container") {
+        var parent = source.getParent();
+        console.log(parent);
+        if (source.getParent() && source.getParent().TYPE === "Container") {
             console.log("has container");
             container = source;
-            // console.log(container);
-            container.setDimension(source.count * 100 + 100, 100);            
+           
         } else {
             console.log("new container");
             // 测试用
@@ -656,27 +659,51 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             app.view.getCommandStack().execute(command);
             container.addFigure(source, new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
             source.resetChildren();
-            container.count += 1;
-            container.setDimension(container.count * 100 + 100, 100);
+            container.count += 1;            
         }
        
 
         if (type == "Protein") {
+            container.setDimension(container.count * 100 + 100, 100);
             container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
             container.count += 1;
             target.resetChildren();
         } else if (type == "RORA") {
             container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
         } else if (type == "R") {
-            container.addFigure(new g.Shapes.R(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
-            container.count += 1;
-        } else if (type == "A") {
-            container.addFigure(new g.Shapes.A(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
-            container.count += 1;
-        }
-        console.log(container.getChildren());
+            var has = false;
+            for (var i = 0 ; i < container.getChildren().size ; i++) {
+                var figure = container.getChildren().get(i);
+                if (figure.TYPE == "R") {
+                    has = true;
+                    break;
+                }
+            }
 
-        g.cache = container;       
+            if (!has) {
+                container.setDimension(container.count * 100 + 100, 100);
+                container.addFigure(new g.Shapes.R(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
+                container.count += 1;
+            }
+        } else if (type == "A") {
+            var has = false;
+            for (var i = 0 ; i < container.getChildren().size ; i++) {
+                var figure = container.getChildren().get(i);
+                if (figure.TYPE == "A") {
+                    has = true;
+                    break;
+                }
+            }
+
+            if (!has) {
+                container.setDimension(container.count * 100 + 100, 100);
+                container.addFigure(new g.Shapes.A(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
+                container.count += 1;
+            }
+        }
+
+        g.cache = container;
+        g.hideAllToolbar();
     };
 })(g);
 
@@ -748,7 +775,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         if (ctx.TYPE == "Protein") {
             for (var i = 0; i < canvas.collection.length; i++) {
                 var figure = canvas.getFigure(canvas.collection[i]);
-                if (figure != null && ctx.getId() !== figure.getId() && (figure.TYPE == "Protein" || figure.TYPE == "Container")) {
+                if (figure != null && ctx.getId() !== figure.getId() && (figure.TYPE == "Protein")) {
                     figure.resetChildren();
                     figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
                     figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
@@ -785,17 +812,18 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                     figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
                 }
             };
-        } else if (ctx.TYPE == "Container") {
-            for (var i = 0; i < canvas.collection.length; i++) {
-                var figure = canvas.getFigure(canvas.collection[i]);
-                if (figure != null && ctx.getId() !== figure.getId() && (figure.TYPE == "Protein" || figure.TYPE == "Container")) {
-                    figure.resetChildren();
-                    figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
-                    figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
-                    figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
-                }
-            };
-        }
+        } 
+        // else if (ctx.TYPE == "Container") {
+        //     for (var i = 0; i < canvas.collection.length; i++) {
+        //         var figure = canvas.getFigure(canvas.collection[i]);
+        //         if (figure != null && ctx.getId() !== figure.getId() && (figure.TYPE == "Protein")) {
+        //             figure.resetChildren();
+        //             figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
+        //             figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
+        //             figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
+        //         }
+        //     };
+        // }
 
     };
 })(g);
@@ -803,6 +831,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 (function(ex) {
     ex.closeToolbar = function(ctx) {
         // remove all children nodes
+        // console.log(ctx);
         if (ctx.remove || ctx.label) {
             ctx.resetChildren();
         }

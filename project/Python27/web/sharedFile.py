@@ -17,7 +17,10 @@ class sharedFiles:
 	def __init__ (self,database):
 		self.db=database
 		self.__cx=self.db.getCx()
-		self.__cursor=self.db.getCuror()	
+		self.__cursor=self.db.getCuror()
+	def getSharedTypePart(self,type):
+		self.__cursor.execute('SELECT * FROM userPart where part_type="%s"'%type)
+		return json.loads(jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall()))	
 	def getSharedFileData(self,code):
 		self.__cursor.execute('SELECT data FROM user_save WHERE user_save.extractCode="%s"'%(code))
 		result=self.__cursor.fetchone()
@@ -60,10 +63,11 @@ class sharedFiles:
 if __name__=="__main__":
 	sql=SqliteDatabase()
 	shared=sharedFiles(sql)	
+	#print shared.getSharedTypePart('Coding')
 	print shared.getUserSharedFileList('Bobby')
-	print shared.getSharedFileList()	
-	print shared.isAFileShared(0,'test','test')
-	#print shared.setFileShared(0,'test','test')
+	#print shared.getSharedFileList()	
+	#print shared.isAFileShared(0,'test','test')
+	#print shared.setFileShared(1,'test1','rnw')
 	#print shared.getFileByExtractCode('3a679784c6b6ad2b82990323272d40a1d604ba65')
-	print shared.getSharedFileData('3a679784c6b6ad2b82990323272d40a1d604ba65')
+	#print shared.getSharedFileData('3a679784c6b6ad2b82990323272d40a1d604ba65')
 	#print shared.unsharedAFile(0,'test','test')
