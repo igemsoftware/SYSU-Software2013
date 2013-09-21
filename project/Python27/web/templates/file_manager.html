@@ -25,6 +25,10 @@
           ws.send(JSON.stringify({'request': 'deleteUserData', 'name': filename}));
         });
 		$("button.open").live("click", function() {
+		  if($(this).text()!=='open')
+		  {
+			  
+		  }
           filename = this.getAttribute("id");
 		  filetype = $(this).find("p").text();
 		  console.log(filetype);
@@ -56,7 +60,9 @@
     </script>
   </head>
   <body>
-    <h2>File Manager</h2>
+    <h1>File Manager</h1>
+    <br>
+    <h2>Your FIle List</h2>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -74,6 +80,34 @@
               <button id="{{ item.fileName }}" class="btn open">open<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
             &nbsp
             <button id="{{ item.fileName }}" class="btn delete">delete<i class="icon-trash"></i></button>
+            {% if item.shared == True %}
+            <button id="{{ item.fileName }}" class="btn unshared">unshared your file<i class="icon-trash"></i></button>
+            {% endif %}
+          </th>
+        </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+      <h2>Shared FIle List</h2>
+      <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Filename</th>
+          <th>Type</th>
+          <th>operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in sharedFileList %}
+        <tr id="{{ item.fileName }}">
+          <th>{{ item.name }}</th>
+          <th>{{ item.fileName }}</th>
+          <th>{{ item.fileType }}</th>
+          <th>
+              <button id="{{ item.fileName }}" class="btn open">open shared file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
+            &nbsp
+            <!--<button id="{{ item.fileName }}" class="btn delete">delete<i class="icon-trash"></i></button>-->
           </th>
         </tr>
         {% endfor %}

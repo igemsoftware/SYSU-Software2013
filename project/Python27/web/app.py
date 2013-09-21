@@ -9,6 +9,8 @@ from gevent.pywsgi import WSGIServer
 from geventwebsocket.handler import WebSocketHandler
 import user
 import xmlParse
+import string
+from sharedFile import sharedFiles
 
 sql = db.SqliteDatabase()
 
@@ -51,9 +53,21 @@ def profile():
 
 @app.route("/file_manager")
 def file_manager():
-  #TODO: pagination
   filelist = sql.getUserFileNameList()
-  return render_template('file_manager.html', filelist = filelist)
+  shared=sharedFiles(sql)
+  sharedFileList=shared.getSharedFileList()  
+  print sharedFileList
+  yoursharedfiles=shared.getUserSharedFileList(user.getLoginedUserName(sql))
+  print yoursharedfiles
+  for file in filelist:
+    for shareF in yoursharedfiles:
+      if file['fileType']==shareF['fileType'] and file['fileName']==shareF['fileName'] and shareF['name']==user.getLoginedUserName(sql):
+        file['shared']=True
+  for file in filelist:
+  	if not 'shared' in file:
+  	  file['shared']=False
+  print filelist
+  return render_template('file_manager.html', filelist = filelist,sharedFileList = sharedFileList)
 
 @app.route("/genecircuit")
 def goToGeneCircuit():
