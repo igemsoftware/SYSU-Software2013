@@ -412,6 +412,9 @@ $().ready(function() {
         var figuresCount = app.view.collection.length,
             linesCount = app.view.connections.length;
 
+            console.log(figuresCount);
+            console.log(linesCount);
+
         var data = {
             part: [],
             link: []
@@ -429,7 +432,9 @@ $().ready(function() {
 
         for (var i = 0; i < linesCount; i++) {
             var line = {};
-            if (lines[i].sourcePort.parent.TYPE == "Protein" || lines[i].sourcePort.parent.TYPE == "Container") {
+
+            // 
+            if (lines[i].sourcePort.parent.TYPE !== "Inducer") {
                 line.from = lines[i].sourcePort.parent.id;
                 line.to = lines[i].targetPort.parent.id;
                 line.type = lines[i].TYPE;
@@ -440,9 +445,9 @@ $().ready(function() {
                         var lineType = lineChildren.get(j).decorator;
 
                         if (lineType == "T") {
-                            line.inducer = "Repressor";
+                            line.inducer = "Negative";
                         } else if (lineType == "A") {
-                            line.inducer = "Activator";
+                            line.inducer = "Positive";
                         }
                         break;
                     }
