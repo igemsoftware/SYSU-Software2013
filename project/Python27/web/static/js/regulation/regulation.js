@@ -443,7 +443,7 @@ $().ready(function() {
                             var line = {};
                             line.from = figures[i].getId();
                             line.to = repressor.id;
-                            line.type = "bound";
+                            line.type = "Bound";
                             line.inducer = "none";
                             data.link.push(line);
 
@@ -458,7 +458,7 @@ $().ready(function() {
                             var line = {};
                             line.from = figures[i].getId();
                             line.to = activator.id;
-                            line.type = "bound";
+                            line.type = "Bound";
                             line.inducer = "none";
                             data.link.push(line);
                         }
