@@ -51,10 +51,11 @@ BiobrickAdder.prototype = {
 		var command = new graphiti.command.CommandAdd(app.view, figure, this.offsetTop, this.offsetLeft);
     	app.view.getCommandStack().execute(command);	// 添加到命令栈中
 
-		figure.setId(this.name + "-" + app.view.collection.counter);	// 设置id
+		figure.name = this.name + "-" + app.view.collection.counter;	// 设置id
 		// figure.label.setText(this.name);	// 设置label
 
-		app.view.collection.push(this.name + "-" + app.view.collection.counter);	// 放入collection中
+		// app.view.collection.push(this.name + "-" + app.view.collection.counter);	// 放入collection中
+		app.view.collection.push(figure.getId());
 		app.view.collection.counter += 1;
 	}
 };

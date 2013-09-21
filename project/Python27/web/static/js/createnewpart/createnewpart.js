@@ -224,7 +224,7 @@ function sendYourdata()
 	if(type=='Regulatory'){
 				
 		}else if(type=='RBS'){					 
-			
+			ws.send(JSON.stringify({'request': 'addARBS','name':parameters.Name,'number':parameters.Number,'MPRBS':parameters.MPRBS,'RIPS':parameters.RIPS}));
 		}
 		else if(type=='Coding'){
 
