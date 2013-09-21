@@ -287,7 +287,6 @@ g.Shapes.Inducer = graphiti.shape.icon.InducerIcon.extend({
         this.Activate = new g.Buttons.Activate();
         this.Inhibit = new g.Buttons.Inhibit();
         this.CoExpress = new g.Buttons.CoExpress();
-        this.btnContainer = new g.Shapes.btnContainer();
 
         // Label
         this.label = new graphiti.shape.basic.Label("Inducer");
