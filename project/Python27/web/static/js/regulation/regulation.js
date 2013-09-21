@@ -359,7 +359,7 @@ $().ready(function() {
     // Cleanly close websocket when unload window
     window.onbeforeunload = function() {
         var jsonData = JSON.stringify(canvasToJSON());
-        console.log(jsonData);
+        // console.log(jsonData);
         ws.send(JSON.stringify({
             'request': 'indexSaveToGeneCircuit',
             'data': jsonData
