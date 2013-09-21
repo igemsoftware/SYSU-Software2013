@@ -183,7 +183,7 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
         this.Inhibit = new g.Buttons.Inhibit();
         this.CoExpress = new g.Buttons.CoExpress();
 
-        this.addFigure(new g.Shapes.Protein(), new graphiti.layout.locator.LeftLocator(this));
+        // this.addFigure(new g.Shapes.Protein(), new graphiti.layout.locator.LeftLocator(this));
     },
 
     onClick: function() {
@@ -645,7 +645,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             console.log("has container");
             container = source;
             // console.log(container);
-            container.setDimension(source.count * 100 + 100, 100);            
+            // container.setDimension(source.count * 100 + 100, 100);            
         } else {
             console.log("new container");
             // 测试用
@@ -656,27 +656,52 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             app.view.getCommandStack().execute(command);
             container.addFigure(source, new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
             source.resetChildren();
-            container.count += 1;
-            container.setDimension(container.count * 100 + 100, 100);
+            container.count += 1;            
         }
        
 
         if (type == "Protein") {
+            container.setDimension(container.count * 100 + 100, 100);
             container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
             container.count += 1;
             target.resetChildren();
         } else if (type == "RORA") {
             container.addFigure(target, new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
         } else if (type == "R") {
-            container.addFigure(new g.Shapes.R(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
-            container.count += 1;
-        } else if (type == "A") {
-            container.addFigure(new g.Shapes.A(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
-            container.count += 1;
-        }
-        console.log(container.getChildren());
+            var has = false;
+            for (var i = 0 ; i < container.getChildren().size ; i++) {
+                var figure = container.getChildren().get(i);
+                if (figure.TYPE == "R") {
+                    has = true;
+                    break;
+                }
+            }
 
-        g.cache = container;       
+            if (!has) {
+                container.setDimension(container.count * 100 + 100, 100);
+                container.addFigure(new g.Shapes.R(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
+                container.count += 1;
+            }
+        } else if (type == "A") {
+            var has = false;
+            for (var i = 0 ; i < container.getChildren().size ; i++) {
+                var figure = container.getChildren().get(i);
+                if (figure == source) {
+                    console.log(figure);
+                    // has = true;
+                    // break;
+                }
+            }
+
+            if (!has) {
+                container.setDimension(container.count * 100 + 100, 100);
+                container.addFigure(new g.Shapes.A(), new graphiti.layout.locator.ContainerLocator(container, container.count, 100));
+                container.count += 1;
+            }
+        }
+
+        g.cache = container;
+        g.hideAllToolbar();
     };
 })(g);
 
@@ -803,9 +828,10 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 (function(ex) {
     ex.closeToolbar = function(ctx) {
         // remove all children nodes
-        if (ctx.remove || ctx.label) {
+        // console.log(ctx);
+        // if (ctx.remove || ctx.label || ct) {
             ctx.resetChildren();
-        }
+        // }
     };
 })(g);
 
