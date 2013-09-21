@@ -3,6 +3,7 @@ import json
 from database import SqliteDatabase
 import component_union
 from sbol2json import format_to_json
+from sharedFile import sharedFiles
 import Simulate_Function
 import user
 import mlog
@@ -22,6 +23,9 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+  def getuserPartByType(self,message):
+    shared=sharedFiles(self.db) 
+    return shared.getSharedTypePart(message['type'])
   def addAPromoter(self,message):
     return self.db.addAPromoter(name=message['name'],number=message['number'],MPPromoter=string.atof(message['MPPromoter']),LeakageRate=string.atof(message['LeakageRate']),K1=string.atof(message['K1']),Type=message['Type'],Repressor=message['Repressor'],Source=message['Source'],Activator=message['Activator'],PoPS=string.atof(message['PoPS']))
   def addARBS(self,message):
