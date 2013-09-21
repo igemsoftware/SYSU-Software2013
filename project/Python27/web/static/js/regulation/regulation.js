@@ -427,7 +427,44 @@ $().ready(function() {
                 figure.name = figures[i].name;
                 figure.type = figures[i].TYPE;
                 data.part.push(figure);
-            }            
+
+                console.log(figures[i].getParent());
+                if (figures[i].getParent() && figures[i].getParent().TYPE == "Container") {
+                    for (var j = 0; j < figures[i].getParent().getChildren().getSize(); j++) {
+                        var sibling = figures[i].getParent().getChildren().get(j);
+                        if (sibling.TYPE == "R") {
+                            var repressor = {};
+                            repressor.id = sibling.getId();
+                            repressor.name = "Repressor";
+                            repressor.type = "Repressor";
+                            data.part.push(repressor);
+
+                            // 添加绑定链接信息
+                            var line = {};
+                            line.from = figures[i].getId();
+                            line.to = repressor.id;
+                            line.type = "bound";
+                            line.inducer = "none";
+                            data.link.push(line);
+
+                        } else if (sibling.TYPE == "A") {
+                            var activator = {};
+                            activator.id = sibling.getId();
+                            activator.name = "Activator";
+                            activator.type = "Activator";
+                            data.part.push(activator);
+
+                            // 添加绑定链接信息
+                            var line = {};
+                            line.from = figures[i].getId();
+                            line.to = activator.id;
+                            line.type = "bound";
+                            line.inducer = "none";
+                            data.link.push(line);
+                        }
+                    };
+                }
+            }
         }
 
         for (var i = 0; i < linesCount; i++) {
