@@ -2,7 +2,7 @@
 import json
 from database import SqliteDatabase
 import component_union
-import sequence_serializer
+from sbol2json import format_to_json
 import Simulate_Function
 import user
 import mlog
@@ -112,7 +112,7 @@ class apis():
     return group.dump_group(message["data"], self.db)
   def getPlasmidSbol_deprecated(self, message):
     sbol = component_union.get_sbol(message["component"], rule)
-    ret = sequence_serializer.format_to_json(sbol)
+    ret = format_to_json(sbol)
     return ret
   def updateGeneCircuit(self, message):
     ret = group.update_controller(self.db, message["data"])
