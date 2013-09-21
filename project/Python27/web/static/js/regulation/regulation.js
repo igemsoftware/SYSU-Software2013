@@ -433,6 +433,7 @@ $().ready(function() {
             line.type = lines[i].TYPE;
             line.inducer = "none";
             var lineChildren = lines[i].getChildren();
+            console.log(lineChildren);
             for (var j = 0; j < lineChildren.size; j++) {
                 if (lineChildren.get(j).TYPE == "HybridPort") {
                     var lineType = lineChildren.get(j).decorator;
@@ -442,8 +443,9 @@ $().ready(function() {
                     } else if (lineType == "A") {
                         line.inducer = "Activator";
                     }
+                    break;
                 }
-                break;
+               
             };
 
             data.link.push(line);

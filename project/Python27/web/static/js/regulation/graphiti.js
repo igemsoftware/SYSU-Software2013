@@ -829,9 +829,9 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
     ex.closeToolbar = function(ctx) {
         // remove all children nodes
         // console.log(ctx);
-        // if (ctx.remove || ctx.label || ct) {
+        if (ctx.remove || ctx.label) {
             ctx.resetChildren();
-        // }
+        }
     };
 })(g);
 
