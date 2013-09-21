@@ -22,8 +22,9 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+  def addAPromoter(self,message):
+    return self.db.addAPromoter(name=message['name'],number=message['number'],MPPromoter=string.atof(message['MPPromoter']),LeakageRate=string.atof(message['LeakageRate']),K1=string.atof(message['K1']),Type=message['Type'],Repressor=message['Repressor'],Source=message['Source'],Activator=message['Activator'],PoPS=string.atof(message['PoPS']))
   def addARBS(self,message):
-    print message['name'],message['number'],message['MPRBS'],message['RIPS']
     return self.db.addARBS(name=message['name'],number=message['number'],MPRBS=string.atof(message['MPRBS']),RIPS=string.atof(message['RIPS']))
   def addAnInducer(self,message):
     return self.db.addAnInducer(message['name'],message['number'],string.atoi(message['HillCoeff2']),string.atof(message['K2']))

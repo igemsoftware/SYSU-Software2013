@@ -26,7 +26,12 @@ class SqliteDatabase:
 	def getCx(self):
 		return self.__cx
 	def getCuror(self):
-		return self.__cursor	
+		return self.__cursor
+	def addAPromoter(self,name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS):
+		sql_cmd='INSERT INTO promoter (Name,Number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS) VALUES ("%s","%s",%f,%f,%f,"%s","%s","%s","%s",%f)'%(name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS)		
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()		
+		return 'add promoter success!'
 	def addAUserPart(self,part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence):
 		sql_cmd='INSERT INTO userPart (part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,uploadUser) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s")'%(part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,self.getUserNameById(self.userId))
 		self.__cursor.execute(sql_cmd)

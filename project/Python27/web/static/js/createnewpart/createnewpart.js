@@ -221,8 +221,8 @@ function sendYourdata()
 // Object {Name: "asdas", Number: "sdfsdf", HillCoeff2: "0.125", K2: "0.125"} 
 // 
 	ws.send(JSON.stringify({'request': 'addAUserPart','part_id':parameters.Number,'part_name':basic.name,'part_short_name':basic.shortname,'part_short_desc':basic.shortDesp,'part_type':basic.type,'part_nickname':basic.nickname,'part_author':basic.author,'sequence':$('#finalSeq').val()}));
-	if(type=='Regulatory'){
-				
+		if(type=='Regulatory'){
+			ws.send(JSON.stringify({'request':'addAPromoter','name':parameters.Name,'number':parameters.Number,'MPPromoter':parameters.MPPromoter,'LeakageRate':parameters.LeakageRate,'K1':parameters.K1,'Type':parameters.Type,'Repressor':parameters.Repressor,'Source':parameters.Source,'Activator':parameters.Activator,'PoPS':parameters.PoPS}));			
 		}else if(type=='RBS'){					 
 			ws.send(JSON.stringify({'request': 'addARBS','name':parameters.Name,'number':parameters.Number,'MPRBS':parameters.MPRBS,'RIPS':parameters.RIPS}));
 		}
@@ -279,7 +279,7 @@ function getBasicInfomation()
 function getPromoter()
 {
 	var data={};
-	data['name']=$('#PromoterName').val();
+	data['Name']=$('#PromoterName').val();
 	data['Number']=$('#PromoterNumber').val();
 	data['PoPS']=$('#PromoterPoPS').val();
 	data['MPPromoter']=$('#PromoterMPPromoter').val();
