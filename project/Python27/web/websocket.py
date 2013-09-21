@@ -22,6 +22,9 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+  def addARBS(self,message):
+    print message['name'],message['number'],message['MPRBS'],message['RIPS']
+    return self.db.addARBS(name=message['name'],number=message['number'],MPRBS=string.atof(message['MPRBS']),RIPS=string.atof(message['RIPS']))
   def addAnInducer(self,message):
     return self.db.addAnInducer(message['name'],message['number'],string.atoi(message['HillCoeff2']),string.atof(message['K2']))
   def addARepressor(self,message):
