@@ -78,7 +78,8 @@ var protein = {
 					/* 'request': 'changeRBS', */
 				/* })); */
 				detail.type = "PoPS";
-				detail.pro_id = parseInt($(this).parents(".proteins").attr('id').split('-')[1]);
+        var id_str = $(this).parents(".proteins").attr('id');
+				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
 			}
@@ -95,7 +96,8 @@ var protein = {
 					/* 'request': 'changeRBS', */
 				/* })); */
 				detail.type = "RiPS";
-				detail.pro_id = parseInt($(this).parents(".proteins").attr('id').split('-')[1]);
+        var id_str = $(this).parents(".proteins").attr('id');
+				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
 			}
@@ -112,7 +114,8 @@ var protein = {
 					/* 'request': 'changeRBS', */
 				/* })); */
 				detail.type = "copy";
-				detail.pro_id = parseInt($(this).parents(".proteins").attr('id').split('-')[1]);
+        var id_str = $(this).parents(".proteins").attr('id');
+				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
 			}
@@ -129,7 +132,8 @@ var protein = {
 					/* 'request': 'changeRBS', */
 				/* })); */
 				detail.type = "K1";
-				detail.pro_id = parseInt($(this).parents(".proteins").attr('id').split('-')[1]);
+        var id_str = $(this).parents(".proteins").attr('id');
+				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
 			}
@@ -146,7 +150,8 @@ var protein = {
 					/* 'request': 'changeRBS', */
 				/* })); */
 				detail.type = "concen";
-				detail.pro_id = parseInt($(this).parents(".proteins").attr('id').split('-')[1]);
+        var id_str = $(this).parents(".proteins").attr('id');
+				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				randomValue();
 			}
@@ -368,7 +373,8 @@ var plasmid =  {
 				curSbol = circuit[circuit.length-1].sbol;
 
 				$('.proteins').each(function(){
-					if($(this).data('grp_id') == parseInt(curSbolId.split('-')[1])) {
+				var sbol_id = curSbolId.substring(curSbolId.indexOf('-') + 1, curSbolId.length);
+					if($(this).data('grp_id') == sbol_id) {
 						data.copy = $(this).find('.copy').slider("value");
 					}
 				});
@@ -414,9 +420,11 @@ var moveAndCheck = function(aGroup, fGroup, tGroup, fPlasmid, tPlasmid) {
 	// detail.pro_id =  
 	// detail.new_value =  
 	// detail.type = "copy" 
-	var grp_id = aGroup.attr('id').split('-')[1];
+  var id_str0 = aGroup.find("id");
+	var grp_id = id_str0.substring(id_str0.indexOf('-') + 1, id_str0.length);
 	if(tPlasmid.find(".sbol").length > 0) {
-		grp_id = parseInt(tPlasmid.find(".sbol").attr('id').split('-')[1]);
+    var id_str = tPlasmid.find(".sbol").attr('id');
+		grp_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 	}
 	$(".proteins").each(function(){
 		if($(this).data('grp_id') == grp_id) {
@@ -573,7 +581,8 @@ var getDataCollection = function() {
 	var pLength = $("#dashboard-view .mCSB_container .proteins").length;
 	for(var i = 0; i < pLength; i++) {
 		var pid = $(".proteins:eq(" + i.toString() + ")").attr('id');
-		var pid_i = parseInt(pid.split('-')[1]);
+
+		pid_i = pid.substring(pid.indexOf('-') + 1, pid.length);
 		var p = $("#" + pid);
 
 		dataCollection.proteins[pid_i] = {};
@@ -602,8 +611,10 @@ var getDataCollection = function() {
 		var groupsLength = curPlasmid.find(".sbol").length;
 		var groupsList = curPlasmid.find(".sbol");
 		for(var j = 0; j < groupsLength; j++) {
-			var grp_id = groupsList.eq(j).attr('id').split('-')[1];
-			dataCollection.plasmids[i].push(parseInt(grp_id));
+
+      var id_str = groupsList.eq(j).attr('id');
+			var grp_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
+			dataCollection.plasmids[i].push(grp_id);
 			dataCollection.groups[grp_id] = {};
 			var curGroup = groupsList.eq(j);
 			var componentsLength = curGroup.find(".component").length;
