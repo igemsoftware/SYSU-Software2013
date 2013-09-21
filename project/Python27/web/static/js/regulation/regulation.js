@@ -419,36 +419,38 @@ $().ready(function() {
 
         for (var i = 0; i < figuresCount; i++) {
             var figure = {};
-            figure.id = figures[i].getId();
-            figure.name = figures[i].name;
-            figure.type = figures[i].TYPE;
-
-            data.part.push(figure);
+            if (figures[i].TYPE == "Protein") {
+                figure.id = figures[i].getId();
+                figure.name = figures[i].name;
+                figure.type = figures[i].TYPE;
+                data.part.push(figure);
+            }            
         }
 
         for (var i = 0; i < linesCount; i++) {
             var line = {};
-            line.from = lines[i].sourcePort.parent.id;
-            line.to = lines[i].targetPort.parent.id;
-            line.type = lines[i].TYPE;
-            line.inducer = "none";
-            var lineChildren = lines[i].getChildren();
-            console.log(lineChildren);
-            // for (var j = 0; j < lineChildren.size; j++) {
-            //     if (lineChildren.get(j).TYPE == "HybridPort") {
-            //         var lineType = lineChildren.get(j).decorator;
+            if (lines[i].sourcePort.parent.TYPE == "Protein" || lines[i].sourcePort.parent.TYPE == "Container") {
+                line.from = lines[i].sourcePort.parent.id;
+                line.to = lines[i].targetPort.parent.id;
+                line.type = lines[i].TYPE;
+                line.inducer = "none";
+                var lineChildren = lines[i].getChildren();
+                for (var j = 0; j < lineChildren.size; j++) {
+                    if (lineChildren.get(j).TYPE == "HybridPort") {
+                        var lineType = lineChildren.get(j).decorator;
 
-            //         if (lineType == "T") {
-            //             line.inducer = "Repressor";
-            //         } else if (lineType == "A") {
-            //             line.inducer = "Activator";
-            //         }
-            //         // break;
-            //     }
-               
-            // };
+                        if (lineType == "T") {
+                            line.inducer = "Repressor";
+                        } else if (lineType == "A") {
+                            line.inducer = "Activator";
+                        }
+                        break;
+                    }
+                   
+                };
 
-            data.link.push(line);
+                data.link.push(line);
+            }
         };
 
         console.log(data);
