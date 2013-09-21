@@ -2,7 +2,8 @@
 import json
 from database import SqliteDatabase
 import component_union
-import sequence_serializer
+from sbol2json import format_to_json
+from sharedFile import sharedFiles
 import Simulate_Function
 import user
 import mlog
@@ -22,6 +23,13 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+  def getuserPartByType(self,message):
+    shared=sharedFiles(self.db) 
+    return shared.getSharedTypePart(message['type'])
+  def addAPromoter(self,message):
+    return self.db.addAPromoter(name=message['name'],number=message['number'],MPPromoter=string.atof(message['MPPromoter']),LeakageRate=string.atof(message['LeakageRate']),K1=string.atof(message['K1']),Type=message['Type'],Repressor=message['Repressor'],Source=message['Source'],Activator=message['Activator'],PoPS=string.atof(message['PoPS']))
+  def addARBS(self,message):
+    return self.db.addARBS(name=message['name'],number=message['number'],MPRBS=string.atof(message['MPRBS']),RIPS=string.atof(message['RIPS']))
   def addAnInducer(self,message):
     return self.db.addAnInducer(message['name'],message['number'],string.atoi(message['HillCoeff2']),string.atof(message['K2']))
   def addARepressor(self,message):
@@ -112,7 +120,7 @@ class apis():
     return group.dump_group(message["data"], self.db)
   def getPlasmidSbol_deprecated(self, message):
     sbol = component_union.get_sbol(message["component"], rule)
-    ret = sequence_serializer.format_to_json(sbol)
+    ret = format_to_json(sbol)
     return ret
   def updateGeneCircuit(self, message):
     ret = group.update_controller(self.db, message["data"])

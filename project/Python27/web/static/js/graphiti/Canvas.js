@@ -1298,7 +1298,11 @@ graphiti.Canvas = Class.extend(
         var figure = this.getBestFigure(x, y);
 
         if(figure!==null){
-            figure.onClick();
+            if (figure.TYPE == "Container") {
+                figure.onClick(x, y);
+            } else {
+                figure.onClick();
+            }
         }
     },
 

@@ -1,5 +1,5 @@
 import component_union
-import sequence_serializer
+from sbol2json import format_to_json
 import os
 import database
 
@@ -130,7 +130,7 @@ def plasmid_sbol(db, groups, rule = "RFC10"):
     content = component_union.union(rule, file_list)
     dna_sequence = component_union.connect(rule, content)
     sbol = component_union.formatter_v11(content, dna_sequence)
-    sbol2 = sequence_serializer.format_to_json(sbol)
+    sbol2 = format_to_json(sbol)
     idx = 0
     for item in sbol2["DnaComponent"]["annotations"]:
       tmp = item["SequenceAnnotation"]
