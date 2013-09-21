@@ -495,7 +495,7 @@ $().ready(function() {
             }
         };
 
-        console.log(data);
+        console.log(JSON.stringify(data));
         return data;
     };
 
