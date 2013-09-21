@@ -434,19 +434,19 @@ $().ready(function() {
             line.inducer = "none";
             var lineChildren = lines[i].getChildren();
             console.log(lineChildren);
-            for (var j = 0; j < lineChildren.size; j++) {
-                if (lineChildren.get(j).TYPE == "HybridPort") {
-                    var lineType = lineChildren.get(j).decorator;
+            // for (var j = 0; j < lineChildren.size; j++) {
+            //     if (lineChildren.get(j).TYPE == "HybridPort") {
+            //         var lineType = lineChildren.get(j).decorator;
 
-                    if (lineType == "T") {
-                        line.inducer = "Repressor";
-                    } else if (lineType == "A") {
-                        line.inducer = "Activator";
-                    }
-                    break;
-                }
+            //         if (lineType == "T") {
+            //             line.inducer = "Repressor";
+            //         } else if (lineType == "A") {
+            //             line.inducer = "Activator";
+            //         }
+            //         // break;
+            //     }
                
-            };
+            // };
 
             data.link.push(line);
         };
