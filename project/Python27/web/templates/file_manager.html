@@ -16,22 +16,37 @@
             var name = message.result.name;
             if (message.result.result == "deleteUserData succeed")
               $("tr#"+name).remove();
+			else if(message.request == "setFileShared")
+			{				
+				$('#mymodal').find('p').text(message.result);
+				$('#mymodal').css('display','block');	
+				//location.reload(); 	
+									
+			}else if(message.request=="unsharedAFile")
+			{
+				location.reload(); 
+			}
           };
         };
 
         // Bind send button to websocket
         $("button.delete").live("click", function() {
-          filename = this.getAttribute("id");
+          filename = this.getAttribute("id");		  
           ws.send(JSON.stringify({'request': 'deleteUserData', 'name': filename}));
         });
+		$("button.shared").live("click", function() {
+			filename = this.getAttribute("id");
+		    filetype = $(this).find("p").text();	
+			ws.send(JSON.stringify({'request': 'setFileShared', 'filename': filename,'filetype':filetype}));			
+		});
+		$("button.unshared").live("click", function() {
+			filename = this.getAttribute("id");
+		    filetype = $(this).find("p").text();	
+			ws.send(JSON.stringify({'request': 'unsharedAFile', 'filename': filename,'filetype':filetype}));
+		});
 		$("button.open").live("click", function() {
-		  if($(this).text()!=='open')
-		  {
-			  
-		  }
-          filename = this.getAttribute("id");
+		  filename = this.getAttribute("id");
 		  filetype = $(this).find("p").text();
-		  console.log(filetype);
 		  switch (filetype){
 			case 'regulation':
 				window.location = "index?"+'filetype='+filetype+'&filename='+filename;
@@ -60,9 +75,13 @@
     </script>
   </head>
   <body>
+    <div id='mymodal' style="background-color:#09F;position:absolute;top:30%;left:30%;width:30%;height:30%;display:none;">  
+    <p></p> 
+    <button onClick="location.reload(); ">close</button>   
+    </div>
     <h1>File Manager</h1>
     <br>
-    <h2>Your FIle List</h2>
+    <h2>Your File List</h2>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -81,14 +100,16 @@
             &nbsp
             <button id="{{ item.fileName }}" class="btn delete">delete<i class="icon-trash"></i></button>
             {% if item.shared == True %}
-            <button id="{{ item.fileName }}" class="btn unshared">unshared your file<i class="icon-trash"></i></button>
+            <button id="{{ item.fileName }}" class="btn unshared">unshared your file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
+            {% else %}
+            <button id="{{ item.fileName }}" class="btn shared">shared your file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
             {% endif %}
           </th>
         </tr>
         {% endfor %}
       </tbody>
       </table>
-      <h2>Shared FIle List</h2>
+      <h2>Shared File List</h2>
       <table class="table table-hover">
       <thead>
         <tr>
@@ -113,5 +134,6 @@
         {% endfor %}
       </tbody>
     </table>
+    <div id='tocopy' style="display:none"></div>
   </body>
 </html>

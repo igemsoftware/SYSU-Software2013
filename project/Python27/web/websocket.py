@@ -23,6 +23,12 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+  def setFileShared(self,message):
+    shared=sharedFiles(self.db) 
+    return shared.setFileShared(self.db.userId,message['filename'],message['filetype'])
+  def unsharedAFile(self,message):
+    shared=sharedFiles(self.db) 
+    return shared.unsharedAFile(self.db.userId,message['filename'],message['filetype'])
   def getuserPartByType(self,message):
     shared=sharedFiles(self.db) 
     return shared.getSharedTypePart(message['type'])
