@@ -420,6 +420,8 @@ $().ready(function() {
             link: []
         };
 
+
+        // 添加part信息
         for (var i = 0; i < figuresCount; i++) {
             var figure = {};
             if (figures[i].TYPE == "Protein") {
@@ -428,7 +430,7 @@ $().ready(function() {
                 figure.type = figures[i].TYPE;
                 data.part.push(figure);
 
-                console.log(figures[i].getParent());
+                // 添加R/A绑定信息
                 if (figures[i].getParent() && figures[i].getParent().TYPE == "Container") {
                     for (var j = 0; j < figures[i].getParent().getChildren().getSize(); j++) {
                         var sibling = figures[i].getParent().getChildren().get(j);
@@ -467,6 +469,8 @@ $().ready(function() {
             }
         }
 
+
+        // 添加link信息（除蛋白绑定外）
         for (var i = 0; i < linesCount; i++) {
             var line = {};
 
@@ -493,6 +497,12 @@ $().ready(function() {
 
                 data.link.push(line);
             }
+        };
+
+        // 添加蛋白绑定信息
+        var len = app.view.boundPairs.length;
+        for (var i = 0; i < len ; i++) {
+            data.link.push(app.view.boundPairs[i])
         };
 
         console.log(JSON.stringify(data));
