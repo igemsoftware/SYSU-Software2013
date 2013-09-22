@@ -11,7 +11,7 @@ rbs_name = "BBa_J61104"
 term_name = "BBa_B0013"
 
 
-data = {u'part': [{u'type': u'Protein', u'id': u'acfa9120-fe99-e45e-d93d-8b6ea831ecc5', u'name': u'BBa_J58105'}, {u'type': u'Protein', u'id': u'd8dba164-9f5c-f242-4feb-493ccef4ca46', u'name': u'BBa_K091002'}], u'link': [{u'to': u'acfa9120-fe99-e45e-d93d-8b6ea831ecc5', u'from': u'd8dba164-9f5c-f242-4feb-493ccef4ca46', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'acfa9120-fe99-e45e-d93d-8b6ea831ecc5', u'from': u'd8dba164-9f5c-f242-4feb-493ccef4ca46', u'inducer': u'none', u'type': u'Bound'}]}
+data = {u'part': [{u'type': u'Protein', u'id': u'acfa9120-fe99-e45e-d93d-8b6ea831ecc5', u'name': u'BBa_J58105'}, {u'type': u'Protein', u'id': u'd8dba164-9f5c-f242-4feb-493ccef4ca46', u'name': u'BBa_K091002'}], u'link': [{u'to': u'acfa9120-fe99-e45e-d93d-8b6ea831ecc5', u'from': u'd8dba164-9f5c-f242-4feb-493ccef4ca46', u'inducer': u'none', u'type': u'Bound'}]}
 #data = {u'part': [{u'type': u'Protein', u'id': 1, u'name': u'BBa_C0060'}, {u'type': u'Protein', u'id': 2, u'name': u'BBa_C0060'}, {u'type': u'Activator', u'id': 3, u'name': u'Activator'}, {u'type': u'Repressor', u'id': 4, u'name': u'Repressor'}, {u'type': u'Protein', u'id': 5, u'name': u'BBa_C0160'}, {u'type': u'Protein', u'id': 6, u'name': u'BBa_C0178'}, {u'type': u'Protein', u'id': 7, u'name': u'BBa_C0178'}], u'link': [{u'to': 2, u'from': 1, u'type': u'Bound'}, {u'to': 3, u'from': 2, u'type': u'Bound'}, {u'to': 4, u'from': 3, u'type': u'Bound'}, {u'to': 5, u'from': 3, u'inducer': u'None', u'type': u'Activator'}, {u'to': 6, u'from': 4, u'inducer': u'Positive', u'type': u'Repressor'}, {u'to': 7, u'from': 6, u'type': u'Bound'}]}
 #data = {
     #"part": [
@@ -324,7 +324,7 @@ def dump_group(network, database):
     pro_id = part["id"]
     grp_id = proteins[pro_id]["grp_id"]
     pos = proteins[pro_id]["pos"]
-    proteins[pro_id]["display"] = str(part["type"] == "Protein")
+    proteins[pro_id]["display"] = part["type"] == "Protein"
     groups[grp_id]["sbol"][pos]["type"] = part["type"]
 
 
@@ -358,7 +358,7 @@ def update_controller(db, update_info):
   gene_circuit = js_formatter(update_info["gene_circuit"])
   # regulator_list = [name for name in gene_circuit["proteins"]]
   regulator_list = [i["name"] for i in gene_circuit["proteins"].values() if
-      i["display"] == 'False']
+      not i["display"]]
   detail = update_info["detail"]
   pro_id = detail["pro_id"]
   protein = gene_circuit["proteins"][pro_id]
