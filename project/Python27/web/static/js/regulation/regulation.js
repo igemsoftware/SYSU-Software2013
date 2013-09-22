@@ -412,8 +412,7 @@ $().ready(function() {
         var figuresCount = app.view.collection.length,
             linesCount = app.view.connections.length;
 
-            console.log(figuresCount);
-            console.log(linesCount);
+        console.log("元件数:" + figuresCount + "  连接数:" + linesCount);
 
         var data = {
             part: [],
@@ -502,7 +501,7 @@ $().ready(function() {
         // 添加蛋白绑定信息
         var len = app.view.boundPairs.length;
         for (var i = 0; i < len ; i++) {
-            data.link.push(app.view.boundPairs[i])
+            data.link.push(app.view.boundPairs[i]);
         };
 
         console.log(JSON.stringify(data));
