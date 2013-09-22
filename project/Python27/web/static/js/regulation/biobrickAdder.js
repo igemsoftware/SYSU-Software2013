@@ -9,11 +9,18 @@ function BiobrickAdder() {
 };
 
 BiobrickAdder.prototype = {
-	init: function(name, type, offsetTop, offsetLeft) {
+	init: function(name, type, offsetTop, offsetLeft, config, path) {
 		this.name = name;
 		this.type = type;
 		this.offsetTop = offsetTop;
 		this.offsetLeft = offsetLeft;
+
+		if (config) {
+			this.config = config;
+		}
+
+		if (path)
+			this.path = path;
 	},
 
 	show: function() {
@@ -53,6 +60,12 @@ BiobrickAdder.prototype = {
 
 		// figure.name = this.name + "-" + app.view.collection.counter;	// 设置id
 		figure.name = this.name;	// 设置id
+
+		if (this.config)
+			figure.config = this.config;
+
+		if (this.path)
+			figure.path = this.path;
 		// figure.label.setText(this.name);	// 设置label
 
 		// app.view.collection.push(this.name + "-" + app.view.collection.counter);	// 放入collection中

@@ -756,7 +756,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 var unbinder = new g.Buttons.Unbind();
                 unbinder.setAttr(source, a);
                 unbinder.locator = new graphiti.layout.locator.UnbindLocator(container, container.count - 1, 100);
-                source.addFigure(unbinder, unbinder.locator);
+                container.addFigure(unbinder, unbinder.locator);
 
                 updateOuterContainer();
             }
@@ -819,8 +819,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             protein.name = child.name;
 
             // 设置连接
-            var newPort = protein.createPort("hybrid", new graphiti.layout.locator.BottomLocator(protein));            
             if (child.getConnections().getSize() !== 0) {
+                var newPort = protein.createPort("hybrid", new graphiti.layout.locator.BottomLocator(protein));
                 if (child.getConnections().get(0).sourceDecorator !== null)
                     child.getConnections().get(0).setSource(newPort);
                 else {
@@ -928,6 +928,53 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             right: '0px'
         });
 
+        if (ctx.config) {
+            resetConfig();
+            $("input[name=part_id]").attr({
+                'value': ctx.config.part_id
+            });
+            $("input[name=part_name]").attr({
+                'value': ctx.config.part_name
+            });
+            $("input[name=part_short_name]").attr({
+                'value': ctx.config.part_short_name
+            });
+            $("input[name=part_short_desc]").attr({
+                'value': ctx.config.part_short_desc
+            });
+            $("input[name=part_type]").attr({
+                'value': ctx.config.part_type
+            });
+            $("input[name=part_status]").attr({
+                'value': ctx.config.part_status
+            });
+            $("input[name=part_results]").attr({
+                'value': ctx.config.part_results
+            });
+            $("input[name=part_nickname]").attr({
+                'value': ctx.config.part_nickname
+            });
+            $("input[name=part_rating]").attr({
+                'value': ctx.config.part_rating
+            });
+            $("input[name=part_author]").attr({
+                'value': ctx.config.part_author
+            });
+            $("input[name=part_entered]").attr({
+                'value': ctx.config.part_entered
+            });
+            $("input[name=part_quality]").attr({
+                'value': ctx.config.best_quality
+            });
+        }
+
+        if (ctx.path) {
+            ws.send(JSON.stringify({
+                'request' : 'getXmlJson',
+                'path' : ctx.path
+            }));
+        }
+
         var hasClassIn = $("#collapseTwo").hasClass('in');
         if (!hasClassIn) {
             $("#collapseOne").toggleClass('in');
@@ -983,7 +1030,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             };
 
             // show protein configuration
-            $("#protein-config").css({
+            $("#component-config").css({
                 "display": "block"
             });
         } else if (ctx.TYPE == "Inducer") {
