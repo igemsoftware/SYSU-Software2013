@@ -697,12 +697,16 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             outerContainer.addFigure(unbinder, unbinder.locator);
 
             // 向蛋白绑定信息数组插入记录
+<<<<<<< HEAD
             app.view.boundPairs.push({
                 from: source.getId(),
                 to: target.getId(),
                 type: "bound",
                 inducer: "none"
             });
+=======
+            app.view.boundPairs.push({from: source.getId(), to: target.getId(), type: "Bound", inducer: "none"});
+>>>>>>> b35b5e4f71eaf9bfa9a4810f05f404d5a510510f
 
             // 更新外容器状态
             updateOuterContainer();
@@ -940,5 +944,10 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 (function(ex) {
     ex.removeLinks = function(startNode) {
 
+<<<<<<< HEAD
     };
 })(g);
+=======
+    }
+})(g);
+>>>>>>> b35b5e4f71eaf9bfa9a4810f05f404d5a510510f
