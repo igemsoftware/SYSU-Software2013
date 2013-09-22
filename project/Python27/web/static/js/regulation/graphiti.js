@@ -213,7 +213,7 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
             if (figure.hitTest(x, y) == true && figure.TYPE !== ignoreType) {
                 if (result === null) {
                     result = figure;
-                } else if (result.getZOrder() > figure.getZOrder()) {
+                } else if (result.getZOrder() < figure.getZOrder()) {
                     result = figure;
                 }
             }
@@ -619,6 +619,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         this._super();
         this.from = null;
         this.to = null;
+        this.TYPE = "Unbind";
 
         if (typeof radius === "number") {
             this.setDimension(radius, radius);
