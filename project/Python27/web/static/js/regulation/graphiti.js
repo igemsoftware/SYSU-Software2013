@@ -700,7 +700,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             app.view.boundPairs.push({
                 from: source.getId(),
                 to: target.getId(),
-                type: "bound",
+                type: "Bound",
                 inducer: "none"
             });
 
