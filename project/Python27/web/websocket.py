@@ -24,13 +24,13 @@ class apis():
   def __init__(self, db):
     self.db = db
   def setFileShared(self,message):
-    shared=sharedFiles(self.db) 
+    shared=sharedFiles(self.db)
     return shared.setFileShared(self.db.userId,message['filename'],message['filetype'])
   def unsharedAFile(self,message):
-    shared=sharedFiles(self.db) 
+    shared=sharedFiles(self.db)
     return shared.unsharedAFile(self.db.userId,message['filename'],message['filetype'])
   def getuserPartByType(self,message):
-    shared=sharedFiles(self.db) 
+    shared=sharedFiles(self.db)
     return shared.getSharedTypePart(message['type'])
   def addAPromoter(self,message):
     return self.db.addAPromoter(name=message['name'],number=message['number'],MPPromoter=string.atof(message['MPPromoter']),LeakageRate=string.atof(message['LeakageRate']),K1=string.atof(message['K1']),Type=message['Type'],Repressor=message['Repressor'],Source=message['Source'],Activator=message['Activator'],PoPS=string.atof(message['PoPS']))
@@ -51,7 +51,7 @@ class apis():
     self.db.indexSave=message['data']
     return "index save success"
   def getBiobrickPath(self,message):
-    return xmlParse.findFile(rootdir="web\\biobrick\\",key=message['data'])
+    return xmlParse.findFile(rootdir="web/biobrick/",key=message['data'])
   def getIndexSave(self,message):
     return group.dump_group(json.loads(self.db.indexSave),self.db)
   def generateRandomsessionKey(self,message):   

@@ -126,7 +126,7 @@ Tree.prototype = {
 
 					ws.send(JSON.stringify({
 						'request' : 'getXmlJson',
-						'path' : node.path
+						'path' : node.path.replace(/\\/g,"/")
 					}));
 				}
 			});
