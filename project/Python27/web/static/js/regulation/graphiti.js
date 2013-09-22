@@ -706,8 +706,6 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 inducer: "none"
             });
 
-            app.view.boundPairs.push({from: source.getId(), to: target.getId(), type: "Bound", inducer: "none"});
-
             // 更新外容器状态
             updateOuterContainer();
             target.resetChildren();
