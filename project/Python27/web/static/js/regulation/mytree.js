@@ -29,6 +29,8 @@ function Node(id, name, level, type, parent, children, icon, path) {
 
 };
 
+/*================================== Tree =========================================*/
+
 function Tree(id, rootName) {
 	// Tree body...
 	this.id = id;
@@ -108,7 +110,7 @@ Tree.prototype = {
 				} else {	// if type is "file"					
 					var adder = new BiobrickAdder();
 					var offset = $(this).offset();
-					adder.init(node.name, "g.Shapes.Protein", offset.top, offset.left);
+					adder.init(node.name, "g.Shapes.Protein", offset.top, offset.left, null, node.path.replace(/\\/g,"/"));
 					adder.show();
 
 					$("#right-container").css({right: '0px'});
@@ -201,6 +203,7 @@ Tree.prototype = {
 	}
 };
 
+/*================================== EFactors Tree =========================================*/
 
 // EFTree, inherits the Tree
 function EFTree(id, rootName) {
@@ -284,7 +287,117 @@ EFTree.prototype.parseJson = function(data) {
 };
 
 
+/*================================== Codings Tree =========================================*/
+function CodingTree(id, rootName) {
+	Tree.call(this, rootName);
 
+	this.id = id;
+}
+
+CodingTree.prototype = new Tree();
+CodingTree.prototype.constructor = CodingTree;
+CodingTree.prototype.parseSubTree = function() {};
+
+CodingTree.prototype.addNode = function(name) {
+	var id = this.nodes.length;
+	var type, icon;
+	
+	this.nodes[this.nodes.length] = new Node(id, name, 1, "g.Shapes.Protein", "Codings", "", "protein.png", "");
+};
+
+CodingTree.prototype.renderNode = function(node) {
+	var shortname = node.name.part_name.length > 12 ? node.name.part_name.substr(0, 9) + ".." : node.name.part_name,
+		img = "<img src=\"../static/img/" + node.icon + "\">",
+		iconDiv = "<div class=\"factorIcon\">" + img + "</div>",
+		nameDiv = "<div class=\"factorName\"><span class=\"label label-info\">" + shortname + "</span></div>",
+		outerDiv = "<div class=\"factorNode\" id=\"factor-" + node.name.part_name + "\">" + iconDiv + nameDiv + "</div>";
+	
+	if ($("#factor-" + node.name).length == 0) {
+		$("#level-" + node.level + "-" + node.parent).append(outerDiv);
+
+		// add tooltip
+		$("#factor-" + node.name.part_name + " .label").tooltip({
+	      animation: true,
+	      title : node.name.part_name,
+	      placement : 'top',
+	    });
+
+
+		// bind click event
+		$("#factor-" + node.name.part_name).click(function() {
+			// if type is "folder"
+			var adder = new BiobrickAdder();
+			var offset = $(this).offset();
+			adder.init(node.name.part_name, "g.Shapes.Protein", offset.top, offset.left, node.name);
+			adder.show();
+
+			$("#right-container").css({right: '0px'});
+			var hasClassIn = $("#collapseTwo").hasClass('in');
+			if(!hasClassIn) {
+				$("#collapseOne").toggleClass('in');
+				$("#collapseOne").css({height: '0'});
+				$("#collapseTwo").toggleClass('in');
+				$("#collapseTwo").css({height: "auto"});
+			}	
+			$("#exogenous-factors-config").css({"display": "none"});
+	        $("#protein-config").css({"display": "none"});
+	        $("#component-config").css({"display": "block"});
+	        $("#arrow-config").css({"display": "none"});
+
+	        resetConfig();
+	        $("input[name=part_id]").attr({
+                'value': node.name.part_id
+            });
+            $("input[name=part_name]").attr({
+                'value': node.name.part_name
+            });
+            $("input[name=part_short_name]").attr({
+                'value': node.name.part_short_name
+            });
+            $("input[name=part_short_desc]").attr({
+                'value': node.name.part_short_desc
+            });
+            $("input[name=part_type]").attr({
+                'value': node.name.part_type
+            });
+            $("input[name=part_status]").attr({
+                'value': node.name.part_status
+            });
+            $("input[name=part_results]").attr({
+                'value': node.name.part_results
+            });
+            $("input[name=part_nickname]").attr({
+                'value': node.name.part_nickname
+            });
+            $("input[name=part_rating]").attr({
+                'value': node.name.part_rating
+            });
+            $("input[name=part_author]").attr({
+                'value': node.name.part_author
+            });
+            $("input[name=part_entered]").attr({
+                'value': node.name.part_entered
+            });
+            $("input[name=part_quality]").attr({
+                'value': node.name.best_quality
+            });
+		});
+	}
+};
+
+CodingTree.prototype.parseJson = function(data) {
+	var levelDiv = "<div class=\"eFactorLevel\" id=\"level-1-Codings\"></div>"
+	$("#codings").append(levelDiv);
+	$("#level-1-Codings").css("display", "block");
+
+	for (var i = 0; i < data.length; i++) {
+		this.addNode(data[i]);
+	};
+
+	this.renderAll();
+};
+
+/*================================== Creation =========================================*/
 // create a tree
 var proteinList = new Tree("protein", "protein");
 
@@ -292,3 +405,6 @@ var proteinList = new Tree("protein", "protein");
 var eFactorList = new EFTree("eFactors", "eFactors");
 var data = ["Inducer", "Metal-ion", "Temperature", "RorA"];
 eFactorList.parseJson(data);
+
+// create a CodingTree
+var codingList = new CodingTree("codings", "codings");

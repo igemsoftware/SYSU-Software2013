@@ -266,7 +266,7 @@ $().ready(function() {
                 }
             } else if (message.request == "getXmlJson") { // get configuration data of a single protein
                 var part = eval('(' + message.result + ')').rsbpml.part_list.part;
-
+                resetConfig();
                 $("input[name=part_id]").attr({
                     'value': part.part_id
                 });
@@ -318,7 +318,8 @@ $().ready(function() {
             } else if (message.request == 'saveUserData') {
                 console.log(message.result);
             } else if (message.request == 'getuserPartByType') {
-                console.log(message.result);
+                // console.log(message.result);
+                codingList.parseJson(message.result);
             }
         };
     }
@@ -343,7 +344,7 @@ $().ready(function() {
         // get coding file
         ws.send(JSON.stringify({
             'request': 'getuserPartByType',
-            'type': 'coding'
+            'type': 'Coding'
         }));
 
         (function loadFile() {
