@@ -467,7 +467,7 @@ graphiti.Canvas = Class.extend(
      * @param {Number} [y] The y position.
      **/
     addFigure:function( figure , x,  y)
-    {
+    {   
         if(figure.getCanvas()===this){
             return;
         }

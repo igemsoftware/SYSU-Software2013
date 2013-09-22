@@ -639,6 +639,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
     onClick: function(x, y) {
         console.log("Unbind Clicked, x=" + x + " y=" + y);
         g.unbind(this.from, this.to);
+
+        this.setCanvas(null);
     }
 });
 
@@ -784,7 +786,102 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
  */
 (function(ex) {
     ex.unbind = function(from, to) {
-        alert("haha");
+        var oldOuterContainer = from.getParent();
+        oldOuterContainer.children = new graphiti.util.ArrayList();
+        // app.view.removeFigure(oldOuterContainer);
+        console.log(oldOuterContainer);
+        var sid = from.children.get(0).figure.getId(),
+            tid = to.children.get(0).figure.getId();
+
+        // 只有蛋白绑定的情况
+        if (from.getChildren().getSize() <= 2) {
+            var child = from.children.get(0).figure;
+            protein = new g.Shapes.Protein(); //外容器
+            var command = new graphiti.command.CommandAdd(app.view, protein, from.getAbsoluteX(), from.getAbsoluteY());
+            app.view.getCommandStack().execute(command);
+            protein.setId(child.getId());
+            protein.name = child.name;
+
+            protein.setParent(null);
+            app.view.removeFigure(child);
+            from.children = new graphiti.util.ArrayList();
+        } else {
+            outerContainer1 = new g.Shapes.Container(); //外容器
+            var command = new graphiti.command.CommandAdd(app.view, outerContainer1, from.getAbsoluteX(), from.getAbsoluteY());
+            app.view.getCommandStack().execute(command);
+            app.view.collection.push(outerContainer1.getId());
+
+            outerContainer2 = new g.Shapes.Container(); //外容器
+            var command = new graphiti.command.CommandAdd(app.view, outerContainer2, to.getAbsoluteX(), to.getAbsoluteY());
+            app.view.getCommandStack().execute(command);
+            app.view.collection.push(outerContainer2.getId());
+
+
+            outerContainer1.addFigure(from, from.locator);
+            from.setParent(outerContainer1);
+            outerContainer1.count++;
+            outerContainer2.addFigure(to, to.locator);
+            to.setParent(outerContainer2);
+            outerContainer2.count++;
+
+
+
+
+            updateOuterContainer(outerContainer1);
+            updateOuterContainer(outerContainer2);
+        }
+        
+
+        // 对to元件进行处理
+         if (to.getChildren().getSize() <= 2) {
+            var child = to.children.get(0).figure;
+            protein = new g.Shapes.Protein(); //外容器
+            var command = new graphiti.command.CommandAdd(app.view, protein, to.getAbsoluteX(), to.getAbsoluteY());
+            app.view.getCommandStack().execute(command);
+            protein.setId(child.getId());
+            protein.name = child.name;
+
+            protein.setParent(null);
+            app.view.removeFigure(child);
+            to.children = new graphiti.util.ArrayList();
+        }
+
+
+        // 清除绑定信息
+        removeBoundInfo(sid, tid);
+
+        // 更新外容器信息
+        function updateOuterContainer(oc) {
+            var children = oc.getChildren();
+            var len = children.getSize();
+            var count = 0;
+            for (var i = 0; i < len; i++) {
+                var innerContainer = children.get(i);
+                if (innerContainer.TYPE == "Container") {
+                    innerContainer.locator.no = count;
+                    innerContainer.locator.relocate(i, innerContainer);
+                    count += innerContainer.count;
+                }
+            }
+            oc.setDimension(count * 100, 100);
+        }
+
+
+        // 删除特定的绑定信息
+        function removeBoundInfo(sid, tid) {
+            var idx = -1;
+            for (var i = 0; i < app.view.boundPairs.length; i++) {
+                var item = app.view.boundPairs[i];
+                if (item.from == sid && item.to == tid) {
+                    idx = i;
+                    break;
+                }
+            }
+
+            if (idx > -1) {
+                app.view.boundPairs.splice(idx, 1);
+            }
+        }
     };
 })(g);
 
@@ -903,6 +1000,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 
         for (var i = 0; i < canvas.collection.length; i++) {
             var figure = canvas.getFigure(canvas.collection[i]);
+            console.log(figure);
             g.closeToolbar(figure);
         }
 
