@@ -253,7 +253,7 @@ $().ready(function() {
                     if (proteinList.isInit) {
                         proteinList.parseSubTree(message.result);
                     } else {
-						console.log(message.result);
+						// console.log(message.result);
 						var regS = new RegExp("/","g");
 						for (var i=0;i<message.result.files.length;i++)
 						{

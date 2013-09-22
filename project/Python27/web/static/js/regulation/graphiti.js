@@ -668,7 +668,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 
         if (type == "Protein") {
             var newContainer = new g.Shapes.Container();
-            newContainer.setDimension(container.count * 100, 100);
+            // newContainer.setDimension(container.count * 100, 100);
             newContainer.addFigure(target, new graphiti.layout.locator.ContainerLocator(newContainer, newContainer.count, 100));
             newContainer.count += 1;
             newContainer.locator = new graphiti.layout.locator.ContainerLocator(outerContainer, outerContainer.count, 100);
@@ -728,6 +728,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 innerContainer.locator.no = count;
                 innerContainer.locator.relocate(i, innerContainer);
                 count += innerContainer.count;
+                
+                console.log(innerContainer.count);
             };
 
             outerContainer.setDimension(count * 100, 100);
