@@ -696,7 +696,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             outerContainer.addFigure(unbinder, unbinder.locator);
 
             // 向蛋白绑定信息数组插入记录
-            app.view.boundPairs.push({from: source.getId(), to: target.getId(), type: "bound", inducer: "none"});
+            app.view.boundPairs.push({from: source.getId(), to: target.getId(), type: "Bound", inducer: "none"});
 
             // 更新外容器状态
             updateOuterContainer();
