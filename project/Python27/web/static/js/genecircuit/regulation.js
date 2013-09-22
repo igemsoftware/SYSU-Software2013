@@ -539,7 +539,7 @@ $().ready(function() {
 			} else if (message.request == "getBiobrickPath") {
 				ws.send(JSON.stringify({ 
 					'request': 'getXmlJson', 
-					'path': message.result,
+					'path': message.result.replace(/\\/g, "/"),
 				})); 
 
 				$("#right-container").css({right: '0px'});
