@@ -127,9 +127,7 @@ def plasmid_sbol(db, groups, rule = "RFC10"):
   for data in circuit:
     comp_names = [cc["name"] for cc in data["sbol"]]
     file_list = [find_file(s + ".xml", ".") for s in comp_names]
-    content = component_union.union(rule, file_list)
-    dna_sequence = component_union.connect(rule, content)
-    sbol = component_union.formatter_v11(content, dna_sequence)
+    sbol = component_union.get_sbol(file_list, rule)
     sbol2 = format_to_json(sbol)
     idx = 0
     for item in sbol2["DnaComponent"]["annotations"]:
