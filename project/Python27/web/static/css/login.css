@@ -116,6 +116,9 @@ body {
 	height: 16px;
 	background-color: #d7ffff;
 	cursor: pointer;
+	text-align: center;
+	font-size: 16px;
+	line-height: 16px;
 }
 
 .tips #remember {

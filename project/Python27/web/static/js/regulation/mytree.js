@@ -291,4 +291,4 @@ var proteinList = new Tree("protein", "protein");
 // create a EFTree
 var eFactorList = new EFTree("eFactors", "eFactors");
 var data = ["Inducer", "Metal-ion", "Temperature", "RorA"];
-eFactorList.parseJson(data); 
+eFactorList.parseJson(data);

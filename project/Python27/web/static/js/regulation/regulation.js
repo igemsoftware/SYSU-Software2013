@@ -317,6 +317,8 @@ $().ready(function() {
                 console.log(message.result);
             } else if (message.request == 'saveUserData') {
                 console.log(message.result);
+            } else if (message.request == 'getuserPartByType') {
+                console.log(message.result);
             }
         };
     }
@@ -336,6 +338,12 @@ $().ready(function() {
         // get username
         ws.send(JSON.stringify({
             'request': 'getLoginedUserName'
+        }));
+
+        // get coding file
+        ws.send(JSON.stringify({
+            'request': 'getuserPartByType',
+            'type': 'coding'
         }));
 
         (function loadFile() {

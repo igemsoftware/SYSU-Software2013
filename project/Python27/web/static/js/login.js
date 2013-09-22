@@ -48,6 +48,23 @@ $(document).ready(function() {
 			}
 		};
 	};
+
+	$("#mycheckbox").click(function() {
+		var checked = $("#remember").attr("checked");
+
+		if (checked == undefined) {
+			$("#remember").attr('checked', 'checked');
+			$(".checkbox-mask").text("●");
+		} else {
+			$("#remember").attr('checked', false);
+			$(".checkbox-mask").text("");
+		}
+
+
+		console.log(checked);
+	});
+
+
 	// Bind send button to websocket
 	$("#btn-login").live("click", function() {
 		var username = $("#username").attr('value');

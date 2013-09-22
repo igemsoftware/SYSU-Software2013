@@ -151,11 +151,11 @@ body {
  *  Left sidebar styles
  */
 #left-container {
-  position: relative;
+  position: absolute;
   top: 0;
   left: -270px;
   width: 250px;
-  height: 708px;
+  height: 100%;
   padding: 10px;  
 	border-radius: 2px;
   box-shadow: 2px 2px 5px #407279;
