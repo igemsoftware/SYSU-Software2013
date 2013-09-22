@@ -186,7 +186,7 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
     onClick: function(x, y) {
         var figure = this.getBestFigure(x, y);
         // console.log(figure);
-        if (figure !== null)
+        if (figure !== undefined)
             figure.onClick(x, y);
     },
 
@@ -213,7 +213,7 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
             if (figure.hitTest(x, y) == true && figure.TYPE !== ignoreType) {
                 if (result === null) {
                     result = figure;
-                } else if (result.getZOrder() < figure.getZOrder()) {
+                } else if (result.getZOrder() > figure.getZOrder()) {
                     result = figure;
                 }
             }
@@ -635,7 +635,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             this.to = to;
     },
 
-    onClick: function() {
+    onClick: function(x, y) {
+        console.log("Unbind Clicked, x=" + x + " y=" + y);
         g.unbind(this.from, this.to);
     }
 });
@@ -691,16 +692,17 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             outerContainer.addFigure(newContainer, newContainer.locator);
             outerContainer.count += 1;
 
+            // 添加绑定符号
             var unbinder = new g.Buttons.Unbind();
             unbinder.setAttr(container, newContainer);
             unbinder.locator = new graphiti.layout.locator.UnbindLocator(outerContainer, outerContainer.count - 1, 100);
-            outerContainer.addFigure(unbinder, unbinder.locator);
+            container.addFigure(unbinder, unbinder.locator);
 
             // 向蛋白绑定信息数组插入记录
             app.view.boundPairs.push({
                 from: source.getId(),
                 to: target.getId(),
-                type: "bound",
+                type: "Bound",
                 inducer: "none"
             });
 
