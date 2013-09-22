@@ -15,6 +15,7 @@ body {
 
 .mycontainer {
   width: 100%;
+  min-width: 1366px;
   height: 100%;
   overflow: hidden;
 }
@@ -22,6 +23,7 @@ body {
 .header {
   position: absolute;
   width: 100%;
+  min-width: 1225px;
   height: 115px;
   top: 0;
 }
@@ -265,23 +267,24 @@ body {
 #content {
   position: absolute;
   width: 100%;
-  min-width: 1366px;
+  min-width: 1121px;
   margin: 0px auto;
   top: 115px;
+  bottom: 20px;
 }
 
 #canvas-mask {
-  width: 1324px;
-  height: 536px;
-  padding: 20px 0;
+  width: 100%;
+  height: 100%;
+  /*padding: 20px 0;*/
   margin: 0 auto;
-  background-image: url(../img/painterbg.png);
+  /*background-image: url(../img/painterbg.png);*/
 }
 
 #canvas {
 	margin: 0 auto;
-	width: 1284px;
-	height: 534px;
+	width: 95%;
+	height: 100%;
 	border-radius: 6px;
 	background-color: #ebebeb;
 	color: #4388CC;
