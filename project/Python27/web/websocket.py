@@ -3,6 +3,7 @@ import json
 from database import SqliteDatabase
 import component_union
 from sbol2json import format_to_json
+from new_sequence import get_new_part_sequence
 from sharedFile import sharedFiles
 import Simulate_Function
 import user
@@ -141,6 +142,12 @@ class apis():
     return ret
   def getUserQuestion(self,message):
     return user.getUserQuestion(self.db,message['userName']) 
+  def getNewPartSequence(self,message):
+    if message.has_key("rule"):
+      rule = message["rule"]
+    else:
+      rule = "RFC10"
+    return get_new_part_sequence(message['data'], rule)
   def forgetPasswordAndReset(self,message):
     self.db.rememberUser(message['userName'],message['password'])
     return user.resetUserPassword(self.db,message['userName'],message['answer'],message['password'])

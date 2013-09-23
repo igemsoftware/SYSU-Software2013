@@ -131,7 +131,6 @@ def get_sbol(component, rule = "RFC10", extended = False):
   sbol = formatter_v11(content, dna_sequence)
   return sbol
 
-
 if __name__ == "__main__":
   rule = "RFC25"
   sbol = get_sbol(sys.argv[2:], rule)
