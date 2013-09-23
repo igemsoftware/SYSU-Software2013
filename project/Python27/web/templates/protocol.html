@@ -13,11 +13,17 @@
     <link rel="stylesheet" href="../static/css/graphiti.css">
     <link rel="stylesheet" href="../static/css/navlist.css">
     <style>
-      .list{line-height:35px; width:250px;background-color:#008080;}
-      .list:hover{background-color:#FFAA33;}
+      .list{text-indent:0px;border:0px;line-height:59px;height:59px;width:250px;background-color:#008080;}
+      .list:hover{border:0px;background-color:#FFAA33;}
       p{font-size:14px;line-height:20px;} 
-      #myTab i{position:relative;top:10px;}
-      .nav-list>.active>a, .nav-list>.active>a:hover{color:#008080;background-color:#FFAA33;}
+      .nav-list>li>a {border:0px;height:59px;font-size:15px;color:#FFAA33;margin-right:0px;
+        margin-left:0px;}
+      .nav-list>li>a>i.myi{width:50px;height:50px;position: relative;
+top:2px;left:13px;float:right;display:none;background-image: url("../static/img/protocolimg.png");}
+       .nav-list>.active>a>i.myi{width:50px;height:50px;position: relative;
+top:2px;left:13px;float:right;display:block;background-image: url("../static/img/protocolimg.png");}
+      .nav-list>.active>a, .nav-list>.active>a:hover{margin-right:0px;
+margin-left:0px;height:59px;color:#008080;background-color:#FFAA33;border:0px;}
     </style>    
   </head>
 
@@ -44,22 +50,24 @@
       <!-- Painting Area -->
       <div id="content">
         <div id="canvas-mask">
-          <div class="row-fluid" style="position:relative;top:-27px;width:1500px;">
-            <div class="span3 accordion" id="accordion1" style="position:relative;left:25px;">
-              <ul class="nav-list bs-docs-sidenav accordion-group" id="myTab" style="width:250px">
-                <li class="accordion-heading list active"><a href="#0" style="width:220px;" data-toggle="tab">Overview<i class="icon-chevron-right"></i></a></li>
-                <li class="accordion-heading list"><a href="#1" style="width:220px;" data-toggle="tab">1.Obtain plasmid DNA<i class="icon-chevron-right"></i></a></li>
-                <li class="accordion-heading list"><a href="#2" style="width:220px;" data-toggle="tab">2.Enzyme Digestion<i class="icon-chevron-right"></i></a></li>
-                <li class="accordion-heading list"><a href="#3" style="width:220px;" data-toggle="tab">3.Gel Electrophoresis<i class="icon-chevron-right"></i></a></li>
-                <li class="accordion-heading list"><a href="#4" style="width:220px;" data-toggle="tab">4.Gel Purification<i class="icon-chevron-right"></i></a></li>
-                <li class="accordion-heading list"><a href="#5" style="width:220px;" data-toggle="tab">5.Ligation<i class="icon-chevron-right"></i></a></li>
-                <li class="accordion-heading list"><a href="#6" style="width:220px;" data-toggle="tab">6.Transformation<i class="icon-chevron-right"></i></a></li>
-                <li class="accordion-heading list"><a href="#7" style="width:220px;" data-toggle="tab">7.Colony PCR<i class="icon-chevron-right"></i></a></li>
-                <li class="accordion-heading list"><a href="#8" style="width:220px;" data-toggle="tab">8.Conclusive Test<i class="icon-chevron-right"></i></a></li>
-                <li class="accordion-heading list"><a href="#9" style="width:220px;" data-toggle="tab">9.Glycerol Stock<i class="icon-chevron-right"></i></a></li>
+          <div class="row-fluid" style="position:relative;width:1700px;">
+            <div class="span3" style="position:relative;left:25px;height:600px;">
+              <ul class="nav nav-list" id="myTab" style="width:250px;">
+                <li class="list active"><a href="#0" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">Overview<i class="myi"></i></a></li>
+                <li class="list"><a href="#1" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">1.Obtain plasmid DNA<i class="myi"></i></a></li>
+                <li class="list"><a href="#2" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">2.Enzyme Digestion<i class="myi"></i></a></li>
+                <li class="list"><a href="#3" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">3.Gel Electrophoresis<i class="myi"></i></a></li>
+                <li class="list"><a href="#4" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">4.Gel Purification<i class="myi"></i></a></li>
+                <li class="list"><a href="#5" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">5.Ligation<i class="myi"></i></a></li>
+                <li class="list"><a href="#6" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">6.Transformation<i class="myi"></i></a></li>
+                <li class="list"><a href="#7" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">7.Colony PCR<i class="myi"></i></a></li>
+                <li class="list"><a href="#8" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">8.Conclusive Test<i class="myi"></i></a></li>
+                <li class="list"><a href="#9" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">9.Glycerol Stock<i class="myi"></i></a></li>
               </ul>
+              <div style="position:relative;top:-590px;left:245px;width:20px;height:590px;background-color:black;opacity:0.5;">
+              </div>
             </div>
-            <div class="span8 tab-content bs-docs-sidenav affix" id="myTabContent" style="background:#ccc;position:relative;top:0px;left:-105px;width:1020px;height:528px;">
+            <div class="span8 tab-content" id="myTabContent" style="background:#ccc;position:relative;top:0px;left:-146px;width:1200px;height:590px;">
               <div class="tab-pane active" style="width:1000px;overflow:auto;" id="0"><br />
                 <canvas id="myCanvas" height="400" style="border:1px;">
                 your browser does not support the canvas element.

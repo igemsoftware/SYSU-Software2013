@@ -215,9 +215,12 @@ def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "p
     ret["K1"] = None
   ret["repress_rate"] = -1
   ret["induce_rate"] = -1
-  ret["concen"] = 0.1
+  if groups[grp_id]["corep_ind_type"] == "None":
+    ret["concen"] = None
+  else:
+    ret["concen"] = 0.1
+
   ret["pos"] = protein_idx
-  # following arguments are DEPRECATED
   return ret
 
 def get_index_in_group(pro_name, group):
