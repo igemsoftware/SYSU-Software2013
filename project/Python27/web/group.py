@@ -11,70 +11,70 @@ rbs_name = "BBa_J61104"
 term_name = "BBa_B0013"
 
 
-#data = {u'part': [{u'type': u'Protein', u'id': u'37e604d1-9267-43ff-d6af-109336b65d47', u'name': u'BBa_I752001'}, {u'type': u'Protein', u'id': u'd9904b7a-12ac-29c7-6a02-2b2f2a27ffb0', u'name': u'BBa_J58104'}, {u'type': u'Protein', u'id': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'name': u'BBa_K091002'}, {u'type': u'Repressor', u'id': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'name': u'Repressor'}], u'link': [{u'to': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'from': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'37e604d1-9267-43ff-d6af-109336b65d47', u'from': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'inducer': u'none', u'type': u'Repressor'}, {u'to': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'from': u'd9904b7a-12ac-29c7-6a02-2b2f2a27ffb0', u'inducer': u'none', u'type': u'Bound'}]}
+data = {u'part': [{u'type': u'Protein', u'id': u'37e604d1-9267-43ff-d6af-109336b65d47', u'name': u'BBa_I752001'}, {u'type': u'Protein', u'id': u'd9904b7a-12ac-29c7-6a02-2b2f2a27ffb0', u'name': u'BBa_J58104'}, {u'type': u'Protein', u'id': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'name': u'BBa_K091002'}, {u'type': u'Repressor', u'id': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'name': u'Repressor'}], u'link': [{u'to': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'from': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'37e604d1-9267-43ff-d6af-109336b65d47', u'from': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'inducer': u'none', u'type': u'Repressor'}, {u'to': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'from': u'd9904b7a-12ac-29c7-6a02-2b2f2a27ffb0', u'inducer': u'none', u'type': u'Bound'}]}
 #data = {u'part': [{u'type': u'Protein', u'id': 1, u'name': u'BBa_C0060'}, {u'type': u'Protein', u'id': 2, u'name': u'BBa_C0060'}, {u'type': u'Activator', u'id': 3, u'name': u'Activator'}, {u'type': u'Repressor', u'id': 4, u'name': u'Repressor'}, {u'type': u'Protein', u'id': 5, u'name': u'BBa_C0160'}, {u'type': u'Protein', u'id': 6, u'name': u'BBa_C0178'}, {u'type': u'Protein', u'id': 7, u'name': u'BBa_C0178'}], u'link': [{u'to': 2, u'from': 1, u'type': u'Bound'}, {u'to': 3, u'from': 2, u'type': u'Bound'}, {u'to': 4, u'from': 3, u'type': u'Bound'}, {u'to': 5, u'from': 3, u'inducer': u'None', u'type': u'Activator'}, {u'to': 6, u'from': 4, u'inducer': u'Positive', u'type': u'Repressor'}, {u'to': 7, u'from': 6, u'type': u'Bound'}]}
-data = {
-    "part": [
-      { "id"  : 1,
-        "name": "BBa_C0060",
-        "type": "Protein"
-        },
-      { "id"  : 2,
-        "name": "BBa_C0060",
-        "type": "Protein"
-        },
-      { "id"  : 3,
-        "name": "Activator",
-        "type": "Activator"
-        },
-      { "id"  : 4,
-        "name": "Repressor",
-        "type": "Repressor"
-        },
-      { "id"  : 5,
-        "name": "BBa_C0160",
-        "type": "Protein"
-        },
-      { "id"  : 6,
-        "name": "BBa_C0178",
-        "type": "Protein"
-        },
-      { "id"  : 7,
-        "name": "BBa_C0178",
-        "type": "Protein"
-        }
+#data = {
+    #"part": [
+      #{ "id"  : 1,
+        #"name": "BBa_C0060",
+        #"type": "Protein"
+        #},
+      #{ "id"  : 2,
+        #"name": "BBa_C0060",
+        #"type": "Protein"
+        #},
+      #{ "id"  : 3,
+        #"name": "Activator",
+        #"type": "Activator"
+        #},
+      #{ "id"  : 4,
+        #"name": "Repressor",
+        #"type": "Repressor"
+        #},
+      #{ "id"  : 5,
+        #"name": "BBa_C0160",
+        #"type": "Protein"
+        #},
+      #{ "id"  : 6,
+        #"name": "BBa_C0178",
+        #"type": "Protein"
+        #},
+      #{ "id"  : 7,
+        #"name": "BBa_C0178",
+        #"type": "Protein"
+        #}
 
-      ],
-    "link": [
-      { "from": 2,
-        "to"  : 4,
-        "type": "Bound",
-        },
-      { "from": 1,
-        "to"  : 2,
-        "type": "Bound",
-        },
-      { "from": 2,
-        "to"  : 3,
-        "type": "Bound",
-        },
-      { "from": 3,
-        "to"  : 5,
-        "type": "Activator",
-        "inducer": "None"
-        },
-      { "from": 4,
-        "to"  : 6,
-        "type": "Repressor",
-        "inducer": "Positive"
-        },
-      { "from": 6,
-        "to"  : 7,
-        "type": "Bound",
-        },
+      #],
+    #"link": [
+      #{ "from": 2,
+        #"to"  : 4,
+        #"type": "Bound",
+        #},
+      #{ "from": 1,
+        #"to"  : 2,
+        #"type": "Bound",
+        #},
+      #{ "from": 2,
+        #"to"  : 3,
+        #"type": "Bound",
+        #},
+      #{ "from": 3,
+        #"to"  : 5,
+        #"type": "Activator",
+        #"inducer": "None"
+        #},
+      #{ "from": 4,
+        #"to"  : 6,
+        #"type": "Repressor",
+        #"inducer": "Positive"
+        #},
+      #{ "from": 6,
+        #"to"  : 7,
+        #"type": "Bound",
+        #},
 
-      ]
-}
+      #]
+#}
 
 def find_repressor(database, item, regulator_list):
   item = database.select_row("repressor", len(regulator_list) + 1)
@@ -141,10 +141,9 @@ def work(data, database):
           pro_pos[idx] += offset
         if bound_list[idx] == u:
           bound_list[idx] = v
-      #bound_list[link["from"]] = find_bound_src(link["to"], bound_list)
-      bound_list[link["from"]] = v
-      rev_bound_list[link["to"]] = u
-      del groups[link["from"]]
+      bound_list[u] = v
+      rev_bound_list[v] = u
+      del groups[u]
 
   # replace repressor with exact component
   for elem in groups:
@@ -451,7 +450,7 @@ def update_controller(db, update_info):
 
 if __name__ == "__main__":
   db = database.SqliteDatabase()
-  #sbol=dump_group(data, db)
-  #print sbol
+  sbol=dump_group(data, db)
+  print sbol
   update_info = {u'detail': {u'new_value': -1, u'type': u'K1', u'pro_id': u'bf8637bb-4847-ade7-9b87-a49284b15984'}, u'gene_circuit': {u'proteins': {u'bf8637bb-4847-ade7-9b87-a49284b15984': {u'RiPS': 83, u'name': u'BBa_J58105', u'repress_rate': 0, u'concen': 0, u'grp_id': u'bf8637bb-4847-ade7-9b87-a49284b15984', u'pos': 2, u'PoPS': 28, u'before_regulated': 169652, u'K1': -1, u'induce_rate': 0, u'copy': 73, u'display': True}, u'9266acc0-045a-07fb-4b19-cc7a4bf14ef4': {u'RiPS': 11, u'name': u'BBa_K091002', u'repress_rate': 0, u'concen': 0, u'grp_id': u'4e5d6270-4a4d-5d9e-3170-331800083771', u'pos': 2, u'PoPS': 8, u'before_regulated': 6424, u'K1': None, u'induce_rate': 0, u'copy': 73, u'display': True}, u'4e5d6270-4a4d-5d9e-3170-331800083771': {u'RiPS': 11, u'name': u'BBa_K518003', u'repress_rate': 0, u'concen': 0, u'grp_id': u'4e5d6270-4a4d-5d9e-3170-331800083771', u'pos': 4, u'PoPS': 8, u'before_regulated': 6424, u'K1': 4, u'induce_rate': 0, u'copy': 73, u'display': False}}, u'plasmids': [[u'bf8637bb-4847-ade7-9b87-a49284b15984', u'4e5d6270-4a4d-5d9e-3170-331800083771']], u'groups': {u'bf8637bb-4847-ade7-9b87-a49284b15984': {u'from': u'4e5d6270-4a4d-5d9e-3170-331800083771', u'state': u'cis', u'corep_ind_type': u'None', u'to': [], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_J64712'}, {u'type': u'RBS', u'name': u'BBa_J61117'}, {u'type': u'Protein', u'name': u'BBa_J58105', u'id': u'bf8637bb-4847-ade7-9b87-a49284b15984'}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'type': u'Positive'}, u'4e5d6270-4a4d-5d9e-3170-331800083771': {u'from': -1, u'state': u'cis', u'corep_ind_type': u'None', u'to': [u'bf8637bb-4847-ade7-9b87-a49284b15984'], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_J23108'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Protein', u'name': u'BBa_K091002', u'id': u'9266acc0-045a-07fb-4b19-cc7a4bf14ef4'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Activator', u'name': u'BBa_I715032', u'id': u'4e5d6270-4a4d-5d9e-3170-331800083771'}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'type': u'Constitutive'}}}}
   print update_controller(db, update_info)
