@@ -292,12 +292,13 @@ var group = {
 			if($(this).text() == 'trans') {
 				/* $(this).removeClass('switch-on').addClass('switch-off'); */
 				/* $(this).text('cis'); */
-         $(this).data("order", "cis");
+        /* $(this).data("order", "cis"); */
+			console.log($(this), "tete", $(this).data('order'));
 				that.turnSwitch($(this), 'cis')
 			} else {
 				/* $(this).removeClass('switch-off').addClass('switch-on'); */
 				/* $(this).text('trans'); */
-         $(this).data("order", "trans");
+        /* $(this).data("order", "trans"); */
 				that.turnSwitch($(this), 'trans');
 			}
 			/* randomValue(); */
@@ -306,11 +307,6 @@ var group = {
 	setData: function(aTextureId, aData, state) {
 		// after_connect 
 		for(var i = 0; i < aData.sbol.length; i++) { 
-			/* console.log(aTextureId); */
-		/* console.log('aData', aData.sbol[i].name); */
-		/* console.log($("#", aTextureId + " .sbol-components .component:eq(" + i.toString() + ")").find('span')); */
-			/* console.log(aTextureId); */
-			/* console.log($("#", aTextureId + " .sbol-components .component:eq(" + i.toString() + ")").find("span").text());  */
 			$("#" + aTextureId + " .sbol-components .component:eq(" + i.toString() + ")").find("span").text(aData.sbol[i].name); 
 		} 
 		if(aData.state == 'trans') { 
@@ -327,11 +323,13 @@ var group = {
 		if(type == 'trans') {
 			target.removeClass('switch-off').addClass('switch-on');
 			target.text('trans');
-			target.data("order", "trans");
+			console.log(target, "trans1", target.parent(".sbol").data('order'));
+			target.parent(".sbol").data("order", "trans");
 		} else {
 			target.removeClass('switch-on').addClass('switch-off');
 			target.text('cis');
-			target.data("order", "cis");
+			console.log(target, "cis1", target.parent(".sbol").data('order'));
+			target.parent(".sbol").data("order", "cis");
 		}
 	}
 }
@@ -664,6 +662,7 @@ var getDataCollection = function() {
 			dataCollection.groups[grp_id].to = curGroup.data("to"); 
 			dataCollection.groups[grp_id].type = curGroup.data("type"); 
 			dataCollection.groups[grp_id].state = curGroup.data("order"); 
+			console.log("order", curGroup.data("order"), curGroup);
 			dataCollection.groups[grp_id].corep_ind_type = curGroup.data("corep_ind_type"); 
 			dataCollection.groups[grp_id].corep_ind = curGroup.data("corep_ind");
 			for(var k = 0; k < componentsLength; k++) {
