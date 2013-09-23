@@ -206,8 +206,8 @@ def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "p
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
   ret["grp_id"] = grp_id
   ret["name"] = cur_group[protein_idx]["name"]
-  ret["PoPS"] = promoter_info[get_type_of_promoter(link_type)] * 100
-  ret["RiPS"] = rbs_info["MPRBS"] * 100
+  ret["PoPS"] = promoter_info[get_type_of_promoter(link_type)]
+  ret["RiPS"] = rbs_info["MPRBS"]
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
   if regulator_info is not None:
     ret["K1"] = log10(regulator_info["K1"])
@@ -374,11 +374,11 @@ def update_controller(db, update_info):
   grp_id = protein["grp_id"]
   group = gene_circuit["groups"][grp_id]
   if detail["type"] == "RiPS":
-    rbs_value = float(detail["new_value"]) / 100
+    rbs_value = float(detail["new_value"])
     # idx = get_index_in_group(pro_name, group["sbol"])
     bestRBS = db.getRBSNearValue(rbs_value)
     gene_circuit["groups"][grp_id]["sbol"][pro_idx - 1]["name"] = bestRBS["Number"]
-    gene_circuit["proteins"][pro_id]["RiPS"] = bestRBS["MPRBS"] * 100
+    gene_circuit["proteins"][pro_id]["RiPS"] = bestRBS["MPRBS"]
 
   elif detail["type"] == "copy":
     for plasmid in gene_circuit["plasmids"]:
@@ -397,7 +397,7 @@ def update_controller(db, update_info):
     p_type = get_type_of_promoter(link_type)
     # pre_work, find best_promoter and best_repressor
     if detail["type"] == "PoPS":
-      promoter_value = float(detail["new_value"]) / 100
+      promoter_value = float(detail["new_value"])
       #select best promoter according to link type
       if link_type == "Positive":
         best_promoter = db.getActivatedPromoterNearValue(promoter_value,\
@@ -431,7 +431,7 @@ def update_controller(db, update_info):
       gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter["Number"]
       for j in range(2, len(group["sbol"]), 2):
         pro2_id = gene_circuit["groups"][grp_id]["sbol"][j]["id"]
-        gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type] * 100
+        gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
 
     if prev_node != -1:
       prev_grp = gene_circuit["proteins"][prev_node]["grp_id"]
@@ -446,7 +446,7 @@ def update_controller(db, update_info):
           gene_circuit["groups"][i]["sbol"][0]["name"] = best_promoter["Number"]
           for j in range(2, len(gene_circuit["groups"][i]["sbol"]), 2):
             pro2_id = gene_circuit["groups"][i]["sbol"][j]["id"]
-            gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type] * 100
+            gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
 
   update_proteins_repress(db, gene_circuit)
   return gene_circuit
