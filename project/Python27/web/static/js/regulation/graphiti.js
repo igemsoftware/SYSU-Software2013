@@ -208,7 +208,7 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
         }
 
         this.children.remove(target);
-        console.log(item);
+
         if (flag) {
             target.figure.setCanvas(null);
         }
@@ -752,7 +752,6 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 outerContainer.updateContainer();
                 target.resetChildren();
             } else {
-                console.log("容器绑定容器");
                 var targetContainer = target.getParent();               // 获取target的innerContainer
                 var targetOuterContainer = targetContainer.getParent(); // 获取target的outerContainer
                 targetOuterContainer.removeItem(targetContainer);       // 从outerContainer里移除innerContainer
@@ -840,12 +839,12 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         var sid, tid;
         var fromFlag = false, toFlag = false;
 
-        console.log("From type: " + from.TYPE);
-        console.log("To type: " + to.TYPE);
+        // console.log("From type: " + from.TYPE);
+        // console.log("To type: " + to.TYPE);
 
         if (from.TYPE == "Container") {
-            console.log("From count: " + from.count);
-            console.log("To count: " + to.count);
+            // console.log("From count: " + from.count);
+            // console.log("To count: " + to.count);
 
             var outerContainer = from.getParent();
 
@@ -897,7 +896,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             var outerContainer = from.getParent().getParent();
             var innerContainer = from.getParent();
             var foundAt = -1;
-            console.log(innerContainer);
+            // console.log(innerContainer);
             for (var i = 0; i < innerContainer.getChildren().getSize(); i++) {
                 if (innerContainer.children.get(i).figure == to) {
                     foundAt = i;
@@ -970,14 +969,23 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             if (figure.getConnections().getSize() !== 0) {
                 var newPort = newone.createPort("hybrid", new graphiti.layout.locator.BottomLocator(newone));
                 
-                var figurePortId = figure.getPorts().get(0).getId();
-                var figureConnectionPortId = figure.getConnections().get(0).getSource().getId();
+                var cNum = figure.getConnections().getSize();
+                console.log(cNum);
+                console.log(figure.getConnections());
 
-                if (figurePortId == figureConnectionPortId) {
-                    figure.getConnections().get(0).setSource(newPort);
-                } else {
-                    figure.getConnections().get(0).setTarget(newPort);
+                var figurePortId = figure.getPorts().get(0).getId();
+                var connects = figure.getConnections();
+
+                for (var i = 0; i < cNum; i++) {
+                    var figureConnectionPortId = connects.get(i).getSource().getId();
+                    if (figurePortId == figureConnectionPortId) {
+                        connects.get(i).setSource(newPort);
+                    } else {
+                        connects.get(i).setTarget(newPort);
+                    }                    
                 }
+
+                // console.log(figure.getConnections());
             }
 
             app.view.removeFigure(figure);
@@ -1180,6 +1188,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 (function(ex) {
     ex.connect = function(source, target, type) {
         var canvas = source.getCanvas();
+        var targetPort;
+       
         var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
         var aTarget = null;
         for (var i = 0; i < target.getChildren().getSize(); i++) {
@@ -1188,8 +1198,13 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 break;
             }
         }
+        
+        if (aTarget.getPorts().getSize() == 0) {
+            targetPort = aTarget.createPort("hybrid", new graphiti.layout.locator.BottomLocator(aTarget));
+        } else {
+            targetPort = aTarget.getPorts().get(0);
+        }
 
-        var targetPort = aTarget.createPort("hybrid", new graphiti.layout.locator.BottomLocator(aTarget));
         var command;
         if (type == "A") {
             command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate"); // 连接两点
