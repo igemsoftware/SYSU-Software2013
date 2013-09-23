@@ -424,8 +424,9 @@ var moveAndCheck = function(aGroup, fGroup, tGroup, fPlasmid, tPlasmid) {
 	// detail.pro_id =  
 	// detail.new_value =  
 	// detail.type = "copy" 
-  var id_str0 = aGroup.find("id");
-	var grp_id = id_str0.substring(id_str0.indexOf('-') + 1, id_str0.length);
+
+  var id_str0 = aGroup.attr("id");
+   var grp_id = id_str0.substring(id_str0.indexOf('-') + 1, id_str0.length);
 	if(tPlasmid.find(".sbol").length > 0) {
     var id_str = tPlasmid.find(".sbol").attr('id');
 		grp_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
