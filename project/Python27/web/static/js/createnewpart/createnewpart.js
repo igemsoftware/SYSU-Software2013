@@ -31,7 +31,7 @@ function addSeqPartButtonOnclick(obj)
 				name='seq'+(userDefineSize+1);
 				item={};
 				item[name]=seq;
-				parts.push(item);
+				parts.push(seq);
 				biobrickDivAddBiobrick(name);
 				userDefineSize++;
 				document.getElementById('seqInput').value='';
@@ -67,7 +67,7 @@ function step0()
 				name='seq'+userDefineSize;
 				item={};
 				item[name]=seq;
-				parts.push(item);
+				parts.push(seq);
 				biobrickDivAddBiobrick(name);
 				userDefineSize++;				
 			}else{
