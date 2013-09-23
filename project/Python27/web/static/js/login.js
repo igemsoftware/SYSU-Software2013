@@ -45,7 +45,8 @@ $(document).ready(function() {
 			} else if (message.request==="userLoginByTicket"){
 				if (message.result!='Ticket error!')
 				{
-					sessionStorage.rememberTicket=message.result;
+					localStorage.rememberTicket=message.result;
+					self.location='index';
 				} else {
 					alert('Login by remember me ticket error!');
 					localStorage.removeItem("rememberTicket"); 
@@ -58,10 +59,14 @@ $(document).ready(function() {
 	$("#mycheckbox").click(function() {
 		var checked = $("#remember").attr("checked");
 
-		if (checked == undefined) {
+		if (checked == undefined) {			
 			$("#remember").attr('checked', 'checked');
 			$(".checkbox-mask").text("●");
+			localStorage.rememberme='true';
 		} else {
+			localStorage.removeItem("rememberTicket"); 
+			localStorage.removeItem("userName"); 
+			localStorage.rememberme='false';
 			$("#remember").attr('checked', false);
 			$(".checkbox-mask").text("");
 		}
@@ -123,7 +128,7 @@ $(document).ready(function() {
 			}));
 		});
 
-	ws.onopen = function() {
+	ws.onopen = function() {		
 		ws.send(JSON.stringify({
 			'request': 'generateRandomsessionKey'
 		}));

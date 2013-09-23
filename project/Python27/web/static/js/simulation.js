@@ -31,10 +31,11 @@ $(document).ready(function () {
         data = turnRawDatatoData(raw_data);
         time = message.result.time;
         dt = message.result.dt;
-        var width1 = document.getElementById('canvasDiv').clientWidth - 15;
-        var height1 = document.getElementById('canvasDiv').clientHeight - 15;
+        var width1 = document.getElementById('canvasDiv').clientWidth ;
+        var height1 = document.getElementById('canvasDiv').clientHeight ;
         run(data,'canvasDiv', width1, height1, time, dt);
 		    inducerList=getinducerList(sessionStorage.gene_circuit);
+			$("#Curve").empty();
         for(var i=0;i<data.length;i++)
         {
           var w=document.getElementById('Curve').clientWidth/3/6;
