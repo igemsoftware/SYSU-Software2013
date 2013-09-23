@@ -858,7 +858,16 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 fromFlag = true;
             } else {
                 // 检查前面的元素
+                var foundAt = -1;
 
+                // console.log("这里");
+                // for (var i = 0; i < outerContainer.getChildren().getSize(); i++) {
+                //     if (outerContainer.getChildren().get(i) == to) {
+                //         foundAt = i;
+                //         console.log("Found At " + i);
+                //         break;
+                //     }
+                // };
 
 
                 var outer = new g.Shapes.Container();
@@ -970,8 +979,6 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 var newPort = newone.createPort("hybrid", new graphiti.layout.locator.BottomLocator(newone));
                 
                 var cNum = figure.getConnections().getSize();
-                console.log(cNum);
-                console.log(figure.getConnections());
 
                 var figurePortId = figure.getPorts().get(0).getId();
                 var connects = figure.getConnections();
@@ -984,8 +991,6 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                         connects.get(i).setTarget(newPort);
                     }                    
                 }
-
-                // console.log(figure.getConnections());
             }
 
             app.view.removeFigure(figure);
