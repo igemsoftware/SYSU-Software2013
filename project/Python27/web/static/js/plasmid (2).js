@@ -1,5 +1,5 @@
 //var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
-var colors={'promoter':"#89c997",'protein': "#ffbf43",'activator': "#ffbf43", 'repressor': "#ffbf43", 'rbs':'#2ec6b7','terminator':"#f95f53"};
+var colors={'promoter':"#89c997",'protein': "#ffbf43",'activator': "#ffbf43", 'repressor': "#ffbf43", 'rbs':'#2ec6b7','terminator':"#f95f53",'plasmidbackbone':'#9B59B6'};
 String.prototype.startWith=function(str){
 			if(str==null||str==""||this.length==0||str.length>this.length)
 			  return false;
