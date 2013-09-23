@@ -456,15 +456,9 @@ var moveAndCheck = function(aGroup, fGroup, tGroup, fPlasmid, tPlasmid) {
 	// detail.pro_id =  
 	// detail.new_value =  
 	// detail.type = "copy" 
-<<<<<<< HEAD
   // var id_str0 = aGroup.find("id"); 
   var id_str0 = aGroup.attr("id");
 	var grp_id = id_str0.substring(id_str0.indexOf('-') + 1, id_str0.length);
-=======
-
-  var id_str0 = aGroup.attr("id");
-   var grp_id = id_str0.substring(id_str0.indexOf('-') + 1, id_str0.length);
->>>>>>> origin/master
 	if(tPlasmid.find(".sbol").length > 0) {
     var id_str = tPlasmid.find(".sbol").attr('id');
 		grp_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
@@ -641,7 +635,7 @@ var getDataCollection = function() {
 		  dataCollection.proteins[pid_i].K1 = null;
     else
       dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
-    if (p.find(".k1").hasClass("unuse"))
+    if (p.find(".concen").hasClass("unuse"))
 		  dataCollection.proteins[pid_i].concen = null;
     else
 			dataCollection.proteins[pid_i].concen = p.find(".concen").slider("value");
