@@ -171,7 +171,7 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
         this.TYPE = "Container";
         this.count = 0;
 
-        this.boundElements = new Array();
+        this.boundElements = new graphiti.util.ArrayList();
         this.setAlpha(0.1);
 
         // Buttons
@@ -180,7 +180,13 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
         this.Inhibit = new g.Buttons.Inhibit();
         this.CoExpress = new g.Buttons.CoExpress();
 
+
         // this.addFigure(new g.Shapes.Protein(), new graphiti.layout.locator.LeftLocator(this));
+    },
+
+    addItem: function(item) {
+        this.boundElements.add(item);
+
     },
 
     onClick: function(x, y) {
@@ -697,7 +703,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             var unbinder = new g.Buttons.Unbind();
             unbinder.setAttr(container, newContainer);
             unbinder.locator = new graphiti.layout.locator.UnbindLocator(outerContainer, outerContainer.count - 1, 100);
-            container.addFigure(unbinder, unbinder.locator);
+            outerContainer.addFigure(unbinder, unbinder.locator);
 
             // 向蛋白绑定信息数组插入记录
             app.view.boundPairs.push({
@@ -795,17 +801,18 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
  */
 (function(ex) {
     ex.unbind = function(from, to) {
-        var oldOuterContainer = from.getParent();
-        oldOuterContainer.children = new graphiti.util.ArrayList();
-        app.view.collection.remove(oldOuterContainer.getId());
-        app.view.removeFigure(oldOuterContainer);
+        var oldOuterContainer;
 
         var sid, tid;
 
+        console.log(from.getParent().getParent());
+
         // 只有蛋白绑定的情况
-        if (from.getChildren().getSize() <= 2) {
+        if (from.getParent().getParent() === null) {
+            oldOuterContainer = from.getParent();
+
             // 记录id
-            sid = from.children.get(0).figure.getId(),
+            sid = from.children.get(0).figure.getId();
             tid = to.children.get(0).figure.getId();
 
             // 创建元件拷贝
@@ -835,48 +842,109 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             from.setCanvas(null);
         } else {
             console.log('这种情况');
+            oldOuterContainer = from.getParent().getParent();
+            var oldInnerContainer = from.getParent();
+            /*
+             *  处理from元件
+             */
+            console.log(from);
+            console.log(from.getParent().getChildren().getSize());
 
-            outerContainer1 = new g.Shapes.Container(); //外容器
+            var outerContainer1 = new g.Shapes.Container(); //外容器
             var command = new graphiti.command.CommandAdd(app.view, outerContainer1, from.getAbsoluteX(), from.getAbsoluteY());
             app.view.getCommandStack().execute(command);
             app.view.collection.push(outerContainer1.getId());
 
-            outerContainer2 = new g.Shapes.Container(); //外容器
-            var command = new graphiti.command.CommandAdd(app.view, outerContainer2, to.getAbsoluteX(), to.getAbsoluteY());
-            app.view.getCommandStack().execute(command);
-            app.view.collection.push(outerContainer2.getId());
+            var innerContainer1 = new g.Shapes.Container(); // 内容器
+            innerContainer1.addFigure(from, new graphiti.layout.locator.ContainerLocator(innerContainer1, innerContainer1.count, 100));
+            from.setParent(innerContainer1);
+            innerContainer1.count++;
 
-
-            outerContainer1.addFigure(from, from.locator);
-            from.setParent(outerContainer1);
+            innerContainer1.locator = new graphiti.layout.locator.ContainerLocator(outerContainer1, outerContainer1.count, 100);
+                      
+            outerContainer1.addFigure(innerContainer1, innerContainer1.locator);
+            innerContainer1.setParent(outerContainer1);
             outerContainer1.count++;
-            outerContainer2.addFigure(to, to.locator);
-            to.setParent(outerContainer2);
-            outerContainer2.count++;
+            
+
+            // 设置连接
 
 
-
+            // 清除原元件
+            // oldInnerContainer.setParent(null);
+            // oldInnerContainer.children = new graphiti.util.ArrayList();
+            // oldInnerContainer.setCanvas(null);
 
             updateOuterContainer(outerContainer1);
-            updateOuterContainer(outerContainer2);
         }
         
 
         // 对to元件进行处理
-         if (to.getChildren().getSize() <= 2) {
+        if (to.getParent().getParent() === null) {
+
+            // 创建元件拷贝
             var child = to.children.get(0).figure;
             protein = new g.Shapes.Protein(); //外容器
             var command = new graphiti.command.CommandAdd(app.view, protein, to.getAbsoluteX(), to.getAbsoluteY());
             app.view.getCommandStack().execute(command);
+
+            // 设置属性
             protein.setId(child.getId());
             protein.name = child.name;
 
+            // 设置连接
+            if (child.getConnections().getSize() !== 0) {
+                var newPort = protein.createPort("hybrid", new graphiti.layout.locator.BottomLocator(protein));
+                if (child.getConnections().get(0).sourceDecorator !== null)
+                    child.getConnections().get(0).setSource(newPort);
+                else {
+                    child.getConnections().get(0).setTarget(newPort);
+                }
+            }
+
+            // 清除原元件
             protein.setParent(null);
             app.view.removeFigure(child);
             to.children = new graphiti.util.ArrayList();
             to.setCanvas(null);
+        } else {
+            var oldInnerContainer = to.getParent();
+            /*
+            *  处理to元件
+            */
+            var outerContainer2 = new g.Shapes.Container(); //外容器
+            var command = new graphiti.command.CommandAdd(app.view, outerContainer2, to.getAbsoluteX(), to.getAbsoluteY());
+            app.view.getCommandStack().execute(command);
+            app.view.collection.push(outerContainer2.getId());
+
+            var innerContainer2 = new g.Shapes.Container(); //内容器
+            innerContainer2.addFigure(to, new graphiti.layout.locator.ContainerLocator(innerContainer2, innerContainer2.count, 100));
+            to.setParent(innerContainer2);
+            innerContainer2.count++;
+
+            innerContainer2.locator = new graphiti.layout.locator.ContainerLocator(outerContainer2, outerContainer2.count, 100);
+        
+            outerContainer2.addFigure(innerContainer2, innerContainer2.locator);
+            innerContainer2.setParent(outerContainer2);
+            outerContainer2.count++;
+
+            console.log("TO:");
+            console.log(innerContainer2);
+            console.log(outerContainer2);
+
+            // 清除原元件
+            oldInnerContainer.setParent(null);
+            oldInnerContainer.children = new graphiti.util.ArrayList();
+            oldInnerContainer.setCanvas(null);
+
+            updateOuterContainer(outerContainer2);
         }
 
+
+
+        oldOuterContainer.children = new graphiti.util.ArrayList();
+        app.view.collection.remove(oldOuterContainer.getId());
+        app.view.removeFigure(oldOuterContainer);
 
         // 清除绑定信息
         removeBoundInfo(sid, tid);
