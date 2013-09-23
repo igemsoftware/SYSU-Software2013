@@ -23,7 +23,7 @@
 			else if(message.request == "setFileShared")
 			{				
 				$('#mymodal').find('p').text(message.result);
-				$('#mymodal').css('display','block');	
+				$('#mymodal').modal('show');
 				//location.reload(); 									
 			}else if(message.request=="unsharedAFile")
 			{
@@ -133,15 +133,23 @@
         // Cleanly close websocket when unload window
         window.onbeforeunload = function() {
           ws.onclose = function () {}; // disable onclose handler first
-          ws.close()
+          ws.close();
         };
       });
     </script>
   </head>
-  <body>
-    <div id='mymodal' style="background-color:#09F;position:absolute;top:30%;left:30%;width:30%;height:30%;display:none;">  
-    <p></p> 
-    <button onClick="location.reload(); ">close</button>   
+  <body>    
+    <div id="mymodal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+      <div class="modal-header">
+        <button type="button" onClick="location.reload();" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Your file extract code</h3>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true" onClick="location.reload();">关闭</button>
+      </div>
     </div>
     <h1>File Manager</h1>
     <br>
