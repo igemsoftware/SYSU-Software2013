@@ -10,25 +10,53 @@
     <script>	
       $(document).ready(function(){
         if ("WebSocket" in window) {
-          ws = new WebSocket("ws://" + document.domain + ":5000/ws");
+          ws = new WebSocket("ws://" + document.domain + ":5000/ws");		  
           ws.onmessage = function (msg) {
             var message = JSON.parse(msg.data);
             var name = message.result.name;
             if (message.result.result == "deleteUserData succeed")
               $("tr#"+name).remove();
+			else if(message.request=='getLoginedUserName')
+			{
+				sessionStorage.loginedUserName=message.result;
+			}
 			else if(message.request == "setFileShared")
 			{				
 				$('#mymodal').find('p').text(message.result);
 				$('#mymodal').css('display','block');	
-				//location.reload(); 	
-									
+				//location.reload(); 									
 			}else if(message.request=="unsharedAFile")
 			{
 				location.reload(); 
+			}else if(message.request=='isExtractCodeRight'){
+				console.log(message.result);
+				if(message.result==false){
+					alert('Wrong extract code!');
+					return;
+				}else{
+					filetype=sessionStorage.filetype;
+					filename=sessionStorage.filename;
+					switch (filetype){
+						case 'regulation':
+							window.location = "index?"+'filetype='+filetype+'&filename='+filename;
+							break;
+						case 'simulation':
+							window.location = "simulation?"+'filetype='+filetype+'&filename='+filename;
+							break;
+						case 'genecircuit':
+							window.location = "genecircuit?"+'filetype='+filetype+'&filename='+filename;
+							break;
+						case 'plasmid':
+							window.location = "plasmid?"+'filetype='+filetype+'&filename='+filename;
+							break;
+						case 'protocol':
+							window.location = "protocol?"+'filetype='+filetype+'&filename='+filename;
+							break;
+					  }
+				}
 			}
           };
-        };
-
+        };		
         // Bind send button to websocket
         $("button.delete").live("click", function() {
           filename = this.getAttribute("id");		  
@@ -63,9 +91,45 @@
 			case 'protocol':
 			  	window.location = "protocol?"+'filetype='+filetype+'&filename='+filename;
 			  	break;
-		  }
-		 
+		  }		 
         });
+		$("button.openshared").live("click", function() {
+		  filename = this.getAttribute("id");
+		  filetype = $(this).find("p").text();
+		  sessionStorage.filename=filename;
+		  sessionStorage.filetype=filetype;
+		  if(this.getAttribute('name')==sessionStorage.loginedUserName)
+		  {
+			switch (filetype){
+			case 'regulation':
+				window.location = "index?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+			case 'simulation':
+			  	window.location = "simulation?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+			case 'genecircuit':
+			  	window.location = "genecircuit?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+			case 'plasmid':
+			  	window.location = "plasmid?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+			case 'protocol':
+			  	window.location = "protocol?"+'filetype='+filetype+'&filename='+filename;
+			  	break;
+		  	}		
+		  }else{
+		  var str=prompt("Please input the file extract code:","");
+			  if(str==null||str=='')
+			  {
+				  return;
+			  }
+			  ws.send(JSON.stringify({'request': 'isExtractCodeRight', 'filename': filename,'filetype':filetype,'userName':this.getAttribute("name"),'code':str}));	
+		  }
+        });
+		ws.onopen=function(){
+			ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
+		};
+		
         // Cleanly close websocket when unload window
         window.onbeforeunload = function() {
           ws.onclose = function () {}; // disable onclose handler first
@@ -126,7 +190,7 @@
           <th>{{ item.fileName }}</th>
           <th>{{ item.fileType }}</th>
           <th>
-              <button id="{{ item.fileName }}" class="btn open">open shared file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
+              <button id="{{ item.fileName }}" class="btn openshared" name="{{ item.name }}">open shared file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
             &nbsp
             <!--<button id="{{ item.fileName }}" class="btn delete">delete<i class="icon-trash"></i></button>-->
           </th>

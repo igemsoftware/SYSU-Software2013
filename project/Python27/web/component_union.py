@@ -92,8 +92,8 @@ def connect(rule_name, content):
 def formatter_v11(content, dna_sequence):
   header = """DnaComponent [
   uri: http://sbol.org/
-  displayId: undefined
-  name: undefined
+  displayId: plasmid
+  name: plasmid
   description: undefined
   annotations:[
 """

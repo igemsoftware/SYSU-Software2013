@@ -26,6 +26,14 @@ class apis():
   def setFileShared(self,message):
     shared=sharedFiles(self.db)
     return shared.setFileShared(self.db.userId,message['filename'],message['filetype'])
+  def isExtractCodeRight(self,message):
+    shared=sharedFiles(self.db)
+    id=self.db.getUserIdByName(message['userName'])
+    #return shared.getExtractCode(id,message['filename'],message['filetype'])
+    if message['code']==shared.getExtractCode(id,message['filename'],message['filetype']):
+	  return True
+    else:
+	  return False
   def unsharedAFile(self,message):
     shared=sharedFiles(self.db)
     return shared.unsharedAFile(self.db.userId,message['filename'],message['filetype'])
@@ -85,7 +93,7 @@ class apis():
       group_id=1    
     self.db.rememberUser(message['name'],message['password'])
     message['password']=encrypt.getPasswordSHA1(message['password'])
-    ret= user.registAUser(self.db,name=message['name'],password=message['password'],email=message['email'],group_id=group_id,gender=message['gender'],question=message['question'],answer=message['answer'])
+    ret= user.registAUser(self.db,name=message['name'],password=message['password'],email=message['email'],group_id=group_id,gender=string.atoi(message['gender']),question=message['question'],answer=message['answer'])
     return ret
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)
