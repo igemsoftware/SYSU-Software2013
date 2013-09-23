@@ -22,6 +22,12 @@ def login():
 		user.userLogout(sql)
 	return render_template('login.html')
 
+@app.route("/login")
+def login2():
+	if user.isUserLogined(sql):
+		user.userLogout(sql)
+	return render_template('login.html')
+
 @app.route("/register")
 def register():	
 	return render_template('register.html')
