@@ -253,7 +253,7 @@ $().ready(function() {
                     if (proteinList.isInit) {
                         proteinList.parseSubTree(message.result);
                     } else {
-						console.log(message.result);
+						// console.log(message.result);
 						var regS = new RegExp("/","g");
 						for (var i=0;i<message.result.files.length;i++)
 						{
@@ -266,7 +266,7 @@ $().ready(function() {
                 }
             } else if (message.request == "getXmlJson") { // get configuration data of a single protein
                 var part = eval('(' + message.result + ')').rsbpml.part_list.part;
-
+                resetConfig();
                 $("input[name=part_id]").attr({
                     'value': part.part_id
                 });
@@ -317,6 +317,9 @@ $().ready(function() {
                 console.log(message.result);
             } else if (message.request == 'saveUserData') {
                 console.log(message.result);
+            } else if (message.request == 'getuserPartByType') {
+                // console.log(message.result);
+                codingList.parseJson(message.result);
             }
         };
     }
@@ -336,6 +339,12 @@ $().ready(function() {
         // get username
         ws.send(JSON.stringify({
             'request': 'getLoginedUserName'
+        }));
+
+        // get coding file
+        ws.send(JSON.stringify({
+            'request': 'getuserPartByType',
+            'type': 'Coding'
         }));
 
         (function loadFile() {
@@ -359,7 +368,7 @@ $().ready(function() {
     // Cleanly close websocket when unload window
     window.onbeforeunload = function() {
         var jsonData = JSON.stringify(canvasToJSON());
-        console.log(jsonData);
+        // console.log(jsonData);
         ws.send(JSON.stringify({
             'request': 'indexSaveToGeneCircuit',
             'data': jsonData
@@ -412,11 +421,15 @@ $().ready(function() {
         var figuresCount = app.view.collection.length,
             linesCount = app.view.connections.length;
 
+        console.log("元件数:" + figuresCount + "  连接数:" + linesCount);
+
         var data = {
             part: [],
             link: []
         };
 
+
+        // 添加part信息
         for (var i = 0; i < figuresCount; i++) {
             var figure = {};
             if (figures[i].TYPE == "Protein") {
@@ -424,12 +437,53 @@ $().ready(function() {
                 figure.name = figures[i].name;
                 figure.type = figures[i].TYPE;
                 data.part.push(figure);
-            }            
+
+                // 添加R/A绑定信息
+                if (figures[i].getParent() && figures[i].getParent().TYPE == "Container") {
+                    for (var j = 0; j < figures[i].getParent().getChildren().getSize(); j++) {
+                        var sibling = figures[i].getParent().getChildren().get(j);
+                        if (sibling.TYPE == "R") {
+                            var repressor = {};
+                            repressor.id = sibling.getId();
+                            repressor.name = "Repressor";
+                            repressor.type = "Repressor";
+                            data.part.push(repressor);
+
+                            // 添加绑定链接信息
+                            var line = {};
+                            line.from = figures[i].getId();
+                            line.to = repressor.id;
+                            line.type = "Bound";
+                            line.inducer = "none";
+                            data.link.push(line);
+
+                        } else if (sibling.TYPE == "A") {
+                            var activator = {};
+                            activator.id = sibling.getId();
+                            activator.name = "Activator";
+                            activator.type = "Activator";
+                            data.part.push(activator);
+
+                            // 添加绑定链接信息
+                            var line = {};
+                            line.from = figures[i].getId();
+                            line.to = activator.id;
+                            line.type = "Bound";
+                            line.inducer = "none";
+                            data.link.push(line);
+                        }
+                    };
+                }
+            }
         }
 
+
+        // 添加link信息（除蛋白绑定外）
         for (var i = 0; i < linesCount; i++) {
             var line = {};
-            if (lines[i].sourcePort.parent.TYPE == "Protein" || lines[i].sourcePort.parent.TYPE == "Container") {
+
+            // 
+            if (lines[i].sourcePort.parent.TYPE !== "Inducer") {
                 line.from = lines[i].sourcePort.parent.id;
                 line.to = lines[i].targetPort.parent.id;
                 line.type = lines[i].TYPE;
@@ -440,9 +494,9 @@ $().ready(function() {
                         var lineType = lineChildren.get(j).decorator;
 
                         if (lineType == "T") {
-                            line.inducer = "Repressor";
+                            line.inducer = "Negative";
                         } else if (lineType == "A") {
-                            line.inducer = "Activator";
+                            line.inducer = "Positive";
                         }
                         break;
                     }
@@ -453,7 +507,13 @@ $().ready(function() {
             }
         };
 
-        console.log(data);
+        // 添加蛋白绑定信息
+        var len = app.view.boundPairs.length;
+        for (var i = 0; i < len ; i++) {
+            data.link.push(app.view.boundPairs[i]);
+        };
+
+        console.log(JSON.stringify(data));
         return data;
     };
 

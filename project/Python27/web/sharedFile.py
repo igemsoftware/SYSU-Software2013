@@ -48,6 +48,7 @@ class sharedFiles:
 		code=self.getExtractCode(user_id,filename,filetype)
 		self.__cursor.execute('UPDATE user_save SET shared=1, extractCode="%s" WHERE user_id=%i AND fileName="%s" AND fileType="%s"' %(code,user_id,filename,filetype))
 		self.__cx.commit()
+		return code
 	def test(self):
 		self.__cursor.execute('SELECT user_save.shared FROM user_save,user_list where user_list.id=user_save.user_id')
 		return self.__cursor.fetchall()

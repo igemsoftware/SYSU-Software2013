@@ -15,6 +15,7 @@ body {
 
 .mycontainer {
   width: 100%;
+  min-width: 1366px;
   height: 100%;
   overflow: hidden;
 }
@@ -22,12 +23,13 @@ body {
 .header {
   position: absolute;
   width: 100%;
+  min-width: 1250px;
   height: 115px;
   top: 0;
 }
 
 .header img {
-  height: 115px;
+  height: 215px;
 }
 
 .header .nav {
@@ -37,7 +39,7 @@ body {
 }
 
 .header .nav ul {
-  margin: 40px 80px 0 0;
+  margin: 40px 15px 0 0;
   list-style: none;
   font-size:  14px;
   color: #407279;
@@ -149,11 +151,11 @@ body {
  *  Left sidebar styles
  */
 #left-container {
-  position: relative;
+  position: absolute;
   top: 0;
   left: -270px;
   width: 250px;
-  height: 708px;
+  height: 100%;
   padding: 10px;  
 	border-radius: 2px;
   box-shadow: 2px 2px 5px #407279;
@@ -265,23 +267,24 @@ body {
 #content {
   position: absolute;
   width: 100%;
-  min-width: 1366px;
+  min-width: 1121px;
   margin: 0px auto;
   top: 115px;
+  bottom: 20px;
 }
 
 #canvas-mask {
-  width: 1324px;
-  height: 536px;
-  padding: 20px 0;
+  width: 100%;
+  height: 100%;
+  /*padding: 20px 0;*/
   margin: 0 auto;
-  background-image: url(../img/painterbg.png);
+  /*background-image: url(../img/painterbg.png);*/
 }
 
 #canvas {
 	margin: 0 auto;
-	width: 1284px;
-	height: 534px;
+	width: 95%;
+	height: 100%;
 	border-radius: 6px;
 	background-color: #ebebeb;
 	color: #4388CC;

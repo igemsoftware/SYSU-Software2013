@@ -23,8 +23,22 @@ logging = mlog.logging
 class apis():
   def __init__(self, db):
     self.db = db
+  def setFileShared(self,message):
+    shared=sharedFiles(self.db)
+    return shared.setFileShared(self.db.userId,message['filename'],message['filetype'])
+  def isExtractCodeRight(self,message):
+    shared=sharedFiles(self.db)
+    id=self.db.getUserIdByName(message['userName'])
+    #return shared.getExtractCode(id,message['filename'],message['filetype'])
+    if message['code']==shared.getExtractCode(id,message['filename'],message['filetype']):
+	  return True
+    else:
+	  return False
+  def unsharedAFile(self,message):
+    shared=sharedFiles(self.db)
+    return shared.unsharedAFile(self.db.userId,message['filename'],message['filetype'])
   def getuserPartByType(self,message):
-    shared=sharedFiles(self.db) 
+    shared=sharedFiles(self.db)
     return shared.getSharedTypePart(message['type'])
   def addAPromoter(self,message):
     return self.db.addAPromoter(name=message['name'],number=message['number'],MPPromoter=string.atof(message['MPPromoter']),LeakageRate=string.atof(message['LeakageRate']),K1=string.atof(message['K1']),Type=message['Type'],Repressor=message['Repressor'],Source=message['Source'],Activator=message['Activator'],PoPS=string.atof(message['PoPS']))
@@ -45,7 +59,7 @@ class apis():
     self.db.indexSave=message['data']
     return "index save success"
   def getBiobrickPath(self,message):
-    return xmlParse.findFile(rootdir="web\\biobrick\\",key=message['data'])
+    return xmlParse.findFile(rootdir="web/biobrick/",key=message['data'])
   def getIndexSave(self,message):
     return group.dump_group(json.loads(self.db.indexSave),self.db)
   def generateRandomsessionKey(self,message):   
@@ -79,7 +93,7 @@ class apis():
       group_id=1    
     self.db.rememberUser(message['name'],message['password'])
     message['password']=encrypt.getPasswordSHA1(message['password'])
-    ret= user.registAUser(self.db,name=message['name'],password=message['password'],email=message['email'],group_id=group_id,gender=message['gender'],question=message['question'],answer=message['answer'])
+    ret= user.registAUser(self.db,name=message['name'],password=message['password'],email=message['email'],group_id=group_id,gender=string.atoi(message['gender']),question=message['question'],answer=message['answer'])
     return ret
   def getLoginedUserName(self,message):
     return user.getLoginedUserName(self.db)

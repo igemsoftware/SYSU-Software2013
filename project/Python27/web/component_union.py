@@ -88,16 +88,12 @@ def connect(rule_name, content):
   ret += rule.suffix
   return ret
 
-def sbol_connect(content):
-  for i in content:
-    pass
-
 #format info into SBOL v1.1
 def formatter_v11(content, dna_sequence):
   header = """DnaComponent [
   uri: http://sbol.org/
-  displayId: undefined
-  name: undefined
+  displayId: plasmid
+  name: plasmid
   description: undefined
   annotations:[
 """
@@ -128,7 +124,7 @@ def formatter_v11(content, dna_sequence):
 ]""" % dna_sequence
   return s
 
-def get_sbol(component, rule = "RFC10"):
+def get_sbol(component, rule = "RFC10", extended = False):
   content = union(rule, component)
   dna_sequence = connect(rule, content)
   sbol = formatter_v11(content, dna_sequence)

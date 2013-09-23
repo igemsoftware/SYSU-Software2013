@@ -31,6 +31,12 @@ $(document).ready(function() {
 				}
 			} else if (message.request === "registAUser") {
 				console.log(message.result);
+				if(message.result=='registAUser success'){
+					alert('Regist A User success!')
+					self.location='login'; 
+				}else{
+					alert('regist fail.')
+				}
 			} else if (message.request==="getRememberMeTicket") {
 				localStorage.userName=$("#username").attr('value');
 				localStorage.rememberTicket=message.result;
@@ -39,7 +45,8 @@ $(document).ready(function() {
 			} else if (message.request==="userLoginByTicket"){
 				if (message.result!='Ticket error!')
 				{
-					sessionStorage.rememberTicket=message.result;
+					localStorage.rememberTicket=message.result;
+					self.location='index';
 				} else {
 					alert('Login by remember me ticket error!');
 					localStorage.removeItem("rememberTicket"); 
@@ -48,6 +55,27 @@ $(document).ready(function() {
 			}
 		};
 	};
+
+	$("#mycheckbox").click(function() {
+		var checked = $("#remember").attr("checked");
+
+		if (checked == undefined) {			
+			$("#remember").attr('checked', 'checked');
+			$(".checkbox-mask").text("●");
+			localStorage.rememberme='true';
+		} else {
+			localStorage.removeItem("rememberTicket"); 
+			localStorage.removeItem("userName"); 
+			localStorage.rememberme='false';
+			$("#remember").attr('checked', false);
+			$(".checkbox-mask").text("");
+		}
+
+
+		console.log(checked);
+	});
+
+
 	// Bind send button to websocket
 	$("#btn-login").live("click", function() {
 		var username = $("#username").attr('value');
@@ -83,7 +111,8 @@ $(document).ready(function() {
 			var username = $("input[name=username]").val(),
 			pw = $("input[name=password]").val(),
 			email = $("input[name=email]").val(),
-			gender = $("select[name=gender]").val(),
+			gender=$("input[name=gender]").val(),
+			//gender = $("select[name=gender]").val(),
 			question = $("input[name=question]").val(),
 			answer = $("input[name=answer]").val();
 
@@ -99,7 +128,7 @@ $(document).ready(function() {
 			}));
 		});
 
-	ws.onopen = function() {
+	ws.onopen = function() {		
 		ws.send(JSON.stringify({
 			'request': 'generateRandomsessionKey'
 		}));

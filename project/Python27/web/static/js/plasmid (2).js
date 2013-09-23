@@ -620,7 +620,9 @@ function handlerWebSocket(){
 				drawThePlasmid();	
 				document.body.style.zoom=1.5;
 				chart.draw();
-				document.body.style.zoom=1;			
+				document.body.style.zoom=1;	
+				updateSeqPosText();		
+				show('plasmid-canvas',createTempDataForCanvas(seq.substring(left,left+60),left),60);
 				//chart.draw();
 			}
 			message=null;
