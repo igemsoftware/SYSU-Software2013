@@ -610,9 +610,7 @@ function handlerWebSocket(){
 							"fileType": "data"
 						}));
 				});
-			} else if (message.request == "loadUserFile") {
-				loadUserFileWebsocket(message.result,true);
-			}else if (message.request == 'saveUserData') {
+			} else if (message.request == 'saveUserData') {
 				console.log(message.result);
 			}else if(message.request == 'getPlasmidSbol') {
 				$('#mymodal').modal('hide');
@@ -623,7 +621,6 @@ function handlerWebSocket(){
 				document.body.style.zoom=1;	
 				updateSeqPosText();		
 				show('plasmid-canvas',createTempDataForCanvas(seq.substring(left,left+60),left),60);
-				//chart.draw();
 			}
 			message=null;
 		}		
@@ -634,8 +631,7 @@ function handlerWebSocket(){
 		{
 			var obj = eval('(' + sessionStorage.genecircuitSave + ')'); 			
 			ws.send(JSON.stringify({'request': 'getPlasmidSbol','data':JSON.stringify(obj['genecircuit'])}));	
-			$('#mymodal').modal({keyboard:false}); 
-			
+			$('#mymodal').modal({keyboard:false});
 		}				
 	}
 }
@@ -804,14 +800,14 @@ function isPointInCircle(circle,x,y)
 } 
 $(function(){	
 	handlerWebSocket();	
-	if(isUrlArgsExist())
+	/*if(isUrlArgsExist())
 	{		
 		ws.onopen = function() {
 			ws.send(JSON.stringify({'request': 'loadUserFile','fileType':request('filetype'),'fileName':request('filename')}));
 		}
 	}else{
 		//drawThePlasmid();
-	}
+	}*/
 	/*window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
               window.webkitRequestAnimationFrame || 

@@ -19,17 +19,35 @@
 			else if(message.request=='getLoginedUserName')
 			{
 				sessionStorage.loginedUserName=message.result;
+			}else if(message.request=='loadUserFile')
+			{
+			  switch (filetype){
+			case 'regulation':
+				sessionStorage.regulationSave=message.result;
+				window.location = "index?"+'filetype='+filetype+'&filename='+filename;
+			  	break;			
+			case 'genecircuit':
+				sessionStorage.gene_circuit=message.result;
+			  	window.location = "genecircuit";
+			  	break;
+			case 'plasmid':
+				sessionStorage.genecircuitSave=message.result;
+			  	window.location = "plasmid";
+			  	break;
+			case 'protocol':
+				sessionStorage.genecircuitSave=message.result;
+			  	window.location = "protocol";
+			  	break;
+		  }		 
 			}
 			else if(message.request == "setFileShared")
 			{				
 				$('#mymodal').find('p').text(message.result);
 				$('#mymodal').modal('show');
-				//location.reload(); 									
 			}else if(message.request=="unsharedAFile")
 			{
 				location.reload(); 
 			}else if(message.request=='isExtractCodeRight'){
-				console.log(message.result);
 				if(message.result==false){
 					alert('Wrong extract code!');
 					return;
@@ -38,19 +56,20 @@
 					filename=sessionStorage.filename;
 					switch (filetype){
 						case 'regulation':
-							window.location = "index?"+'filetype='+filetype+'&filename='+filename;
-							break;
-						case 'simulation':
-							window.location = "simulation?"+'filetype='+filetype+'&filename='+filename;
-							break;
+							sessionStorage.regulationSave=message.result;
+							window.location = "index";
+							break;			
 						case 'genecircuit':
-							window.location = "genecircuit?"+'filetype='+filetype+'&filename='+filename;
+							sessionStorage.gene_circuit=message.result;
+							window.location = "genecircuit";
 							break;
 						case 'plasmid':
-							window.location = "plasmid?"+'filetype='+filetype+'&filename='+filename;
+							sessionStorage.genecircuitSave=message.result;
+							window.location = "plasmid";
 							break;
 						case 'protocol':
-							window.location = "protocol?"+'filetype='+filetype+'&filename='+filename;
+							sessionStorage.genecircuitSave=message.result;
+							window.location = "protocol";
 							break;
 					  }
 				}
@@ -75,23 +94,7 @@
 		$("button.open").live("click", function() {
 		  filename = this.getAttribute("id");
 		  filetype = $(this).find("p").text();
-		  switch (filetype){
-			case 'regulation':
-				window.location = "index?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-			case 'simulation':
-			  	window.location = "simulation?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-			case 'genecircuit':
-			  	window.location = "genecircuit?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-			case 'plasmid':
-			  	window.location = "plasmid?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-			case 'protocol':
-			  	window.location = "protocol?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-		  }		 
+		  ws.send(JSON.stringify({'request': 'loadUserFile', 'fileName': filename,'fileType':filetype}));
         });
 		$("button.openshared").live("click", function() {
 		  filename = this.getAttribute("id");
@@ -100,23 +103,7 @@
 		  sessionStorage.filetype=filetype;
 		  if(this.getAttribute('name')==sessionStorage.loginedUserName)
 		  {
-			switch (filetype){
-			case 'regulation':
-				window.location = "index?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-			case 'simulation':
-			  	window.location = "simulation?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-			case 'genecircuit':
-			  	window.location = "genecircuit?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-			case 'plasmid':
-			  	window.location = "plasmid?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-			case 'protocol':
-			  	window.location = "protocol?"+'filetype='+filetype+'&filename='+filename;
-			  	break;
-		  	}		
+			  ws.send(JSON.stringify({'request': 'loadUserFile', 'fileName': filename,'fileType':filetype}));			
 		  }else{
 		  var str=prompt("Please input the file extract code:","");
 			  if(str==null||str=='')
@@ -206,6 +193,9 @@
         {% endfor %}
       </tbody>
     </table>
+    <button type="button" class="btn btn-default btn-lg" onClick="window.history.back(-1);">
+ 		<span class="icon-arrow-left"></span> Back
+	</button>
     <div id='tocopy' style="display:none"></div>
   </body>
 </html>

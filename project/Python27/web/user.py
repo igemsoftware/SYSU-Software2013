@@ -87,13 +87,13 @@ def resetUserPassword(database,username,answer,newpassword):
 		return flag
 
 def saveUserData(database,datastr,fileName,fileType):
-    datastr=jsonUtil.turnStringDoubleQuoteToSingleQuote(datastr)
-    if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName,'fileType':fileType})):
-        print 'updateUserData'
-        return database.updateUserData(datastr,fileName,fileType)
-    else:
-        print 'insertUserData'
-        return database.insertUserData(datastr,fileName,fileType)
+    #datastr=jsonUtil.turnStringDoubleQuoteToSingleQuote(datastr)
+    #if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName,'fileType':fileType})):
+    print 'updateUserData'
+    return database.updateUserData(datastr,fileName,fileType)
+    #else:
+        #print 'insertUserData'
+        #return database.insertUserData(datastr,fileName,fileType)
 
 def deleteUserData(database, fileName):
     if(database.isRecordExist(tableName='user_save',recs={'user_id':database.userId,'fileName':fileName})):
