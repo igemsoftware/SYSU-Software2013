@@ -13,6 +13,11 @@ $().ready(function() {
         e.preventDefault();
     };
 
+    // click header 
+    $(".header").click(function() {
+        console.log(app.view.figures);
+    });
+
     // toggle left-container
     $(".trigger-left").click(function() {
         var left = $("#left-container").css("left");
