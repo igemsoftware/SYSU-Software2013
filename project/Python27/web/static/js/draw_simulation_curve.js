@@ -17,7 +17,7 @@ function turnRawDatatoData(raw)
 
 function getLabel(time, dt) {
   var labels = [];
-  for (var i = 0; i < time; i += dt * 3)
+  for (var i = 0; i <= time; i += dt * 3)
     labels.push((Math.round(i*10)/10.0).toFixed(0));
   return labels;
 }
