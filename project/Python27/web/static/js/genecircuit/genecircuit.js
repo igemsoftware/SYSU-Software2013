@@ -260,12 +260,12 @@ var group = {
 			if($(this).text() == 'trans') {
 				/* $(this).removeClass('switch-on').addClass('switch-off'); */
 				/* $(this).text('cis'); */
-				/* $(this).data("order", "cis"); */
+         $(this).data("order", "cis");
 				that.turnSwitch($(this), 'cis')
 			} else {
 				/* $(this).removeClass('switch-off').addClass('switch-on'); */
 				/* $(this).text('trans'); */
-				/* $(this).data("order", "trans"); */
+         $(this).data("order", "trans");
 				that.turnSwitch($(this), 'trans');
 			}
 			/* randomValue(); */

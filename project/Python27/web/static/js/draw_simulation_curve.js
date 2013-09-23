@@ -34,7 +34,7 @@ function run(data, canvasId, width1, height1, time, dt) {
   //ws.send(JSON.stringify({'request': 'getSimulationData'}));
     labels = getLabel(time, dt);
     chart= new iChart.LineBasic2D({
-    animation:true,
+    animation:false,
     render : 'canvasDiv',//图表渲染的HTML DOM的id
     data: data,//图表的数据源
     labels: labels,
