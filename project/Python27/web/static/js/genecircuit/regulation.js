@@ -518,7 +518,7 @@ $().ready(function() {
         var time = message.result.time;
         var dt = message.result.dt;
 	      $("#canvasDiv div").css("margin", "auto");
-        run(data,'canvasDiv', 267, 200, time, dt * 2);
+        run(data,'canvasDiv', 300, 200, time, dt * 4);
       } else if (message.request == "changeRBS") {
 				/* console.log(message.result); */
 				console.log("changeRBS", message);

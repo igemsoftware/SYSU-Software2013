@@ -67,10 +67,6 @@ BiobrickAdder.prototype = {
 		if (this.path)
 			figure.path = this.path;
 		// figure.label.setText(this.name);	// 设置label
-
-		// app.view.collection.push(this.name + "-" + app.view.collection.counter);	// 放入collection中
-		app.view.collection.push(figure.getId());
-		app.view.collection.counter += 1;
 	}
 };
 
