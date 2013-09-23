@@ -533,6 +533,11 @@ $().ready(function() {
          console.log("updateGeneCircuit", message.result); 
 				genecircuitData = message.result;
 				updateGen(genecircuitData);
+				ws.send(JSON.stringify({'request'     : 'Simulate',
+										'isStochastic': false,
+										'gene_circuit':JSON.stringify(genecircuitData),
+										'corepind':{},
+				}));
 			} else if (message.request == "getIndexSave") {
 				console.log("getIndexSave", message.result); 
 				genecircuitData = message.result;
