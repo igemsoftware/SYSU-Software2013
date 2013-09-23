@@ -79,11 +79,9 @@ var protein = {
 			range: "min",
 			min: 0,
 			max: 1,
-			value: 60,
+			step: 0.0001,
+			value: 0,
 			stop: function(event, ui) {
-				/* ws.send(JSON.stringify({ */
-					/* 'request': 'changeRBS', */
-				/* })); */
 				detail.type = "PoPS";
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
@@ -100,11 +98,9 @@ var protein = {
 			range: "min",
 			min: 0,
 			max: 1,
-			value: 60,
+			step: 0.0001,
+			value: 0,
 			stop: function(event, ui) {
-				/* ws.send(JSON.stringify({ */
-					/* 'request': 'changeRBS', */
-				/* })); */
 				detail.type = "RiPS";
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
@@ -122,11 +118,9 @@ var protein = {
 			range: "min",
 			min: 0,
 			max: 100,
+			step: 0.0001,
 			value: 60,
 			stop: function(event, ui) {
-				/* ws.send(JSON.stringify({ */
-					/* 'request': 'changeRBS', */
-				/* })); */
 				detail.type = "copy";
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
@@ -143,6 +137,7 @@ var protein = {
 			range: "min",
 			min: -6,
 			max: 6,
+			step: 0.0001,
 			value: 0,
 			stop: function(event, ui) {
 				/* ws.send(JSON.stringify({ */
@@ -164,6 +159,7 @@ var protein = {
 			range: "min",
 			min: 0,
 			max: 100,
+			step: 0.0001,
 			value: 60,
 			stop: function(event, ui) {
 				/* ws.send(JSON.stringify({ */

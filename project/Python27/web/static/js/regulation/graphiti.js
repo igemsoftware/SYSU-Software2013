@@ -752,7 +752,6 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 outerContainer.updateContainer();
                 target.resetChildren();
             } else {
-                console.log("容器绑定容器");
                 var targetContainer = target.getParent();               // 获取target的innerContainer
                 var targetOuterContainer = targetContainer.getParent(); // 获取target的outerContainer
                 targetOuterContainer.removeItem(targetContainer);       // 从outerContainer里移除innerContainer
@@ -781,8 +780,16 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 container.addItem(r);
                 // 添加绑定符号
                 var unbinder = new g.Buttons.Unbind();
-                unbinder.setAttr(source, r);
-                container.addItem(unbinder);
+
+                if (source.getParent().getChildren().getSize() > 2) {
+                    var realSource = source.getParent().getChildren().get(1);
+                    unbinder.setAttr(realSource, r);
+                    container.addItem(unbinder);
+                } else {
+                    unbinder.setAttr(source, r);
+                    container.addItem(unbinder);
+                }
+                
 
                 //   更新外容器大小
                 outerContainer.updateContainer();
@@ -803,8 +810,14 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 container.addItem(a);
                 // 添加绑定符号
                 var unbinder = new g.Buttons.Unbind();
-                unbinder.setAttr(source, a);
-                container.addItem(unbinder);
+                if (source.getParent().getChildren().getSize() > 2) {
+                    var realSource = source.getParent().getChildren().get(1);
+                    unbinder.setAttr(realSource, a);
+                    container.addItem(unbinder);
+                } else {
+                    unbinder.setAttr(source, a);
+                    container.addItem(unbinder);
+                }
 
                 //   更新外容器大小
                 outerContainer.updateContainer();
@@ -826,12 +839,12 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         var sid, tid;
         var fromFlag = false, toFlag = false;
 
-        console.log("From type: " + from.TYPE);
-        console.log("To type: " + to.TYPE);
+        // console.log("From type: " + from.TYPE);
+        // console.log("To type: " + to.TYPE);
 
         if (from.TYPE == "Container") {
-            console.log("From count: " + from.count);
-            console.log("To count: " + to.count);
+            // console.log("From count: " + from.count);
+            // console.log("To count: " + to.count);
 
             var outerContainer = from.getParent();
 
@@ -845,7 +858,16 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 fromFlag = true;
             } else {
                 // 检查前面的元素
+                var foundAt = -1;
 
+                // console.log("这里");
+                // for (var i = 0; i < outerContainer.getChildren().getSize(); i++) {
+                //     if (outerContainer.getChildren().get(i) == to) {
+                //         foundAt = i;
+                //         console.log("Found At " + i);
+                //         break;
+                //     }
+                // };
 
 
                 var outer = new g.Shapes.Container();
@@ -883,18 +905,17 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             var outerContainer = from.getParent().getParent();
             var innerContainer = from.getParent();
             var foundAt = -1;
-            console.log(innerContainer);
+            // console.log(innerContainer);
             for (var i = 0; i < innerContainer.getChildren().getSize(); i++) {
                 if (innerContainer.children.get(i).figure == to) {
                     foundAt = i;
-                    console.log("Found at " + i);
-                    console.log("Total " + innerContainer.getChildren().getSize());
                     break;
                 }
-            };
+            }
 
             if (foundAt == 1) {
                 copyFigure(from);
+                innerContainer.removeItem(from, true);
             } else if (foundAt > 0) {
                 var outer = new g.Shapes.Container();
                 var command = new graphiti.command.CommandAdd(app.view, outer, from.getAbsoluteX(), from.getAbsoluteY());
@@ -903,38 +924,38 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 var inner = new g.Shapes.Container();
                 outer.addItem(inner);
 
-                for (var i = 0; i < foundAt; i++) {
-                    console.log(innerContainer.children.get(i));
-                    innerContainer.removeItem(innerContainer.children.get(i).figure);
-                    inner.addItem(innerContainer.children.get(i).figure);
+                var i = 0;
+                while(i < foundAt) {
+                    inner.addItem(innerContainer.children.get(0).figure);
+                    innerContainer.removeItem(innerContainer.children.get(0).figure, false);
+                    i++;
                 }
+
+                outer.updateContainer();
             }
 
-            console.log("Found at " + foundAt);
-            console.log("Total " + innerContainer.getChildren().getSize());
-            if (innerContainer.getChildren().getSize() - foundAt == 1) {
+
+            if (innerContainer.getChildren().getSize() == 1) {
                 copyFigure(to);
+                innerContainer.removeItem(to, true);
             } else if (innerContainer.getChildren().getSize() - foundAt > 1) {
-                console.log(innerContainer.getChildren().getSize() - foundAt);
                 var outer = new g.Shapes.Container();
-                var command = new graphiti.command.CommandAdd(app.view, outer, to.getAbsoluteX(), to.getAbsoluteY());
+                var command = new graphiti.command.CommandAdd(app.view, outer, to.getAbsoluteX() + 100, to.getAbsoluteY());
                 app.view.getCommandStack().execute(command);
 
                 var inner = new g.Shapes.Container();
                 outer.addItem(inner);
 
-                for (var i = foundAt; i < innerContainer.getChildren().getSize(); i++) {
-                    console.log(innerContainer.children.get(i));
-                    innerContainer.removeItem(innerContainer.children.get(i).figure);
-                    inner.addItem(innerContainer.children.get(i).figure);
+                while(innerContainer.getChildren().getSize() !== 0) {
+                    inner.addItem(innerContainer.children.get(0).figure);
+                    innerContainer.removeItem(innerContainer.children.get(0).figure, false);
                 }
+
+                outer.updateContainer();
             }
-            
 
-            
-
-            // outerContainer.removeItem(from.getParent(), true);
-            // app.view.removeFigure(outerContainer);
+            outerContainer.removeItem(innerContainer, true);
+            app.view.removeFigure(outerContainer);
         }
 
         // 清除绑定信息
@@ -957,13 +978,18 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             if (figure.getConnections().getSize() !== 0) {
                 var newPort = newone.createPort("hybrid", new graphiti.layout.locator.BottomLocator(newone));
                 
-                var figurePortId = figure.getPorts().get(0).getId();
-                var figureConnectionPortId = figure.getConnections().get(0).getSource().getId();
+                var cNum = figure.getConnections().getSize();
 
-                if (figurePortId == figureConnectionPortId) {
-                    figure.getConnections().get(0).setSource(newPort);
-                } else {
-                    figure.getConnections().get(0).setTarget(newPort);
+                var figurePortId = figure.getPorts().get(0).getId();
+                var connects = figure.getConnections();
+
+                for (var i = 0; i < cNum; i++) {
+                    var figureConnectionPortId = connects.get(i).getSource().getId();
+                    if (figurePortId == figureConnectionPortId) {
+                        connects.get(i).setSource(newPort);
+                    } else {
+                        connects.get(i).setTarget(newPort);
+                    }                    
                 }
             }
 
@@ -1167,6 +1193,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 (function(ex) {
     ex.connect = function(source, target, type) {
         var canvas = source.getCanvas();
+        var targetPort;
+       
         var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
         var aTarget = null;
         for (var i = 0; i < target.getChildren().getSize(); i++) {
@@ -1175,8 +1203,13 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 break;
             }
         }
+        
+        if (aTarget.getPorts().getSize() == 0) {
+            targetPort = aTarget.createPort("hybrid", new graphiti.layout.locator.BottomLocator(aTarget));
+        } else {
+            targetPort = aTarget.getPorts().get(0);
+        }
 
-        var targetPort = aTarget.createPort("hybrid", new graphiti.layout.locator.BottomLocator(aTarget));
         var command;
         if (type == "A") {
             command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate"); // 连接两点
