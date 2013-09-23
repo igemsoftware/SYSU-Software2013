@@ -26,8 +26,8 @@ var chart=null;
 
 function saveGraph()
 {
-	var _canvas=document.getElementById(chart.canvasid);	
-	Canvas2Image.AsPNG(_canvas); 
+	var _canvas=document.getElementById(chart.canvasid);
+	Canvas2Image.AsPNG(_canvas);
 }
 
 function run(data, canvasId, width1, height1, time, dt) {
@@ -42,21 +42,6 @@ function run(data, canvasId, width1, height1, time, dt) {
     shadow:true,
     background_color:'#f4f4f4',
     separate_angle:10,//分离角度
-	/*coordinate:{
-		scale:[{
-			position:'left',	
-			scale_space:5,
-			scale_enable:false,//禁用小横线			
-
-			},{
-			position:'bottom',	
-			start_scale:1,
-			end_scale:12,	
-			fontunit:'0.1',
-			scale_space:10,		
-			labels:labels
-		}]
-	},*/
     tip:{
       enable:true,
       showType:'fixed',
@@ -111,7 +96,7 @@ function run(data, canvasId, width1, height1, time, dt) {
 										'gene_circuit': gene_circuit,
 										'corepind'    : corepind
 				}));
-			}          
+			}
         }
       }
     },

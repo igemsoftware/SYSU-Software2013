@@ -8,6 +8,7 @@ from Simulate_Class import Protein_Simulate
 
 def Simulate(isStochastic, circuit, corepind, database, time, dt):
     try:
+        cnt = 0
         if time <=0 or dt <= 0:
             raise InvalidParameter
         timelen  = int(ceil(time / dt) + 1)
@@ -93,7 +94,8 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         ret['dt'] = dt
         ret['time'] = time
         for n in range(len(dictkey)):
-            data[pro_name[n] + "," + str(dictkey[n])] = Prodict[dictkey[n]].Concen
+            data[pro_name[n] + "," + str(cnt)] = Prodict[dictkey[n]].Concen
+            cnt += 1
         ret['data'] = data
         return ret
     except InvalidParameter:
