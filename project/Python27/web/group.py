@@ -11,7 +11,7 @@ rbs_name = "BBa_J61104"
 term_name = "BBa_B0013"
 
 
-data = {u'part': [{u'type': u'Protein', u'id': u'acfa9120-fe99-e45e-d93d-8b6ea831ecc5', u'name': u'BBa_J58105'}, {u'type': u'Protein', u'id': u'd8dba164-9f5c-f242-4feb-493ccef4ca46', u'name': u'BBa_K091002'}], u'link': [{u'to': u'acfa9120-fe99-e45e-d93d-8b6ea831ecc5', u'from': u'd8dba164-9f5c-f242-4feb-493ccef4ca46', u'inducer': u'none', u'type': u'Bound'}]}
+data = {u'part': [{u'type': u'Protein', u'id': u'37e604d1-9267-43ff-d6af-109336b65d47', u'name': u'BBa_I752001'}, {u'type': u'Protein', u'id': u'd9904b7a-12ac-29c7-6a02-2b2f2a27ffb0', u'name': u'BBa_J58104'}, {u'type': u'Protein', u'id': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'name': u'BBa_K091002'}, {u'type': u'Repressor', u'id': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'name': u'Repressor'}], u'link': [{u'to': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'from': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'37e604d1-9267-43ff-d6af-109336b65d47', u'from': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'inducer': u'none', u'type': u'Repressor'}, {u'to': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'from': u'd9904b7a-12ac-29c7-6a02-2b2f2a27ffb0', u'inducer': u'none', u'type': u'Bound'}]}
 #data = {u'part': [{u'type': u'Protein', u'id': 1, u'name': u'BBa_C0060'}, {u'type': u'Protein', u'id': 2, u'name': u'BBa_C0060'}, {u'type': u'Activator', u'id': 3, u'name': u'Activator'}, {u'type': u'Repressor', u'id': 4, u'name': u'Repressor'}, {u'type': u'Protein', u'id': 5, u'name': u'BBa_C0160'}, {u'type': u'Protein', u'id': 6, u'name': u'BBa_C0178'}, {u'type': u'Protein', u'id': 7, u'name': u'BBa_C0178'}], u'link': [{u'to': 2, u'from': 1, u'type': u'Bound'}, {u'to': 3, u'from': 2, u'type': u'Bound'}, {u'to': 4, u'from': 3, u'type': u'Bound'}, {u'to': 5, u'from': 3, u'inducer': u'None', u'type': u'Activator'}, {u'to': 6, u'from': 4, u'inducer': u'Positive', u'type': u'Repressor'}, {u'to': 7, u'from': 6, u'type': u'Bound'}]}
 #data = {
     #"part": [
@@ -24,11 +24,11 @@ data = {u'part': [{u'type': u'Protein', u'id': u'acfa9120-fe99-e45e-d93d-8b6ea83
         #"type": "Protein"
         #},
       #{ "id"  : 3,
-        #"name": "activator",
+        #"name": "Activator",
         #"type": "Activator"
         #},
       #{ "id"  : 4,
-        #"name": "repressor",
+        #"name": "Repressor",
         #"type": "Repressor"
         #},
       #{ "id"  : 5,
@@ -46,16 +46,16 @@ data = {u'part': [{u'type': u'Protein', u'id': u'acfa9120-fe99-e45e-d93d-8b6ea83
 
       #],
     #"link": [
+      #{ "from": 3,
+        #"to"  : 4,
+        #"type": "Bound",
+        #},
       #{ "from": 1,
         #"to"  : 2,
         #"type": "Bound",
         #},
       #{ "from": 2,
         #"to"  : 3,
-        #"type": "Bound",
-        #},
-      #{ "from": 3,
-        #"to"  : 4,
         #"type": "Bound",
         #},
       #{ "from": 3,
@@ -129,16 +129,21 @@ def work(data, database):
   # combine bound link
   for link in data["link"]:
     if link["type"] == "Bound":
-      groups[link["to"]] = bind(groups[link["from"]], groups[link["to"]])
-      offset = len(groups[link["from"]]) - 2
+      u = bound_list[link["from"]]
+      v = bound_list[link["to"]]
+      if u == v:
+        continue
+      groups[v] = bind(groups[u], groups[v])
+      offset = len(groups[u]) - 2
       for p in data["part"]:
         idx = p["id"]
-        if bound_list[idx] == link["to"]:
+        if bound_list[idx] == v:
           pro_pos[idx] += offset
-        if bound_list[idx] == link["from"]:
-          bound_list[idx] = link["to"]
-      bound_list[link["from"]] = find_bound_src(link["to"], bound_list)
-      rev_bound_list[link["to"]] = link["from"]
+        if bound_list[idx] == u:
+          bound_list[idx] = v
+      #bound_list[link["from"]] = find_bound_src(link["to"], bound_list)
+      bound_list[link["from"]] = v
+      rev_bound_list[link["to"]] = u
       del groups[link["from"]]
 
   # replace repressor with exact component
