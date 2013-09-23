@@ -22,23 +22,23 @@
 			}else if(message.request=='loadUserFile')
 			{
 			  switch (filetype){
-			case 'regulation':
-				sessionStorage.regulationSave=eval('(' + message.result + ')');
-				window.location = "index";
-			  	break;			
-			case 'genecircuit':
-				sessionStorage.gene_circuit=eval('(' + message.result + ')');
-			  	window.location = "genecircuit";
-			  	break;
-			case 'plasmid':
-				sessionStorage.genecircuitSave=eval('(' + message.result + ')');
-			  	window.location = "plasmid";
-			  	break;
-			case 'protocol':
-				sessionStorage.genecircuitSave=eval('(' + message.result + ')');
-			  	window.location = "protocol";
-			  	break;
-		  }		 
+				case 'regulation':
+					sessionStorage.regulationSave=eval('(' + message.result + ')');
+					window.location = "index";
+					break;			
+				case 'genecircuit':
+					sessionStorage.gene_circuit=eval('(' + message.result + ')');
+					window.location = "genecircuit";
+					break;
+				case 'plasmid':
+					sessionStorage.genecircuitSave=eval('(' + message.result + ')');
+					window.location = "plasmid";
+					break;
+				case 'protocol':
+					sessionStorage.genecircuitSave=eval('(' + message.result + ')');
+					window.location = "protocol";
+					break;
+			  }		 
 			}
 			else if(message.request == "setFileShared")
 			{				
@@ -55,23 +55,24 @@
 					filetype=sessionStorage.filetype;
 					filename=sessionStorage.filename;
 					switch (filetype){
-						case 'regulation':
-							sessionStorage.regulationSave=message.result;
-							window.location = "index";
-							break;			
-						case 'genecircuit':
-							sessionStorage.gene_circuit=message.result;
-							window.location = "genecircuit";
-							break;
-						case 'plasmid':
-							sessionStorage.genecircuitSave=message.result;
-							window.location = "plasmid";
-							break;
-						case 'protocol':
-							sessionStorage.genecircuitSave=message.result;
-							window.location = "protocol";
-							break;
-					  }
+										case 'regulation':
+					sessionStorage.regulationSave=eval('(' + message.result + ')');
+					window.location = "index";
+					break;			
+				case 'genecircuit':
+					sessionStorage.gene_circuit=eval('(' + message.result + ')');
+					window.location = "genecircuit";
+					break;
+				case 'plasmid':
+					sessionStorage.genecircuitSave=eval('(' + message.result + ')');
+					window.location = "plasmid";
+					break;
+				case 'protocol':
+					sessionStorage.genecircuitSave=eval('(' + message.result + ')');
+					window.location = "protocol";
+					break;
+			  }		 
+
 				}
 			}
           };
