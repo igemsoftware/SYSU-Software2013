@@ -42,7 +42,6 @@ var protein = {
 	},
 
 	setTexture: function(aTextureId, aData) {
-    console.log(aData['display']);
     if (!aData['display'])
       $("#" + aTextureId).hide();
 
@@ -293,7 +292,6 @@ var group = {
 				/* $(this).removeClass('switch-on').addClass('switch-off'); */
 				/* $(this).text('cis'); */
         /* $(this).data("order", "cis"); */
-			console.log($(this), "tete", $(this).data('order'));
 				that.turnSwitch($(this), 'cis')
 			} else {
 				/* $(this).removeClass('switch-off').addClass('switch-on'); */
@@ -323,12 +321,10 @@ var group = {
 		if(type == 'trans') {
 			target.removeClass('switch-off').addClass('switch-on');
 			target.text('trans');
-			console.log(target, "trans1", target.parent(".sbol").data('order'));
 			target.parent(".sbol").data("order", "trans");
 		} else {
 			target.removeClass('switch-on').addClass('switch-off');
 			target.text('cis');
-			console.log(target, "cis1", target.parent(".sbol").data('order'));
 			target.parent(".sbol").data("order", "cis");
 		}
 	}
@@ -351,7 +347,6 @@ var plasmid =  {
 		$("#" + aTextureId + " div .label").html("<span class='view-plasmid'><i class='icon-zoom-in'></i>" + aTextureId + "</span>");
 		$("#" + aTextureId).append("<div id='" + aTextureId + "-first' style='display:none'></div>");
 
-		// console.log("kakakakak", aData); 
 		for(var i = 0; i < aData.length; i++) {
 			var sbol_id = aData[i].id;
 			// $("#" + aTextureId).append("<div class='sbol' id='" + aTextureId + "-sbol-" + i.toString() + "'></div>"); 
@@ -627,7 +622,6 @@ var getDataCollection = function() {
 		dataCollection.proteins[pid_i].name = p.find(".module-title em").text();
 		dataCollection.proteins[pid_i].PoPS = p.find(".pops").slider("value");
 		dataCollection.proteins[pid_i].RiPS = p.find(".rips").slider("value");
-		console.log(p.find(".rips").slider("value"));
 		dataCollection.proteins[pid_i].copy = p.find(".copy").slider("value");
     if (p.find(".k1").hasClass("unuse"))
 		  dataCollection.proteins[pid_i].K1 = null;
@@ -662,7 +656,6 @@ var getDataCollection = function() {
 			dataCollection.groups[grp_id].to = curGroup.data("to"); 
 			dataCollection.groups[grp_id].type = curGroup.data("type"); 
 			dataCollection.groups[grp_id].state = curGroup.data("order"); 
-			console.log("order", curGroup.data("order"), curGroup);
 			dataCollection.groups[grp_id].corep_ind_type = curGroup.data("corep_ind_type"); 
 			dataCollection.groups[grp_id].corep_ind = curGroup.data("corep_ind");
 			for(var k = 0; k < componentsLength; k++) {
@@ -686,13 +679,7 @@ var randomValue = function() {
 	data.gene_circuit = dataCollection;
 	data.detail = detail;
 
-	console.log("data", data);
 
-	// console.log("data", data); 
-	// console.log("upup", JSON.stringify({ 
-		// 'request': 'updateGeneCircuit', 
-		// 'data': {'detail':detail, 'gene_circuit':dataCollection}, 
-	// })); 
 	ws.send(JSON.stringify({
 		'request': 'updateGeneCircuit',
 		'data': {'detail':detail, 'gene_circuit':dataCollection},
@@ -706,7 +693,6 @@ var init = function(genecircuitData) {
 		// protein.init("protein-" + i.toString(), genecircuitData.proteins[i]); 
 	// } 
 	for(var prop in genecircuitData.proteins) {
-		// console.log(genecircuitData.proteins[prop]); 
 		$("#dashboard-view .mCSB_container").append("<div class='proteins new-proteins' id='protein-" + prop + "'></div>"); 
 		protein.init("protein-" + prop, genecircuitData.proteins[prop]); 
 	}
