@@ -299,15 +299,20 @@ $().ready(function() {
         }
       }, 1000);
     } else {
+			// var saveData = JSON.stringify(canvasToSaveData()); 
+			var saveData = getDataCollection();
+			saveData.fileName = filename;
+			saveData.fileType = 'genecircuit';
 
-      // ws.send({
-      //   "request" : "saveUserData",
-      //   "data" : filename
-      // });
+			ws.send(JSON.stringify({
+					'request': 'saveUserData',
+					'data': saveData,
+					'fileName': filename,
+					'fileType': 'genecircuit'
+			}));
 
-
-      $("#myModalInfo").html("File: " + filename + " is saved!");
-      $("#save-trigger").click();
+			$("#myModalInfo").html("File: " + filename + " is saved!");
+			$("#save-trigger").click();
     }
   });
 
