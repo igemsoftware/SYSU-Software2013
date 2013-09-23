@@ -21,7 +21,11 @@ $.fn.dashboard = function(options) {
 			per = Math.floor(per);
 			$(this).find(".arrow1").css('transform', 'rotate(' + ((1.8 * (per+3)) - 180) + 'deg)');
 			$(this).find(".arrow2").css('transform', 'rotate(' + ((1.8 * (per-3)) - 180) + 'deg)');
-			$(this).find(".dashboard-value").text(val);
+			if(options.max == 1000) {
+				$(this).find(".dashboard-value").text(val.toFixed(0));
+			} else if(options.max == 6) {
+				$(this).find(".dashboard-value").text(val.toFixed(3));
+			}
 		});
 
 		$(this).trigger('update', 0);
@@ -42,7 +46,7 @@ var protein = {
     if (!aData['display'])
       $("#" + aTextureId).hide();
 
-		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider concen\"></div><span>concen</span></div></div>");
+		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-6</span><span class=\"upper-bound\">6</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-6</span><span class=\"upper-bound\">6</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider concen\"></div><span>concen</span></div></div>");
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
@@ -53,7 +57,7 @@ var protein = {
 			size: 40,		
 			percentage: 0,
 			min: 0,
-			max: 100,
+			max: 1000,
 		})
 
 		$("#" + aTextureId + " .repress-rate").dashboard({
@@ -75,7 +79,7 @@ var protein = {
 			orientation: "vertical",
 			range: "min",
 			min: 0,
-			max: 100,
+			max: 1,
 			value: 60,
 			stop: function(event, ui) {
 				/* ws.send(JSON.stringify({ */
@@ -86,14 +90,17 @@ var protein = {
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
-			}
+			},
+			slide: function(event, ui) { 
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(2)); 
+			} 
 		});
 
 		$("#" + aTextureId + " .rips").slider({
 			orientation: "vertical",
 			range: "min",
 			min: 0,
-			max: 100,
+			max: 1,
 			value: 60,
 			stop: function(event, ui) {
 				/* ws.send(JSON.stringify({ */
@@ -103,8 +110,12 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(2)); 
 				randomValue(); 
-			}
+			},
+			slide: function(event, ui) { 
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(2)); 
+			} 
 		});
 
 		$("#" + aTextureId + " .copy").slider({
@@ -122,7 +133,10 @@ var protein = {
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
-			}
+			},
+			slide: function(event, ui) { 
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(0)); 
+			} 
 		});
 
 		$("#" + aTextureId + " .k1").slider({
@@ -140,7 +154,10 @@ var protein = {
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				randomValue(); 
-			}
+			},
+			slide: function(event, ui) { 
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(1)); 
+			} 
 		});
 
 		$("#" + aTextureId + " .concen").slider({
@@ -154,11 +171,15 @@ var protein = {
 					/* 'request': 'changeRBS', */
 				/* })); */
 				detail.type = "concen";
+
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				randomValue();
-			}
+			},
+			slide: function(event, ui) { 
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(0)); 
+			} 
 		});
 
 		/* this.textureId = aTextureId; */
@@ -173,15 +194,26 @@ var protein = {
 		// aData.repress_rate = Math.floor(Math.random()*100); 
 		// aData.induce_rate = Math.floor(Math.random()*100); 
 		$("#" + aTextureId + " .pops").slider("value", aData.PoPS);
+		$("#" + aTextureId + " .pops").find(".ui-slider-handle").text($("#" + aTextureId + " .pops").slider("value").toFixed(2)); 
 		$("#" + aTextureId + " .rips").slider("value", aData.RiPS);
+		$("#" + aTextureId + " .rips").find(".ui-slider-handle").text($("#" + aTextureId + " .rips").slider("value").toFixed(2)); 
 		$("#" + aTextureId + " .copy").slider("value", aData.copy);
+		$("#" + aTextureId + " .copy").find(".ui-slider-handle").text($("#" + aTextureId + " .copy").slider("value").toFixed(0)); 
 		if(aData.K1 == null) {
 			$("#" + aTextureId + " .k1").addClass("unuse");
 		} else {
 			$("#" + aTextureId + " .k1").removeClass("unuse");
 		}
 		$("#" + aTextureId + " .k1").slider("value", aData.K1);
+		$("#" + aTextureId + " .k1").find(".ui-slider-handle").text($("#" + aTextureId + " .k1").slider("value").toFixed(1)); 
+
+		if(aData.concen == null) {
+			$("#" + aTextureId + " .concen").addClass("unuse");
+		} else {
+			$("#" + aTextureId + " .concen").removeClass("unuse");
+		}
 		$("#" + aTextureId + " .concen").slider("value", aData.concen);
+		$("#" + aTextureId + " .concen").find(".ui-slider-handle").text($("#" + aTextureId + " .concen").slider("value").toFixed(0)); 
 		$("#" + aTextureId + " .before-regulated").trigger("update", aData.before_regulated);
 		$("#" + aTextureId + " .repress-rate").trigger("update", aData.repress_rate);
 		$("#" + aTextureId + " .induce-rate").trigger("update", aData.induce_rate);
@@ -260,12 +292,12 @@ var group = {
 			if($(this).text() == 'trans') {
 				/* $(this).removeClass('switch-on').addClass('switch-off'); */
 				/* $(this).text('cis'); */
-				/* $(this).data("order", "cis"); */
+         $(this).data("order", "cis");
 				that.turnSwitch($(this), 'cis')
 			} else {
 				/* $(this).removeClass('switch-off').addClass('switch-on'); */
 				/* $(this).text('trans'); */
-				/* $(this).data("order", "trans"); */
+         $(this).data("order", "trans");
 				that.turnSwitch($(this), 'trans');
 			}
 			/* randomValue(); */
@@ -424,7 +456,8 @@ var moveAndCheck = function(aGroup, fGroup, tGroup, fPlasmid, tPlasmid) {
 	// detail.pro_id =  
 	// detail.new_value =  
 	// detail.type = "copy" 
-  var id_str0 = aGroup.find("id");
+  // var id_str0 = aGroup.find("id"); 
+  var id_str0 = aGroup.attr("id");
 	var grp_id = id_str0.substring(id_str0.indexOf('-') + 1, id_str0.length);
 	if(tPlasmid.find(".sbol").length > 0) {
     var id_str = tPlasmid.find(".sbol").attr('id');
@@ -602,7 +635,10 @@ var getDataCollection = function() {
 		  dataCollection.proteins[pid_i].K1 = null;
     else
       dataCollection.proteins[pid_i].K1 = p.find(".k1").slider("value");
-		dataCollection.proteins[pid_i].concen = p.find(".concen").slider("value");
+    if (p.find(".concen").hasClass("unuse"))
+		  dataCollection.proteins[pid_i].concen = null;
+    else
+			dataCollection.proteins[pid_i].concen = p.find(".concen").slider("value");
 		dataCollection.proteins[pid_i].before_regulated = parseInt(p.find(".before-regulated .dashboard-value").text());
 		dataCollection.proteins[pid_i].repress_rate = parseInt(p.find(".repress-rate .dashboard-value").text());
 		dataCollection.proteins[pid_i].induce_rate = parseInt(p.find(".induce-rate .dashboard-value").text());

@@ -96,6 +96,8 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         for n in range(len(dictkey)):
             data[pro_name[n] + "," + str(cnt)] = Prodict[dictkey[n]].Concen
             cnt += 1
+        for i in data:
+          data[i] = [float('%0.3f'%x) for x in data[i]]
         ret['data'] = data
         return ret
     except InvalidParameter:
@@ -114,4 +116,4 @@ if __name__ == "__main__":
     #            7: {"time": 60}}
     corepind = {}
     gene_circuit = {"proteins":{"bb865a37-4071-0c36-be47-e23df57d10ee":{"RiPS":11.49,"name":"BBa_K091002","before_regulated":72771.6852,"concen":0.1,"grp_id":"6ca651e6-8cc1-19be-52dc-0cd900a3647f","pos":2,"PoPS":86.76,"repress_rate":0,"K1":None,"induce_rate":0,"copy":73,"display":True},"6ca651e6-8cc1-19be-52dc-0cd900a3647f":{"RiPS":11.49,"name":"BBa_K518003","before_regulated":72771.6852,"concen":0.1,"grp_id":"6ca651e6-8cc1-19be-52dc-0cd900a3647f","pos":4,"PoPS":86.76,"repress_rate":0,"K1":None,"induce_rate":0,"copy":73,"display":False},"04fa82db-9dd5-4fa8-a0d4-8e41e807b490":{"RiPS":11.49,"name":"BBa_I752001","before_regulated":79590.88530000001,"concen":0.1,"grp_id":"04fa82db-9dd5-4fa8-a0d4-8e41e807b490","pos":2,"PoPS":94.89,"repress_rate":-0.44281354749750823,"K1":-2.4287510356503725,"induce_rate":-0.44281354749750823,"copy":73,"display":True}},"plasmids":[["6ca651e6-8cc1-19be-52dc-0cd900a3647f","04fa82db-9dd5-4fa8-a0d4-8e41e807b490"]],"groups":{"6ca651e6-8cc1-19be-52dc-0cd900a3647f":{"from":-1,"state":"cis","corep_ind_type":"None","to":["04fa82db-9dd5-4fa8-a0d4-8e41e807b490"],"sbol":[{"type":"Promoter","name":"BBa_K143013"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_K091002","id":"bb865a37-4071-0c36-be47-e23df57d10ee"},{"type":"RBS","name":"BBa_J61104"},{"type":"Repressor","name":"BBa_K518003","id":"6ca651e6-8cc1-19be-52dc-0cd900a3647f"},{"type":"Terminator","name":"BBa_B0013"}],"type":"Constitutive"},"04fa82db-9dd5-4fa8-a0d4-8e41e807b490":{"from":"6ca651e6-8cc1-19be-52dc-0cd900a3647f","state":"cis","corep_ind_type":"Corepressor","to":[],"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_I752001","id":"04fa82db-9dd5-4fa8-a0d4-8e41e807b490"},{"type":"Terminator","name":"BBa_B0013"}],"corep_ind":"Ind_0144","type":"Negative"}}}
-    print Simulate(False, gene_circuit, corepind, db, 6000, 100)
+    print Simulate(True, gene_circuit, corepind, db, 6000, 100)
