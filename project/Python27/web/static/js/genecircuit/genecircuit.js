@@ -292,12 +292,12 @@ var group = {
 			if($(this).text() == 'trans') {
 				/* $(this).removeClass('switch-on').addClass('switch-off'); */
 				/* $(this).text('cis'); */
-				/* $(this).data("order", "cis"); */
+         $(this).data("order", "cis");
 				that.turnSwitch($(this), 'cis')
 			} else {
 				/* $(this).removeClass('switch-off').addClass('switch-on'); */
 				/* $(this).text('trans'); */
-				/* $(this).data("order", "trans"); */
+         $(this).data("order", "trans");
 				that.turnSwitch($(this), 'trans');
 			}
 			/* randomValue(); */
@@ -456,9 +456,15 @@ var moveAndCheck = function(aGroup, fGroup, tGroup, fPlasmid, tPlasmid) {
 	// detail.pro_id =  
 	// detail.new_value =  
 	// detail.type = "copy" 
+<<<<<<< HEAD
   // var id_str0 = aGroup.find("id"); 
   var id_str0 = aGroup.attr("id");
 	var grp_id = id_str0.substring(id_str0.indexOf('-') + 1, id_str0.length);
+=======
+
+  var id_str0 = aGroup.attr("id");
+   var grp_id = id_str0.substring(id_str0.indexOf('-') + 1, id_str0.length);
+>>>>>>> origin/master
 	if(tPlasmid.find(".sbol").length > 0) {
     var id_str = tPlasmid.find(".sbol").attr('id');
 		grp_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);

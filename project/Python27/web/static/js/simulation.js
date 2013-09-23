@@ -7,12 +7,7 @@ var corepind ={}; //{5: {"time": 20},7: {"time": 60}}
 function stochasticOnChange(obj)
 {
 	//ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-	if($('#stochastic').attr("checked")==true)
-	{
-		isStochastic = true;
-	}else{
-    isStochastic = false;
-	}
+  isStochastic = $('#stochastic')[0].checked;
     gene_circuit = sessionStorage.gene_circuit;
     ws.send(JSON.stringify({'request'     : 'Simulate',
                             'isStochastic': isStochastic,
