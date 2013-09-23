@@ -588,61 +588,61 @@ $().ready(function() {
     //var regulationData = sessionStorage.regulation;
     var regulationData = { 
       "part": [ 
-			{ "id"  : 1, 
+			{ "id"  : "1", 
 				"name": "BBa_C0060", 
 				"type": "Protein" 
       }, 
-      { "id"  : 2, 
+      { "id"  : "2", 
         "name": "BBa_C0060", 
         "type": "Protein" 
       }, 
-      { "id"  : 3, 
+      { "id"  : "3", 
         "name": "Activator", 
         "type": "Activator" 
       }, 
-      { "id"  : 4, 
+      { "id"  : "4", 
         "name": "Repressor", 
         "type": "Repressor" 
       }, 
-      { "id"  : 5, 
+      { "id"  : "5", 
         "name": "BBa_C0160", 
         "type": "Protein" 
       }, 
-      { "id"  : 6, 
+      { "id"  : "6", 
         "name": "BBa_C0178", 
         "type": "Protein" 
       }, 
-      { "id"  : 7, 
+      { "id"  : "7", 
         "name": "BBa_C0178", 
         "type": "Protein" 
       } 
  
       ], 
       "link": [ 
-        { "from": 1, 
-          "to"  : 2, 
+        { "from": "1", 
+          "to"  : "2", 
           "type": "Bound", 
       }, 
-      { "from": 2, 
-        "to"  : 3, 
+      { "from": "2", 
+        "to"  : "3", 
         "type": "Bound", 
       }, 
-      { "from": 3, 
-        "to"  : 4, 
+      { "from": "3", 
+        "to"  : "4", 
         "type": "Bound", 
       }, 
-      { "from": 3, 
-        "to"  : 5, 
+      { "from": "3", 
+        "to"  : "5", 
         "type": "Activator", 
         "inducer": "None" 
       }, 
-      { "from": 4, 
-        "to"  : 6, 
+      { "from": "4", 
+        "to"  : "6", 
         "type": "Repressor", 
         "inducer": "Positive" 
         }, 
-      { "from": 6, 
-        "to"  : 7, 
+      { "from": "6", 
+        "to"  : "7", 
         "type": "Bound", 
         }, 
  
