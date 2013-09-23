@@ -632,7 +632,7 @@ function handlerWebSocket(){
 			var obj = eval('(' + sessionStorage.genecircuitSave + ')'); 			
 			ws.send(JSON.stringify({'request': 'getPlasmidSbol','data':JSON.stringify(obj['genecircuit'])}));	
 			$('#mymodal').modal({keyboard:false});
-		}				
+		}
 	}
 }
 function loadUserFileWebsocket(result,needTitle)
