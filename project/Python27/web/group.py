@@ -206,8 +206,8 @@ def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "p
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
   ret["grp_id"] = grp_id
   ret["name"] = cur_group[protein_idx]["name"]
-  ret["PoPS"] = promoter_info[get_type_of_promoter(link_type)] * 100
-  ret["RiPS"] = rbs_info["MPRBS"] * 100
+  ret["PoPS"] = promoter_info[get_type_of_promoter(link_type)]
+  ret["RiPS"] = rbs_info["MPRBS"]
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
   if regulator_info is not None:
     ret["K1"] = log10(regulator_info["K1"])
