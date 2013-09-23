@@ -23,13 +23,13 @@ body {
 .header {
   position: absolute;
   width: 100%;
-  min-width: 1225px;
+  min-width: 1250px;
   height: 115px;
   top: 0;
 }
 
 .header img {
-  height: 115px;
+  height: 215px;
 }
 
 .header .nav {
@@ -39,7 +39,7 @@ body {
 }
 
 .header .nav ul {
-  margin: 40px 80px 0 0;
+  margin: 40px 15px 0 0;
   list-style: none;
   font-size:  14px;
   color: #407279;
