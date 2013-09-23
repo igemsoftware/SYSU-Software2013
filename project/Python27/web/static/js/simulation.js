@@ -29,8 +29,9 @@ $(document).ready(function () {
         var width1 = document.getElementById('canvasDiv').clientWidth ;
         var height1 = document.getElementById('canvasDiv').clientHeight ;
         run(data,'canvasDiv', width1, height1, time, dt);
-		    inducerList=getinducerList(sessionStorage.gene_circuit);
-			$("#Curve").empty();
+		$("#Inducer").empty();
+		$("#Curve").empty();
+		inducerList=getinducerList(sessionStorage.gene_circuit);		
         for(var i=0;i<data.length;i++)
         {
           var w=document.getElementById('Curve').clientWidth/3/6;

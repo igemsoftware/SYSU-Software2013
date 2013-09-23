@@ -89,18 +89,14 @@ $().ready(function() {
             }, 1000);
         } else {//save the data into the database
 			var saveData = '';
-            if(window.location.pathname==='/simulation')
-			{
-				filetype='simulation';
-				saveData=getSimulationSaveData();
-			}else if(window.location.pathname==='/plasmid')
+            if(window.location.pathname==='/plasmid')
 			{
 				filetype='plasmid';
-				saveData=getPlasmidSaveData();
+				saveData=sessionStorage.genecircuitSave;
 			}            
             ws.send(JSON.stringify({
                 'request': 'saveUserData',
-                'data': saveData,
+                'data': JSON.stringify(saveData),
                 'fileName': filename,
                 'fileType': filetype
             }));           
