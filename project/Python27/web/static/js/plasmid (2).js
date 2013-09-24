@@ -1,4 +1,6 @@
-//var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
+/*
+The color array to use for the different type of sbol
+ */
 var colors={'promoter':"#89c997",'protein': "#ffbf43",'activator': "#ffbf43", 'repressor': "#ffbf43", 'rbs':'#2ec6b7','terminator':"#f95f53",'plasmidbackbone':'#9B59B6'};
 String.prototype.startWith=function(str){
 			if(str==null||str==""||this.length==0||str.length>this.length)
@@ -11,7 +13,6 @@ String.prototype.startWith=function(str){
 		}
 function standardOnChange(obj)
 {
-	console.log('standonchange');
 	if(sessionStorage.genecircuitSave!==undefined)
 	{
 			var obj = eval('(' + sessionStorage.genecircuitSave + ')'); 			
@@ -19,6 +20,7 @@ function standardOnChange(obj)
 			$('#mymodal').modal({keyboard:false});
 	}
 }
+
 var plasmidPainter = {
 	canvas: null,
 	canvasId: null,
@@ -252,52 +254,9 @@ tip.fadeIn("slow");
 };
 var data =  [];
 var left=1;//the int to record seq's left position
-var size=0;//整个序列的长度
-var raw_data={
-    "DnaComponent": {
-        "description": "undefined",
-        "annotations": [{"SequenceAnnotation": {"bioStart": "49",
-                    "subComponent": {
-                        "DnaComponent": {
-                            "displayId": "4932",
-                            "uri": "http: //partsregistry.org/Part: BBa_E1010",
-                            "type": "Coding",
-                            "description": "**highly**engineeredmutantofredfluorescentproteinfromDiscosomastriata(coral)",
-                            "name": "BBa_E1010"
-                        }
-                    },
-                    "uri": "http: //sbols.org/",
-                    "strand": "+",
-                    "bioEnd": "730"
-                }
-            },{
-                "SequenceAnnotation": {
-                    "bioStart": "736",
-                    "subComponent": {
-                        "DnaComponent": {
-                            "displayId": "144",
-                            "uri": "http: //partsregistry.org/Part: BBa_B0011",
-                            "type": "Terminator",
-                            "description": "LuxICDABEG(+/-)",
-                            "name": "BBa_B0011"
-                        }
-                    },
-                    "uri": "http: //sbols.org/",
-                    "strand": "+",
-                    "bioEnd": "782"
-                }
-            }
-        ],
-        "uri": "http: //sbol.org/",
-        "DnaSequence": {
-            "nucleotides": "GAATTCGCGGCCGCTTCTAGATGGCCGGCGAATTCGCGGCCGCTTCTAGatggcttcctccgaagacgttatcaaagagttcatgcgtttcaaagttcgtatggaaggttccgttaacggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacgaaggtacccagaccgctaaactgaaagttaccaaaggtggtccgctgccgttcgcttgggacatcctgtccccgcagttccagtacggttccaaagcttacgttaaacacccggctgacatcccggactacctgaaactgtccttcccggaaggtttcaaatgggaacgtgttatgaacttcgaagacggtggtgttgttaccgttacccaggactcctccctgcaagacggtgagttcatctacaaagttaaactgcgtggtaccaacttcccgtccgacggtccggttatgcagaaaaaaaccatgggttgggaagcttccaccgaacgtatgtacccggaagacggtgctctgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcactacgacgctgaagttaaaaccacctacatggctaaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaactggacatcacctcccacaacgaagactacaccatcgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgcttaataaACCGGCagagaatataaaaagccagattattaatccggcttttttattatttACCGGTTAATACTAGTAGCGGCCGCTGCAG",
-            "uri": "http: //sbols.org/"
-        },
-        "displayId": "undefined",
-        "name": "undefined"
-    }
-};
-var seq=raw_data.DnaComponent.DnaSequence.nucleotides;
+var size=0;//total length of the seqence
+var raw_data=null;
+var seq=null;
 var chart=null;//the ichartjs object
 //the function that use to sort an array
 function sortNumber(a, b)
