@@ -675,6 +675,7 @@ var randomValue = function() {
 	data.gene_circuit = dataCollection;
 	data.detail = detail;
 
+	console.log("detail dataCollection", {'detail':detail, 'gene_circuit':dataCollection});
 
 	ws.send(JSON.stringify({
 		'request': 'updateGeneCircuit',
