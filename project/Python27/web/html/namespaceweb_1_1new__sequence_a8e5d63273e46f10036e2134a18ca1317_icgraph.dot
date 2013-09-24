@@ -1,0 +1,13 @@
+digraph "web.new_sequence.find_file"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="web.new_sequence.find_file",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="web.new_sequence.get\l_new_part_sequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1new__sequence.html#a30bc3808f9e697750a7ea56e31ae9c79"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="web.extended_sbol.get\l_extended_sbol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1extended__sbol.html#aa3bc7da3defcb7a028430f9a35345a82"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="web.websocket.apis.getNew\lPartSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classweb_1_1websocket_1_1apis.html#aa36573629156c13e49397d4b81cca8cb"];
+}

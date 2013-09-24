@@ -1,29 +1,99 @@
 \hypertarget{classweb_1_1encrypt_1_1_encrypt}{\section{web.\-encrypt.\-Encrypt Class Reference}
 \label{classweb_1_1encrypt_1_1_encrypt}\index{web.\-encrypt.\-Encrypt@{web.\-encrypt.\-Encrypt}}
 }
+
+
+\subsubsection*{the class that can provide R\-S\-A method } 
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classweb_1_1encrypt_1_1_encrypt_a7ac013ef450d16011e76b7af95c25f3d}{def {\bfseries \-\_\-\-\_\-init\-\_\-\-\_\-}}\label{classweb_1_1encrypt_1_1_encrypt_a7ac013ef450d16011e76b7af95c25f3d}
-
+def \hyperlink{classweb_1_1encrypt_1_1_encrypt_a7ac013ef450d16011e76b7af95c25f3d}{\-\_\-\-\_\-init\-\_\-\-\_\-}
 \item 
-\hypertarget{classweb_1_1encrypt_1_1_encrypt_ad9c50ce7eec9117081e4d86a9bfd87c9}{def {\bfseries get\-Public\-Key}}\label{classweb_1_1encrypt_1_1_encrypt_ad9c50ce7eec9117081e4d86a9bfd87c9}
-
-\item 
-\hypertarget{classweb_1_1encrypt_1_1_encrypt_afcab4d2eea9fe8213086a46253e72316}{def {\bfseries decrypt}}\label{classweb_1_1encrypt_1_1_encrypt_afcab4d2eea9fe8213086a46253e72316}
-
-\end{DoxyCompactItemize}
+def \hyperlink{classweb_1_1encrypt_1_1_encrypt_ad9c50ce7eec9117081e4d86a9bfd87c9}{get\-Public\-Key}
+\begin{DoxyCompactList}\small\item\em get the public key \end{DoxyCompactList}\item 
+def \hyperlink{classweb_1_1encrypt_1_1_encrypt_afcab4d2eea9fe8213086a46253e72316}{decrypt}
+\begin{DoxyCompactList}\small\item\em decrypt a string \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classweb_1_1encrypt_1_1_encrypt_a1e54531b2aac210260199608edc7f62c}{{\bfseries public\-Key}}\label{classweb_1_1encrypt_1_1_encrypt_a1e54531b2aac210260199608edc7f62c}
-
+\hyperlink{classweb_1_1encrypt_1_1_encrypt_a1e54531b2aac210260199608edc7f62c}{public\-Key}
 \item 
-\hypertarget{classweb_1_1encrypt_1_1_encrypt_a1145a5b40bf2a2ff38383b34d4d86dc8}{{\bfseries private\-Key}}\label{classweb_1_1encrypt_1_1_encrypt_a1145a5b40bf2a2ff38383b34d4d86dc8}
-
+\hyperlink{classweb_1_1encrypt_1_1_encrypt_a1145a5b40bf2a2ff38383b34d4d86dc8}{private\-Key}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{the class that can provide R\-S\-A method }
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classweb_1_1encrypt_1_1_encrypt_a7ac013ef450d16011e76b7af95c25f3d}{\index{web\-::encrypt\-::\-Encrypt@{web\-::encrypt\-::\-Encrypt}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!web::encrypt::Encrypt@{web\-::encrypt\-::\-Encrypt}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def web.\-encrypt.\-Encrypt.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classweb_1_1encrypt_1_1_encrypt_a7ac013ef450d16011e76b7af95c25f3d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classweb_1_1encrypt_1_1_encrypt_afcab4d2eea9fe8213086a46253e72316}{\index{web\-::encrypt\-::\-Encrypt@{web\-::encrypt\-::\-Encrypt}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!web::encrypt::Encrypt@{web\-::encrypt\-::\-Encrypt}}
+\subsubsection[{decrypt}]{\setlength{\rightskip}{0pt plus 5cm}def web.\-encrypt.\-Encrypt.\-decrypt (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{crypto}
+\end{DoxyParamCaption}
+)}}\label{classweb_1_1encrypt_1_1_encrypt_afcab4d2eea9fe8213086a46253e72316}
+
+
+decrypt a string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & \\
+\hline
+{\em crypto} & the crypto string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the original string using the private\-Key 
+
+ 
+\end{DoxyReturn}
+\hypertarget{classweb_1_1encrypt_1_1_encrypt_ad9c50ce7eec9117081e4d86a9bfd87c9}{\index{web\-::encrypt\-::\-Encrypt@{web\-::encrypt\-::\-Encrypt}!get\-Public\-Key@{get\-Public\-Key}}
+\index{get\-Public\-Key@{get\-Public\-Key}!web::encrypt::Encrypt@{web\-::encrypt\-::\-Encrypt}}
+\subsubsection[{get\-Public\-Key}]{\setlength{\rightskip}{0pt plus 5cm}def web.\-encrypt.\-Encrypt.\-get\-Public\-Key (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classweb_1_1encrypt_1_1_encrypt_ad9c50ce7eec9117081e4d86a9bfd87c9}
+
+
+get the public key 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the public key 
+
+ 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classweb_1_1encrypt_1_1_encrypt_a1145a5b40bf2a2ff38383b34d4d86dc8}{\index{web\-::encrypt\-::\-Encrypt@{web\-::encrypt\-::\-Encrypt}!private\-Key@{private\-Key}}
+\index{private\-Key@{private\-Key}!web::encrypt::Encrypt@{web\-::encrypt\-::\-Encrypt}}
+\subsubsection[{private\-Key}]{\setlength{\rightskip}{0pt plus 5cm}web.\-encrypt.\-Encrypt.\-private\-Key}}\label{classweb_1_1encrypt_1_1_encrypt_a1145a5b40bf2a2ff38383b34d4d86dc8}
+\hypertarget{classweb_1_1encrypt_1_1_encrypt_a1e54531b2aac210260199608edc7f62c}{\index{web\-::encrypt\-::\-Encrypt@{web\-::encrypt\-::\-Encrypt}!public\-Key@{public\-Key}}
+\index{public\-Key@{public\-Key}!web::encrypt::Encrypt@{web\-::encrypt\-::\-Encrypt}}
+\subsubsection[{public\-Key}]{\setlength{\rightskip}{0pt plus 5cm}web.\-encrypt.\-Encrypt.\-public\-Key}}\label{classweb_1_1encrypt_1_1_encrypt_a1e54531b2aac210260199608edc7f62c}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-encrypt.\-py\end{DoxyCompactItemize}
+\hyperlink{encrypt_8py}{encrypt.\-py}\end{DoxyCompactItemize}

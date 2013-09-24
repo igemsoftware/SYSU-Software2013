@@ -1,0 +1,25 @@
+digraph "web.group.dump_sbol"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="web.group.dump_sbol",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="web.group.work",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#a8b2f16691c1fcd46dcaeb6caf126b83c"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="web.group.pre_work",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#a3c1931bd9782fdfbbc42e27cf9ec0b7e",tooltip="get group list with a protein "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="web.group.bind",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#a203c02195af59d2e98d588c0bd0781a2"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="web.group.find_repressor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#a7a76edcad82bd03a61d1decdc6f046f4",tooltip="find a unique repressor "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="web.group.find_activator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#a2eb7a3d5ff9a89313b7739f0bd3b3a9e",tooltip="find a unique activator "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="web.group.find_bound_src",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#ae65499baac8300b77c14b3b0346c0bc5"];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="web.group.find_promoter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#a090d26034ffbe7cc76af5d46820d2286"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="web.group.find_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#a2b259265e97817bd2980fdf5eab3673a"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="web.sbol2json.format\l_to_json",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1sbol2json.html#a65d4097ac981de3ba0cae4958e9b25bd"];
+}

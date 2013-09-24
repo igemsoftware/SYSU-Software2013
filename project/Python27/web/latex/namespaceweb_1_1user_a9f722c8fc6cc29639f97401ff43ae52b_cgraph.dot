@@ -1,0 +1,13 @@
+digraph "web.user.userLoginByTicket"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="web.user.userLoginByTicket",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="web.user.getRememberMeTicket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1user.html#acd9378ec2190f99ba7c702db8fd5680c"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="web.user.userSetRememberMe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1user.html#abc5c01a718c5fbe455f9e3d7e4a1be8c"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="web.user.isUserLogined",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1user.html#a38fcd46ce0e5fd094569f50175317c30"];
+}

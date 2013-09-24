@@ -1,0 +1,15 @@
+digraph "web.sbol2json.format_to_json"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="web.sbol2json.format\l_to_json",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="web.group.dump_sbol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#ae87ef9f3d260d26fabcbb93d7a4348af"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="web.plasmid.plasmid_sbol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1plasmid.html#a815b6bb1e8ce0d7c5e74517980fe8956"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="web.sbol_demo.test",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1sbol__demo.html#a4087aef863b88aa01ef0443aa9fc80c2"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="web.websocket.apis.getPlasmid\lSbol_deprecated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classweb_1_1websocket_1_1apis.html#afc8b7cf604dd99438bee44bcfe0c7aa9"];
+}
