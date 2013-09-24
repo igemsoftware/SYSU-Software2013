@@ -41,6 +41,8 @@ class apis():
   def getuserPartByType(self,message):
     shared=sharedFiles(self.db)
     return shared.getSharedTypePart(message['type'])
+  def addATerminator(self,message):
+    return self.db.addATerminator(message['name'],message['number'],string.atof(message['Efficiency']))
   def addAPromoter(self,message):
     return self.db.addAPromoter(name=message['name'],number=message['number'],MPPromoter=string.atof(message['MPPromoter']),LeakageRate=string.atof(message['LeakageRate']),K1=string.atof(message['K1']),Type=message['Type'],Repressor=message['Repressor'],Source=message['Source'],Activator=message['Activator'],PoPS=string.atof(message['PoPS']))
   def addARBS(self,message):
