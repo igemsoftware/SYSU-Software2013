@@ -7,20 +7,22 @@ var corepind ={}; //{5: {"time": 20},7: {"time": 60}}
 function stochasticOnChange(obj)
 {
 	//ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-  isStochastic = $('#stochastic')[0].checked;
+    isStochastic = $('#stochastic')[0].checked;
     gene_circuit = sessionStorage.gene_circuit;
     ws.send(JSON.stringify({'request'     : 'Simulate',
                             'isStochastic': isStochastic,
                             'gene_circuit': gene_circuit,
                             'corepind'    : corepind
     }));
+	$('#mymodal').modal({keyboard:false});
 }
 $(document).ready(function () {
   if ("WebSocket" in window) {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function (msg) {
       var message = JSON.parse(msg.data);
-      if (message.request == "Simulate") {        
+      if (message.request == "Simulate") { 
+	  	$('#mymodal').modal('hide');       
         raw_data = message.result.data;
         proteinNames = Object.keys(message.result.data);
         data = turnRawDatatoData(raw_data);
@@ -61,28 +63,7 @@ $(document).ready(function () {
       }
       else if (message.request == "loginOut") { // get logout info
         window.location = "..";
-      }
-      else if (message.request == "getUserFileList") {
-        //console.log(message.result);
-        $("#filelist").html("");
-        for (var i = 0; i < message.result.length; i++) {
-          $("#filelist").append("<a href=\"javascript:void(0);\" id=\"" + message.result[i].fileName + "\">" + message.result[i].fileName + "</a><br/>");
-        };
-
-        $("#filelist > a").live("click", function() {
-          ws.send(JSON.stringify({
-            "request": "loadUserFile",
-            "fileName": "default1",
-            "fileType": "data"
-          }));
-        });
-      }
-      else if (message.request == "loadUserFile") {
-        console.log(message.result);
-      }
-      else if (message.request == 'saveUserData') {
-        console.log(message.result);
-      }
+      }       
     };
   };
 
@@ -102,6 +83,7 @@ $(document).ready(function () {
                             'gene_circuit': gene_circuit,
                             'corepind'    : corepind
     }));
+	$('#mymodal').modal({keyboard:false});
   };
 
   // Cleanly close websocket when unload window

@@ -8,17 +8,17 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" href="../static/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">  
   <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="../static/css/demo.css" type="text/css"/>	
   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="../static/css/reset.css">
   <link rel="stylesheet" href="../static/css/graphiti.css">
-  <script type="text/javascript" src="../static/js/lib/ZeroClipboard.js"></script>
   <script type="text/javascript" src="../static/js/ichartjs.v1.2/ichart_test.js"></script>  
   <script src="../static/js/underscore-min.js"></script>
   <script src="../static/js/jquery-1.8.0.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
   <script src="../static/js/lib/canvas2image.js"></script>
   <script src="../static/js/lib/base64.js"></script>
   <script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>
@@ -28,6 +28,11 @@
   <!--<script src="../static/js/jCanvaScript.1.5.18.js"></script> --> 
 </head>
 <body>
+	<div class="modal fade" id='mymodal'>
+      <div class="modal-body">
+        <img id='loading' src="../static/img/loading.gif" >
+      </div>
+    </div>
 	<div class="mycontainer" id="regulation-container">
     	<div class="header">
         	<a href="http://2013.igem.org/Team:SYSU-Software" target="_blank">
@@ -64,8 +69,8 @@
                  </div>    
                  </div>      
                   <div id="buttons" style="padding-left:35px;width:30%;height:20%;float:left;border-style: outset;"> 
-                   <input id="back-botton" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back" onClick="window.history.back(-1);"/>
-                   <input id="save-button" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();"/>
+                   <input id="back-botton" class="btn" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back" onClick="window.history.back(-1);"/>
+                   <input id="save-button" class="btn" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();"/>
                  </div>    
 			 </div>
         </div>    	
