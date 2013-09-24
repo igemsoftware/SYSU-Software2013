@@ -12,19 +12,7 @@
     <link rel="stylesheet" href="../static/css/reset.css">
     <link rel="stylesheet" href="../static/css/graphiti.css">
     <link rel="stylesheet" href="../static/css/navlist.css">
-    <style>
-      .list{text-indent:0px;border:0px;line-height:59px;height:59px;width:250px;background-color:#008080;}
-      .list:hover{border:0px;background-color:#FFAA33;}
-      p{font-size:14px;line-height:20px;} 
-      .nav-list>li>a {border:0px;height:59px;font-size:15px;color:#FFAA33;margin-right:0px;
-        margin-left:0px;}
-      .nav-list>li>a>i.myi{width:50px;height:50px;position: relative;
-top:2px;left:13px;float:right;display:none;background-image: url("../static/img/protocolimg.png");}
-       .nav-list>.active>a>i.myi{width:50px;height:50px;position: relative;
-top:2px;left:13px;float:right;display:block;background-image: url("../static/img/protocolimg.png");}
-      .nav-list>.active>a, .nav-list>.active>a:hover{margin-right:0px;
-margin-left:0px;height:59px;color:#008080;background-color:#FFAA33;border:0px;}
-    </style>    
+    <link rel="stylesheet" href="../static/css/protocol.css">
   </head>
 
   <body>
@@ -50,25 +38,25 @@ margin-left:0px;height:59px;color:#008080;background-color:#FFAA33;border:0px;}
       <!-- Painting Area -->
       <div id="content">
         <div id="canvas-mask">
-          <div class="row-fluid" style="position:relative;width:1700px;">
-            <div class="span3" style="position:relative;left:25px;height:600px;">
-              <ul class="nav nav-list" id="myTab" style="width:100%;">
-                <li class="list active"><a href="#0" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">Overview<i class="myi"></i></a></li>
-                <li class="list"><a href="#1" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">1.Obtain plasmid DNA<i class="myi"></i></a></li>
-                <li class="list"><a href="#2" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">2.Enzyme Digestion<i class="myi"></i></a></li>
-                <li class="list"><a href="#3" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">3.Gel Electrophoresis<i class="myi"></i></a></li>
-                <li class="list"><a href="#4" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">4.Gel Purification<i class="myi"></i></a></li>
-                <li class="list"><a href="#5" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">5.Ligation<i class="myi"></i></a></li>
-                <li class="list"><a href="#6" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">6.Transformation<i class="myi"></i></a></li>
-                <li class="list"><a href="#7" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">7.Colony PCR<i class="myi"></i></a></li>
-                <li class="list"><a href="#8" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">8.Conclusive Test<i class="myi"></i></a></li>
-                <li class="list"><a href="#9" style="height:53px;width:220px;text-decoration:none;" data-toggle="tab">9.Glycerol Stock<i class="myi"></i></a></li>
+          <div id="main" class="row-fluid">
+            <div id="index" class="span3">
+              <ul class="nav nav-list" id="myTab">
+                <li class="list active"><a href="#0" data-toggle="tab">Overview<i class="myi"></i></a></li>
+                <li class="list"><a href="#1" data-toggle="tab">1.Obtain plasmid DNA<i class="myi"></i></a></li>
+                <li class="list"><a href="#2" data-toggle="tab">2.Enzyme Digestion<i class="myi"></i></a></li>
+                <li class="list"><a href="#3" data-toggle="tab">3.Gel Electrophoresis<i class="myi"></i></a></li>
+                <li class="list"><a href="#4" data-toggle="tab">4.Gel Purification<i class="myi"></i></a></li>
+                <li class="list"><a href="#5" data-toggle="tab">5.Ligation<i class="myi"></i></a></li>
+                <li class="list"><a href="#6" data-toggle="tab">6.Transformation<i class="myi"></i></a></li>
+                <li class="list"><a href="#7" data-toggle="tab">7.Colony PCR<i class="myi"></i></a></li>
+                <li class="list"><a href="#8" data-toggle="tab">8.Conclusive Test<i class="myi"></i></a></li>
+                <li class="list"><a href="#9" data-toggle="tab">9.Glycerol Stock<i class="myi"></i></a></li>
               </ul>
-              <div style="position:relative;top:-590px;left:245px;width:20px;height:590px;background-color:black;opacity:0.5;">
+              <div id="black">
               </div>
             </div>
-            <div class="span8 tab-content" id="myTabContent" style="background:#ccc;position:relative;top:0px;left:-146px;width:70%;height:590px;">
-              <div class="tab-pane active" style="width:100%;height:100%;overflow:auto;" id="0"><br />
+            <div class="span8 tab-content" id="myTabContent">
+              <div class="tab-pane active" id="0"><br />
                 <canvas id="myCanvas" style="border:1px;">
                 your browser does not support the canvas element.
                 </canvas>
@@ -90,7 +78,7 @@ margin-left:0px;height:59px;color:#008080;background-color:#FFAA33;border:0px;}
                 to 20 μL with dH2O.Salt conditions for double digestion. Useful enzyme combinations for digesting 
                 BioBrick parts with their optimal buffer and what the digestion produces. All five reactions are 
                 optimal at 37°C<br /><br /></p>
-                <table class="table table-bordered table-hover" align="center" style="width:450px;background:white;">
+                <table id="mytable" class="table table-bordered table-hover" align="center">
                   <caption><b>Table 1</b></caption>
                   <tr>
                     <th colspan="2"><b>Restriction enzymes</b></th>

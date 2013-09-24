@@ -1,0 +1,94 @@
+/*
+ *
+ * style for protocol
+ *
+ */
+
+.list{
+  text-indent:0px;
+  border:0px;
+  line-height:59px;
+  height:59px;
+  width:250px;
+  background-color:#008080;
+}
+
+.list:hover{
+  border:0px;
+  background-color:#FFAA33;
+}
+
+p{
+  font-size:14px;
+  line-height:20px;
+} 
+
+.nav-list>li>a{
+  border:0px;
+  height:53px;
+  font-size:15px;
+  color:#FFAA33;
+  margin-right:0px;
+  margin-left:0px;
+  text-decoration:none;
+}
+
+.nav-list>li>a>i.myi{
+  width:50px;
+  height:50px;
+  position:relative;
+  top:2px;
+  left:13px;
+  float:right;
+  display:none;
+  background-image:url("../img/protocolimg.png");
+}
+
+.nav-list>.active>a>i.myi{
+  width:50px;
+  height:50px;
+  position:relative;
+  top:2px;
+  left:13px;
+  float:right;
+  display:block;
+  background-image:url("../img/protocolimg.png");
+}
+
+.nav-list>.active>a, .nav-list>.active>a:hover{
+  margin-right:0px;
+  margin-left:0px;
+  height:53px;
+  color:#008080;
+  background-color:#FFAA33;
+  border:0px;
+}
+
+#black{
+  position:relative;
+  top:-590px;
+  left:245px;
+  width:20px;
+  height:590px;
+  background-color:black;
+  opacity:0.5;
+}
+
+#myTabContent{
+  background:#ccc;
+  position:relative;
+  top:0px;
+  left:-55px;
+  width:70%;
+  height:590px;
+}
+
+#mytable{
+  width:450px;
+  background:white;
+}
+
+#index{
+  position:relative;
+  left:75px;
+}
