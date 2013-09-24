@@ -527,6 +527,7 @@ g.Buttons.Remove = graphiti.shape.icon.Remove.extend({
 
         var outerContainer = parent.getParent();
         if (outerContainer) {
+            console.log("here");
             for (var i = 0; i < outerContainer.getChildren().getSize(); i++) {
                 var figure = outerContainer.getChildren().get(i);
 
