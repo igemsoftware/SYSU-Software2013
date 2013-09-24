@@ -1,3 +1,13 @@
+##
+# @file sbol2json.py
+# @brief export SBOL to json format
+# @author Jianhong Li
+# @version 1.0
+# @date 2013-06-22
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+#
+
 import re
 import sys
 import json
