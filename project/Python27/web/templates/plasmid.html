@@ -66,14 +66,14 @@
                         </div> 
                     </div>  
     <div id='optionpanel' style="width:33%;height:400px;float:left;">
-   		<select id='standardSelect' name="standard" style="width:100%;height:10%">
+   		<select id='standardSelect' name="standard" style="width:100%;height:10%" onChange="standardOnChange(this);">
         	<option selected="selected" value="">Assembly Standard</option>
-            <option value="RFC 10">RFC 10</option>
-            <option value="RFC 20">RFC 20</option>
-            <option value="RFC 21">RFC 21</option>
-            <option value="RFC 23">RFC 23</option>
+            <option value="RFC10">RFC 10</option>
+            <option value="RFC20">RFC 20</option>
+            <option value="RFC21">RFC 21</option>
+            <option value="RFC23">RFC 23</option>
         </select>
-        <select id="backboneSelect" name="backbone" style="width:100%;height:10%">
+        <!--<select id="backboneSelect" name="backbone" style="width:100%;height:10%">
         	<option selected="selected" value="">Plasmid Backbone</option>
             <optgroup label="Archive">
             	<option value="pSB1A2.xml">pSB1A2.xml</option>
@@ -185,7 +185,7 @@
                 <option value="pSB4T5.xml">pSB4T5.xml</option>
                 <option value="pSB6A1.xml">pSB6A1.xml</option>
             </optgroup>
-        </select>
+        </select>-->
         <input name="saveplasmidgraphBtn" style="width:100%;height:10%;" type="submit" value="Save Plasmid Graph" onClick="saveGraph();"/>
         	<div style="width:100%;height:10%;">
            		<label style="height:100%;float:left;">Sequence</label>
