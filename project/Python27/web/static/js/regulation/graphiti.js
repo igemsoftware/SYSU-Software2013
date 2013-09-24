@@ -526,11 +526,19 @@ g.Buttons.Remove = graphiti.shape.icon.Remove.extend({
         var parentId = parent.getId();
 
         var outerContainer = parent.getParent();
-        if (outerContainer) {
-            console.log("here");
+        if (outerContainer.getParent()) {
+            for (var i = 0; i < outerContainer.getParent().getChildren().getSize(); i++) {
+                var figure = outerContainer.getParent().getChildren().get(i);
+
+                if (figure.TYPE == "Unbind") {
+                    figure.onClick();
+                    break;
+                }
+            }
+        } else if (outerContainer) {
+            
             for (var i = 0; i < outerContainer.getChildren().getSize(); i++) {
                 var figure = outerContainer.getChildren().get(i);
-
                 if (figure.TYPE == "Unbind") {
                     figure.onClick();
                     break;
