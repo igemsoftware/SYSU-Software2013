@@ -34,6 +34,19 @@ def get_extended_sbol(db, part_id, rule = "RFC10"):
   sys_comp = filter(lambda x: x[0:3] == "BBa", component)
   sys_comp = [find_file(x+".xml", ".") for x in sys_comp]
   content = union(rule, sys_comp)
+  print content
+  cnt = 0
+  offset = 0
+  intermediat = len(getattr(__import__("component_union"), rule).intermediat)
+  for i in xrange(len(component)):
+    if component[i][0:3] == "BBa":
+      content[cnt]["seq"]["bioStart"] += offset
+      content[cnt]["seq"]["bioEnd"] += offset
+      cnt += 1
+    else:
+      offset += len(component[i])
+      if i > 0:
+        offset += intermediat
   header = extend(user_part, model_param)
   print component
   dna_sequence = get_new_part_sequence(component, rule)

@@ -17,7 +17,7 @@ import base64
 import hashlib
 import json
 import string
-#import make_graph
+import extended_sbol
 
 logging = mlog.logging
 
@@ -163,6 +163,13 @@ class apis():
     return plasmid.plasmid_sbol(self.db, json.loads(message['data']), rule)
   def loadSBOL(self,message):    
     return group.dump_sbol(json.loads(message['data']), self.db)
+  def get_extended_sbol(self, message):
+    if message.has_key("rule"):
+      rule = message["rule"]
+    else:
+      rule = "RFC10"
+    return extended_sbol.get_extended_sbol(self.db, message["part_id"],\
+        rule)
 
 def handle_websocket(ws, db):
   logging.info("start handling websocket...")
