@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ##
 # @file Simulate_Class.py
-# @Synopsis  calculate Simulation data
+# @brief  calculate Simulation data
 # @author Jianhong Li
 # @version 1.0
 # @date 2013-09-24
@@ -53,9 +53,9 @@ class DNA_Simulate:
     IndConst    = None
     # --------------------------------------------------------------------------
     ##
-    # @brief  Set data in class
+    # @synopsis  Set data in class
     #
-    # @param ty type of data(constitutive, positive or negative)
+    # @param ty           type of data(constitutive, positive or negative)
     # @param copynumber   copy number of corresponding plasmid of component
     # @param tspromoter   TSPromoter of corresponding group of component
     # @param leakagerate  Leakage Rate of corresponding group of component
