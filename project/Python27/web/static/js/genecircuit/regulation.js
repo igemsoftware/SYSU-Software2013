@@ -277,10 +277,16 @@ $().ready(function() {
 
   // load file list
   $("#myfile").click(function() {
-    ws.send(JSON.stringify({
-      'request': 'getUserFileList'
-    }));
+    // ws.send(JSON.stringify({ 
+      // 'request': 'getUserFileList' 
+    // })); 
+		window.location.pathname = "/file_manager";
   });
+
+	$("#create-part").click(function() {
+		window.location.pathname = "/createnewpart";
+	});
+
 
   // save file
   $("#save").click(function() {
@@ -299,14 +305,11 @@ $().ready(function() {
         }
       }, 1000);
     } else {
-			// var saveData = JSON.stringify(canvasToSaveData()); 
-			var saveData = getDataCollection();
-			saveData.fileName = filename;
-			saveData.fileType = 'genecircuit';
+			var saveData = getDataCollection(); 
 
 			ws.send(JSON.stringify({
 					'request': 'saveUserData',
-					'data': saveData,
+					'data': JSON.stringify(saveData),
 					'fileName': filename,
 					'fileType': 'genecircuit'
 			}));
@@ -324,77 +327,6 @@ $().ready(function() {
     });
 
     E.use('slider', function() {
-      // Slider 1
-      //   var slider1 = new E.ui.Slider('#slider-1', {
-      //     min: 0,
-      //     max: 10,
-      //     value: 5,
-      //     axis: 'x',
-      //     size: '198px'
-      //   });
-
-      //   var demoText1 = E('#slider-text-1');
-      //   slider1.on('slide', function(e) {
-      //     demoText1.text(this.value / 10);
-      //   });
-
-      //   demoText1.on('click', function() {
-      //     slider1.setValue(5);
-      //   });
-
-      //   // Slider 2
-      //   var slider2 = new E.ui.Slider('#slider-2', {
-      //     min: -1,
-      //     max: 10,
-      //     value: 0,
-      //     axis: 'x',
-      //     size: '198px'
-      //   });
-
-      //   var demoText2 = E('#slider-text-2');
-      //   slider2.on('slide', function(e) {
-      //     demoText2.text(this.value);
-      //   });
-
-      //   demoText2.on('click', function() {
-      //     slider2.setValue(0);
-      //   });
-
-      //   // Slider 3
-      //   var slider3 = new E.ui.Slider('#slider-3', {
-      //     min: -10,
-      //     max: 10,
-      //     value: 0.5,
-      //     axis: 'x',
-      //     size: '198px'
-      //   });
-
-      //   var demoText3 = E('#slider-text-3');
-      //   slider3.on('slide', function(e) {
-      //     demoText3.text(this.value);
-      //   });
-
-      //   demoText3.on('click', function() {
-      //     slider3.setValue(0.5);
-      //   });
-
-      //   // Slider 4
-      //   var slider4 = new E.ui.Slider('#slider-4', {
-      //     min: -10,
-      //     max: 10,
-      //     value: 0,
-      //     axis: 'x',
-      //     size: '198px'
-      //   });
-
-      //   var demoText4 = E('#slider-text-4');
-      //   slider4.on('slide', function(e) {
-      //     demoText4.text(this.value);
-      //   });
-
-      //   demoText4.on('click', function() {
-      //     slider4.setValue(0);
-      //   });
     });
 
     $("#component-config").ready(function() {
@@ -516,6 +448,7 @@ $().ready(function() {
 										'gene_circuit':JSON.stringify(genecircuitData),
 										'corepind':{},
 				}));
+				sessionStorage.gene_circuit = JSON.stringify(genecircuitData);
 				init(genecircuitData);
 			} else if (message.request == "Simulate") {
         var raw_data = message.result.data;
@@ -576,21 +509,11 @@ $().ready(function() {
    *  Websocket onopen
    */
   ws.onopen = function() {
-    // get directory
-    // ws.send(JSON.stringify({ 
-      // 'request': 'getDirList', 
-      // 'dir': 'web\\biobrick\\Protein coding sequences' 
-    // })); 
-		
     // get username
     ws.send(JSON.stringify({
       'request': 'getLoginedUserName'
     }));
 
-		// ws.send(JSON.stringify({  
-			// 'request': 'getIndexSave',  
-		// }));
-    //var regulationData = sessionStorage.regulation;
     var regulationData = { 
       "part": [ 
 			{ "id"  : "1", 
@@ -655,47 +578,32 @@ $().ready(function() {
 		}; 
      // console.log(regulationData); 
 		 
-		if(sessionStorage.regulation) {
+		if(sessionStorage.gene_circuit && sessionStorage.gene_circuit != 'undefined') {
+			console.log('gene_circuit', sessionStorage.gene_circuit);
+			genecircuitData = eval('(' + sessionStorage.gene_circuit + ')');    
+			ws.send(JSON.stringify({'request'     : 'Simulate',    
+									'isStochastic': false,    
+									'gene_circuit':JSON.stringify(genecircuitData),    
+									'corepind':{},    
+			}));    
+			
+			// ws.send(JSON.stringify({    
+				// 'request': 'getGroup',    
+				// // 'data': regulationData,     
+				// 'data': eval('(' + sessionStorage.regulation + ')'),    
+			// }));    
+			init(genecircuitData);
+		} else if(sessionStorage.regulation) {
 			ws.send(JSON.stringify({
 				'request': 'getGroup',
-				// 'data': regulationData, 
 				'data': eval('(' + sessionStorage.regulation + ')'),
 			}));
 		} else {
 			ws.send(JSON.stringify({
 				'request': 'getGroup',
 				'data': regulationData, 
-				// 'data': eval('(' + sessionStorage.regulation + ')'), 
 			}));
-		
 		}
-
-		//ws.send(JSON.stringify({     
-			//'request': 'changeRBS',     
-		//}));     
-		// console.log('sessionStorage', sessionStorage); 
-
-		// ws.send(JSON.stringify({ 
-			// 'request': 'getIndexSave', 
-		// })); 
-
-		// ws.send(JSON.stringify({ 
-			// 'request': 'updateGeneCircuit', 
-		// })); 
-//  
-		// ws.send(JSON.stringify({ 
-			// 'request': 'getGroup', 
-		// })); 
-//  
-		// ws.send(JSON.stringify({ 
-			// 'request': 'getPlasmidSbol', 
-		// })); 
-//  
-//  
-		// ws.send(JSON.stringify({ 
-			// 'request': 'loadSBOL', 
-		// })); 
-
 
   }
 
@@ -715,35 +623,12 @@ $().ready(function() {
     historyStack.redo();
   });
 
+	$('#index').click(function(ev) {
+		sessionStorage.gene_circuit = undefined;
+		window.location.pathname = "/index";
+	});
+
 	console.log("aa", sessionStorage);
 
 	// a_why_end 
-
-
-  // // Create graphiti application 
-  // app = new g.Application(); 
-//  
-  // $('#cmd_undo').click(function(ev) { 
-    // app.undo(); 
-  // }); 
-//  
-  // $('#cmd_redo').click(function(ev) { 
-    // app.redo(); 
-  // }); 
-//  
-  // $('#cmd_zoom_in').click(function(ev) { 
-    // app.zoom(ev.clientX, ev.clientY, 0.9); 
-  // }); 
-//  
-  // $('#cmd_zoom_out').click(function(ev) { 
-    // app.zoom(ev.clientX, ev.clientY, 1.1); 
-  // }); 
-//  
-  // $('#cmd_zoom_reset').click(function(ev) { 
-    // app.zoomReset(); 
-  // }); 
-//  
-  // $('#cmd_snap_to_grid').click(function(ev) { 
-    // app.toggleSnapToGrid(); 
-  // }); 
 });
