@@ -1,11 +1,15 @@
 #igem sysu
 iGEM-SOFTWARE-2013
 ==================
-This is the project of igem 2013 by SYSU-Software.Not finish yet..
+This is the project of igem 2013 by SYSU-Software.
 
-This project can be run in windows7 32bit and 64bit
+## Introduction
+Accurate simulation and gene circuit design are essential but difficult parts in synthetic biology.Here, we designed CAST to cover the workflow from beginning to end, users can focus on function design and the gene circuit would be automatically designed. Furthermore, we developed a new simulation model that work with standard dynamic characteristic and verified by wetlab experiments. Moreover, we build an expandable database that users can contribute their own dynamic information which would lead to more accurate and sufficient dynamic information of all the Biobricks. Finally, our software is designed as an easy deployed server so that it can be used on personal purpose or shared by a whole lab or institution. 
 
-这是一个合成生物学方面的自动化设计系统，从生物砖到质粒到回路，以及实验模拟等，功能齐全。
+## Supported OS
+* Windows 7
+* Mac OS X
+* Linux
 
 前端使用了javascript实现，后台运用python的flask框架以及websocket，数据库则使用sqlite。另外还自带了cefsharp浏览器（基于chromium内核，用c#语言编写）。
 
