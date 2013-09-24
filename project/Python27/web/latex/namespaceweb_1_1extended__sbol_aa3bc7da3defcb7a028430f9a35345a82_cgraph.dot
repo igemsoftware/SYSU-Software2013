@@ -1,0 +1,19 @@
+digraph "web.extended_sbol.get_extended_sbol"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="web.extended_sbol.get\l_extended_sbol",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="web.group.find_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1group.html#a2b259265e97817bd2980fdf5eab3673a"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="web.component_union.union",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1component__union.html#a618bdcac0531c3cf9509edaed5f5185e"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="web.extended_sbol.extend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1extended__sbol.html#aeb20270634402fd5a2a4354c36d8d9ad"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="web.new_sequence.get\l_new_part_sequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1new__sequence.html#a30bc3808f9e697750a7ea56e31ae9c79"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="web.new_sequence.find_file",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1new__sequence.html#a8e5d63273e46f10036e2134a18ca1317"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="web.component_union.formatter_v11",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1component__union.html#a3aef7f09818a440458fc00d8538b2e9f"];
+}

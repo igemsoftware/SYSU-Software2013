@@ -1,0 +1,9 @@
+digraph "web.xmlParse.get_allfiledirs"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="web.xmlParse.get_allfiledirs",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="web.xmlParse.getAllInPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceweb_1_1xml_parse.html#a3969e676a453939509762befc13140e1",tooltip="list all the files and dirs of the path "];
+}

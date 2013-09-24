@@ -83,12 +83,8 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
             timeaxis[t] = t * dt
             if t == 0: continue
             for n in range(len(dictkey)):
-                if isStochastic:
-                    mRNAdict[dictkey[n]].Compute_Concen(t, True)
-                    Prodict [dictkey[n]].Compute_Concen(t, True)
-                else:
-                    mRNAdict[dictkey[n]].Compute_Concen(t, False)
-                    Prodict [dictkey[n]].Compute_Concen(t, False)
+                mRNAdict[dictkey[n]].Compute_Concen(t, isStochastic)
+                Prodict [dictkey[n]].Compute_Concen(t, isStochastic)
         ret = {}
         data = {}
         ret['dt'] = dt
@@ -102,11 +98,10 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         return ret
     except InvalidParameter:
         return 'Invalid Paramter!'
-    #except IllegalSetting:
-        #return 'Illegal Setting!'
-    #except Exception as e:
-        #print e
-        #return 'Something Unexpected Happened!'
+    except IllegalSetting:
+        return 'Illegal Setting!'
+    except Exception as e:
+        return 'Something Unexpected Happened!'
 
 if __name__ == "__main__":
 
