@@ -382,8 +382,8 @@ function initDrawChart(){
 			},
 			color_factor : 0.3
 		},					
-		width : 847,
-		height : 430,
+		width : 850,
+		height : 410,
 		radius:140		
 	});		
 	if(title!=null)
@@ -736,7 +736,7 @@ function canvasMouseMove(obj,e)
 		sessionStorage._offsetAngle=offsetang;
 		chart.push("offset_angle",offsetang);
 		chart.push("animation","false");
-		chart.resize(847,430);
+		chart.resize(850,410);
 		var ang=270-offsetang;
 		if(ang<0)
 		{
