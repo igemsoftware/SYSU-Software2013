@@ -1,6 +1,30 @@
+"""
+The MIT License
+
+Copyright (c) 2013 iGEM - SYSU Software Team. All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+"""
+
 ##
 # @file Simulate_Class.py
-# @Synopsis  calculate Simulation data
+# @brief  calculate Simulation data
 # @author Jianhong Li
 # @version 1.0
 # @date 2013-09-24
@@ -13,10 +37,10 @@ class IllegalSetting(Exception): pass
 
 # --------------------------------------------------------------------------
 ##
-# @Synopsis  calculating DNA simulation result
+# @brief  calculating DNA simulation result
 # ----------------------------------------------------------------------------
 class DNA_Simulate:
-    Type = ''
+    Type = ""
     CopyNumber  = None
     TSPromoter  = None
     LeakageRate = None
@@ -29,15 +53,15 @@ class DNA_Simulate:
     IndConst    = None
     # --------------------------------------------------------------------------
     ##
-    # @Synopsis  Set data in class
+    # @brief  Set data in class
     #
-    # @Param ty type of data(constitutive, positive or negative)
-    # @Param copynumber copy number of corresponding plasmid of component
-    # @Param tspromoter TSPromoter of corresponding group of component
-    # @Param leakagerate Leakage Rate of corresponding group of component
-    # @Param tere terminator efficiency of corresponding group of component
+    # @param ty           type of data(constitutive, positive or negative)
+    # @param copynumber   copy number of corresponding plasmid of component
+    # @param tspromoter   TSPromoter of corresponding group of component
+    # @param leakagerate  Leakage Rate of corresponding group of component
+    # @param tere         terminator efficiency of corresponding group of component
     #
-    # @Returns   return nothing
+    # @returns   return nothing
     #
     # --------------------------------------------------------------------------
     def SetData(self, ty, copynumber, tspromoter, leakagerate, tere):
@@ -50,6 +74,17 @@ class DNA_Simulate:
         self.TSPromoter  = tspromoter
         self.LeakageRate = leakagerate
         self.TerE        = tere
+    # --------------------------------------------------------------------------
+    ##
+    # @brief  set activator in class
+    #
+    # @param activator   name of activator
+    # @param k           K value of activator
+    # @param hillcoeff   hill coefficiency of activator
+    #
+    # @returns   return nothing
+    #
+    # --------------------------------------------------------------------------
     def SetActivator(self, activator, k, hillcoeff):
         if self.Type != 'Positive':
             raise IllegalSetting
@@ -62,6 +97,17 @@ class DNA_Simulate:
             self.Repressor = None
         else:
             raise IllegalSetting
+    # --------------------------------------------------------------------------
+    ##
+    # @brief  set repressor in class
+    #
+    # @param repressor   name of repressor
+    # @param k           K value of repressor
+    # @param hillcoeff   hill coefficiency of repressor
+    #
+    # @returns   return nothing
+    #
+    # --------------------------------------------------------------------------
     def SetRepressor(self, repressor, k, hillcoeff):
         if self.Type != 'Negative':
             raise IllegalSetting
@@ -74,6 +120,17 @@ class DNA_Simulate:
             self.Activator = None
         else:
             raise IllegalSetting
+    # --------------------------------------------------------------------------
+    ##
+    # @brief  set corepressor in class
+    #
+    # @param corepressor     name of corepressor
+    # @param k               K value of corepressor
+    # @param hillcoeff       hill coefficiency of corepressor
+    #
+    # @returns   return nothing
+    #
+    # --------------------------------------------------------------------------
     def SetCorepressor(self, corepressor, k, hillcoeff):
         if self.Activator == None and self.Repressor == None:
             raise IllegalSetting
@@ -81,6 +138,17 @@ class DNA_Simulate:
             raise InvalidParameter
         self.CorepConst = pow(corepressor / k, hillcoeff)
         self.IndConst   = None
+    # --------------------------------------------------------------------------
+    ##
+    # @brief  set inducer in class
+    #
+    # @param inducer     name of inducer
+    # @param k           K value of inducer
+    # @param hillcoeff   hill coefficiency of inducer
+    #
+    # @returns   return nothing
+    #
+    # --------------------------------------------------------------------------
     def SetInducer(self, inducer, k, hillcoeff):
         if self.Activator == None and self.Repressor == None:
             raise IllegalSetting

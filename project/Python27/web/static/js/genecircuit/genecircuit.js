@@ -117,7 +117,7 @@ var protein = {
 			orientation: "vertical",
 			range: "min",
 			min: 0,
-			max: 100,
+			max: 1000,
 			step: 0.0001,
 			value: 60,
 			stop: function(event, ui) {
@@ -675,6 +675,7 @@ var randomValue = function() {
 	data.gene_circuit = dataCollection;
 	data.detail = detail;
 
+	console.log("detail dataCollection", {'detail':detail, 'gene_circuit':dataCollection});
 
 	ws.send(JSON.stringify({
 		'request': 'updateGeneCircuit',
