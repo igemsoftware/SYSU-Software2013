@@ -1,6 +1,4 @@
 ##
-
-##
 # @file Simulate_Class.py
 # @brief  calculate Simulation data
 # @author Jianhong Li

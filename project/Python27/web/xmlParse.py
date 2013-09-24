@@ -1,15 +1,41 @@
+##
+# @file xmlParse.py
+# @brief  tools to parse the xml or the os paths
+# @author Jiexin guo
+# @version 1.0
+# @date 2013-07-28
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
 import xml.dom.minidom 
 import xmltodict
 import json
 import sys, os, stat
+# --------------------------------------------------------------------------
+##
+# @brief  get a file's path by its name
 #
+# @param rootdir    the dir to start searching
+# @param key        the file's name to be find 
+#
+# @returns   return the path of file
+#
+# --------------------------------------------------------------------------
 def findFile(rootdir="web\\biobrick\\",key="BBa_J61008"):
 	for root,dirs,files in os.walk(rootdir):
 		for file in files:
 			a,b=os.path.splitext(file)
 			if a==key:
 				return os.path.join(root,file)
-
+# --------------------------------------------------------------------------
+##
+# @brief  list all the files and dirs of the path
+#
+# @param path       the path to be listed
+# @param res        the res dict to save the last step's result
+#
+# @returns   return res that include all the information about the path
+#
+# --------------------------------------------------------------------------
 def list_dir(path, res):
     '''
         res = {'dir':'root', 'child_dirs' : [] , 'files' : []}
