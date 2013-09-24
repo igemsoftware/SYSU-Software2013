@@ -1,3 +1,13 @@
+##
+# @file Simulate_Function.py
+# @brief Simulate the curve of protein concen in a time period
+# @author Jianhong Li
+# @version 1.0
+# @date 2013-09-02
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+# 
+
 from math import floor
 from math import ceil
 from Simulate_Class import InvalidParameter
@@ -6,6 +16,20 @@ from Simulate_Class import DNA_Simulate
 from Simulate_Class import mRNA_Simulate
 from Simulate_Class import Protein_Simulate
 
+# --------------------------------------------------------------------------
+##
+# @brief Simulate the curve of protein concen in a time period
+#
+# @param isStochastic  whether to add a stochastic optimization
+# @param circuit       the gene circuit to simulate
+# @param corepind      the time to add corepressor and inducer
+# @param database      database instance
+# @param time          time period to simulate
+# @param dt            a time delta for two points in the curve
+#
+# @returns             simulation result
+#
+# --------------------------------------------------------------------------
 def Simulate(isStochastic, circuit, corepind, database, time, dt):
     try:
         cnt = 0
@@ -19,6 +43,7 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         Prodict  = {}
         dictkey  = []
         pro_name = []
+        DegRate = 0.018
         for i in circuit["proteins"]:
           if i not in corepind:
             corepind[i] = {"time": time}
@@ -45,8 +70,8 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
                 DNAdict [proid].SetData(ty = group['type'], copynumber = circuit['proteins'][proid]['copy'],
                                         tspromoter = promoter['MPPromoter'], leakagerate = promoter['LeakageRate'],
                                         tere = terminator['Efficiency'])
-                mRNAdict[proid].SetData(transle = rbs['MPRBS'], degrate = 0.00288)
-                Prodict [proid].SetData(degrate = 0.00288)
+                mRNAdict[proid].SetData(transle = rbs['MPRBS'], degrate = DegRate)
+                Prodict [proid].SetData(degrate = DegRate)
                 mRNAdict[proid].IniConcen(timelen, dt, ini = 0)
                 Prodict [proid].IniConcen(timelen, dt, ini = 0)
                 mRNAdict[proid].Connect(DNAdict [proid])

@@ -2,6 +2,15 @@ import re
 import sys
 import json
 
+# --------------------------------------------------------------------------
+##
+# @brief format SBOL to json
+#
+# @param content  SBOL format string
+#
+# @returns   json corresponding to SBOL
+#
+# --------------------------------------------------------------------------
 def format_to_json(content):
   content = re.sub("(\w*)\s*:\s*([^\[][^\n]*)\n",r'"\1":"\2",\n',content)
   content = re.sub("(\w*)\s*:\s*\[\n",r'"\1":[\n',content)

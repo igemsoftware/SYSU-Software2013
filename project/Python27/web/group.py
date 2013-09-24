@@ -326,7 +326,7 @@ def dump_group(network, database):
     # get name and type of group member
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
-      grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
+      grp.append({"name": elem, "type": component_union.get_part_type(xml_file)})
     for idx in range(1, len(grp) - 1, 2):
       grp[idx]["type"] = "RBS"
     grp[0]["type"] = "Promoter"
