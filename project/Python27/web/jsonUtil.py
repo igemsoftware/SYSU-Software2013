@@ -36,13 +36,6 @@ def turnSelectionResultToJson(description=[],result=[]):
         dict.clear()
     return json.dumps(obj)
 
-'''
-{u'desp': u'as you know', u'type': u'pre', u'id': 123, u'name': u'test1'} 
-to 
-type = 'pre'  and desp = 'as you know'  and id = '123'  and name = 'test1'
-
-the kind of dictionery to string that of sql "where" parse
-'''
 # --------------------------------------------------------------------------
 ##
 # @brief			turn the dictionery to the format that can be use by sqlite3,for example: {u'desp': u'as you know', u'type': u'pre', u'id': 123, u'name': u'test1'} to "type = 'pre'  and desp = 'as you know'  and id = '123'  and name = 'test1'
