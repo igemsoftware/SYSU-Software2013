@@ -96,7 +96,8 @@ class SqliteDatabase:
 		self.__cx = sqlite3.connect(self.URL)
 		self.logger.debug('connect to database: %s'%self.URL)
 		self.__cursor = self.__cx.cursor()	
-		
+	
+	
 	"""
 		return a json that after doing the selection of all the table(of the tableName)
 		@author: Jiexin Guo
@@ -460,7 +461,12 @@ class SqliteDatabase:
 			if item["Number"] not in activator_list:
 				activator_list.append(item["Number"])
 				return item
-
+	def getUserPartByLoginuser(self):
+		excuteString = "SELECT part_id,part_name AS Name,part_type as Type,part_author as Author FROM userPart WHERE uploadUser = '%s'" % self.getUserNameById(self.userId)
+		self.__cursor.execute(excuteString)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
 	def getUserPart(self, part_id):
 		excuteString = "SELECT * FROM userPart WHERE part_id = '%s'" % part_id
 		self.__cursor.execute(excuteString)
