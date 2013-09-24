@@ -32,8 +32,8 @@ class SqliteDatabase:
 		self.__cursor.execute(sql_cmd)
 		self.__cx.commit()		
 		return 'add promoter success!'
-	def addAUserPart(self,part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence):
-		sql_cmd='INSERT INTO userPart (part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,uploadUser) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s")'%(part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,self.getUserNameById(self.userId))
+	def addAUserPart(self,part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,Number,parts):
+		sql_cmd="INSERT INTO userPart (part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,uploadUser,Number,parts) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,self.getUserNameById(self.userId),Number,parts)
 		self.__cursor.execute(sql_cmd)
 		self.__cx.commit()	
 		return 'add user part success!'

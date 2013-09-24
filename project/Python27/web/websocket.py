@@ -50,7 +50,7 @@ class apis():
   def addARepressor(self,message):
     return self.db.addARepressor(message['name'],message['number'],string.atoi(message['HillCoeff1']),string.atof(message['K1']),string.atof(message['K2']))
   def addAUserPart(self,message):
-    return self.db.addAUserPart(part_id=message['part_id'],part_name=message['part_name'],part_short_name=message['part_short_name'],part_short_desc=message['part_short_desc'],part_type=message['part_type'],part_nickname=message['part_nickname'],part_author=message['part_author'],sequence=message['sequence'])    
+    return self.db.addAUserPart(part_id=message['part_id'],part_name=message['part_name'],part_short_name=message['part_short_name'],part_short_desc=message['part_short_desc'],part_type=message['part_type'],part_nickname=message['part_nickname'],part_author=message['part_author'],sequence=message['sequence'],Number=message['Number'],parts=message['parts'])    
   def getRememberMeTicket(self,message):
     user.userSetRememberMe(self.db)
     return user.getRememberMeTicket(self.db,user.getLoginedUserName(self.db))
