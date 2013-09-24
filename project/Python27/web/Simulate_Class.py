@@ -1,9 +1,20 @@
+##
+# @file Simulate_Class.py
+# @Synopsis  calculate Simulation data
+# @author Jianhong Li
+# @version 1.0
+# @date 2013-09-24
+
 from math import ceil
 from Simulate_Poisson import Poissrnd
 
 class InvalidParameter(Exception): pass
 class IllegalSetting(Exception): pass
 
+# --------------------------------------------------------------------------
+##
+# @Synopsis  calculating DNA simulation result
+# ----------------------------------------------------------------------------
 class DNA_Simulate:
     Type = ''
     CopyNumber  = None
@@ -16,6 +27,19 @@ class DNA_Simulate:
     K           = None
     CorepConst  = None
     IndConst    = None
+    # --------------------------------------------------------------------------
+    ##
+    # @Synopsis  Set data in class
+    #
+    # @Param ty type of data(constitutive, positive or negative)
+    # @Param copynumber copy number of corresponding plasmid of component
+    # @Param tspromoter TSPromoter of corresponding group of component
+    # @Param leakagerate Leakage Rate of corresponding group of component
+    # @Param tere terminator efficiency of corresponding group of component
+    #
+    # @Returns   return nothing
+    #
+    # --------------------------------------------------------------------------
     def SetData(self, ty, copynumber, tspromoter, leakagerate, tere):
         if ty not in ['Constitutive', 'Positive', 'Negative']:
             raise InvalidParameter
