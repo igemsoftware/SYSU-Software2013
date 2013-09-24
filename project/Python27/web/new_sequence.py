@@ -27,4 +27,4 @@ def get_new_part_sequence(component, rule = "RFC10"):
   return dna_sequence
 
 if __name__ == "__main__":
-  print get_new_part_sequence(["BBa_B0011", "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"])
+  print get_new_part_sequence([u'BBa_B0011', u'ACGT'])
