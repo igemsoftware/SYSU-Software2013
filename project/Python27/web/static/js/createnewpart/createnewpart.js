@@ -112,6 +112,8 @@ function acButtonOnclick(obj)
 	if(step==0)
 	{
 		step0();
+		var sendData=JSON.stringify(parts);
+		ws.send(JSON.stringify({'request': 'getNewPartSequence','data':sendData}));
 		return;
 	}else if(step==1)
 	{	
@@ -155,14 +157,12 @@ function acButtonOnclick(obj)
 			alert('You have not select the type!');
 			return;
 		}
-		step+=1;
+		step+=1;		
 		return;
 	}else if(step==2)
 	{
 		step+=1;	
-		$("#step4").css('display','block');
-		var sendData=JSON.stringify(parts);
-		console.log(sendData);
+		$("#step4").css('display','block');		
 		var type=document.getElementById('typeSelect').value;
 		if(type=='Regulatory')
 		{
@@ -201,7 +201,6 @@ function acButtonOnclick(obj)
 		if(standard.length==0)
 			standard="RFC 10";
 		sendData=JSON.stringify({'seq':seqData,'standard':standard});
-		console.log(sendData);
 		sendYourdata();
 	}
 }
@@ -209,8 +208,6 @@ function sendYourdata()
 {
 	basic=eval('(' + sessionStorage.basicInfomation + ')');
 	parameters=eval('(' + sessionStorage.ModelingParameters + ')');
-	console.log(basic);
-	console.log(parameters);
 	var type=basic.type;
 // 	 Object {author: "asda"
 // name: "asd"
@@ -241,7 +238,8 @@ function sendYourdata()
 }
 function standardChange(obj)
 {
-	//ws.send(JSON.stringify({'request': 'loginOut'}));
+	var sendData=JSON.stringify(parts);
+	ws.send(JSON.stringify({'request': 'getNewPartSequence','data':sendData,'rule':$('#standardSelect').val()}));
 }
 function getPlasmidBackbone()
 {
@@ -477,7 +475,6 @@ $().ready(function() {
                     if (proteinList.isInit) {
                         proteinList.parseSubTree(message.result);
                     } else {
-						console.log(message.result);
 						var regS = new RegExp("/","g");
 						for (var i=0;i<message.result.files.length;i++)
 						{							
@@ -534,12 +531,9 @@ $().ready(function() {
                 window.location = "..";
             } else if (message.request == "getUserFileList") {
                 
-            } else if (message.request == "loadUserFile") {
-                  //repaintCanvas(message.result);
-            } else if (message.request == 'indexSaveToGeneCircuit') {
-                console.log(message.result);
-            } else if (message.request == 'saveUserData') {
-                console.log(message.result);
+            } else if (message.request == 'getNewPartSequence')
+            {
+            	$('#finalSeq').text(message.result);
             }
         };
     }
