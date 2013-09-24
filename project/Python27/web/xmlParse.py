@@ -1,6 +1,5 @@
 ##
 # @file xmlParse.py
-# @package xmlParse
 # @brief  tools to parse the xml or the os paths
 # @author Jiexin guo
 # @version 1.0
