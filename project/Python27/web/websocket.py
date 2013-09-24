@@ -3,6 +3,7 @@ import json
 from database import SqliteDatabase
 import component_union
 from sbol2json import format_to_json
+from new_sequence import get_new_part_sequence
 from sharedFile import sharedFiles
 import Simulate_Function
 import user
@@ -40,6 +41,10 @@ class apis():
   def getuserPartByType(self,message):
     shared=sharedFiles(self.db)
     return shared.getSharedTypePart(message['type'])
+  def addAplasmid_backbone(self,message):
+    return self.db.addAplasmidBackbone(message['name'],message['number'],string.atoi(message['CopyNumber']))
+  def addATerminator(self,message):
+    return self.db.addATerminator(message['name'],message['number'],string.atof(message['Efficiency']))
   def addAPromoter(self,message):
     return self.db.addAPromoter(name=message['name'],number=message['number'],MPPromoter=string.atof(message['MPPromoter']),LeakageRate=string.atof(message['LeakageRate']),K1=string.atof(message['K1']),Type=message['Type'],Repressor=message['Repressor'],Source=message['Source'],Activator=message['Activator'],PoPS=string.atof(message['PoPS']))
   def addARBS(self,message):
@@ -49,7 +54,7 @@ class apis():
   def addARepressor(self,message):
     return self.db.addARepressor(message['name'],message['number'],string.atoi(message['HillCoeff1']),string.atof(message['K1']),string.atof(message['K2']))
   def addAUserPart(self,message):
-    return self.db.addAUserPart(part_id=message['part_id'],part_name=message['part_name'],part_short_name=message['part_short_name'],part_short_desc=message['part_short_desc'],part_type=message['part_type'],part_nickname=message['part_nickname'],part_author=message['part_author'],sequence=message['sequence'])    
+    return self.db.addAUserPart(part_id=message['part_id'],part_name=message['part_name'],part_short_name=message['part_short_name'],part_short_desc=message['part_short_desc'],part_type=message['part_type'],part_nickname=message['part_nickname'],part_author=message['part_author'],sequence=message['sequence'],Number=message['Number'],parts=message['parts'])    
   def getRememberMeTicket(self,message):
     user.userSetRememberMe(self.db)
     return user.getRememberMeTicket(self.db,user.getLoginedUserName(self.db))
@@ -141,6 +146,12 @@ class apis():
     return ret
   def getUserQuestion(self,message):
     return user.getUserQuestion(self.db,message['userName']) 
+  def getNewPartSequence(self,message):
+    if message.has_key("rule"):
+      rule = message["rule"]
+    else:
+      rule = "RFC10"
+    return get_new_part_sequence(json.loads(message['data']), rule)
   def forgetPasswordAndReset(self,message):
     self.db.rememberUser(message['userName'],message['password'])
     return user.resetUserPassword(self.db,message['userName'],message['answer'],message['password'])

@@ -31,7 +31,7 @@ function addSeqPartButtonOnclick(obj)
 				name='seq'+(userDefineSize+1);
 				item={};
 				item[name]=seq;
-				parts.push(item);
+				parts.push(seq);
 				biobrickDivAddBiobrick(name);
 				userDefineSize++;
 				document.getElementById('seqInput').value='';
@@ -67,7 +67,7 @@ function step0()
 				name='seq'+userDefineSize;
 				item={};
 				item[name]=seq;
-				parts.push(item);
+				parts.push(seq);
 				biobrickDivAddBiobrick(name);
 				userDefineSize++;				
 			}else{
@@ -112,6 +112,8 @@ function acButtonOnclick(obj)
 	if(step==0)
 	{
 		step0();
+		var sendData=JSON.stringify(parts);
+		ws.send(JSON.stringify({'request': 'getNewPartSequence','data':sendData}));
 		return;
 	}else if(step==1)
 	{	
@@ -120,7 +122,7 @@ function acButtonOnclick(obj)
 			{return;}
 		sessionStorage.basicInfomation=JSON.stringify(ret);
 		var type=document.getElementById('typeSelect').value;
-		if(type=='Regulatory')
+		if(type=='promoter')
 		{
 			$("#step3").css('display','inline-block');
 			$('#PromoterForm').show();	
@@ -147,7 +149,7 @@ function acButtonOnclick(obj)
 		{
 			$('#step3').css('display','inline-block');
 			$('#Inducer').show();
-		}else if (type=='Plasmid backbone')
+		}else if (type=='plasmid_backbone')
 		{
 			$('#step3').css('display','inline-block');
 			$('#plasmid_backboneForm').show();
@@ -155,16 +157,14 @@ function acButtonOnclick(obj)
 			alert('You have not select the type!');
 			return;
 		}
-		step+=1;
+		step+=1;		
 		return;
 	}else if(step==2)
 	{
 		step+=1;	
-		$("#step4").css('display','block');
-		var sendData=JSON.stringify(parts);
-		console.log(sendData);
+		$("#step4").css('display','block');		
 		var type=document.getElementById('typeSelect').value;
-		if(type=='Regulatory')
+		if(type=='promoter')
 		{
 			sessionStorage.ModelingParameters=JSON.stringify(getPromoter());	
 		}else if(type=='RBS')
@@ -182,7 +182,7 @@ function acButtonOnclick(obj)
 		}else if(type=='Inducer'||type=='Corepressor')
 		{
 			sessionStorage.ModelingParameters=JSON.stringify(getInducer());
-		}else if (type=='Plasmid backbone')
+		}else if (type=='plasmid_backbone')
 		{
 			sessionStorage.ModelingParameters=JSON.stringify(getPlasmidBackbone());
 		}else{
@@ -201,7 +201,6 @@ function acButtonOnclick(obj)
 		if(standard.length==0)
 			standard="RFC 10";
 		sendData=JSON.stringify({'seq':seqData,'standard':standard});
-		console.log(sendData);
 		sendYourdata();
 	}
 }
@@ -209,8 +208,6 @@ function sendYourdata()
 {
 	basic=eval('(' + sessionStorage.basicInfomation + ')');
 	parameters=eval('(' + sessionStorage.ModelingParameters + ')');
-	console.log(basic);
-	console.log(parameters);
 	var type=basic.type;
 // 	 Object {author: "asda"
 // name: "asd"
@@ -220,8 +217,8 @@ function sendYourdata()
 // type: "Inducer"} 
 // Object {Name: "asdas", Number: "sdfsdf", HillCoeff2: "0.125", K2: "0.125"} 
 // 
-	ws.send(JSON.stringify({'request': 'addAUserPart','part_id':parameters.Number,'part_name':basic.name,'part_short_name':basic.shortname,'part_short_desc':basic.shortDesp,'part_type':basic.type,'part_nickname':basic.nickname,'part_author':basic.author,'sequence':$('#finalSeq').val()}));
-		if(type=='Regulatory'){
+	ws.send(JSON.stringify({'request': 'addAUserPart','part_id':parameters.Number,'part_name':basic.name,'part_short_name':basic.shortname,'part_short_desc':basic.shortDesp,'part_type':basic.type,'part_nickname':basic.nickname,'part_author':basic.author,'sequence':$('#finalSeq').val(),'Number':parameters.Number,'parts':JSON.stringify(parts)}));
+		if(type=='promoter'){
 			ws.send(JSON.stringify({'request':'addAPromoter','name':parameters.Name,'number':parameters.Number,'MPPromoter':parameters.MPPromoter,'LeakageRate':parameters.LeakageRate,'K1':parameters.K1,'Type':parameters.Type,'Repressor':parameters.Repressor,'Source':parameters.Source,'Activator':parameters.Activator,'PoPS':parameters.PoPS}));			
 		}else if(type=='RBS'){					 
 			ws.send(JSON.stringify({'request': 'addARBS','name':parameters.Name,'number':parameters.Number,'MPRBS':parameters.MPRBS,'RIPS':parameters.RIPS}));
@@ -229,19 +226,20 @@ function sendYourdata()
 		else if(type=='Coding'){
 
 		}else if(type=='Terminator'){		
-
+			ws.send(JSON.stringify({'request': 'addATerminator','name':parameters.Name,'number':parameters.Number,'Efficiency':parameters.Efficiency}));
 		}else if(type=='Repressor'){
 			ws.send(JSON.stringify({'request': 'addARepressor','name':parameters.Name,'number':parameters.Number,'HillCoeff1':parameters.HillCoeff1,'K2':parameters.K2,'K1':parameters.K1}));
 		}else if(type=='Inducer'||type=='Corepressor')
 		{
 			ws.send(JSON.stringify({'request': 'addAnInducer','name':parameters.Name,'number':parameters.Number,'HillCoeff2':parameters.HillCoeff2,'K2':parameters.K2}));
-		}else if (type=='Plasmid backbone'){	
-
+		}else if (type=='plasmid_backbone'){	
+			ws.send(JSON.stringify({'request': 'addAplasmid_backbone','name':parameters.Name,'number':parameters.Number,'CopyNumber':parameters.CopyNumber}));
 		}
 }
 function standardChange(obj)
 {
-	//ws.send(JSON.stringify({'request': 'loginOut'}));
+	var sendData=JSON.stringify(parts);
+	ws.send(JSON.stringify({'request': 'getNewPartSequence','data':sendData,'rule':$('#standardSelect').val()}));
 }
 function getPlasmidBackbone()
 {
@@ -477,7 +475,6 @@ $().ready(function() {
                     if (proteinList.isInit) {
                         proteinList.parseSubTree(message.result);
                     } else {
-						console.log(message.result);
 						var regS = new RegExp("/","g");
 						for (var i=0;i<message.result.files.length;i++)
 						{							
@@ -534,12 +531,13 @@ $().ready(function() {
                 window.location = "..";
             } else if (message.request == "getUserFileList") {
                 
-            } else if (message.request == "loadUserFile") {
-                  //repaintCanvas(message.result);
-            } else if (message.request == 'indexSaveToGeneCircuit') {
-                console.log(message.result);
-            } else if (message.request == 'saveUserData') {
-                console.log(message.result);
+            } else if (message.request == 'getNewPartSequence')
+            {
+            	$('#finalSeq').text(message.result);
+            } else if (message.request == 'addAUserPart')
+            {
+            	if(message.result=='add user part success!')
+					alert('add user part to database success!');
             }
         };
     }

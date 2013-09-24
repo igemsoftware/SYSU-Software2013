@@ -7,124 +7,7 @@
     <link rel="stylesheet" href="../static/css/navlist.css">
     <script src="../static/js/jquery-1.8.0.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
-    <script>	
-      $(document).ready(function(){
-        if ("WebSocket" in window) {
-          ws = new WebSocket("ws://" + document.domain + ":5000/ws");		  
-          ws.onmessage = function (msg) {
-            var message = JSON.parse(msg.data);
-            var name = message.result.name;
-            if (message.result.result == "deleteUserData succeed")
-              $("tr#"+name).remove();
-			else if(message.request=='getLoginedUserName')
-			{
-				sessionStorage.loginedUserName=message.result;
-			}else if(message.request=='loadUserFile')
-			{
-			  switch (filetype){
-				case 'regulation':
-					sessionStorage.regulationSave=eval('(' + message.result + ')');
-					window.location = "index";
-					break;			
-				case 'genecircuit':
-					sessionStorage.gene_circuit=message.result ;
-					window.location = "genecircuit";
-					break;
-				case 'plasmid':
-					sessionStorage.genecircuitSave=eval('(' + message.result + ')');
-					window.location = "plasmid";
-					break;
-				case 'protocol':
-					sessionStorage.genecircuitSave=eval('(' + message.result + ')');
-					window.location = "protocol";
-					break;
-			  }		 
-			}
-			else if(message.request == "setFileShared")
-			{				
-				$('#mymodal').find('p').text(message.result);
-				$('#mymodal').modal('show');
-			}else if(message.request=="unsharedAFile")
-			{
-				location.reload(); 
-			}else if(message.request=='isExtractCodeRight'){
-				if(message.result==false){
-					alert('Wrong extract code!');
-					return;
-				}else{
-					filetype=sessionStorage.filetype;
-					filename=sessionStorage.filename;
-					switch (filetype){
-										case 'regulation':
-					sessionStorage.regulationSave=eval('(' + message.result + ')');
-					window.location = "index";
-					break;			
-				case 'genecircuit':
-					sessionStorage.gene_circuit=eval('(' + message.result + ')');
-					window.location = "genecircuit";
-					break;
-				case 'plasmid':
-					sessionStorage.genecircuitSave=eval('(' + message.result + ')');
-					window.location = "plasmid";
-					break;
-				case 'protocol':
-					sessionStorage.genecircuitSave=eval('(' + message.result + ')');
-					window.location = "protocol";
-					break;
-			  }		 
-
-				}
-			}
-          };
-        };		
-        // Bind send button to websocket
-        $("button.delete").live("click", function() {
-          filename = this.getAttribute("id");		  
-          ws.send(JSON.stringify({'request': 'deleteUserData', 'name': filename}));
-        });
-		$("button.shared").live("click", function() {
-			filename = this.getAttribute("id");
-		    filetype = $(this).find("p").text();	
-			ws.send(JSON.stringify({'request': 'setFileShared', 'filename': filename,'filetype':filetype}));			
-		});
-		$("button.unshared").live("click", function() {
-			filename = this.getAttribute("id");
-		    filetype = $(this).find("p").text();	
-			ws.send(JSON.stringify({'request': 'unsharedAFile', 'filename': filename,'filetype':filetype}));
-		});
-		$("button.open").live("click", function() {
-		  filename = this.getAttribute("id");
-		  filetype = $(this).find("p").text();
-		  ws.send(JSON.stringify({'request': 'loadUserFile', 'fileName': filename,'fileType':filetype}));
-        });
-		$("button.openshared").live("click", function() {
-		  filename = this.getAttribute("id");
-		  filetype = $(this).find("p").text();
-		  sessionStorage.filename=filename;
-		  sessionStorage.filetype=filetype;
-		  if(this.getAttribute('name')==sessionStorage.loginedUserName)
-		  {
-			  ws.send(JSON.stringify({'request': 'loadUserFile', 'fileName': filename,'fileType':filetype}));			
-		  }else{
-		  var str=prompt("Please input the file extract code:","");
-			  if(str==null||str=='')
-			  {
-				  return;
-			  }
-			  ws.send(JSON.stringify({'request': 'isExtractCodeRight', 'filename': filename,'filetype':filetype,'userName':this.getAttribute("name"),'code':str}));	
-		  }
-        });
-		ws.onopen=function(){
-			ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-		};
-		
-        // Cleanly close websocket when unload window
-        window.onbeforeunload = function() {
-          ws.onclose = function () {}; // disable onclose handler first
-          ws.close();
-        };
-      });
-    </script>
+    <script src='../static/js/filemanager.min.js'></script>
   </head>
   <body>    
     <div id="mymodal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
@@ -138,9 +21,34 @@
       <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true" onClick="location.reload();">关闭</button>
       </div>
-    </div>
-    <h1>File Manager</h1>
-    <br>
+    </div>    
+    <div class="span3">
+    <ul class="nav nav-list bs-docs-sidenav affix" id="navlist">
+      <li class="active">
+        <a href="#yourfilelist" data-toggle="tab">
+          <i class="icon-chevron-right"></i>
+          Your File list
+        </a>
+      </li>
+      <li>
+        <a href="#sharefilelist" data-toggle="tab">
+          <i class="icon-chevron-right"></i>
+          Shared File List
+        </a>
+      </li>  
+      <li>
+        <a href="#yourpartlist" data-toggle="tab">
+          <i class="icon-chevron-right"></i>
+          Your Part List
+        </a>
+      </li>      
+    </ul>
+    <button type="button" class="btn btn-default btn-lg" onClick="window.history.back(-1);">
+ 		<span class="icon-arrow-left"></span> Back
+	</button>  
+  </div>
+    <div class="span9 tab-content">
+    <div class="tab-pane active" id="yourfilelist">
     <h2>Your File List</h2>
     <table class="table table-hover">
       <thead>
@@ -169,8 +77,10 @@
         {% endfor %}
       </tbody>
       </table>
-      <h2>Shared File List</h2>
-      <table class="table table-hover">
+    </div>
+    <div class="tab-pane"  id="sharefilelist">
+    <h2>Shared File List</h2>
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>Username</th>
@@ -187,16 +97,35 @@
           <th>{{ item.fileType }}</th>
           <th>
               <button id="{{ item.fileName }}" class="btn openshared" name="{{ item.name }}">open shared file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
-            &nbsp
-            <!--<button id="{{ item.fileName }}" class="btn delete">delete<i class="icon-trash"></i></button>-->
+            &nbsp            
           </th>
         </tr>
         {% endfor %}
       </tbody>
     </table>
-    <button type="button" class="btn btn-default btn-lg" onClick="window.history.back(-1);">
- 		<span class="icon-arrow-left"></span> Back
-	</button>
-    <div id='tocopy' style="display:none"></div>
+    </div>
+    </div>
+    <div class="tab-pane"  id="yourpartlist">
+    <h2>Your Part List</h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Username</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for item in sharedFileList %}
+        <tr id="{{ item.fileName }}">
+          <th>{{ item.name }}</th>          
+          <th>
+              <button id="{{ item.fileName }}" class="btn openshared" name="{{ item.name }}">open shared file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
+            &nbsp            
+          </th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    </div>      
   </body>
 </html>

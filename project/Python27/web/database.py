@@ -32,8 +32,8 @@ class SqliteDatabase:
 		self.__cursor.execute(sql_cmd)
 		self.__cx.commit()		
 		return 'add promoter success!'
-	def addAUserPart(self,part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence):
-		sql_cmd='INSERT INTO userPart (part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,uploadUser) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s")'%(part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,self.getUserNameById(self.userId))
+	def addAUserPart(self,part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,Number,parts):
+		sql_cmd="INSERT INTO userPart (part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,uploadUser,Number,parts) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,self.getUserNameById(self.userId),Number,parts)
 		self.__cursor.execute(sql_cmd)
 		self.__cx.commit()	
 		return 'add user part success!'
@@ -461,6 +461,15 @@ class SqliteDatabase:
 				activator_list.append(item["Number"])
 				return item
 
+	def getUserPart(self, part_id):
+		excuteString = "SELECT * FROM userPart WHERE part_id = '%s'" % part_id
+		self.__cursor.execute(excuteString)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if len(decodejson)==0:
+			return None
+		else:
+			return decodejson[0]
 
 	"""
 		test if there is the same record in the table

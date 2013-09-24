@@ -89,8 +89,9 @@ def connect(rule_name, content):
   return ret
 
 #format info into SBOL v1.1
-def formatter_v11(content, dna_sequence):
-  header = """DnaComponent [
+def formatter_v11(content, dna_sequence, header = None):
+  if header == None:
+    header = """DnaComponent [
   uri: http://sbol.org/
   displayId: plasmid
   name: plasmid
@@ -126,11 +127,9 @@ def formatter_v11(content, dna_sequence):
 
 def get_sbol(component, rule = "RFC10", extended = False):
   content = union(rule, component)
-  print content
   dna_sequence = connect(rule, content)
   sbol = formatter_v11(content, dna_sequence)
   return sbol
-
 
 if __name__ == "__main__":
   rule = "RFC25"

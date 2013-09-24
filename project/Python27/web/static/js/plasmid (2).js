@@ -1,5 +1,5 @@
 //var colors=['#afcc22','#82d8ef','#80bd91'];//环形图有色色块的颜色'
-var colors={'promoter':"#89c997",'protein': "#ffbf43",'activator': "#ffbf43", 'repressor': "#ffbf43", 'rbs':'#2ec6b7','terminator':"#f95f53"};
+var colors={'promoter':"#89c997",'protein': "#ffbf43",'activator': "#ffbf43", 'repressor': "#ffbf43", 'rbs':'#2ec6b7','terminator':"#f95f53",'plasmidbackbone':'#9B59B6'};
 String.prototype.startWith=function(str){
 			if(str==null||str==""||this.length==0||str.length>this.length)
 			  return false;
@@ -9,6 +9,16 @@ String.prototype.startWith=function(str){
 			  return false;
 			return true;
 		}
+function standardOnChange(obj)
+{
+	console.log('standonchange');
+	if(sessionStorage.genecircuitSave!==undefined)
+	{
+			var obj = eval('(' + sessionStorage.genecircuitSave + ')'); 			
+			ws.send(JSON.stringify({'request': 'getPlasmidSbol','data':JSON.stringify(obj['genecircuit']),'rule':$('#standardSelect').val()}));	
+			$('#mymodal').modal({keyboard:false});
+	}
+}
 var plasmidPainter = {
 	canvas: null,
 	canvasId: null,
@@ -352,7 +362,7 @@ function initDrawChart(){
 	data=turnRawDatatoData(raw_data);
 	//data=data.slice(0,10);		
 	chart = new iChart.Donut2D({		
-		id:"ichartjs2013",
+		//id:"ichartjs2013",
 		animation:true,
 		render : 'canvasDiv', //Chart rendering the HTML DOM id
 		center:{
@@ -612,7 +622,7 @@ function handlerWebSocket(){
 				});
 			} else if (message.request == 'saveUserData') {
 				console.log(message.result);
-			}else if(message.request == 'getPlasmidSbol') {
+			}else if(message.request == 'getPlasmidSbol') {				
 				$('#mymodal').modal('hide');
 				raw_data=message.result;
 				drawThePlasmid();	
