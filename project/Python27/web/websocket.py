@@ -169,7 +169,7 @@ class apis():
     else:
       rule = "RFC10"
     return extended_sbol.get_extended_sbol(self.db, message["part_id"],\
-        message["rule"])
+        rule)
 
 def handle_websocket(ws, db):
   logging.info("start handling websocket...")
