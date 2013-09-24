@@ -891,6 +891,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 var xpos = figure.getAbsoluteX(),
                     ypos = figure.getAbsoluteY();
 
+                sid = figure.getId();
                 copyFigure(figure);
                 from.removeItem(figure);        // 从from中删除
                 fromFlag = true;
@@ -908,7 +909,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 // };
 
 
-
+                sid = figure.getId();
                 var outer = new g.Shapes.Container();
                 var command = new graphiti.command.CommandAdd(app.view, outer, from.getAbsoluteX(), from.getAbsoluteY());
                 app.view.getCommandStack().execute(command);
@@ -922,6 +923,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 var xpos = figure.getAbsoluteX(),
                     ypos = figure.getAbsoluteY();
 
+                tid = figure.getId();
                 copyFigure(figure);
                 to.removeItem(figure);
                 toFlag = true;
@@ -932,6 +934,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 var command = new graphiti.command.CommandAdd(app.view, outer, to.getAbsoluteX(), to.getAbsoluteY());
                 app.view.getCommandStack().execute(command);
 
+                tid = figure.getId();
                 outer.addItem(to);
                 toFlag = false;
             }
@@ -998,6 +1001,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         }
 
         // 清除绑定信息
+        console.log("sid="+sid + "  tid=" + tid);
         removeBoundInfo(sid, tid);
 
         // 拷贝元素
