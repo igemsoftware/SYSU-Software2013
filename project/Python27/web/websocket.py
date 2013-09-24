@@ -41,6 +41,10 @@ class apis():
   def getuserPartByType(self,message):
     shared=sharedFiles(self.db)
     return shared.getSharedTypePart(message['type'])
+  def addAplasmid_backbone(self,message):
+    return self.db.addAplasmidBackbone(message['name'],message['number'],string.atoi(message['CopyNumber']))
+  def addATerminator(self,message):
+    return self.db.addATerminator(message['name'],message['number'],string.atof(message['Efficiency']))
   def addAPromoter(self,message):
     return self.db.addAPromoter(name=message['name'],number=message['number'],MPPromoter=string.atof(message['MPPromoter']),LeakageRate=string.atof(message['LeakageRate']),K1=string.atof(message['K1']),Type=message['Type'],Repressor=message['Repressor'],Source=message['Source'],Activator=message['Activator'],PoPS=string.atof(message['PoPS']))
   def addARBS(self,message):
@@ -50,7 +54,7 @@ class apis():
   def addARepressor(self,message):
     return self.db.addARepressor(message['name'],message['number'],string.atoi(message['HillCoeff1']),string.atof(message['K1']),string.atof(message['K2']))
   def addAUserPart(self,message):
-    return self.db.addAUserPart(part_id=message['part_id'],part_name=message['part_name'],part_short_name=message['part_short_name'],part_short_desc=message['part_short_desc'],part_type=message['part_type'],part_nickname=message['part_nickname'],part_author=message['part_author'],sequence=message['sequence'])    
+    return self.db.addAUserPart(part_id=message['part_id'],part_name=message['part_name'],part_short_name=message['part_short_name'],part_short_desc=message['part_short_desc'],part_type=message['part_type'],part_nickname=message['part_nickname'],part_author=message['part_author'],sequence=message['sequence'],Number=message['Number'],parts=message['parts'])    
   def getRememberMeTicket(self,message):
     user.userSetRememberMe(self.db)
     return user.getRememberMeTicket(self.db,user.getLoginedUserName(self.db))

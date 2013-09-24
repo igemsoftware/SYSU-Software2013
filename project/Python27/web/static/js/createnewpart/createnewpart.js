@@ -122,7 +122,7 @@ function acButtonOnclick(obj)
 			{return;}
 		sessionStorage.basicInfomation=JSON.stringify(ret);
 		var type=document.getElementById('typeSelect').value;
-		if(type=='Regulatory')
+		if(type=='promoter')
 		{
 			$("#step3").css('display','inline-block');
 			$('#PromoterForm').show();	
@@ -149,7 +149,7 @@ function acButtonOnclick(obj)
 		{
 			$('#step3').css('display','inline-block');
 			$('#Inducer').show();
-		}else if (type=='Plasmid backbone')
+		}else if (type=='plasmid_backbone')
 		{
 			$('#step3').css('display','inline-block');
 			$('#plasmid_backboneForm').show();
@@ -164,7 +164,7 @@ function acButtonOnclick(obj)
 		step+=1;	
 		$("#step4").css('display','block');		
 		var type=document.getElementById('typeSelect').value;
-		if(type=='Regulatory')
+		if(type=='promoter')
 		{
 			sessionStorage.ModelingParameters=JSON.stringify(getPromoter());	
 		}else if(type=='RBS')
@@ -182,7 +182,7 @@ function acButtonOnclick(obj)
 		}else if(type=='Inducer'||type=='Corepressor')
 		{
 			sessionStorage.ModelingParameters=JSON.stringify(getInducer());
-		}else if (type=='Plasmid backbone')
+		}else if (type=='plasmid_backbone')
 		{
 			sessionStorage.ModelingParameters=JSON.stringify(getPlasmidBackbone());
 		}else{
@@ -217,8 +217,8 @@ function sendYourdata()
 // type: "Inducer"} 
 // Object {Name: "asdas", Number: "sdfsdf", HillCoeff2: "0.125", K2: "0.125"} 
 // 
-	ws.send(JSON.stringify({'request': 'addAUserPart','part_id':parameters.Number,'part_name':basic.name,'part_short_name':basic.shortname,'part_short_desc':basic.shortDesp,'part_type':basic.type,'part_nickname':basic.nickname,'part_author':basic.author,'sequence':$('#finalSeq').val()}));
-		if(type=='Regulatory'){
+	ws.send(JSON.stringify({'request': 'addAUserPart','part_id':parameters.Number,'part_name':basic.name,'part_short_name':basic.shortname,'part_short_desc':basic.shortDesp,'part_type':basic.type,'part_nickname':basic.nickname,'part_author':basic.author,'sequence':$('#finalSeq').val(),'Number':parameters.Number,'parts':JSON.stringify(parts)}));
+		if(type=='promoter'){
 			ws.send(JSON.stringify({'request':'addAPromoter','name':parameters.Name,'number':parameters.Number,'MPPromoter':parameters.MPPromoter,'LeakageRate':parameters.LeakageRate,'K1':parameters.K1,'Type':parameters.Type,'Repressor':parameters.Repressor,'Source':parameters.Source,'Activator':parameters.Activator,'PoPS':parameters.PoPS}));			
 		}else if(type=='RBS'){					 
 			ws.send(JSON.stringify({'request': 'addARBS','name':parameters.Name,'number':parameters.Number,'MPRBS':parameters.MPRBS,'RIPS':parameters.RIPS}));
@@ -226,14 +226,14 @@ function sendYourdata()
 		else if(type=='Coding'){
 
 		}else if(type=='Terminator'){		
-
+			ws.send(JSON.stringify({'request': 'addATerminator','name':parameters.Name,'number':parameters.Number,'Efficiency':parameters.Efficiency}));
 		}else if(type=='Repressor'){
 			ws.send(JSON.stringify({'request': 'addARepressor','name':parameters.Name,'number':parameters.Number,'HillCoeff1':parameters.HillCoeff1,'K2':parameters.K2,'K1':parameters.K1}));
 		}else if(type=='Inducer'||type=='Corepressor')
 		{
 			ws.send(JSON.stringify({'request': 'addAnInducer','name':parameters.Name,'number':parameters.Number,'HillCoeff2':parameters.HillCoeff2,'K2':parameters.K2}));
-		}else if (type=='Plasmid backbone'){	
-
+		}else if (type=='plasmid_backbone'){	
+			ws.send(JSON.stringify({'request': 'addAplasmid_backbone','name':parameters.Name,'number':parameters.Number,'CopyNumber':parameters.CopyNumber}));
 		}
 }
 function standardChange(obj)
@@ -534,6 +534,10 @@ $().ready(function() {
             } else if (message.request == 'getNewPartSequence')
             {
             	$('#finalSeq').text(message.result);
+            } else if (message.request == 'addAUserPart')
+            {
+            	if(message.result=='add user part success!')
+					alert('add user part to database success!');
             }
         };
     }
