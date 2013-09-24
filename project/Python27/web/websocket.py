@@ -147,7 +147,7 @@ class apis():
       rule = message["rule"]
     else:
       rule = "RFC10"
-    return get_new_part_sequence(message['data'], rule)
+    return get_new_part_sequence(json.loads(message['data']), rule)
   def forgetPasswordAndReset(self,message):
     self.db.rememberUser(message['userName'],message['password'])
     return user.resetUserPassword(self.db,message['userName'],message['answer'],message['password'])
