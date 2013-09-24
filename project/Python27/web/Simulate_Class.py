@@ -1,6 +1,4 @@
 ##
-
-##
 # @file Simulate_Class.py
 # @brief  calculate Simulation data
 # @author Jianhong Li
@@ -137,6 +135,11 @@ class DNA_Simulate:
         self.IndConst   = pow(inducer / k, hillcoeff)
         self.CorepConst = None
 
+# --------------------------------------------------------------------------
+##
+# @brief  calculating mRNA simulation result
+#
+# --------------------------------------------------------------------------
 class mRNA_Simulate:
     Dt      = None
     TimeLen = None
@@ -144,6 +147,16 @@ class mRNA_Simulate:
     DNA     = None
     TranslE = None
     DegRate = None
+    # --------------------------------------------------------------------------
+    ##
+    # @brief set data in mRNA_Simulate class
+    #
+    # @param transle   translate efficiency
+    # @param degrate   degradation rate
+    #
+    # @returns   return nothing
+    #
+    # --------------------------------------------------------------------------
     def SetData(self, transle, degrate):
         if transle <=0 or degrate < 0:
             raise InvalidParameter
