@@ -461,6 +461,15 @@ class SqliteDatabase:
 				activator_list.append(item["Number"])
 				return item
 
+	def getUserPart(self, part_id):
+		excuteString = "SELECT * FROM userPart WHERE part_id = '%s'" % part_id
+		self.__cursor.execute(excuteString)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if len(decodejson)==0:
+			return None
+		else:
+			return decodejson[0]
 
 	"""
 		test if there is the same record in the table
