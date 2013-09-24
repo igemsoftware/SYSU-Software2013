@@ -168,7 +168,7 @@ class apis():
       rule = message["rule"]
     else:
       rule = "RFC10"
-    return extended_sbol.get_extended_sbol(self.db, message["data"],\
+    return extended_sbol.get_extended_sbol(self.db, message["part_id"],\
         message["rule"])
 
 def handle_websocket(ws, db):
