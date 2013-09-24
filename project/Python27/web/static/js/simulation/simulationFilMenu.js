@@ -5,27 +5,7 @@
  *    Description:  right file config containner logic and websocket.
  *
  **/
- 
- //this function can get if the url has args
-function isUrlArgsExist()
-{
-	return (location.search.substring(1).length!=0);
-}
-//return the param of the url by 'paras' variable
-function request(paras){ 
-	var url = location.href;  
-	var paraString = url.substring(url.indexOf("?")+1,url.length).split("&");  
-	var paraObj = {}  
-	for (i=0; j=paraString[i]; i++){  
-		paraObj[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length);  
-	}  
-	var returnValue = paraObj[paras.toLowerCase()];  
-	if(typeof(returnValue)=="undefined"){  
-		return "";  
-	}else{  
-		return returnValue;  
-	}  
-}
+
 // document ready
 $().ready(function() {
     document.ontouchmove = function(e) {
@@ -114,9 +94,4 @@ function getSimulationSaveData(){
 	var temp=JSON.stringify({'data':data,'proteinName':proteinNames});
 	console.log(temp);
 	return JSON.stringify({'data':temp});
-}
-function loadPlasmidSaveData(){
-}
-function loadSimulationSaveData()
-{
 }
