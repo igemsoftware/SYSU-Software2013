@@ -42,7 +42,7 @@ class apis():
     shared=sharedFiles(self.db)
     return shared.getSharedTypePart(message['type'])
   def addAplasmid_backbone(self,message):
-    return self.db.addAplasmidBackbone(message['name'],message['number'],string.atoi(message['CopyNumber']))
+    return self.db.addAplasmidBackbone(message['name'],message['number'],string.atof(message['CopyNumber']))
   def addATerminator(self,message):
     return self.db.addATerminator(message['name'],message['number'],string.atof(message['Efficiency']))
   def addAPromoter(self,message):
@@ -50,9 +50,9 @@ class apis():
   def addARBS(self,message):
     return self.db.addARBS(name=message['name'],number=message['number'],MPRBS=string.atof(message['MPRBS']),RIPS=string.atof(message['RIPS']))
   def addAnInducer(self,message):
-    return self.db.addAnInducer(message['name'],message['number'],string.atoi(message['HillCoeff2']),string.atof(message['K2']))
+    return self.db.addAnInducer(message['name'],message['number'],string.atof(message['HillCoeff2']),string.atof(message['K2']))
   def addARepressor(self,message):
-    return self.db.addARepressor(message['name'],message['number'],string.atoi(message['HillCoeff1']),string.atof(message['K1']),string.atof(message['K2']))
+    return self.db.addARepressor(message['name'],message['number'],string.atof(message['HillCoeff1']),string.atof(message['K1']),string.atof(message['K2']))
   def addAUserPart(self,message):
     return self.db.addAUserPart(part_id=message['part_id'],part_name=message['part_name'],part_short_name=message['part_short_name'],part_short_desc=message['part_short_desc'],part_type=message['part_type'],part_nickname=message['part_nickname'],part_author=message['part_author'],sequence=message['sequence'],Number=message['Number'],parts=message['parts'])    
   def getRememberMeTicket(self,message):
