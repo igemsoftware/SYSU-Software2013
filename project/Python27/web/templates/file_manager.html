@@ -43,14 +43,14 @@
         </a>
       </li>      
     </ul>
-    <button type="button" class="btn btn-default btn-lg" onClick="window.history.back(-1);">
+    <button type="button" class="btn btn-default btn-large" onClick="window.history.back(-1);">
  		<span class="icon-arrow-left"></span> Back
 	</button>  
-  </div>
+  	</div>
     <div class="span9 tab-content">
     <div class="tab-pane active" id="yourfilelist">
     <h2>Your File List</h2>
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
       <thead>
         <tr>
           <th>Filename</th>
@@ -80,7 +80,7 @@
     </div>
     <div class="tab-pane"  id="sharefilelist">
     <h2>Shared File List</h2>
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
       <thead>
         <tr>
           <th>Username</th>
@@ -103,29 +103,36 @@
         {% endfor %}
       </tbody>
     </table>
-    </div>
-    </div>
+    </div>    
     <div class="tab-pane"  id="yourpartlist">
     <h2>Your Part List</h2>
-    <table class="table table-hover">
+     <table class="table table-hover table-bordered">
       <thead>
         <tr>
-          <th>Username</th>
-          </tr>
+          <th>Part Id</th>
+          <th>Part Name</th>
+          <th>Type</th>
+          <th>Author</th>
+          <th>operation</th>
+        </tr>
       </thead>
       <tbody>
-        {% for item in sharedFileList %}
-        <tr id="{{ item.fileName }}">
-          <th>{{ item.name }}</th>          
+        {% for item in userpart %}
+        <tr id="{{ item.part_id }}">
+          <th>{{ item.part_id }}</th>
+          <th>{{ item.Name }}</th>
+          <th>{{ item.Type }}</th>
+          <th>{{ item.Author }}</th>
           <th>
-              <button id="{{ item.fileName }}" class="btn openshared" name="{{ item.name }}">open shared file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
-            &nbsp            
+              <button id="{{ item.fileName }}" class="btn openpart">Export<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
+            &nbsp
+            <button id="{{ item.fileName }}" class="btn deletepart">delete<i class="icon-trash"></i></button>            
           </th>
         </tr>
         {% endfor %}
       </tbody>
-    </table>
-    </div>
-    </div>      
+      </table>
+    </div>  
+    </div> 
   </body>
 </html>
