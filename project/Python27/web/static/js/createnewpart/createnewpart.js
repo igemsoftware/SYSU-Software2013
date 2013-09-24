@@ -233,7 +233,7 @@ function sendYourdata()
 		{
 			ws.send(JSON.stringify({'request': 'addAnInducer','name':parameters.Name,'number':parameters.Number,'HillCoeff2':parameters.HillCoeff2,'K2':parameters.K2}));
 		}else if (type=='plasmid_backbone'){	
-
+			ws.send(JSON.stringify({'request': 'addAplasmid_backbone','name':parameters.Name,'number':parameters.Number,'CopyNumber':parameters.CopyNumber}));
 		}
 }
 function standardChange(obj)

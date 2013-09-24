@@ -41,6 +41,8 @@ class apis():
   def getuserPartByType(self,message):
     shared=sharedFiles(self.db)
     return shared.getSharedTypePart(message['type'])
+  def addAplasmid_backbone(self,message):
+    return self.db.addAplasmidBackbone(message['name'],message['number'],string.atoi(message['CopyNumber']))
   def addATerminator(self,message):
     return self.db.addATerminator(message['name'],message['number'],string.atof(message['Efficiency']))
   def addAPromoter(self,message):
