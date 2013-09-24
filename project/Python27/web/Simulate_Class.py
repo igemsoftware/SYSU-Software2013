@@ -37,7 +37,7 @@ class IllegalSetting(Exception): pass
 
 # --------------------------------------------------------------------------
 ##
-# @Synopsis  calculating DNA simulation result
+# @brief  calculating DNA simulation result
 # ----------------------------------------------------------------------------
 class DNA_Simulate:
     Type = ""
@@ -53,7 +53,7 @@ class DNA_Simulate:
     IndConst    = None
     # --------------------------------------------------------------------------
     ##
-    # @synopsis  Set data in class
+    # @brief  Set data in class
     #
     # @param ty           type of data(constitutive, positive or negative)
     # @param copynumber   copy number of corresponding plasmid of component
@@ -76,7 +76,7 @@ class DNA_Simulate:
         self.TerE        = tere
     # --------------------------------------------------------------------------
     ##
-    # @synopsis  set activator in class
+    # @brief  set activator in class
     #
     # @param activator   name of activator
     # @param k           K value of activator
@@ -99,7 +99,7 @@ class DNA_Simulate:
             raise IllegalSetting
     # --------------------------------------------------------------------------
     ##
-    # @synopsis  set repressor in class
+    # @brief  set repressor in class
     #
     # @param repressor   name of repressor
     # @param k           K value of repressor
@@ -122,11 +122,11 @@ class DNA_Simulate:
             raise IllegalSetting
     # --------------------------------------------------------------------------
     ##
-    # @synopsis  set corepressor in class
+    # @brief  set corepressor in class
     #
-    # @param inducer     name of corepressor
-    # @param k           K value of corepressor
-    # @param hillcoeff   hill coefficiency of corepressor
+    # @param corepressor     name of corepressor
+    # @param k               K value of corepressor
+    # @param hillcoeff       hill coefficiency of corepressor
     #
     # @returns   return nothing
     #
@@ -140,7 +140,7 @@ class DNA_Simulate:
         self.IndConst   = None
     # --------------------------------------------------------------------------
     ##
-    # @synopsis  set inducer in class
+    # @brief  set inducer in class
     #
     # @param inducer     name of inducer
     # @param k           K value of inducer
