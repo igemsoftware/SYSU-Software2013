@@ -31,7 +31,8 @@
             <!-- navigation -->
             <div class="nav">
                 <ul>
-                    <li><a href="index">Regulation network</a></li>
+                    <!-- <li><a id="index" href="index">Regulation network</a></li> -->
+                    <li id="index">Regulation network</li>
                     <li class="active"><a href="genecircuit">Gene Circuit</a></li>
                     <li><a href="plasmid">Plasmid</a></li>
                     <li><a href="protocol">Protocol</a></li>
@@ -303,7 +304,7 @@
                                 <div id="commandmenu" class="block">
                                     <div id="button-group">
                                         <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal">My Files</button>
-                                        <button class="mybtn" id="create-part">Create New Part</button>
+                                        <!-- <button class="mybtn" id="create-part">Create New Part</button> -->
                                     </div>
                                 </div>
                                 <!-- commandmenu ends -->
@@ -316,10 +317,9 @@
                                         √  Save
                                     </button>
                                     <a class="mybtn" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
-                                    <button class="mybtn" id="clear" role="button">
-                                        <!-- <i class="icon-remove"></i> -->
-                                        ×  Clear
-                                    </button>
+                                    <!-- <button class="mybtn" id="clear" role="button"> -->
+                                        <!-- ×  Clear -->
+                                    <!-- </button> -->
                                 </div>
                                 <!-- filemenu ends --> </div>
                             <!-- menu ends --> </div>
@@ -466,18 +466,18 @@
 <!-- save modal ends -->
 
 <!-- filelist modal starts -->
-<div id="filelist-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h6>File List</h6>
-    </div>
-    <div class="modal-body">
-        <div id="filelist"></div>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button>
-    </div>
-</div>
+<!-- <div id="filelist-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> -->
+    <!-- <div class="modal-header"> -->
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+        <!-- <h6>File List</h6> -->
+    <!-- </div> -->
+    <!-- <div class="modal-body"> -->
+        <!-- <div id="filelist"></div> -->
+    <!-- </div> -->
+    <!-- <div class="modal-footer"> -->
+        <!-- <button class="btn btn-success btn-mini" data-dismiss="modal" aria-hidden="true">Close</button> -->
+    <!-- </div> -->
+<!-- </div> -->
 <!-- filelist modal ends -->
 
 <!-- footer starts -->
@@ -647,7 +647,7 @@
 <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="../static/js/regulation/biobrickAdder.js"></script>
 <script src="../static/js/regulation/mytree.js"></script>
-<script src="../static/js/regulation/graphiti.js"></script>
+<!-- <script src="../static/js/regulation/graphiti.js"></script> -->
 <!-- a_why_begin -->
 <script src="../static/js/genecircuit/genecircuit.js"></script>
 <script src="../static/js/ichartjs.v1.2/ichart.1.2.min.js"></script>
