@@ -15,7 +15,8 @@ def get_new_part_sequence(component, rule = "RFC10"):
       xml_file = find_file(component[i] + ".xml", '.')
       t = ET.parse(xml_file)
       path = "part_list/part/"
-      info["sequences"] = t.find(path+"sequences/seq_data").text[1:-1]
+      dna_sequence = t.find(path+"sequences/seq_data").text[1:-1]
+      info["sequences"] = filter(lambda x: x != '\n', dna_sequence)
       info["dna"] = {"type": t.find(path+"part_type").text}
     else:
       info["sequences"] = component[i]
