@@ -3,7 +3,7 @@
 # @brief an extended version of SBOL v1.1, with modeling parameter
 # @author Jianhong Li
 # @version 1.0
-# @date 2013-09-25
+# @date 2013-09-15
 # @copyright 2013 SYSU-Software. All rights reserved.
 # This project is released under MIT License.
 #
