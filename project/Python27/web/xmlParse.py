@@ -49,12 +49,16 @@ def list_dir(path, res):
         else:
             res['files'].append(i)
     return res
-
-def test(path):
-    res=[]
-    str=getAllInPathDemo(path,res)
-    return str
-
+# --------------------------------------------------------------------------
+##
+# @brief  list all the files and dirs of the path
+#
+# @param path       the path to be listed
+# @param res        the res dict to save the last step's result
+#
+# @returns   return res that include all the information about the path
+#
+# --------------------------------------------------------------------------
 def getAllInPathDemo(path,result):
     for item in os.listdir(path):
         dirpath=os.path.join(path,item)
@@ -63,7 +67,16 @@ def getAllInPathDemo(path,result):
         else:
             result.append(os.path.basename(dirpath))
     return result   
-
+# --------------------------------------------------------------------------
+##
+# @brief  list all the files and dirs of the path
+#
+# @param path       the path to be listed
+# @param res        the res dict to save the last step's result
+#
+# @returns   return res that include all the information about the path
+#
+# --------------------------------------------------------------------------
 def list_all_fileanddir(path):
     l=[]    
     for p,d,f in os.walk(path):
@@ -71,7 +84,16 @@ def list_all_fileanddir(path):
             l.append(os.path.join(p,f1))
     print l
     return l    
-
+# --------------------------------------------------------------------------
+##
+# @brief  list all the files and dirs of the path
+#
+# @param path       the path to be listed
+# @param res        the res dict to save the last step's result
+#
+# @returns   return res that include all the information about the path
+#
+# --------------------------------------------------------------------------
 def get_allfiledirs(path="biobrick"):
     if os.path.isfile(path):
         return {'path':path,'files':'','pathIsAFile':'true'}
@@ -85,7 +107,16 @@ def get_allfiledirs(path="biobrick"):
     print dict['files']
     dict['pathIsAFile']='false'
     return dict
-    
+# --------------------------------------------------------------------------
+##
+# @brief  list all the files and dirs of the path
+#
+# @param path       the path to be listed
+# @param result     the res dict to save the last step's result
+#
+# @returns   return res that include all the information about the path
+#
+# --------------------------------------------------------------------------
 def getAllInPath(path,result):
     for item in os.listdir(path):
         dirpath=os.path.join(path,item)
@@ -94,31 +125,61 @@ def getAllInPath(path,result):
         else:
             result.append(dirpath)
     return result   
-
+# --------------------------------------------------------------------------
+##
+# @brief  output Paths To File in format as <option> to help making the option groups html tags
+#
+# @param res        the dict to output to file
+#
+# @returns   return nothing
+#
+# --------------------------------------------------------------------------
 def outputPathsToFile(res):
 	f=open('out.txt','w')
 	for item in res:
 		str='<option value="%s">%s</option>\n' %(item,item)
 		f.write(str)
 	f.close()
-
+# --------------------------------------------------------------------------
+##
+# @brief  the class that can parse a xml to a biobrick object
+# ----------------------------------------------------------------------------
 class xmlBiobrick:
     data=None
     def __init__ (self,path="biobrick/Terminators/BBa_B0010.xml"):
         self.data = xmltodict.parse(open(path).read());
         self.data['filepath']=path
-        #print self.data
-        #jsonStr = json.dumps(data,indent=1);
-        #jsonStr = json.dumps(data);
-        #print "jsonStr=",jsonStr;
-        #print data["rsbpml"]["part_list"]
-
+    # --------------------------------------------------------------------------
+    ##
+    # @brief  get Part's Short Name
+    # 
+    # @param self  
+    #
+    # @returns   return part_short_name
+    #
+    # --------------------------------------------------------------------------
     def getPartShortName(self):
 		return self.getPart()['part_short_name']
-
+    # --------------------------------------------------------------------------
+    ##
+    # @brief  get Part's data to json string
+    # 
+    # @param self  
+    #
+    # @returns   return json string of this biobrick
+    #
+    # --------------------------------------------------------------------------
     def getJsonString(self):
         return json.dumps(self.data)
-    
+    # --------------------------------------------------------------------------
+    ##
+    # @brief  get Part's Id
+    # 
+    # @param self  
+    #
+    # @returns   return part_id
+    #
+    # --------------------------------------------------------------------------
     def getPart_id(self):
         return self.getPart()['part_id']
     
