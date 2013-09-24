@@ -23,7 +23,7 @@ $.fn.dashboard = function(options) {
 			$(this).find(".arrow2").css('transform', 'rotate(' + ((1.8 * (per-3)) - 180) + 'deg)');
 			if(options.max == 1000) {
 				$(this).find(".dashboard-value").text(val.toFixed(0));
-			} else if(options.max == 6) {
+			} else if(options.max == 10) {
 				$(this).find(".dashboard-value").text(val.toFixed(3));
 			}
 		});
@@ -45,7 +45,7 @@ var protein = {
     if (!aData['display'])
       $("#" + aTextureId).hide();
 
-		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-6</span><span class=\"upper-bound\">6</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-6</span><span class=\"upper-bound\">6</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider concen\"></div><span>concen</span></div></div>");
+		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider concen\"></div><span>concen</span></div></div>");
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
@@ -62,15 +62,15 @@ var protein = {
 		$("#" + aTextureId + " .repress-rate").dashboard({
 			size: 40,
 			percentage: 0,
-			min: -6,
-			max: 6,
+			min: -10,
+			max: 10,
 		});
 
 		$("#" + aTextureId + " .induce-rate").dashboard({
 			size: 40,
 			percentage: 0,
-			min: -6,
-			max: 6,
+			min: -10,
+			max: 10,
 		});
 
 		/* $("#" + aTextureId + " .protein-range .slider").slider({ */
@@ -119,7 +119,7 @@ var protein = {
 			min: 0,
 			max: 1000,
 			step: 0.0001,
-			value: 60,
+			value: 0,
 			stop: function(event, ui) {
 				detail.type = "copy";
         var id_str = $(this).parents(".proteins").attr('id');
@@ -135,8 +135,8 @@ var protein = {
 		$("#" + aTextureId + " .k1").slider({
 			orientation: "vertical",
 			range: "min",
-			min: -6,
-			max: 6,
+			min: -10,
+			max: 10,
 			step: 0.0001,
 			value: 0,
 			stop: function(event, ui) {
