@@ -58,7 +58,6 @@ BiobrickAdder.prototype = {
 		var command = new graphiti.command.CommandAdd(app.view, figure, this.offsetTop, this.offsetLeft);
     	app.view.getCommandStack().execute(command);	// 添加到命令栈中
 
-		// figure.name = this.name + "-" + app.view.collection.counter;	// 设置id
 		figure.name = this.name;	// 设置id
 
 		if (this.config)
@@ -66,18 +65,5 @@ BiobrickAdder.prototype = {
 
 		if (this.path)
 			figure.path = this.path;
-		// figure.label.setText(this.name);	// 设置label
 	}
 };
-
-
-
-// $(".factorNode").live("click", function(){
-// 	var offset = $(this).offset();
-// 	var thisId = $(this).attr("id");
-// 	var name = thisId.substr(7, thisId.length - 1);
-
-// 	var adder = BiobrickAdder;
-// 	adder.init(name, "g.Shapes.Protein", offset.top, offset.left);
-// 	adder.show();
-// });
