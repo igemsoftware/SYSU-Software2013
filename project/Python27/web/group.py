@@ -19,7 +19,6 @@ from math import log10
 prom_name = "BBa_I712074"
 rbs_name = "BBa_J61104"
 term_name = "BBa_B0013"
-data = {u'part': [{u'type': u'Protein', u'id': u'1', u'name': u'BBa_C0060'}, {u'type': u'Protein', u'id': u'2', u'name': u'BBa_C0060'}, {u'type': u'Activator', u'id': u'3', u'name': u'Activator'}, {u'type': u'Repressor', u'id': u'4', u'name': u'Repressor'}, {u'type': u'Protein', u'id': u'5', u'name': u'BBa_C0160'}, {u'type': u'Protein', u'id': u'6', u'name': u'BBa_C0178'}, {u'type': u'Protein', u'id': u'7', u'name': u'BBa_C0178'}], u'link': [{u'to': u'2', u'from': u'1', u'type': u'Bound'}, {u'to': u'3', u'from': u'2', u'type': u'Bound'}, {u'to': u'4', u'from': u'3', u'type': u'Bound'}, {u'to': u'5', u'from': u'3', u'inducer': u'None', u'type': u'Activator'}, {u'to': u'6', u'from': u'4', u'inducer': u'Positive', u'type': u'Repressor'}, {u'to': u'7', u'from': u'6', u'type': u'Bound'}]}
 
 # --------------------------------------------------------------------------
 ##
@@ -33,7 +32,7 @@ data = {u'part': [{u'type': u'Protein', u'id': u'1', u'name': u'BBa_C0060'}, {u'
 #
 # --------------------------------------------------------------------------
 def find_repressor(database, item, regulator_list):
-  item = database.find_distinct_actrep("Negative", len(regulator_list) + 1)
+  item = database.select_row("repressor", len(regulator_list) + 1)
   regulator_list += item
   return str(item)
 
@@ -49,7 +48,7 @@ def find_repressor(database, item, regulator_list):
 #
 # --------------------------------------------------------------------------
 def find_activator(database, item, regulator_list):
-  item = database.find_distinct_actrep("Positive", len(regulator_list) + 1)
+  item = database.select_row("activator", len(regulator_list) + 1)
   regulator_list += item
   return str(item)
 
@@ -187,17 +186,15 @@ def work(data, database):
   for link in data["link"]:
     if link["type"] == "Bound":
       continue
-    next_grp = bound_list[link["to"]]
-    cur_grp = bound_list[link["from"]]
+    next_grp = bound_list[link["from"]]
     for p in data["part"]:
       if p["id"] == link["from"]:
         cur = p
         break
-    regulator = groups[cur_grp][pro_pos[link["from"]]]
     if cur["type"] == "Repressor":
-      groups[next_grp][0] = find_promoter(database, regulator)["Number"]
+      groups[next_grp][0] = find_promoter(database, repressor=cur["name"])["Number"]
     if cur["type"] == "Activator":
-      groups[next_grp][0] = find_promoter(database, regulator)["Number"]
+      groups[next_grp][0] = find_promoter(database, activator=cur["name"])["Number"]
   return (groups, bound_list, pro_pos)
 
 # --------------------------------------------------------------------------
