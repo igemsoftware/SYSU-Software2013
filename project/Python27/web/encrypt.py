@@ -2,7 +2,7 @@
 ##
 # @file encrypt.py
 # @brief  tools for encrypting
-# @author Jiexin guo
+# @author Jiexin Guo
 # @version 1.0
 # @date 2013-07-28
 # @copyright 2013 SYSU-Software. All rights reserved.
@@ -84,7 +84,7 @@ class Encrypt:
 		crypto = binascii.a2b_hex(crypto)
 		print crypto
 		return rsa.decrypt(crypto,self.privateKey)
-		
+
 if __name__ == "__main__":     
 	(pub_key, priv_key) = rsa.key.newkeys(128)
 	print dec2hex(pub_key.n)
