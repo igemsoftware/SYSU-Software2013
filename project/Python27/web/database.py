@@ -364,7 +364,13 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_repressor(self, repressor = None):
-		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')		
+		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
+        ActRreNumber="%s" AND ActRreType="Negative"' % repressor)
+		print repressor
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		promoter = decodejson[0]
+		self.__cursor.execute('SELECT * FROM promoter WHERE Number="%s"' % promoter)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -373,7 +379,13 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_activator(self, activator = None):
-		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
+		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
+        ActRreNumber="%s" AND ActRreType="Positive"' % activator)
+		print activator
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		promoter = decodejson[0]
+		self.__cursor.execute('SELECT * FROM promoter WHERE Number="%s"' % promoter)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
