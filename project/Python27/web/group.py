@@ -33,7 +33,7 @@ data = {u'part': [{u'type': u'Protein', u'id': u'1', u'name': u'BBa_C0060'}, {u'
 #
 # --------------------------------------------------------------------------
 def find_repressor(database, item, regulator_list):
-  item = database.select_row("repressor", len(regulator_list) + 1)
+  item = database.find_distinct_actrep("Negative", len(regulator_list) + 1)
   regulator_list += item
   return str(item)
 
@@ -49,7 +49,7 @@ def find_repressor(database, item, regulator_list):
 #
 # --------------------------------------------------------------------------
 def find_activator(database, item, regulator_list):
-  item = database.select_row("activator", len(regulator_list) + 1)
+  item = database.find_distinct_actrep("Positive", len(regulator_list) + 1)
   regulator_list += item
   return str(item)
 
