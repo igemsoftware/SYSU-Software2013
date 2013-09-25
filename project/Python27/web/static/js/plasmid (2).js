@@ -60,14 +60,14 @@ var plasmidPainter = {
 	},
 	drawAll: function() {
 		jc.start(this.canvasId);
-		jc.rect(0, 0, 1300, 50, "#BCCBCE", true);			
+		jc.rect(0, 0, document.getElementById('seqCurrentText').clientWidth, 50, "#BCCBCE", true);			
 		jc.start(this.canvasId);
 		for(var i=0;i<data2.length;i++)
 		{		
 			if(!/[A-Z]/.test(data2[i].seq[0]))
 			{				
-				var st=data2[i].start*1284/datasize;
-				var en=data2[i].end*1284/datasize;
+				var st=data2[i].start*document.getElementById('seqCurrentText').clientWidth/datasize;
+				var en=data2[i].end*document.getElementById('seqCurrentText').clientWidth/datasize;
 				if(data2[i].color=== undefined)
 				{
 					data2[i].color='#82d8ef';
@@ -383,7 +383,7 @@ function initDrawChart(){
 			color_factor : 0.3
 		},					
 		width :document.getElementById('optionpanel').clientWidth*2.2,
-		height : 410,
+		height : document.getElementById('optionpanel').clientHeight,
 		radius:140		
 	});		
 	console.log(document.getElementById('optionpanel').clientWidth);
@@ -707,7 +707,7 @@ function canvasMouseMove(obj,e)
 		sessionStorage._offsetAngle=offsetang;
 		chart.push("offset_angle",offsetang);
 		chart.push("animation","false");
-		chart.resize(960,410);
+		chart.resize(document.getElementById('optionpanel').clientWidth*2.2,document.getElementById('optionpanel').clientHeight);
 		var ang=270-offsetang;
 		if(ang<0)
 		{
