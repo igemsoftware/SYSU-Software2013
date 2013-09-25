@@ -382,8 +382,8 @@ function initDrawChart(){
 			},
 			color_factor : 0.3
 		},					
-		width : 847,
-		height : 430,
+		width : 850,
+		height : 410,
 		radius:140		
 	});		
 	if(title!=null)
@@ -477,38 +477,8 @@ function createTop(chart){
 
 function copyBtnOnClick(obj)
 {
-	if(window.clipboardData) {   
-              window.clipboardData.clearData();   
-              window.clipboardData.setData("Text", seq);
-            alert("Copy success");   
-      } else if(navigator.userAgent.indexOf("Opera") != -1) {   
-           window.location = seq;   
-      } else if (window.netscape) {   
-           try {   
-                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");   
-           } catch (e) {   
-                alert("如果您正在使用FireFox！\n请在浏览器地址栏输入'about:config'并回车\n然后将'signed.applets.codebase_principal_support'设置为'true'");   
-           }   
-           var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);   
-           if (!clip)   
-                return;   
-           var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);   
-           if (!trans)   
-                return;   
-           trans.addDataFlavor('text/unicode');   
-           var str = new Object();   
-           var len = new Object();   
-           var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);   
-           var copytext = seq;   
-           str.data = copytext;   
-           trans.setTransferData("text/unicode",str,copytext.length*2);   
-           var clipid = Components.interfaces.nsIClipboard;   
-           if (!clip)   
-                return false;   
-           clip.setData(trans,null,clipid.kGlobalClipboard);   
-           alert("Copy success！")   
-      }   
-
+	var blob = new Blob([$('#sequenceDiv').text()], {type: "text/plain;charset=utf-8"});
+	saveAs(blob, "sequence.txt");
 }
 //accrording to the data array 's colors to add the color to the seq
 function createDivStrByData()
@@ -736,7 +706,7 @@ function canvasMouseMove(obj,e)
 		sessionStorage._offsetAngle=offsetang;
 		chart.push("offset_angle",offsetang);
 		chart.push("animation","false");
-		chart.resize(847,430);
+		chart.resize(850,410);
 		var ang=270-offsetang;
 		if(ang<0)
 		{

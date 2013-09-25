@@ -10,12 +10,13 @@ import xml.dom.minidom
 import xmltodict
 import json
 import sys, os, stat
+
 # --------------------------------------------------------------------------
 ##
 # @brief  get a file's path by its name
 #
 # @param rootdir    the dir to start searching
-# @param key        the file's name to be find 
+# @param key        the file's name to be find
 #
 # @returns   return the path of file
 #
@@ -54,7 +55,7 @@ def list_dir(path, res):
 # @brief  list all the files and dirs of the path
 #
 # @param path       the path to be listed
-# @param res        the res dict to save the last step's result
+# @param result     the res dict to save the last step's result
 #
 # @returns   return res that include all the information about the path
 #
@@ -72,7 +73,6 @@ def getAllInPathDemo(path,result):
 # @brief  list all the files and dirs of the path
 #
 # @param path       the path to be listed
-# @param res        the res dict to save the last step's result
 #
 # @returns   return res that include all the information about the path
 #
@@ -89,7 +89,6 @@ def list_all_fileanddir(path):
 # @brief  list all the files and dirs of the path
 #
 # @param path       the path to be listed
-# @param res        the res dict to save the last step's result
 #
 # @returns   return res that include all the information about the path
 #
@@ -127,7 +126,7 @@ def getAllInPath(path,result):
     return result   
 # --------------------------------------------------------------------------
 ##
-# @brief  output Paths To File in format as <option> to help making the option groups html tags
+# @brief  output Paths To File in format as option to help making the option groups html tags
 #
 # @param res        the dict to output to file
 #

@@ -1,7 +1,26 @@
+##
+# @file sbol2json.py
+# @brief export SBOL to json format
+# @author Jianhong Li
+# @version 1.0
+# @date 2013-06-22
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+#
+
 import re
 import sys
 import json
 
+# --------------------------------------------------------------------------
+##
+# @brief format SBOL to json
+#
+# @param content  SBOL format string
+#
+# @returns   json corresponding to SBOL
+#
+# --------------------------------------------------------------------------
 def format_to_json(content):
   content = re.sub("(\w*)\s*:\s*([^\[][^\n]*)\n",r'"\1":"\2",\n',content)
   content = re.sub("(\w*)\s*:\s*\[\n",r'"\1":[\n',content)

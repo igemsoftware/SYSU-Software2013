@@ -437,10 +437,17 @@ $().ready(function() {
         // 添加part信息
         for (var i = 0; i < figuresCount; i++) {
             var figure = {};
-            if (figures[i].TYPE == "Protein") {
+            if (figures[i].TYPE == "Protein" || figures[i].TYPE == "R" || figures[i].TYPE == "A") {
                 figure.id = figures[i].getId();
                 figure.name = figures[i].name;
-                figure.type = figures[i].TYPE;
+
+                if (figures[i].TYPE == "A")
+                    figure.type = "Activator";
+                else if (figures[i].TYPE == "R")
+                    figure.type = "Repressor";
+                else
+                    figure.type = figures[i].TYPE;
+                
                 data.part.push(figure);
 
                 // 添加R/A绑定信息

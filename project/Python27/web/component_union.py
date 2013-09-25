@@ -1,39 +1,92 @@
+##
+# @file component_union.py
+# @brief connect component and generate SBOL
+# @author Jianhong Li
+# @version 1.0
+# @date 2013-06-20
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+#
+
 import sys
 import xml.etree.ElementTree as ET
 
+# --------------------------------------------------------------------------
+##
+# @brief a rule of DNA concentration
+#
+# --------------------------------------------------------------------------
 class RFC10():
   prefix = "GAATTCGCGGCCGCTTCTAGAG"
   prefix_with_pro = "GAATTCGCGGCCGCTTCTAG"
   suffix = "TACTAGTAGCGGCCGCTGCAG"
   intermediat = "TACTAGAG"
 
+# --------------------------------------------------------------------------
+##
+# @brief a rule of DNA concentration
+#
+# --------------------------------------------------------------------------
 class RFC20():
   prefix =  "GAATTCGCGGCCGCTTCTAGAG"
   suffix = "ACTAGTAGCGGCCGCCCTGCAGG"
   intermediat = "TACTAGAG"
 
+# --------------------------------------------------------------------------
+##
+# @brief a rule of DNA concentration
+#
+# --------------------------------------------------------------------------
 class RFC23():
   prefix =  "GAATTCGCGGCCGCTTCTAGA"
   suffix = "ACTAGTAGCGGCCGCTGCAG"
   intermediat = "ACTAGA"
 
+# --------------------------------------------------------------------------
+##
+# @brief a rule of DNA concentration
+#
+# --------------------------------------------------------------------------
 class RFC25():
   prefix = "GAATTCGCGGCCGCTTCTAGATGGCCGGC"
   suffix = "ACCGGTTAATACTAGTAGCGGCCGCTGCAG"
   intermediat = "ACCGGC"
   special = "GAATTCGCGGCCGCTTCTAG"
 
+# --------------------------------------------------------------------------
+##
+# @brief a rule of DNA concentration
+#
+# --------------------------------------------------------------------------
 class RFC21():
   prefix = "GAATTCATGAGATCT"
   suffix = "GGATCCTAACTCGAG"
   intermediat = "GGATCT"
 
-def get_rule(xml_file):
+# --------------------------------------------------------------------------
+##
+# @brief get type of a part
+#
+# @param xml_file  the path of the xml file of the part
+#
+# @returns   the type of the part
+#
+# --------------------------------------------------------------------------
+def get_part_type(xml_file):
   t = ET.parse(xml_file)
   path = "part_list/part/"
   return t.find(path + "part_type").text
 
-# return dna component and sequence annotation info from all files
+# --------------------------------------------------------------------------
+##
+# @brief Get DNA component and sequence annotation info from all files
+#
+# @param rule_name  the rule of DNA concentration
+# @param file_list  list of files of components
+#
+# @returns   DNA component and sequence annotation info from all files
+#
+# --------------------------------------------------------------------------
 def union(rule_name, file_list):
   rule = globals()[rule_name]()
   ret = []
@@ -74,6 +127,16 @@ def union(rule_name, file_list):
       "sequences": sequence})
   return ret
 
+# --------------------------------------------------------------------------
+##
+# @brief connect components with given rule
+#
+# @param rule_name  the rule
+# @param content    components
+#
+# @returns          DNA sequence of components
+# 
+# --------------------------------------------------------------------------
 def connect(rule_name, content):
   rule = globals()[rule_name]()
   if rule_name == "RFC10" and content[0]["dna"]["type"] == "Coding":
@@ -88,7 +151,17 @@ def connect(rule_name, content):
   ret += rule.suffix
   return ret
 
-#format info into SBOL v1.1
+# --------------------------------------------------------------------------
+##
+# @brief format info into SBOL v1.1
+#
+# @param content       components
+# @param dna_sequence  the DNA sequence of components
+# @param header        customized header, None by default
+#
+# @returns   SBOL v1.1 format string
+#
+# --------------------------------------------------------------------------
 def formatter_v11(content, dna_sequence, header = None):
   if header == None:
     header = """DnaComponent [
@@ -99,23 +172,27 @@ def formatter_v11(content, dna_sequence, header = None):
   annotations:[
 """
   s = header
-  # indent level: 2 spaces
   indent = "  "
   for item in content:
-    s += 2 * indent + "SequenceAnnotation [\n"
+    indent_level = 2
+    s += indent_level * indent + "SequenceAnnotation [\n"
+    indent_level += 1
     for key, value in sorted(item["seq"].items()):
-      s += 3 * indent + "%s: %s\n" % (key, value)
+      s += indent_level * indent + "%s: %s\n" % (key, value)
 
     # a colon is missing here for convience to format into json
-    s += 3 * indent + "subComponent [\n"
-    s += 4 * indent + "DnaComponent [\n"
+    s += indent_level * indent + "subComponent [\n"
+    indent_level += 1
+    s += indent_level * indent + "DnaComponent [\n"
+    indent_level += 1
     for key, value in sorted(item["dna"].items()):
-      s += 5 * indent + "%s: %s\n" % (key, value)
+      s += indent_level * indent + "%s: %s\n" % (key, value)
+    indent_level -= 1
     s += 4 * indent + "]\n"
+    indent_level -= 1
     s += 3 * indent + "]\n"
+    indent_level -= 1
     s += 2 * indent + "]\n"
-  #dna_sequence = '\n'.join([dna_sequence[i:i+100] for i in range(0,
-    #len(dna_sequence), 100)])
   s += """
   ]
   DnaSequence [
@@ -125,7 +202,17 @@ def formatter_v11(content, dna_sequence, header = None):
 ]""" % dna_sequence
   return s
 
-def get_sbol(component, rule = "RFC10", extended = False):
+# --------------------------------------------------------------------------
+##
+# @brief get SBOL for components
+#
+# @param component  components in SBOL
+# @param rule       selected rule, RFC10 by default
+#
+# @returns          SBOL format string
+#
+# --------------------------------------------------------------------------
+def get_sbol(component, rule = "RFC10"):
   content = union(rule, component)
   dna_sequence = connect(rule, content)
   sbol = formatter_v11(content, dna_sequence)

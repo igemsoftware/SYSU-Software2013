@@ -1,9 +1,9 @@
 ##
 # @file Simulate_Class.py
-# @brief  calculate Simulation data
+# @brief  define Simulation data model and formulas
 # @author Jianhong Li
 # @version 1.0
-# @date 2013-09-24
+# @date 2013-09-01
 # @copyright 2013 SYSU-Software. All rights reserved.
 # This project is released under MIT License.
 

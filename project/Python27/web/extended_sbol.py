@@ -1,7 +1,27 @@
+##
+# @file extended_sbol.py
+# @brief an extended version of SBOL v1.1, with modeling parameter
+# @author Jianhong Li
+# @version 1.0
+# @date 2013-09-15
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+#
+
 from component_union import union, connect, formatter_v11
 from new_sequence import get_new_part_sequence, find_file
 import json
 
+# --------------------------------------------------------------------------
+##
+# @brief extend SBOL header with modeling parameter
+#
+# @param content  components of SBOL
+# @param model_param  modeling parameter of components
+#
+# @returns   the extended SBOL header
+#
+# --------------------------------------------------------------------------
 def extend(content, model_param):
   displayId = content["part_id"]
   name = content["part_name"]
@@ -23,6 +43,17 @@ def extend(content, model_param):
 """ % (displayId, name, description, model)
   return header
 
+# --------------------------------------------------------------------------
+##
+# @brief get extended SBOL
+#
+# @param db       database instance
+# @param part_id  part id of new part
+# @param rule     the rule to connect dna sequence
+#
+# @returns   an SBOL format string
+#
+# --------------------------------------------------------------------------
 def get_extended_sbol(db, part_id, rule = "RFC10"):
   user_part = db.getUserPart(part_id)
   print user_part

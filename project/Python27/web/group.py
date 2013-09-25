@@ -1,3 +1,13 @@
+##
+# @file group.py
+# @brief generate gene circuit with given regulation network
+# @author Jianhong Li
+# @version 1.0
+# @date 2013-08-31
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+#
+
 import os
 from sbol2json import format_to_json
 import component_union
@@ -10,107 +20,123 @@ prom_name = "BBa_I712074"
 rbs_name = "BBa_J61104"
 term_name = "BBa_B0013"
 
-
-data = {u'part': [{u'type': u'Protein', u'id': u'37e604d1-9267-43ff-d6af-109336b65d47', u'name': u'BBa_I752001'}, {u'type': u'Protein', u'id': u'd9904b7a-12ac-29c7-6a02-2b2f2a27ffb0', u'name': u'BBa_J58104'}, {u'type': u'Protein', u'id': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'name': u'BBa_K091002'}, {u'type': u'Repressor', u'id': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'name': u'Repressor'}], u'link': [{u'to': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'from': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'37e604d1-9267-43ff-d6af-109336b65d47', u'from': u'ab2ab024-8165-afb7-58d0-12481611d12a', u'inducer': u'none', u'type': u'Repressor'}, {u'to': u'50cd4c9b-6f30-34b4-bbd6-507de935c5ec', u'from': u'd9904b7a-12ac-29c7-6a02-2b2f2a27ffb0', u'inducer': u'none', u'type': u'Bound'}]}
-#data = {u'part': [{u'type': u'Protein', u'id': 1, u'name': u'BBa_C0060'}, {u'type': u'Protein', u'id': 2, u'name': u'BBa_C0060'}, {u'type': u'Activator', u'id': 3, u'name': u'Activator'}, {u'type': u'Repressor', u'id': 4, u'name': u'Repressor'}, {u'type': u'Protein', u'id': 5, u'name': u'BBa_C0160'}, {u'type': u'Protein', u'id': 6, u'name': u'BBa_C0178'}, {u'type': u'Protein', u'id': 7, u'name': u'BBa_C0178'}], u'link': [{u'to': 2, u'from': 1, u'type': u'Bound'}, {u'to': 3, u'from': 2, u'type': u'Bound'}, {u'to': 4, u'from': 3, u'type': u'Bound'}, {u'to': 5, u'from': 3, u'inducer': u'None', u'type': u'Activator'}, {u'to': 6, u'from': 4, u'inducer': u'Positive', u'type': u'Repressor'}, {u'to': 7, u'from': 6, u'type': u'Bound'}]}
-#data = {
-    #"part": [
-      #{ "id"  : 1,
-        #"name": "BBa_C0060",
-        #"type": "Protein"
-        #},
-      #{ "id"  : 2,
-        #"name": "BBa_C0060",
-        #"type": "Protein"
-        #},
-      #{ "id"  : 3,
-        #"name": "Activator",
-        #"type": "Activator"
-        #},
-      #{ "id"  : 4,
-        #"name": "Repressor",
-        #"type": "Repressor"
-        #},
-      #{ "id"  : 5,
-        #"name": "BBa_C0160",
-        #"type": "Protein"
-        #},
-      #{ "id"  : 6,
-        #"name": "BBa_C0178",
-        #"type": "Protein"
-        #},
-      #{ "id"  : 7,
-        #"name": "BBa_C0178",
-        #"type": "Protein"
-        #}
-
-      #],
-    #"link": [
-      #{ "from": 2,
-        #"to"  : 4,
-        #"type": "Bound",
-        #},
-      #{ "from": 1,
-        #"to"  : 2,
-        #"type": "Bound",
-        #},
-      #{ "from": 2,
-        #"to"  : 3,
-        #"type": "Bound",
-        #},
-      #{ "from": 3,
-        #"to"  : 5,
-        #"type": "Activator",
-        #"inducer": "None"
-        #},
-      #{ "from": 4,
-        #"to"  : 6,
-        #"type": "Repressor",
-        #"inducer": "Positive"
-        #},
-      #{ "from": 6,
-        #"to"  : 7,
-        #"type": "Bound",
-        #},
-
-      #]
-#}
-
+# --------------------------------------------------------------------------
+##
+# @brief find a unique repressor
+#
+# @param database  database instance
+# @param item      repressor
+# @param regulator_list currently used repressor and activator
+#
+# @returns   selected repressor
+#
+# --------------------------------------------------------------------------
 def find_repressor(database, item, regulator_list):
   item = database.select_row("repressor", len(regulator_list) + 1)
   regulator_list += item
   return str(item)
 
+# --------------------------------------------------------------------------
+##
+# @brief find a unique activator
+#
+# @param database        database instance
+# @param item            activator
+# @param regulator_list  currently used repressor and activator
+#
+# @returns   select activator
+#
+# --------------------------------------------------------------------------
 def find_activator(database, item, regulator_list):
   item = database.select_row("activator", len(regulator_list) + 1)
   regulator_list += item
   return str(item)
 
+# --------------------------------------------------------------------------
+##
+# @brief find a promoter corresponding to regulator
+#
+# @param db         database instance
+# @param activator  optional activator
+# @param repressor  optional repressor
+#
+# @returns   selected promoter
+#
+# --------------------------------------------------------------------------
 def find_promoter(db, activator = None, repressor = None):
   if activator is not None:
     return db.find_promoter_with_activator(activator)
   else:
     return db.find_promoter_with_repressor(repressor)
 
+# --------------------------------------------------------------------------
+##
+# @brief find a file with given file name and path
+#
+# @param name  file name
+# @param path  file path
+#
+# @returns     the file with path
+#
+# --------------------------------------------------------------------------
 def find_file(name, path):
     for root, dirs, files in os.walk(path):
         if name in files:
             return os.path.join(root, name)
 
 
+# --------------------------------------------------------------------------
+##
+# @brief get group list with a protein
+#
+# @param part  protein
+#
+# @returns   the group list
+#
+# --------------------------------------------------------------------------
 def pre_work(part):
   return [prom_name, rbs_name, part["name"], term_name]
 
+# --------------------------------------------------------------------------
+##
+# @brief connect two bounded component
+#
+# @param protein1 the first protein
+# @param protein2 the second protein
+#
+# @returns   connected components
+# 
+# --------------------------------------------------------------------------
 def bind(protein1, protein2):
   l1 = len(protein1) - 1
   l2 = len(protein2) - 1
   return [prom_name] + protein1[1:l1] + protein2[1:l2] + [term_name]
 
-def find_bound_src(i, bound_list):
-  if bound_list[i] != i:
-    bound_list[i] = find_bound_src(bound_list[i], bound_list)
-  return bound_list[i]
+# --------------------------------------------------------------------------
+##
+# @brief find group name of bounded components using disjoint set
+#
+# @param v           current node
+# @param bound_list  the relation of bound edges
+#
+# @returns   the group name of bounded components
+#
+# --------------------------------------------------------------------------
+def find_bound_src(v, bound_list):
+  if bound_list[v] != v:
+    bound_list[v] = find_bound_src(bound_list[v], bound_list)
+  return bound_list[v]
 
+# --------------------------------------------------------------------------
+##
+# @brief generate group list with regulation network
+#
+# @param data      regulation network
+# @param database  databse instance
+#
+# @returns         group list
+#
+# --------------------------------------------------------------------------
 def work(data, database):
   groups = {}
   part_list = {}
@@ -171,26 +197,20 @@ def work(data, database):
       groups[next_grp][0] = find_promoter(database, activator=cur["name"])["Number"]
   return (groups, bound_list, pro_pos)
 
-def get_start_pos(groups):
-  start_pos = []
-  for i in groups:
-    if groups[i]["from"] == -1:
-      start_pos.append(i)
-  return start_pos
-
-def dump_sbol(network, database):
-  data, r_list, a_list = work(network, database)
-  sbol = []
-  rule = "RFC10"
-  for i in data:
-    data[i] = [find_file(s + ".xml", ".") for s in data[i]]
-    data_sbol = component_union.get_sbol(file_list, rule)
-    sbol.append(format_to_json(data_sbol))
-    #content = component_union.union(rule, data[i])
-    #dna_sequence = component_union.connect(rule, content)
-    #sbol.append(format_to_json(component_union.formatter_v11(content, dna_sequence)))
-  return sbol
-
+# --------------------------------------------------------------------------
+##
+# @brief get protein info from database
+#
+# @param database     database instance
+# @param protein_idx  the protein index in the group
+# @param groups       all groups in gene circuit
+# @param grp_id       group id of the protein
+# @param regulator    regulator to the protein
+# @param backbone     plasmid backbone, pSB1AT3 by default
+#
+# @returns   protein info
+#
+# --------------------------------------------------------------------------
 def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "pSB1AT3"):
   ret = {}
   cur_group = groups[grp_id]["sbol"]
@@ -238,6 +258,15 @@ def update_proteins_repress(database, gene_circuit):
     gene_circuit["proteins"][i]["repress_rate"] = log10(repress_rates[i])
     gene_circuit["proteins"][i]["induce_rate"] = log10(induce_rates[i])
 
+# --------------------------------------------------------------------------
+##
+# @brief Get graph without bound edges from link
+#
+# @param link  links in regulation network
+#
+# @returns   basic graph info
+#
+# --------------------------------------------------------------------------
 def get_graph(link):
   ret = {}
   for item in link:
@@ -245,6 +274,15 @@ def get_graph(link):
       ret[item["to"]] = item["from"]
   return ret
 
+# --------------------------------------------------------------------------
+##
+# @brief Get type of all links
+#
+# @param link  link in regulation network
+#
+# @returns   type of all links in regulation network
+#
+# --------------------------------------------------------------------------
 def get_graph_type(link):
   link_type = {}
   inducer_type = {}
@@ -264,6 +302,16 @@ def get_graph_type(link):
       inducer_type[item["to"]] = "None"
   return link_type, inducer_type
 
+# --------------------------------------------------------------------------
+##
+# @brief Get gene circuit with regulation network
+#
+# @param network   regulation network
+# @param database  database instance
+#
+# @returns   gene circuit
+#
+# --------------------------------------------------------------------------
 def dump_group(network, database):
   graph = get_graph(network["link"])
   link_type, inducer_type = get_graph_type(network["link"])
@@ -278,7 +326,7 @@ def dump_group(network, database):
     # get name and type of group member
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
-      grp.append({"name": elem, "type": component_union.get_rule(xml_file)})
+      grp.append({"name": elem, "type": component_union.get_part_type(xml_file)})
     for idx in range(1, len(grp) - 1, 2):
       grp[idx]["type"] = "RBS"
     grp[0]["type"] = "Promoter"
@@ -340,6 +388,15 @@ def dump_group(network, database):
   update_proteins_repress(database, gene_circuit)
   return gene_circuit
 
+# --------------------------------------------------------------------------
+##
+# @brief  get promoter parameter type
+#
+# @param p_type link type
+#
+# @returns   promoter paramter type
+#
+# --------------------------------------------------------------------------
 def get_type_of_promoter(p_type):
   if p_type == "Constitutive":
     return "PoPS"
@@ -348,6 +405,15 @@ def get_type_of_promoter(p_type):
   elif p_type == "Positive":
     return "LeakageRate"
 
+# --------------------------------------------------------------------------
+##
+# @brief Format data from javascript to use in python
+#
+# @param gene_circuit  gene circuit
+#
+# @returns   formatted data
+#
+# --------------------------------------------------------------------------
 def js_formatter(gene_circuit):
   return gene_circuit
   new_proteins = {}
@@ -361,6 +427,16 @@ def js_formatter(gene_circuit):
   gene_circuit["groups"] = new_groups
   return gene_circuit
 
+# --------------------------------------------------------------------------
+##
+# @brief update gene circuit
+#
+# @param db           database instance
+# @param update_info  update detail and gene circuit
+#
+# @returns   updated gene circuit
+#
+# --------------------------------------------------------------------------
 def update_controller(db, update_info):
   gene_circuit = js_formatter(update_info["gene_circuit"])
   # regulator_list = [name for name in gene_circuit["proteins"]]
@@ -453,7 +529,4 @@ def update_controller(db, update_info):
 
 if __name__ == "__main__":
   db = database.SqliteDatabase()
-  sbol=dump_group(data, db)
-  print sbol
-  update_info = {u'detail': {u'new_value': 72.549, u'type': u'copy', u'pro_id': u'3685f39b-40b4-6249-e3a4-77f2016a7001'}, u'gene_circuit': {u'proteins': {u'0ec6c528-fe70-4ed0-e14f-6862c0211b12': {u'RiPS': 0.1149, u'name': u'BBa_K518003', u'repress_rate': 0, u'concen': None, u'grp_id': u'0ec6c528-fe70-4ed0-e14f-6862c0211b12', u'pos': 4, u'PoPS': 0.6069, u'before_regulated': 5, u'K1': None, u'induce_rate': 0, u'copy': 73, u'display': False}, u'3685f39b-40b4-6249-e3a4-77f2016a7001': {u'RiPS': 0.1149, u'name': u'BBa_J58104', u'repress_rate': 0, u'concen': None, u'grp_id': u'3685f39b-40b4-6249-e3a4-77f2016a7001', u'pos': 2, u'PoPS': 0.9489, u'before_regulated': 8, u'K1': -2.4288, u'induce_rate': 0, u'copy': 72.549, u'display': True}, u'b953de13-1995-e928-4c38-468aa0059ebd': {u'RiPS': 0.1149, u'name': u'BBa_I752001', u'repress_rate': 0, u'concen': None, u'grp_id': u'0ec6c528-fe70-4ed0-e14f-6862c0211b12', u'pos': 2, u'PoPS': 0.6069, u'before_regulated': 5, u'K1': None, u'induce_rate': 0, u'copy': 73, u'display': True}}, u'plasmids': [[u'3685f39b-40b4-6249-e3a4-77f2016a7001'], [u'0ec6c528-fe70-4ed0-e14f-6862c0211b12']], u'groups': {u'0ec6c528-fe70-4ed0-e14f-6862c0211b12': {u'from': -1, u'state': u'cis', u'corep_ind_type': u'None', u'to': [u'3685f39b-40b4-6249-e3a4-77f2016a7001'], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_K124002'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Protein', u'name': u'BBa_I752001', u'id': u'b953de13-1995-e928-4c38-468aa0059ebd'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Repressor', u'name': u'BBa_K518003', u'id': u'0ec6c528-fe70-4ed0-e14f-6862c0211b12'}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'type': u'Constitutive'}, u'3685f39b-40b4-6249-e3a4-77f2016a7001': {u'from': u'0ec6c528-fe70-4ed0-e14f-6862c0211b12', u'state': u'cis', u'corep_ind_type': u'None', u'to': [], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_I712074'}, {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Protein', u'name': u'BBa_J58104', u'id': u'3685f39b-40b4-6249-e3a4-77f2016a7001'}, {u'type': u'Terminator', u'name': u'BBa_B0013'}], u'type': u'Negative'}}}}
-  print update_controller(db, update_info)
+  print dump_group(data, db)

@@ -101,6 +101,10 @@ def goToSimulation():
 	else:
 		return redirect(url_for('login'))
 
+@app.route("/doc")
+def documentation():
+  return render_template("html/index.html")
+
 @app.route("/ws")
 def webSocket():
   if request.environ.get('wsgi.websocket'):
