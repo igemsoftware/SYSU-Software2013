@@ -363,6 +363,17 @@ class SqliteDatabase:
 		else:
 			return None
 
+	def find_distinct_actrep(self, act_rep_type, idx):
+		self.__cursor.execute('SELECT DISTINCT ActRreNumber FROM relation WHERE\
+			ActRreNumber IS NOT NULL AND ActRreType = "%s" ORDER BY ActRreNumber DESC\
+			LIMIT %s,1' % (act_rep_type, idx))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
 	def find_promoter_with_repressor(self, repressor = None):
 		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
         ActRreNumber="%s" AND ActRreType="Negative"' % repressor)
@@ -544,6 +555,8 @@ class SqliteDatabase:
 		
 if __name__=="__main__":
 	sql=SqliteDatabase()
+	# sql.find_distinct_actrep("Negative", 1)
+	sql.select_with_name("repressor", "BBa_C0040")
 	# print sql.getUserGroup('Bobby')	
 	# sql.updateUserLoginRememberTime()
 	sql.userId=1
