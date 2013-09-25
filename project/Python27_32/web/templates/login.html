@@ -1,64 +1,49 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		
-		<title>Welcome to iGem</title>
-		
-		<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
-		
-		<style type="text/css">
-			.header {
-				text-align: center;
-			}
+<head>
+	<meta charset="utf-8">
+	<title>Welcome to iGem</title>
+	<link rel="stylesheet" href="../static/css/login.css">	
+</head>
 
-			.login-form {
-				width: 270px;
-				margin: 0 auto;
-			}
+<body>
+	<div class="container">
+		<div class="left-part"></div>
+		
+		<div class="login-part">
+			<form id="input-field">
+				<input type="text" name="userName" id="username" placeholder="username" required>
+				<input type="password" name="password" id="password" placeholder="password" required>
+				<a id="btn-login"></a>
+			</form>
 
-			.input-prepend label{
-				margin-bottom: 0px;
-			}
+			<div class="tips">
+				<span id="mycheckbox" title="Remember your username and password!">
+					<span class="checkbox-mask"></span>					
+					<span>&nbsp Remember me</span>
+				</span>
+				<input id="remember" type="checkbox" name="remember">
 
-			.btn-group {
-				width: 100px;
-				margin: 0 auto;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="row-fluid">
-				<div class="header">
-					<h2>Login</h2>
-				</div>
-			</div>
-			
-			<div class="alert" style="display: none">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong>The login credentials you supplied could not be recognized. Please try again.</strong> 
+				<a href="./register" title="click to sign in">Sign up for CAST?</a>
 			</div>
 
-			<div class="row-fluid">  
-				<div class="login-form">
-					<div class="input-prepend">
-						<label class="add-on" for="username">帐号:</label>
-						<input type="text" name="userName" id="username"/>
-					</div>  
-					<div class="input-prepend">
-						<label class="add-on" for="password">密码:</label>  
-						<input type="password" name="password" id="password"/>
-					</div>  
-					<div class="btn-group">  
-						<button class="btn btn-primary" id="btn-login" type="submit">登录</button>
-						<button class="btn" type="reset">重置</button> 
-					</div>
-				</div>
+			<div class="contact-us">
+				<a id="facebook" href="#" title="facebook"><img src="../static/img/login/facebook.png" alt="facebook"></a>
+				<a id="twitter" href="#" title="twitter"><img src="../static/img/login/twitter.png" alt="twitter"></a>
+				<a id="gplus" href="#" title="gplus"><img src="../static/img/login/gplus.png" alt="gplus"></a>
 			</div>
 		</div>
-
-		<script src="../static/js/jquery-1.8.0.min.js"></script>
-		<script src="../static/js/login.js"></script>
-	</body>
+		
+		<div class="right-part"></div>
+	</div>
+	<script src="../static/js/rsa/jsbn.js"></script>
+	<script src="../static/js/rsa/jsbn2.js"></script>
+    <script src="../static/js/rsa/prng4.js"></script>
+    <script src="../static/js/rsa/rng.js"></script>
+    <script src="../static/js/rsa/rsa.js"></script>
+    <script src="../static/js/rsa/rsa2.js"></script>
+	<script src="../static/js/jquery-1.8.0.min.js"></script>
+    <script src="../static/js/rsa/sha1.js"></script>
+	<script src="../static/js/login.js"></script>
+</body>
 </html>

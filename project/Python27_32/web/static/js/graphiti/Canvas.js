@@ -467,7 +467,7 @@ graphiti.Canvas = Class.extend(
      * @param {Number} [y] The y position.
      **/
     addFigure:function( figure , x,  y)
-    {
+    {   
         if(figure.getCanvas()===this){
             return;
         }
@@ -480,10 +480,14 @@ graphiti.Canvas = Class.extend(
      
       if(figure instanceof graphiti.shape.basic.Line){
         this.lines.add(figure);
+        this.connections.push(figure.getId());
+        this.connections.counter++;
         this.linesToRepaintAfterDragDrop = this.lines;
       }
       else{
         this.figures.add(figure);
+        this.collection.push(figure.getId());
+        this.collection.counter++;
 
         if(typeof y !== "undefined"){
         	figure.setPosition(x,y);
@@ -505,9 +509,13 @@ graphiti.Canvas = Class.extend(
     removeFigure:function(figure){
         if(figure instanceof graphiti.shape.basic.Line){
            this.lines.remove(figure);
+           this.connections.remove(figure);
+           this.connections.counter--;
          }
         else {
            this.figures.remove(figure);
+           this.collection.remove(figure.getId());
+           this.collection.counter--;
         }
 
         figure.setCanvas(null);
@@ -1298,7 +1306,11 @@ graphiti.Canvas = Class.extend(
         var figure = this.getBestFigure(x, y);
 
         if(figure!==null){
-            figure.onClick();
+            if (figure.TYPE == "Container") {
+                figure.onClick(x, y);
+            } else {
+                figure.onClick();
+            }
         }
     },
 

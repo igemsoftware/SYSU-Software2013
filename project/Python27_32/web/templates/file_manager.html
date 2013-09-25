@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>File Manager</title>
+    <meta name="author" content="Jiexin Guo,Jianhong Li">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/navlist.css">
+    <script src="../static/js/jquery-1.8.0.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/createnewpart/FileSaver.js"></script>
+    <script src='../static/js/filemanager.min.js'></script>    
+  </head>
+  <body>    
+    <div id="mymodal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+      <div class="modal-header">
+        <button type="button" onClick="location.reload();" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Your file extract code</h3>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true" onClick="location.reload();">关闭</button>
+      </div>
+    </div>    
+    <div class="span3">
+    <ul class="nav nav-list bs-docs-sidenav affix" id="navlist">
+      <li class="active">
+        <a href="#yourfilelist" data-toggle="tab">
+          <i class="icon-chevron-right"></i>
+          Your File list
+        </a>
+      </li>
+      <li>
+        <a href="#sharefilelist" data-toggle="tab">
+          <i class="icon-chevron-right"></i>
+          Shared File List
+        </a>
+      </li>  
+      <li>
+        <a href="#yourpartlist" data-toggle="tab">
+          <i class="icon-chevron-right"></i>
+          Your Part List
+        </a>
+      </li>      
+    </ul>
+    <button type="button" class="btn btn-default btn-large" onClick="window.history.back(-1);">
+ 		<span class="icon-arrow-left"></span> Back
+	</button>  
+  	</div>
+    <div class="span9 tab-content">
+    <div class="tab-pane active" id="yourfilelist">
+    <h2>Your File List</h2>
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Filename</th>
+          <th>Type</th>
+          <th>operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in filelist %}
+        <tr id="{{ item.fileName }}">
+          <th>{{ item.fileName }}</th>
+          <th>{{ item.fileType }}</th>
+          <th>
+              <button id="{{ item.fileName }}" class="btn open">open<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
+            &nbsp
+            <button id="{{ item.fileName }}" class="btn delete">delete<i class="icon-trash"></i></button>
+            {% if item.shared == True %}
+            <button id="{{ item.fileName }}" class="btn unshared">unshared your file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
+            {% else %}
+            <button id="{{ item.fileName }}" class="btn shared">shared your file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
+            {% endif %}
+          </th>
+        </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+    </div>
+    <div class="tab-pane"  id="sharefilelist">
+    <h2>Shared File List</h2>
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Filename</th>
+          <th>Type</th>
+          <th>operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in sharedFileList %}
+        <tr id="{{ item.fileName }}">
+          <th>{{ item.name }}</th>
+          <th>{{ item.fileName }}</th>
+          <th>{{ item.fileType }}</th>
+          <th>
+              <button id="{{ item.fileName }}" class="btn openshared" name="{{ item.name }}">open shared file<i class="icon-folder-open"></i><p style="display:none;">{{ item.fileType }}</p></button>
+            &nbsp            
+          </th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>    
+    <div class="tab-pane"  id="yourpartlist">
+    <h2>Your Part List</h2>
+     <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Part Id</th>
+          <th>Part Name</th>
+          <th>Type</th>
+          <th>Author</th>
+          <th>operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in userpart %}
+        <tr id="{{ item.part_id }}">
+          <th>{{ item.part_id }}</th>
+          <th>{{ item.Name }}</th>
+          <th>{{ item.Type }}</th>
+          <th>{{ item.Author }}</th>
+          <th>
+              <button id="{{ item.part_id }}" class="btn export">Export<i class="icon-folder-open"></i></button>
+            &nbsp
+            <button id="{{ item.part_id }}" name="{{ item.username }}" class="btn deletepart">delete<i class="icon-trash"></i></button>            
+          </th>
+        </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+    </div>  
+    </div> 
+  </body>
+</html>

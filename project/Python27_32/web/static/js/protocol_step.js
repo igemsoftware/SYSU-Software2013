@@ -1,152 +1,105 @@
-function parse_data() {
-  var data = {
-    "DnaComponent": {
-      "description": "undefined",
-      "annotaions": [
-        {
-        "SequenceAnnotation": {
-          "bioStart": "29",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "144",
-              "uri": "http://partsregistry.org/Part:BBa_B0011",
-              "type": "Terminator",
-              "description": "LuxICDABEG (+/-)",
-              "name": "BBa_B0011"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "75"
+function preloadimages(arr){
+    var newimages=[], loadedimages=0;
+    var postaction = function(){}
+    var arr=(typeof arr!="object")? [arr] : arr
+    function imageloadpost() {
+        loadedimages++
+        if (loadedimages==arr.length){
+            postaction(newimages)
         }
-      },
-      {
-        "SequenceAnnotation": {
-          "bioStart": "101",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "4932",
-              "uri": "http://partsregistry.org/Part:BBa_E1010",
-              "type": "Coding",
-              "description": "**highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)",
-              "name": "BBa_E1010"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "782"
-        }
-      },
-      {
-        "SequenceAnnotation": {
-          "bioStart": "788",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "4955",
-              "uri": "http://partsregistry.org/Part:BBa_I14016",
-              "type": "operator",
-              "description": "P(Las) CIO",
-              "name": "BBa_I14016"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "956"
-        }
-      },
-      {
-        "SequenceAnnotation": {
-          "bioStart": "962",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "8042",
-              "uri": "http://partsregistry.org/Part:BBa_J61101",
-              "type": "RBS",
-              "description": "Ribosome Binding Site Family Member",
-              "name": "BBa_J61101"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "974"
-        }
-      },
-      {
-        "SequenceAnnotation": {
-          "bioStart": "980",
-          "subComponent": {
-            "DnaComponent": {
-              "displayId": "7587",
-              "uri": "http://partsregistry.org/Part:pSB1A7",
-              "type": "stickyends",
-              "description": "Transcriptionally insulated high copy BioBrick plasmid",
-              "name": "pSB1A7"
-            }
-          },
-          "uri": "http://sbols.org/",
-          "strand": "+",
-          "bioEnd": "3411"
-        }
-      }
-      ],
-      "uri": "http://sbol.org/",
-      "DnaSequence": {
-        "nucleotides": "GAATTCG",
-        "uri": "http://sbols.org/"
-      },
-      "displayId": "undefined",
-      "name": "undefined"
     }
-  };
-  var img = new Array();
-  for (var i = 0; i < data.DnaComponent.annotaions.length; i++) {
-    img[i] = new Image();
-    img[i].src =
-      "../static/img/component/"+data.DnaComponent.annotaions[i].SequenceAnnotation.subComponent.DnaComponent.type+".PNG" 
-  }
-  return img;
+    for (var i=0; i<arr.length; i++){
+        newimages[i]=new Image()
+        newimages[i].src=arr[i]
+        newimages[i].onload=function(){
+            imageloadpost()
+        }
+        newimages[i].onerror=function(){
+            imageloadpost()
+        }
+    }
+    return {
+        done:function(f){
+            postaction=f || postaction
+        }
+    }
 }
 
-var interval = 100;
-var horizon = 100;
-var img = parse_data();
+function parse_data(data) {
+  var img_path = [];
+  for (var i = 0; i < data.circuit.length; i++)
+  for (var j = 0; j < data.circuit[i].sbol.length; j++) {
+    var img_name = 'Promoter.PNG';
+    var pro_type = data.circuit[i].sbol[j].type;
+    if      (pro_type == 'Promoter') img_name = 'Promoter.PNG';
+    else if (pro_type == 'RBS') img_name = 'rbs.PNG';
+    else if (pro_type == 'Protein') img_name = 'Coding.PNG';
+    else if (pro_type == 'Repressor') img_name = 'Coding.PNG';
+    else if (pro_type == 'Activator') img_name = 'Coding.PNG';
+    else if (pro_type == 'Terminator') img_name = 'Terminator.PNG';
+    img_path.push("../static/img/component/" + img_name);
+  }
+  return img_path;
+}
+
+function get_name(data) {
+  var comp_name = [];
+  for (var i = 0; i < data.circuit.length; i++)
+  for (var j = 0; j < data.circuit[i].sbol.length; j++) {
+    comp_name.push(data.circuit[i].sbol[j].name);
+  }
+  return comp_name;
+}
+
+var interval = 70;
+var horizon = 70;
 function draw(cxt, horizon) {
 }
+function handlerData(){
+	if(sessionStorage.genecircuitSave!==undefined)
+	{
+		data = eval('(' + sessionStorage.genecircuitSave + ')'); 
+		return data['genecircuit'];
+	}
+}
 window.onload=function() {
-  var c=document.getElementById("myCanvas");
-  var cxt=c.getContext("2d");
-  var tot = img.length;
-  var k = 2;
-  var hor = 100;
-  var step = 1;
-  var text_pos = -1;
-  for (var l = 0; l < Math.log(tot)/Math.LN2; l++) {
+  var data = handlerData();
+  console.log(data);
+  var img_path = parse_data(data);
+  var comp_name = get_name(data);
+  preloadimages(img_path).done( function(img) {
     var tot = img.length;
-    var bgn = 0;
-    for (var i = 0; i < tot; i++) {
-      var height = img[i].height * interval /img[i].width;
-      cxt.drawImage(img[i], bgn, hor - height, interval, height);
-      var j = 2;
-      if ((i+1)%k != 0 && i < tot - 1)
-        j = 1;
-      bgn += j * interval;
+    var c = document.getElementById("myCanvas");
+    c.width = interval * img.length * 2;
+    c.height = horizon * (Math.log(tot)/Math.LN2 + 1);
+    var cxt=c.getContext("2d");
+    var k = 2;
+    var cur_hor = horizon;
+    var step = 1;
+    var text_pos = -1;
+    for (var l = 0; l < Math.log(tot)/Math.LN2; l++) {
+      var tot = img.length;
+      var bgn = 30;
+      cxt.font="20px Helvetica";
+      cxt.textAlign="left";
+      cxt.fillText("Step " + step, bgn, cur_hor);
+      bgn += 100;
+
+
+      for (var i = 0; i < tot; i++) {
+        var height = img[i].height * interval / img[i].width;
+        cxt.drawImage(img[i], bgn, cur_hor - height, interval, height);
+        cxt.font="10px Helvetica";
+        cxt.textAlign="center";
+        cxt.fillText(comp_name[i], bgn + interval / 2, cur_hor + 10);
+        var j = 2;
+        if ((i+1) % k != 0 && i < tot - 1)
+          j = 1;
+        bgn += j * interval;
+      }
+      k *= 2;
+      cur_hor += horizon;
+      step++;
     }
-    if (text_pos == -1)
-      text_pos = bgn;
-    cxt.font="30px Arial";
-    cxt.fillText("Step " + step, text_pos, hor);
-    var pos = interval;
-    /*
-       for (var j = 0; j < tot - 1; j++) {
-       if ((j+1) % k != 0) {
-       cxt.fillStyle="#000000";
-       cxt.fillRect(pos, hor - 8, interval, 2);
-       }
-       pos += interval * 2;
-       }
-       */
-    k *= 2;
-    hor += horizon;
-    step++;
-  }
+  });
 }

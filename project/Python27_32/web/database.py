@@ -21,6 +21,57 @@ class SqliteDatabase:
 	URL=''
 	userId=-1
 	logger=None
+	encrypt=None
+	indexSave=None
+	def getCx(self):
+		return self.__cx
+	def getCuror(self):
+		return self.__cursor
+
+	def addAPromoter(self,name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS):
+		sql_cmd='INSERT INTO promoter (Name,Number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS) VALUES ("%s","%s",%f,%f,%f,"%s","%s","%s","%s",%f)'%(name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS)		
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()		
+		return 'add promoter success!'
+	def addAUserPart(self,part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,Number,parts):
+		sql_cmd="INSERT INTO userPart (part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,uploadUser,Number,parts) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(part_id,part_name,part_short_name,part_short_desc,part_type,part_nickname,part_author,sequence,self.getUserNameById(self.userId),Number,parts)
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()	
+		return 'add user part success!'
+	def addAplasmidBackbone(self,name,number,CopyNumber):
+		sql_cmd='INSERT INTO plasmid_backbone (Name,Number,CopyNumber) VALUES ("%s","%s",%d)'%(name,number,CopyNumber)
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()	
+		return 'add plasmidBackbone success!'
+	def addARBS(self,name,number,MPRBS,RIPS):
+		sql_cmd='INSERT INTO RBS (Name,Number,MPRBS,RIPS) VALUES ("%s","%s",%f,%f)'%(name,number,MPRBS,RIPS)
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()
+		return 'add RBS success!'
+	def addARepressor(self,name,number,HillCoeff1,K1,K2):
+		sql_cmd='INSERT INTO repressor (Name,Number,HillCoeff1,K1,K2) VALUES ("%s","%s",%d,%f,%f)'%(name,number,HillCoeff1,K1,K2)
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()	
+		return 'add Repressor success!'
+	def addATerminator(self,name,number,Efficiency):
+		sql_cmd='INSERT INTO terminator (Name,Number,Efficiency) VALUES ("%s","%s",%f)'%(name,number,Efficiency)
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()	
+		return 'add terminator success!'
+	def addAnInducer(self,name,number,HillCoeff2,K2):
+		sql_cmd='INSERT INTO Inducer (Name,Number,HillCoeff2,K2) VALUES ("%s","%s",%d,%f)'%(name,number,HillCoeff2,K2)
+		self.__cursor.execute(sql_cmd)
+		self.__cx.commit()	
+		return 'add Inducer success!'
+	def updateUserLoginRememberTime(self):
+		if self.userId==-1:
+			self.logger.error('not login but want to remember the user login time')
+			return 'updateUserLoginRememberTime failed'
+		sql_cmd='UPDATE user_list SET rememberTime=datetime("now") WHERE id=%d'%(self.userId)
+		self.__cursor.execute(sql_cmd)
+		self.logger.debug('updateUserLoginRememberTime: %s'%sql_cmd)
+		self.__cx.commit()		
+		return 'updateUserPassword succeed'
 	def isDatabaseExist(self,database):
 		if os.path.exists(database):  
 			return True
@@ -46,7 +97,8 @@ class SqliteDatabase:
 		self.__cx = sqlite3.connect(self.URL)
 		self.logger.debug('connect to database: %s'%self.URL)
 		self.__cursor = self.__cx.cursor()	
-		
+	
+	
 	"""
 		return a json that after doing the selection of all the table(of the tableName)
 		@author: Jiexin Guo
@@ -67,6 +119,21 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson
 	
+	def getUserAnswer(self,userName):
+		self.__cursor.execute('select user_list.answer from user_list where name="%s"'%(userName))		
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if len(decodejson)==0:
+			return 'no such a user'
+		else:
+			return decodejson[0]['answer']
+
+	def getUserQuestion(self,userName):
+		self.__cursor.execute('select user_list.question from user_list where name="%s"'%(userName))		
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)			
+		return decodejson[0]['question']
+
 	def getMaxUserId(self,tableName='user_list'):
 		self.__cursor.execute('select * from %s where id=(select max(id) from %s)'%(tableName,tableName))		
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
@@ -79,49 +146,92 @@ class SqliteDatabase:
 		if self.userId==-1:
 			self.logger.error('not login but want to change the user password')
 			return 'updateUserPassword failed'
-		sql_cmd='UPDATE user_list SET password_MD5="%s" WHERE id=%d'%(password,self.userId)
+		sql_cmd='UPDATE user_list SET password_SHA1="%s" WHERE id=%d'%(password,self.userId)
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user password: %s'%sql_cmd)
 		self.__cx.commit()
 		return 'updateUserPassword succeed'
 
+	def resetUserPassword(self,userName,password):
+		sql_cmd='UPDATE user_list SET password_SHA1="%s" WHERE name="%s"'%(password,userName)
+		self.__cursor.execute(sql_cmd)
+		self.logger.debug('reset user password: %s'%sql_cmd)
+		self.__cx.commit()
+		return 'reset User Password succeed'
+
 	def getUserFileNameList(self):
 		if self.userId==-1:
 			self.logger.error('not login but want to get the user fileList')
 			return 'getUserFileNameList failed'
-		sql_cmd='select fileName from user_save WHERE user_id=%d'%(self.userId)
+		sql_cmd='select fileName,fileType from user_save WHERE user_id=%d'%(self.userId)
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('select fileName from user_save: %s'%sql_cmd)
-		rec=[]
-		for item in self.__cursor.fetchall():
-			rec.append(item[0])
-		return rec
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson	
 
-	def updateUserData(self,data,fileName):
+	def getUserFile(self,filename, fileType):
+		if self.userId==-1:
+			self.logger.error('not login but want to get the user file')
+			return 'getUserFile failed'
+		# sql_cmd='select data from user_save WHERE user_id=%d AND fileType="%s" AND fileName="%s"'%(self.userId, fileType,filename)
+		sql_cmd='select data from user_save WHERE user_id=%d AND fileName="%s"'%(self.userId, filename)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)
+		self.logger.debug('select fileName from user_save: %s'%sql_cmd)
+		result=self.__cursor.fetchall()
+		if(len(result)!=0):
+			return result[0][0]
+		else:
+			return 'getUserFile No result!'
+
+	def updateUserData(self,data,fileName,fileType):
 		if self.userId==-1:
 			self.logger.error('not login but want to save the user data')
 			return 'updateUserData failed'
-		sql_cmd='UPDATE user_save SET data="%s" WHERE user_id=%d AND fileName="%s"'%(data,self.userId,fileName)
+		#sql_cmd='UPDATE user_save SET data="%s" WHERE user_id=%d AND fileName="%s" AND fileType="%s"'%(data,self.userId,fileName,fileType)
+		sql_cmd='REPLACE INTO user_save (data,user_id,fileName,fileType) VALUES ("%s",%d,"%s","%s")'%(data,self.userId,fileName,fileType)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
 		self.__cx.commit()
 		return 'updateUserData succeed'		
 	
-	def insertUserData(self,data,fileName):
+	def insertUserData(self,data,fileName,fileType):
 		if self.userId==-1:
 			self.logger.error('not login but want to save the user data')
 			return 'updateUserData failed'
-		sql_cmd='INSERT INTO user_save (user_id,data,fileName) VALUES (%d,"%s","%s")'%(self.userId,data,fileName)
+		sql_cmd='INSERT INTO user_save (user_id,data,fileName,fileType,extractCode,shared) VALUES (%d,"%s","%s","%s",NULL,0)'%(self.userId,data,fileName,fileType)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
 		print self.__cx.commit()
 		return 'updateUserData succeed'	
-		
-	def insertAUser(self,name,password,email,group_id):
+	
+	def deleteUserPart(self,part_id,uploaduser):
+		if self.userId==-1:
+			self.logger.error('not login but want to delete the user data')
+			return 'deleteUserData failed'
+		sql_cmd='DELETE FROM userPart WHERE part_id = "%s" AND uploadUser = "%s"'%(part_id,uploaduser)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)		
+		print self.__cx.commit()
+		return 'delete User part succeed'
+
+	def deleteUserData(self,fileName):
+		if self.userId==-1:
+			self.logger.error('not login but want to delete the user data')
+			return 'deleteUserData failed'
+		sql_cmd='DELETE FROM user_save WHERE user_id = %d AND fileName = "%s"'%(self.userId,fileName)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)
+		self.logger.debug('delete user: %s'%self.getUserNameById(self.userId))
+		print self.__cx.commit()
+		return 'deleteUserData succeed'	
+
+	def insertAUser(self,name,password,email,group_id,gender,question,answer):
 		nextId=self.getMaxUserId()+1
-		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d);'%(nextId,name,password,email,group_id)
+		excuteString='INSERT INTO user_list VALUES(%d,"%s","%s","%s",%d,%d,"%s","%s",NULL);'%(nextId,name,email,password,group_id,gender,question,answer)
 		self.logger.debug('insert a user: %s ' %excuteString)
 		self.__cursor.execute(excuteString)
 		self.__cx.commit()
@@ -134,7 +244,7 @@ class SqliteDatabase:
 		if len(decodejson)==0:
 			return None
 		else:
-			return decodejson[0]['password_MD5']		
+			return decodejson[0]['password_SHA1']		
 	
 	def isUserNameAndPasswordCorrect(self,name,password):
 		if self.getUserPasswordById(name) is None:
@@ -144,6 +254,29 @@ class SqliteDatabase:
 		else:
 			return 'Password not correct!'
 	
+	def getUserGroup(self,username):
+		excuteString="SELECT [user_group].[id],[user_group].[name],  [user_group].[canReadPartList],[user_group].[canWritePartList] FROM user_group,user_list WHERE user_list.name = '%s' AND user_list.group_id = user_group.id" %(username)
+		self.logger.debug(excuteString)
+		self.__cursor.execute(excuteString)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if len(decodejson)==0:
+			return 'No such a user!'
+		else:
+			for item in decodejson[0]:				
+				if decodejson[0][item] is None:
+					decodejson[0][item]=0
+			return decodejson[0]
+
+	def rememberUser(self,username,pwd):	
+		if not self.isRecordExist('remember',recs={'username':username}):
+			excuteString='INSERT INTO remember VALUES("%s","%s");'%(username,pwd)
+			self.logger.debug('insert a user remember: %s ' %excuteString)
+			self.__cursor.execute(excuteString)
+			self.__cx.commit()
+		else:
+			return "the same name user exist"
+
 	def getUserNameById(self,id):
 		excuteString='select * from user_list where id = %d' %id				
 		self.__cursor.execute(excuteString)	
@@ -158,7 +291,26 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]['id']
-		
+
+	def getUserInfoByName(self,name='Bobby'):
+		excuteString='select * from user_list where name = "%s"' %name
+		self.__cursor.execute(excuteString)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
+	def updateUserInfo(self, info, userId):
+		name = info["name"]
+    # TODO gender is not included in database
+		gender = info["gender"]
+		e_mail = info["e_mail"]
+		excuteString= 'UPDATE user_list SET name="%s", e_mail = "%s" WHERE id = "%s"' % (name, e_mail, userId)
+		try:
+		  self.__cursor.execute(excuteString)
+		  return "success"
+		except:
+		  return "fail"
+
 	"the demo of selecting all data of part_list to the encoded json format"
 	def demo1(self):
 		pass
@@ -181,7 +333,161 @@ class SqliteDatabase:
 			temp=temp+row[0]+','
 		print temp
 		return temp
+
+	def select_row(self, tableName, idx):
+		excuteString = "SELECT * FROM %s ORDER BY Number DESC LIMIT %s,1" % (tableName, idx)
+		self.__cursor.execute(excuteString)		
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if len(decodejson)==0:
+			return None
+		else:
+			return decodejson[0]['Number']		
+
+	def select_with_name(self, table, name):
+		self.__cursor.execute('SELECT * FROM %s WHERE Number = "%s"' % (table,\
+      name))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
+	def find_promoter_with_repressor(self, repressor = None):
+		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
+	def find_promoter_with_activator(self, activator = None):
+		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
+	def find_inducer_with_repressor(self, repressor, corep_ind_type):
+		if corep_ind_type == "Corepressor":
+			self.__cursor.execute('SELECT * FROM Corepressor ORDER BY random() LIMIT 1')
+		elif corep_ind_type == "Inducer":
+			self.__cursor.execute('SELECT * FROM Inducer ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
+	def find_inducer_with_activator(self, activator, corep_ind_type):
+		if corep_ind_type == "Corepressor":
+			self.__cursor.execute('SELECT * FROM Corepressor ORDER BY random() LIMIT 1')
+		elif corep_ind_type == "Inducer":
+			self.__cursor.execute('SELECT * FROM Inducer ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
+	def find_repressor_with_promoter(self, promoter):
+		self.__cursor.execute('SELECT * FROM repressor ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
+	def find_activator_with_promoter(self, promoter):
+		self.__cursor.execute('SELECT * FROM activator ORDER BY random() LIMIT 1')
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
 	
+	def getRBSNearValue(self,idealValue):
+		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%f) limit 0,1' %idealValue)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
+	def getPlasmidBackboneNearValue(self,idealValue):
+		self.__cursor.execute('select * from plasmid_backbone order by\
+        abs(CopyNumber-%f) limit 0,1' %idealValue)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
+	def getRepressedPromoterNearValue(self, idealValue, repressor_list, link_type, p_type):
+		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
+				limit 0,%d" % (link_type, p_type, idealValue, len(repressor_list)+1)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if self.find_repressor_with_promoter(item["Number"]) not in repressor_list:
+				return item
+
+	def getActivatedPromoterNearValue(self, idealValue, activator_list, link_type, p_type):
+		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
+				limit 0,%d" % (link_type, p_type, idealValue, len(activator_list)+1)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if self.find_activator_with_promoter(item["Number"]) not in activator_list:
+				return item
+
+	def getRepressorNearValue(self, idealValue, repressor_list):
+		self.__cursor.execute('select * from repressor order by abs(K1-%f)\
+				limit 0,%d' % (idealValue, len(repressor_list)+1))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if item["Number"] not in repressor_list:
+				repressor_list.append(item["Number"])
+				return item
+
+	def getUserRememberMeTime(self,username):
+		self.__cursor.execute('SELECT user_list.rememberTime FROM user_list WHERE name="%s"' % (username))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]['rememberTime']
+				
+	def getActivatorNearValue(self, idealValue, activator_list):
+		self.__cursor.execute('select * from activator order by abs(K1-%f)\
+				limit 0,%d' % (idealValue, len(activator_list)+1))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if item["Number"] not in activator_list:
+				activator_list.append(item["Number"])
+				return item
+	def getUserPartByLoginuser(self):
+		excuteString = "SELECT part_id,part_name AS Name,part_type as Type,part_author as Author,uploadUser as username FROM userPart WHERE uploadUser = '%s'" % self.getUserNameById(self.userId)
+		self.__cursor.execute(excuteString)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+	def getUserPart(self, part_id):
+		excuteString = "SELECT * FROM userPart WHERE part_id = '%s'" % part_id
+		self.__cursor.execute(excuteString)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if len(decodejson)==0:
+			return None
+		else:
+			return decodejson[0]
+
 	"""
 		test if there is the same record in the table
 		@author: Jiexin Guo		
@@ -201,7 +507,6 @@ class SqliteDatabase:
 		self.logger.debug(recs)
 		whereCommand=jsonUtil.changeADictToStringThatCanUseBySql(recs)		
 		sql_cmd="select * from %s where %s ;"%(tableName,whereCommand)
-		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug(sql_cmd)
 		res = self.__cursor.fetchall()		
@@ -218,8 +523,18 @@ class SqliteDatabase:
 		
 if __name__=="__main__":
 	sql=SqliteDatabase()
-	#sql.addColumnToTable('part_relation','testw','integer',' 0')
-	sql.demo1()
+	# print sql.getUserGroup('Bobby')	
+	# sql.updateUserLoginRememberTime()
+	sql.userId=1
+	#print sql.addAUserPart(part_id='test',part_name='test',part_short_name='set',part_short_desc='sets',part_type='terminater',part_nickname='sdfhsdjf',part_author='huangjunyong',sequence='actga')
+	print sql.addARBS('test1','BBa-tst',1.0123,0.1234)
+	# print sql.addARepressor('test1','BBa-tst',2,0.1234,0.123)
+	#print sql.addAplasmidBackbone('testw','BBa-tst',5)
+	# sql.insertAUser('name','password','email',1,1,'question','answer')
+	#sql.addATerminator('test','BBa_12345',0.358)
+	# sql.addAnInducer('test','BBa-tst',3,0.123)
+	# addATerminator(self,name,number,Efficiency)
+	#sql.addColumnToTable('part_relation','testw','integer',' 0')	
 	#print sql.isRecordExist('part_list')
 	#sql.selectAllOfTable('part_relation')
 	#sql.printAllTableNames()

@@ -7,7 +7,10 @@ import json
 from websocket import handle_websocket
 from gevent.pywsgi import WSGIServer
 from geventwebsocket.handler import WebSocketHandler
+import user
 import xmlParse
+import string
+from sharedFile import sharedFiles
 
 sql = db.SqliteDatabase()
 
@@ -15,49 +18,100 @@ app = Flask(__name__)
 	
 @app.route("/")
 def login():
+	if user.isUserLogined(sql):
+		user.userLogout(sql)
 	return render_template('login.html')
 
-@app.route("/demo")
-def demo():
-  return render_template('demo.html')
+@app.route("/login")
+def login2():
+	if user.isUserLogined(sql):
+		user.userLogout(sql)
+	return render_template('login.html')
 
+@app.route("/register")
+def register():	
+	return render_template('register.html')
+	
 @app.route("/index")
 def index():
-	return render_template('index.html')
+	if user.isUserLogined(sql):
+		return render_template('index.html')
+	else:
+		return redirect(url_for('login'))
+		
+@app.route("/createnewpart")
+def createnewpart():
+	if user.isUserLogined(sql):
+		return render_template('createNewPart.html')
+	else:
+		return redirect(url_for('login'))	
 
-@app.route("/profile/")
-@app.route("/profile/<username>")
-def profile(username=None):
-  userExist = sql.isRecordExist("user_list", {"name": username})
-  return render_template('profile.html', username = username, flag = userExist)
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+  if request.method == 'GET':
+    username = user.getLoginedUserName(sql)
+    userInfo = user.getUserInfo(sql)
+    return render_template('profile.html', username = username,
+        userInfo = userInfo,
+        flag = (username != "NULL"))
+  else:
+    pass
 
-@app.route("/getdir/<pathname>")
-def getDir(pathname):
-	return json.dumps(xmlParse.get_allfiledirs('web\\'+pathname))
+@app.route("/file_manager")
+def file_manager():
+  filelist = sql.getUserFileNameList()
+  shared=sharedFiles(sql)
+  sharedFileList=shared.getSharedFileList()  
+  yoursharedfiles=shared.getUserSharedFileList(user.getLoginedUserName(sql))
+  for file in filelist:
+    for shareF in yoursharedfiles:
+      if file['fileType']==shareF['fileType'] and file['fileName']==shareF['fileName'] and shareF['name']==user.getLoginedUserName(sql):
+        file['shared']=True
+  for file in filelist:
+  	if not 'shared' in file:
+  	  file['shared']=False  
+  print sql.getUserPartByLoginuser()
+  return render_template('file_manager.html', filelist = filelist,sharedFileList = sharedFileList,userpart=sql.getUserPartByLoginuser())
 
 @app.route("/genecircuit")
 def goToGeneCircuit():
-	return render_template('genecircuit.html')
+	if user.isUserLogined(sql):
+		return render_template('genecircuit.html')
+	else:
+		return redirect(url_for('login'))
 
 @app.route("/plasmid")
 def goToPlasmid():
-	return render_template('plasmid.html')
+	if user.isUserLogined(sql):
+		return render_template('plasmid.html')
+	else:
+		return redirect(url_for('login'))
 
 @app.route("/protocol")
 def goToProtocol():
-	return render_template('protocol.html')
+	if user.isUserLogined(sql):
+		return render_template('protocol.html')
+	else:
+		return redirect(url_for('login'))
 
 @app.route("/simulation")
 def goToSimulation():
-	return render_template('simulation.html')
+	if user.isUserLogined(sql):
+		return render_template('simulation.html')
+	else:
+		return redirect(url_for('login'))
+
+@app.route("/doc")
+def documentation():
+  return render_template("html/index.html")
 
 @app.route("/ws")
 def webSocket():
   if request.environ.get('wsgi.websocket'):
     handle_websocket(request.environ["wsgi.websocket"], sql)
   return
-	
+
 if __name__ == "__main__":
-    http_server = WSGIServer(('',5000), app, handler_class=WebSocketHandler)
+    http_server = WSGIServer(('0.0.0.0',5000), app, handler_class=WebSocketHandler)
     http_server.serve_forever()
-    #app.run(debug=True)
+    # app.run(debug=True)

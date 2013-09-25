@@ -30,7 +30,7 @@ graphiti.Connection = graphiti.shape.basic.PolyLine.extend({
     NAME : "graphiti.Connection",
 
 //    DEFAULT_ROUTER: new graphiti.layout.connection.DirectRouter(),
-    DEFAULT_ROUTER: new graphiti.layout.connection.DirectRouter(),
+    DEFAULT_ROUTER: new graphiti.layout.connection.ManhattanConnectionRouter(),
         
     /**
      * @constructor
@@ -56,7 +56,7 @@ graphiti.Connection = graphiti.shape.basic.PolyLine.extend({
       this.sourceAnchor = new graphiti.ConnectionAnchor(this);
       this.targetAnchor = new graphiti.ConnectionAnchor(this);
     
-      this.router =this.DEFAULT_ROUTER;
+      this.router = this.DEFAULT_ROUTER;
 
       this.setColor("#4cbf2f");
       this.setStroke(2);
