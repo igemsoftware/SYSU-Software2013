@@ -382,11 +382,11 @@ function initDrawChart(){
 			},
 			color_factor : 0.3
 		},					
-		width : 960,
+		width :document.getElementById('optionpanel').clientWidth*2.2,
 		height : 410,
 		radius:140		
 	});		
-	
+	console.log(document.getElementById('optionpanel').clientWidth);
 	if(title!=null)
 	{
 		chart.plugin(new iChart.Custom({
