@@ -707,7 +707,7 @@ function canvasMouseMove(obj,e)
 		sessionStorage._offsetAngle=offsetang;
 		chart.push("offset_angle",offsetang);
 		chart.push("animation","false");
-		chart.resize(850,410);
+		chart.resize(960,410);
 		var ang=270-offsetang;
 		if(ang<0)
 		{
