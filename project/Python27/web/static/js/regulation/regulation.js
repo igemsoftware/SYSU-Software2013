@@ -80,6 +80,7 @@ $().ready(function() {
         // }));
         // window.location.pathname = "/file_manager";
         canvasToJSON();
+		window.location.pathname = "/file_manager";
     });
 
     // create new biobrick
