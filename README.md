@@ -17,4 +17,11 @@ Accurate simulation and gene circuit design are essential but difficult parts in
 
 如果你清除了浏览器缓存，重新打开主页时可能会报错，酸辛一下就好了。
 
+<br>See our school at http://www.sysu.edu.cn/2012/cn/index.htm
+<br>
+We are using the python_flask and websocket to create the server,with html5 and javascript(ichartjs) to create the front end.
+<br>My E-mail is 1036479561@qq.com or guojiexinsysu@gmail.com
+<p>If you have any questions,please contact me.
+<font color="red"><del>Girls better.</del></font></p>
+<img src="http://ww4.sinaimg.cn/mw690/b8700d2fgw1e67vo2hdmsj206d052glm.jpg" width="60" height="70" />
 <img src="http://ww4.sinaimg.cn/mw690/b8700d2fgw1e6eirqqn66j207l0840t0.jpg" width="273" height="292" />
