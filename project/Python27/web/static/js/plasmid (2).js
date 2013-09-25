@@ -382,10 +382,11 @@ function initDrawChart(){
 			},
 			color_factor : 0.3
 		},					
-		width : 850,
+		width : 960,
 		height : 410,
 		radius:140		
 	});		
+	
 	if(title!=null)
 	{
 		chart.plugin(new iChart.Custom({
