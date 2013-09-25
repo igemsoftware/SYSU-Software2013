@@ -68,10 +68,11 @@ window.onload=function() {
   var img_path = parse_data(data);
   var comp_name = get_name(data);
   preloadimages(img_path).done( function(img) {
-    var c=document.getElementById("myCanvas");
-    c.width = interval * img.length * 2;
-    var cxt=c.getContext("2d");
     var tot = img.length;
+    var c = document.getElementById("myCanvas");
+    c.width = interval * img.length * 2;
+    c.height = horizon * (Math.log(tot)/Math.LN2 + 1);
+    var cxt=c.getContext("2d");
     var k = 2;
     var cur_hor = horizon;
     var step = 1;
