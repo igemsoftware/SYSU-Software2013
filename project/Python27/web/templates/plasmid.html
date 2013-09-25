@@ -20,6 +20,7 @@
   <script src="../static/js/plasmid (2).js"></script>
   <script src="../static/js/jCanvaScript.1.5.18.js"></script>
   <script src="../static/js/simulation/simulationFilMenu.js"></script>
+  
 </head>
   <body>
   <div class="modal fade" id='mymodal'>
@@ -45,146 +46,33 @@
                 <div class="pointer-arrow" style="left:370px;"></div>
             	</div>
     	</div>
-    	<div id="content">
-            <div id="canvas-mask" style="background-image:url(../static/img/painterbg2.png);">
-                <div id="canvas">
-                	<div id='seqPanel' style="width:100%;height:115px;float:left;">
+    	<div id="content" ">
+            <div id="canvas-mask" >
+                <div id="canvas" style="background-image:url(../static/img/painterbg2.png);"'>
+                	<div id='seqPanel' style="width:99%;margin-left:5px;height:115px;float:left;">
                         <label id='x1' style="width:25%;height:15px;float:left;">1</label>    
                         <label id='x2' style="width:25%;height:15px;float:left;">21</label>
                         <label id='x3' style="width:25%;height:15px;float:left;">41</label>
                         <label id='x4' style="width:25%;height:15px;float:left;">61</label>
                         <pre contenteditable="false" id="seqCurrentText" style="resize:none;width:100%;height:40px;overflow:hidden;font-size:33px;line-height:90%;"></pre>   
-                        <canvas id="plasmid-canvas" width="1284" height="80"></canvas>      
+                        <canvas id="plasmid-canvas" width="1290" height="80"></canvas>      
                     </div>
-                    <div id='drawCanvasDiv' style="width:67%;height:100%;float:left;">      
+                    <div id='drawCanvasDiv' style="width:67%;height:100%;float:left;margin-left:7px;">      
                         <div id='canvasDiv' style="width:100%;height:100%;left: 0px;top:0px;position:relative;" onmousemove="canvasMouseMove(this,event);" onmousedown="canvasMouseDown(this,event);" onmouseup="canvasMouseUp(this,event);">
                         </div> 
                     </div>  
-    <div id='optionpanel' style="width:33%;height:400px;float:left;">
-   		<select id='standardSelect' name="standard" style="width:100%;height:10%;" onChange="standardOnChange(this);">
+    <div id='optionpanel' style="width:30%;height:400px;float:left;">
+   		<select id='standardSelect' name="standard" style="border:solid 2px #20A2DE;width:100%;height:10%;" onChange="standardOnChange(this);">
         	<option selected="selected" value="">Assembly Standard</option>
             <option value="RFC10">RFC 10</option>
             <option value="RFC20">RFC 20</option>
             <option value="RFC21">RFC 21</option>
             <option value="RFC23">RFC 23</option>
-        </select>
-        <!--<select id="backboneSelect" name="backbone" style="width:100%;height:10%">
-        	<option selected="selected" value="">Plasmid Backbone</option>
-            <optgroup label="Archive">
-            	<option value="pSB1A2.xml">pSB1A2.xml</option>
-                <option value="pSB2K0.xml">pSB2K0.xml</option>
-                <option value="pSB4A1.xml">pSB4A1.xml</option>
-                <option value="pSB4A3.xml">pSB4A3.xml</option>
-            </optgroup>
-            <optgroup label="Assembly">
-            	<option value="pSB1A3.xml">pSB1A3.xml</option>
-                <option value="pSB1A7.xml">pSB1A7.xml</option>
-                <option value="pSB1AC3.xml">pSB1AC3.xml</option>
-                <option value="pSB1AK3.xml">pSB1AK3.xml</option>
-                <option value="pSB1AT3.xml">pSB1AT3.xml</option>
-                <option value="pSB1C3.xml">pSB1C3.xml</option>
-                <option value="pSB1K3.xml">pSB1K3.xml</option>
-                <option value="pSB1T3.xml">pSB1T3.xml</option>
-                <option value="pSB2K3.xml">pSB2K3.xml</option>
-                <option value="pSB2K4.xml">pSB2K4.xml</option>
-                <option value="pSB3C5.xml">pSB3C5.xml</option>
-                <option value="pSB3K5.xml">pSB3K5.xml</option>
-                <option value="pSB3T5.xml">pSB3T5.xml</option>
-                <option value="pSB4A5.xml">pSB4A5.xml</option>
-                <option value="pSB4C5.xml">pSB4C5.xml</option>
-                <option value="pSB4K5.xml">pSB4K5.xml</option>
-                <option value="pSB4T5.xml">pSB4T5.xml</option>
-            </optgroup>
-			<optgroup label="Assembly of protein fusions">
-            	<option value="BBa_J18901.xml">BBa_J18901.xml</option>
-                <option value="BBa_J18902.xml">BBa_J18902.xml</option>
-                <option value="BBa_J18903.xml">BBa_J18903.xml</option>
-                <option value="BBa_J63009.xml">BBa_J63009.xml</option>
-                <option value="BBa_J63010.xml">BBa_J63010.xml</option>
-                <option value="BBa_K157000.xml">BBa_K157000.xml</option>
-            </optgroup>
-            <optgroup label="BioBrick friendly plasmid backbones">
-            	<option value="BBa_B0045.xml">BBa_B0045.xml</option>
-                <option value="BBa_I732950.xml">BBa_I732950.xml</option>
-                <option value="BBa_I732952.xml">BBa_I732952.xml</option>
-                <option value="BBa_I750017.xml">BBa_I750017.xml</option>
-                <option value="BBa_J23006.xml">BBa_J23006.xml</option>
-                <option value="BBa_J23018.xml">BBa_J23018.xml</option>
-                <option value="BBa_J23019.xml">BBa_J23019.xml</option>
-                <option value="BBa_J61002.xml">BBa_J61002.xml</option>
-                <option value="BBa_J61003.xml">BBa_J61003.xml</option>
-                <option value="BBa_J61031.xml">BBa_J61031.xml</option>
-                <option value="BBa_J61035.xml">BBa_J61035.xml</option>
-                <option value="BBa_K133041.xml">BBa_K133041.xml</option>
-                <option value="BBa_K592202.xml">BBa_K592202.xml</option>
-            </optgroup>
-            <optgroup label="Commercial gene synthesis">
-            	<option value="BBa_J70003.xml">BBa_J70003.xml</option>
-                <option value="BBa_J70004.xml">BBa_J70004.xml</option>
-                <option value="BBa_J70022.xml">BBa_J70022.xml</option>
-                <option value="pSB1A1.xml">pSB1A1.xml</option>
-            </optgroup>
-            <optgroup label="Expression plasmids">
-            	<option value="BBa_J04500.xml">BBa_J04500.xml</option>
-                <option value="BBa_J13002.xml">BBa_J13002.xml</option>
-                <option value="BBa_J13023.xml">BBa_J13023.xml</option>
-                <option value="BBa_J23038.xml">BBa_J23038.xml</option>
-                <option value="BBa_K215000.xml">BBa_K215000.xml</option>
-                <option value="BBa_K345667.xml">BBa_K345667.xml</option>
-                <option value="BBa_S03511.xml">BBa_S03511.xml</option>
-            </optgroup>
-            <optgroup label="Measurement">
-            	<option value="BBa_J23101.xml">BBa_J23101.xml</option>
-				<option value="pSB1A10 .xml">pSB1A10 .xml</option>
-            </optgroup>
-            <optgroup label="Other assembly standard plasmid backbones">
-            	<option value="BBa_I716101.xml">BBa_I716101.xml</option>
-                <option value="BBa_K106006.xml">BBa_K106006.xml</option>
-                <option value="BBa_K106014.xml">BBa_K106014.xml</option>
-                <option value="BBa_K106670.xml">BBa_K106670.xml</option>
-                <option value="BBa_K106672.xml">BBa_K106672.xml</option>
-                <option value="BBa_K106693.xml">BBa_K106693.xml</option>
-                <option value="BBa_K106697.xml">BBa_K106697.xml</option>
-                <option value="BBa_K106698.xml">BBa_K106698.xml</option>
-                <option value="BBa_K112125.xml">BBa_K112125.xml</option>
-                <option value="BBa_K209432.xml">BBa_K209432.xml</option>
-            </optgroup>
-            <optgroup label="Screening libraries of parts">
-                <option value="BBa_I732950.xml">BBa_I732950.xml</option>
-                <option value="BBa_I732952.xml">BBa_I732952.xml</option>
-                <option value="BBa_J23006.xml">BBa_J23006.xml</option>
-                <option value="BBa_J23018.xml">BBa_J23018.xml</option>
-                <option value="BBa_J23019.xml">BBa_J23019.xml</option>
-                <option value="BBa_J61002.xml">BBa_J61002.xml</option>
-                <option value="BBa_J61003.xml">BBa_J61003.xml</option>
-            </optgroup>
-            <optgroup label="System operation">
-                <option value="BBa_I742123.xml">BBa_I742123.xml</option>
-                <option value="BBa_J64100.xml">BBa_J64100.xml</option>
-                <option value="BBa_K125000.xml">BBa_K125000.xml</option>
-                <option value="BBa_K157040.xml">BBa_K157040.xml</option>
-                <option value="BBa_K157041.xml">BBa_K157041.xml</option>
-                <option value="BBa_K592200.xml">BBa_K592200.xml</option>
-                <option value="pSB1AK8.xml">pSB1AK8.xml</option>
-                <option value="pSB2K3.xml">pSB2K3.xml</option>
-                <option value="pSB2K4.xml">pSB2K4.xml</option>
-                <option value="pSB3C5.xml">pSB3C5.xml</option>
-                <option value="pSB3K1.xml">pSB3K1.xml</option>
-                <option value="pSB3K3.xml">pSB3K3.xml</option>
-                <option value="pSB3K5.xml">pSB3K5.xml</option>
-                <option value="pSB3T5.xml">pSB3T5.xml</option>
-                <option value="pSB4A5.xml">pSB4A5.xml</option>
-                <option value="pSB4C1.xml">pSB4C1.xml</option>
-                <option value="pSB4C5.xml">pSB4C5.xml</option>
-                <option value="pSB4K5.xml">pSB4K5.xml</option>
-                <option value="pSB4T5.xml">pSB4T5.xml</option>
-                <option value="pSB6A1.xml">pSB6A1.xml</option>
-            </optgroup>
-        </select>-->
-        <input name="saveplasmidgraphBtn" class="btn" style="width:100%;height:10%;" type="submit" value="Save Plasmid Graph" onClick="saveGraph();"/>
+        </select>        
+        <input name="saveplasmidgraphBtn" style="background-color:#20A2DE;color:white;width:100%;height:10%;border:none;border-radius:0px;" type="submit" value="Save Plasmid Graph" onClick="saveGraph();"/>
         	<div style="width:100%;height:10%;">
            		<label style="height:100%;float:left;">Sequence</label>
-            	<input id="copy-botton" class="btn" style="width:100px;cursor:pointer;height:100%;float:right;" type="submit" value="downloadSeq" onClick="copyBtnOnClick(this);"/>        
+            	<input id="copy-botton" style="width:100px;cursor:pointer;height:100%;float:right;background-color:#FFBF43;border:none;border-radius:0px;" type="submit" value="downloadSeq" onClick="copyBtnOnClick(this);"/>        
         	</div>    	        
         <div style="width:100%;height:70%; overflow: scroll; float:left;overflow-x: hidden;border-color:black;border-style:solid;border-width:1px;word-break:break-all;" id="sequenceDiv"></div>
 				</div>

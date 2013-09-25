@@ -60,7 +60,7 @@ var plasmidPainter = {
 	},
 	drawAll: function() {
 		jc.start(this.canvasId);
-		jc.rect(0, 0, 1284, 50, "#EEEEFF", true);			
+		jc.rect(0, 0, 1300, 50, "#BCCBCE", true);			
 		jc.start(this.canvasId);
 		for(var i=0;i<data2.length;i++)
 		{		
