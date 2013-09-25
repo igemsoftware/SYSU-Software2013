@@ -65,14 +65,14 @@
 #regulation-view {
 	/* display: inline-block;  */
 	float: left;
-	width: 25%;
+	width: 20%;
 	height: 100%;
 }
 
 #simulation-view {
 	/* display: inline-block; */
 	float: left;
-	width: 25%;
+	width: 30%;
 	height: 100%;
 }
 
@@ -84,19 +84,29 @@
 }
 
 .browser img {
-	width: 100%;
+	width: 95%;
+	height: 100%;
 }
 
 .module-title {
 	width: 100%;
 	height: 10%;
 	text-align: center;
+	color: #407279;
+}
+
+.module-title em {
+	font-weight: bold;
 }
 
 .btn-more {
 	display: block;
 	margin: 0 auto;
 	height: 10%;
+	background-color: #00b67d;
+	border: 0px;
+	border-radius: 3px;
+	color: white;
 }
 
 #dashboard-view {
@@ -186,6 +196,7 @@
 
 .dashboard-unit > div {
 	text-align: center;
+	line-height: 17px;
 }
 
 .protein-range {
@@ -271,7 +282,7 @@
   height: 2em;
   width: 2em;
   line-height: 1em;
-  border: 0.3em solid #c9c4c4;
+  border: 0.3em solid #c5caca;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -317,7 +328,7 @@
 /* } */
 
 .dashboard:before {
-  border-color: #c9c4c4;
+  border-color: #c5caca;
 }
 
 .dashboard-value {
@@ -532,3 +543,47 @@
 	cursor: pointer;
 }
 
+#canvasDiv {
+	width: 350px;
+	margin: auto;
+}
+
+.view-plasmid .icon-zoom-in {
+	margin: 2px 0;
+}
+
+.plasmids .label {
+	background: #1fa1de;
+}
+
+.slider.ui-slider {
+	background: #c5caca;
+}
+
+#dashboard-view .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background: #f95f53;
+}
+
+#plasmids-view .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	background: #1fa1de;
+}
+
+.ui-state-default.ui-slider-handle {
+	background: #f6f6f6;
+}
+
+.cmd-group button {
+	background: #ffbf44;
+	border: 0;
+	color: white;
+	width: 80px;
+	height: 35px;
+	font-size: 18px;
+	border-radius: 3px;
+}
+
+.cmd-group {
+	position: absolute;
+	right: 100px;
+	bottom: 50px;
+}

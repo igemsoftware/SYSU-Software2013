@@ -56,9 +56,9 @@
 											<h2>Regulation network</h2>
 										</div>
 										<div class="browser">
-											<img src="../static/img/protein.png" />
+											<img src="../static/img/style-protein.png" />
 										</div>
-										<button class="btn-more btn" onclick="window.location.pathname = '/index'">Edit</button>
+										<button class="btn-more" onclick="window.location.pathname = '/index'">Edit</button>
 									</div>
 									<div id="simulation-view">
 										<div class="module-title">
@@ -69,7 +69,7 @@
 											<div id="canvasDiv">
 											</div>
 										</div>
-										<button class="btn-more btn" onclick="jumpToSimulation()">View more</button>
+										<button class="btn-more" onclick="jumpToSimulation()">View more</button>
 									</div>
 									<div id="dashboard-view">
 										<!-- <div class="proteins"> -->
@@ -177,9 +177,9 @@
 
 								<div id="content-row2">
 									<div id="plasmids-view">
-										<div class="module-title">
-											<span class="label label-info">plasmids</span>
-										</div>
+										<!-- <div class="module-title"> -->
+											<!-- <span class="label label-info">plasmids</span> -->
+										<!-- </div> -->
 										<!-- <div class="plasmids"> -->
 											<!-- <div> -->
 												<!-- <span class="label">plasmid1</span> -->
@@ -250,7 +250,7 @@
 									</div>
 
 									<div id="cmd">
-										<button class="btn" id="cmd-new-plasmid">New plasmid</button>
+										<button class="btn-more" id="cmd-new-plasmid">New plasmid</button>
 									</div>
 								</div>
 
@@ -486,11 +486,11 @@
 
 <!-- command group starts-->
 <div class="cmd-group">
-    <button class="btn" id="cmd_undo">
+    <button class="" id="cmd_undo">
         <img src="../static/img/Undo.png" width="17px" height="17px">
         <span>Undo</span>
     </button>
-    <button class="btn" id="cmd_redo">
+    <button class="" id="cmd_redo">
         <img src="../static/img/Redo.png" width="17px" height="17px">
         <span>Redo</span>
     </button>

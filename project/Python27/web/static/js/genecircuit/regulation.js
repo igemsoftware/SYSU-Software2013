@@ -456,7 +456,7 @@ $().ready(function() {
         var time = message.result.time;
         var dt = message.result.dt;
 	      $("#canvasDiv div").css("margin", "auto");
-        run(data,'canvasDiv', 300, 200, time, dt * 4);
+        genecircuitRun(data,'canvasDiv', 350, 200, time, dt * 4);
       } else if (message.request == "changeRBS") {
 				/* console.log(message.result); */
 				console.log("changeRBS", message);
