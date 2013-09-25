@@ -27,6 +27,7 @@ class SqliteDatabase:
 		return self.__cx
 	def getCuror(self):
 		return self.__cursor
+
 	def addAPromoter(self,name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS):
 		sql_cmd='INSERT INTO promoter (Name,Number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS) VALUES ("%s","%s",%f,%f,%f,"%s","%s","%s","%s",%f)'%(name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS)		
 		self.__cursor.execute(sql_cmd)
@@ -206,7 +207,17 @@ class SqliteDatabase:
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
 		print self.__cx.commit()
 		return 'updateUserData succeed'	
-		
+	
+	def deleteUserPart(self,part_id,uploaduser):
+		if self.userId==-1:
+			self.logger.error('not login but want to delete the user data')
+			return 'deleteUserData failed'
+		sql_cmd='DELETE FROM userPart WHERE part_id = "%s" AND uploadUser = "%s"'%(part_id,uploaduser)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)		
+		print self.__cx.commit()
+		return 'delete User part succeed'
+
 	def deleteUserData(self,fileName):
 		if self.userId==-1:
 			self.logger.error('not login but want to delete the user data')
@@ -462,7 +473,7 @@ class SqliteDatabase:
 				activator_list.append(item["Number"])
 				return item
 	def getUserPartByLoginuser(self):
-		excuteString = "SELECT part_id,part_name AS Name,part_type as Type,part_author as Author FROM userPart WHERE uploadUser = '%s'" % self.getUserNameById(self.userId)
+		excuteString = "SELECT part_id,part_name AS Name,part_type as Type,part_author as Author,uploadUser as username FROM userPart WHERE uploadUser = '%s'" % self.getUserNameById(self.userId)
 		self.__cursor.execute(excuteString)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)

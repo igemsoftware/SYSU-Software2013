@@ -27,6 +27,8 @@ class apis():
   def setFileShared(self,message):
     shared=sharedFiles(self.db)
     return shared.setFileShared(self.db.userId,message['filename'],message['filetype'])
+  def deleteUserPart(self,message):
+    return self.db.deleteUserPart(message['part_id'],message['uploaduser'])
   def isExtractCodeRight(self,message):
     shared=sharedFiles(self.db)
     id=self.db.getUserIdByName(message['userName'])
