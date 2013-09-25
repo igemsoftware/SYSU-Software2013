@@ -1,120 +1,64 @@
+##
+# @file plasmid.py
+# @brief get SBOL with plasmid part and type
+# @author Jianhong Li
+# @version 1.0
+# @date 2013-08-15
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+#
+
 import component_union
 from sbol2json import format_to_json
 import os
 import database
 
-groups = {
-    "copy": 23.00,
-    "circuit":[
-      {
-        "sbol": [
-          {
-            "type": "Signalling",
-            "name": "BBa_K266005"
-            },
-          {
-            "type": "RBS",
-            "name": "BBa_J61104"
-            },
-          {
-            "type": "Coding",
-            "name": "BBa_C0060"
-            },
-          {
-            "type": "RBS",
-            "name": "BBa_J61104"
-            },
-          {
-            "type": "Coding",
-            "name": "BBa_C0060"
-            },
-          {
-            "type": "RBS",
-            "name": "BBa_J61104"
-            },
-          {
-            "type": "Coding",
-            "name": "BBa_K518003"
-            },
-          {
-            "type": "RBS",
-            "name": "BBa_J61104"
-            },
-          {
-            "type": "Coding",
-            "name": "BBa_K518003"
-            },
-          {
-            "type": "Terminator",
-            "name": "BBa_B0013"
-            }
-          ],
-        "state": "cis"
-        },
-      {
-        "sbol": [
-          {
-            "type": "Regulatory",
-            "name": "BBa_I712074"
-            },
-          {
-            "type": "RBS",
-            "name": "BBa_J61104"
-            },
-          {
-            "type": "Coding",
-            "name": "BBa_C0160"
-            },
-          {
-            "type": "Terminator",
-            "name": "BBa_B0013"
-            }
-          ],
-        "state": "cis"
-        },
-      {
-          "sbol": [
-            {
-              "type": "Regulatory",
-              "name": "BBa_I712074"
-              },
-            {
-              "type": "RBS",
-              "name": "BBa_J61104"
-              },
-            {
-              "type": "Coding",
-              "name": "BBa_C0178"
-              },
-            {
-              "type": "RBS",
-              "name": "BBa_J61104"
-              },
-            {
-              "type": "Coding",
-              "name": "BBa_C0178"
-              },
-            {
-              "type": "Terminator",
-              "name": "BBa_B0013"
-              }
-            ],
-          "state": "cis"
-          }
-      ]
-    }
-
+# --------------------------------------------------------------------------
+##
+# @brief A dict to reverse DNA sequence
+#
+# --------------------------------------------------------------------------
 reverse = {"A":"T", "T":"A", "C":"G", "G":"C", "a":"t", "t":"a", "g":"c","c":"g"}
 
+# --------------------------------------------------------------------------
+##
+# @brief find file in a directory
+#
+# @param name  file name
+# @param path  root directory to search
+#
+# @returns   the path to the file
+#
+# --------------------------------------------------------------------------
 def find_file(name, path):
   for root, dirs, files in os.walk(path):
     if name in files:
       return os.path.join(root, name)
 
+# --------------------------------------------------------------------------
+##
+# @brief turn DNA sequence in trans
+#
+# @param s  a DNA sequence
+#
+# @returns   DNA in trans
+#
+# --------------------------------------------------------------------------
 def trans(s):
   ret = ''.join([reverse[i] for i in s[::-1]])
   return ret
 
+# --------------------------------------------------------------------------
+##
+# @brief get SBOL with plasmid part and type
+#
+# @param db      database instance
+# @param groups  the plasmid parts and types
+# @param rule    connect rule
+#
+# @returns   SBOL-like json
+#
+# --------------------------------------------------------------------------
 def plasmid_sbol(db, groups, rule = "RFC10"):
   circuit = groups["circuit"]
   copy = groups["copy"]
