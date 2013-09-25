@@ -19,6 +19,7 @@ Following jobs:<br>
 	2. Web client ( HTML, CSS, JAVASCRIPT )<br>
 	3. Server, GPU Computing ( Python & C++ )<br>
 	4. Database ( Sqlite | MySQL )<br>
+	5. Cloud Compute<br>
 	
 An important thing:
 	The data transfer between Client, Server and GPU
