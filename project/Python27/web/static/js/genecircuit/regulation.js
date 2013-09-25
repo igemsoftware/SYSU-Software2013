@@ -418,8 +418,8 @@ $().ready(function() {
         });
       } else if (message.request == "loadUserFile") {
         console.log(message.result);
-			} else if (message.request == "getGroup") {
-				console.log("getGroup", message);
+	  } else if (message.request == "getGroup") {
+		console.log("getGroup", message);
         if(message.result==='ERROR!'){
           ws.send(JSON.stringify({
             'request': 'getGroup',
@@ -450,19 +450,14 @@ $().ready(function() {
 				}));
 				sessionStorage.gene_circuit = JSON.stringify(genecircuitData);
 				init(genecircuitData);
-			} else if (message.request == "Simulate") {
+			} else if (message.request == "Simulate") {				 
         var raw_data = message.result.data;
         var data = turnRawDatatoData(raw_data);
         var time = message.result.time;
         var dt = message.result.dt;
 	      $("#canvasDiv div").css("margin", "auto");
         genecircuitRun(data,'canvasDiv', 350, 200, time, dt * 4);
-      } else if (message.request == "changeRBS") {
-				/* console.log(message.result); */
-				console.log("changeRBS", message);
-				// console.log(genecircuitData); 
-				init(genecircuitData);   
-			} else if (message.request == "getPlasmidSbol") {
+      	}  else if (message.request == "getPlasmidSbol") {
 				console.log("getPlasmidSbol", message);
 			} else if (message.request == "loadSBOL") {
 				console.log("loadSBOL", message);
@@ -476,9 +471,6 @@ $().ready(function() {
 										'gene_circuit':JSON.stringify(genecircuitData),
 										'corepind':{},
 				}));
-			} else if (message.request == "getIndexSave") {
-				console.log("getIndexSave", message.result); 
-				genecircuitData = message.result;
 			} else if (message.request == "getBiobrickPath") {
 				ws.send(JSON.stringify({ 
 					'request': 'getXmlJson', 
@@ -576,33 +568,30 @@ $().ready(function() {
  
       ] 
 		}; 
-     // console.log(regulationData); 
-		 
-		if(sessionStorage.gene_circuit && sessionStorage.gene_circuit != 'undefined') {
+     
+		if(sessionStorage.regulation) {
+			ws.send(JSON.stringify({
+				'request': 'getGroup',
+				'data': eval('(' + sessionStorage.regulation + ')'),
+			}));
+			$('#mymodal').modal({keyboard:false});
+		} else 	if(sessionStorage.gene_circuit && sessionStorage.gene_circuit != 'undefined') {
 			console.log('gene_circuit', sessionStorage.gene_circuit);
 			genecircuitData = eval('(' + sessionStorage.gene_circuit + ')');    
 			ws.send(JSON.stringify({'request'     : 'Simulate',    
 									'isStochastic': false,    
 									'gene_circuit':JSON.stringify(genecircuitData),    
 									'corepind':{},    
-			}));    
-			
-			// ws.send(JSON.stringify({    
-				// 'request': 'getGroup',    
-				// // 'data': regulationData,     
-				// 'data': eval('(' + sessionStorage.regulation + ')'),    
-			// }));    
+			}));    		
+			$('#mymodal').modal({keyboard:false});
 			init(genecircuitData);
-		} else if(sessionStorage.regulation) {
-			ws.send(JSON.stringify({
-				'request': 'getGroup',
-				'data': eval('(' + sessionStorage.regulation + ')'),
-			}));
-		} else {
+		}
+		else {
 			ws.send(JSON.stringify({
 				'request': 'getGroup',
 				'data': regulationData, 
 			}));
+			$('#mymodal').modal({keyboard:false});
 		}
 
   }
