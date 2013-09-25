@@ -2,7 +2,7 @@
 ##
 # @file jsonUtil.py
 # @brief  tools to parse the string and json
-# @author Jiexin guo
+# @author Jiexin Guo
 # @version 1.0
 # @date 2013-07-28
 # @copyright 2013 SYSU-Software. All rights reserved.

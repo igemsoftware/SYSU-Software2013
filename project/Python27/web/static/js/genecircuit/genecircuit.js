@@ -708,6 +708,7 @@ var init = function(genecircuitData) {
 	} 
 	dataCollection = getDataCollection();
 	historyStack.add(dataCollection);
+	$('#mymodal').modal('hide');
 }
 
 var updateGen = function(genecircuitData) {

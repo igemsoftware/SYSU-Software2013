@@ -3,3 +3,4 @@ DEPENDENCY:
 * gevent
 * geventwebsocket
 * greenlet
+* rsa

@@ -1,4 +1,14 @@
 # coding: utf-8
+# 
+# @file websocket.py
+# @brief the core code of websocket server
+# @author Jianhong Li,Jiexin Guo
+# @version 1.0
+# @date 2013-07-31
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+#
+
 import json
 from database import SqliteDatabase
 import component_union
@@ -21,12 +31,42 @@ import extended_sbol
 
 logging = mlog.logging
 
+# --------------------------------------------------------------------------
+##
+# @brief  the class that provide all the apis for the websocket
+# ----------------------------------------------------------------------------
 class apis():
   def __init__(self, db):
     self.db = db
+
+  # --------------------------------------------------------------------------
+  ##
+  # @brief     to set a file shared
+  #
+  # @returns   return whether the shared action success or not
+  #
+  # --------------------------------------------------------------------------
   def setFileShared(self,message):
     shared=sharedFiles(self.db)
     return shared.setFileShared(self.db.userId,message['filename'],message['filetype'])
+
+  # --------------------------------------------------------------------------
+  ##
+  # @brief     to delete a user part
+  #
+  # @returns   return the result of action
+  #
+  # --------------------------------------------------------------------------
+  def deleteUserPart(self,message):
+    return self.db.deleteUserPart(message['part_id'],message['uploaduser'])
+
+  # --------------------------------------------------------------------------
+  ##
+  # @brief     to get is the extract code right for a file 
+  #
+  # @returns   return the result of action
+  #
+  # --------------------------------------------------------------------------
   def isExtractCodeRight(self,message):
     shared=sharedFiles(self.db)
     id=self.db.getUserIdByName(message['userName'])

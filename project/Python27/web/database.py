@@ -1,14 +1,13 @@
-"""
-@author Jiexin Guo
-
-This is the wrapping of sqlite3 for python.
-
-Copyright (C) 2013-2014 sysu-software. All Rights Reserved.
-
-To use, simply 'import database' and connect the database of sqlite3!
-
-"""
-
+# coding: utf-8
+# 
+# @file database.py
+# @brief This is the wrapping of sqlite3 for python.
+# @author Jianhong Li,Jiexin Guo
+# @version 1.0
+# @date 2013-07-31
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+#
 import sqlite3
 import urllib2
 import jsonUtil
@@ -17,12 +16,23 @@ import os, sys
 import logging
 import logging.handlers
 
+# --------------------------------------------------------------------------
+##
+# @brief  the class that contain all the database control method
+# ----------------------------------------------------------------------------
 class SqliteDatabase:
 	URL=''
 	userId=-1
 	logger=None
 	encrypt=None
 	indexSave=None
+	# --------------------------------------------------------------------------
+  ##
+  # @brief     to get the database class's connection
+  #
+  # @returns   return the connection
+  #
+  # --------------------------------------------------------------------------
 	def getCx(self):
 		return self.__cx
 	def getCuror(self):
@@ -206,7 +216,17 @@ class SqliteDatabase:
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
 		print self.__cx.commit()
 		return 'updateUserData succeed'	
-		
+	
+	def deleteUserPart(self,part_id,uploaduser):
+		if self.userId==-1:
+			self.logger.error('not login but want to delete the user data')
+			return 'deleteUserData failed'
+		sql_cmd='DELETE FROM userPart WHERE part_id = "%s" AND uploadUser = "%s"'%(part_id,uploaduser)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)		
+		print self.__cx.commit()
+		return 'delete User part succeed'
+
 	def deleteUserData(self,fileName):
 		if self.userId==-1:
 			self.logger.error('not login but want to delete the user data')
@@ -343,8 +363,25 @@ class SqliteDatabase:
 		else:
 			return None
 
+	def find_distinct_actrep(self, act_rep_type, idx):
+		self.__cursor.execute('SELECT DISTINCT ActRreNumber FROM relation WHERE\
+			ActRreNumber IS NOT NULL AND ActRreType = "%s" ORDER BY ActRreNumber DESC\
+			LIMIT %s,1' % (act_rep_type, idx))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+
 	def find_promoter_with_repressor(self, repressor = None):
-		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
+		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
+        ActRreNumber="%s" AND ActRreType="Negative"' % repressor)
+		print repressor
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		promoter = decodejson[0]
+		self.__cursor.execute('SELECT * FROM promoter WHERE Number="%s"' % promoter)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -353,7 +390,13 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_activator(self, activator = None):
-		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
+		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
+        ActRreNumber="%s" AND ActRreType="Positive"' % activator)
+		print activator
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		promoter = decodejson[0]
+		self.__cursor.execute('SELECT * FROM promoter WHERE Number="%s"' % promoter)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -462,7 +505,7 @@ class SqliteDatabase:
 				activator_list.append(item["Number"])
 				return item
 	def getUserPartByLoginuser(self):
-		excuteString = "SELECT part_id,part_name AS Name,part_type as Type,part_author as Author FROM userPart WHERE uploadUser = '%s'" % self.getUserNameById(self.userId)
+		excuteString = "SELECT part_id,part_name AS Name,part_type as Type,part_author as Author,uploadUser as username FROM userPart WHERE uploadUser = '%s'" % self.getUserNameById(self.userId)
 		self.__cursor.execute(excuteString)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
@@ -512,6 +555,8 @@ class SqliteDatabase:
 		
 if __name__=="__main__":
 	sql=SqliteDatabase()
+	# sql.find_distinct_actrep("Negative", 1)
+	sql.select_with_name("repressor", "BBa_C0040")
 	# print sql.getUserGroup('Bobby')	
 	# sql.updateUserLoginRememberTime()
 	sql.userId=1

@@ -1,24 +1,12 @@
-﻿2013.7.15：
-<img src="http://ww4.sinaimg.cn/mw690/b8700d2fgw1e6nu2yxavmj21hc0l0wgs.jpg" width="690" height="271" />
-<br>
-2013.7.17:
-<img src="http://ww1.sinaimg.cn/mw690/b8700d2fgw1e6q13t24f6j21hc0hlq6g.jpg" width="690" height="271" />
-<br>
-2013.7.20:
-<img src="http://ww3.sinaimg.cn/mw690/b8700d2fgw1e6tcsv7ftbj21hc0ja772.jpg" width="690" height="271" />
-<br>
-2013.7.23:
-<img src="http://ww3.sinaimg.cn/mw690/b8700d2fgw1e6wugsupqnj21hc0sxacr.jpg" width="690" height="271" />
-<img src="http://ww1.sinaimg.cn/mw690/b8700d2fgw1e6wugx0uhtj21hc0t1goa.jpg" width="690" height="271" />
-<img src="http://ww1.sinaimg.cn/mw690/b8700d2fgw1e6wugyww31j21hc0t0goa.jpg" width="690" height="271" />
-<br>
-2013.7.25:把canvas环形图保存成图片
-<img src="http://http://ww2.sinaimg.cn/mw690/b8700d2fgw1e6z9g0rv4ej21hb0hlwh3.jpg" width="690" height="271" />
-<br>
-2013.7.28:增加局部序列色条
-<img src="http://ww1.sinaimg.cn/mw690/b8700d2fgw1e72rfa4xqrj21hc0hl0w7.jpg" width="690" height="227" />
-<br>
-2013.8.03:数据库增加protein条目
-<img src="http://ww3.sinaimg.cn/mw690/b8700d2fgw1e79iyltte7j21400l4wl5.jpg" width="690" height="227" />
-2013.8.30:更改plasmid css
-<img src="http://ww2.sinaimg.cn/mw690/b8700d2fgw1e84yvscli8j21hc0qj42y.jpg" width="690" height="227" />
+﻿THE FOLDER STRUCTURE:
+===================================
+web:the folder of our main program
+
+web\\*.*		the python source files to makes up the server
+web\templates:the html files that makes up the front end	
+web\templates\html:the document of our program's source
+web\static:the static files on the server
+web\static\img:the images that used in the program
+web\static\css:the css that used in the program
+web\static\js:the javascript that used in the program
+web\biobrick:the biobircks xml database that used in the program

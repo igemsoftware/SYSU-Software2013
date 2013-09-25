@@ -1,4 +1,4 @@
-#igem sysu
+﻿#C.A.S.T designer
 iGEM-SOFTWARE-2013
 ==================
 This is the project of igem 2013 by SYSU-Software.
@@ -11,10 +11,21 @@ Accurate simulation and gene circuit design are essential but difficult parts in
 * Mac OS X
 * Linux
 
-前端使用了javascript实现，后台运用python的flask框架以及websocket，数据库则使用sqlite。另外还自带了cefsharp浏览器（基于chromium内核，用c#语言编写）。
+## Detail
+We use pure javascript to implement the front end,and use flask framework (especially the websocket protocol for data transfer)for the back end,which is written in python.Next we use sqlite as the database.By the way,we have provided a brower so called cefsharp,which is base on chromium core and written in c#
 
-对于所有的密码传送使用rsa算法进行加密，以及sha-1算法进行摘要，不保存明文密码。
+## Safety
+We have used rsa algorithm to encrypt any password transferation,and use sha-a algorithm for information digesting,never save plain password.
 
-如果你清除了浏览器缓存，重新打开主页时可能会报错，酸辛一下就好了。
+## FAQ
+Q:Sometime after I have cleaned up the browser 's cache ,it will return 500 error when I open the page?<br>
+A:Just press the F5 to refresh the page ,or you can reboot the server.
 
+## More information
+<br>See our school at http://www.sysu.edu.cn/2012/cn/index.htm
+<br>You can open the AUTHORS file to get the contact information of us.
+<p>If you have any questions,please contact me.
+<br>My E-mail is 1036479561@qq.com.
+<font color="red"><del>Girls better.</del></font></p>
+<img src="http://ww4.sinaimg.cn/mw690/b8700d2fgw1e67vo2hdmsj206d052glm.jpg" width="60" height="70" />
 <img src="http://ww4.sinaimg.cn/mw690/b8700d2fgw1e6eirqqn66j207l0840t0.jpg" width="273" height="292" />

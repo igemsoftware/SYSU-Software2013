@@ -1,5 +1,5 @@
 import component_union
-import sequence_serializer
+from sbol2json import format_to_json
 import sys
 
 def test():
@@ -10,6 +10,6 @@ def test():
   dna_sequence = component_union.connect(rule, content)
   sbol = component_union.formatter_v11(content, dna_sequence)
   print sbol
-  print sequence_serializer.format_to_json(sbol)
+  print format_to_json(sbol)
 
 test()

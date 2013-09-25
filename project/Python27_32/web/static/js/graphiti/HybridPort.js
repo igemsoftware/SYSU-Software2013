@@ -37,6 +37,7 @@ graphiti.HybridPort = graphiti.Port.extend({
     init : function(name)
     {
         this._super(name);
+        this.TYPE = "HybridPort";
     },
 
     

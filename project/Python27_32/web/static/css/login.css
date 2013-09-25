@@ -1,0 +1,226 @@
+/*
+ *
+ *  Styles for login view
+ *
+ */
+
+body {
+	font-family: "微软雅黑";
+	width: 100%;
+	height: 100%;
+	min-width: 1366px;
+	max-height: 708px;
+	background-color: #3f7279;
+}
+
+.container {
+	width: 100%;
+	min-width: 1366px;
+	height: 100%;	
+}
+
+.left-part {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 477px;
+	height: 100%;
+	max-height: 708px;
+	background-image: url(../img/login/leftbg.png);
+}
+
+.right-part {
+	position: absolute;
+	top: 0;
+	left: 914px;
+	width: 452px;
+	height: 100%;
+	max-height: 708px;
+	background-image: url(../img/login/rightbg.png);
+}
+
+.login-part {
+	position: absolute;
+	left: 486px;
+	top: 50%;
+	width: 430px;
+	height: 424px;
+	margin-top: -212px;
+	border-radius: 50%;
+	background-image: url(../img/login/loginbg.png);
+}
+
+.login-part form {
+	position: relative;
+	overflow: hidden;
+	top: 194px;
+	left: 74px;
+	width: 290px;
+	height: 99px;
+}
+
+.login-part form input {
+	width: 200px;
+	height: 43px;
+	padding: 0 0 0 10px; 
+	margin-right: 14px;
+	border: none;
+	background-color: #d7ffff;
+	font-size: 20px;
+}
+
+.login-part form input#username {
+	margin-bottom: 13px;
+}
+
+.login-part #btn-login {
+	position: relative;
+	display: block;
+	top: -98px;
+	left: 224px;
+	width: 64px;
+	height: 97px;
+	background-image: url(../img/login/loginbtn.png);
+	box-shadow: 0 1px 2px #f96053;
+	cursor: pointer;
+}
+
+.login-part #btn-login:active {
+	position: relative;
+	top: -97px;
+	left: 225px;
+}
+
+
+
+.tips {
+	position: relative;
+	top: 212px;
+	left: 76px;
+	width: 290px;
+	height: 16px;
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: bold;
+	color: #316a72;
+}
+
+.tips #mycheckbox {
+	cursor: pointer;
+}
+
+.tips .checkbox-mask {
+	display: block;
+	float: left;
+	width: 16px;
+	height: 16px;
+	background-color: #d7ffff;
+	cursor: pointer;
+	text-align: center;
+	font-size: 16px;
+	line-height: 16px;
+}
+
+.tips #remember {
+	display: none;
+}
+
+.tips a {
+	float: right;
+	text-decoration: none;
+	color: #316a72
+}
+
+.contact-us {
+	position: relative;
+	top: 230px;
+	left: 127px;
+	width: 178px;
+	height: 34px;
+}
+
+.contact-us a {
+	display: inline-block;
+}
+
+.contact-us a#twitter {
+	margin: 0 39px;
+}
+
+
+
+/*
+ *  register
+ */
+
+ .reg-part {
+	position: absolute;
+	left: 500px;
+	top: 50%;
+	width: 403px;
+	height: 614px;
+	margin-top: -307px;
+	background-image: url(../img/login/registerbg.png);
+}
+
+.reg-part form {
+	position: relative;
+	overflow: hidden;
+	top: 165px;
+	width: 403px;
+	height: 450px;
+}
+
+.input-line {
+	height: 43px;
+	width: 296px;
+	margin: 0 auto 17px;
+}
+
+.input-line img {
+	display: inline-block;
+	float: left;
+	margin-right: 33px;
+}
+
+.reg-part form input {
+	width: 200px;
+	height: 43px;
+	padding: 0 0 0 10px; 
+	margin-right: 14px;
+	border: none;
+	background-color: #d7ffff;
+	font-size: 20px;
+}
+
+input[name=gender] {
+	width: 110px !important;
+}
+
+#reset {
+	position: absolute;
+	display: block;
+	top: 310px;
+	left: 255px;
+	width: 80px;
+	height: 27px;
+	margin: 0 auto;
+	background-image: url(../img/login/reset.png);
+	cursor: pointer;
+}
+
+#register {
+	position: relative;
+	display: block;
+	width: 280px;
+	height: 57px;
+	margin: 0 auto;
+	background-image: url(../img/login/register.png);
+	cursor: pointer;	
+}
+
+#register:active {
+	position: relative;
+	top: 1px;
+	left: 1px;
+}

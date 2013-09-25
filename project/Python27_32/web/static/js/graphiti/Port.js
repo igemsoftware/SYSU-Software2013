@@ -49,9 +49,6 @@ graphiti.Port = graphiti.shape.basic.Circle.extend({
             this.setDimension(10, 10);
         }
 
-        // this.decorator
-        this.decorator = "T";
-
         // status var for user interaction
         //
         this.ox = this.x;

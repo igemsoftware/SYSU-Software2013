@@ -110,7 +110,7 @@ def webSocket():
   if request.environ.get('wsgi.websocket'):
     handle_websocket(request.environ["wsgi.websocket"], sql)
   return
-	
+
 if __name__ == "__main__":
     http_server = WSGIServer(('0.0.0.0',5000), app, handler_class=WebSocketHandler)
     http_server.serve_forever()

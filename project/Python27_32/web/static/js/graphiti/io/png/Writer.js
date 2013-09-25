@@ -51,11 +51,11 @@ graphiti.io.png.Writer = graphiti.io.Writer.extend({
         
         var svg = canvas.getHtmlContainer().html().replace(/>\s+/g, ">").replace(/\s+</g, "<");
 
-        var canvas = $('<canvas id="canvas" width="1000px" height="600px"></canvas>');
+        var canvas = $('<canvas id="canvas2" width="1000px" height="600px"></canvas>');
         $('body').append(canvas);
-        canvg('canvas', svg, { ignoreMouse: true, ignoreAnimation: true});
+        canvg('canvas2', svg, { ignoreMouse: true, ignoreAnimation: true});
 
-        var img = document.getElementById('canvas').toDataURL("image/png");
+        var img = document.getElementById('canvas2').toDataURL("image/png");
         canvas.remove();
         return img;
     }

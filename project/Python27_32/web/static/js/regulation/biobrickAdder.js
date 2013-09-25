@@ -1,37 +1,55 @@
-var BiobrickAdder = {
-	name: null,	
+function BiobrickAdder() {
+	this.name = null;	
 
-	type: null,
+	this.type = null;
 
-	offsetTop: null,
+	this.offsetTop = null;
 
-	offsetLeft: null,
+	this.offsetLeft = null;
+};
 
-	init: function(name, type, offsetTop, offsetLeft) {
+BiobrickAdder.prototype = {
+	init: function(name, type, offsetTop, offsetLeft, config, path) {
 		this.name = name;
 		this.type = type;
 		this.offsetTop = offsetTop;
 		this.offsetLeft = offsetLeft;
+
+		if (config) {
+			this.config = config;
+		}
+
+		if (path)
+			this.path = path;
 	},
 
 	show: function() {
-		var actualTop = (parseInt(this.offsetTop) - 15) + "px";
-		var actualLeft = (parseInt(this.offsetLeft) + 29) + "px";
+		this.hideAll();
+		var actualTop = (parseInt(this.offsetTop) - 105) + "px";
+		var actualLeft = (parseInt(this.offsetLeft) + 5) + "px";
 		var that = this;
+		var adder = "<div class=\"adder\" id=\"adder-" + this.name + "\"></div>";
 
-		$(".adder").data("shape", this.type);
+		if ($("#factor-"+this.name + "> .adder").length == 0) {
+			$("#factor-"+this.name).append(adder);
+		}
 
-		$(".adder").css({
-			"visibility": "visible",
-			"top": actualTop,
-			"left": actualLeft
+		$("#adder-"+this.name).data("shape", this.type);
+
+		$("#adder-"+this.name).css({
+			"top": "-95px",
+			"left": "30px"
 		});
-
-		$(".adder").click(function() {
+	
+		$("#adder-"+this.name).click(function() {
 			that.paint();
 
 			$(this).unbind("click");	// 取消click事件绑定，避免多次绑定
 		});
+	},
+
+	hideAll: function() {
+		$(".adder").remove();
 	},
 
 	paint: function() {
@@ -40,21 +58,12 @@ var BiobrickAdder = {
 		var command = new graphiti.command.CommandAdd(app.view, figure, this.offsetTop, this.offsetLeft);
     	app.view.getCommandStack().execute(command);	// 添加到命令栈中
 
-		figure.setId(this.name);	// 设置id
-		figure.label.setText(this.name);	// 设置label
+		figure.name = this.name;	// 设置id
 
-		app.view.collection.push(this.name);	// 放入collection中
+		if (this.config)
+			figure.config = this.config;
+
+		if (this.path)
+			figure.path = this.path;
 	}
 };
-
-
-
-$(".factorNode").live("click", function(){
-	var offset = $(this).offset();
-	var thisId = $(this).attr("id");
-	var name = thisId.substr(7, thisId.length - 1);
-
-	var adder = BiobrickAdder;
-	adder.init(name, "g.Shapes.Protein", offset.top, offset.left);
-	adder.show();
-});
