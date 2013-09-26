@@ -224,15 +224,15 @@ class SqliteDatabase:
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
 		print self.__cx.commit()
-		return 'updateUserData succeed'	
-	
+		return 'updateUserData succeed'
+
 	def deleteUserPart(self,part_id,uploaduser):
 		if self.userId==-1:
 			self.logger.error('not login but want to delete the user data')
 			return 'deleteUserData failed'
 		sql_cmd='DELETE FROM userPart WHERE part_id = "%s" AND uploadUser = "%s"'%(part_id,uploaduser)
 		print sql_cmd
-		self.__cursor.execute(sql_cmd)		
+		self.__cursor.execute(sql_cmd)
 		print self.__cx.commit()
 		return 'delete User part succeed'
 
@@ -245,7 +245,7 @@ class SqliteDatabase:
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('delete user: %s'%self.getUserNameById(self.userId))
 		print self.__cx.commit()
-		return 'deleteUserData succeed'	
+		return 'deleteUserData succeed'
 
 	def insertAUser(self,name,password,email,group_id,gender,question,answer):
 		nextId=self.getMaxUserId()+1
@@ -423,6 +423,16 @@ class SqliteDatabase:
 		promoter = decodejson[0]["PromoterNumber"]
 		self.__cursor.execute('SELECT * FROM promoter WHERE Number = "%s"' %
         promoter)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			return decodejson[0]
+		else:
+			return None
+	def find_cor_ind(self, corep_ind_type, regulator, promoter):
+		self.__cursor.execute('SELECT HillCoeff2, K2 FROM relation WHERE\
+				ActRreNumber = "%s" AND PromoterNumber = "%s" AND IncCorType = "%s"'
+				% (regulator, promoter, corep_ind_type))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:

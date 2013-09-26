@@ -398,12 +398,12 @@ def dump_group(network, database):
       regulator = None
     ## get inducer of a link
     corep_ind_type = cur_group["corep_ind_type"]
-    if corep_ind_type != "None" and cur_group["type"] == "Positive":
-      inducer = database.find_inducer_with_activator(regulator, corep_ind_type)
-      groups[b_list[i]]["corep_ind"] = inducer["Number"]
-    if corep_ind_type != "None" and cur_group["type"] == "Negative":
-      inducer = database.find_inducer_with_activator(regulator, corep_ind_type)
-      groups[b_list[i]]["corep_ind"] = inducer["Number"]
+    #if corep_ind_type != "None" and cur_group["type"] == "Positive":
+      #inducer = database.find_inducer_with_activator(regulator, corep_ind_type)
+      #groups[b_list[i]]["corep_ind"] = inducer["Number"]
+    #if corep_ind_type != "None" and cur_group["type"] == "Negative":
+      #inducer = database.find_inducer_with_activator(regulator, corep_ind_type)
+      #groups[b_list[i]]["corep_ind"] = inducer["Number"]
     ## get protein info
     proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i],\
         regulator)
