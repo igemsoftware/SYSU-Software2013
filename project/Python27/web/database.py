@@ -368,7 +368,7 @@ class SqliteDatabase:
 			act_rep_type = "Negative"
 		else:
 			act_rep_type = "Positive"
-		if link["inducer"] == "None":
+		if link["inducer"] not in {"Positive", "Negative"}:
 			self.__cursor.execute('SELECT DISTINCT ActRreNumber FROM relation WHERE\
 					ActRreType = "%s" AND IncCorType IS NULL ORDER BY ActRreNumber DESC\
 					LIMIT 0,%s' % (act_rep_type, idx))
@@ -399,7 +399,6 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_repressor(self, repressor = None):
-		print repressor
 		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
     ActRreNumber = "%s" AND ActRreType = "Negative"' % repressor)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
@@ -415,7 +414,6 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_activator(self, activator = None):
-		print activator
 		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
     ActRreNumber = "%s" AND ActRreType = "Positive"' % activator)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
@@ -429,7 +427,10 @@ class SqliteDatabase:
 			return decodejson[0]
 		else:
 			return None
+
 	def find_cor_ind(self, corep_ind_type, regulator, promoter):
+		print 'SELECT HillCoeff2, K2 FROM relation WHERE\
+				ActRreNumber = "%s" AND PromoterNumber = "%s" AND IncCorType = "%s"' % (regulator, promoter, corep_ind_type)
 		self.__cursor.execute('SELECT HillCoeff2, K2 FROM relation WHERE\
 				ActRreNumber = "%s" AND PromoterNumber = "%s" AND IncCorType = "%s"'
 				% (regulator, promoter, corep_ind_type))
@@ -465,7 +466,13 @@ class SqliteDatabase:
 			return None
 
 	def find_repressor_with_promoter(self, promoter):
-		self.__cursor.execute('SELECT * FROM repressor ORDER BY random() LIMIT 1')
+		self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
+    PromoterNumber = "%s" AND ActRreType = "Negative"' % promoter)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		promoter = decodejson[0]["ActRreNumber"]
+		self.__cursor.execute('SELECT * FROM repressor WHERE Number = "%s"' %
+        promoter)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -474,7 +481,13 @@ class SqliteDatabase:
 			return None
 
 	def find_activator_with_promoter(self, promoter):
-		self.__cursor.execute('SELECT * FROM activator ORDER BY random() LIMIT 1')
+		self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
+    PromoterNumber = "%s" AND ActRreType = "Positive"' % promoter)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		promoter = decodejson[0]["ActRreNumber"]
+		self.__cursor.execute('SELECT * FROM activator WHERE Number = "%s"' %
+        promoter)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -502,7 +515,7 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
-			if self.find_repressor_with_promoter(item["Number"]) not in repressor_list:
+			if self.find_repressor_with_promoter(item["Number"])["Number"] not in repressor_list:
 				return item
 
 	def getActivatedPromoterNearValue(self, idealValue, activator_list, link_type, p_type):
@@ -512,17 +525,17 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
-			if self.find_activator_with_promoter(item["Number"]) not in activator_list:
+			if self.find_activator_with_promoter(item["Number"])["Number"] not in activator_list:
 				return item
 
-	def getRepressorNearValue(self, idealValue, repressor_list):
+	def getRepressorNearValue(self, idealValue, regulator_set):
 		self.__cursor.execute('select * from repressor order by abs(K1-%f)\
-				limit 0,%d' % (idealValue, len(repressor_list)+1))
+				limit 0,%d' % (idealValue, len(regulator_set)+1))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
-			if item["Number"] not in repressor_list:
-				repressor_list.append(item["Number"])
+			if item["Number"] not in regulator_set:
+				regulator_set.add(item["Number"])
 				return item
 
 	def getUserRememberMeTime(self,username):
@@ -531,15 +544,16 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]['rememberTime']
 				
-	def getActivatorNearValue(self, idealValue, activator_list):
+	def getActivatorNearValue(self, idealValue, regulator_set):
 		self.__cursor.execute('select * from activator order by abs(K1-%f)\
-				limit 0,%d' % (idealValue, len(activator_list)+1))
+				limit 0,%d' % (idealValue, len(regulator_set)+1))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
 			if item["Number"] not in activator_list:
-				activator_list.append(item["Number"])
+				regulator_set.add(item["Number"])
 				return item
+
 	def getUserPartByLoginuser(self):
 		excuteString = "SELECT part_id,part_name AS Name,part_type as Type,part_author as Author,uploadUser as username FROM userPart WHERE uploadUser = '%s'" % self.getUserNameById(self.userId)
 		self.__cursor.execute(excuteString)
