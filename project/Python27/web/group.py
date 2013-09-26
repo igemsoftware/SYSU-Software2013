@@ -30,8 +30,8 @@ data = {"part": [
         "type": "Protein" 
       }, 
       { "id"  : "3", 
-        "name": "Activator", 
-        "type": "Activator" 
+        "name": "Repressor", 
+        "type": "Repressor" 
       }, 
       { "id"  : "4", 
         "name": "Repressor", 
@@ -66,7 +66,7 @@ data = {"part": [
       },
       { "from": "3",
         "to"  : "5",
-        "type": "Activator",
+        "type": "Repressor",
         "inducer": "None"
       },
       { "from": "4",

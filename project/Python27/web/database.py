@@ -213,8 +213,8 @@ class SqliteDatabase:
 		self.__cursor.execute(sql_cmd)
 		self.logger.debug('update user: %s'%self.getUserNameById(self.userId))
 		self.__cx.commit()
-		return 'updateUserData succeed'		
-	
+		return 'updateUserData succeed'
+
 	def insertUserData(self,data,fileName,fileType):
 		if self.userId==-1:
 			self.logger.error('not login but want to save the user data')
