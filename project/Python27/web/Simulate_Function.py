@@ -43,7 +43,7 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         Prodict  = {}
         dictkey  = []
         pro_name = []
-        DegRate = 0.018
+        DegRate = 0.00288
         for i in circuit["proteins"]:
           if i not in corepind:
             corepind[i] = {"time": time}
