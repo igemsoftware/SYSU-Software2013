@@ -26,6 +26,7 @@ class SqliteDatabase:
 	logger=None
 	encrypt=None
 	indexSave=None
+
 	# --------------------------------------------------------------------------
   ##
   # @brief     to get the database class's connection
@@ -35,10 +36,18 @@ class SqliteDatabase:
   # --------------------------------------------------------------------------
 	def getCx(self):
 		return self.__cx
+
+	# --------------------------------------------------------------------------
+  ##
+  # @brief     to get the database class's cursor
+  #
+  # @returns   return the connection
+  #
+  # --------------------------------------------------------------------------
 	def getCuror(self):
 		return self.__cursor
 	def addAPromoter(self,name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS):
-		sql_cmd='INSERT INTO promoter (Name,Number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS) VALUES ("%s","%s",%f,%f,%f,"%s","%s","%s","%s",%f)'%(name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS)		
+		sql_cmd='INSERT INTO promoter (Name,Number,MPPromoter,LeakageRate,K1,Type,Source,PoPS) VALUES ("%s","%s",%f,%f,%f,"%s","%s",%f)'%(name,number,MPPromoter,LeakageRate,K1,Type,Source,PoPS)		
 		self.__cursor.execute(sql_cmd)
 		self.__cx.commit()		
 		return 'add promoter success!'
@@ -58,7 +67,7 @@ class SqliteDatabase:
 		self.__cx.commit()
 		return 'add RBS success!'
 	def addARepressor(self,name,number,HillCoeff1,K1,K2):
-		sql_cmd='INSERT INTO repressor (Name,Number,HillCoeff1,K1,K2) VALUES ("%s","%s",%d,%f,%f)'%(name,number,HillCoeff1,K1,K2)
+		sql_cmd='INSERT INTO repressor (Name,Number,HillCoeff1,K1) VALUES ("%s","%s",%d,%f,)'%(name,number,HillCoeff1,K1)
 		self.__cursor.execute(sql_cmd)
 		self.__cx.commit()	
 		return 'add Repressor success!'
