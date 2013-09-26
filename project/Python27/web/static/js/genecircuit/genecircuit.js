@@ -211,7 +211,9 @@ var protein = {
 		$("#" + aTextureId + " .concen").find(".ui-slider-handle").text($("#" + aTextureId + " .concen").slider("value").toFixed(0)); 
 		$("#" + aTextureId + " .before-regulated").trigger("update", aData.before_regulated);
 		$("#" + aTextureId + " .repress-rate").trigger("update", aData.repress_rate);
-	  $("#" + aTextureId + " .module-title em").text(aData.name);	$("#" + aTextureId + " .induce-rate").trigger("update", aData.induce_rate);
+    $("#" + aTextureId + " .induce-rate").trigger("update", aData.induce_rate);
+	  $("#" + aTextureId + " .module-title em").text(aData.name);
+    $("#" + aTextureId).data("pos", aData.pos);
 	},
 }
 

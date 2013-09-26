@@ -548,7 +548,7 @@ class SqliteDatabase:
 		else:
 			return decodejson[0]
 
-	def getRepressorNearValue(self, idealValue, regulator_set):
+	def getRepressorNearValue(self, idealValue, cor_ind_type, regulator_set):
 		idx = len(regulator_set) + 1
 		if cor_ind_type not in {"Negative", "Positive"}:
 			sql_cmd = 'SELECT repressor.*, relation.* FROM repressor INNER JOIN\
