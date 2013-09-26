@@ -39,6 +39,8 @@
 p{
   font-size:14px;
   line-height:20px;
+  margin-left:20px;
+  margin-right:20px;
 } 
 
 .nav-list {
@@ -49,6 +51,17 @@ p{
   padding-left:0px;
   padding-top:0px;
   padding-bottom:0px;
+}
+
+.image{
+  position:relative;
+  height:30%;
+  width:50%;
+  border:5px #407279 solid;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:5px;
+  margin-bottom:5px;
 }
 
 .nav-list>li>a{
@@ -83,7 +96,11 @@ p{
 .nav-list>.active>a>i.myi{
   background-repeat:no-repeat;
   position:relative;
-  width: 0; height: 0; border-top: 25px solid transparent; border-right: 35px solid black; border-bottom: 25px solid transparent;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-right: 35px solid black;
+  border-bottom: 25px solid transparent;
   opacity:0.5;
   float:right;
   margin-right:8%;
@@ -156,6 +173,11 @@ p{
   width:50%;
   height:100%;
   background:white;
+  padding-right:0px;
+  padding-left:0px;
+  padding-top:0px;
+  padding-bottom:0px;
+  border:0px;
 }
 
 #index{
