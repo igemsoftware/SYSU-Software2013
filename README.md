@@ -17,6 +17,9 @@ We use pure javascript to implement the front end,and use flask framework (espec
 ## Safety
 We have used rsa algorithm to encrypt any password transferation,and use sha-a algorithm for information digesting,never save plain password.
 
+## License
+This project is released under MIT License. See LICENSE for the content.
+
 ## FAQ
 Q:Sometime after I have cleaned up the browser 's cache ,it will return 500 error when I open the page?<br>
 A:Just press the F5 to refresh the page ,or you can reboot the server.
