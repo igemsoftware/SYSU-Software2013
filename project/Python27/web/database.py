@@ -471,7 +471,6 @@ class SqliteDatabase:
 		if cor_ind_type == "Corepressor":
 			cor_ind_type = "Corepressed"
 		idx = len(regulator_set) + 1
-		print "fffff", cor_ind_type
 		if cor_ind_type not in {"Induced", "Corepressed"}:
 			sql_cmd = 'SELECT DISTINCT ActRreNumber FROM relation WHERE\
 					PromoterNumber = "%s" AND ActRreType = "%s" AND IncCorType IS NULL\
@@ -528,23 +527,23 @@ class SqliteDatabase:
 			cor_ind_type = "Corepressed"
 		if cor_ind_type not in {"Induced", "Corepressed"}:
 			sql_cmd = 'SELECT promoter.*, relation.* FROM promoter INNER JOIN relation\
-					ON promoter.Number = relation.PromoterNumber WHERE Type = "%s"\
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = "%s"\
 					AND relation.IncCorType IS NULL ORDER BY abs(promoter.%s - %f)' % \
 					(link_type, p_type, idealValue)
 		else:
 			sql_cmd = 'SELECT promoter.*, relation.* FROM promoter INNER JOIN relation\
-					ON promoter.Number = relation.PromoterNumber WHERE Type = "%s"\
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = "%s"\
 					AND relation.IncCorType = "%s" ORDER BY abs(promoter.%s - %f)' % \
 					(link_type, cor_ind_type, p_type, idealValue)
+		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if p_type != "PoPS":
 			for item in decodejson:
-				regulator = self.find_actrep_with_promoter(item["Number"], link_type,\
-						cor_ind_type, regulator_set)
-				if regulator["Number"] not in regulator_set:
-					regulator_set.add(regulator["Number"])
+				regulator = item["ActRreNumber"]
+				if regulator not in regulator_set:
+					regulator_set.add(regulator)
 					return item
 		else:
 			return decodejson[0]
@@ -593,7 +592,7 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
-			if item["Number"] not in activator_list:
+			if item["Number"] not in regulator_set:
 				regulator_set.add(item["Number"])
 				return item
 
