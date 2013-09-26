@@ -120,6 +120,7 @@ def CorepIndRate(circuit, database):
             elif group['corep_ind_type'] == 'Inducer':
                 inducer = database.find_cor_ind("Induced",\
                     regulator['Number'], promoter['Number'])
+                print inducer
                 dataset['Inducer'] = circuit['proteins'][proid]['concen']
                 dataset['K2']         = inducer['K2']
                 dataset['HillCoeff2'] = inducer['HillCoeff2']

@@ -528,6 +528,12 @@ def update_controller(db, update_info):
         gene_circuit["proteins"][i]["copy"] = best_value
 
   elif detail["type"] == "PoPS" or detail["type"] == "K1":
+    prev_node = group["from"]
+    prev_grp = gene_circuit["proteins"][prev_node]["grp_id"]
+    prev_pos = gene_circuit["proteins"][prev_node]["pos"]
+    orig_repressor = gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"]
+    regulator_set.remove(orig_repressor)
+
     link_type = group["type"]
     cor_ind_type = group["corep_ind_type"]
     p_type = get_type_of_promoter(link_type)
@@ -535,12 +541,12 @@ def update_controller(db, update_info):
     if detail["type"] == "PoPS":
       promoter_value = float(detail["new_value"])
       #select best promoter
-      print link_type, p_type, cor_ind_type
       best_promoter = db.getPromoterNearValue(promoter_value,\
           regulator_set, link_type, p_type, cor_ind_type)
+      print link_type, p_type, cor_ind_type
       if link_type in {"Positive", "Negative"}:
         best_regulator = db.find_actrep_with_promoter(best_promoter["Number"],\
-            link_type, p_type, regulator_set)
+            link_type, cor_ind_type, regulator_set)
         regulator_value = log10(best_regulator["K1"])
     else:
       regulator_value = pow(10, float(detail["new_value"]))
@@ -554,7 +560,6 @@ def update_controller(db, update_info):
         promoter_value = best_promoter[p_type]
 
     # update corresponding repressor
-    prev_node = group["from"]
     regulator = None
     # update related promoters
     if detail["type"] == "PoPS":
@@ -564,8 +569,6 @@ def update_controller(db, update_info):
         gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
 
     if prev_node != -1:
-      prev_grp = gene_circuit["proteins"][prev_node]["grp_id"]
-      prev_pos = gene_circuit["proteins"][prev_node]["pos"]
       gene_circuit["proteins"][prev_node]["K1"] = regulator_value
       gene_circuit["proteins"][prev_node]["name"] = best_regulator["Number"]
       gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"] = best_regulator["Number"]
