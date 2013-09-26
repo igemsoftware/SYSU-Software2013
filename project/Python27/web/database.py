@@ -465,20 +465,28 @@ class SqliteDatabase:
 		else:
 			return None
 
-	def find_repressor_with_promoter(self, promoter):
-		self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
-    PromoterNumber = "%s" AND ActRreType = "Negative"' % promoter)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		promoter = decodejson[0]["ActRreNumber"]
-		self.__cursor.execute('SELECT * FROM repressor WHERE Number = "%s"' %
-        promoter)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		if decodejson != []:
-			return decodejson[0]
-		else:
+	def find_actrep_with_promoter(self, promoter, link_type, cor_ind_type, regulator_set):
+		if link_type == "Constitutive":
 			return None
+		idx = len(regulator_set) + 1
+		if cor_ind_type not in {"Negative", "Positive"}:
+			self.__cursor.execute('SELECT DISTINCT ActRreNumber FROM relation WHERE\
+					PromoterNumber = "%s" AND ActRreType = "%s" AND IncCorType IS NULL\
+					ORDER BY ActRreNumber DESC LIMIT 0, %s' % (promoter, link_type, idx))
+		else:
+			self.__cursor.execute('SELECT DISTINCT ActRreNumber FROM relation WHERE\
+					PromoterNumber = "%s" AND ActRreType = "%s" AND IncCorType = "%s"\
+					ORDER BY ActRreNumber DESC LIMIT 0, %s' % (promoter, link_type, cor_ind_type, idx))
+
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		print decodejson
+		actrep = decodejson[0]["ActRreNumber"]
+		self.__cursor.execute('SELECT * FROM repressor WHERE Number = "%s"' %
+        actrep)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
 
 	def find_activator_with_promoter(self, promoter):
 		self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
@@ -508,25 +516,31 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	def getRepressedPromoterNearValue(self, idealValue, repressor_list, link_type, p_type):
-		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
-				limit 0,%d" % (link_type, p_type, idealValue, len(repressor_list)+1)
+	def getPromoterNearValue(self, idealValue, regulator_set, link_type, p_type,\
+      cor_ind_type):
+		if cor_ind_type not in {"Negative", "Positive"}:
+			sql_cmd = 'SELECT promoter.*, relation.* FROM promoter INNER JOIN relation\
+					ON promoter.Number = relation.PromoterNumber WHERE Type = "%s"\
+					AND relation.IncCorType IS NULL ORDER BY abs(promoter.%s - %f)' % \
+					(link_type, p_type, idealValue)
+		else:
+			sql_cmd = 'SELECT promoter.*, relation.* FROM promoter INNER JOIN relation\
+					ON promoter.Number = relation.PromoterNumber WHERE Type = "%s"\
+					AND relation.IncCorType = "%s" ORDER BY abs(promoter.%s - %f)' % \
+					(link_type, p_type, corep_ind_type, idealValue)
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
-		for item in decodejson:
-			if self.find_repressor_with_promoter(item["Number"])["Number"] not in repressor_list:
-				return item
-
-	def getActivatedPromoterNearValue(self, idealValue, activator_list, link_type, p_type):
-		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
-				limit 0,%d" % (link_type, p_type, idealValue, len(activator_list)+1)
-		self.__cursor.execute(sql_cmd)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		for item in decodejson:
-			if self.find_activator_with_promoter(item["Number"])["Number"] not in activator_list:
-				return item
+		print p_type
+		if p_type != "PoPS":
+			for item in decodejson:
+				regulator = self.find_actrep_with_promoter(item["Number"], link_type,\
+						cor_ind_type, regulator_set)
+				if regulator["Number"] not in regulator_set:
+					regulator_set.add(regulator["Number"])
+					return item
+		else:
+			return decodejson[0]
 
 	def getRepressorNearValue(self, idealValue, regulator_set):
 		self.__cursor.execute('select * from repressor order by abs(K1-%f)\
