@@ -351,7 +351,33 @@ class SqliteDatabase:
 		if len(decodejson)==0:
 			return None
 		else:
-			return decodejson[0]['Number']		
+			return decodejson[0]['Number']
+
+	def find_actrep(self, link, regulator_set):
+		idx = len(regulator_set) + 1
+		if link["type"] == "Repressor":
+			act_rep_type = "Negative"
+		else:
+			act_rep_type = "Positive"
+		if link["inducer"] == "None":
+			self.__cursor.execute('SELECT DISTINCT ActRreNumber FROM relation WHERE\
+					ActRreType = "%s" AND IncCorType IS NULL ORDER BY ActRreNumber DESC\
+					LIMIT 0,%s' % (act_rep_type, idx))
+		else:
+			if link["inducer"] == "Positive":
+				inc_cor_type = "Induced"
+			if link["inducer"] == "Negative":
+				inc_cor_type = "Corepressed"
+			self.__cursor.execute('SELECT DISTINCT ActRreNumber FROM relation WHERE\
+					ActRreType = "%s" AND IncCorType = "%s" ORDER BY ActRreNumber DESC\
+					LIMIT 0,%s' % (act_rep_type, inc_cor_type, idx))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if item["ActRreNumber"] not in regulator_set:
+				regulator_set.add(item["ActRreNumber"])
+				return item["ActRreNumber"]
+
 
 	def select_with_name(self, table, name):
 		self.__cursor.execute('SELECT * FROM %s WHERE Number = "%s"' % (table,\
@@ -364,7 +390,14 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_repressor(self, repressor = None):
-		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')		
+		print repressor
+		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
+    ActRreNumber = "%s" AND ActRreType = "Negative"' % repressor)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		promoter = decodejson[0]["PromoterNumber"]
+		self.__cursor.execute('SELECT * FROM promoter WHERE Number = "%s"' %
+        promoter)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -373,7 +406,14 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_activator(self, activator = None):
-		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
+		print activator
+		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
+    ActRreNumber = "%s" AND ActRreType = "Positive"' % activator)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		promoter = decodejson[0]["PromoterNumber"]
+		self.__cursor.execute('SELECT * FROM promoter WHERE Number = "%s"' %
+        promoter)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:

@@ -20,37 +20,68 @@ prom_name = "BBa_I712074"
 rbs_name = "BBa_J61104"
 term_name = "BBa_B0013"
 
-# --------------------------------------------------------------------------
-##
-# @brief find a unique repressor
-#
-# @param database  database instance
-# @param item      repressor
-# @param regulator_list currently used repressor and activator
-#
-# @returns   selected repressor
-#
-# --------------------------------------------------------------------------
-def find_repressor(database, item, regulator_list):
-  item = database.select_row("repressor", len(regulator_list) + 1)
-  regulator_list += item
-  return str(item)
+data = {"part": [ 
+			{ "id"  : "1", 
+				"name": "BBa_C0060", 
+				"type": "Protein" 
+      }, 
+      { "id"  : "2", 
+        "name": "BBa_C0060", 
+        "type": "Protein" 
+      }, 
+      { "id"  : "3", 
+        "name": "Activator", 
+        "type": "Activator" 
+      }, 
+      { "id"  : "4", 
+        "name": "Repressor", 
+        "type": "Repressor" 
+      }, 
+      { "id"  : "5", 
+        "name": "BBa_C0160", 
+        "type": "Protein" 
+      }, 
+      { "id"  : "6", 
+        "name": "BBa_C0178", 
+        "type": "Protein" 
+      }, 
+      { "id"  : "7", 
+        "name": "BBa_C0178",
+        "type": "Protein"
+      }
 
-# --------------------------------------------------------------------------
-##
-# @brief find a unique activator
-#
-# @param database        database instance
-# @param item            activator
-# @param regulator_list  currently used repressor and activator
-#
-# @returns   select activator
-#
-# --------------------------------------------------------------------------
-def find_activator(database, item, regulator_list):
-  item = database.select_row("activator", len(regulator_list) + 1)
-  regulator_list += item
-  return str(item)
+      ],
+      "link": [
+        { "from": "1",
+          "to"  : "2",
+          "type": "Bound",
+      },
+      { "from": "2",
+        "to"  : "3",
+        "type": "Bound",
+      },
+      { "from": "3",
+        "to"  : "4",
+        "type": "Bound",
+      },
+      { "from": "3",
+        "to"  : "5",
+        "type": "Activator",
+        "inducer": "None"
+      },
+      { "from": "4",
+        "to"  : "6",
+        "type": "Repressor",
+        "inducer": "Positive"
+        },
+      { "from": "6",
+        "to"  : "7",
+        "type": "Bound",
+        },
+
+      ]
+		};
+
 
 # --------------------------------------------------------------------------
 ##
@@ -143,7 +174,7 @@ def work(data, database):
   bound_list = {}
   pro_pos = {}
   rev_bound_list = {}
-  regulator_list = []
+  regulator_set = set()
   # Initialization
   for part in data["part"]:
     idx = part["id"]
@@ -171,30 +202,31 @@ def work(data, database):
       rev_bound_list[v] = u
       del groups[u]
 
-  # replace repressor with exact component
-  for elem in groups:
-    for i in xrange(len(groups[elem])):
-      if groups[elem][i] == "Repressor":
-        groups[elem][i] = find_repressor(database, groups[elem][i],\
-            regulator_list)
-      if groups[elem][i] == "Activator":
-        groups[elem][i] = find_activator(database, groups[elem][i],\
-            regulator_list)
+  print groups
 
   for i in bound_list:
     bound_list[i] = find_bound_src(bound_list[i], bound_list)
   for link in data["link"]:
     if link["type"] == "Bound":
       continue
-    next_grp = bound_list[link["from"]]
-    for p in data["part"]:
-      if p["id"] == link["from"]:
-        cur = p
-        break
-    if cur["type"] == "Repressor":
-      groups[next_grp][0] = find_promoter(database, repressor=cur["name"])["Number"]
-    if cur["type"] == "Activator":
-      groups[next_grp][0] = find_promoter(database, activator=cur["name"])["Number"]
+    next_grp = bound_list[link["to"]]
+    cur_grp = bound_list[link["from"]]
+    #for p in data["part"]:
+      #if p["id"] == link["from"]:
+        #cur = p
+        #break
+
+    # replace repressor with exact component
+    groups[cur_grp][pro_pos[link["from"]]] = database.find_actrep(link,\
+        regulator_set)
+
+    # find promoter
+    regulator = groups[cur_grp][pro_pos[link["from"]]]
+    if link["type"] == "Repressor":
+      promoter = find_promoter(database, repressor = regulator)
+    if link["type"] == "Activator":
+      promoter = find_promoter(database, activator = regulator)
+    groups[next_grp][0] = promoter["Number"]
   return (groups, bound_list, pro_pos)
 
 # --------------------------------------------------------------------------
@@ -230,6 +262,7 @@ def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "p
   ret["RiPS"] = rbs_info["MPRBS"]
   ret["copy"] = plasmid_backbone_info["CopyNumber"]
   if regulator_info is not None:
+    print regulator_info
     ret["K1"] = log10(regulator_info["K1"])
   else:
     ret["K1"] = None
@@ -325,6 +358,7 @@ def dump_group(network, database):
     grp = []
     # get name and type of group member
     for elem in data[i]:
+      print elem
       xml_file = find_file(elem + ".xml", ".")
       grp.append({"name": elem, "type": component_union.get_part_type(xml_file)})
     for idx in range(1, len(grp) - 1, 2):
@@ -439,9 +473,8 @@ def js_formatter(gene_circuit):
 # --------------------------------------------------------------------------
 def update_controller(db, update_info):
   gene_circuit = js_formatter(update_info["gene_circuit"])
-  # regulator_list = [name for name in gene_circuit["proteins"]]
-  regulator_list = [i["name"] for i in gene_circuit["proteins"].values() if
-      not i["display"]]
+  regulator_set = set([i["name"] for i in gene_circuit["proteins"].values() if
+      not i["display"]])
   detail = update_info["detail"]
   pro_id = detail["pro_id"]
   protein = gene_circuit["proteins"][pro_id]
@@ -477,12 +510,12 @@ def update_controller(db, update_info):
       #select best promoter according to link type
       if link_type == "Positive":
         best_promoter = db.getActivatedPromoterNearValue(promoter_value,\
-            regulator_list, link_type, p_type)
+            regulator_set, link_type, p_type)
         best_regulator = db.find_activator_with_promoter(best_promoter["Number"])
         regulator_value = log10(best_regulator["K1"])
       elif link_type == "Negative":
         best_promoter = db.getRepressedPromoterNearValue(promoter_value,\
-            regulator_list, link_type, p_type)
+            regulator_set, link_type, p_type)
         best_regulator = db.find_repressor_with_promoter(best_promoter["Number"])
         regulator_value = log10(best_regulator["K1"])
       else:
@@ -491,11 +524,11 @@ def update_controller(db, update_info):
     else:
       regulator_value = pow(10, float(detail["new_value"]))
       if link_type == "Positive":
-        best_regulator = db.getActivatorNearValue(regulator_value, regulator_list)
+        best_regulator = db.getActivatorNearValue(regulator_value, regulator_set)
         best_promoter = find_promoter(db, activator=best_regulator["Number"])
         promoter_value = best_promoter[p_type]
       else:
-        best_regulator = db.getRepressorNearValue(regulator_value, regulator_list)
+        best_regulator = db.getRepressorNearValue(regulator_value, regulator_set)
         best_promoter = find_promoter(db, repressor=best_regulator["Number"])
         promoter_value = best_promoter[p_type]
 

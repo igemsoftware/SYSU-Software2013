@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>27971</part_id>
+<part_name>BBa_K783054</part_name>
+<part_short_name>K783054</part_short_name>
+<part_short_desc>This is a MoClo converted version of BBa_C0079</part_short_desc>
+<part_type>Coding</part_type>
+<release_status>Not Released</release_status>
+<sample_status>Pending</sample_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K783054</part_url>
+<part_entered>2012-10-02</part_entered>
+<part_author>Traci Haddock</part_author>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atggccttggttgacggttttcttgagctggaacgctcaagtggaaaattggagtggagcgccatcctccagaagatggc
+gagcgaccttggattctcgaagatcctgttcggcctgttgcctaaggacagccaggactacgagaacgccttcatcgtcg
+gcaactacccggccgcctggcgcgagcattacgaccgggctggctacgcgcgggtcgacccgacggtcagtcactgtacc
+cagagcgtactgccgattttctgggaaccgtccatctaccagacgcgaaagcagcacgagttcttcgaggaagcctcggc
+cgccggcctggtgtatgggctgaccatgccgctgcatggtgctcgcggcgaactcggcgcgctgagcctcagcgtggaag
+cggaaaaccgggccgaggccaaccgtttcatagagtcggtcctgccgaccctgtggatgctcaaggactacgcactgcaa
+agcggtgccggactggccttcgaacatccggtcagcaaaccggtggttctgaccagccgggagaaggaagtgttgcagtg
+gtgcgccatcggcaagaccagttgggagatatcggttatctgcaactgctcggaagccaatgtgaacttccatatgggaa
+atattcggcggaagttcggtgtgacctcccgccgcgtagcggccattatggccgttaatttgggtcttattactctcgct
+gcaaacgacgaaaactacgctttagtagcttaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2214299</id>
+<title>lasR</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>717</endpos></feature>
+<feature>
+<id>2214300</id>
+<title>G</title>
+<type>mutation</type>
+<direction>forward</direction>
+<startpos>480</startpos>
+<endpos>480</endpos></feature>
+<feature>
+<id>2214301</id>
+<title>LVA</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>718</startpos>
+<endpos>750</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>direction</name>
+<value>Forward</value>
+<units></units>
+<url></url>
+<id>19666</id>
+<m_date>2012-10-07 14:25:17</m_date>
+<user_id>8248</user_id>
+<user_name>THaddock</user_name></parameter>
+<parameter>
+<name>function</name>
+<value>Rep</value>
+<units></units>
+<url></url>
+<id>19667</id>
+<m_date>2012-10-07 14:25:17</m_date>
+<user_id>8248</user_id>
+<user_name>THaddock</user_name></parameter>
+<parameter>
+<name>ligands</name>
+<value>PAI</value>
+<units></units>
+<url></url>
+<id>19668</id>
+<m_date>2012-10-07 14:25:17</m_date>
+<user_id>8248</user_id>
+<user_name>THaddock</user_name></parameter>
+<parameter>
+<name>protein</name>
+<value>lasR-LVA</value>
+<units></units>
+<url></url>
+<id>19669</id>
+<m_date>2012-10-07 14:25:17</m_date>
+<user_id>8248</user_id>
+<user_name>THaddock</user_name></parameter>
+<parameter>
+<name>swisspro</name>
+<value>P25084</value>
+<units></units>
+<url></url>
+<id>19670</id>
+<m_date>2012-10-07 14:25:17</m_date>
+<user_id>8248</user_id>
+<user_name>THaddock</user_name></parameter>
+<parameter>
+<name>tag</name>
+<value>LVA</value>
+<units></units>
+<url></url>
+<id>19671</id>
+<m_date>2012-10-07 14:25:17</m_date>
+<user_id>8248</user_id>
+<user_name>THaddock</user_name></parameter></parameters>
+<categories>
+<category>//cds</category>
+<category>//cds/transcriptionalregulator/activator</category>
+<category>//function/cellsignalling</category>
+<category>//function/regulation/transcriptional</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>

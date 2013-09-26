@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>27141</part_id>
+<part_name>BBa_K864201</part_name>
+<part_short_name>K864201</part_short_name>
+<part_short_desc>LexA SOS response repressor</part_short_desc>
+<part_type>Coding</part_type>
+<release_status>Released HQ 2013</release_status>
+<sample_status>In stock</sample_status>
+<part_results>None</part_results>
+<part_nickname>lexA</part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K864201</part_url>
+<part_entered>2012-09-25</part_entered>
+<part_author>Erik Lundin</part_author>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgaaagcgttaacggccaggcaacaagaggtgtttgatctcatccgtgatcacatcagccagacaggtatgccgccgac
+gcgtgcggaaatcgcgcagcgtttggggttccgttccccaaacgcggctgaagaacatctgaaggcgctggcacgcaaag
+gcgttattgaaattgtttccggcgcatcacgcgggattcgtctgttgcaggaagaggaagaagggttgccgctggtaggt
+cgtgtggctgccggtgaaccacttctggcgcaacagcatattgaaggtcattatcaggtcgatccttccttattcaagcc
+gaatgctgatttcctgctgcgcgtcagcgggatgtcgatgaaagatatcggcattatggatggtgacttgctggcagtgc
+ataaaactcaggatgtacgtaacggtcaggtcgttgtcgcacgtattgatgacgaagttaccgttaagcgcctgaaaaaa
+cagggcaataaagtcgaactgttgccagaaaatagcgagtttaaaccaattgtcgttgaccttcgtcagcagagcttcac
+cattgaagggctggcggttggggttattcgcaacggcgactggctgtaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2197113</id>
+<title>lexA</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>612</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>protein</name>
+<value>LexA</value>
+<units></units>
+<url></url>
+<id>17459</id>
+<m_date>2012-09-25 05:50:39</m_date>
+<user_id>9827</user_id>
+<user_name>erlu2699</user_name></parameter>
+<parameter>
+<name>protein</name>
+<value>MarR</value>
+<units></units>
+<url></url>
+<id>17457</id>
+<m_date>2012-09-25 05:50:13</m_date>
+<user_id>9827</user_id>
+<user_name>erlu2699</user_name></parameter>
+<parameter>
+<name>direction</name>
+<value>Forward</value>
+<units></units>
+<url></url>
+<id>17454</id>
+<m_date>2012-09-25 05:50:12</m_date>
+<user_id>9827</user_id>
+<user_name>erlu2699</user_name></parameter>
+<parameter>
+<name>function</name>
+<value>Rep</value>
+<units></units>
+<url></url>
+<id>17455</id>
+<m_date>2012-09-25 05:50:12</m_date>
+<user_id>9827</user_id>
+<user_name>erlu2699</user_name></parameter></parameters>
+<categories>
+<category>//cds/transcriptionalregulator/repressor</category>
+<category>//function/regulation/transcriptional</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>
