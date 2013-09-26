@@ -17,7 +17,7 @@
   position:relative;
   height:10%;
   width:100%;
-  background-color:#008080;
+  background-color:#407279;
 }
 
 .list:hover{
@@ -33,12 +33,14 @@
   height:10%;
   width:100%;
   border:0px;
-  background-color:#FFAA33;
+  background-color:#FFBF43;
 }
 
 p{
   font-size:14px;
   line-height:20px;
+  margin-left:20px;
+  margin-right:20px;
 } 
 
 .nav-list {
@@ -51,6 +53,18 @@ p{
   padding-bottom:0px;
 }
 
+.image{
+  position:relative;
+  height:30%;
+  width:50%;
+  border:5px #407279 solid;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:5px;
+  margin-bottom:5px;
+  background-color:#f5f5f5;
+}
+
 .nav-list>li>a{
   position:relative;
   border:0px;
@@ -59,7 +73,7 @@ p{
   line-height:50px;
   text-indent:10px;
   font-size:15px;
-  color:#FFAA33;
+  color:#EBEBEB;
   margin-right:0px;
   margin-left:0px;
   padding-right:0px;
@@ -67,6 +81,10 @@ p{
   padding-top:0px;
   padding-bottom:0px;
   text-decoration:none;
+}
+
+.nav-list>li>a:hover{
+  color:#407279;
 }
 
 .nav-list>li>a>i.myi{
@@ -79,7 +97,11 @@ p{
 .nav-list>.active>a>i.myi{
   background-repeat:no-repeat;
   position:relative;
-  width: 0; height: 0; border-top: 25px solid transparent; border-right: 35px solid black; border-bottom: 25px solid transparent;
+  width: 0;
+  height: 0;
+  border-top: 23px solid transparent;
+  border-right: 34px solid black;
+  border-bottom: 23px solid transparent;
   opacity:0.5;
   float:right;
   margin-right:8%;
@@ -98,7 +120,7 @@ p{
   height:100%;
   width:100%;
   color:#008080;
-  background-color:#FFAA33;
+  background-color:#FFBF43;
   border:0px;
   line-height:50px;
 }
@@ -111,7 +133,7 @@ p{
   width:100%;
   line-height:50px;
   color:#008080;
-  background-color:#FFAA33;
+  background-color:#FFBF43;
   border:0px;
   padding-right:0px;
   padding-left:0px;
@@ -139,7 +161,7 @@ p{
   margin-right:0px;
   padding-right:0px;
   padding-left:0px;
-  background:#ccc;
+  background:#EBEBEB;
   position:relative;
   top:0px;
   left:0px;
@@ -152,6 +174,11 @@ p{
   width:50%;
   height:100%;
   background:white;
+  padding-right:0px;
+  padding-left:0px;
+  padding-top:0px;
+  padding-bottom:0px;
+  border:0px;
 }
 
 #index{
