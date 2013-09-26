@@ -32,8 +32,8 @@ data = {u'part': [{u'type': u'Protein', u'id': u'1', u'name': u'BBa_C0060'}, {u'
 # @returns   selected repressor
 #
 # --------------------------------------------------------------------------
-def find_repressor(database, item, regulator_list):
-  item = database.find_distinct_actrep("Negative", len(regulator_list) + 1)
+def find_repressor(database, item, regulator_list, edge):
+  item = database.find_distinct_actrep("Negative", len(regulator_list) + 1, edge)
   regulator_list += item
   return str(item)
 
@@ -195,9 +195,10 @@ def work(data, database):
         break
     regulator = groups[cur_grp][pro_pos[link["from"]]]
     if cur["type"] == "Repressor":
-      groups[next_grp][0] = find_promoter(database, regulator)["Number"]
+      promoter = find_promoter(database, repressor = regulator)
     if cur["type"] == "Activator":
-      groups[next_grp][0] = find_promoter(database, regulator)["Number"]
+      promoter = find_promoter(database, activator = regulator)
+    groups[next_grp][0] = promoter["PromoterNumber"]
   return (groups, bound_list, pro_pos)
 
 # --------------------------------------------------------------------------
@@ -329,9 +330,12 @@ def dump_group(network, database):
     # get name and type of group member
     for elem in data[i]:
       xml_file = find_file(elem + ".xml", ".")
-      grp.append({"name": elem, "type": component_union.get_part_type(xml_file)})
+      #grp.append({"name": elem, "type": component_union.get_part_type(xml_file)})
+      grp.append({"name": elem})
     for idx in range(1, len(grp) - 1, 2):
       grp[idx]["type"] = "RBS"
+    for idx in range(2, len(grp) - 2, 2):
+      grp[idx]["type"] = "Coding"
     grp[0]["type"] = "Promoter"
     grp[-1]["type"] = "Terminator"
 
