@@ -47,7 +47,7 @@ data = {"part": [
   ]
     }
 
-data = {u'part': [{u'type': u'Protein', u'id': u'336e1f40-04ff-be5a-85a6-09c3e17ebd7b', u'name': u'BBa_I11021'}, {u'type': u'Activator', u'id': u'0355309c-fd99-2115-f03a-a0e9dd5dfa99', u'name': u'Activator'}, {u'type': u'Protein', u'id': u'70908c6a-f22c-e0e8-0198-077cbd84b791', u'name': u'BBa_I11031'}], u'link': [{u'to': u'0355309c-fd99-2115-f03a-a0e9dd5dfa99', u'from': u'336e1f40-04ff-be5a-85a6-09c3e17ebd7b', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'70908c6a-f22c-e0e8-0198-077cbd84b791', u'from': u'0355309c-fd99-2115-f03a-a0e9dd5dfa99', u'inducer': u'none', u'type': u'Activator'}]}
+data = {u'part': [{u'type': u'Protein', u'id': u'e84b3201-6e7a-802d-d4b8-cfec5e82b38b', u'name': u'BBa_K112002'}, {u'type': u'Activator', u'id': u'31860a9b-da04-3630-50af-a30bdbebe2d7', u'name': u'Activator'}, {u'type': u'Protein', u'id': u'432ccef7-9eb6-56ac-d6d2-0d964949d94a', u'name': u'BBa_K112004'}], u'link': [{u'to': u'31860a9b-da04-3630-50af-a30bdbebe2d7', u'from': u'e84b3201-6e7a-802d-d4b8-cfec5e82b38b', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'432ccef7-9eb6-56ac-d6d2-0d964949d94a', u'from': u'31860a9b-da04-3630-50af-a30bdbebe2d7', u'inducer': u'none', u'type': u'Activator'}]}
 #data = {"part": [ 
 			#{ "id"  : "1", 
 				#"name": "BBa_C0060", 
