@@ -1,4 +1,4 @@
-﻿#C.A.S.T designer
+#C.A.S.T designer
 iGEM-SOFTWARE-2013
 ==================
 This is the project of igem 2013 by SYSU-Software.

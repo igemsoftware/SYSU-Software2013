@@ -96,17 +96,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae547689a9a88efbb40244b70932d8fb4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb_1_1plasmid.html#ae547689a9a88efbb40244b70932d8fb4">find_file</a></td></tr>
+<tr class="memdesc:ae547689a9a88efbb40244b70932d8fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">find file in a directory  <a href="#ae547689a9a88efbb40244b70932d8fb4">More...</a><br/></td></tr>
 <tr class="separator:ae547689a9a88efbb40244b70932d8fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe025b0e48e975deecc57ad618ff0ea7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb_1_1plasmid.html#abe025b0e48e975deecc57ad618ff0ea7">trans</a></td></tr>
+<tr class="memdesc:abe025b0e48e975deecc57ad618ff0ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">turn <a class="el" href="class_d_n_a.html">DNA</a> sequence in trans  <a href="#abe025b0e48e975deecc57ad618ff0ea7">More...</a><br/></td></tr>
 <tr class="separator:abe025b0e48e975deecc57ad618ff0ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a815b6bb1e8ce0d7c5e74517980fe8956"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb_1_1plasmid.html#a815b6bb1e8ce0d7c5e74517980fe8956">plasmid_sbol</a></td></tr>
+<tr class="memdesc:a815b6bb1e8ce0d7c5e74517980fe8956"><td class="mdescLeft">&#160;</td><td class="mdescRight">get SBOL with plasmid part and type  <a href="#a815b6bb1e8ce0d7c5e74517980fe8956">More...</a><br/></td></tr>
 <tr class="separator:a815b6bb1e8ce0d7c5e74517980fe8956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aafb74ca9719e0596b5c9c71f5f493d9d"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb_1_1plasmid.html#aafb74ca9719e0596b5c9c71f5f493d9d">groups</a></td></tr>
-<tr class="separator:aafb74ca9719e0596b5c9c71f5f493d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9b01088cbfe70ce3083dc036af63196"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb_1_1plasmid.html#ac9b01088cbfe70ce3083dc036af63196">reverse</a> = {&quot;A&quot;:&quot;T&quot;, &quot;T&quot;:&quot;A&quot;, &quot;C&quot;:&quot;G&quot;, &quot;G&quot;:&quot;C&quot;, &quot;a&quot;:&quot;t&quot;, &quot;t&quot;:&quot;a&quot;, &quot;g&quot;:&quot;c&quot;,&quot;c&quot;:&quot;g&quot;}</td></tr>
+<tr class="memdesc:ac9b01088cbfe70ce3083dc036af63196"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dict to reverse <a class="el" href="class_d_n_a.html">DNA</a> sequence.  <a href="#ac9b01088cbfe70ce3083dc036af63196">More...</a><br/></td></tr>
 <tr class="separator:ac9b01088cbfe70ce3083dc036af63196"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2b82bff33d21eabbac7f05683887542"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceweb_1_1plasmid.html#ad2b82bff33d21eabbac7f05683887542">db</a> = <a class="el" href="classweb_1_1database_1_1_sqlite_database.html">database.SqliteDatabase</a>()</td></tr>
 <tr class="separator:ad2b82bff33d21eabbac7f05683887542"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +137,17 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>find file in a directory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>file name </td></tr>
+    <tr><td class="paramname">path</td><td>root directory to search</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the path to the file <hr/>
+ </dd></dl>
 
 </div>
 </div>
@@ -168,6 +181,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>get SBOL with plasmid part and type </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>database instance </td></tr>
+    <tr><td class="paramname">groups</td><td>the plasmid parts and types </td></tr>
+    <tr><td class="paramname">rule</td><td>connect rule</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SBOL-like json <hr/>
+ </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="abe025b0e48e975deecc57ad618ff0ea7"></a>
@@ -184,6 +209,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>turn <a class="el" href="class_d_n_a.html">DNA</a> sequence in trans </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>a <a class="el" href="class_d_n_a.html">DNA</a> sequence</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_d_n_a.html">DNA</a> in trans <hr/>
+ </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -193,18 +228,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">tuple web.plasmid.db = <a class="el" href="classweb_1_1database_1_1_sqlite_database.html">database.SqliteDatabase</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aafb74ca9719e0596b5c9c71f5f493d9d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">dictionary web.plasmid.groups</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -221,12 +244,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A dict to reverse <a class="el" href="class_d_n_a.html">DNA</a> sequence. </p>
+<hr/>
+ 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 25 2013 02:21:37 for CAST Designer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 27 2013 21:00:11 for CAST Designer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
