@@ -125,8 +125,8 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
         return 'Invalid Paramter!'
     except IllegalSetting:
         return 'Illegal Setting!'
-    except Exception as e:
-        return 'Something Unexpected Happened!'
+    #except Exception as e:
+        #return 'Something Unexpected Happened!'
 
 if __name__ == "__main__":
 
@@ -135,5 +135,4 @@ if __name__ == "__main__":
     #corepind = {5: {"time": 20},
     #            7: {"time": 60}}
     corepind = {}
-    gene_circuit = {"proteins":{"1":{"RiPS":11.49,"name":"BBa_C0060","before_regulated":34381.1823,"concen":None,"grp_id":4,"pos":2,"PoPS":40.99,"repress_rate":0,"K1":None,"induce_rate":0,"copy":73,"display":True},"2":{"RiPS":11.49,"name":"BBa_C0060","before_regulated":34381.1823,"concen":None,"grp_id":4,"pos":4,"PoPS":40.99,"repress_rate":0,"K1":None,"induce_rate":0,"copy":73,"display":True},"3":{"RiPS":11.49,"name":"BBa_K518003","before_regulated":34381.1823,"concen":None,"grp_id":4,"pos":6,"PoPS":40.99,"repress_rate":0,"K1":None,"induce_rate":0,"copy":73,"display":False},"4":{"RiPS":11.49,"name":"BBa_K142002","before_regulated":34381.1823,"concen":None,"grp_id":4,"pos":8,"PoPS":40.99,"repress_rate":0,"K1":None,"induce_rate":0,"copy":73,"display":False},"5":{"RiPS":11.49,"name":"BBa_C0160","before_regulated":28711.097099999995,"concen":None,"grp_id":5,"pos":2,"PoPS":34.23,"repress_rate":0.44281322723427,"K1":3.041392685158225,"induce_rate":0.44281322723427,"copy":73,"display":True},"6":{"RiPS":11.49,"name":"BBa_C0178","before_regulated":79590.88530000001,"concen":0.1,"grp_id":7,"pos":2,"PoPS":94.89,"repress_rate":-0.44281354749750734,"K1":-2.451703061628793,"induce_rate":-0.4428135474972783,"copy":73,"display":True},"7":{"RiPS":11.49,"name":"BBa_C0178","before_regulated":79590.88530000001,"concen":0.1,"grp_id":7,"pos":4,"PoPS":94.89,"repress_rate":-0.44281354749750734,"K1":-2.451703061628793,"induce_rate":-0.4428135474972783,"copy":73,"display":True}},"plasmids":[[4,5,7]],"groups":{"4":{"from":-1,"state":"cis","corep_ind_type":"None","to":[5,6],"sbol":[{"type":"Promoter","name":"BBa_J23100"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0060","id":1},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0060","id":2},{"type":"RBS","name":"BBa_J61104"},{"type":"Activator","name":"BBa_K518003","id":3},{"type":"RBS","name":"BBa_J61104"},{"type":"Repressor","name":"BBa_K142002","id":4},{"type":"Terminator","name":"BBa_B0013"}],"type":"Constitutive"},"5":{"from":3,"state":"cis","corep_ind_type":"None","to":[],"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0160","id":5},{"type":"Terminator","name":"BBa_B0013"}],"type":"Positive"},"7":{"from":4,"state":"cis","corep_ind_type":"Inducer","to":[],"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0178","id":6},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0178","id":7},{"type":"Terminator","name":"BBa_B0013"}],"corep_ind":"Ind_0140","type":"Negative"}}}
     print Simulate(True, gene_circuit, corepind, db, 6000, 100)
