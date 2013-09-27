@@ -11,13 +11,13 @@ Accurate simulation and gene circuit design are essential but difficult parts in
 * Mac OS X
 * Linux
 
-## Installatino Guide
-For Windows user, to start using CAST designer, you need to enter `project`
+## Installation Guide
+For Windows users, to start using CAST designer, you need to enter `project`
 directory and choose 32-bit or 64-bit version of python. Our bat file in
 `python` directory will automatically start the server and you can run CAST
 designer locally on your computer.
 
-For unix-like operating system user, you may need to confirm that all the
+For unix-like operating system users, you may need to confirm that all the
 dependencies all correctly installed on your computer. You shall have your `pip`
 installed on your computer, and then use `pip` to install other dependencies.  
 The following commands shows how to install these requirements in ubuntu.
