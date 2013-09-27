@@ -11,6 +11,9 @@ Accurate simulation and gene circuit design are essential but difficult parts in
 * Mac OS X
 * Linux
 
+## Detail
+We use pure javascript to implement the front end,and use flask framework (especially the websocket protocol for data transfer)for the back end,which is written in python.Next we use sqlite as the database.By the way,we have provided a brower so called cefsharp,which is base on chromium core and written in c#
+
 ## Installation Guide
 For Windows users, to start using CAST designer, you need to enter `project`
 directory and choose 32-bit or 64-bit version of python. Our bat file in
@@ -20,14 +23,14 @@ designer locally on your computer.
 For unix-like operating system users, you may need to confirm that all the
 dependencies all correctly installed on your computer. You shall have your `pip`
 installed on your computer, and then use `pip` to install other dependencies.  
-The following commands shows how to install these requirements in ubuntu.
+The following commands show how to install these requirements in ubuntu.
 ```
 sudo apt-get install pip
 sudo pip install -r requirements.txt
 ```
 
-## Detail
-We use pure javascript to implement the front end,and use flask framework (especially the websocket protocol for data transfer)for the back end,which is written in python.Next we use sqlite as the database.By the way,we have provided a brower so called cefsharp,which is base on chromium core and written in c#
+Our project is based on flask framework, you can easily turn the project into a
+server version with `uwsgi`.
 
 ## Safety
 We have used rsa algorithm to encrypt any password transferation,and use sha-a algorithm for information digesting,never save plain password.
