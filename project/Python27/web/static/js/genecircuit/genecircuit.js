@@ -147,7 +147,7 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
-				randomValue(); 
+				randomValue();
 			},
 			slide: function(event, ui) { 
 				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(1)); 
@@ -224,8 +224,8 @@ var group = {
 		this.setData(aTextureId, aData, "init");
 	},
 	setTexture: function(aTextureId, aData) {
-							
-							
+
+
 		$("#" + aTextureId).append("<ul class=\"sbol-components\"></ul><div class=\"move-left cmd-move\">&lt</div><div class=\"move-right cmd-move\">&gt</div><button class=\"sbol-switch switch-on\">trans</button>");
 		for(var i = 0; i < aData.sbol.length; i++) {
 			var type = 'Promoter.PNG';
