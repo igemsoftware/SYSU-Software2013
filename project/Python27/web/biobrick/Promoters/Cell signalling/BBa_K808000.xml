@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>25399</part_id>
+<part_name>BBa_K808000</part_name>
+<part_short_name>K808000</part_short_name>
+<part_short_desc> araC-Pbad - Arabinose inducible regulatory promoter/repressor unit</part_short_desc>
+<part_type>Regulatory</part_type>
+<release_status>Released HQ 2013</release_status>
+<sample_status>Long part</sample_status>
+<part_results>Works</part_results>
+<part_nickname>Ara</part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K808000</part_url>
+<part_entered>2012-08-11</part_entered>
+<part_author>Valentina Herbring, Sebastian Palluk, Andreas Schmidt</part_author>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ttatgacaacttgacggctacatcattcactttttcttcacaaccggcacggaactcgctcgggctggccccggtgcatt
+ttttaaatacccgcgagaaatagagttgatcgtcaaaaccaacattgcgaccgacggtggcgataggcatccgggtggtg
+ctcaaaagcagcttcgcctggctgatacgttggtcctcgcgccagcttaagacgctaatccctaactgctggcggaaaag
+atgtgacagacgcgacggcgacaagcaaacatgctgtgcgacgctggcgatatcaaaattgctgtctgccaggtgatcgc
+tgatgtactgacaagcctcgcgtacccgattatccatcggtggatggagcgactcgttaatcgcttccatgcgccgcagt
+aacaattgctcaagcagatttatcgccagcagctccgaatagcgcccttccccttgcccggcgttaatgatttgcccaaa
+caggtcgctgaaatgcggctggtgcgcttcatccgggcgaaagaaccccgtattggcaaatattgacggccagttaagcc
+attcatgccagtaggcgcgcggacgaaagtaaacccactggtgataccattcgcgagcctccggatgacgaccgtagtga
+tgaatctctcctggcgggaacagcaaaatatcacccggtcggcaaacaaattctcgtccctgatttttcaccaccccctg
+accgcgaatggtgagattgagaatataacctttcattcccagcggtcggtcgataaaaaaatcgagataaccgttggcct
+caatcggcgttaaacccgccaccagatgggcattaaacgagtatcccggcagcaggggatcattttgcgcttcagccata
+cttttcatactcccgccattcagagaagaaaccaattgtccatattgcatcagacattgccgtcactgcgtcttttactg
+gctcttctcgctaaccaaaccggtaaccccgcttattaaaagcattctgtaacaaagcgggaccaaagccatgacaaaaa
+cgcgtaacaaaagtgtctataatcacggcagaaaagtccacattgattatttgcacggcgtcacactttgctatgccata
+gcatttttatccataagattagcggatcctacctgacgctttttatcgcaactctctactgtttctccatacccgttttt
+tgggctaac
+</seq_data></sequences>
+<features>
+<feature>
+<id>2200757</id>
+<title>AraC</title>
+<type>protein</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>879</endpos></feature>
+<feature>
+<id>2200758</id>
+<title>AraO</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>909</startpos>
+<endpos>924</endpos></feature>
+<feature>
+<id>2200759</id>
+<title>AraO1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>1066</startpos>
+<endpos>1077</endpos></feature>
+<feature>
+<id>2200760</id>
+<title>AraPromoter</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>1153</startpos>
+<endpos>1181</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>biology</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16748</id>
+<m_date>2012-09-22 08:03:37</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>control</name>
+<value>araC, arabinose</value>
+<units></units>
+<url></url>
+<id>16749</id>
+<m_date>2012-09-22 08:03:37</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>direction</name>
+<value>Forward</value>
+<units></units>
+<url></url>
+<id>16750</id>
+<m_date>2012-09-22 08:03:37</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Inducible pBad/araC promoter</value>
+<units></units>
+<url></url>
+<id>16751</id>
+<m_date>2012-09-22 08:03:37</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>negative_regulators</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16752</id>
+<m_date>2012-09-22 08:03:37</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>o_h</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16753</id>
+<m_date>2012-09-22 08:03:37</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>o_l</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16754</id>
+<m_date>2012-09-22 08:03:37</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>positive_regulators</name>
+<value>1</value>
+<units></units>
+<url></url>
+<id>16755</id>
+<m_date>2012-09-22 08:03:37</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>biology</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16740</id>
+<m_date>2012-09-22 08:02:02</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>control</name>
+<value>araC, arabinose</value>
+<units></units>
+<url></url>
+<id>16741</id>
+<m_date>2012-09-22 08:02:02</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>direction</name>
+<value>Forward</value>
+<units></units>
+<url></url>
+<id>16742</id>
+<m_date>2012-09-22 08:02:02</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>n/a</name>
+<value>Inducible pBad/araC promoter</value>
+<units></units>
+<url></url>
+<id>16743</id>
+<m_date>2012-09-22 08:02:02</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>o_h</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16745</id>
+<m_date>2012-09-22 08:02:02</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>o_l</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16746</id>
+<m_date>2012-09-22 08:02:02</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>positive_regulators</name>
+<value>1</value>
+<units></units>
+<url></url>
+<id>16747</id>
+<m_date>2012-09-22 08:02:02</m_date>
+<user_id>12842</user_id>
+<user_name>A.Schmidt</user_name></parameter>
+<parameter>
+<name>positive_regulators</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>16215</id>
+<m_date>2012-08-11 09:42:53</m_date>
+<user_id>11792</user_id>
+<user_name>Henrik</user_name></parameter></parameters>
+<categories>
+<category>//rnap/prokaryote/ecoli/sigma70</category>
+<category>//direction/forward</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//promoter</category>
+<category>//regulation/positive</category>
+<category>//classic/regulatory/other</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>
