@@ -19,16 +19,3 @@ We have used rsa algorithm to encrypt any password transferation,and use sha-a a
 
 ## License
 This project is released under MIT License. See LICENSE for the content.
-
-## FAQ
-Q:Sometime after I have cleaned up the browser 's cache ,it will return 500 error when I open the page?<br>
-A:Just press the F5 to refresh the page ,or you can reboot the server.
-
-## More information
-<br>See our school at http://www.sysu.edu.cn/2012/cn/index.htm
-<br>You can open the AUTHORS file to get the contact information of us.
-<p>If you have any questions,please contact me.
-<br>My E-mail is 1036479561@qq.com.
-<font color="red"><del>Girls better.</del></font></p>
-<img src="http://ww4.sinaimg.cn/mw690/b8700d2fgw1e67vo2hdmsj206d052glm.jpg" width="60" height="70" />
-<img src="http://ww4.sinaimg.cn/mw690/b8700d2fgw1e6eirqqn66j207l0840t0.jpg" width="273" height="292" />
