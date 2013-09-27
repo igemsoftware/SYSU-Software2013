@@ -7,7 +7,7 @@ This is the project of igem 2013 by SYSU-Software.
 Accurate simulation and gene circuit design are essential but difficult parts in synthetic biology.Here, we designed CAST to cover the workflow from beginning to end, users can focus on function design and the gene circuit would be automatically designed. Furthermore, we developed a new simulation model that work with standard dynamic characteristic and verified by wetlab experiments. Moreover, we build an expandable database that users can contribute their own dynamic information which would lead to more accurate and sufficient dynamic information of all the Biobricks. Finally, our software is designed as an easy deployed server so that it can be used on personal purpose or shared by a whole lab or institution. 
 
 ## Supported OS
-* Windows 7
+* Windows XP or higher
 * Mac OS X
 * Linux
 
@@ -16,6 +16,9 @@ We use pure javascript to implement the front end,and use flask framework (espec
 
 ## Safety
 We have used rsa algorithm to encrypt any password transferation,and use sha-a algorithm for information digesting,never save plain password.
+
+## License
+This project is released under MIT License. See LICENSE for the content.
 
 ## FAQ
 Q:Sometime after I have cleaned up the browser 's cache ,it will return 500 error when I open the page?<br>
