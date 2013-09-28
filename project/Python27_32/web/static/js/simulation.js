@@ -120,7 +120,8 @@ function createAnInputCheckBoxForInducer(index,width,height,inducerIndex,inducer
 	div.style.height=height+'%';
 	div.style.display='inline-block';
 	o.onclick = function() {
-		
+		console.log($('#canvasDiv :eq(0)').css('cursor'));
+		$('#canvasDiv :eq(0)').css('cursor','hand');
 	}
 	div.appendChild(o);
 	div.appendChild(document.createTextNode(inducerName));

@@ -72,6 +72,5 @@ var searchData=
   ['graph_2ecpp',['graph.cpp',['../graph_8cpp.html',1,'']]],
   ['graph_2eh',['graph.h',['../graph_8h.html',1,'']]],
   ['graphmethods',['graphMethods',['../graph_8cpp.html#a8a29db5c2abfbee0e1c9f5e78dfa9bf3',1,'graph.cpp']]],
-  ['group_2epy',['group.py',['../group_8py.html',1,'']]],
-  ['groups',['groups',['../namespaceweb_1_1plasmid.html#aafb74ca9719e0596b5c9c71f5f493d9d',1,'web::plasmid']]]
+  ['group_2epy',['group.py',['../group_8py.html',1,'']]]
 ];

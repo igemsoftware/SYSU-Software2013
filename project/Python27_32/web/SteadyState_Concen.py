@@ -17,6 +17,7 @@ def SteadyState_Concen(DataSet):
         else:
             Concen = DataSet['CopyNumber'] * DataSet['Efficiency'] * (DataSet['LeakageRate'] / DataSet['DegRatemRNA']) * (DataSet['MPRBS'] / DataSet['DegRatePro'])
     elif DataSet['Type'] == 'Negative':
+        print DataSet
         if DataSet['Repressor']:
             if DataSet['Corepressor']:
                 Corepressor = pow(DataSet['Corepressor'] / DataSet['K2'], DataSet['HillCoeff2'])

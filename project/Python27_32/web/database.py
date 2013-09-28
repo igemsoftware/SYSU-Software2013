@@ -1,14 +1,13 @@
-"""
-@author Jiexin Guo
-
-This is the wrapping of sqlite3 for python.
-
-Copyright (C) 2013-2014 sysu-software. All Rights Reserved.
-
-To use, simply 'import database' and connect the database of sqlite3!
-
-"""
-
+# coding: utf-8
+# 
+# @file database.py
+# @brief This is the wrapping of sqlite3 for python.
+# @author Jianhong Li,Jiexin Guo
+# @version 1.0
+# @date 2013-07-31
+# @copyright 2013 SYSU-Software. All rights reserved.
+# This project is released under MIT License.
+#
 import sqlite3
 import urllib2
 import jsonUtil
@@ -17,17 +16,27 @@ import os, sys
 import logging
 import logging.handlers
 
+# --------------------------------------------------------------------------
+##
+# @brief  the class that contain all the database control method
+# ----------------------------------------------------------------------------
 class SqliteDatabase:
 	URL=''
 	userId=-1
 	logger=None
 	encrypt=None
 	indexSave=None
+	# --------------------------------------------------------------------------
+  ##
+  # @brief     to get the database class's connection
+  #
+  # @returns   return the connection
+  #
+  # --------------------------------------------------------------------------
 	def getCx(self):
 		return self.__cx
 	def getCuror(self):
 		return self.__cursor
-
 	def addAPromoter(self,name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS):
 		sql_cmd='INSERT INTO promoter (Name,Number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS) VALUES ("%s","%s",%f,%f,%f,"%s","%s","%s","%s",%f)'%(name,number,MPPromoter,LeakageRate,K1,Type,Repressor,Source,Activator,PoPS)		
 		self.__cursor.execute(sql_cmd)
@@ -355,7 +364,7 @@ class SqliteDatabase:
 			return None
 
 	def find_promoter_with_repressor(self, repressor = None):
-		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
+		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')		
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
