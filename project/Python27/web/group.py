@@ -280,7 +280,7 @@ def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "p
     regulator_info = database.select_with_name("repressor", regulator)
   else:
     regulator_info = None
-  promoter_info= database.select_with_name("promoter", cur_group[0]["name"])
+  promoter_info = database.select_with_name("promoter", cur_group[0]["name"])
   rbs_info= database.select_with_name("RBS", cur_group[protein_idx - 1]["name"])
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
   ret["grp_id"] = grp_id

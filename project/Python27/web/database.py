@@ -558,12 +558,12 @@ class SqliteDatabase:
 		if cor_ind_type not in {"Negative", "Positive"}:
 			sql_cmd = 'SELECT repressor.*, relation.* FROM repressor INNER JOIN\
 					relation ON repressor.Number = relation.ActRreNumber WHERE\
-					relation.IncCorType IS NULL AND relation.ActRreType = "Positive" ORDER BY\
+					relation.IncCorType IS NULL AND relation.ActRreType = "Negative" ORDER BY\
 					abs(repressor.K1 - %f) LIMIT 0,%d' % (idealValue, idx)
 		else:
 			sql_cmd = 'SELECT repressor.*, relation.* FROM repressor INNER JOIN relation\
 					ON repressor.Number = relation.ActRreNumber WHERE\
-					relation.IncCorType = "%s" AND relation.ActRreType = "Positive"\
+					relation.IncCorType = "%s" AND relation.ActRreType = "Negative"\
 					ORDER BY abs(repressor.K1 - %f) LIMIT 0,%d'\
 					% (cor_ind_type, idealValue, idx)
 		self.__cursor.execute(sql_cmd)
@@ -593,6 +593,7 @@ class SqliteDatabase:
 					relation.IncCorType = "%s" AND relation.ActRreType = "Positive"\
 					ORDER BY abs(activator.K1 - %f) LIMIT 0,%d'\
 					% (cor_ind_type, idealValue, idx)
+		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
