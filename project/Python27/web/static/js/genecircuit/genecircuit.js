@@ -117,7 +117,7 @@ var protein = {
 			orientation: "vertical",
 			range: "min",
 			min: 0,
-			max: 1000,
+			max: 100,
 			step: 0.0001,
 			value: 0,
 			stop: function(event, ui) {
