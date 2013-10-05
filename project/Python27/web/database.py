@@ -484,9 +484,14 @@ class SqliteDatabase:
 		print sql_cmd
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
+		print decodejson
 		actrep = decodejson[0]["ActRreNumber"]
-		self.__cursor.execute('SELECT * FROM repressor WHERE Number = "%s"' %
-        actrep)
+		if link_type == "Positive":
+			actrep_table = "activator"
+		elif link_type == "Negative":
+			actrep_table = "repressor"
+		self.__cursor.execute('SELECT * FROM %s WHERE Number = "%s"' %
+        (actrep_table, actrep))
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
