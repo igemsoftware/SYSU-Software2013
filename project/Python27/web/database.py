@@ -566,6 +566,7 @@ class SqliteDatabase:
 					relation.IncCorType = "%s" AND relation.ActRreType = "Negative"\
 					ORDER BY abs(repressor.K1 - %f) LIMIT 0,%d'\
 					% (cor_ind_type, idealValue, idx)
+		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
