@@ -420,9 +420,10 @@ class SqliteDatabase:
 			return None
 
 	def find_cor_ind(self, corep_ind_type, regulator, promoter):
-		self.__cursor.execute('SELECT HillCoeff2, K2 FROM relation WHERE\
-				ActRreNumber = "%s" AND PromoterNumber = "%s" AND IncCorType = "%s"'
-				% (regulator, promoter, corep_ind_type))
+		sql_cmd = """SELECT HillCoeff2, K2 FROM relation WHERE
+				ActRreNumber = '%s' AND PromoterNumber = '%s' AND IncCorType = '%s'
+				""" % (regulator, promoter, corep_ind_type)
+		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -462,6 +463,7 @@ class SqliteDatabase:
 		if cor_ind_type == "Corepressor":
 			cor_ind_type = "Corepressed"
 		idx = len(regulator_set) + 1
+		print cor_ind_type
 		if cor_ind_type not in {"Induced", "Corepressed"}:
 			sql_cmd = 'SELECT DISTINCT ActRreNumber FROM relation WHERE\
 					PromoterNumber = "%s" AND ActRreType = "%s" AND IncCorType IS NULL\
@@ -472,10 +474,8 @@ class SqliteDatabase:
 					ORDER BY ActRreNumber DESC LIMIT 0, %s' % (promoter, link_type, cor_ind_type, idx)
 
 		self.__cursor.execute(sql_cmd)
-		print sql_cmd
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
-		print decodejson
 		actrep = decodejson[0]["ActRreNumber"]
 		if link_type == "Positive":
 			actrep_table = "activator"
@@ -531,7 +531,6 @@ class SqliteDatabase:
 					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = "%s"\
 					AND relation.IncCorType = "%s" ORDER BY abs(promoter.%s - %f)' % \
 					(link_type, cor_ind_type, p_type, idealValue)
-		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
@@ -546,7 +545,11 @@ class SqliteDatabase:
 
 	def getRepressorNearValue(self, idealValue, cor_ind_type, regulator_set):
 		idx = len(regulator_set) + 1
-		if cor_ind_type not in {"Negative", "Positive"}:
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		elif cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
 			sql_cmd = 'SELECT repressor.*, relation.* FROM repressor INNER JOIN\
 					relation ON repressor.Number = relation.ActRreNumber WHERE\
 					relation.IncCorType IS NULL AND relation.ActRreType = "Negative" ORDER BY\
@@ -566,15 +569,13 @@ class SqliteDatabase:
 				regulator_set.add(item["Number"])
 				return item
 
-	def getUserRememberMeTime(self,username):
-		self.__cursor.execute('SELECT user_list.rememberTime FROM user_list WHERE name="%s"' % (username))
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		return decodejson[0]['rememberTime']
-
 	def getActivatorNearValue(self, idealValue, cor_ind_type, regulator_set):
 		idx = len(regulator_set) + 1
-		if cor_ind_type not in {"Negative", "Positive"}:
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		elif cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
 			sql_cmd = 'SELECT activator.*, relation.* FROM activator INNER JOIN\
 					relation ON activator.Number = relation.ActRreNumber WHERE\
 					relation.IncCorType IS NULL AND relation.ActRreType = "Positive" ORDER BY\
@@ -585,7 +586,6 @@ class SqliteDatabase:
 					relation.IncCorType = "%s" AND relation.ActRreType = "Positive"\
 					ORDER BY abs(activator.K1 - %f) LIMIT 0,%d'\
 					% (cor_ind_type, idealValue, idx)
-		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
@@ -593,6 +593,12 @@ class SqliteDatabase:
 			if item["Number"] not in regulator_set:
 				regulator_set.add(item["Number"])
 				return item
+
+	def getUserRememberMeTime(self,username):
+		self.__cursor.execute('SELECT user_list.rememberTime FROM user_list WHERE name="%s"' % (username))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]['rememberTime']
 
 	def getUserPartByLoginuser(self):
 		excuteString = "SELECT part_id,part_name AS Name,part_type as Type,part_author as Author,uploadUser as username FROM userPart WHERE uploadUser = '%s'" % self.getUserNameById(self.userId)
