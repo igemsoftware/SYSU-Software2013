@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>8409</part_id>
+<part_name>BBa_J64712</part_name>
+<part_short_name>J64712</part_short_name>
+<part_short_desc>LasR/LasI Inducible &amp; RHLR/RHLI repressible Promoter</part_short_desc>
+<part_type>Regulatory</part_type>
+<release_status>Not Released</release_status>
+<sample_status>Not in stock</sample_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_J64712</part_url>
+<part_entered>2007-03-24</part_entered>
+<part_author>laura lavery</part_author>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>gcccctcgctgagcgcgtcccggagctgggggcaacctagctgccacctgcttttctgctagctattccagcgaaaacat
+acagatttccggcgaaatcaaggctacctgccagttctggcaggtgtgaaatctggcagtttttggtacacgaaagc
+</seq_data></sequences>
+<features>
+<feature>
+<id>1921064</id>
+<title>LasR/LasI O2</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>46</startpos>
+<endpos>64</endpos></feature>
+<feature>
+<id>1921065</id>
+<title>LasR/LasI O1</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>106</startpos>
+<endpos>125</endpos></feature>
+<feature>
+<id>1921067</id>
+<title>-35</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>117</startpos>
+<endpos>122</endpos></feature>
+<feature>
+<id>1921066</id>
+<title>RHLR/RHLI</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>125</startpos>
+<endpos>141</endpos></feature>
+<feature>
+<id>1921068</id>
+<title>-10</title>
+<type>misc</type>
+<direction>forward</direction>
+<startpos>140</startpos>
+<endpos>145</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>negative_regulators</name>
+<value>1</value>
+<units></units>
+<url></url>
+<id>5701</id>
+<m_date>2008-12-09 15:47:12</m_date>
+<user_id>135</user_id>
+<user_name>bcanton</user_name></parameter>
+<parameter>
+<name>positive_regulators</name>
+<value>1</value>
+<units></units>
+<url></url>
+<id>5169</id>
+<m_date>2008-12-09 15:46:49</m_date>
+<user_id>135</user_id>
+<user_name>bcanton</user_name></parameter></parameters>
+<categories>
+<category>//rnap/prokaryote/ecoli/sigma70</category>
+<category>//direction/forward</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//promoter</category>
+<category>//regulation/positive</category>
+<category>//regulation/negative</category>
+<category>//regulation/multiple</category>
+<category>//function/cellsignalling/LasR</category>
+<category>//function/cellsignalling/LuxR</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>

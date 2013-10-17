@@ -46,7 +46,8 @@ class DNA_Simulate:
         if ty not in ['Constitutive', 'Positive', 'Negative']:
             raise InvalidParameter
         if copynumber <= 0 or tspromoter <= 0 or leakagerate < 0 or tere <=0:
-            raise InvalidParameter
+            pass
+            #raise InvalidParameter
         self.Type = ty
         self.CopyNumber  = copynumber
         self.TSPromoter  = tspromoter

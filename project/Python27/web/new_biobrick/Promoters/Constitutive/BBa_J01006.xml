@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>6219</part_id>
+<part_name>BBa_J01006</part_name>
+<part_short_name>J01006</part_short_name>
+<part_short_desc>Key Promoter absorbs 3</part_short_desc>
+<part_type>Regulatory</part_type>
+<release_status>Not Released</release_status>
+<sample_status>Not in stock</sample_status>
+<part_results></part_results>
+<part_nickname>KP3</part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_J01006</part_url>
+<part_entered>2005-10-31</part_entered>
+<part_author>Golden Bear</part_author>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tcagaaaattattttaaatttcctcttgtcaggccggaataactccctataatgcgcca
+</seq_data></sequences>
+<features></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>negative_regulators</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>5435</id>
+<m_date>2008-12-09 15:47:12</m_date>
+<user_id>135</user_id>
+<user_name>bcanton</user_name></parameter>
+<parameter>
+<name>positive_regulators</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>4903</id>
+<m_date>2008-12-09 15:46:49</m_date>
+<user_id>135</user_id>
+<user_name>bcanton</user_name></parameter></parameters>
+<categories>
+<category>//rnap/prokaryote/ecoli/sigma70</category>
+<category>//direction/forward</category>
+<category>//chassis/prokaryote/ecoli</category>
+<category>//promoter</category>
+<category>//regulation/constitutive</category>
+<category>//classic/regulatory/uncategorized</category></categories>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>
