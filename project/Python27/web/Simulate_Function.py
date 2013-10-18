@@ -85,7 +85,6 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
             Type = circuit['groups'][grpid]['type']
             iden = circuit['groups'][grpid]['from']
             regulator = None
-            print grpid, iden
             if iden in dictkey:
                 if Type == 'Positive':
                     activator = database.select_with_name('Activator', circuit['proteins'][iden]['name'])
@@ -100,21 +99,32 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
                 if t != operate['index'][n]: continue
                 grpid = operate['grp_id'][n]
                 Type = circuit['groups'][grpid]['corep_ind_type']
+                print "grpid: %s" % grpid
+                promoter = circuit['groups'][grpid]['sbol'][0]['name']
+                prev_node = circuit['groups'][grpid]['from']
+                if prev_node != -1:
+                    regulator = circuit['proteins'][prev_node]['name']
                 if Type == 'Corepressor':
                     #corepressor = database.select_with_name('Corepressor', circuit['groups'][grpid]['corep_ind'])
                     corepressor = database.find_cor_ind('Corepressed',\
-                        regulator["Number"], promoter["Number"])
+                        regulator, promoter)
                     for k in range(plassize[grpid]):
                         proid = plaspro[grpid][k]
-                        DNAdict[proid].SetCorepressor(circuit['proteins'][proid]['concen'], corepressor['K2'], corepressor['HillCoeff2'])
+                        concen = circuit['proteins'][proid]['concen']
+                        K2 = corepressor['K2']
+                        HillCoeff2 = corepressor['HillCoeff2']
+                        DNAdict[proid].SetCorepressor(concen, K2, HillCoeff2)
                 elif Type == 'Inducer':
                     print regulator
                     print promoter
                     inducer = database.find_cor_ind('Induced',\
-                        regulator["Number"], promoter["Number"])
+                        regulator, promoter)
                     for k in range(plassize[grpid]):
                         proid = plaspro[grpid][k]
-                        DNAdict[proid].SetInducer(circuit['proteins'][proid]['concen'], inducer['K2'], inducer['HillCoeff2'])
+                        concen = circuit['proteins'][proid]['concen']
+                        K2 = inducer['K2']
+                        HillCoeff2 = inducer['HillCoeff2']
+                        DNAdict[proid].SetInducer(concen, K2, HillCoeff2)
             timeaxis[t] = t * dt
             if t == 0: continue
             for n in range(len(dictkey)):
@@ -147,7 +157,7 @@ if __name__ == "__main__":
     #corepind = {5: {"time": 20},
     #            7: {"time": 60}}
     corepind = {}
-    gene_circuit = u'{"proteins":{"bded614c-10a0-cdee-f498-ae6b8ded26c2":{"RiPS":0.336,"name":"BBa_K112004","before_regulated":20.60352,"concen":null,"grp_id":"2da34a2a-8ca4-1373-a682-c2b58006ad08","pos":2,"PoPS":0.84,"repress_rate":0,"K1":null,"induce_rate":0,"copy":73,"display":true},"e0e28453-468c-5042-fbeb-094339f39860":{"RiPS":0.336,"name":"BBa_K112002","before_regulated":3.4339200000000005,"concen":0.1,"grp_id":"e0e28453-468c-5042-fbeb-094339f39860","pos":2,"PoPS":0.14,"repress_rate":-0.30102999566398064,"K1":0.7481880270062004,"induce_rate":-1.6808077821628082e-9,"copy":73,"display":true},"2da34a2a-8ca4-1373-a682-c2b58006ad08":{"RiPS":0.336,"name":"BBa_C0040","before_regulated":20.60352,"concen":null,"grp_id":"2da34a2a-8ca4-1373-a682-c2b58006ad08","pos":4,"PoPS":0.84,"repress_rate":0,"K1":null,"induce_rate":0,"copy":73,"display":false}},"plasmids":[["e0e28453-468c-5042-fbeb-094339f39860","2da34a2a-8ca4-1373-a682-c2b58006ad08"]],"groups":{"e0e28453-468c-5042-fbeb-094339f39860":{"from":"2da34a2a-8ca4-1373-a682-c2b58006ad08","state":"cis","corep_ind_type":"Inducer","to":[],"sbol":[{"type":"Promoter","name":"BBa_R0040"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_K112002","id":"e0e28453-468c-5042-fbeb-094339f39860"},{"type":"Terminator","name":"BBa_B0013"}],"type":"Negative"},"2da34a2a-8ca4-1373-a682-c2b58006ad08":{"from":-1,"state":"cis","corep_ind_type":"None","to":["e0e28453-468c-5042-fbeb-094339f39860"],"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_K112004","id":"bded614c-10a0-cdee-f498-ae6b8ded26c2"},{"type":"RBS","name":"BBa_J61104"},{"type":"Repressor","name":"BBa_C0040","id":"2da34a2a-8ca4-1373-a682-c2b58006ad08"},{"type":"Terminator","name":"BBa_B0013"}],"type":"Constitutive"}}}'
+    gene_circuit = u'{"proteins":{"3be9a5f7-893b-5831-11b2-bff8b0b1903d":{"RiPS":0.336,"name":"BBa_C0178","repress_rate":-0.30102999202430636,"concen":0.1,"grp_id":"3be9a5f7-893b-5831-11b2-bff8b0b1903d","pos":2,"PoPS":0.14,"before_regulated":1.0819200000000002,"K1":-2.886056647693163,"induce_rate":-5.829870629263188e-11,"copy":23,"display":true},"5a5c3e16-e365-480b-230a-d981fdbe8f59":{"RiPS":0.336,"name":"BBa_C0160","repress_rate":0,"concen":null,"grp_id":"b485eb93-4480-1cf6-229f-2d79090be63e","pos":2,"PoPS":0.84,"before_regulated":6.4915199999999995,"K1":null,"induce_rate":0,"copy":23,"display":true},"b485eb93-4480-1cf6-229f-2d79090be63e":{"RiPS":0.336,"name":"BBa_C0012","repress_rate":0,"concen":null,"grp_id":"b485eb93-4480-1cf6-229f-2d79090be63e","pos":4,"PoPS":0.84,"before_regulated":6.4915199999999995,"K1":null,"induce_rate":0,"copy":23,"display":false}},"plasmids":[["3be9a5f7-893b-5831-11b2-bff8b0b1903d","b485eb93-4480-1cf6-229f-2d79090be63e"]],"groups":{"3be9a5f7-893b-5831-11b2-bff8b0b1903d":{"from":"b485eb93-4480-1cf6-229f-2d79090be63e","state":"cis","corep_ind_type":"Inducer","to":[],"sbol":[{"type":"Promoter","name":"BBa_K091110"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0178","id":"3be9a5f7-893b-5831-11b2-bff8b0b1903d"},{"type":"Terminator","name":"BBa_B0013"}],"type":"Negative","id":"3be9a5f7-893b-5831-11b2-bff8b0b1903d"},"b485eb93-4480-1cf6-229f-2d79090be63e":{"from":-1,"state":"cis","corep_ind_type":"None","to":["3be9a5f7-893b-5831-11b2-bff8b0b1903d"],"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0160","id":"5a5c3e16-e365-480b-230a-d981fdbe8f59"},{"type":"RBS","name":"BBa_J61104"},{"type":"Repressor","name":"BBa_C0012","id":"b485eb93-4480-1cf6-229f-2d79090be63e"},{"type":"Terminator","name":"BBa_B0013"}],"type":"Constitutive","id":"b485eb93-4480-1cf6-229f-2d79090be63e"}}}'
     import json
     gene_circuit = json.loads(gene_circuit)
     print Simulate(False, gene_circuit, corepind, db, 6000, 100)
