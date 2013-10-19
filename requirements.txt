@@ -5,3 +5,4 @@ gevent
 greenlet
 gevent-websocket
 rsa
+xmltodict
