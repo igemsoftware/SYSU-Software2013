@@ -225,8 +225,8 @@ self.DNA.LeakageRate) / (1 + Repressor) + self.Dt * self.DNA.CopyNumber * self.D
                 production = self.Dt * self.DNA.CopyNumber * self.DNA.TSPromoter
         degradation = self.Dt * self.DegRate * self.Concen[n-1]
         if isStochastic:
-            production  = PoissonRandom(production )
-            degradation = PoissonRandom(degradation)
+            production  = Poissrnd(production )
+            degradation = Poissrnd(degradation)
         self.Concen[n] = self.Concen[n-1] + production - degradation
 
     #def Compute_Concen(self, n, isStochastic = False):

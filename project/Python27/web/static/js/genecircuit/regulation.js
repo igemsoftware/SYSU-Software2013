@@ -445,6 +445,7 @@ $().ready(function() {
         }
 				ws.send(JSON.stringify({'request'     : 'Simulate',
 										'isStochastic': false,
+										'isDelay': false,
 										'gene_circuit':JSON.stringify(genecircuitData),
 										'corepind':{},
 				}));
@@ -468,6 +469,7 @@ $().ready(function() {
 				updateGen(genecircuitData);
 				ws.send(JSON.stringify({'request'     : 'Simulate',
 										'isStochastic': false,
+										'isDelay': false,
 										'gene_circuit':JSON.stringify(genecircuitData),
 										'corepind':{},
 				}));
@@ -580,6 +582,7 @@ $().ready(function() {
 			genecircuitData = eval('(' + sessionStorage.gene_circuit + ')');    
 			ws.send(JSON.stringify({'request'     : 'Simulate',    
 									'isStochastic': false,    
+										'isDelay': false,
 									'gene_circuit':JSON.stringify(genecircuitData),    
 									'corepind':{},    
 			}));    		

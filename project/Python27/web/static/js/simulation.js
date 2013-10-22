@@ -4,13 +4,16 @@ var time, dt;
 var proteinNames=[];
 var inducerList=[[2,'inducer1'],[7,'inducer2']];
 var corepind ={}; //{5: {"time": 20},7: {"time": 60}}
-function stochasticOnChange(obj)
+function stateOnChange(obj)
 {
 	//ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
     isStochastic = $('#stochastic')[0].checked;
+    isDelay      = $('#delay')[0].checked;
+    console.log(isStochastic);
     gene_circuit = sessionStorage.gene_circuit;
     ws.send(JSON.stringify({'request'     : 'Simulate',
                             'isStochastic': isStochastic,
+                            'isDelay'     : isDelay,
                             'gene_circuit': gene_circuit,
                             'corepind'    : corepind
     }));
@@ -70,16 +73,14 @@ $(document).ready(function () {
   // Bind send button to websocket
   ws.onopen = function() {
 	ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-	if($('#stochastic').attr("checked")==true)
-	{
-		isStochastic = true;
-	}else{
-    	isStochastic = false;
-	}
+  isStochastic = $('#stochastic')[0].checked;
+  isDelay = $('#delay')[0].checked;
+
     gene_circuit = sessionStorage.gene_circuit;
     corepind = {};
     ws.send(JSON.stringify({'request'     : 'Simulate',
                             'isStochastic': isStochastic,
+                            'isDelay'     : isDelay,
                             'gene_circuit': gene_circuit,
                             'corepind'    : corepind
     }));
