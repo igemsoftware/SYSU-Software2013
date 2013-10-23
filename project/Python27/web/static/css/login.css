@@ -32,7 +32,7 @@ body {
 .right-part {
 	position: absolute;
 	top: 0;
-	left: 914px;
+	right: 0;
 	width: 452px;
 	height: 100%;
 	max-height: 708px;
@@ -41,11 +41,12 @@ body {
 
 .login-part {
 	position: absolute;
-	left: 486px;
+	left: 50%;
 	top: 50%;
 	width: 430px;
 	height: 424px;
 	margin-top: -212px;
+	margin-left: -215px;
 	border-radius: 50%;
 	background-image: url(../img/login/loginbg.png);
 }
@@ -153,13 +154,14 @@ body {
  *  register
  */
 
- .reg-part {
+.reg-part {
 	position: absolute;
-	left: 500px;
+	left: 50%;
 	top: 50%;
 	width: 403px;
 	height: 614px;
 	margin-top: -307px;
+	margin-left: -201px;
 	background-image: url(../img/login/registerbg.png);
 }
 
@@ -193,8 +195,13 @@ body {
 	font-size: 20px;
 }
 
-input[name=gender] {
-	width: 110px !important;
+#gender {
+	width: 110px;
+	height: 43px;
+	border: none;
+	background-color: #d7ffff;
+	padding: 0 0 0 10px; 
+	font-size: 20px;
 }
 
 #reset {

@@ -8,6 +8,20 @@ function stringToHex(str){
 　　　　}
 　　　　return val;
 　　}
+
+function inputCheck() {
+	var username = $("#username").val(),
+		password = $("#password").val();
+
+	if (username.trim() == "") {
+		$("#username").focus();
+	} else if (password.trim() == "") {
+		$("#password").focus();
+	} else {
+		$("#btn-login").click();
+	}
+}
+
 $(document).ready(function() {
 	if ("WebSocket" in window) {
 
@@ -97,6 +111,8 @@ $(document).ready(function() {
 		}
 	});
 
+
+
 	//注册页面
 	$("#reset").click(function() {
 		$('input[name=username]').val("");
@@ -111,10 +127,11 @@ $(document).ready(function() {
 			var username = $("input[name=username]").val(),
 			pw = $("input[name=password]").val(),
 			email = $("input[name=email]").val(),
-			gender=$("input[name=gender]").val(),
-			//gender = $("select[name=gender]").val(),
+			gender = $("select[name=gender]").val(),
 			question = $("input[name=question]").val(),
 			answer = $("input[name=answer]").val();
+
+			console.log(gender);
 
 			ws.send(JSON.stringify({
 				'request'		:	'registAUser',
@@ -133,6 +150,14 @@ $(document).ready(function() {
 			'request': 'generateRandomsessionKey'
 		}));
 	};
+});
+
+$(document).keyup(function(evt){
+	if (evt.keyCode == 13) {
+		// alert("enter");
+
+		inputCheck();
+	}
 });
 
 if(!window.btoa) {
