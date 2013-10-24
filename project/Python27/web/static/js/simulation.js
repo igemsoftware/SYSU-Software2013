@@ -37,7 +37,7 @@ $(document).ready(function () {
         run(data,'canvasDiv', width1, height1, time, dt);
 		$("#Inducer").empty();
 		$("#Curve").empty();
-		inducerList=getinducerList(sessionStorage.gene_circuit);		
+		inducerList=getinducerList(sessionStorage.gene_circuit);
         for(var i=0;i<data.length;i++)
         {
           var w=document.getElementById('Curve').clientWidth/3/6;
@@ -105,7 +105,10 @@ function getinducerList(circuit)
 		var corep_ind_type = obj.groups[x].corep_ind_type;
 		if(corep_ind_type ==="Inducer" || corep_ind_type === "Corepressor")
 		{
-			ret.push([x,obj.groups[x].corep_ind]);
+      var display = corep_ind_type.substring(0, 3) + "_" + x.substring(0, 6);
+      console.log(x);
+      console.log(display);
+			ret.push([x, display]);
 		}
 	}
 	obj=null;
