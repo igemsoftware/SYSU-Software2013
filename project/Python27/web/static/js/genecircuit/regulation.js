@@ -457,7 +457,7 @@ $().ready(function() {
         var time = message.result.time;
         var dt = message.result.dt;
 	      $("#canvasDiv div").css("margin", "auto");
-        genecircuitRun(data,'canvasDiv', 350, 200, time, dt * 4);
+        genecircuitRun(data,'canvasDiv', 350, 200, time, dt * 3);
       	}  else if (message.request == "getPlasmidSbol") {
 				console.log("getPlasmidSbol", message);
 			} else if (message.request == "loadSBOL") {

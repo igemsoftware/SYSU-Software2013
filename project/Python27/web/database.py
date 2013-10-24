@@ -487,20 +487,20 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	def find_activator_with_promoter(self, promoter):
-		self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
-    PromoterNumber = "%s" AND ActRreType = "Positive"' % promoter)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		promoter = decodejson[0]["ActRreNumber"]
-		self.__cursor.execute('SELECT * FROM activator WHERE Number = "%s"' %
-        promoter)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		if decodejson != []:
-			return decodejson[0]
-		else:
-			return None
+	#def find_activator_with_promoter(self, promoter):
+		#self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
+    #PromoterNumber = "%s" AND ActRreType = "Positive"' % promoter)
+		#jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		#decodejson = json.loads(jsonEncoded)
+		#promoter = decodejson[0]["ActRreNumber"]
+		#self.__cursor.execute('SELECT * FROM activator WHERE Number = "%s"' %
+        #promoter)
+		#jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		#decodejson = json.loads(jsonEncoded)
+		#if decodejson != []:
+			#return decodejson[0]
+		#else:
+			#return None
 	
 	def getRBSNearValue(self,idealValue):
 		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%f) limit 0,1' %idealValue)
