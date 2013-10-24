@@ -86,7 +86,7 @@ function run(data, canvasId, width1, height1, time, dt) {
       axis:{
         color:'#252525',
         width:[0,0,4,4]
-      },
+      }
     },
     width : width1,
     height : height1,
