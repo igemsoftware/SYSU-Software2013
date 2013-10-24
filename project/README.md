@@ -14,6 +14,8 @@ SYSU iGEM software
 2. Open the "IGEM-Browser"
 	> See "Hello world" in browser
 
+3. If you want to open the clotho app,just decompression the clotho.zip the current directory
+
 Following jobs:<br>
 	1. Chromium CEF, optimize ( C++ & C# )<br>
 	2. Web client ( HTML, CSS, JAVASCRIPT )<br>
