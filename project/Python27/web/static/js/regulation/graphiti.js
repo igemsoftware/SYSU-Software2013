@@ -526,7 +526,7 @@ g.Buttons.Remove = graphiti.shape.icon.Remove.extend({
         var parentId = parent.getId();
 
         var outerContainer = parent.getParent();
-        if (outerContainer.getParent()) {
+        if (outerContainer != null && outerContainer.getParent() != null) {
             for (var i = 0; i < outerContainer.getParent().getChildren().getSize(); i++) {
                 var figure = outerContainer.getParent().getChildren().get(i);
 
@@ -535,7 +535,7 @@ g.Buttons.Remove = graphiti.shape.icon.Remove.extend({
                     break;
                 }
             }
-        } else if (outerContainer) {
+        } else if (outerContainer != null) {
             
             for (var i = 0; i < outerContainer.getChildren().getSize(); i++) {
                 var figure = outerContainer.getChildren().get(i);

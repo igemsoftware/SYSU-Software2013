@@ -39,7 +39,7 @@ body {
 }
 
 .header .nav ul {
-  margin: 40px 15px 0 0;
+  margin: 40px 215px 0 0;
   list-style: none;
   font-size:  14px;
   color: #407279;
@@ -87,14 +87,14 @@ body {
 .trigger-left {
   position: absolute;
   left: 270px;
-  top: 350px;
+  top: 50%;
   background-image: url(../img/left-trigger.png);
 }
 
 .trigger-right {
   position: absolute;
   left: -71px;
-  top: 350px;
+  top: 50%;
   background-image: url(../img/right-trigger.png);
 }
 
