@@ -32,8 +32,7 @@ $(document).ready(function () {
         time = message.result.time;
         dt = message.result.dt;
         var width1 = document.getElementById('canvasDiv').clientWidth -parseInt(document.getElementById('canvasDiv').style.left);
-        var height1 = document.getElementById('canvasDiv').clientHeight -parseInt(document.getElementById('canvasDiv').style.top);
-		console.log(width1,height1);
+        var height1 = document.getElementById('canvasDiv').clientHeight -parseInt(document.getElementById('canvasDiv').style.top);		
         run(data,'canvasDiv', width1, height1, time, dt);
 		$("#Inducer").empty();
 		$("#Curve").empty();
