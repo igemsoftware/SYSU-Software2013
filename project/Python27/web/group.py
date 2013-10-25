@@ -103,11 +103,11 @@ u'Repressor'}, {u'to': u'7', u'from': u'6', u'type': u'Bound'}]}
 # @returns   selected promoter
 #
 # --------------------------------------------------------------------------
-def find_promoter(db, activator = None, repressor = None):
+def find_promoter(db, promoter_set, activator = None, repressor = None):
   if activator is not None:
-    return db.find_promoter_with_activator(activator)
+    return db.find_promoter_with_activator(promoter_set, activator)
   else:
-    return db.find_promoter_with_repressor(repressor)
+    return db.find_promoter_with_repressor(promoter_set, repressor)
 
 # --------------------------------------------------------------------------
 ##
@@ -200,6 +200,7 @@ def work(data, database):
   pro_pos = {}
   rev_bound_list = {}
   regulator_set = set()
+  promoter_set  = set()
   # Initialization
   for part in data["part"]:
     idx = part["id"]
@@ -247,9 +248,9 @@ def work(data, database):
     # find promoter
     regulator = groups[cur_grp][pro_pos[link["from"]]]
     if link["type"] == "Repressor":
-      promoter = find_promoter(database, repressor = regulator)
+      promoter = find_promoter(database, promoter_set, repressor = regulator)
     if link["type"] == "Activator":
-      promoter = find_promoter(database, activator = regulator)
+      promoter = find_promoter(database, promoter_set, activator = regulator)
     groups[next_grp][0] = promoter["Number"]
   return (groups, bound_list, pro_pos)
 
@@ -509,8 +510,10 @@ def js_formatter(gene_circuit):
 # --------------------------------------------------------------------------
 def update_controller(db, update_info):
   gene_circuit = js_formatter(update_info["gene_circuit"])
-  regulator_set = set([i["name"] for i in gene_circuit["proteins"].values() if
-      not i["display"]])
+  regulator_set = set([database.getRegulatorCluster(i["name"]) for i in \
+      gene_circuit["proteins"].values() if not i["display"]])
+  promoter_set = set([database.getPromoterCluster(i["sbol"][0]) for i in \
+      gene_circuit["genecircuit"].values() if not i["display"]])
   detail = update_info["detail"]
   pro_id = detail["pro_id"]
   protein = gene_circuit["proteins"][pro_id]
@@ -556,7 +559,7 @@ def update_controller(db, update_info):
       promoter_value = float(detail["new_value"])
       #select best promoter
       best_promoter = db.getPromoterNearValue(promoter_value,\
-          regulator_set, link_type, p_type, cor_ind_type)
+          regulator_set, promoter_set, link_type, p_type, cor_ind_type)
       if link_type in {"Positive", "Negative"}:
         best_regulator = db.find_actrep_with_promoter(best_promoter["Number"],\
             link_type, cor_ind_type, regulator_set)
@@ -564,11 +567,13 @@ def update_controller(db, update_info):
     else:
       regulator_value = pow(10, float(detail["new_value"]))
       if link_type == "Positive":
-        best_regulator = db.getActivatorNearValue(regulator_value, cor_ind_type, regulator_set)
+        best_regulator = db.getActivatorNearValue(regulator_value, cor_ind_type,\
+            regulator_set, promoter_set)
         best_promoter = find_promoter(db, activator=best_regulator["Number"])
         promoter_value = best_promoter[p_type]
       else:
-        best_regulator = db.getRepressorNearValue(regulator_value, cor_ind_type, regulator_set)
+        best_regulator = db.getRepressorNearValue(regulator_value,\
+            cor_ind_type, regulator_set, promoter_set)
         best_promoter = find_promoter(db, repressor=best_regulator["Number"])
         promoter_value = best_promoter[p_type]
       regulator_value = log10(best_regulator["K1"])
