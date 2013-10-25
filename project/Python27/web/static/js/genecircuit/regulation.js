@@ -450,6 +450,7 @@ $().ready(function() {
 										'corepind':{},
 				}));
 				sessionStorage.gene_circuit = JSON.stringify(genecircuitData);
+				// console.log('initGenecircuitData', JSON.stringify(genecircuitData)); 
 				init(genecircuitData);
 			} else if (message.request == "Simulate") {				 
         var raw_data = message.result.data;
@@ -571,15 +572,10 @@ $().ready(function() {
       ] 
 		}; 
      
-		if(sessionStorage.regulation) {
-			ws.send(JSON.stringify({
-				'request': 'getGroup',
-				'data': eval('(' + sessionStorage.regulation + ')'),
-			}));
-			$('#mymodal').modal({keyboard:false});
-		} else 	if(sessionStorage.gene_circuit && sessionStorage.gene_circuit != 'undefined') {
-			console.log('gene_circuit', sessionStorage.gene_circuit);
-			genecircuitData = eval('(' + sessionStorage.gene_circuit + ')');    
+		isDebug = false;
+		if(isDebug) {
+			genecircuitData = {"proteins":{"06f19df8-844f-cf01-56f9-eb39dcca4826":{"RiPS":0.336,"name":"BBa_C0070","before_regulated":6.4915199999999995,"concen":null,"grp_id":"19d6f6ed-a3db-d38a-9399-abe589a36b16","pos":2,"PoPS":0.84,"pops_option":[{"des":"asdfasdf","val":0.9,"type":"left"},{"des":"asdfasdfaaaaaaa\naaaaaaaddddd","val":0.6,"type":"left"},{"des":"dddads1qwerqwerqwerqwer\nfasdfasdfdd","val":0.2,"type":"right"}],"repress_rate":0,"K1":null,"induce_rate":0,"copy":23,"display":true},"2217f133-2061-4b53-9431-d5aa8ae76e1c":{"RiPS":0.336,"name":"BBa_C0076","before_regulated":1.8547200000000001,"concen":null,"grp_id":"2217f133-2061-4b53-9431-d5aa8ae76e1c","pos":2,"PoPS":0.24,"pops_option":[{"des":"asdfasdf","val":0.2,"type":"left"},{"des":"ddddddddddddd","val":0.5,"type":"left"},{"des":"ddddd","val":0.5,"type":"right"}],"repress_rate":-0.3010299956639812,"K1":-6.920818753952375,"induce_rate":-0.3010299956639812,"copy":23,"display":true},"19d6f6ed-a3db-d38a-9399-abe589a36b16":{"RiPS":0.336,"name":"BBa_K864201","before_regulated":6.4915199999999995,"concen":null,"grp_id":"19d6f6ed-a3db-d38a-9399-abe589a36b16","pos":4,"PoPS":0.84,"pops_option":[{"des":"asdfasdf","val":0.2,"type":"left"},{"des":"ddddd","val":0.5,"type":"left"},{"des":"ddddd","val":0.5,"type":"right"}],"repress_rate":0,"K1":null,"induce_rate":0,"copy":23,"display":false}},"plasmids":[["2217f133-2061-4b53-9431-d5aa8ae76e1c","19d6f6ed-a3db-d38a-9399-abe589a36b16"]],"groups":{"2217f133-2061-4b53-9431-d5aa8ae76e1c":{"from":"19d6f6ed-a3db-d38a-9399-abe589a36b16","state":"cis","corep_ind_type":"None","to":[],"sbol":[{"type":"Promoter","name":"BBa_I756014"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0076","id":"2217f133-2061-4b53-9431-d5aa8ae76e1c"},{"type":"Terminator","name":"BBa_B0013"}],"type":"Negative"},"19d6f6ed-a3db-d38a-9399-abe589a36b16":{"from":-1,"state":"cis","corep_ind_type":"None","to":["2217f133-2061-4b53-9431-d5aa8ae76e1c"],"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0070","id":"06f19df8-844f-cf01-56f9-eb39dcca4826"},{"type":"RBS","name":"BBa_J61104"},{"type":"Repressor","name":"BBa_K864201","id":"19d6f6ed-a3db-d38a-9399-abe589a36b16"},{"type":"Terminator","name":"BBa_B0013"}],"type":"Constitutive"}}};
+			console.log("debugData", genecircuitData);
 			ws.send(JSON.stringify({'request'     : 'Simulate',    
 									'isStochastic': false,    
 										'isDelay': false,
@@ -588,13 +584,31 @@ $().ready(function() {
 			}));    		
 			$('#mymodal').modal({keyboard:false});
 			init(genecircuitData);
-		}
-		else {
-			ws.send(JSON.stringify({
-				'request': 'getGroup',
-				'data': regulationData, 
-			}));
-			$('#mymodal').modal({keyboard:false});
+		} else {
+			if(sessionStorage.regulation) {
+				ws.send(JSON.stringify({
+					'request': 'getGroup',
+					'data': eval('(' + sessionStorage.regulation + ')'),
+				}));
+				$('#mymodal').modal({keyboard:false});
+			} else 	if(sessionStorage.gene_circuit && sessionStorage.gene_circuit != 'undefined') {
+				console.log('gene_circuit', sessionStorage.gene_circuit);
+				genecircuitData = eval('(' + sessionStorage.gene_circuit + ')');    
+				ws.send(JSON.stringify({'request'     : 'Simulate',    
+										'isStochastic': false,    
+										'gene_circuit':JSON.stringify(genecircuitData),    
+										'corepind':{},    
+				}));    		
+				$('#mymodal').modal({keyboard:false});
+				init(genecircuitData);
+			}
+			else {
+				ws.send(JSON.stringify({
+					'request': 'getGroup',
+					'data': regulationData, 
+				}));
+				$('#mymodal').modal({keyboard:false});
+			}
 		}
 
   }

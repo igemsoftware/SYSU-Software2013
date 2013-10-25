@@ -389,7 +389,7 @@ class SqliteDatabase:
 		else:
 			return None
 
-	def find_promoter_with_repressor(self, repressor = None):
+	def find_promoter_with_repressor(self, promoter_set, repressor = None):
 		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
     ActRreNumber = "%s" AND ActRreType = "Negative"' % repressor)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
@@ -400,11 +400,15 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
-			return decodejson[0]
+			for item in decodejson:
+				if item["Cluster"] not in promoter_set:
+					promoter_set.add(item["Cluster"])
+					return item
+				return None
 		else:
 			return None
 
-	def find_promoter_with_activator(self, activator = None):
+	def find_promoter_with_activator(self, promoter, activator = None):
 		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
     ActRreNumber = "%s" AND ActRreType = "Positive"' % activator)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
@@ -415,7 +419,10 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
-			return decodejson[0]
+			for item in decodejson:
+				if item["Cluster"] not in promoter_set:
+					promoter_set.add(item["Cluster"])
+					return item
 		else:
 			return None
 
@@ -487,21 +494,68 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	#def find_activator_with_promoter(self, promoter):
-		#self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
-    #PromoterNumber = "%s" AND ActRreType = "Positive"' % promoter)
-		#jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		#decodejson = json.loads(jsonEncoded)
-		#promoter = decodejson[0]["ActRreNumber"]
-		#self.__cursor.execute('SELECT * FROM activator WHERE Number = "%s"' %
-        #promoter)
-		#jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		#decodejson = json.loads(jsonEncoded)
-		#if decodejson != []:
-			#return decodejson[0]
-		#else:
-			#return None
-	
+	def getPromoterCluster(self, promoter):
+		sql_cmd = """
+			SELECT Cluster FROM promoter WHERE Number = '%s'
+		""" % promoter
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
+	def getPromoterCluster(self, regulator):
+		sql_cmd = """
+			SELECT Cluster FROM relation WHERE ActRreNumber = '%s'
+		""" % regulator
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
+	def getAllPromoterOption(self, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT promoter.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+          AND relation.IncCorType IS NULL
+					""" % (link_type)
+		else:
+			sql_cmd = """
+					SELECT promoter.*, relation.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+					AND relation.IncCorType = '%s'
+					""" % (link_type, cor_ind_type)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
+	def getSelfPromoterOption(self, actrep, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT promoter.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+          AND relation.ActRreNumber = '%s' AND relation.IncCorType IS NULL
+					""" % (link_type, actrep)
+		else:
+			sql_cmd = """
+					SELECT promoter.*, relation.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+					AND relation.ActRreNumber = '%s' AND relation.IncCorType = '%s'
+					""" % (link_type, actrep, cor_ind_type)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
 	def getRBSNearValue(self,idealValue):
 		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%e) limit 0,1' %idealValue)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
@@ -515,8 +569,8 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	def getPromoterNearValue(self, idealValue, regulator_set, link_type, p_type,\
-      cor_ind_type):
+	def getPromoterNearValue(self, idealValue, regulator_set, promoter_set, \
+			link_type, p_type, cor_ind_type):
 		if cor_ind_type == "Inducer":
 			cor_ind_type = "Induced"
 		if cor_ind_type == "Corepressor":
@@ -537,8 +591,9 @@ class SqliteDatabase:
 		if p_type != "PoPS":
 			for item in decodejson:
 				regulator = item["ActRreNumber"]
-				if regulator not in regulator_set:
+				if regulator not in regulator_set and promoter not in promoter_set:
 					regulator_set.add(regulator)
+					promoter_set.add(promoter_set)
 					return item
 		else:
 			return decodejson[0]
@@ -569,7 +624,8 @@ class SqliteDatabase:
 				regulator_set.add(item["Number"])
 				return item
 
-	def getActivatorNearValue(self, idealValue, cor_ind_type, regulator_set):
+	def getActivatorNearValue(self, idealValue, cor_ind_type, regulator_set,\
+      promoter_set):
 		idx = len(regulator_set) + 1
 		if cor_ind_type == "Inducer":
 			cor_ind_type = "Induced"
@@ -590,7 +646,7 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
-			if item["Number"] not in regulator_set:
+			if item["Cluster"] not in regulator_set:
 				regulator_set.add(item["Number"])
 				return item
 

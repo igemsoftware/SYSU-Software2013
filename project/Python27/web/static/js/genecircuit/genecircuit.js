@@ -34,6 +34,42 @@ $.fn.dashboard = function(options) {
 }
 })(jQuery);
 
+/* scale */
+(function($) {
+$.fn.scale = function(options) {
+	options = options || {};
+	return this.each(function() {
+		for(var i = 0; i < options.lines.length; i++) {
+			$(this).append("<div id=\"" + options.aTextureId + "-" + i.toString() + "\" class=\"line\"></div>");
+			var that = $("#" + options.aTextureId + "-" + i.toString());
+			var per = (1 - options.lines[i].val / (options.max-options.min)) * 100;
+			that.css("top", per.toString() + "%");
+			if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
+			else if(options.lines[i].type == "right") that.css("border-color", "#56ff56");
+			that.bind("click", function(){
+				var aThat = that;
+				var aOptions = options;
+				var aPer = per;
+				return function(){
+					aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min)); 
+					aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
+					detail.type = aOptions.type;
+					var id_str = aOptions.aSlider.parents(".proteins").attr('id');
+					detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
+					detail.new_value = aOptions.aSlider.slider("value");
+					randomValue(); 
+				};
+			}()); 
+			that.tooltip({
+				delay: { show: 0, hide: 50,},
+				title: options.lines[i].des,
+			});
+		}
+
+	});
+}
+})(jQuery);
+
 /* protein */
 var protein = {
 	init: function(aTextureId, aData) {
@@ -45,7 +81,7 @@ var protein = {
     if (!aData['display'])
       $("#" + aTextureId).hide();
 
-		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider concen\"></div><span>concen</span></div></div>");
+		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"pops-scale scale\"></div><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"scale\"></div><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"scale\"></div><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"scale\"></div><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"scale\"></div><div class=\"slider concen\"></div><span>concen</span></div></div>");
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
@@ -73,6 +109,52 @@ var protein = {
 			max: 10,
 		});
 
+		$("#" + aTextureId + " .pops-scale").scale({
+			// lines: aData["PoPS"]["options"], 
+			lines: aData["pops_option"], 
+			aTextureId: aTextureId + "-pops",
+			aSlider: $("#" + aTextureId + " .pops"),
+			min: 0,
+			max: 1,
+			type: "PoPS",
+		});
+
+		$("#" + aTextureId + " .rips-scale").scale({
+			lines: aData["rips_option"], 
+			aTextureId: aTextureId + "-rips",
+			aSlider: $("#" + aTextureId + " .rips"),
+			min: 0,
+			max: 1,
+			type: "RiPS",
+		});
+
+		$("#" + aTextureId + " .copy-scale").scale({
+			lines: aData["copy_option"], 
+			aTextureId: aTextureId + "-copy",
+			aSlider: $("#" + aTextureId + " .copy"),
+			min: 0,
+			max: 100,
+			type: "copy",
+		});
+
+		$("#" + aTextureId + " .k1-scale").scale({
+			lines: aData["k1_option"], 
+			aTextureId: aTextureId + "-k1",
+			aSlider: $("#" + aTextureId + " .k1"),
+			min: -10,
+			max: 10,
+			type: "K1",
+		});
+		
+		$("#" + aTextureId + " .concen-scale").scale({
+			lines: aData["concen_option"], 
+			aTextureId: aTextureId + "-concen",
+			aSlider: $("#" + aTextureId + " .concen"),
+			min: 0,
+			max: 100,
+			type: "concen",
+		});
+
 		/* $("#" + aTextureId + " .protein-range .slider").slider({ */
 		$("#" + aTextureId + " .pops").slider({
 			orientation: "vertical",
@@ -90,7 +172,7 @@ var protein = {
 			},
 			slide: function(event, ui) { 
 				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(2)); 
-			} 
+			},
 		});
 
 		$("#" + aTextureId + " .rips").slider({
@@ -374,6 +456,7 @@ var plasmid =  {
 		while($("#plasmid-" + count).length > 0) {
 			count += 1;
 		}
+		var prePlasmid = $(".plasmids:last");
 		$("#plasmids-view .mCSB_container").append("<div class='plasmids' id='plasmid-" + count.toString() + "'></div>");	
 		var aTextureId = "plasmid-" + count.toString();
 		$("#" + aTextureId).append("<div><span class=\"label\"></span></div><div class=\"cmd-del\">x</div>");
@@ -388,6 +471,13 @@ var plasmid =  {
 		$("#plasmids-view").mCustomScrollbar("update");
 		$("#plasmids-view").mCustomScrollbar("scrollTo", "bottom");
 		this.viewPlasmid(aTextureId);
+		// return $("#" + aTextureId); 
+		
+		// command.tempCmd.type = "NewPlasmid"; 
+		// command.tempCmd.pre = prePlasmid; 
+		// command.tempCmd.newOne = $("#" + aTextureId); 
+		// command.cmdConfirm(); 
+		
 	},
 	viewPlasmid: function(aTextureId) {
 		$("#" + aTextureId + " div .label .view-plasmid").click(function(){
@@ -425,6 +515,11 @@ var plasmid =  {
 
 
 $(".empty-plasmid .cmd-del").live('click', function(){
+	// command.tempCmd.type = "DelPlasmid"; 
+	// command.tempCmd.pre = prePlasmid; 
+	// command.tempCmd.newOne = $("#" + aTextureId); 
+	// command.cmdConfirm(); 
+
 	$(this).parents(".plasmids").remove();
 	$("#plasmids-view").mCustomScrollbar("update");
 	$("#plasmids-view").mCustomScrollbar("scrollTo", "bottom");
@@ -548,6 +643,7 @@ var historyStack = {
 		this.stack.push(dataCollection);
 		this.pointer += 1;
 		this.stack[this.pointer].cmd = command.cmd;
+		this.stack[this.pointer].genecircuitData = genecircuitData;
 	},
 	setState: function(p) {
 		var curState = this.stack[p];
@@ -573,6 +669,8 @@ var historyStack = {
 			} 
 			plasmid.setData(tId, groups); 
 		} 
+
+		genecircuitData = this.stack[this.pointer].genecircuitData;
 	},
 	undo: function() {
 		if(this.pointer > 0) {
@@ -583,7 +681,14 @@ var historyStack = {
 				$("#" + curCmd.from).after(temp);
 			}
 			this.setState(this.pointer);
-			/* this.setCurrentStack(stack[pointer], stack[pointer+1]); */
+
+			// update simulation 
+			ws.send(JSON.stringify({'request'     : 'Simulate',
+									'isStochastic': false,
+									// 'gene_circuit':JSON.stringify(this.stack[this.pointer].genecircuitData), 
+									'gene_circuit':JSON.stringify(genecircuitData), 
+									'corepind':{},
+			}));
 		}
 	},
 	redo: function() {
@@ -596,6 +701,14 @@ var historyStack = {
 			}
 			this.setState(this.pointer);
 			/* this.setCurrentStack(stack[pointer], stack[pointer+1]); */
+
+			// update simulation 
+			ws.send(JSON.stringify({'request'     : 'Simulate',
+									'isStochastic': false,
+									// 'gene_circuit':JSON.stringify(this.stack[this.pointer].genecircuitData), 
+									'gene_circuit':JSON.stringify(genecircuitData), 
+									'corepind':{},
+			}));
 		}
 	}
 }
