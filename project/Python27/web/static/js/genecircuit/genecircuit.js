@@ -51,8 +51,8 @@ $.fn.scale = function(options) {
 				var aOptions = options;
 				var aPer = per;
 				return function(){
-					aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
 					aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min)); 
+					aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
 					detail.type = aOptions.type;
 					var id_str = aOptions.aSlider.parents(".proteins").attr('id');
 					detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
@@ -81,7 +81,7 @@ var protein = {
     if (!aData['display'])
       $("#" + aTextureId).hide();
 
-		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"pops-scale scale\"></div><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"scale\"><div class=\"line\"></div></div><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"scale\"><div class=\"line\"></div></div><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"scale\"><div class=\"line\"></div></div><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"scale\"><div class=\"line\"></div></div><div class=\"slider concen\"></div><span>concen</span></div></div>");
+		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"pops-scale scale\"></div><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"scale\"></div><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"scale\"></div><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"scale\"></div><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"scale\"></div><div class=\"slider concen\"></div><span>concen</span></div></div>");
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
@@ -118,10 +118,42 @@ var protein = {
 			max: 1,
 			type: "PoPS",
 		});
-		/* $("#" + aTextureId + " .scale .line").tooltip({ */
-			/* delay: {show:50}, */
-			/* placement: 'right' */
-		/* }); */
+
+		$("#" + aTextureId + " .rips-scale").scale({
+			lines: aData["rips_option"], 
+			aTextureId: aTextureId + "-rips",
+			aSlider: $("#" + aTextureId + " .rips"),
+			min: 0,
+			max: 1,
+			type: "RiPS",
+		});
+
+		$("#" + aTextureId + " .copy-scale").scale({
+			lines: aData["copy_option"], 
+			aTextureId: aTextureId + "-copy",
+			aSlider: $("#" + aTextureId + " .copy"),
+			min: 0,
+			max: 100,
+			type: "copy",
+		});
+
+		$("#" + aTextureId + " .k1-scale").scale({
+			lines: aData["k1_option"], 
+			aTextureId: aTextureId + "-k1",
+			aSlider: $("#" + aTextureId + " .k1"),
+			min: -10,
+			max: 10,
+			type: "K1",
+		});
+		
+		$("#" + aTextureId + " .concen-scale").scale({
+			lines: aData["concen_option"], 
+			aTextureId: aTextureId + "-concen",
+			aSlider: $("#" + aTextureId + " .concen"),
+			min: 0,
+			max: 100,
+			type: "concen",
+		});
 
 		/* $("#" + aTextureId + " .protein-range .slider").slider({ */
 		$("#" + aTextureId + " .pops").slider({
