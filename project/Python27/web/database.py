@@ -487,30 +487,30 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	def find_activator_with_promoter(self, promoter):
-		self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
-    PromoterNumber = "%s" AND ActRreType = "Positive"' % promoter)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		promoter = decodejson[0]["ActRreNumber"]
-		self.__cursor.execute('SELECT * FROM activator WHERE Number = "%s"' %
-        promoter)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		if decodejson != []:
-			return decodejson[0]
-		else:
-			return None
+	#def find_activator_with_promoter(self, promoter):
+		#self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
+    #PromoterNumber = "%s" AND ActRreType = "Positive"' % promoter)
+		#jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		#decodejson = json.loads(jsonEncoded)
+		#promoter = decodejson[0]["ActRreNumber"]
+		#self.__cursor.execute('SELECT * FROM activator WHERE Number = "%s"' %
+        #promoter)
+		#jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		#decodejson = json.loads(jsonEncoded)
+		#if decodejson != []:
+			#return decodejson[0]
+		#else:
+			#return None
 	
 	def getRBSNearValue(self,idealValue):
-		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%f) limit 0,1' %idealValue)
+		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%e) limit 0,1' %idealValue)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
 	def getPlasmidBackboneNearValue(self,idealValue):
 		self.__cursor.execute('select * from plasmid_backbone order by\
-        abs(CopyNumber-%f) limit 0,1' %idealValue)
+        abs(CopyNumber-%e) limit 0,1' %idealValue)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
@@ -524,12 +524,12 @@ class SqliteDatabase:
 		if cor_ind_type not in {"Induced", "Corepressed"}:
 			sql_cmd = 'SELECT promoter.*, relation.* FROM promoter INNER JOIN relation\
 					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = "%s"\
-					AND relation.IncCorType IS NULL ORDER BY abs(promoter.%s - %f)' % \
+					AND relation.IncCorType IS NULL ORDER BY abs(promoter.%s - %e)' % \
 					(link_type, p_type, idealValue)
 		else:
 			sql_cmd = 'SELECT promoter.*, relation.* FROM promoter INNER JOIN relation\
 					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = "%s"\
-					AND relation.IncCorType = "%s" ORDER BY abs(promoter.%s - %f)' % \
+					AND relation.IncCorType = "%s" ORDER BY abs(promoter.%s - %e)' % \
 					(link_type, cor_ind_type, p_type, idealValue)
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
@@ -553,12 +553,12 @@ class SqliteDatabase:
 			sql_cmd = 'SELECT repressor.*, relation.* FROM repressor INNER JOIN\
 					relation ON repressor.Number = relation.ActRreNumber WHERE\
 					relation.IncCorType IS NULL AND relation.ActRreType = "Negative" ORDER BY\
-					abs(repressor.K1 - %f) LIMIT 0,%d' % (idealValue, idx)
+					abs(repressor.K1 - %e) LIMIT 0,%d' % (idealValue, idx)
 		else:
 			sql_cmd = 'SELECT repressor.*, relation.* FROM repressor INNER JOIN relation\
 					ON repressor.Number = relation.ActRreNumber WHERE\
 					relation.IncCorType = "%s" AND relation.ActRreType = "Negative"\
-					ORDER BY abs(repressor.K1 - %f) LIMIT 0,%d'\
+					ORDER BY abs(repressor.K1 - %e) LIMIT 0,%d'\
 					% (cor_ind_type, idealValue, idx)
 		print sql_cmd
 		self.__cursor.execute(sql_cmd)
@@ -579,12 +579,12 @@ class SqliteDatabase:
 			sql_cmd = 'SELECT activator.*, relation.* FROM activator INNER JOIN\
 					relation ON activator.Number = relation.ActRreNumber WHERE\
 					relation.IncCorType IS NULL AND relation.ActRreType = "Positive" ORDER BY\
-					abs(activator.K1 - %f) LIMIT 0,%d' % (idealValue, idx)
+					abs(activator.K1 - %e) LIMIT 0,%d' % (idealValue, idx)
 		else:
 			sql_cmd = 'SELECT activator.*, relation.* FROM activator INNER JOIN relation\
 					ON activator.Number = relation.ActRreNumber WHERE\
 					relation.IncCorType = "%s" AND relation.ActRreType = "Positive"\
-					ORDER BY abs(activator.K1 - %f) LIMIT 0,%d'\
+					ORDER BY abs(activator.K1 - %e) LIMIT 0,%d'\
 					% (cor_ind_type, idealValue, idx)
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())

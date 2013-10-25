@@ -30,7 +30,7 @@ from Simulate_Class import Protein_Simulate
 # @returns             simulation result
 #
 # --------------------------------------------------------------------------
-def Simulate(isStochastic, circuit, corepind, database, time, dt):
+def Simulate(isStochastic, isDelay, circuit, corepind, database, time, dt):
     try:
         cnt = 0
         if time <=0 or dt <= 0:
@@ -72,8 +72,8 @@ def Simulate(isStochastic, circuit, corepind, database, time, dt):
                                         tere = terminator['Efficiency'])
                 mRNAdict[proid].SetData(transle = rbs['MPRBS'], degrate = DegRate)
                 Prodict [proid].SetData(degrate = DegRate)
-                mRNAdict[proid].IniConcen(timelen, dt, ini = 0)
-                Prodict [proid].IniConcen(timelen, dt, ini = 0)
+                mRNAdict[proid].IniConcen(isDelay, timelen, dt, ini = 0)
+                Prodict [proid].IniConcen(isDelay, timelen, dt, ini = 0)
                 mRNAdict[proid].Connect(DNAdict [proid])
                 Prodict [proid].Connect(mRNAdict[proid])
             if group['corep_ind_type'] == 'Corepressor' or group['corep_ind_type'] == 'Inducer':
@@ -160,4 +160,4 @@ if __name__ == "__main__":
     gene_circuit = u'{"proteins":{"3be9a5f7-893b-5831-11b2-bff8b0b1903d":{"RiPS":0.336,"name":"BBa_C0178","repress_rate":-0.30102999202430636,"concen":0.1,"grp_id":"3be9a5f7-893b-5831-11b2-bff8b0b1903d","pos":2,"PoPS":0.14,"before_regulated":1.0819200000000002,"K1":-2.886056647693163,"induce_rate":-5.829870629263188e-11,"copy":23,"display":true},"5a5c3e16-e365-480b-230a-d981fdbe8f59":{"RiPS":0.336,"name":"BBa_C0160","repress_rate":0,"concen":null,"grp_id":"b485eb93-4480-1cf6-229f-2d79090be63e","pos":2,"PoPS":0.84,"before_regulated":6.4915199999999995,"K1":null,"induce_rate":0,"copy":23,"display":true},"b485eb93-4480-1cf6-229f-2d79090be63e":{"RiPS":0.336,"name":"BBa_C0012","repress_rate":0,"concen":null,"grp_id":"b485eb93-4480-1cf6-229f-2d79090be63e","pos":4,"PoPS":0.84,"before_regulated":6.4915199999999995,"K1":null,"induce_rate":0,"copy":23,"display":false}},"plasmids":[["3be9a5f7-893b-5831-11b2-bff8b0b1903d","b485eb93-4480-1cf6-229f-2d79090be63e"]],"groups":{"3be9a5f7-893b-5831-11b2-bff8b0b1903d":{"from":"b485eb93-4480-1cf6-229f-2d79090be63e","state":"cis","corep_ind_type":"Inducer","to":[],"sbol":[{"type":"Promoter","name":"BBa_K091110"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0178","id":"3be9a5f7-893b-5831-11b2-bff8b0b1903d"},{"type":"Terminator","name":"BBa_B0013"}],"type":"Negative","id":"3be9a5f7-893b-5831-11b2-bff8b0b1903d"},"b485eb93-4480-1cf6-229f-2d79090be63e":{"from":-1,"state":"cis","corep_ind_type":"None","to":["3be9a5f7-893b-5831-11b2-bff8b0b1903d"],"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61104"},{"type":"Protein","name":"BBa_C0160","id":"5a5c3e16-e365-480b-230a-d981fdbe8f59"},{"type":"RBS","name":"BBa_J61104"},{"type":"Repressor","name":"BBa_C0012","id":"b485eb93-4480-1cf6-229f-2d79090be63e"},{"type":"Terminator","name":"BBa_B0013"}],"type":"Constitutive","id":"b485eb93-4480-1cf6-229f-2d79090be63e"}}}'
     import json
     gene_circuit = json.loads(gene_circuit)
-    print Simulate(False, gene_circuit, corepind, db, 6000, 100)
+    print Simulate(False, True, gene_circuit, corepind, db, 6000, 100)
