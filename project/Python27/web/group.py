@@ -255,14 +255,17 @@ def work(data, database):
 
 # --------------------------------------------------------------------------
 ##
-# @brief get option of promoter
+# @brief get promoter labels, which indicate alternatives of current promoter
 #
 # @param database      an instance of database
+# @param actrep        activator or repressor that regulates the promoter
+# @param l_type        link type
+# @param cor_ind_type  corepressor or inducer type
 #
-# @returns   promoter option
+# @returns  the labels of the promoter
 # 
 # --------------------------------------------------------------------------
-def get_promoter_option(database, actrep, l_type, cor_ind_type):
+def get_promoter_label(database, actrep, l_type, cor_ind_type):
   ret = []
   pops_option = database.getAllPromoterOption(l_type, cor_ind_type)
   self_option = database.getSelfPromoterOption(actrep, l_type, cor_ind_type)
@@ -454,7 +457,7 @@ def dump_group(network, database):
         regulator)
     promoter = groups[b_list[i]]["sbol"][0]
     l_type = groups[b_list[i]]["type"]
-    proteins[i]["pops_option"] = get_promoter_option(database, regulator, \
+    proteins[i]["pops_option"] = get_promoter_label(database, regulator, \
         l_type, corep_ind_type)
 
   # do not display regulation protein
