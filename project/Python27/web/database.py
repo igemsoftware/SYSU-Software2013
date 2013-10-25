@@ -487,21 +487,6 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	#def find_activator_with_promoter(self, promoter):
-		#self.__cursor.execute('SELECT ActRreNumber FROM relation WHERE\
-    #PromoterNumber = "%s" AND ActRreType = "Positive"' % promoter)
-		#jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		#decodejson = json.loads(jsonEncoded)
-		#promoter = decodejson[0]["ActRreNumber"]
-		#self.__cursor.execute('SELECT * FROM activator WHERE Number = "%s"' %
-        #promoter)
-		#jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		#decodejson = json.loads(jsonEncoded)
-		#if decodejson != []:
-			#return decodejson[0]
-		#else:
-			#return None
-	
 	def getRBSNearValue(self,idealValue):
 		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%e) limit 0,1' %idealValue)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
@@ -514,6 +499,51 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
+
+	def getAllPromoterOption(self, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT promoter.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+          AND relation.IncCorType IS NULL
+					""" % (link_type)
+		else:
+			sql_cmd = """
+					SELECT promoter.*, relation.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+					AND relation.IncCorType = '%s'
+					""" % (link_type, cor_ind_type)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
+	def getSelfPromoterOption(self, actrep, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT promoter.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+          AND relation.ActRreNumber = '%s' AND relation.IncCorType IS NULL
+					""" % (link_type, actrep)
+		else:
+			sql_cmd = """
+					SELECT promoter.*, relation.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+					AND relation.ActRreNumber = '%s' AND relation.IncCorType = '%s'
+					""" % (link_type, actrep, cor_ind_type)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
 
 	def getPromoterNearValue(self, idealValue, regulator_set, link_type, p_type,\
       cor_ind_type):

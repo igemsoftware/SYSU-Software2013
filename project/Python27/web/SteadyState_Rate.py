@@ -13,7 +13,7 @@ def ActRepRate(circuit, database):
     for n in range(len(PlasID)):
         group      = circuit['groups'][PlasID[n]]
         promoter   = database.select_with_name('Promoter', group['sbol'][0]['name'])
-        terminator = database.select_with_name('Terminator', group['sbol'][-1]['name'])
+        terminator = database.select_with_name('terminator', group['sbol'][-1]['name'])
         for k in range(PlasSize[PlasID[n]]):
             rbs   = database.select_with_name('RBS', group['sbol'][2*k+1]['name'])
             proid = group['sbol'][2*k+2]['id']
@@ -26,6 +26,7 @@ def ActRepRate(circuit, database):
             dataset['CopyNumber']  = circuit['proteins'][proid]['copy']
             dataset['MPPromoter']  = promoter['MPPromoter']
             dataset['LeakageRate'] = promoter['LeakageRate']
+            print terminator
             dataset['Efficiency']  = terminator['Efficiency']
             dataset['MPRBS']       = rbs['MPRBS']
             dataset['DegRatemRNA'] = 0.00288
