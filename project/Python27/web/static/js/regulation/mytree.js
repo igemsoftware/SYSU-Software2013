@@ -235,11 +235,18 @@ EFTree.prototype.addNode = function(name) {
 		type = "g.Shapes.MetalIon";
 		icon = "MetalIon.png";
 	} else if (name == "Temperature") {
+		name = "Tempt";
 		type = "g.Shapes.Temperature";
 		icon = "Temperature.png";
 	} else if (name == "RorA") {
 		type = "g.Shapes.RORA";
 		icon = "RorA.png";
+	} else if (name == "R") {
+		type = "g.Shapes.R";
+		icon = "R.png";
+	} else if (name == "A") {
+		type = "g.Shapes.A";
+		icon = "A.png";
 	}
 
 	this.nodes[this.nodes.length] = new Node(id, name, 1, type, "EFactors", "", icon, "");
@@ -403,7 +410,7 @@ var proteinList = new Tree("protein", "protein");
 
 // create a EFTree
 var eFactorList = new EFTree("eFactors", "eFactors");
-var data = ["Inducer", "Metal-ion", "Temperature", "RorA"];
+var data = ["Inducer", "Metal-ion", "Temperature", "R", "A"];
 eFactorList.parseJson(data);
 
 // create a CodingTree
