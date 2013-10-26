@@ -717,6 +717,7 @@ $().ready(function() {
                 app.view.collection.remove(figure.getId());
 
                 figure.setId(part.id);    // 设置id
+                figure.name = part.name;
                 figure.TYPE = part.type;
 
                 app.view.collection.push(figure.getId());
