@@ -53,6 +53,8 @@ graphiti.Connection = graphiti.shape.basic.PolyLine.extend({
       this.endDecoSet=null;
   
       this.regulated = false;
+      this.Activator = new g.Buttons.Activate();
+      this.Repressor = new g.Buttons.Inhibit();
 
       this.sourceAnchor = new graphiti.ConnectionAnchor(this);
       this.targetAnchor = new graphiti.ConnectionAnchor(this);
