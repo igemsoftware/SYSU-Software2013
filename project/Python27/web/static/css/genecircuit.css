@@ -21,6 +21,7 @@
 	height: 534px;
 	border-radius: 6px;
 	background-color: #ebebeb;
+	padding: 20px;
 }
 
 #content {
@@ -381,8 +382,8 @@
 
 #cmd {
 	position: absolute;
-	right: 20px;
-	bottom: 20px;
+	right: 10px;
+	bottom: 0px;
 }
 
 .sbol {
@@ -532,13 +533,14 @@
 .plasmids {
 	border: dotted 1px #848b89;
 	border-radius: 4px;
-	margin: 3px;
+	margin: 6px 3px;
 	min-height: 103px;
 	position: relative;
 	-webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+	background: #dddcdc;
 }
 
 .plasmids:after {
@@ -628,4 +630,9 @@
 .tooltip {
 	z-index: 10;
 	position: fixed;
+}
+
+.cmd_undo_redo {
+	cursor: pointer;
+	margin: 0 10px;
 }
