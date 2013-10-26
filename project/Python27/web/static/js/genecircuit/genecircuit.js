@@ -43,13 +43,13 @@ $.fn.scale = function(options) {
 		if(options.lines) {
 			for(var i = 0; i < options.lines.length; i++) {
 				if(options.lines[i].type == options.direction) {
-					$(this).append("<div id=\"" + options.aTextureId + "-" + i.toString() + "\" class=\"line\"></div>");
-					var that = $("#" + options.aTextureId + "-" + i.toString());
+					$(this).append("<div id=\"" + options.aTextureId + "-" + options.direction + "-" + i.toString() + "\" class=\"line\"></div>");
+					var that = $("#" + options.aTextureId + "-" + options.direction + "-" + i.toString());
 					var per = (1 - options.lines[i].val / (options.max-options.min)) * 100;
 					that.css("top", per.toString() + "%");
 					if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
 					else if(options.lines[i].type == "right") that.css("border-color", "#56ff56");
-					console.log(options.lines[i].type);
+					console.log(options.lines[i].type, options.lines[i]);
 					that.bind("click", function(){
 						var aThat = that;
 						var aOptions = options;
@@ -324,6 +324,7 @@ var protein = {
 		$("#" + aTextureId).data("pos", aData.pos);
 	},
 	setRightScale: function(aTextureId, aData) {
+		console.log(aData);
 		$("#" + aTextureId + " .pops-scale.right").empty().scale({
 			lines: aData["pops_option"], 
 			aTextureId: aTextureId + "-pops",
