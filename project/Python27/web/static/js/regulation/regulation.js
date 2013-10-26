@@ -30,9 +30,17 @@ $().ready(function() {
             $("#left-container").css({
                 left: '-270px'
             });
+
+            $("#canvas").css({
+                left: '0px'
+            });
         } else {
             $("#left-container").css({
                 left: '0px'
+            });
+
+            $("#canvas").css({
+                left: '270px'
             });
         }
     });
@@ -45,9 +53,17 @@ $().ready(function() {
             $("#right-container").css({
                 right: '-270px'
             });
+
+            $("#canvas").css({
+                left: '0px'
+            });
         } else {
             $("#right-container").css({
                 right: '0px'
+            });
+
+            $("#canvas").css({
+                left: '-270px'
             });
         }
     });
@@ -55,6 +71,10 @@ $().ready(function() {
     $("#content").click(function() {
         $("#left-container").css({
             left: '-270px'
+        });
+
+        $("#canvas").css({
+            left: '0px'
         });
 
         $("#right-container").css({

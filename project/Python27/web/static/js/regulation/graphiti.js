@@ -173,7 +173,7 @@ g.Shapes.Container = graphiti.shape.basic.Rectangle.extend({
         this.countLength = 0;
 
         this.boundElements = new graphiti.util.ArrayList();
-        this.setAlpha(0.1);
+        this.setAlpha(0.01);
 
         // Buttons
         this.remove = new g.Buttons.Remove();
