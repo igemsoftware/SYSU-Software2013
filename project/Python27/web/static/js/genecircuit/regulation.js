@@ -386,13 +386,13 @@ $().ready(function() {
 			$('#mymodal').modal({keyboard:false});
 			init(genecircuitData);
 		} else {
-			if(sessionStorage.regulation) {
+			if(sessionStorage.regulation && sessionStorage.regulation != 'undefined') {
 				ws.send(JSON.stringify({
 					'request': 'getGroup',
 					'data': eval('(' + sessionStorage.regulation + ')'),
 				}));
 				$('#mymodal').modal({keyboard:false});
-			} else 	if(sessionStorage.gene_circuit && sessionStorage.gene_circuit != 'undefined') {
+			} else if(sessionStorage.gene_circuit && sessionStorage.gene_circuit != 'undefined') {
 				console.log('gene_circuit', sessionStorage.gene_circuit);
 				genecircuitData = eval('(' + sessionStorage.gene_circuit + ')');    
 				ws.send(JSON.stringify({'request'     : 'Simulate',    
@@ -402,8 +402,7 @@ $().ready(function() {
 				}));    		
 				$('#mymodal').modal({keyboard:false});
 				init(genecircuitData);
-			}
-			else {
+			} else {
 				ws.send(JSON.stringify({
 					'request': 'getGroup',
 					'data': regulationData, 
@@ -433,6 +432,10 @@ $().ready(function() {
 	$('#index').click(function(ev) {
 		sessionStorage.gene_circuit = undefined;
 		window.location.pathname = "/index";
+	});
+
+	$('#btn-edit').click(function(ev){
+		sessionStorage.gene_circuit = undefined;
 	});
 
 	console.log("aa", sessionStorage);
