@@ -64,7 +64,7 @@
 										<div class="browser">
 											<img src="../static/img/style-protein.png" />
 										</div>
-										<button class="btn-more" onclick="window.location.pathname = '/index'">Edit</button>
+										<button id='btn-edit' class="btn-more" onclick="window.location.pathname = '/index'" data-toggle="tooltip" title="edit the network">Edit</button>
 									</div>
 									<div id="simulation-view">
 										<div class="module-title">
@@ -75,7 +75,7 @@
 											<div id="canvasDiv">
 											</div>
 										</div>
-										<button class="btn-more" onclick="jumpToSimulation()">View more</button>
+										<button id='btn-viewmore' class="btn-more" onclick="jumpToSimulation()" data-toggle="tooltip" title="see the detail of simulation">View more</button>
 									</div>
 									<div id="dashboard-view">
 										
@@ -89,7 +89,7 @@
 									</div>
 
 									<div id="cmd">
-										<button class="btn-more" id="cmd-new-plasmid">New plasmid</button>
+										<button class="btn-more" id="cmd-new-plasmid" data-toggle="tooltip" title="add a new plasmid">New plasmid</button>
 									</div>
 								</div>				
 												
@@ -478,6 +478,8 @@
 
 <!-- Custom js -->
 <script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/bootstrap-tooltip.js"></script>
+<script src="../static/js/bootstrap-popover.js"></script>
 <script src="../static/js/regulation/base/js/easy.js"></script>
 <script src="../static/js/regulation/dtree.js"></script>
 <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>

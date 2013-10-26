@@ -1,6 +1,7 @@
 /* refer to donuts */
 /* dashboard */
 (function($) {
+
 $.fn.dashboard = function(options) {
 	options = options || {};
 	return this.each(function() {
@@ -39,32 +40,36 @@ $.fn.dashboard = function(options) {
 $.fn.scale = function(options) {
 	options = options || {};
 	return this.each(function() {
-		for(var i = 0; i < options.lines.length; i++) {
-			if(options.lines[i].type == options.direction) {
-				$(this).append("<div id=\"" + options.aTextureId + "-" + i.toString() + "\" class=\"line\"></div>");
-				var that = $("#" + options.aTextureId + "-" + i.toString());
-				var per = (1 - options.lines[i].val / (options.max-options.min)) * 100;
-				that.css("top", per.toString() + "%");
-				if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
-				else if(options.lines[i].type == "right") that.css("border-color", "#56ff56");
-				that.bind("click", function(){
-					var aThat = that;
-					var aOptions = options;
-					var aPer = per;
-					return function(){
-						aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min)); 
-						aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
-						detail.type = aOptions.type;
-						var id_str = aOptions.aSlider.parents(".proteins").attr('id');
-						detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
-						detail.new_value = aOptions.aSlider.slider("value");
-						randomValue(); 
-					};
-				}()); 
-				that.tooltip({
-					delay: { show: 0, hide: 50,},
-					title: options.lines[i].des,
-				});
+		if(options.lines) {
+			for(var i = 0; i < options.lines.length; i++) {
+				if(options.lines[i].type == options.direction) {
+					$(this).append("<div id=\"" + options.aTextureId + "-" + i.toString() + "\" class=\"line\"></div>");
+					var that = $("#" + options.aTextureId + "-" + i.toString());
+					var per = (1 - options.lines[i].val / (options.max-options.min)) * 100;
+					that.css("top", per.toString() + "%");
+					if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
+					else if(options.lines[i].type == "right") that.css("border-color", "#56ff56");
+					that.bind("click", function(){
+						var aThat = that;
+						var aOptions = options;
+						var aPer = per;
+						return function(){
+							aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min)); 
+							aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
+							detail.type = aOptions.type;
+							var id_str = aOptions.aSlider.parents(".proteins").attr('id');
+							detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
+							detail.new_value = aOptions.aSlider.slider("value");
+							if(aOptions.direction == "right") detail.cluster = true;
+							else detail.cluster = false;
+							randomValue(); 
+						};
+					}()); 
+					that.tooltip({
+						delay: { show: 0, hide: 50,},
+						title: options.lines[i].des,
+					});
+				}
 			}
 		}
 
@@ -309,6 +314,18 @@ var protein = {
 	  $("#" + aTextureId + " .module-title em").text(aData.name);	
 		$("#" + aTextureId).data("pos", aData.pos);
 	},
+	setRightScale: function(aTextureId, aData) {
+		$("#" + aTextureId + " .pops-scale.right").empty().scale({
+			lines: aData["pops_option"], 
+			aTextureId: aTextureId + "-pops",
+			aSlider: $("#" + aTextureId + " .pops"),
+			min: 0,
+			max: 1,
+			type: "PoPS",
+			direction: "right",
+		});
+		// k1 
+	}
 }
 
 /* group */
@@ -516,6 +533,7 @@ var plasmid =  {
       data.circuit = circuit;
 			sessionStorage.genecircuitSave=JSON.stringify({'genecircuit':data});
 			sessionStorage.gene_circuit = JSON.stringify(getDataCollection());
+			sessionStorage.regulation = undefined;
 			// console.log(data); 
 			// sendMessage 
 			// console.log(sessionStorage);  
@@ -625,6 +643,7 @@ var detail = {
 	type: "",
 	pro_id: 0,
 	new_value: 0,
+	cluster: false,
 }
 
 /* command */
@@ -816,6 +835,7 @@ var init = function(genecircuitData) {
 		// $("#dashboard-view .mCSB_container").append("<div class='proteins new-proteins' id='protein-" + i.toString() + "'></div>"); 
 		// protein.init("protein-" + i.toString(), genecircuitData.proteins[i]); 
 	// } 
+	console.log("init", genecircuitData);
 	for(var prop in genecircuitData.proteins) {
 		$("#dashboard-view .mCSB_container").append("<div class='proteins new-proteins' id='protein-" + prop + "'></div>"); 
 		protein.init("protein-" + prop, genecircuitData.proteins[prop]); 
@@ -843,6 +863,7 @@ var updateGen = function(genecircuitData) {
 	for(var prop in genecircuitData.proteins) {
 		var tId = "protein-" + prop;
 		protein.setData(tId, genecircuitData.proteins[prop]);
+		protein.setRightScale(tId, genecircuitData.proteins[prop]); 
 	}
 	for(var i = 0; i < genecircuitData.plasmids.length; i++) {
 		var tId = $("#plasmids-view .mCSB_container .plasmids:eq(" + i.toString() + ")").attr("id");

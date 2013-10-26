@@ -17,6 +17,7 @@
   <script type="text/javascript" src="../static/js/ichartjs.v1.2/ichart_test.js"></script>  
   <script src="../static/js/jquery-1.8.0.min.js"></script>
   <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/bootstrap-tooltip.js"></script>
   <script src="../static/js/lib/canvas2image.js"></script>
   <script src="../static/js/lib/base64.js"></script>
   <script src="../static/js/draw_simulation_curve.js"></script>
@@ -39,7 +40,7 @@
                     <li ><a href="index">Regulation network</a></li>
                     <li><a href="genecircuit">Gene Circuit</a></li>
                     <li class="active"><a href="">Simulation</a></li>
-                    <li><a href="help">Help</a></li>
+                    <li><a href="">Help</a></li>
                 </ul>
                 <div class="pointer-arrow" style="left:375px"></div>
             </div>
@@ -54,18 +55,18 @@
                  </div>
                  <div id="Option" style="left:3px;width:30%;height:25%;padding-left:35px;float:left;border-style: outset;background-color:#f4f4f4;"> 
                  <label>Option</label>       
-                 <input type="checkbox" id="stochastic" style="margin:15px;" onChange="stateOnChange(this);">stochastic</input>        	
+                 <input type="checkbox" id="stochastic" style="margin:15px;" onChange="stateOnChange(this);"  data-toggle="tooltip" title="randomize the data"><script>$('#stochastic').tooltip();</script>stochastic</input>        	
                  <br>	 
-                 <input type="checkbox" id="delay" style="margin:15px;" onChange="stateOnChange(this)">time delay</input>
+                 <input type="checkbox" id="delay" style="margin:15px;" onChange="stateOnChange(this)" data-toggle="tooltip" title="to show the graph of time delay"><script>$('#delay').tooltip();</script>time delay</input>
                  </div>    
                  <div style="padding-left:35px;width:30%;height:25%;float:left;border-style: outset;background-color:#f4f4f4;">
-                 <label>Inducer</label> 
-                 <div id="Inducer" >                  
+                 <label title="Inducer list">Inducer</label> 
+                 <div id="Inducer">                  
                  </div>    
                  </div>      
                   <div id="buttons" style="padding-left:35px;width:30%;height:20%;float:left;border-style: outset;background-color:#f4f4f4;"> 
-                   <input id="back-botton" class="btn" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back" onClick="window.history.back(-1);"/>
-                   <input id="save-button" class="btn" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();"/>
+                   <input id="back-botton" class="btn" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back" onClick="window.history.back(-1);" data-toggle="tooltip" title="go back to gene circuit"/><script>$('#back-botton').tooltip();</script>
+                   <input id="save-button" class="btn" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();" data-toggle="tooltip" title="save and download the simulation graph"/><script>$('#save-button').tooltip();</script>
                  </div>    
 			 </div>
         </div>    	
@@ -102,7 +103,7 @@
                                     </div>
                                     <div id="user-view-right">
                                         <div class="avatar-container">
-                                            <img src="../static/img/avatar.png">
+                                            <img src="../static/img/avatar.png" alt="user">
                                         </div>
                                     </div>
                                 </div>
@@ -135,7 +136,7 @@
                 <!-- basic menu ends -->               
     <!-- right menu list ends -->
 
-</div>
+</div></div>
 <!-- right container ends -->
 
 </body>
