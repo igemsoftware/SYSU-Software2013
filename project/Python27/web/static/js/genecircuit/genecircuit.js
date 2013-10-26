@@ -60,7 +60,7 @@ $.fn.scale = function(options) {
 						var aPer = per;
 						var aI = i;
 						return function(){
-							aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min)); 
+							aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min) + aOptions.min); 
 							aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
 							detail.type = aOptions.type;
 							var id_str = aOptions.aSlider.parents(".proteins").attr('id');
@@ -115,6 +115,22 @@ var protein = {
 		}
 		$("#" + aTextureId).data("pops_option_left", popsOptionLeft);
 		$("#" + aTextureId).data("pops_option_right", popsOptionRight);
+		$("#" + aTextureId).data("rips_option", aData['rips_option']);
+		$("#" + aTextureId).data("copy_option", aData['copy_option']);
+		var k1OptionLeft = [];
+		var k1OptionRight = [];
+		if(aData['k1_option']) {
+			for(var i = 0; i < aData['k1_option'].length; i++) {
+				if(aData['k1_option'][i].type == 'left') {
+					k1OptionLeft.push(aData['k1_option'][i]);
+				} else if(aData['k1_option'][i].type == 'right') {
+					k1OptionRight.push(aData['k1_option'][i]);
+				}
+			}
+		}
+		$("#" + aTextureId).data("k1_option_left", k1OptionLeft);
+		$("#" + aTextureId).data("k1_option_right", k1OptionRight);
+		$("#" + aTextureId).data("concen_option", aData['concen_option']);
 
 		$("#" + aTextureId + " .before-regulated").dashboard({
 			size: 40,		
@@ -157,41 +173,54 @@ var protein = {
 			direction: "right",
 		});
 
-		// $("#" + aTextureId + " .rips-scale").scale({ 
-			// lines: aData["rips_option"],  
-			// aTextureId: aTextureId + "-rips", 
-			// aSlider: $("#" + aTextureId + " .rips"), 
-			// min: 0, 
-			// max: 1, 
-			// type: "RiPS", 
-		// }); 
-//  
-		// $("#" + aTextureId + " .copy-scale").scale({ 
-			// lines: aData["copy_option"],  
-			// aTextureId: aTextureId + "-copy", 
-			// aSlider: $("#" + aTextureId + " .copy"), 
-			// min: 0, 
-			// max: 100, 
-			// type: "copy", 
-		// }); 
-//  
-		// $("#" + aTextureId + " .k1-scale").scale({ 
-			// lines: aData["k1_option"],  
-			// aTextureId: aTextureId + "-k1", 
-			// aSlider: $("#" + aTextureId + " .k1"), 
-			// min: -10, 
-			// max: 10, 
-			// type: "K1", 
-		// }); 
-		//  
-		// $("#" + aTextureId + " .concen-scale").scale({ 
-			// lines: aData["concen_option"],  
-			// aTextureId: aTextureId + "-concen", 
-			// aSlider: $("#" + aTextureId + " .concen"), 
-			// min: 0, 
-			// max: 100, 
-			// type: "concen", 
-		// }); 
+		$("#" + aTextureId + " .rips-scale").scale({ 
+			lines: aData["rips_option"],  
+			aTextureId: aTextureId + "-rips", 
+			aSlider: $("#" + aTextureId + " .rips"), 
+			min: 0, 
+			max: 1, 
+			type: "RiPS", 
+			direction: "left",
+		}); 
+ 
+		$("#" + aTextureId + " .copy-scale").scale({ 
+			lines: aData["copy_option"],  
+			aTextureId: aTextureId + "-copy", 
+			aSlider: $("#" + aTextureId + " .copy"), 
+			min: 0, 
+			max: 100, 
+			type: "copy", 
+			direction: "left",
+		}); 
+ 
+		$("#" + aTextureId + " .k1-scale.left").scale({ 
+			lines: aData["k1_option"],  
+			aTextureId: aTextureId + "-k1", 
+			aSlider: $("#" + aTextureId + " .k1"), 
+			min: -10, 
+			max: 10, 
+			type: "K1", 
+			direction: "left",
+		}); 
+
+		$("#" + aTextureId + " .k1-scale.right").scale({ 
+			lines: aData["k1_option"],  
+			aTextureId: aTextureId + "-k1", 
+			aSlider: $("#" + aTextureId + " .k1"), 
+			min: -10, 
+			max: 10, 
+			type: "K1", 
+			direction: "right",
+		}); 
+		 
+		$("#" + aTextureId + " .concen-scale").scale({ 
+			lines: aData["concen_option"],  
+			aTextureId: aTextureId + "-concen", 
+			aSlider: $("#" + aTextureId + " .concen"), 
+			min: 0, 
+			max: 100, 
+			type: "concen", 
+		}); 
 
 		/* $("#" + aTextureId + " .protein-range .slider").slider({ */
 		$("#" + aTextureId + " .pops").slider({
@@ -341,7 +370,11 @@ var protein = {
 		$("#" + aTextureId).data("pos", aData.pos);
 	},
 	setRightScale: function(aTextureId, aData) {
-		$("#" + aTextureId).data("pops_option_right", aData["pops_option"]);
+		if(aData["pops_option"]) {
+			$("#" + aTextureId).data("pops_option_right", aData["pops_option"]);
+		} else {
+			$("#" + aTextureId).data("pops_option_right", []);
+		}
 		$("#" + aTextureId + " .pops-scale.right").empty().scale({
 			lines: aData["pops_option"], 
 			aTextureId: aTextureId + "-pops",
@@ -351,7 +384,20 @@ var protein = {
 			type: "PoPS",
 			direction: "right",
 		});
-		// k1 
+		if(aData["k1_option"]) {
+			$("#" + aTextureId).data("k1_option_right", aData["k1_option"]);
+		} else {
+			$("#" + aTextureId).data("k1_option_right", []);
+		}
+		$("#" + aTextureId + " .k1-scale.right").empty().scale({
+			lines: aData["k1_option"], 
+			aTextureId: aTextureId + "-k1",
+			aSlider: $("#" + aTextureId + " .k1"),
+			min: -10,
+			max: 10,
+			type: "K1",
+			direction: "right",
+		});
 	}
 }
 
@@ -573,6 +619,10 @@ var plasmid =  {
 				var p = $("#" + pid);
 				
 				dataCollection.proteins[pid_i].pops_option = p.data('pops_option_left').concat(p.data('pops_option_right'));
+				dataCollection.proteins[pid_i].rips_option = p.data('rips_option');
+				dataCollection.proteins[pid_i].copy_option = p.data('copy_option');
+				dataCollection.proteins[pid_i].k1_option = p.data('k1_option_left').concat(p.data('k1_option_right'));
+				dataCollection.proteins[pid_i].concen = p.data('concen_option');
 			}
 
 
@@ -582,6 +632,7 @@ var plasmid =  {
 			// console.log(data); 
 			// sendMessage 
 			// console.log(sessionStorage);  
+			// console.log("CCC", dataCollection); 
 			window.location.href="plasmid";    
 		});
 					
@@ -977,7 +1028,7 @@ $(function(){
 		/* $("#btn-edit").tooltip('show'); */
 		$("#btn-viewmore").tooltip('show');
 		/* setTimeout("$(\".view-plasmid\").tooltip('hide');$(\"#btn-edit\").tooltip('hide');$(\"#btn-viewmore\").tooltip('hide');", 500); */
-		setTimeout("$(\".view-plasmid\").tooltip('hide');$(\"#btn-viewmore\").tooltip('hide');", 500);
+		setTimeout("$(\".view-plasmid\").tooltip('hide');$(\"#btn-viewmore\").tooltip('hide');", 1000);
 	});
 });
 
