@@ -238,14 +238,16 @@ body {
 }
 
 #left-container .factorName {
-  margin-top: 3px;
+  margin-top: 5px;
   text-align: center;
   /*background-color: #3a87ad;*/
 }
 
 #left-container .factorName .label {
+  display: inline-block;
   cursor: pointer;
   width: 82px;
+  border-radius: 0;
 }
 
 #left-container #catalog {
