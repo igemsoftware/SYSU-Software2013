@@ -20,6 +20,12 @@ function stateOnChange(obj)
 	$('#mymodal').modal({keyboard:false});
 }
 $(document).ready(function () {
+	$('#linknext').click(function(){
+		window.location.pathname = "/plasmid";
+	});
+	$('#linkabove').click(function(){
+		window.location.pathname = "/genecircuit";
+	});
   if ("WebSocket" in window) {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function (msg) {

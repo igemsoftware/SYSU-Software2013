@@ -760,6 +760,12 @@ function isPointInCircle(circle,x,y)
     return false;
 } 
 $(function(){	
+	$('#linknext').click(function(){
+		window.location.pathname = "/protocol";
+	});
+	$('#linkabove').click(function(){
+		window.location.pathname = "/simulation";
+	});
 	handlerWebSocket();		
 });
 function drawThePlasmid()

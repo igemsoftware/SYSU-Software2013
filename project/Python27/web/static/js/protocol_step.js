@@ -63,6 +63,9 @@ function handlerData(){
 	}
 }
 window.onload=function() {
+	$('#linkabove').click(function(){
+		window.location.pathname = "/plasmid";
+	});
   var data = handlerData();
   console.log(data);
   var img_path = parse_data(data);
