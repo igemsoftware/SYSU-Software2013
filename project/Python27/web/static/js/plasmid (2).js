@@ -327,7 +327,6 @@ function turnRawDatatoData(raw)
 		}		
 	}		
 	tempArray=null;
-	console.log(seq);
 	return real_data;	
 }
 var title=null;
