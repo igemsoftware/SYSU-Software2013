@@ -15,10 +15,8 @@ Accurate simulation and gene circuit design are essential but difficult parts in
 We use pure javascript to implement the front end,and use flask framework (especially the websocket protocol for data transfer)for the back end,which is written in python.Next we use sqlite as the database.By the way,we have provided a brower so called cefsharp,which is based on chromium core and written in c#
 
 ## Installation
-For Windows users, to start using CAST designer, you need to enter `project`
-directory and choose 32-bit or 64-bit version of python. Our bat file in
-`python` directory will automatically start the server and you can run CAST
-designer locally on your computer.
+For Windows users, to start using CAST designer, you can open the setup32.vbs if your windows is 32bit version to create a link on your desktop,setup64.vbs for 64bit windows.
+Or you can just open the CAST_Designer_32bit.exe(or CAST_Designer_32bit.bat) if you're using 32bit windows,CAST_Designer_64bit.exe(or CAST_Designer_64bit.bat) for 64bit windows.You can also only open the server by opening the project/server x64.bat(for 64bit) or project/server_32bit.bat (for 32bit).
 
 For unix-like operating system users, you may need to confirm that all the
 dependencies all correctly installed on your computer. You shall have your `pip`
