@@ -72,6 +72,9 @@
           password
         </a>
       </li>
+      <button type="button" class="btn btn-default btn-large" onClick="window.history.back(-1);">
+ 		<span class="icon-arrow-left"></span> Back
+	</button>  
     </ul>
   </div>
   <div class="span9 tab-content">
@@ -87,10 +90,10 @@
         checked{%endif%}/> Female
 
         <label>Email:</label>
-        <input type="text" id="e_mail" name="e_mail" value={{userInfo.e_mail}}>
+        <input type="text" id="e_mail" name="e_mail" value={{userInfo.e_mail}}></input>
         <br/>
         <input type="submit" id="update_info" class="btn">
-        <span></span>
+        <span></span></input>
       </form>
   </div>
   <div class="tab-pane" id="password">
