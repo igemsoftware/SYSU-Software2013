@@ -308,8 +308,10 @@ function biobrickDivAddBiobrick(name)
 	biobrick.style.marginTop="10px";	
 	var span=document.createElement("span");
 	span.innerHTML=name;
-	span.style.color="black";
-	span.style.margin="5px";
+	span.style.color="white";
+	span.style.margin="7px";
+	span.style.paddingTop="4px";
+	span.style.paddingLeft="4px";
 	biobrick.appendChild(span);
 	biobrickDiv.appendChild(biobrick);
 }
