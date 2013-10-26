@@ -49,6 +49,7 @@ $.fn.scale = function(options) {
 					that.css("top", per.toString() + "%");
 					if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
 					else if(options.lines[i].type == "right") that.css("border-color", "#56ff56");
+					console.log(options.lines[i].type);
 					that.bind("click", function(){
 						var aThat = that;
 						var aOptions = options;
@@ -188,6 +189,7 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				detail.cluster = false;
 				randomValue(); 
 			},
 			slide: function(event, ui) { 
@@ -207,6 +209,7 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				detail.cluster = false;
 				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(2)); 
 				randomValue(); 
 			},
@@ -227,6 +230,7 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				detail.cluster = false;
 				randomValue(); 
 			},
 			slide: function(event, ui) { 
@@ -249,6 +253,7 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				detail.cluster = false;
 				randomValue();
 			},
 			slide: function(event, ui) { 
@@ -272,6 +277,7 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				detail.cluster = false;
 				randomValue();
 			},
 			slide: function(event, ui) { 
