@@ -408,6 +408,15 @@ class SqliteDatabase:
 		else:
 			return None
 
+	def find_promoter_in_cluster(self, part_name, p_type, value):
+		sql_cmd = """
+			SELECT * FROM promoter WHERE Number = '%s' AND %s = '%s'
+		""" % (part_name, p_type, value)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
 	def find_promoter_with_activator(self, promoter_set, activator = None):
 		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
     ActRreNumber = "%s" AND ActRreType = "Positive"' % activator)

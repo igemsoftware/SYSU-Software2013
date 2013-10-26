@@ -18,21 +18,31 @@ $().ready(function() {
     $(".header").click(function() {
         // console.log(app.view.figures);
         
-        window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
-        console.log(window.sessionStorage.getItem("regulationWork"));
+        // window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
+        // console.log(window.sessionStorage.getItem("regulationWork"));
     });
 
     // toggle left-container
     $(".trigger-left").click(function() {
         var left = $("#left-container").css("left");
 
+        $("#right-container").css("right", "-270px");
+
         if (parseInt(left) == 0) {
             $("#left-container").css({
                 left: '-270px'
             });
+
+            $("#canvas").css({
+                left: '0px'
+            });
         } else {
             $("#left-container").css({
                 left: '0px'
+            });
+
+            $("#canvas").css({
+                left: '270px'
             });
         }
     });
@@ -41,13 +51,23 @@ $().ready(function() {
     $(".trigger-right").click(function() {
         var right = $("#right-container").css("right");
 
+        $("#left-container").css("left", "-270px");
+
         if (parseInt(right) == 0) {
             $("#right-container").css({
                 right: '-270px'
             });
+
+            $("#canvas").css({
+                left: '0px'
+            });
         } else {
             $("#right-container").css({
                 right: '0px'
+            });
+
+            $("#canvas").css({
+                left: '-270px'
             });
         }
     });
@@ -55,6 +75,10 @@ $().ready(function() {
     $("#content").click(function() {
         $("#left-container").css({
             left: '-270px'
+        });
+
+        $("#canvas").css({
+            left: '0px'
         });
 
         $("#right-container").css({
@@ -380,14 +404,13 @@ $().ready(function() {
     // Cleanly close websocket when unload window
     window.onbeforeunload = function() {
         var jsonData = JSON.stringify(canvasToJSON());
-        // console.log(jsonData);
         ws.send(JSON.stringify({
             'request': 'indexSaveToGeneCircuit',
             'data': jsonData
         }));
         sessionStorage.regulation = jsonData;
 
-        // window.localStorage.setItem("regulation", JSON.stringify(canvasToSaveData()));
+        window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
 
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();
