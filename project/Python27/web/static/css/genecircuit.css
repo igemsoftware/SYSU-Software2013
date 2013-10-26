@@ -17,8 +17,10 @@
 
 #genecircuit-canvas {
 	margin: 0 auto;
-	width: 1284px;
-	height: 534px;
+	/* width: 1284px; */
+	/* height: 534px; */
+	width: 90%;
+	height: 90%;
 	border-radius: 6px;
 	background-color: #ebebeb;
 	padding: 20px;
@@ -139,7 +141,7 @@
 	float: left;
 	/* width: 245px; */
 	/* width: 295px; */
-	width: 370px;
+	width: 330px;
 	margin: 2px;
 	border: dashed 1px #A29E95;
 	border-radius: 5px;
@@ -219,7 +221,7 @@
 }
 
 .protein-range.mul.double{
-	width: 36%;
+	/* width: 36%; */
 }
 
 .protein-range .slider {
