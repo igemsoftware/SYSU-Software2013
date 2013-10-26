@@ -1,6 +1,7 @@
 /* refer to donuts */
 /* dashboard */
 (function($) {
+
 $.fn.dashboard = function(options) {
 	options = options || {};
 	return this.each(function() {

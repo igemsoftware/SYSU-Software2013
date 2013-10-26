@@ -17,6 +17,7 @@
   <script type="text/javascript" src="../static/js/ichartjs.v1.2/ichart_test.js"></script>  
   <script src="../static/js/jquery-1.8.0.min.js"></script>
   <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/bootstrap-tooltip.js"></script>
   <script src="../static/js/lib/canvas2image.js"></script>
   <script src="../static/js/lib/base64.js"></script>
   <script src="../static/js/draw_simulation_curve.js"></script>
@@ -39,7 +40,7 @@
                     <li ><a href="index">Regulation network</a></li>
                     <li><a href="genecircuit">Gene Circuit</a></li>
                     <li class="active"><a href="">Simulation</a></li>
-                    <li><a href="help">Help</a></li>
+                    <li><a href="">Help</a></li>
                 </ul>
                 <div class="pointer-arrow" style="left:375px"></div>
             </div>
@@ -54,7 +55,7 @@
                  </div>
                  <div id="Option" style="left:3px;width:30%;height:25%;padding-left:35px;float:left;border-style: outset;background-color:#f4f4f4;"> 
                  <label>Option</label>       
-                 <input type="checkbox" id="stochastic" style="margin:15px;" onChange="stateOnChange(this);">stochastic</input>        	
+                 <input type="checkbox" id="stochastic" style="margin:15px;" onChange="stateOnChange(this);"  data-toggle="tooltip" title="randomize the data"><script>$('#stochastic').tooltip();</script>stochastic</input>        	
                  <br>	 
                  <input type="checkbox" id="delay" style="margin:15px;" onChange="stateOnChange(this)">time delay</input>
                  </div>    
