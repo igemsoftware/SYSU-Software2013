@@ -48,6 +48,8 @@ def createnewpart():
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
+  if not user.isUserLogined(sql):
+    return redirect(url_for('login'))	
   if request.method == 'GET':
     username = user.getLoginedUserName(sql)
     userInfo = user.getUserInfo(sql)
