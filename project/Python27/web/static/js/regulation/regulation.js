@@ -18,8 +18,8 @@ $().ready(function() {
     $(".header").click(function() {
         // console.log(app.view.figures);
         
-        // window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
-        // console.log(window.sessionStorage.getItem("regulationWork"));
+        window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
+        console.log(window.sessionStorage.getItem("regulationWork"));
     });
 
     // toggle left-container
@@ -410,7 +410,7 @@ $().ready(function() {
         }));
         sessionStorage.regulation = jsonData;
 
-        window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
+        // window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
 
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();
@@ -662,7 +662,10 @@ $().ready(function() {
                 line.to = lines[i].targetPort.parent.id;
                 line.type = lines[i].TYPE;
                 line.inducer = "none";
+
+                // find connections that was regulated by inducer
                 var lineChildren = lines[i].getChildren();
+
                 for (var j = 0; j < lineChildren.size; j++) {
                     if (lineChildren.get(j).TYPE == "HybridPort") {
                         var lineType = lineChildren.get(j).decorator;
@@ -672,12 +675,26 @@ $().ready(function() {
                         } else if (lineType == "A") {
                             line.inducer = "Positive";
                         }
+
                         break;
-                    }
-                   
+                    }                   
                 };
 
                 data.link.push(line);
+            } else {
+                // add Inducer info to parts collection
+                console.log(lines[i].targetPort.parent);
+                // console.log(lines[i].sourcePort.parent);
+                
+                var idc = {};
+                idc.id = lines[i].sourcePort.parent.id;
+                idc.type = "Inducer";
+                idc.targetId = lines[i].targetPort.parent.targetPort.parent.id;
+                idc.linkType = lines[i].TYPE;
+                idc.xPos = lines[i].sourcePort.parent.getAbsoluteX();
+                idc.yPos = lines[i].sourcePort.parent.getAbsoluteY();
+
+                data.part.push(idc);
             }
         };
 
@@ -701,6 +718,10 @@ $().ready(function() {
         for (var i = 0; i < model.link.length; i++) {
             repaintLine(model.link[i]);
         };
+
+        for (var i = 0; i < model.part.length; i++) {
+            repaintInducer(model.part[i]);
+        };
         
 
         function repaintFigure(part) {
@@ -719,6 +740,52 @@ $().ready(function() {
                 figure.TYPE = part.type;
 
                 app.view.collection.push(figure.getId());
+            }
+        };
+
+        function repaintInducer(part) {
+            if (part.type == "Inducer") {
+                var type = 'g.Shapes.' + part.type;
+
+                var figure = eval('new ' + type + '()');
+
+                var command = new graphiti.command.CommandAdd(app.view, figure, part.xPos, part.yPos);
+                app.view.getCommandStack().execute(command);    // 添加到命令栈中
+
+                app.view.collection.remove(figure.getId());
+
+                figure.setId(part.id);
+                figure.TYPE = part.type;
+
+                app.view.collection.push(figure.getId());
+
+
+                figure.onClick();
+
+                var line = getLine(part.targetId);
+
+                if (part.linkType == "Activator") {
+                    line.Activator.onClick();
+                } else if (part.linkType == "Repressor") {
+                    line.Repressor.onClick();
+                }
+                
+                console.log(line);
+                // console.log(app.view.getFigure(part.targetId));
+
+            }
+
+            function getLine(id) {
+                // console.log(id);
+                // console.log(app.view.getFigure(id));
+                // console.log(app.view.lines);
+
+                var lines = app.view.lines;
+                for (var i = 0; i < lines.getSize(); i++) {
+                    if (lines.get(i).targetPort.parent.id == id) {
+                        return lines.get(i);
+                    }
+                };
             }
         };
 

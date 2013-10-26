@@ -590,6 +590,7 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
             // app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
 
         } else if (canvas.getFigure(app.view.currentSelected).TYPE == "Inducer") {
+            g.hideAllToolbar();            
             var target = canvas.getFigure(app.view.currentSelected);
             // var sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
             var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
@@ -600,7 +601,7 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
             var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate");
             app.view.getCommandStack().execute(command); // 添加到命令栈中
             this.parent.regulated = true;
-            g.hideAllToolbar();
+            
             // app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
         }
     }
@@ -636,6 +637,7 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
             var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.TDecorator(), "Inhibit"); // 连接两点
             app.view.getCommandStack().execute(command); // 添加到命令栈中
         } else if (canvas.getFigure(app.view.currentSelected).TYPE == "Inducer") {
+            g.hideAllToolbar();
             var target = canvas.getFigure(app.view.currentSelected);
             var targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
             var sourcePort = new graphiti.HybridPort();
@@ -645,7 +647,7 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
             var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.TDecorator(), "Inhibit");
             app.view.getCommandStack().execute(command); // 添加到命令栈中
             this.parent.regulated = true;
-            g.hideAllToolbar();
+            
         }
     }
 });
@@ -1177,8 +1179,8 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             for (var i = 0; i < connections.size; i++) {
                 connection = connections.get(i);
                 if (!connection.regulated) {
-                    connection.addFigure(new g.Buttons.Activate(), new graphiti.layout.locator.ManhattanMidpointLocator(connection));
-                    connection.addFigure(new g.Buttons.Inhibit(), new graphiti.layout.locator.MidpointLocator(connection));
+                    connection.addFigure(connection.Activator, new graphiti.layout.locator.ManhattanMidpointLocator(connection));
+                    connection.addFigure(connection.Repressor, new graphiti.layout.locator.MidpointLocator(connection));
                 }
             }
 
@@ -1208,7 +1210,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             ctx.resetChildren();
         }
 
-        if (ctx.getChildren().getSize() != 0)
+        if (ctx.getChildren().getSize() > 1)
             ctx.resetChildren();
     };
 })(g);
