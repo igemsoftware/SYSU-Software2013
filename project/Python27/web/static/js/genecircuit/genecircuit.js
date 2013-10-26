@@ -53,6 +53,7 @@ $.fn.scale = function(options) {
 						var aThat = that;
 						var aOptions = options;
 						var aPer = per;
+						var aI = i;
 						return function(){
 							aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min)); 
 							aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
@@ -60,8 +61,10 @@ $.fn.scale = function(options) {
 							var id_str = aOptions.aSlider.parents(".proteins").attr('id');
 							detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 							detail.new_value = aOptions.aSlider.slider("value");
-							if(aOptions.direction == "right") detail.cluster = true;
-							else detail.cluster = false;
+							if(aOptions.direction == "right"){ 
+								detail.cluster = true;
+								detail.part_name = aOptions.lines[aI].des;
+							} else detail.cluster = false;
 							randomValue(); 
 						};
 					}()); 
