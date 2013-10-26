@@ -379,24 +379,33 @@ $().ready(function() {
 			console.log("debugData", genecircuitData);
 			ws.send(JSON.stringify({'request'     : 'Simulate',    
 									'isStochastic': false,    
-										'isDelay': false,
+									'isDelay': false,
 									'gene_circuit':JSON.stringify(genecircuitData),    
 									'corepind':{},    
 			}));    		
 			$('#mymodal').modal({keyboard:false});
 			init(genecircuitData);
 		} else {
-			if(sessionStorage.regulation && sessionStorage.regulation != 'undefined') {
+			var state = 0;
+			if(sessionStorage.curPage == "index") state = 1;
+			else if(sessionStorage.curPage == "plasmid") state = 2;
+			else if(sessionStorage.regulation) state = 1;
+			else if(sessionStorage.gene_circuit) state = 2;
+			// if(sessionStorage.regulation && sessionStorage.regulation != 'undefined') { 
+			if(state == 1) {
 				ws.send(JSON.stringify({
 					'request': 'getGroup',
 					'data': eval('(' + sessionStorage.regulation + ')'),
 				}));
 				$('#mymodal').modal({keyboard:false});
-			} else if(sessionStorage.gene_circuit && sessionStorage.gene_circuit != 'undefined') {
+			// } else if(sessionStorage.gene_circuit && sessionStorage.gene_circuit != 'undefined') { 
+			} else if(state == 2) {
 				console.log('gene_circuit', sessionStorage.gene_circuit);
 				genecircuitData = eval('(' + sessionStorage.gene_circuit + ')');    
+				console.log("pla_genecircuitData", genecircuitData);
 				ws.send(JSON.stringify({'request'     : 'Simulate',    
 										'isStochastic': false,    
+										'isDelay': false,
 										'gene_circuit':JSON.stringify(genecircuitData),    
 										'corepind':{},    
 				}));    		
@@ -430,12 +439,14 @@ $().ready(function() {
   });
 
 	$('#index').click(function(ev) {
-		sessionStorage.gene_circuit = undefined;
+		// sessionStorage.gene_circuit = undefined; 
+		sessionStorage.curPage = "index";
 		window.location.pathname = "/index";
 	});
 
 	$('#btn-edit').click(function(ev){
-		sessionStorage.gene_circuit = undefined;
+		sessionStorage.curPage = "index";
+		// sessionStorage.gene_circuit = undefined; 
 	});
 
 	console.log("aa", sessionStorage);
