@@ -262,13 +262,13 @@ def work(data, database):
 # @param actrep        activator or repressor that regulates the promoter
 # @param l_type        link type
 # @param cor_ind_type  corepressor or inducer type
+# @param get_all       if get_all is False, get self promoter only, true by default
 #
 # @returns  the labels of the promoter
-# 
+#
 # --------------------------------------------------------------------------
-def get_promoter_label(database, actrep, l_type, cor_ind_type):
+def get_promoter_label(database, actrep, l_type, cor_ind_type, get_all = True):
   ret = []
-  pops_option = database.getAllPromoterOption(l_type, cor_ind_type)
   self_option = database.getSelfPromoterOption(actrep, l_type, cor_ind_type)
   right_promoter = set()
   for item in self_option:
@@ -277,13 +277,14 @@ def get_promoter_label(database, actrep, l_type, cor_ind_type):
       "type": "right"})
     right_promoter.add(item["Number"])
 
-  for item in pops_option:
-    if item["Number"] in right_promoter:
-      continue
-    ret.append({"des": item["Number"],
-      "val": item[get_type_of_promoter(l_type)],
-      "type": "left"})
-  print ret
+  if get_all:
+    pops_option = database.getAllPromoterOption(l_type, cor_ind_type)
+    for item in pops_option:
+      if item["Number"] in right_promoter:
+        continue
+      ret.append({"des": item["Number"],
+        "val": item[get_type_of_promoter(l_type)],
+        "type": "left"})
   return ret
 
 # --------------------------------------------------------------------------
@@ -608,6 +609,18 @@ def update_controller(db, update_info):
               pro2_id = gene_circuit["groups"][i]["sbol"][j]["id"]
               gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
 
+  for i in gene_circuit["proteins"]:
+    grp_id = gene_circuit["proteins"][i]["grp_id"]
+    prev_node = gene_circuit["groups"][grp_id]["from"]
+    if prev_node == -1:
+      labels = {}
+    else:
+      regulator = gene_circuit["proteins"][prev_node]["name"]
+      l_type = gene_circuit["groups"][grp_id]["type"]
+      cor_ind_type = gene_circuit["groups"][grp_id]["corep_ind_type"]
+      labels = get_promoter_label(db, regulator, l_type, cor_ind_type,\
+          get_all = False)
+    gene_circuit["proteins"][i]["pops_option"] = labels
   update_proteins_repress(db, gene_circuit)
   return gene_circuit
 
