@@ -52,7 +52,8 @@ graphiti.Connection = graphiti.shape.basic.PolyLine.extend({
       this.startDecoSet = null;
       this.endDecoSet=null;
   
-      
+      this.regulated = false;
+
       this.sourceAnchor = new graphiti.ConnectionAnchor(this);
       this.targetAnchor = new graphiti.ConnectionAnchor(this);
     
