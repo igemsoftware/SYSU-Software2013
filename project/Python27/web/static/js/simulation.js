@@ -115,6 +115,7 @@ function getinducerList(circuit)
 }
 function createAnInputCheckBoxForInducer(index,width,height,inducerIndex,inducerName){
 	var div=document.createElement("div");
+	div.setAttribute('title', inducerName);
 	var o=document.createElement("input");
     o.type="radio";
     o.name="inducerRadio";

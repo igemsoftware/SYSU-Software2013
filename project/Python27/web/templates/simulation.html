@@ -57,16 +57,16 @@
                  <label>Option</label>       
                  <input type="checkbox" id="stochastic" style="margin:15px;" onChange="stateOnChange(this);"  data-toggle="tooltip" title="randomize the data"><script>$('#stochastic').tooltip();</script>stochastic</input>        	
                  <br>	 
-                 <input type="checkbox" id="delay" style="margin:15px;" onChange="stateOnChange(this)">time delay</input>
+                 <input type="checkbox" id="delay" style="margin:15px;" onChange="stateOnChange(this)" data-toggle="tooltip" title="to show the graph of time delay"><script>$('#delay').tooltip();</script>time delay</input>
                  </div>    
                  <div style="padding-left:35px;width:30%;height:25%;float:left;border-style: outset;background-color:#f4f4f4;">
-                 <label>Inducer</label> 
-                 <div id="Inducer" >                  
+                 <label title="Inducer list">Inducer</label> 
+                 <div id="Inducer">                  
                  </div>    
                  </div>      
                   <div id="buttons" style="padding-left:35px;width:30%;height:20%;float:left;border-style: outset;background-color:#f4f4f4;"> 
-                   <input id="back-botton" class="btn" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back" onClick="window.history.back(-1);"/>
-                   <input id="save-button" class="btn" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();"/>
+                   <input id="back-botton" class="btn" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back" onClick="window.history.back(-1);" data-toggle="tooltip" title="go back to gene circuit"/><script>$('#back-botton').tooltip();</script>
+                   <input id="save-button" class="btn" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();" data-toggle="tooltip" title="save and download the simulation graph"/><script>$('#save-button').tooltip();</script>
                  </div>    
 			 </div>
         </div>    	

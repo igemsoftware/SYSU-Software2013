@@ -59,8 +59,8 @@
                         <label id='x2' style="width:25%;height:15px;float:left;">21</label>
                         <label id='x3' style="width:25%;height:15px;float:left;">41</label>
                         <label id='x4' style="width:25%;height:15px;float:left;">61</label>
-                        <pre contenteditable="false" id="seqCurrentText" style="resize:none;width:100%;height:40px;overflow:hidden;font-size:33px;line-height:90%;background-color:#f4f4f4;"></pre>   
-                        <canvas id="plasmid-canvas" width="1290" height="80"></canvas>      
+                        <pre contenteditable="false" id="seqCurrentText" style="resize:none;width:100%;height:40px;overflow:hidden;font-size:33px;line-height:90%;background-color:#f4f4f4;" data-toggle="tooltip" title="the sequence of plasmid on the current place"/><script>$('#seqCurrentText').tooltip();</script></pre>   
+                        <canvas id="plasmid-canvas" width="1290" height="80" ></canvas >      
                     </div>
                     <div id='drawCanvasDiv' style="width:67%;height:100%;float:left;margin-left:7px;">      
                         <div id='canvasDiv' style="width:100%;height:100%;left: 0px;top:0px;position:relative;" onmousemove="canvasMouseMove(this,event);" onmousedown="canvasMouseDown(this,event);" onmouseup="canvasMouseUp(this,event);">
@@ -74,7 +74,7 @@
             <option value="RFC21">RFC 21</option>
             <option value="RFC23">RFC 23</option>
         </select>        
-        <input name="saveplasmidgraphBtn" style="background-color:#20A2DE;color:white;width:100%;height:10%;border:none;border-radius:0px;" type="submit" value="Save Plasmid Graph" onClick="saveGraph();" id='saveplasmid' data-toggle="tooltip" title="Click this button to save and download the plasmid."><script>$('#saveplasmid').tooltip();</script></input>
+        <input name="saveplasmidgraphBtn" style="background-color:#20A2DE;color:white;width:100%;height:10%;border:none;border-radius:0px;" type="submit" value="Save Plasmid Graph" onClick="saveGraph();" id='saveplasmid' data-toggle="tooltip" title="Click this button to save and download the plasmid."/><script>$('#saveplasmid').tooltip();</script>
         	<div style="width:100%;height:10%;">
            		<label style="height:100%;float:left;">Sequence</label>
             	<input id="copy-botton" style="width:100px;cursor:pointer;height:100%;float:right;background-color:#FFBF43;border:none;border-radius:0px;" type="submit" value="downloadSeq" onClick="copyBtnOnClick(this);" data-toggle="tooltip" title="Click this button to save and download the sequence."/><script>$('#copy-botton').tooltip();</script>        
