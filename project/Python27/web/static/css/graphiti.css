@@ -69,7 +69,7 @@ body {
 
 .header .nav .pointer-arrow {
   position: relative;
-  top: 11px;
+  top: 15px;
   left: 73px;
   height: 0;
   width: 0;
@@ -284,12 +284,16 @@ body {
 }
 
 #canvas {
+  position: relative;
 	margin: 0 auto;
 	width: 95%;
 	height: 100%;
 	border-radius: 6px;
 	background-color: #ebebeb;
 	color: #4388CC;
+  left: 0;
+  transition: left 0.5s;
+  -webkit-transition: left 0.5s;   /* Safari 和 Chrome */
 }
 
 
