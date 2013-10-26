@@ -2,15 +2,18 @@
 The color array to use for the different type of sbol
  */
 var colors={'promoter':"#89c997",'protein': "#ffbf43",'activator': "#ffbf43", 'repressor': "#ffbf43", 'rbs':'#2ec6b7','terminator':"#f95f53",'plasmidbackbone':'#9B59B6'};
-String.prototype.startWith=function(str){
-			if(str==null||str==""||this.length==0||str.length>this.length)
-			  return false;
-			if(this.substr(0,str.length)==str)
-			  return true;
-			else
-			  return false;
-			return true;
-		}
+
+String.prototype.startWith=function(str)
+{
+	if(str==null||str==""||this.length==0||str.length>this.length)
+		return false;
+	if(this.substr(0,str.length)==str)
+		return true;
+	else
+		return false;
+	return true;
+}
+///The handler of standard select box change
 function standardOnChange(obj)
 {
 	if(sessionStorage.genecircuitSave!==undefined)
@@ -83,11 +86,10 @@ var plasmidPainter = {
 		}
 	}
 };
-var ws=null;
+var ws=null;//the glboal var for websocket
 function show(id,tempdata,datasize) {
 	plasmidPainter.bindCanvas(id);
 	plasmidPainter.init(tempdata,datasize);
-	//plasmidPainter.clearAll();
 	plasmidPainter.drawAll();
 }
 function createTempDataForCanvas(seqText,leftTemp)
@@ -263,7 +265,6 @@ function sortNumber(a, b)
 {
 	return a.start - b.start;
 }
-//把原始数据json转化为可以生成环形图的数组的函数
 //The function that can turn raw json data to array that can generate donut
 function turnRawDatatoData(raw)
 {                   
@@ -279,10 +280,6 @@ function turnRawDatatoData(raw)
 		tempArray[i].value=parseInt((tempArray[i].end-tempArray[i].start)/size*100,10);
 		tempArray[i].desp=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.description;
 		tempArray[i].type=raw.DnaComponent.annotations[i].SequenceAnnotation.subComponent.DnaComponent.type;
-		/*if(tempArray[i].type=='Coding')
-		{
-			tempArray[i].value=tempArray[i].value*0.01;
-		}*/
 	}		
 	tempArray=tempArray.sort(sortNumber);	
 	var real_data=[];
@@ -319,9 +316,7 @@ var title=null;
 function initDrawChart(){		
 	sessionStorage._offsetAngle=270;	
 	data=turnRawDatatoData(raw_data);
-	//data=data.slice(0,10);		
 	chart = new iChart.Donut2D({		
-		//id:"ichartjs2013",
 		animation:true,
 		render : 'canvasDiv', //Chart rendering the HTML DOM id
 		center:{
@@ -338,7 +333,7 @@ function initDrawChart(){
 		offsetx:0,
 		shadow:false,
 		background_color:'#f4f4f4',
-		separate_angle:0,//分离角度 //Separation angle
+		separate_angle:0,//Separation angle
 		tip:{
 			enable:true,
 			showType:'follow',
@@ -370,7 +365,7 @@ function initDrawChart(){
 		sub_option:{			
 			label : {
 				background_color:null,
-				sign:true,//设置禁用label的小图标
+				sign:true,
 				padding:'0 4',
 				border:{
 					enable:false,
@@ -391,9 +386,9 @@ function initDrawChart(){
 	{
 		chart.plugin(new iChart.Custom({
 					drawFn:function(){
-						 //*计算位置
+						 //*calc the place
 						var y = chart.get('originy');					
-						 //在左侧的位置，设置竖排模式渲文字。
+						 //on the left,set vertical
 						chart.target.textAlign('center')
 						.textBaseline('middle')
 						.textFont('600 24px 微软雅黑')
@@ -406,9 +401,7 @@ function initDrawChart(){
 	chart.plugin(createBottom(chart));
 	chart.plugin(createLeft(chart));
 	chart.plugin(createTop(chart));	
-	//chart.draw();
-	chart.bound(3);
-	
+	chart.bound(3);	
 }
 function createRight(chart){
 	return new iChart.Custom({
@@ -425,6 +418,7 @@ function createRight(chart){
 		}		
 	});
 }
+//add the top,left,bottom,right scale line
 function addDegreeScale()
 {
 	var centerx=parseInt(chart.getDrawingArea().width/2);
@@ -550,9 +544,9 @@ function handlerWebSocket(){
 							"fileType": "data"
 						}));
 				});
-			} else if (message.request == 'saveUserData') {
+			} /*else if (message.request == 'saveUserData') {
 				console.log(message.result);
-			}else if(message.request == 'getPlasmidSbol') {				
+			}*/else if(message.request == 'getPlasmidSbol') {				
 				$('#mymodal').modal('hide');
 				raw_data=message.result;
 				drawThePlasmid();	
@@ -562,7 +556,6 @@ function handlerWebSocket(){
 				updateSeqPosText();		
 				show('plasmid-canvas',createTempDataForCanvas(seq.substring(left,left+60),left),60);
 			}
-			message=null;
 		}		
 	}
 	ws.onopen = function() {
@@ -657,7 +650,7 @@ function cosValueBetweenALineAndPositiveX(x1,y1,x2,y2) {
      * @param x 
      * @param y
      * @return an angle from 0 to 360
-     */
+*/
 function getAngleFromLineToYAxis(circle,x,y) {
 	var angle = 0;
 	angle = cosValueBetweenALineAndPositiveX(circle.getX(), circle.getY(), x, y);
@@ -739,25 +732,7 @@ function isPointInCircle(circle,x,y)
     return false;
 } 
 $(function(){	
-	handlerWebSocket();	
-	/*if(isUrlArgsExist())
-	{		
-		ws.onopen = function() {
-			ws.send(JSON.stringify({'request': 'loadUserFile','fileType':request('filetype'),'fileName':request('filename')}));
-		}
-	}else{
-		//drawThePlasmid();
-	}*/
-	/*window.requestAnimFrame = (function(){
-      return  window.requestAnimationFrame       || 
-              window.webkitRequestAnimationFrame || 
-              window.mozRequestAnimationFrame    || 
-              window.oRequestAnimationFrame      || 
-              window.msRequestAnimationFrame     || 
-              function(/* function  callback, /* DOMElement  element){
-                window.setTimeout(callback, 1000 / 60);
-              };
-    })();	*/
+	handlerWebSocket();		
 });
 function drawThePlasmid()
 {	
