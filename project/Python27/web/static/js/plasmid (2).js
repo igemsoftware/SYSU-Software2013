@@ -265,6 +265,8 @@ function sortNumber(a, b)
 {
 	return a.start - b.start;
 }
+var seqs=[];
+var colorsforseqs=[];
 //The function that can turn raw json data to array that can generate donut
 function turnRawDatatoData(raw)
 {                   
@@ -287,17 +289,31 @@ function turnRawDatatoData(raw)
 	var index=0;
 	var scarIndex=1;
 	var colorIndex=0;
+	var left=0;
+	for(i=0;i<seq.length;i++)
+	{		
+		if(i+1<seq.length&&'a'<=seq[i]&&seq[i]<='z'&&'A'<=seq[i+1]&&seq[i+1]<='Z'){
+			seqs.push(seq.substring(left,i+1));
+			left=i+1;
+		}
+		if(i+1<seq.length&&'A'<=seq[i]&&seq[i]<='Z'&&'a'<=seq[i+1]&&seq[i+1]<='z'){
+			seqs.push(seq.substring(left,i+1));
+			left=i+1;
+		}
+	}
 	for(i=0;i<tempArray.length;i++)
 	{
 		real_data[index]={name:'scar'+scarIndex,color:"#f4f4f4"};
 		scarIndex+=1;
 		real_data[index].start=start;
-		real_data[index].end=tempArray[i].start;		
+		real_data[index].end=tempArray[i].start;				
+		colorsforseqs.push('#f4f4f4');
 		real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
 		real_data[index].desp=tempArray[i].desp;
 		index=index+1;
 		real_data[index]=tempArray[i];
-		real_data[index].color=colors[tempArray[i].type.toLowerCase()];
+		real_data[index].color=colors[tempArray[i].type.toLowerCase()];		
+		colorsforseqs.push(real_data[index].color);
 		index=index+1;
 		start=real_data[index-1].end;
 		if(i==tempArray.length-1)
@@ -305,11 +321,13 @@ function turnRawDatatoData(raw)
 			real_data[index]={name:'scar'+scarIndex,color:"#f4f4f4"};
 			scarIndex+=1;
 			real_data[index].start=start;
-			real_data[index].end=size-1;
+			real_data[index].end=size-1;			
+		    colorsforseqs.push('#f4f4f4');
 			real_data[index].value=parseInt((real_data[real_data.length-1].end-real_data[real_data.length-1].start)/size*100,10);
 		}		
 	}		
 	tempArray=null;
+	console.log(seq);
 	return real_data;	
 }
 var title=null;
@@ -479,9 +497,8 @@ function copyBtnOnClick(obj)
 function createDivStrByData()
 {
 	var str='';
-	var temp=0;
-	for(i=0;i<data.length;i++){
-		if(/*typeof(data[i].name)=="number"*/data[i].name.startWith('scar') )
+	/*for(i=0;i<data.length;i++){
+		if(data[i].name.startWith('scar') )
 		{
 			if(i===0)
 			{
@@ -495,6 +512,12 @@ function createDivStrByData()
 			str=str+'<span style="color:'+findColorInDataBySeq(seq.substring(data[i].start,data[i].end))+';">'+seq.substring(data[i].start,data[i].end)+"</span>";
 			temp=temp+1;
 		}
+	}*/
+	for(i=0;i<seqs.length;i++)
+	{
+		if(colorsforseqs[i]==="#f4f4f4")
+			colorsforseqs[i]="black";
+		str=str+'<span style="color:'+colorsforseqs[i]+';">'+seqs[i]+"</span>";
 	}
 	return str;
 }
