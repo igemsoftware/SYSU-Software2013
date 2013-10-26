@@ -38,7 +38,7 @@ graphiti.decoration.connection.ArrowDecorator = graphiti.decoration.connection.D
     init : function(width, height)
     {   
         this._super( width, height);
-        this.color = new graphiti.util.Color(0, 0, 255);
+        this.color = new graphiti.util.Color(67, 185, 103);
     },
 
 	/**
@@ -60,11 +60,37 @@ graphiti.decoration.connection.ArrowDecorator = graphiti.decoration.connection.D
 	paint:function(paper)
 	{
 		var st = paper.set();
-		var path = ["M0 0"];  
-		path.push(  "L", this.width/2, " ", -this.height/2); 
+		var path = ["M0 0"];
+		path.push(  "L", this.width/2, " ", -this.height/2);
 		path.push(  "M0 0");
 		path.push(  "L", this.width/2, " ", this.height/2);
 		path.push(  "L0 0");
+		path.push(  "M1 0");
+		path.push(  "L", this.width/2, " ", -this.height/2);
+		path.push(  "M1 0");
+		path.push(  "L", this.width/2, " ", this.height/2);
+		path.push(  "L1 0");
+		path.push(  "M2 0");
+		path.push(  "L", this.width/2, " ", -this.height/2);
+		path.push(  "M2 0");
+		path.push(  "L", this.width/2, " ", this.height/2);
+		path.push(  "L2 0");
+		path.push(  "M3 0");
+		path.push(  "L", this.width/2, " ", -this.height/2);
+		path.push(  "M3 0");
+		path.push(  "L", this.width/2, " ", this.height/2);
+		path.push(  "L3 0");
+		path.push(  "M4 0");
+		path.push(  "L", this.width/2, " ", -this.height/2);
+		path.push(  "M4 0");
+		path.push(  "L", this.width/2, " ", this.height/2);
+		path.push(  "L4 0");
+		path.push(  "M5 0");
+		path.push(  "L", this.width/2, " ", -this.height/2);
+		path.push(  "M5 0");
+		path.push(  "L", this.width/2, " ", this.height/2);
+		path.push(  "L5 0");
+
 		st.push(
 	        paper.path(path.join(""))
 		);
