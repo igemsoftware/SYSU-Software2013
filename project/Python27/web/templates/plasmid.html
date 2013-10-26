@@ -77,9 +77,9 @@
         <input name="saveplasmidgraphBtn" style="background-color:#20A2DE;color:white;width:100%;height:10%;border:none;border-radius:0px;" type="submit" value="Save Plasmid Graph" onClick="saveGraph();" id='saveplasmid' data-toggle="tooltip" title="Click this button to save and download the plasmid."/><script>$('#saveplasmid').tooltip();</script>
         	<div style="width:100%;height:10%;">
            		<label style="height:100%;float:left;">Sequence</label>
-            	<input id="copy-botton" style="width:100px;cursor:pointer;height:100%;float:right;background-color:#FFBF43;border:none;border-radius:0px;" type="submit" value="downloadSeq" onClick="copyBtnOnClick(this);" data-toggle="tooltip" title="Click this button to save and download the sequence."/><script>$('#copy-botton').tooltip();</script>        
+            	<input id="copy-botton" style="width:100px;cursor:pointer;height:100%;float:right;background-color:#FFBF43;border:none;border-radius:0px;" type="submit" value="downloadSeq" onClick="copyBtnOnClick(this);" data-toggle="tooltip" title="Click this button to save and download the sequence." data-placement="left"/><script>$('#copy-botton').tooltip();</script>        
         	</div>    	        
-        <div style="width:100%;height:70%; overflow: scroll; float:left;overflow-x: hidden;border-style:solid;border-width:1px;word-break:break-all;background-color:#f4f4f4;" id="sequenceDiv"></div>
+        <div id="sequenceDiv" style="width:100%;height:70%; overflow: scroll; float:left;overflow-x: hidden;border-style:solid;border-width:1px;word-break:break-all;background-color:#f4f4f4;" data-toggle="tooltip" title="the whole sequence of the plasmid"><script>$('#sequenceDiv').tooltip();</script>        </div>
 				</div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                                 <div id="user-view" class="block">
                                     <div id="user-view-left">
                                         <div id="username">Nobody</div>
-                                        <div id="logout">Logout</div>
+                                        <div id="logout" data-toggle='tooltip' title='click to logout'>Logout</div>
                                     </div>
                                     <div id="user-view-right">
                                         <div class="avatar-container">
@@ -126,14 +126,14 @@
                                 <!-- commandmenu starts -->
                                 <div id="commandmenu" class="block">
                                     <div id="button-group">
-                                        <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal">My Files</button>
+                                        <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal tooltip" title='click to see your file list'>My Files</button>
                                     </div>
                                 </div>
                                 <!-- commandmenu ends -->
 
                                 <!-- filemenu starts -->
                                 <div id="filemenu" class="block">
-                                    <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename">
+                                    <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename"><script>$('#logout').tooltip();$('#myfile').tooltip();$('#fn-input').tooltip();</script>
                                     <button class="mybtn" id="save">
                                         <!-- <i class="icon-ok"></i> -->
                                         √  Save

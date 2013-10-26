@@ -544,9 +544,15 @@ function handlerWebSocket(){
 							"fileType": "data"
 						}));
 				});
-			} /*else if (message.request == 'saveUserData') {
-				console.log(message.result);
-			}*/else if(message.request == 'getPlasmidSbol') {				
+			} else if (message.request == 'saveUserData') {
+				if(message.result==='updateUserData succeed')
+				{
+					alert('Save user file success!');
+				}else
+				{
+					alert('Error!Save not succeed.');
+				}
+			}else if(message.request == 'getPlasmidSbol') {				
 				$('#mymodal').modal('hide');
 				raw_data=message.result;
 				drawThePlasmid();	
