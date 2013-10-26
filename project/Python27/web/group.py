@@ -564,7 +564,7 @@ def update_controller(db, update_info):
       if "cluster" not in detail:
         detail["cluster"] = False
       if detail["cluster"]:
-        best_promoter = detail["number"]
+        best_promoter = detail["part_name"]
       else:
         best_promoter = db.getPromoterNearValue(promoter_value,\
             regulator_set, promoter_set, link_type, p_type, cor_ind_type)
