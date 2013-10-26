@@ -510,10 +510,10 @@ def js_formatter(gene_circuit):
 # --------------------------------------------------------------------------
 def update_controller(db, update_info):
   gene_circuit = js_formatter(update_info["gene_circuit"])
-  regulator_set = set([database.getRegulatorCluster(i["name"]) for i in \
+  regulator_set = set([db.getRegulatorCluster(i["name"]) for i in \
       gene_circuit["proteins"].values() if not i["display"]])
-  promoter_set = set([database.getPromoterCluster(i["sbol"][0]) for i in \
-      gene_circuit["genecircuit"].values() if not i["display"]])
+  promoter_set = set([db.getPromoterCluster(i["sbol"][0]["name"]) for i in \
+      gene_circuit["groups"].values()])
   detail = update_info["detail"]
   pro_id = detail["pro_id"]
   protein = gene_circuit["proteins"][pro_id]
@@ -544,12 +544,14 @@ def update_controller(db, update_info):
         gene_circuit["proteins"][i]["copy"] = best_value
 
   elif detail["type"] == "PoPS" or detail["type"] == "K1":
+    orig_promoter = gene_circuit["groups"][grp_id]["sbol"][0]["name"]
+    p_cluster = db.getPromoterCluster(orig_promoter)
     prev_node = group["from"]
     if prev_node != -1:
       prev_grp = gene_circuit["proteins"][prev_node]["grp_id"]
       prev_pos = gene_circuit["proteins"][prev_node]["pos"]
       orig_repressor = gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"]
-      regulator_set.remove(orig_repressor)
+      regulator_set.remove(db.getRegulatorCluster(orig_repressor))
 
     link_type = group["type"]
     cor_ind_type = group["corep_ind_type"]
@@ -558,89 +560,77 @@ def update_controller(db, update_info):
     if detail["type"] == "PoPS":
       promoter_value = float(detail["new_value"])
       #select best promoter
-      best_promoter = db.getPromoterNearValue(promoter_value,\
-          regulator_set, promoter_set, link_type, p_type, cor_ind_type)
-      if link_type in {"Positive", "Negative"}:
-        best_regulator = db.find_actrep_with_promoter(best_promoter["Number"],\
-            link_type, cor_ind_type, regulator_set)
-        regulator_value = log10(best_regulator["K1"])
+      if "cluster" not in detail:
+        detail["cluster"] = False
+      if detail["cluster"]:
+        best_promoter = db.getClusterPromoterNearValue(promoter_value, p_cluster)
+      else:
+        best_promoter = db.getPromoterNearValue(promoter_value,\
+            regulator_set, promoter_set, link_type, p_type, cor_ind_type)
+        if link_type in {"Positive", "Negative"}:
+          best_regulator = db.find_actrep_with_promoter(best_promoter["Number"],\
+              link_type, cor_ind_type, regulator_set)
+          regulator_value = log10(best_regulator["K1"])
     else:
       regulator_value = pow(10, float(detail["new_value"]))
       if link_type == "Positive":
         best_regulator = db.getActivatorNearValue(regulator_value, cor_ind_type,\
             regulator_set, promoter_set)
-        best_promoter = find_promoter(db, activator=best_regulator["Number"])
+        best_promoter = find_promoter(db, promoter_set, activator=best_regulator["Number"])
         promoter_value = best_promoter[p_type]
       else:
         best_regulator = db.getRepressorNearValue(regulator_value,\
             cor_ind_type, regulator_set, promoter_set)
-        best_promoter = find_promoter(db, repressor=best_regulator["Number"])
+        best_promoter = find_promoter(db, promoter_set, repressor=best_regulator["Number"])
         promoter_value = best_promoter[p_type]
       regulator_value = log10(best_regulator["K1"])
 
     regulator = None
-    # update related promoters
+    # update promoters of self
     if detail["type"] == "PoPS":
       gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter["Number"]
       for j in range(2, len(group["sbol"]), 2):
         pro2_id = gene_circuit["groups"][grp_id]["sbol"][j]["id"]
         gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
 
-    # update corresponding repressor
-    if prev_node != -1:
-      gene_circuit["proteins"][pro_id]["K1"] = regulator_value
-      gene_circuit["proteins"][prev_node]["name"] = best_regulator["Number"]
-      gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"] = best_regulator["Number"]
+    if not (detail["type"] == "PoPS" and detail["cluster"]):
+      # update corresponding repressor
+      if prev_node != -1:
+        gene_circuit["proteins"][pro_id]["K1"] = regulator_value
+        gene_circuit["proteins"][prev_node]["name"] = best_regulator["Number"]
+        gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"] = best_regulator["Number"]
 
-      # update related promoters
-      for i in gene_circuit["groups"]:
-        if gene_circuit["groups"][i]["from"] == prev_node:
-          gene_circuit["groups"][i]["sbol"][0]["name"] = best_promoter["Number"]
-          for j in range(2, len(gene_circuit["groups"][i]["sbol"]), 2):
-            pro2_id = gene_circuit["groups"][i]["sbol"][j]["id"]
-            gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
+        # update related promoters
+        for i in gene_circuit["groups"]:
+          if gene_circuit["groups"][i]["from"] == prev_node:
+            gene_circuit["groups"][i]["sbol"][0]["name"] = best_promoter["Number"]
+            for j in range(2, len(gene_circuit["groups"][i]["sbol"]), 2):
+              pro2_id = gene_circuit["groups"][i]["sbol"][j]["id"]
+              gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
 
   update_proteins_repress(db, gene_circuit)
   return gene_circuit
 
 if __name__ == "__main__":
   db = database.SqliteDatabase()
-  print dump_group(data, db)
-  update = {u'detail': {u'new_value': 2.3529, u'type': u'K1', u'pro_id':
-    u'e5adf3de-49ce-2338-06a6-e648c8b1efd6'}, u'gene_circuit': {u'proteins':
-      {u'9a641b23-75dd-73ec-414c-a673651a43e9': {u'RiPS': 0.336, u'name':
-        u'BBa_C0012', u'repress_rate': 0, u'concen': None, u'grp_id':
-        u'9a641b23-75dd-73ec-414c-a673651a43e9', u'pos': 4, u'PoPS': 0.84,
-        u'before_regulated': 6, u'K1': None, u'induce_rate': 0, u'copy': 23,
-        u'display': False}, u'b2ba4f6b-98dd-61d1-5137-653530470647': {u'RiPS':
-          0.336, u'name': u'BBa_J120015', u'repress_rate': 0, u'concen': None,
-          u'grp_id': u'9a641b23-75dd-73ec-414c-a673651a43e9', u'pos': 2,
-          u'PoPS': 0.84, u'before_regulated': 6, u'K1': None, u'induce_rate': 0,
-          u'copy': 23, u'display': True},
-        u'e5adf3de-49ce-2338-06a6-e648c8b1efd6': {u'RiPS': 0.336, u'name':
-          u'BBa_K106669', u'repress_rate': 0, u'concen': 0.1, u'grp_id':
-          u'e5adf3de-49ce-2338-06a6-e648c8b1efd6', u'pos': 2, u'PoPS': 0.14,
-          u'before_regulated': 1, u'K1': 2.3529, u'induce_rate': 0, u'copy': 23,
-          u'display': True}}, u'plasmids':
-        [[u'9a641b23-75dd-73ec-414c-a673651a43e9',
-          u'e5adf3de-49ce-2338-06a6-e648c8b1efd6']], u'groups':
-        {u'9a641b23-75dd-73ec-414c-a673651a43e9': {u'from': -1, u'state':
-          u'cis', u'corep_ind_type': u'None', u'to':
-          [u'e5adf3de-49ce-2338-06a6-e648c8b1efd6'], u'sbol': [{u'type':
-            u'Promoter', u'name': u'BBa_I712074'}, {u'type': u'RBS', u'name':
-              u'BBa_J61104'}, {u'type': u'Protein', u'name': u'BBa_J120015',
-                u'id': u'b2ba4f6b-98dd-61d1-5137-653530470647'}, {u'type':
-                  u'RBS', u'name': u'BBa_J61104'}, {u'type': u'Repressor',
-                    u'name': u'BBa_C0012', u'id':
-                    u'9a641b23-75dd-73ec-414c-a673651a43e9'}, {u'type':
-                      u'Terminator', u'name': u'BBa_B0012'}], u'type':
-                    u'Constitutive'}, u'e5adf3de-49ce-2338-06a6-e648c8b1efd6':
-                    {u'from': u'9a641b23-75dd-73ec-414c-a673651a43e9', u'state':
-                      u'cis', u'corep_ind_type': u'Inducer', u'to': [], u'sbol':
-                      [{u'type': u'Promoter', u'name': u'BBa_K091110'},
-                        {u'type': u'RBS', u'name': u'BBa_J61104'}, {u'type':
-                          u'Protein', u'name': u'BBa_K106669', u'id':
-                          u'e5adf3de-49ce-2338-06a6-e648c8b1efd6'}, {u'type':
-                            u'Terminator', u'name': u'BBa_B0012'}], u'type':
-                          u'Negative'}}}}
-  #print update_controller(db, update)
+  #print dump_group(data, db)
+  update = {u'detail': {u'new_value': 0.7, u'type': u'PoPS', u'pro_id': u'6e024775-a0b8-cf34-738a-42c4887d30b3'}, 
+u'gene_circuit': {u'proteins': {u'd26cffec-5857-00b8-42aa-cf6491a48ed5': {u'RiPS': 0.12, u'name': u'BBa_K864203', 
+u'repress_rate': 0, u'concen': None, u'grp_id': u'd26cffec-5857-00b8-42aa-cf6491a48ed5', u'pos': 4, u'PoPS': 0.84, 
+u'before_regulated': 2, u'K1': None, u'induce_rate': 0, u'copy': 23, u'display': False}, 
+u'6e024775-a0b8-cf34-738a-42c4887d30b3': {u'RiPS': 0.12, u'name': u'BBa_J31000', u'repress_rate': -3, u'concen': None, 
+u'grp_id': u'6e024775-a0b8-cf34-738a-42c4887d30b3', u'pos': 2, u'PoPS': 0.7, u'before_regulated': 1, u'K1': -8.9208, 
+u'induce_rate': -3, u'copy': 23, u'display': True}, u'748ff6ab-5c52-a055-93bb-ad6e2f6fd4e7': {u'RiPS': 0.12, u'name': 
+u'BBa_K112223', u'repress_rate': 0, u'concen': None, u'grp_id': u'd26cffec-5857-00b8-42aa-cf6491a48ed5', u'pos': 2, u'PoPS': 
+0.84, u'before_regulated': 2, u'K1': None, u'induce_rate': 0, u'copy': 23, u'display': True}}, u'plasmids': 
+[[u'd26cffec-5857-00b8-42aa-cf6491a48ed5', u'6e024775-a0b8-cf34-738a-42c4887d30b3']], u'groups': 
+{u'd26cffec-5857-00b8-42aa-cf6491a48ed5': {u'from': -1, u'state': u'cis', u'corep_ind_type': u'None', u'to': 
+[u'6e024775-a0b8-cf34-738a-42c4887d30b3'], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_I712074'}, {u'type': u'RBS', 
+u'name': u'BBa_J61101'}, {u'type': u'Protein', u'name': u'BBa_K112223', u'id': u'748ff6ab-5c52-a055-93bb-ad6e2f6fd4e7'}, 
+{u'type': u'RBS', u'name': u'BBa_J61101'}, {u'type': u'Repressor', u'name': u'BBa_K864203', u'id': 
+u'd26cffec-5857-00b8-42aa-cf6491a48ed5'}, {u'type': u'Terminator', u'name': u'BBa_B0012'}], u'type': u'Constitutive'}, 
+u'6e024775-a0b8-cf34-738a-42c4887d30b3': {u'from': u'd26cffec-5857-00b8-42aa-cf6491a48ed5', u'state': u'cis', 
+u'corep_ind_type': u'None', u'to': [], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_I756014'}, {u'type': u'RBS', u'name': 
+u'BBa_J61101'}, {u'type': u'Protein', u'name': u'BBa_J31000', u'id': u'6e024775-a0b8-cf34-738a-42c4887d30b3'}, {u'type': 
+u'Terminator', u'name': u'BBa_B0012'}], u'type': u'Negative'}}}}
+  print update_controller(db, update)
