@@ -283,7 +283,7 @@ class Protein_Simulate:
         self.Concen    = [0] * self.TimeLen
         self.Concen[0] = ini
         if isDelay:
-            self.TimeDelay = int(ceil(20 / self.Dt))
+            self.TimeDelay = int(ceil(20 / self.Dt)) # [Time-delay: 20s]
         else:
             self.TimeDelay = 1
 
