@@ -564,7 +564,8 @@ def update_controller(db, update_info):
       if "cluster" not in detail:
         detail["cluster"] = False
       if detail["cluster"]:
-        best_promoter = detail["part_name"]
+        best_promoter = db.find_promoter_in_cluster(detail["part_name"],\
+            p_type, promoter_value)
       else:
         best_promoter = db.getPromoterNearValue(promoter_value,\
             regulator_set, promoter_set, link_type, p_type, cor_ind_type)
@@ -629,23 +630,23 @@ def update_controller(db, update_info):
 if __name__ == "__main__":
   db = database.SqliteDatabase()
   #print dump_group(data, db)
-  update = {u'detail': {u'new_value': 0.4, u'type': u'PoPS', u'pro_id': u'3b6e2c34-544c-3085-03ae-25b5eedbf9be', u'cluster': 
-True}, u'gene_circuit': {u'proteins': {u'db1d6dd7-0d31-d8e2-c617-92f67cc27f92': {u'RiPS': 0.12, u'name': u'BBa_C0073', 
-u'repress_rate': 0, u'concen': None, u'grp_id': u'db1d6dd7-0d31-d8e2-c617-92f67cc27f92', u'pos': 4, u'PoPS': 0.84, 
-u'before_regulated': 2, u'K1': None, u'induce_rate': 0, u'copy': 23, u'display': False}, 
-u'6fc904a2-aadf-7830-709a-53b7a64b0d8b': {u'RiPS': 0.12, u'name': u'BBa_K525404', u'repress_rate': 0, u'concen': None, 
-u'grp_id': u'db1d6dd7-0d31-d8e2-c617-92f67cc27f92', u'pos': 2, u'PoPS': 0.84, u'before_regulated': 2, u'K1': None, 
-u'induce_rate': 0, u'copy': 23, u'display': True}, u'3b6e2c34-544c-3085-03ae-25b5eedbf9be': {u'RiPS': 0.12, u'name': 
-u'BBa_K165005', u'repress_rate': -1, u'concen': None, u'grp_id': u'3b6e2c34-544c-3085-03ae-25b5eedbf9be', u'pos': 2, u'PoPS': 
-0.4, u'before_regulated': 0, u'K1': -0.0969, u'induce_rate': -1, u'copy': 23, u'display': True}}, u'plasmids': 
-[[u'db1d6dd7-0d31-d8e2-c617-92f67cc27f92', u'3b6e2c34-544c-3085-03ae-25b5eedbf9be']], u'groups': 
-{u'db1d6dd7-0d31-d8e2-c617-92f67cc27f92': {u'from': -1, u'state': u'cis', u'corep_ind_type': u'None', u'to': 
-[u'3b6e2c34-544c-3085-03ae-25b5eedbf9be'], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_I712074'}, {u'type': u'RBS', 
-u'name': u'BBa_J61101'}, {u'type': u'Protein', u'name': u'BBa_K525404', u'id': u'6fc904a2-aadf-7830-709a-53b7a64b0d8b'}, 
+  update = {u'detail': {u'new_value': 0.4, u'type': u'PoPS', u'pro_id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790', u'part_name': 
+u'BBa_K091104', u'cluster': True}, u'gene_circuit': {u'proteins': {u'e53e441d-c811-6d5e-212e-07dbae64f8db': {u'RiPS': 0.12, 
+u'name': u'BBa_C0073', u'repress_rate': 0, u'concen': None, u'grp_id': u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'pos': 4, 
+u'PoPS': 0.84, u'before_regulated': 2, u'K1': None, u'induce_rate': 0, u'copy': 23, u'display': False}, 
+u'91c1e8d5-a282-9de4-2df3-47a6fcb74790': {u'RiPS': 0.12, u'name': u'BBa_K389001', u'repress_rate': 0, u'concen': None, 
+u'grp_id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790', u'pos': 2, u'PoPS': 0.4, u'before_regulated': 0, u'K1': -0.0969, 
+u'induce_rate': 0, u'copy': 23, u'display': True}, u'a6feb6a7-1752-a351-0912-7dd9ee4ee596': {u'RiPS': 0.12, u'name': 
+u'BBa_K126000', u'repress_rate': 0, u'concen': None, u'grp_id': u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'pos': 2, u'PoPS': 
+0.84, u'before_regulated': 2, u'K1': None, u'induce_rate': 0, u'copy': 23, u'display': True}}, u'plasmids': 
+[[u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'91c1e8d5-a282-9de4-2df3-47a6fcb74790']], u'groups': 
+{u'e53e441d-c811-6d5e-212e-07dbae64f8db': {u'from': -1, u'state': u'cis', u'corep_ind_type': u'None', u'to': 
+[u'91c1e8d5-a282-9de4-2df3-47a6fcb74790'], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_I712074'}, {u'type': u'RBS', 
+u'name': u'BBa_J61101'}, {u'type': u'Protein', u'name': u'BBa_K126000', u'id': u'a6feb6a7-1752-a351-0912-7dd9ee4ee596'}, 
 {u'type': u'RBS', u'name': u'BBa_J61101'}, {u'type': u'Repressor', u'name': u'BBa_C0073', u'id': 
-u'db1d6dd7-0d31-d8e2-c617-92f67cc27f92'}, {u'type': u'Terminator', u'name': u'BBa_B0012'}], u'type': u'Constitutive'}, 
-u'3b6e2c34-544c-3085-03ae-25b5eedbf9be': {u'from': u'db1d6dd7-0d31-d8e2-c617-92f67cc27f92', u'state': u'cis', 
-u'corep_ind_type': u'None', u'to': [], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_K091105'}, {u'type': u'RBS', u'name': 
-u'BBa_J61101'}, {u'type': u'Protein', u'name': u'BBa_K165005', u'id': u'3b6e2c34-544c-3085-03ae-25b5eedbf9be'}, {u'type': 
+u'e53e441d-c811-6d5e-212e-07dbae64f8db'}, {u'type': u'Terminator', u'name': u'BBa_B0012'}], u'type': u'Constitutive'}, 
+u'91c1e8d5-a282-9de4-2df3-47a6fcb74790': {u'from': u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'state': u'cis', 
+u'corep_ind_type': u'None', u'to': [], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_K101000'}, {u'type': u'RBS', u'name': 
+u'BBa_J61101'}, {u'type': u'Protein', u'name': u'BBa_K389001', u'id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790'}, {u'type': 
 u'Terminator', u'name': u'BBa_B0012'}], u'type': u'Negative'}}}}
   print update_controller(db, update)
