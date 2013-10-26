@@ -19,16 +19,9 @@ from math import log10
 prom_name = "BBa_I712074"
 rbs_name = "BBa_J61101"
 term_name = "BBa_B0012"
+#data = {"part":[{"id":"9da9b8e5-d2a9-dd36-db24-76a8b4a0d11c","type":"Protein"},{"id":"250affc4-b975-f0e6-5581-6bc2eb9a4db9","name":"Repressor","type":"Repressor"},{"id":"ff1c2420-d743-cede-8827-fdc6b3b4e1fd","type":"Protein"}],"link":[{"from":"9da9b8e5-d2a9-dd36-db24-76a8b4a0d11c","to":"250affc4-b975-f0e6-5581-6bc2eb9a4db9","type":"Bound","inducer":"none"},{"from":"250affc4-b975-f0e6-5581-6bc2eb9a4db9","to":"ff1c2420-d743-cede-8827-fdc6b3b4e1fd","type":"Repressor","inducer":"none"}]}
 
-data =  {u'part': [{u'type': u'Protein', u'id': u'1', u'name': u'BBa_C0060'}, {u'type': u'Protein', u'id': u'2', u'name': 
-u'BBa_C0060'}, {u'type': u'Activator', u'id': u'3', u'name': u'Activator'}, {u'type': u'Repressor', u'id': u'4', u'name': 
-u'Repressor'}, {u'type': u'Protein', u'id': u'5', u'name': u'BBa_C0160'}, {u'type': u'Protein', u'id': u'6', u'name': 
-u'BBa_C0178'}, {u'type': u'Protein', u'id': u'7', u'name': u'BBa_C0178'}], u'link': [{u'to': u'2', u'from': u'1', u'type': 
-u'Bound'}, {u'to': u'3', u'from': u'2', u'type': u'Bound'}, {u'to': u'4', u'from': u'3', u'type': u'Bound'}, {u'to': u'5', 
-u'from': u'3', u'inducer': u'None', u'type': u'Activator'}, {u'to': u'6', u'from': u'4', u'inducer': u'Positive', u'type': 
-u'Repressor'}, {u'to': u'7', u'from': u'6', u'type': u'Bound'}]}
-
-#data = {u'part': [{u'type': u'Protein', u'id': u'374a65bd-5bf7-cae4-1cd1-44a016d3561c', u'name': u'BBa_K112002'}, {u'type': u'Repressor', u'id': u'd82fad51-c176-900e-b056-c3ff02b8feff', u'name': u'Repressor'}, {u'type': u'Protein', u'id': u'7ccb8628-4891-ad32-b8f8-70bf39e1e5ef', u'name': u'BBa_K112004'}], u'link': [{u'to': u'd82fad51-c176-900e-b056-c3ff02b8feff', u'from': u'374a65bd-5bf7-cae4-1cd1-44a016d3561c', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'7ccb8628-4891-ad32-b8f8-70bf39e1e5ef', u'from': u'd82fad51-c176-900e-b056-c3ff02b8feff', u'inducer': u'Negative', u'type': u'Repressor'}]}
+data = {u'part': [{u'type': u'Protein', u'id': u'374a65bd-5bf7-cae4-1cd1-44a016d3561c', u'name': u'BBa_K112002'}, {u'type': u'Repressor', u'id': u'd82fad51-c176-900e-b056-c3ff02b8feff', u'name': u'Repressor'}, {u'type': u'Protein', u'id': u'7ccb8628-4891-ad32-b8f8-70bf39e1e5ef', u'name': u'BBa_K112004'}], u'link': [{u'to': u'd82fad51-c176-900e-b056-c3ff02b8feff', u'from': u'374a65bd-5bf7-cae4-1cd1-44a016d3561c', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'7ccb8628-4891-ad32-b8f8-70bf39e1e5ef', u'from': u'd82fad51-c176-900e-b056-c3ff02b8feff', u'inducer': u'Negative', u'type': u'Repressor'}]}
 #data = {"part": [ 
 			#{ "id"  : "1", 
 				#"name": "BBa_C0060", 
@@ -295,6 +288,46 @@ def get_promoter_label(database, actrep, l_type, cor_ind_type, get_all = True):
 
 # --------------------------------------------------------------------------
 ##
+# @brief get promoter labels, which indicate alternatives of current promoter
+#
+# @param database      an instance of database
+# @param promoter      the promoter regulated by the regulator
+# @param l_type        link type
+# @param cor_ind_type  corepressor or inducer type
+# @param get_all       if get_all is False, get self promoter only, true by default
+#
+# @returns  the labels of the promoter
+#
+# --------------------------------------------------------------------------
+def get_regulator_label(database, promoter, l_type, cor_ind_type, get_all = True):
+  ret = []
+  self_option = database.getSelfRegulatorOption(promoter, l_type, cor_ind_type)
+  right_regulator = set()
+  for item in self_option:
+    r_value = item["K1"]
+    hash_str = str(item["ActRreNumber"])+str(r_value)
+    if hash_str in right_regulator:
+      continue
+    ret.append({"des": item["ActRreNumber"],
+      "val": r_value,
+      "type": "right"})
+    right_regulator.add(hash_str)
+  if get_all:
+    k1_option = database.getAllRegulatorOption(l_type, cor_ind_type)
+    for item in k1_option:
+      r_value = item["K1"]
+      hash_str = str(item["ActRreNumber"])+str(r_value)
+      if hash_str in right_regulator:
+        continue
+      ret.append({"des": item["ActRreNumber"],
+        "val": r_value,
+        "type": "left"})
+      right_regulator.add(str(item["ActRreNumber"])+str(r_value))
+  return ret
+
+
+# --------------------------------------------------------------------------
+##
 # @brief get protein info from database
 #
 # @param database     database instance
@@ -467,6 +500,8 @@ def dump_group(network, database):
     l_type = groups[b_list[i]]["type"]
     proteins[i]["pops_option"] = get_promoter_label(database, regulator, \
         l_type, corep_ind_type)
+    proteins[i]["k1_option"] = get_regulator_label(database, promoter["name"], \
+        l_type, corep_ind_type)
 
   # do not display regulation protein
   for part in network["part"]:
@@ -635,7 +670,7 @@ def update_controller(db, update_info):
 
 if __name__ == "__main__":
   db = database.SqliteDatabase()
-  #print dump_group(data, db)
+  print dump_group(data, db)
   update = {u'detail': {u'new_value': 0.4, u'type': u'PoPS', u'pro_id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790', u'part_name': 
 u'BBa_K091104', u'cluster': True}, u'gene_circuit': {u'proteins': {u'e53e441d-c811-6d5e-212e-07dbae64f8db': {u'RiPS': 0.12, 
 u'name': u'BBa_C0073', u'repress_rate': 0, u'concen': None, u'grp_id': u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'pos': 4, 

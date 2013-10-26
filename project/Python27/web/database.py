@@ -565,6 +565,51 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson
 
+	def getAllRegulatorOption(self, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT * FROM relation
+					WHERE relation.ActRreType = '%s'
+          AND relation.IncCorType IS NULL
+					""" % (link_type)
+		else:
+			sql_cmd = """
+					SELECT * FROM relation
+					WHERE relation.ActRreType = '%s'
+					AND relation.IncCorType = '%s'
+					""" % (link_type, cor_ind_type)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
+	def getSelfRegulatorOption(self, promoter, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT * FROM relation
+					WHERE ActRreType = '%s' AND PromoterNumber = '%s'
+          AND IncCorType IS NULL
+					""" % (link_type, promoter)
+		else:
+			sql_cmd = """
+					SELECT * FROM relation
+					WHERE ActRreType = '%s' AND PromoterNumber = '%s'
+					AND relation.IncCorType = '%s'
+					""" % (link_type, promoter, cor_ind_type)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
 	def getRBSNearValue(self,idealValue):
 		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%e) limit 0,1' %idealValue)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
