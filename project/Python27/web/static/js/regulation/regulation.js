@@ -18,13 +18,15 @@ $().ready(function() {
     $(".header").click(function() {
         // console.log(app.view.figures);
         
-        window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
-        console.log(window.sessionStorage.getItem("regulationWork"));
+        // window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
+        // console.log(window.sessionStorage.getItem("regulationWork"));
     });
 
     // toggle left-container
     $(".trigger-left").click(function() {
         var left = $("#left-container").css("left");
+
+        $("#right-container").css("right", "-270px");
 
         if (parseInt(left) == 0) {
             $("#left-container").css({
@@ -48,6 +50,8 @@ $().ready(function() {
     // toggle right-container
     $(".trigger-right").click(function() {
         var right = $("#right-container").css("right");
+
+        $("#left-container").css("left", "-270px");
 
         if (parseInt(right) == 0) {
             $("#right-container").css({
@@ -407,7 +411,7 @@ $().ready(function() {
         }));
         sessionStorage.regulation = jsonData;
 
-        // window.localStorage.setItem("regulation", JSON.stringify(canvasToSaveData()));
+        window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
 
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();
