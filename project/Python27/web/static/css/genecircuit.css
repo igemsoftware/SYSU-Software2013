@@ -540,7 +540,7 @@
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
-	background: #dddcdc;
+	/* background: #dddcdc; */
 }
 
 .plasmids:after {
