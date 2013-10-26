@@ -59,6 +59,8 @@ def profile():
 
 @app.route("/file_manager")
 def file_manager():
+  if not user.isUserLogined(sql):
+    return redirect(url_for('login'))	
   filelist = sql.getUserFileNameList()
   shared=sharedFiles(sql)
   sharedFileList=shared.getSharedFileList()  
