@@ -40,30 +40,32 @@ $.fn.scale = function(options) {
 	options = options || {};
 	return this.each(function() {
 		for(var i = 0; i < options.lines.length; i++) {
-			$(this).append("<div id=\"" + options.aTextureId + "-" + i.toString() + "\" class=\"line\"></div>");
-			var that = $("#" + options.aTextureId + "-" + i.toString());
-			var per = (1 - options.lines[i].val / (options.max-options.min)) * 100;
-			that.css("top", per.toString() + "%");
-			if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
-			else if(options.lines[i].type == "right") that.css("border-color", "#56ff56");
-			that.bind("click", function(){
-				var aThat = that;
-				var aOptions = options;
-				var aPer = per;
-				return function(){
-					aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min)); 
-					aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
-					detail.type = aOptions.type;
-					var id_str = aOptions.aSlider.parents(".proteins").attr('id');
-					detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
-					detail.new_value = aOptions.aSlider.slider("value");
-					randomValue(); 
-				};
-			}()); 
-			that.tooltip({
-				delay: { show: 0, hide: 50,},
-				title: options.lines[i].des,
-			});
+			if(options.lines[i].type == options.direction) {
+				$(this).append("<div id=\"" + options.aTextureId + "-" + i.toString() + "\" class=\"line\"></div>");
+				var that = $("#" + options.aTextureId + "-" + i.toString());
+				var per = (1 - options.lines[i].val / (options.max-options.min)) * 100;
+				that.css("top", per.toString() + "%");
+				if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
+				else if(options.lines[i].type == "right") that.css("border-color", "#56ff56");
+				that.bind("click", function(){
+					var aThat = that;
+					var aOptions = options;
+					var aPer = per;
+					return function(){
+						aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min)); 
+						aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
+						detail.type = aOptions.type;
+						var id_str = aOptions.aSlider.parents(".proteins").attr('id');
+						detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
+						detail.new_value = aOptions.aSlider.slider("value");
+						randomValue(); 
+					};
+				}()); 
+				that.tooltip({
+					delay: { show: 0, hide: 50,},
+					title: options.lines[i].des,
+				});
+			}
 		}
 
 	});
@@ -81,7 +83,7 @@ var protein = {
     if (!aData['display'])
       $("#" + aTextureId).hide();
 
-		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"pops-scale scale\"></div><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"scale\"></div><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"scale\"></div><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"scale\"></div><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"scale\"></div><div class=\"slider concen\"></div><span>concen</span></div></div>");
+		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul double\"><div class=\"pops-scale scale left\"></div><div class=\"slider pops\"></div><div class=\"pops-scale scale right\"></div><span>PoPS</span></div><div class=\"protein-range mul single\"><div class=\"rips-scale scale left\"></div><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul single\"><div class=\"copy-scale scale left\"></div><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"k1-scale scale left\"></div><div class=\"slider k1\"></div><div class=\"k1-scale scale right\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"concen-scale scale left\"></div><div class=\"slider concen\"></div><span>concen</span></div></div>");
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
@@ -109,51 +111,61 @@ var protein = {
 			max: 10,
 		});
 
-		$("#" + aTextureId + " .pops-scale").scale({
-			// lines: aData["PoPS"]["options"], 
+		$("#" + aTextureId + " .pops-scale.left").scale({
 			lines: aData["pops_option"], 
 			aTextureId: aTextureId + "-pops",
 			aSlider: $("#" + aTextureId + " .pops"),
 			min: 0,
 			max: 1,
 			type: "PoPS",
+			direction: "left",
 		});
 
-		$("#" + aTextureId + " .rips-scale").scale({
-			lines: aData["rips_option"], 
-			aTextureId: aTextureId + "-rips",
-			aSlider: $("#" + aTextureId + " .rips"),
+		$("#" + aTextureId + " .pops-scale.right").scale({
+			lines: aData["pops_option"], 
+			aTextureId: aTextureId + "-pops",
+			aSlider: $("#" + aTextureId + " .pops"),
 			min: 0,
 			max: 1,
-			type: "RiPS",
+			type: "PoPS",
+			direction: "right",
 		});
 
-		$("#" + aTextureId + " .copy-scale").scale({
-			lines: aData["copy_option"], 
-			aTextureId: aTextureId + "-copy",
-			aSlider: $("#" + aTextureId + " .copy"),
-			min: 0,
-			max: 100,
-			type: "copy",
-		});
-
-		$("#" + aTextureId + " .k1-scale").scale({
-			lines: aData["k1_option"], 
-			aTextureId: aTextureId + "-k1",
-			aSlider: $("#" + aTextureId + " .k1"),
-			min: -10,
-			max: 10,
-			type: "K1",
-		});
-		
-		$("#" + aTextureId + " .concen-scale").scale({
-			lines: aData["concen_option"], 
-			aTextureId: aTextureId + "-concen",
-			aSlider: $("#" + aTextureId + " .concen"),
-			min: 0,
-			max: 100,
-			type: "concen",
-		});
+		// $("#" + aTextureId + " .rips-scale").scale({ 
+			// lines: aData["rips_option"],  
+			// aTextureId: aTextureId + "-rips", 
+			// aSlider: $("#" + aTextureId + " .rips"), 
+			// min: 0, 
+			// max: 1, 
+			// type: "RiPS", 
+		// }); 
+//  
+		// $("#" + aTextureId + " .copy-scale").scale({ 
+			// lines: aData["copy_option"],  
+			// aTextureId: aTextureId + "-copy", 
+			// aSlider: $("#" + aTextureId + " .copy"), 
+			// min: 0, 
+			// max: 100, 
+			// type: "copy", 
+		// }); 
+//  
+		// $("#" + aTextureId + " .k1-scale").scale({ 
+			// lines: aData["k1_option"],  
+			// aTextureId: aTextureId + "-k1", 
+			// aSlider: $("#" + aTextureId + " .k1"), 
+			// min: -10, 
+			// max: 10, 
+			// type: "K1", 
+		// }); 
+		//  
+		// $("#" + aTextureId + " .concen-scale").scale({ 
+			// lines: aData["concen_option"],  
+			// aTextureId: aTextureId + "-concen", 
+			// aSlider: $("#" + aTextureId + " .concen"), 
+			// min: 0, 
+			// max: 100, 
+			// type: "concen", 
+		// }); 
 
 		/* $("#" + aTextureId + " .protein-range .slider").slider({ */
 		$("#" + aTextureId + " .pops").slider({
