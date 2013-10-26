@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Regulation</title>
+    <title>Gene Circuit</title>
     <meta name="description" content="">
     <meta name="author" content="rathinho">
     <meta name="viewport" content="width=device-width">
@@ -64,7 +64,7 @@
 										<div class="browser">
 											<img src="../static/img/style-protein.png" />
 										</div>
-										<button id='btn-edit' class="btn-more" onclick="window.location.pathname = '/index'" data-toggle="tooltip" title="edit the network">Edit</button>
+										<button id='btn-edit' class="btn-more" onclick="window.location.pathname = '/index'" data-toggle="tooltip" title="Edit regulation network">Edit</button>
 									</div>
 									<div id="simulation-view">
 										<div class="module-title">
@@ -75,7 +75,7 @@
 											<div id="canvasDiv">
 											</div>
 										</div>
-										<button id='btn-viewmore' class="btn-more" onclick="jumpToSimulation()" data-toggle="tooltip" title="see the detail of simulation">View more</button>
+										<button id='btn-viewmore' class="btn-more" onclick="jumpToSimulation()" data-toggle="tooltip" title="View customized simulation curves">View more</button>
 									</div>
 									<div id="dashboard-view">
 										
@@ -89,7 +89,16 @@
 									</div>
 
 									<div id="cmd">
-										<button class="btn-more" id="cmd-new-plasmid" data-toggle="tooltip" title="add a new plasmid">New plasmid</button>
+										<!-- <button class="btn-more" id="cmd-new-plasmid" data-toggle="tooltip" title="add a new plasmid">New plasmid</button> -->
+										<span class="cmd_undo_redo" id="cmd_undo">
+												<img src="../static/img/undo_1.png">
+										</span>
+										<span class="cmd_undo_redo" id="cmd-new-plasmid" data-toggle="tooltip" title="Add a new plasmid">
+												<img src="../static/img/add.png">
+										</span>
+										<span class="cmd_undo_redo" id="cmd_redo">
+												<img src="../static/img/redo_1.png">
+										</span>
 									</div>
 								</div>				
 												
@@ -322,19 +331,6 @@
 
 <!-- command group starts-->
 <div class="cmd-group">
-    <button class="" id="cmd_undo">
-        <img src="../static/img/Undo.png" width="17px" height="17px">
-        <span>Undo</span>
-    </button>
-    <button class="" id="cmd_redo">
-        <img src="../static/img/Redo.png" width="17px" height="17px">
-        <span>Redo</span>
-    </button>
-    <!--   
-      <a href="javascript:void(0);" id="cmd_zoom_in">zoom in</a>
-<a href="javascript:void(0);" id="cmd_zoom_out">zoom out</a>
-<a href="javascript:void(0);" id="cmd_zoom_reset">zoom reset</a>
--->
 </div>
 <!-- command group ends-->
 
@@ -479,7 +475,7 @@
 <!-- Custom js -->
 <script src="../static/js/bootstrap.min.js"></script>
 <script src="../static/js/bootstrap-tooltip.js"></script>
-<script src="../static/js/bootstrap-popover.js"></script>
+
 <script src="../static/js/regulation/base/js/easy.js"></script>
 <script src="../static/js/regulation/dtree.js"></script>
 <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>

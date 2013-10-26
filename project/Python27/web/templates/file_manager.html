@@ -26,7 +26,7 @@
         <button class="btn" data-dismiss="modal" aria-hidden="true" onClick="location.reload();">关闭</button>
       </div>
     </div>    
-    <div class="span3">
+    <div class="span4" style="margin:10px;padding-left:20px">
     <ul class="nav nav-list bs-docs-sidenav affix" id="navlist" >
       <li class="active" title='show your own file list here' data-toggle="tooltip" id='navlist1'>
         <a href="#yourfilelist" data-toggle="tab" >
@@ -46,13 +46,18 @@
           <i class="icon-chevron-right"></i>
           Your Part List
         </a>
+      </li>   
+      <li title='show your parts here'>
+         <button type="button" class="btn btn-default btn-large" onClick="window.history.back(-1);">
+ 		<span class="icon-arrow-left"></span> Back
+	</button> 
       </li>      
     </ul>
     <button type="button" class="btn btn-default btn-large" onClick="window.history.back(-1);">
  		<span class="icon-arrow-left"></span> Back
 	</button>  
   	</div>
-    <div class="span9 tab-content">
+    <div class="span10 tab-content">
     <div class="tab-pane active" id="yourfilelist">
     <h2>Your File List</h2>
     <table class="table table-hover table-bordered">

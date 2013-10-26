@@ -19,10 +19,12 @@ $.fn.dashboard = function(options) {
 				per = 100;
 			else if (per < 0)
 				per = 0;
+			/* if is before regulated */
+			/* if(options.max == 100 && options.min == 0) per = 100*Math.pow(per/100, 0.3); */
 			per = Math.floor(per);
 			$(this).find(".arrow1").css('transform', 'rotate(' + ((1.8 * (per+3)) - 180) + 'deg)');
 			$(this).find(".arrow2").css('transform', 'rotate(' + ((1.8 * (per-3)) - 180) + 'deg)');
-			if(options.max == 1000) {
+			if(options.max == 100) {
 				$(this).find(".dashboard-value").text(val.toFixed(0));
 			} else if(options.max == 10) {
 				$(this).find(".dashboard-value").text(val.toFixed(3));
@@ -94,7 +96,7 @@ var protein = {
     if (!aData['display'])
       $("#" + aTextureId).hide();
 
-		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul double\"><div class=\"pops-scale scale left\"></div><div class=\"slider pops\"></div><div class=\"pops-scale scale right\"></div><span>PoPS</span></div><div class=\"protein-range mul single\"><div class=\"rips-scale scale left\"></div><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul single\"><div class=\"copy-scale scale left\"></div><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"k1-scale scale left\"></div><div class=\"slider k1\"></div><div class=\"k1-scale scale right\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"concen-scale scale left\"></div><div class=\"slider concen\"></div><span>concen</span></div></div>");
+		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">100</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul double\"><div class=\"pops-scale scale left\"></div><div class=\"slider pops\"></div><div class=\"pops-scale scale right\"></div><span title=\"The strength of promoter\">PoPS</span></div><div class=\"protein-range mul single\"><div class=\"rips-scale scale left\"></div><div class=\"slider rips\"></div><span title=\"The strength of RBS\">RiPS</span></div><div class=\"protein-range mul single\"><div class=\"copy-scale scale left\"></div><div class=\"slider copy\"></div><span title=\"The copy number of plasmid backbone\">copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"k1-scale scale left\"></div><div class=\"slider k1\"></div><div class=\"k1-scale scale right\"></div><span title=\"The reaction constant of transcriptional regulation\">K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"concen-scale scale left\"></div><div class=\"slider concen\"></div><span title=\"The concentration of inducer\/corepressor\">concen</span></div></div>");
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
@@ -102,11 +104,13 @@ var protein = {
 		$("#" + aTextureId).data("pos", aData['pos']);
 		var popsOptionLeft = [];
 		var popsOptionRight = [];
-		for(var i = 0; i < aData['pops_option'].length; i++) {
-			if(aData['pops_option'][i].type == 'left') {
-				popsOptionLeft.push(aData['pops_option'][i]);
-			} else if(aData['pops_option'][i].type == 'right') {
-				popsOptionRight.push(aData['pops_option'][i]);
+		if(aData['pops_option']) {
+			for(var i = 0; i < aData['pops_option'].length; i++) {
+				if(aData['pops_option'][i].type == 'left') {
+					popsOptionLeft.push(aData['pops_option'][i]);
+				} else if(aData['pops_option'][i].type == 'right') {
+					popsOptionRight.push(aData['pops_option'][i]);
+				}
 			}
 		}
 		$("#" + aTextureId).data("pops_option_left", popsOptionLeft);
@@ -116,7 +120,7 @@ var protein = {
 			size: 40,		
 			percentage: 0,
 			min: 0,
-			max: 1000,
+			max: 100,
 		})
 
 		$("#" + aTextureId + " .repress-rate").dashboard({
@@ -476,7 +480,7 @@ var plasmid =  {
 						
 		// $("#" + aTextureId + " div .label").text(aTextureId); 
 		/* $("#" + aTextureId + " div .label").html("<a href='plasmid'><i class='icon-zoom-in'></i>" + aTextureId + "</a>"); */
-		$("#" + aTextureId + " div .label").html("<span class='view-plasmid'><i class='icon-zoom-in'></i>" + aTextureId + "</span>");
+		$("#" + aTextureId + " div .label").html("<span class='view-plasmid' title='View plasmid sequence'><i class='icon-zoom-in'></i>" + aTextureId + "</span>");
 		$("#" + aTextureId).append("<div id='" + aTextureId + "-first' style='display:none'></div>");
 
 		for(var i = 0; i < aData.length; i++) {
@@ -512,7 +516,7 @@ var plasmid =  {
 		$("#plasmids-view .mCSB_container").append("<div class='plasmids' id='plasmid-" + count.toString() + "'></div>");	
 		var aTextureId = "plasmid-" + count.toString();
 		$("#" + aTextureId).append("<div><span class=\"label\"></span></div><div class=\"cmd-del\">x</div>");
-		$("#" + aTextureId + " div .label").html("<span class='view-plasmid'><i class='icon-zoom-in'></i>" + aTextureId + "</span>");
+		$("#" + aTextureId + " div .label").html("<span class='view-plasmid' title='View plasmid sequence'><i class='icon-zoom-in'></i>" + aTextureId + "</span>");
 		$("#" + aTextureId).append("<div id='" + aTextureId + "-first' style='display:none'></div>");
 		checkEmptyPlasmid();
 		/* $("#" + aTextureId).append("<div id='" + aTextureId + "-first'></div>"); */
@@ -532,6 +536,7 @@ var plasmid =  {
 		
 	},
 	viewPlasmid: function(aTextureId) {
+		$("#" + aTextureId + " div .label .view-plasmid").tooltip();
 		$("#" + aTextureId + " div .label .view-plasmid").click(function(){
       var data = {};
 			var circuit = [];
