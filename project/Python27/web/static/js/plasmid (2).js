@@ -761,10 +761,10 @@ function isPointInCircle(circle,x,y)
 } 
 $(function(){	
 	$('#linknext').click(function(){
-		window.location.pathname = "/simulation";
+		window.location.pathname = "/protocol";
 	});
 	$('#linkabove').click(function(){
-		window.location.pathname = "/protocol";
+		window.location.pathname = "/simulation";
 	});
 	handlerWebSocket();		
 });
