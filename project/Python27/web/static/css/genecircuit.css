@@ -213,12 +213,16 @@
 	display: inline-block;
 }
 
-.protein-range.mul{
+.protein-range.mul.single{
 	width: 30%;
 }
 
+.protein-range.mul.double{
+	width: 36%;
+}
+
 .protein-range .slider {
-	margin: 6px;
+	margin: 6px 0;
 	display: inline-block;
 }
 
@@ -226,7 +230,7 @@
 	display: inline-block;
 	margin: 6px 0;
 	height: 100px;
-	width: 10px;
+	width: 15px;
 	font-size: 20px;
 	vertical-align: top;
 	position: relative;
@@ -240,6 +244,7 @@
 	cursor: pointer;
 	top: 0%;
 	position: absolute;
+	border-width: 1px 0 0 0;
 }
 
 
