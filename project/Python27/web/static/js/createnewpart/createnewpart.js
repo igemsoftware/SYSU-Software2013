@@ -295,7 +295,10 @@ function biobrickDivAddBiobrick(name)
 	var biobrick=document.createElement("div");
 	biobrick.style.width=name.length*10+'px';
 	biobrick.style.height="30px";
-	biobrick.style.backgroundColor="#4388CC";
+	//biobrick.style.backgroundColor="#3ABBB7";
+	//biobrick.style.color="#FFF";
+	biobrick.setAttribute("class", "btn-more"); 
+	biobrick.style.backgroundColor="#3ABBB7";
 	biobrick.onclick=function()
 	{
 		console.log(this);
