@@ -972,11 +972,12 @@ $(function(){
 		plasmid.addPlasmid();
 	});
 
-	$("#index").click(function(){
+	$("#linknext").click(function(){
 		$(".view-plasmid").tooltip('show');
-		$("#btn-edit").tooltip('show');
+		/* $("#btn-edit").tooltip('show'); */
 		$("#btn-viewmore").tooltip('show');
-		setTimeout("$(\".view-plasmid\").tooltip('hide');$(\"#btn-edit\").tooltip('hide');$(\"#btn-viewmore\").tooltip('hide');", 500);
+		/* setTimeout("$(\".view-plasmid\").tooltip('hide');$(\"#btn-edit\").tooltip('hide');$(\"#btn-viewmore\").tooltip('hide');", 500); */
+		setTimeout("$(\".view-plasmid\").tooltip('hide');$(\"#btn-viewmore\").tooltip('hide');", 500);
 	});
 });
 
