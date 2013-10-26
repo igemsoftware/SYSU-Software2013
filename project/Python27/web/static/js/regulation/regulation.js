@@ -11,16 +11,21 @@
 $().ready(function() {
     document.ontouchmove = function(e) {
         e.preventDefault();
-    };   
+    };
+
+    $("#linktogc").click(function(){
+        console.log("haha");
+        window.location.pathname = "/genecircuit";
+    });
 
 
     // click header 
-    $(".header").click(function() {
-        // console.log(app.view.figures);
+    // $(".header").click(function() {
+    //     // console.log(app.view.figures);
         
-        window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
-        console.log(window.sessionStorage.getItem("regulationWork"));
-    });
+    //     window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
+    //     console.log(window.sessionStorage.getItem("regulationWork"));
+    // });
 
     // toggle left-container
     $(".trigger-left").click(function() {
@@ -769,17 +774,10 @@ $().ready(function() {
                 } else if (part.linkType == "Repressor") {
                     line.Repressor.onClick();
                 }
-                
-                console.log(line);
-                // console.log(app.view.getFigure(part.targetId));
 
             }
 
             function getLine(id) {
-                // console.log(id);
-                // console.log(app.view.getFigure(id));
-                // console.log(app.view.lines);
-
                 var lines = app.view.lines;
                 for (var i = 0; i < lines.getSize(); i++) {
                     if (lines.get(i).targetPort.parent.id == id) {

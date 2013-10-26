@@ -39,7 +39,7 @@ body {
 }
 
 .header .nav ul {
-  margin: 40px 215px 0 0;
+  margin: 40px 115px 0 0;
   list-style: none;
   font-size:  14px;
   color: #407279;
@@ -49,9 +49,25 @@ body {
   display: inline-block;
   padding: 0 11px;
   height: 29px;
-  margin: 0 17px;
+  margin: 0 8px;
   line-height: 29px;
   border-radius: 4px;
+
+}
+
+.header .nav ul li.arrow {
+  color: transparent;
+  cursor: pointer;
+}
+
+.header .nav ul li.arrow-right {
+  background-image: url(../img/right.png);
+  background-repeat: no-repeat;
+}
+
+.header .nav ul li.arrow-left {
+  background-image: url(../img/left.png);
+  background-repeat: no-repeat;
 }
 
 .header .nav ul li.active {
@@ -65,6 +81,7 @@ body {
 .header .nav ul li a {
   text-decoration: none;
   color: #407279;
+  cursor: default;
 }
 
 .header .nav .pointer-arrow {
