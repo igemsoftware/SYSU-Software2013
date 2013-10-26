@@ -47,27 +47,27 @@
         </div>        
         <div id="content">
             <div id="canvas-mask">                
-            	<div id='canvasDiv' style='padding-left:30px;width:60%;height:100%;left:30px;top:30px;float:left;' ></div>                
-                <div style="float:left;width:35%;height:100%;">   
-                <div style="height:24%;width:100%;border-style: outset;background-color:#f4f4f4;" title='Choose genes whose simulation curve will be displayed.'>  
-                 <label class="btn" style="background:#426F72;color:#FFF;height:20%;width:96%;cursor:default;"><strong>Curve</strong></label>
-                 <div id="Curve"></div> 
+            	<div id='canvasDiv' style='padding-left:30px;width:60%;height:95%;left:30px;top:30px;float:left;' ></div>                
+                <div style="float:left;width:35%;height:100%;">    
+                <div style="height:24%;width:100%;background-color:#f4f4f4;" title='Choose genes whose simulation curve will be displayed.'>  
+                 <label class="btn" style="font-size:16px;font-family: Arial,Verdana,Sans-serif;background:#608d93;color:#FFF;height:20%;width:96%;cursor:default;">Curve</label>
+                <div id="Curve" style="margin:2px"></div> 
                  </div>
-                 <div id="Option" style="height:25%;width:100%;border-style: outset;background-color:#f4f4f4;"> 
-                 <label class="btn" style="background:#426F72;color:#FFF;height:20%;width:96%;cursor:default;"><strong>Option</strong></label>       
-                 <input type="checkbox" id="stochastic" style="margin:15px;" onChange="stateOnChange(this);"  data-toggle="tooltip" title="Take randomness in transcription and translation into account" data-placement='left'><script>$('#stochastic').tooltip();</script>stochastic</input>        	
+                 <div id="Option" style="height:25%;width:100%;background-color:#f4f4f4;"> 
+                 <label class="btn" style="font-size:16px;font-family: Arial,Verdana,Sans-serif;background:#608d93;color:#FFF;height:20%;width:96%;cursor:default;">Option</label>       
+                 <input type="checkbox" id="stochastic" style="margin:15px;" onChange="stateOnChange(this);"  data-toggle="tooltip" title="Take randomness in transcription and translation into account" data-placement='left'/><script>$('#stochastic').tooltip();</script>stochastic        	
                  <br>	 
-                 <input type="checkbox" id="delay" style="margin:15px;" onChange="stateOnChange(this)" data-toggle="tooltip" title="Take time delay in transcription and translation process into account." data-placement='left'><script>$('#delay').tooltip();</script>time delay</input>
+                 <input type="checkbox" id="delay" style="margin:15px;" onChange="stateOnChange(this)" data-toggle="tooltip" title="Take time delay in transcription and translation process into account." data-placement='left'/><script>$('#delay').tooltip();</script>time delay
                  </div>    
-                 <div style="height:25%;width:100%;display:block;border-style: outset;background-color:#f4f4f4;">
-                 <label class="btn" style="background:#426F72;color:#FFF;height:20%;width:96%;cursor:default;" title="Add inducer into the system. Then select an inducer and click on the curve to select a time point on which inducer will be added"><strong>Inducer</strong></label> 
+                 <div style="height:25%;width:100%;display:block;background-color:#f4f4f4;">
+                 <label class="btn" style="font-size:16px;font-family: Arial,Verdana,Sans-serif;background:#608d93;color:#FFF;height:20%;width:96%;cursor:default;" title="Add inducer into the system. Then select an inducer and click on the curve to select a time point on which inducer will be added">Inducer</label> 
                  <div id="Inducer"> </div>    
                  </div>      
-                  <div id="buttons" style="height:20%;display:block;border-style: outset;background-color:#f4f4f4;width:100%;"> 
+                  <div id="buttons" style="height:20%;display:block;background-color:#f4f4f4;width:100%;"> 
                   
-                   <input id="back-botton" class="btn" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;background:#F39;color:#FFF;" type="submit" value="back" onClick="window.history.back(-1);" data-toggle="tooltip" title="go back to gene circuit"/><script>$('#back-botton').tooltip();</script>
+                   <input id="back-botton" class="btn" style="font-size:16px;font-family:Arial,Verdana,Sans-serif;width:30%;height:30%;float:left;margin:30px;background:#f95f53;color:white;" type="submit" value="back" onClick="window.history.back(-1);" data-toggle="tooltip" title="go back to gene circuit"/><script>$('#back-botton').tooltip();</script>
                    
-                   <input id="save-button" class="btn" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;background:#09C;color:#FFF;" type="submit" value="Save Graph" onClick="saveGraph();" data-toggle="tooltip" title="save and download the simulation graph"/><script>$('#save-button').tooltip();</script>
+                   <input id="save-button" class="btn" style="font-size:16px;font-family:Arial,Verdana,Sans-serif;width:30%;cursor:pointer;float:right;height:30%;margin:30px;background:#20a2de;color:white;" type="submit" value="Save Graph" onClick="saveGraph();" data-toggle="tooltip" title="save and download the simulation graph"/><script>$('#save-button').tooltip();</script>
                  </div>    
                  </div>
 			 </div>
@@ -114,7 +114,7 @@
                                 <!-- commandmenu starts -->
                                 <div id="commandmenu" class="block">
                                     <div id="button-group">
-                                        <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal">My Files</button>
+                                        <button class="mybtn" id="myfile">My Files</button>
                                     </div>
                                 </div>
                                 <!-- commandmenu ends -->
