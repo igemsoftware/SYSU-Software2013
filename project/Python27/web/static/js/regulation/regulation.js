@@ -14,7 +14,6 @@ $().ready(function() {
     };
 
     $("#linktogc").click(function(){
-        console.log("haha");
         window.location.pathname = "/genecircuit";
     });
 
@@ -415,7 +414,7 @@ $().ready(function() {
         }));
         sessionStorage.regulation = jsonData;
 
-        // window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
+        window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
 
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();

@@ -49,7 +49,7 @@ body {
   display: inline-block;
   padding: 0 11px;
   height: 29px;
-  margin: 0 8px;
+  margin: 0 2px;
   line-height: 29px;
   border-radius: 4px;
 
@@ -58,6 +58,8 @@ body {
 .header .nav ul li.arrow {
   color: transparent;
   cursor: pointer;
+  margin: 0;
+  width: 0;
 }
 
 .header .nav ul li.arrow-right {
