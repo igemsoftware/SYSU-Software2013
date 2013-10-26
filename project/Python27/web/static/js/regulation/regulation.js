@@ -127,7 +127,11 @@ $().ready(function() {
     
     // clear the canvas
     $("#clear").click(function() {
-        app.view = new g.View("canvas");
+        app = null;
+        $("#canvas").remove();
+
+        $("#canvas-mask").append("<div id=\"canvas\"></div>");
+        app = new g.Application();
     });
 
     // save configuration of protein 
