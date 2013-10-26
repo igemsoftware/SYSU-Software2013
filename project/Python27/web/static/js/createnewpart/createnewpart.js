@@ -19,7 +19,6 @@ function addSeqPartButtonOnclick(obj)
 	{
 		document.getElementById('optionDiv').style.width="40%";
 		document.getElementById('optionDiv').style.height="100px";
-		document.getElementById('optionDiv').style.height="100px";
 		textareaDiv.style.display='block';
 	}else{//when the seqtextArea is shown
 		var seq=document.getElementById('seqInput').value;
