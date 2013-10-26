@@ -272,19 +272,25 @@ def get_promoter_label(database, actrep, l_type, cor_ind_type, get_all = True):
   self_option = database.getSelfPromoterOption(actrep, l_type, cor_ind_type)
   right_promoter = set()
   for item in self_option:
+    p_value = item[get_type_of_promoter(l_type)]
+    hash_str = str(item["Number"])+str(p_value)
+    if hash_str in right_promoter:
+      continue
     ret.append({"des": item["Number"],
-      "val": item[get_type_of_promoter(l_type)],
+      "val": p_value,
       "type": "right"})
-    right_promoter.add(item["Number"])
-
+    right_promoter.add(hash_str)
   if get_all:
     pops_option = database.getAllPromoterOption(l_type, cor_ind_type)
     for item in pops_option:
-      if item["Number"] in right_promoter:
+      p_value = item[get_type_of_promoter(l_type)]
+      hash_str = str(item["Number"])+str(p_value)
+      if hash_str in right_promoter:
         continue
       ret.append({"des": item["Number"],
-        "val": item[get_type_of_promoter(l_type)],
+        "val": p_value,
         "type": "left"})
+      right_promoter.add(str(item["Number"])+str(p_value))
   return ret
 
 # --------------------------------------------------------------------------
