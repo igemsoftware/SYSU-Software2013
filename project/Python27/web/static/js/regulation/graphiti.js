@@ -599,6 +599,8 @@ g.Buttons.Activate = graphiti.shape.icon.Activate.extend({
 
             var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.ArrowDecorator(), "Activate");
             app.view.getCommandStack().execute(command); // 添加到命令栈中
+            this.parent.regulated = true;
+            g.hideAllToolbar();
             // app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
         }
     }
@@ -642,6 +644,8 @@ g.Buttons.Inhibit = graphiti.shape.icon.Inhibit.extend({
 
             var command = new graphiti.command.CommandConnect(canvas, targetPort, sourcePort, new graphiti.decoration.connection.TDecorator(), "Inhibit");
             app.view.getCommandStack().execute(command); // 添加到命令栈中
+            this.parent.regulated = true;
+            g.hideAllToolbar();
         }
     }
 });
@@ -1172,8 +1176,10 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 
             for (var i = 0; i < connections.size; i++) {
                 connection = connections.get(i);
-                connection.addFigure(new g.Buttons.Activate(), new graphiti.layout.locator.ManhattanMidpointLocator(connection));
-                connection.addFigure(new g.Buttons.Inhibit(), new graphiti.layout.locator.MidpointLocator(connection));
+                if (!connection.regulated) {
+                    connection.addFigure(new g.Buttons.Activate(), new graphiti.layout.locator.ManhattanMidpointLocator(connection));
+                    connection.addFigure(new g.Buttons.Inhibit(), new graphiti.layout.locator.MidpointLocator(connection));
+                }
             }
 
             // show exogenous-factors configuration
@@ -1198,9 +1204,12 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
 (function(ex) {
     ex.closeToolbar = function(ctx) {
         // remove all children nodes
-        if (ctx.remove || ctx.label) {
+        if (ctx.remove || ctx.label || ctx.Activate || ctx.Inhibit) {
             ctx.resetChildren();
         }
+
+        if (ctx.getChildren().getSize() != 0)
+            ctx.resetChildren();
     };
 })(g);
 
@@ -1278,6 +1287,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         }
         app.view.getCommandStack().execute(command); // 添加到命令栈中
         // app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
+        g.hideAllToolbar();
     };
 })(g);
 

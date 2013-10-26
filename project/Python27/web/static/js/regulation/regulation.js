@@ -712,8 +712,6 @@ $().ready(function() {
                 var command = new graphiti.command.CommandAdd(app.view, figure, part.xPos, part.yPos);
                 app.view.getCommandStack().execute(command);    // 添加到命令栈中
 
-                console.log(part.xPos + "  " + part.yPos);
-
                 app.view.collection.remove(figure.getId());
 
                 figure.setId(part.id);    // 设置id
