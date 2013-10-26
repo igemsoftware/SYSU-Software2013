@@ -295,7 +295,10 @@ function biobrickDivAddBiobrick(name)
 	var biobrick=document.createElement("div");
 	biobrick.style.width=name.length*10+'px';
 	biobrick.style.height="30px";
-	biobrick.style.backgroundColor="#4388CC";
+	//biobrick.style.backgroundColor="#3ABBB7";
+	//biobrick.style.color="#FFF";
+	biobrick.setAttribute("class", "btn-more"); 
+	biobrick.style.backgroundColor="#3ABBB7";
 	biobrick.onclick=function()
 	{
 		console.log(this);
@@ -305,8 +308,10 @@ function biobrickDivAddBiobrick(name)
 	biobrick.style.marginTop="10px";	
 	var span=document.createElement("span");
 	span.innerHTML=name;
-	span.style.color="black";
-	span.style.margin="5px";
+	span.style.color="white";
+	span.style.margin="7px";
+	span.style.paddingTop="4px";
+	span.style.paddingLeft="4px";
 	biobrick.appendChild(span);
 	biobrickDiv.appendChild(biobrick);
 }
