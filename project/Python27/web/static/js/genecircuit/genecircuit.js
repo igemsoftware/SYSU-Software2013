@@ -48,8 +48,10 @@ $.fn.scale = function(options) {
 					var per = (1 - options.lines[i].val / (options.max-options.min)) * 100;
 					that.css("top", per.toString() + "%");
 					if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
-					else if(options.lines[i].type == "right") that.css("border-color", "#56ff56");
-					console.log(options.lines[i].type, options.lines[i]);
+					else if(options.lines[i].type == "right"){ 
+						that.css("border-color", "#43aa60");
+						that.css("border-width", "1px 0 1px 0");
+					}
 					that.bind("click", function(){
 						var aThat = that;
 						var aOptions = options;
@@ -98,6 +100,17 @@ var protein = {
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
 		$("#" + aTextureId).data("display", aData['display']);
 		$("#" + aTextureId).data("pos", aData['pos']);
+		var popsOptionLeft = [];
+		var popsOptionRight = [];
+		for(var i = 0; i < aData['pops_option'].length; i++) {
+			if(aData['pops_option'][i].type == 'left') {
+				popsOptionLeft.push(aData['pops_option'][i]);
+			} else if(aData['pops_option'][i].type == 'right') {
+				popsOptionRight.push(aData['pops_option'][i]);
+			}
+		}
+		$("#" + aTextureId).data("pops_option_left", popsOptionLeft);
+		$("#" + aTextureId).data("pops_option_right", popsOptionRight);
 
 		$("#" + aTextureId + " .before-regulated").dashboard({
 			size: 40,		
@@ -324,7 +337,7 @@ var protein = {
 		$("#" + aTextureId).data("pos", aData.pos);
 	},
 	setRightScale: function(aTextureId, aData) {
-		console.log(aData);
+		$("#" + aTextureId).data("pops_option_right", aData["pops_option"]);
 		$("#" + aTextureId + " .pops-scale.right").empty().scale({
 			lines: aData["pops_option"], 
 			aTextureId: aTextureId + "-pops",
@@ -542,8 +555,25 @@ var plasmid =  {
 			});	
       data.circuit = circuit;
 			sessionStorage.genecircuitSave=JSON.stringify({'genecircuit':data});
-			sessionStorage.gene_circuit = JSON.stringify(getDataCollection());
-			sessionStorage.regulation = undefined;
+
+
+
+
+			var dataCollection = getDataCollection();
+			var pLength = $("#dashboard-view .mCSB_container .proteins").length;
+			for(var i = 0; i < pLength; i++) {
+				var pid = $(".proteins:eq(" + i.toString() + ")").attr('id');
+
+				pid_i = pid.substring(pid.indexOf('-') + 1, pid.length);
+				var p = $("#" + pid);
+				
+				dataCollection.proteins[pid_i].pops_option = p.data('pops_option_left').concat(p.data('pops_option_right'));
+			}
+
+
+			sessionStorage.gene_circuit = JSON.stringify(dataCollection);
+			// sessionStorage.regulation = undefined; 
+			sessionStorage.curPage = 'plasmid';
 			// console.log(data); 
 			// sendMessage 
 			// console.log(sessionStorage);  
