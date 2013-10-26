@@ -19,7 +19,7 @@ graphiti.decoration.connection.TDecorator = graphiti.decoration.connection.Decor
     init : function(width, height)
     {   
         this._super( width, height);
-        this.color = new graphiti.util.Color(255, 0, 0);
+        this.color = new graphiti.util.Color(225, 69, 69);
     },
 
 	/**
@@ -43,8 +43,21 @@ graphiti.decoration.connection.TDecorator = graphiti.decoration.connection.Decor
 		var st = paper.set();
 		var path = ["M0 0"];  
 		path.push(  "L", 0, " ", -this.height/2); 
-		path.push(  "L",0, " ", this.height/2);
+		path.push(  "L", 0, " ", this.height/2);
 		path.push(  "L0 0");
+		path.push(  "M1 0");
+		path.push(  "L", 1, " ", -this.height/2); 
+		path.push(  "L", 1, " ", this.height/2);
+		path.push(  "L1 0");
+		path.push(  "M2 0");
+		path.push(  "L", 2, " ", -this.height/2); 
+		path.push(  "L", 2, " ", this.height/2);
+		path.push(  "L2 0");
+		path.push(  "M3 0");
+		path.push(  "L", 3, " ", -this.height/2); 
+		path.push(  "L", 3, " ", this.height/2);
+		path.push(  "L3 0");
+		path.push(  "Z");
 		st.push(
 	        paper.path(path.join(""))
 		);

@@ -59,7 +59,7 @@ graphiti.Connection = graphiti.shape.basic.PolyLine.extend({
       this.router = this.DEFAULT_ROUTER;
 
       this.setColor("#4cbf2f");
-      this.setStroke(2);
+      this.setStroke(3);
     },
     
 
