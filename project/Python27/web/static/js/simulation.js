@@ -115,7 +115,7 @@ function getinducerList(circuit)
 }
 function createAnInputCheckBoxForInducer(index,width,height,inducerIndex,inducerName){
 	var div=document.createElement("div");
-	div.setAttribute('title', inducerName);
+	div.setAttribute('title', 'Add inducer into the system. Then select an inducer and click on the curve to select a time point on which inducer will be added');
 	var o=document.createElement("input");
     o.type="radio";
     o.name="inducerRadio";
