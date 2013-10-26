@@ -58,6 +58,8 @@ $.fn.scale = function(options) {
 						var id_str = aOptions.aSlider.parents(".proteins").attr('id');
 						detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 						detail.new_value = aOptions.aSlider.slider("value");
+						if(aOptions.direction == "right") detail.cluster = true;
+						else detail.cluster = false;
 						randomValue(); 
 					};
 				}()); 
@@ -625,6 +627,7 @@ var detail = {
 	type: "",
 	pro_id: 0,
 	new_value: 0,
+	cluster: false,
 }
 
 /* command */
