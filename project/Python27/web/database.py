@@ -389,22 +389,22 @@ class SqliteDatabase:
 		else:
 			return None
 
-	def find_promoter_with_repressor(self, promoter_set, repressor = None):
-		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
-    ActRreNumber = "%s" AND ActRreType = "Negative"' % repressor)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		promoter = decodejson[0]["PromoterNumber"]
-		self.__cursor.execute('SELECT * FROM promoter WHERE Number = "%s"' %
-        promoter)
+	def find_promoter(self, promoter_set, act_rep, act_rep_type):
+		sql_cmd = """
+			SELECT promoter.* FROM promoter INNER JOIN relation
+			ON promoter.Number = relation.PromoterNumber
+			WHERE ActRreNumber = "%s" AND ActRreType = "%s"
+			""" % (act_rep, act_rep_type)
+		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
 			for item in decodejson:
+				print "asdfasdf %s" %item["Cluster"]
 				if item["Cluster"] not in promoter_set:
 					promoter_set.add(item["Cluster"])
 					return item
-				return None
+			return None
 		else:
 			return None
 
