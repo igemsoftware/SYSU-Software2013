@@ -34,15 +34,13 @@
             <!-- navigation -->
             <div class="nav">
                 <ul>
-                    <!-- <li id="index">Regulation network</li> -->
-                    <!-- <li class="active"><a href="genecircuit">Gene Circuit</a></li> -->
-                    <!-- <li><a href="plasmid">Plasmid</a></li> -->
-                    <!-- <li><a href="protocol">Protocol</a></li> -->
-                    <!-- <li><a href="simulation">Simulation</a></li> -->
-										<li><a id="index" href="index">Regulation network</a></li>
-                    <li class="active"><a href="genecircuit">Gene Circuit</a></li>
-                    <li><a href="protocol">Protocol</a></li>
-                    <li><a href="simulation">Help</a></li>
+                    <li><a href="index">Regulation network</a></li>
+                    <li class="arrow arrow-left" id="index"><a href="javascript:void(0);">&nbsp</a></li>
+                    <li class="active"><a href="javascript:void(0);" >Gene Circuit</a></li>
+                    <li class="arrow arrow-right" id="linknext"><a href="javascript:void(0);">&nbsp</a></li>
+                    <li><a href="javascript:void(0);">Plasmid</a></li>
+                    <li><a href="javascript:void(0);">Protocol</a></li>
+                    <li><a href="javascript:void(0);">Simulation</a></li>
                 </ul>
                 <div class="pointer-arrow"></div>
             </div>
@@ -90,13 +88,13 @@
 
 									<div id="cmd">
 										<!-- <button class="btn-more" id="cmd-new-plasmid" data-toggle="tooltip" title="add a new plasmid">New plasmid</button> -->
-										<span class="cmd_undo_redo" id="cmd_undo" data-toggle="tooltip" title="undo">
+										<span class="cmd_undo_redo" id="cmd_undo">
 												<img src="../static/img/undo_1.png">
 										</span>
 										<span class="cmd_undo_redo" id="cmd-new-plasmid" data-toggle="tooltip" title="Add a new plasmid">
 												<img src="../static/img/add.png">
 										</span>
-										<span class="cmd_undo_redo" id="cmd_redo" data-toggle="tooltip" title="redo">
+										<span class="cmd_undo_redo" id="cmd_redo">
 												<img src="../static/img/redo_1.png">
 										</span>
 									</div>
@@ -475,7 +473,7 @@
 <!-- Custom js -->
 <script src="../static/js/bootstrap.min.js"></script>
 <script src="../static/js/bootstrap-tooltip.js"></script>
-
+<script src="../static/js/bootstrap-popover.js"></script>
 <script src="../static/js/regulation/base/js/easy.js"></script>
 <script src="../static/js/regulation/dtree.js"></script>
 <script src="../static/js/regulation/jquery.mCustomScrollbar.concat.min.js"></script>
