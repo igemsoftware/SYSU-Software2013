@@ -89,6 +89,7 @@ body {
   left: 270px;
   top: 50%;
   background-image: url(../img/left-trigger.png);
+  background-repeat: no-repeat;
 }
 
 .trigger-right {
@@ -96,6 +97,7 @@ body {
   left: -71px;
   top: 50%;
   background-image: url(../img/right-trigger.png);
+  background-repeat: no-repeat;
 }
 
 .accordion-group {
