@@ -160,8 +160,8 @@ function createAnInputCheckBox(index,width,height,proteinName){
 				newdata.push(data[i]);
 			}
 		}
-    var width1 = document.getElementById('canvasDiv').clientWidth;
-    var height1 = document.getElementById('canvasDiv').clientHeight;
+    var width1 = document.getElementById('canvasDiv').clientWidth -parseInt(document.getElementById('canvasDiv').style.left);
+    var height1 = document.getElementById('canvasDiv').clientHeight -parseInt(document.getElementById('canvasDiv').style.top);	
 		run(newdata, 'canvasDiv', width1, height1, time, dt);
 		chart.resize(document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
 	}
