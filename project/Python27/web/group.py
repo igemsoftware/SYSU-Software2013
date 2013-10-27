@@ -240,7 +240,6 @@ def work(data, database):
     # find promoter
     regulator = groups[cur_grp][pro_pos[link["from"]]]
     if link["type"] == "Repressor":
-      print regulator
       promoter = find_promoter(database, promoter_set, repressor = regulator)
     if link["type"] == "Activator":
       promoter = find_promoter(database, promoter_set, activator = regulator)
@@ -304,23 +303,26 @@ def get_regulator_label(database, promoter, l_type, cor_ind_type, get_all = True
   self_option = database.getSelfRegulatorOption(promoter, l_type, cor_ind_type)
   right_regulator = set()
   for item in self_option:
+    print item
     r_value = item["K1"]
+    print r_value
     hash_str = str(item["ActRreNumber"])+str(r_value)
     if hash_str in right_regulator:
       continue
     ret.append({"des": item["ActRreNumber"],
-      "val": r_value,
+      "val": log10(r_value),
       "type": "right"})
     right_regulator.add(hash_str)
   if get_all:
     k1_option = database.getAllRegulatorOption(l_type, cor_ind_type)
     for item in k1_option:
       r_value = item["K1"]
+      print r_value
       hash_str = str(item["ActRreNumber"])+str(r_value)
       if hash_str in right_regulator:
         continue
       ret.append({"des": item["ActRreNumber"],
-        "val": r_value,
+        "val": log10(r_value),
         "type": "left"})
       right_regulator.add(str(item["ActRreNumber"])+str(r_value))
   return ret
@@ -454,7 +456,6 @@ def dump_group(network, database):
     grp = []
     # get name and type of group member
     for elem in data[i]:
-      print elem
       xml_file = find_file(elem + ".xml", ".")
       grp.append({"name": elem, "type": component_union.get_part_type(xml_file)})
     for idx in range(1, len(grp) - 1, 2):
@@ -506,7 +507,8 @@ def dump_group(network, database):
     l_type = groups[b_list[i]]["type"]
     proteins[i]["pops_option"] = get_promoter_label(database, regulator, \
         l_type, corep_ind_type)
-    proteins[i]["k1_option"] = get_regulator_label(database, promoter["name"], \
+    if corep_ind_type != "None":
+      proteins[i]["k1_option"] = get_regulator_label(database, promoter["name"], \
         l_type, corep_ind_type)
 
   # do not display regulation protein
@@ -679,8 +681,8 @@ def update_controller(db, update_info):
 
 if __name__ == "__main__":
   db = database.SqliteDatabase()
-  #print dump_group(data, db)
-  update = {u'detail': {u'new_value': 0.4, u'type': u'K1', u'pro_id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790', u'part_name': 
+  print dump_group(data, db)
+  update = {u'detail': {u'new_value': 0.4, u'type': u'K1', u'pro_id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790', u'part_name':
 u'BBa_K091104', u'cluster': False}, u'gene_circuit': {u'proteins': {u'e53e441d-c811-6d5e-212e-07dbae64f8db': {u'RiPS': 0.12, 
 u'name': u'BBa_C0073', u'repress_rate': 0, u'concen': None, u'grp_id': u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'pos': 4, 
 u'PoPS': 0.84, u'before_regulated': 2, u'K1': None, u'induce_rate': 0, u'copy': 23, u'display': False}, 
