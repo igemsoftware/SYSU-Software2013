@@ -760,6 +760,8 @@ function isPointInCircle(circle,x,y)
     return false;
 } 
 $(function(){	
+	document.getElementById('plasmid-canvas').width=document.getElementById('seqCurrentText').clientWidth;
+	console.log(document.getElementById('plasmid-canvas').width);
 	$('#linknext').click(function(){
 		window.location.pathname = "/protocol";
 	});
