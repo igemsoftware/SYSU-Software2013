@@ -352,31 +352,38 @@ class SqliteDatabase:
 		else:
 			return decodejson[0]['Number']		
 
-	def find_actrep(self, link, regulator_set):
+	def find_actrep(self, link, regulator_set, promoter_set):
 		idx = len(regulator_set) + 1
 		if link["type"] == "Repressor":
 			act_rep_type = "Negative"
 		else:
 			act_rep_type = "Positive"
 		if link["inducer"] not in {"Positive", "Negative"}:
-			self.__cursor.execute('SELECT DISTINCT ActRreNumber FROM relation WHERE\
-					ActRreType = "%s" AND IncCorType IS NULL ORDER BY ActRreNumber DESC\
-					LIMIT 0,%s' % (act_rep_type, idx))
+			sql_cmd = """
+				SELECT relation.ActRreNumber, relation.Cluster AS RCluster,
+				promoter.Cluster FROM promoter INNER JOIN relation
+				WHERE ActRreType = "%s" AND IncCorType IS NULL
+				ORDER BY ActRreNumber DESC
+			""" % (act_rep_type)
 		else:
 			if link["inducer"] == "Positive":
 				inc_cor_type = "Induced"
 			if link["inducer"] == "Negative":
 				inc_cor_type = "Corepressed"
-			self.__cursor.execute('SELECT DISTINCT ActRreNumber FROM relation WHERE\
-					ActRreType = "%s" AND IncCorType = "%s" ORDER BY ActRreNumber DESC\
-					LIMIT 0,%s' % (act_rep_type, inc_cor_type, idx))
+			sql_cmd = """
+				SELECT relation.ActRreNumber, relation.Cluster AS RCluster,
+				promoter.Cluster FROM promoter INNER JOIN relation
+				WHERE ActRreType = "%s" AND IncCorType = "%s"
+				ORDER BY ActRreNumber DESC
+			""" % (act_rep_type, inc_cor_type)
+		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
-			if item["ActRreNumber"] not in regulator_set:
-				regulator_set.add(item["ActRreNumber"])
+			if item["RCluster"] not in regulator_set and item["Cluster"] not in promoter_set:
+				regulator_set.add(item["RCluster"])
+				promoter_set.add(item["Cluster"])
 				return item["ActRreNumber"]
-
 
 	def select_with_name(self, table, name):
 		self.__cursor.execute('SELECT * FROM %s WHERE Number = "%s"' % (table,\
@@ -394,9 +401,11 @@ class SqliteDatabase:
 			ON promoter.Number = relation.PromoterNumber
 			WHERE ActRreNumber = "%s" AND ActRreType = "%s"
 			""" % (act_rep, act_rep_type)
+		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
+		print promoter_set
 		if decodejson != []:
 			for item in decodejson:
 				if item["Cluster"] not in promoter_set:

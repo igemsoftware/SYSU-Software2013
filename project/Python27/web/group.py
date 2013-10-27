@@ -19,9 +19,8 @@ from math import log10
 prom_name = "BBa_I712074"
 rbs_name = "BBa_J61101"
 term_name = "BBa_B0012"
-#data = {"part":[{"id":"9da9b8e5-d2a9-dd36-db24-76a8b4a0d11c","type":"Protein"},{"id":"250affc4-b975-f0e6-5581-6bc2eb9a4db9","name":"Repressor","type":"Repressor"},{"id":"ff1c2420-d743-cede-8827-fdc6b3b4e1fd","type":"Protein"}],"link":[{"from":"9da9b8e5-d2a9-dd36-db24-76a8b4a0d11c","to":"250affc4-b975-f0e6-5581-6bc2eb9a4db9","type":"Bound","inducer":"none"},{"from":"250affc4-b975-f0e6-5581-6bc2eb9a4db9","to":"ff1c2420-d743-cede-8827-fdc6b3b4e1fd","type":"Repressor","inducer":"none"}]}
 
-data = {u'part': [{u'type': u'Protein', u'id': u'374a65bd-5bf7-cae4-1cd1-44a016d3561c', u'name': u'BBa_K112002'}, {u'type': u'Repressor', u'id': u'd82fad51-c176-900e-b056-c3ff02b8feff', u'name': u'Repressor'}, {u'type': u'Protein', u'id': u'7ccb8628-4891-ad32-b8f8-70bf39e1e5ef', u'name': u'BBa_K112004'}], u'link': [{u'to': u'd82fad51-c176-900e-b056-c3ff02b8feff', u'from': u'374a65bd-5bf7-cae4-1cd1-44a016d3561c', u'inducer': u'none', u'type': u'Bound'}, {u'to': u'7ccb8628-4891-ad32-b8f8-70bf39e1e5ef', u'from': u'd82fad51-c176-900e-b056-c3ff02b8feff', u'inducer': u'Negative', u'type': u'Repressor'}]}
+data = {"part":[{"id":"40bb0f60-61bf-deaf-a3f6-898dff283e5b","name":"BBa_J120015","type":"Protein"},{"id":"56fbca1b-935b-bf29-2f3e-e2bc8445b8fc","name":"Repressor","type":"Repressor"},{"id":"586b3410-e97f-b942-f9be-deaad485115a","name":"BBa_K106669","type":"Protein"},{"id":"107df8f1-4b39-e9f2-9ac4-c7ac4a6aef3f","name":"Repressor","type":"Repressor"},{"id":"029edd25-075e-1a49-961f-61790e7d7f41","name":"BBa_J120015","type":"Protein"}],"link":[{"from":"40bb0f60-61bf-deaf-a3f6-898dff283e5b","to":"56fbca1b-935b-bf29-2f3e-e2bc8445b8fc","type":"Bound","inducer":"none"},{"from":"586b3410-e97f-b942-f9be-deaad485115a","to":"107df8f1-4b39-e9f2-9ac4-c7ac4a6aef3f","type":"Bound","inducer":"none"},{"from":"56fbca1b-935b-bf29-2f3e-e2bc8445b8fc","to":"586b3410-e97f-b942-f9be-deaad485115a","type":"Repressor","inducer":"none"},{"from":"107df8f1-4b39-e9f2-9ac4-c7ac4a6aef3f","to":"029edd25-075e-1a49-961f-61790e7d7f41","type":"Repressor","inducer":"none"}]}
 #data = {"part": [ 
 			#{ "id"  : "1", 
 				#"name": "BBa_C0060", 
@@ -236,11 +235,12 @@ def work(data, database):
 
     # replace repressor with exact component
     groups[cur_grp][pro_pos[link["from"]]] = database.find_actrep(link,\
-        regulator_set)
+        regulator_set, promoter_set)
 
     # find promoter
     regulator = groups[cur_grp][pro_pos[link["from"]]]
     if link["type"] == "Repressor":
+      print regulator
       promoter = find_promoter(database, promoter_set, repressor = regulator)
     if link["type"] == "Activator":
       promoter = find_promoter(database, promoter_set, activator = regulator)
