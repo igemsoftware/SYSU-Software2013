@@ -108,9 +108,10 @@ function getinducerList(circuit)
 	for (x in obj['groups'])
 	{
 		var corep_ind_type = obj.groups[x].corep_ind_type;
+		var corep_ind = obj.groups[x].corep_ind;
 		if(corep_ind_type ==="Inducer" || corep_ind_type === "Corepressor")
 		{
-      var display = corep_ind_type.substring(0, 3) + "_" + x.substring(0, 6);
+      var display = corep_ind_type.substring(0, 3) + "_" + corep_ind;
       console.log(x);
       console.log(display);
 			ret.push([x, display]);

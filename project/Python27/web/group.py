@@ -472,8 +472,7 @@ def dump_group(network, database):
         i_type = inducer_type[j]
         break
     groups[i] = {"sbol":grp, "state": "cis", "type": l_type,
-        "corep_ind_type": i_type, "corep_ind": database.find_cor_ind(),
-        "from": prev, "to": []}
+        "corep_ind_type": i_type, "from": prev, "to": []}
     plasmid.append(i)
 
   # get next nodes of a group
@@ -485,6 +484,8 @@ def dump_group(network, database):
     groups[b_list[i]]["sbol"][pro_pos[i]]["id"] = i
 
     # get protein info
+    ## get promoter of the group
+    promoter = groups[b_list[i]]["sbol"][0]["name"]
     ## get coresponding repressor
     prev_node = cur_group["from"]
     if prev_node != -1:
@@ -494,6 +495,9 @@ def dump_group(network, database):
       regulator = None
     ## get inducer of a link
     corep_ind_type = cur_group["corep_ind_type"]
+    if corep_ind_type != "None":
+      cur_group["corep_ind"] = database.find_cor_ind(corep_ind_type,\
+        regulator, promoter)["IncCorName"]
     ## get protein info
     proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i],\
         regulator)

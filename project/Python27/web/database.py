@@ -433,10 +433,16 @@ class SqliteDatabase:
 		else:
 			return None
 
-	def find_cor_ind(self, corep_ind_type, regulator, promoter):
+	def find_cor_ind(self, cor_ind_type, regulator, promoter):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+
+		print cor_ind_type, regulator, promoter
 		sql_cmd = """SELECT IncCorName, HillCoeff2, K2 FROM relation WHERE
 				ActRreNumber = '%s' AND PromoterNumber = '%s' AND IncCorType = '%s'
-				""" % (regulator, promoter, corep_ind_type)
+				""" % (regulator, promoter, cor_ind_type)
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
