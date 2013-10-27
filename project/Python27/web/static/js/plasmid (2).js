@@ -395,10 +395,9 @@ function initDrawChart(){
 			color_factor : 0.3
 		},					
 		width :document.getElementById('optionpanel').clientWidth*2.2,
-		height : document.getElementById('optionpanel').clientHeight,
+		height : document.getElementById('optionpanel').clientHeight*0.92,
 		radius:140		
 	});		
-	console.log(document.getElementById('optionpanel').clientWidth);
 	if(title!=null)
 	{
 		chart.plugin(new iChart.Custom({
@@ -728,7 +727,8 @@ function canvasMouseMove(obj,e)
 		sessionStorage._offsetAngle=offsetang;
 		chart.push("offset_angle",offsetang);
 		chart.push("animation","false");
-		chart.resize(document.getElementById('optionpanel').clientWidth*2.2,document.getElementById('optionpanel').clientHeight);
+		chart.resize(document.getElementById('optionpanel').clientWidth*2.2,document.getElementById('optionpanel').clientHeight*0.92);
+		console.log(document.getElementById('optionpanel').clientHeight);
 		var ang=270-offsetang;
 		if(ang<0)
 		{

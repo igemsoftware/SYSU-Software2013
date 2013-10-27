@@ -63,11 +63,11 @@
                         <pre contenteditable="false" id="seqCurrentText" style="resize:none;width:100%;height:40px;overflow:hidden;font-size:33px;line-height:90%;background-color:#f4f4f4;" data-toggle="tooltip" title="the sequence of plasmid on the current place"><script>$('#seqCurrentText').tooltip();</script></pre>   
                         <canvas id="plasmid-canvas" width="1290" height="80" ></canvas >      
                     </div>
-                    <div id='drawCanvasDiv' style="width:67%;height:100%;float:left;margin-left:7px;">      
-                        <div id='canvasDiv' style="width:100%;height:100%;left: 0px;top:0px;position:relative;" onmousemove="canvasMouseMove(this,event);" onmousedown="canvasMouseDown(this,event);" onmouseup="canvasMouseUp(this,event);">
+                    <div id='drawCanvasDiv' style="width:67%;height:90%;float:left;margin-left:7px;">      
+                        <div id='canvasDiv' style="width:100%;height:100%;left: 0px;top:0px;" onmousemove="canvasMouseMove(this,event);" onmousedown="canvasMouseDown(this,event);" onmouseup="canvasMouseUp(this,event);">
                         </div> 
                     </div>  
-    <div id='optionpanel' style="width:30%;height:400px;float:left;">
+    <div id='optionpanel' style="width:30%;height:90%;float:left;">
    		<select id='standardSelect' name="standard" style="border:solid 2px #20A2DE;width:100%;height:10%;" onChange="standardOnChange(this);"  data-toggle="tooltip" title="change the standard"><script>$('#standardSelect').tooltip();</script>
         	<option selected="selected" value="">Assembly Standard</option>
             <option value="RFC10">RFC 10</option>
@@ -80,7 +80,7 @@
            		<label style="height:100%;float:left;">Sequence</label>
             	<input id="copy-botton" style="width:100px;cursor:pointer;height:100%;float:right;background-color:#FFBF43;border:none;border-radius:0px;" type="submit" value="downloadSeq" onClick="copyBtnOnClick(this);" data-toggle="tooltip" title="Click this button to save and download the sequence." data-placement="left"/><script>$('#copy-botton').tooltip();</script>        
         	</div>    	        
-        <div id="sequenceDiv" style="width:100%;height:70%; overflow: scroll; float:left;overflow-x: hidden;border-style:solid;border-width:1px;word-break:break-all;background-color:#f4f4f4;" data-toggle="tooltip" title="the whole sequence of the plasmid"><script>$('#sequenceDiv').tooltip();</script>        </div>
+        <div id="sequenceDiv" style="width:100%;height:60%; overflow: scroll; float:left;overflow-x: hidden;border-style:solid;border-width:1px;word-break:break-all;background-color:#f4f4f4;" data-toggle="tooltip" title="the whole sequence of the plasmid"><script>$('#sequenceDiv').tooltip();</script>        </div>
 				</div>
                 </div>
             </div>
