@@ -63,7 +63,10 @@ BiobrickAdder.prototype = {
 
 		figure.name = this.name;	// 设置id
 		figure.nickname = this.nickname;
-		figure.label.setText(this.name);
+
+		if (this.type == "Protein") {
+			figure.label.setText(this.name);
+		}
 
 		if (this.config)
 			figure.config = this.config;

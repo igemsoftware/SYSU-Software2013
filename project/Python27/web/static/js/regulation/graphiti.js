@@ -491,6 +491,18 @@ g.Shapes.R = graphiti.shape.icon.R.extend({
         }
 
         this.TYPE = "R";
+        // Buttons
+        this.remove = new g.Buttons.Remove();
+    },
+
+    onClick: function() {
+        g.toolbar(this);
+    },
+
+    onDoubleClick: function() {
+        if (this.remove || this.label) {
+            this.resetChildren();
+        }
     }
 });
 
@@ -1235,7 +1247,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 "display": "block"
             });
 
-        } else if (ctx.TYPE == "RORA") {
+        } else if (ctx.TYPE == "RORA" || ctx.TYPE == "R" || ctx.TYPE == "A") {
             for (var i = 0; i < canvas.collection.length; i++) {
                 var figure = canvas.getFigure(canvas.collection[i]);
                 if (figure !== null && ctx.getId() !== figure.getId() && figure.TYPE == "Protein") {
