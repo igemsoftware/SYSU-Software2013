@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to iGem</title>
-	<link rel="stylesheet" href="../static/css/login.css">	
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to iGem</title>
+    <link rel="stylesheet" href="../static/css/login.css">	
+  </head>
 
-<body>
-	<div class="container">
-		<div class="left-part"></div>
-		
-		<div class="login-part">
-			<form id="input-field">
-				<input type="text" name="userName" id="username" placeholder="username" required>
-				<input type="password" name="password" id="password" placeholder="password" required>
-				<a id="btn-login"></a>
-			</form>
+  <body>
+    <div class="container"> 
+      <div class="left-part"></div>
 
-			<div class="tips">
-				<span id="mycheckbox" title="Remember your username and password!">
-					<span class="checkbox-mask"></span>					
-					<span>&nbsp Remember me</span>
-				</span>
-				<input id="remember" type="checkbox" name="remember">
+      <div class="login-part">
+        <form id="input-field">
+          <input type="text" name="userName" id="username" placeholder="username" required>
+          <input type="password" name="password" id="password" placeholder="password" required>
+          <a id="btn-login"></a>
+        </form>
 
-				<a href="./register" title="click to sign in">Sign up for CAST?</a>
-			</div>
+        <div class="tips">
+          <span id="mycheckbox" title="Remember your username and password!">
+            <span class="checkbox-mask"></span>					
+            <span>&nbsp Remember me</span>
+          </span>
+          <input id="remember" type="checkbox" name="remember">
 
-			<div class="contact-us">
-				<a id="facebook" href="#" title="facebook"><img src="../static/img/login/facebook.png" alt="facebook"></a>
-				<a id="twitter" href="#" title="twitter"><img src="../static/img/login/twitter.png" alt="twitter"></a>
-				<a id="gplus" href="#" title="gplus"><img src="../static/img/login/gplus.png" alt="gplus"></a>
-			</div>
-		</div>
-		
-		<div class="right-part"></div>
-	</div>
-	<script src="../static/js/rsa/jsbn.js"></script>
-	<script src="../static/js/rsa/jsbn2.js"></script>
+          <a href="./register" title="click to sign in">Sign up for CAST?</a>
+        </div>
+
+        <div class="contact-us">
+          <a id="facebook" href="#" title="facebook"><img src="../static/img/login/facebook.png" alt="facebook"></a>
+          <a id="twitter" href="#" title="twitter"><img src="../static/img/login/twitter.png" alt="twitter"></a>
+          <a id="gplus" href="#" title="gplus"><img src="../static/img/login/gplus.png" alt="gplus"></a>
+        </div>
+      </div>
+
+      <div class="right-part">
+        <div id="start-help">
+          <img src="" alt="help" onclick="starthelp();">
+        </div>
+      </div>
+      <div id="help">
+        <div id="closehelp">
+          <img src="" alt="close" onclick="closehelp();">
+        </div>
+        <div id="help-content">
+          <img src="..\static\img\help\initial interface.jpg" alt="The image may have lost.">
+        </div>
+      </div>
+    </div>
+    <script src="../static/js/help.js"></script>
+    <script src="../static/js/rsa/jsbn.js"></script>
+    <script src="../static/js/rsa/jsbn2.js"></script>
     <script src="../static/js/rsa/prng4.js"></script>
     <script src="../static/js/rsa/rng.js"></script>
     <script src="../static/js/rsa/rsa.js"></script>
     <script src="../static/js/rsa/rsa2.js"></script>
-	<script src="../static/js/jquery-1.8.0.min.js"></script>
+    <script src="../static/js/jquery-1.8.0.min.js"></script>
     <script src="../static/js/rsa/sha1.js"></script>
-	<script src="../static/js/login.js"></script>
-</body>
+    <script src="../static/js/login.js"></script>
+  </body>
 </html>
