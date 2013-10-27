@@ -340,7 +340,6 @@ class SqliteDatabase:
 		temp=''
 		for row in result.fetchall():
 			temp=temp+row[0]+','
-		print temp
 		return temp
 
 	def select_row(self, tableName, idx):
@@ -400,7 +399,6 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
 			for item in decodejson:
-				print "asdfasdf %s" %item["Cluster"]
 				if item["Cluster"] not in promoter_set:
 					promoter_set.add(item["Cluster"])
 					return item
@@ -436,7 +434,7 @@ class SqliteDatabase:
 			return None
 
 	def find_cor_ind(self, corep_ind_type, regulator, promoter):
-		sql_cmd = """SELECT HillCoeff2, K2 FROM relation WHERE
+		sql_cmd = """SELECT IncCorName, HillCoeff2, K2 FROM relation WHERE
 				ActRreNumber = '%s' AND PromoterNumber = '%s' AND IncCorType = '%s'
 				""" % (regulator, promoter, corep_ind_type)
 		self.__cursor.execute(sql_cmd)
@@ -479,7 +477,6 @@ class SqliteDatabase:
 		if cor_ind_type == "Corepressor":
 			cor_ind_type = "Corepressed"
 		idx = len(regulator_set) + 1
-		print cor_ind_type
 		if cor_ind_type not in {"Induced", "Corepressed"}:
 			sql_cmd = 'SELECT DISTINCT ActRreNumber FROM relation WHERE\
 					PromoterNumber = "%s" AND ActRreType = "%s" AND IncCorType IS NULL\
@@ -604,7 +601,6 @@ class SqliteDatabase:
 					WHERE ActRreType = '%s' AND PromoterNumber = '%s'
 					AND relation.IncCorType = '%s'
 					""" % (link_type, promoter, cor_ind_type)
-		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
@@ -674,17 +670,16 @@ class SqliteDatabase:
 					FROM repressor, promoter INNER JOIN relation
 					ON repressor.Number = relation.ActRreNumber WHERE
 					relation.IncCorType IS NULL AND relation.ActRreType = "Negative"
-					ORDER BY abs(repressor.K1 - %e) LIMIT 0,%d
-					""" % (idealValue, idx)
+					ORDER BY abs(repressor.K1 - %e)
+					""" % (idealValue)
 		else:
 			sql_cmd = """
 					SELECT repressor.*, relation.*, promoter.Cluster AS PCluster
 					FROM repressor, promoter INNER JOIN relation
 					ON repressor.Number = relation.ActRreNumber WHERE
 					relation.IncCorType = "%s" AND relation.ActRreType = "Negative"
-					ORDER BY abs(repressor.K1 - %e) LIMIT 0,%d
-					""" % (cor_ind_type, idealValue, idx)
-		print sql_cmd
+					ORDER BY abs(repressor.K1 - %e)
+					""" % (cor_ind_type, idealValue)
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
@@ -710,16 +705,16 @@ class SqliteDatabase:
 					activator, promoter INNER JOIN relation
 					ON activator.Number = relation.ActRreNumber WHERE
 					relation.IncCorType IS NULL AND relation.ActRreType = "Positive"
-					ORDER BY abs(activator.K1 - %e) LIMIT 0,%d
-					""" % (idealValue, idx)
+					ORDER BY abs(activator.K1 - %e)
+					""" % (idealValue)
 		else:
 			sql_cmd = """
 					SELECT activator.*, relation.*, promoter.Cluster AS PCluster FROM
 					activator, promoter INNER JOIN relation
 					ON activator.Number = relation.ActRreNumber WHERE
 					relation.IncCorType = "%s" AND relation.ActRreType = "Positive"
-					ORDER BY abs(activator.K1 - %e) LIMIT 0,%d
-					""" % (cor_ind_type, idealValue, idx)
+					ORDER BY abs(activator.K1 - %e)
+					""" % (cor_ind_type, idealValue)
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)

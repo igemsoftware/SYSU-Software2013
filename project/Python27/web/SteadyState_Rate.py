@@ -26,7 +26,6 @@ def ActRepRate(circuit, database):
             dataset['CopyNumber']  = circuit['proteins'][proid]['copy']
             dataset['MPPromoter']  = promoter['MPPromoter']
             dataset['LeakageRate'] = promoter['LeakageRate']
-            print terminator
             dataset['Efficiency']  = terminator['Efficiency']
             dataset['MPRBS']       = rbs['MPRBS']
             dataset['DegRatemRNA'] = 0.00288
@@ -112,14 +111,12 @@ def CorepIndRate(circuit, database):
             if group['corep_ind_type'] == 'Corepressor':
                 corepressor = database.find_cor_ind("Corepressed",\
                     regulator["Number"], promoter['Number'])
-                print corepressor
                 dataset['Corepressor'] = circuit['proteins'][proid]['concen']
                 dataset['K2']          = corepressor['K2']
                 dataset['HillCoeff2']  = corepressor['HillCoeff2']
             elif group['corep_ind_type'] == 'Inducer':
                 inducer = database.find_cor_ind("Induced",\
                     regulator['Number'], promoter['Number'])
-                print inducer
                 dataset['Inducer'] = circuit['proteins'][proid]['concen']
                 dataset['K2']         = inducer['K2']
                 dataset['HillCoeff2'] = inducer['HillCoeff2']
@@ -150,6 +147,7 @@ def CorepIndRate(circuit, database):
     Rate = {}
     for n in range(len(DictKey)):
         Rate[DictKey[n]] = Concen_ActRep[DictKey[n]] / Concen_None[DictKey[n]]
+    print "Rate %s" % Rate
     return Rate
 
 if __name__ == "__main__":

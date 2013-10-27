@@ -471,8 +471,9 @@ def dump_group(network, database):
         l_type = link_type[j]
         i_type = inducer_type[j]
         break
-    groups[i] = {"sbol":grp, "state": "cis", "type": l_type,\
-        "corep_ind_type": i_type, "from": prev, "to": []}
+    groups[i] = {"sbol":grp, "state": "cis", "type": l_type,
+        "corep_ind_type": i_type, "corep_ind": database.find_cor_ind(),
+        "from": prev, "to": []}
     plasmid.append(i)
 
   # get next nodes of a group
@@ -624,9 +625,7 @@ def update_controller(db, update_info):
       else:
         best_regulator = db.getRepressorNearValue(regulator_value,\
             cor_ind_type, regulator_set, promoter_set)
-        print best_regulator
         best_promoter = find_promoter(db, promoter_set, repressor=best_regulator["Number"])
-        print best_promoter
         promoter_value = best_promoter[p_type]
       regulator_value = log10(best_regulator["K1"])
 
