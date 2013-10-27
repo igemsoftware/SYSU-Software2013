@@ -100,6 +100,8 @@ $().ready(function() {
 
     // logout
     $("#logout").click(function() {
+        window.sessionStorage.removeItem("regulationWork");
+
         ws.send(JSON.stringify({
             'request': 'loginOut'
         }));
@@ -158,6 +160,7 @@ $().ready(function() {
         // 清除原来的内容
         app = null;
         $("#canvas").remove();
+        window.sessionStorage.removeItem("regulationWork");
 
         // 新建画布
         $("#canvas-mask").append("<div id=\"canvas\"></div>");
@@ -742,6 +745,7 @@ $().ready(function() {
                 figure.setId(part.id);    // 设置id
                 figure.name = part.name;
                 figure.TYPE = part.type;
+                figure.label.setText(figure.name);
 
                 app.view.collection.push(figure.getId());
             }

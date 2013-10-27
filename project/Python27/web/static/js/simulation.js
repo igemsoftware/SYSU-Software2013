@@ -167,10 +167,11 @@ function createAnInputCheckBox(index,width,height,proteinName){
 				newdata.push(data[i]);
 			}
 		}
-    var width1 = document.getElementById('canvasDiv').clientWidth -parseInt(document.getElementById('canvasDiv').style.left);
-    var height1 = document.getElementById('canvasDiv').clientHeight -parseInt(document.getElementById('canvasDiv').style.top);	
-		run(newdata, 'canvasDiv', width1, height1, time, dt);
-		chart.resize(document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
+    var width1 = document.getElementById('canvasDiv').clientWidth;
+    var height1 = document.getElementById('canvasDiv').clientHeight;
+	console.log(width1);	
+		run(newdata, 'canvasDiv', width1*0.9, height1*0.9, time, dt);
+		chart.resize(document.getElementById('canvasDiv').clientWidth*0.97,document.getElementById('canvasDiv').clientHeight*0.97);
 	}
 	div.appendChild(o);
 	div.appendChild(document.createTextNode(proteinName));
