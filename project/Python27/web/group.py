@@ -20,7 +20,7 @@ prom_name = "BBa_I712074"
 rbs_name = "BBa_J61101"
 term_name = "BBa_B0012"
 
-data = {"part":[{"id":"40bb0f60-61bf-deaf-a3f6-898dff283e5b","name":"BBa_J120015","type":"Protein"},{"id":"56fbca1b-935b-bf29-2f3e-e2bc8445b8fc","name":"Repressor","type":"Repressor"},{"id":"586b3410-e97f-b942-f9be-deaad485115a","name":"BBa_K106669","type":"Protein"},{"id":"107df8f1-4b39-e9f2-9ac4-c7ac4a6aef3f","name":"Repressor","type":"Repressor"},{"id":"029edd25-075e-1a49-961f-61790e7d7f41","name":"BBa_J120015","type":"Protein"}],"link":[{"from":"40bb0f60-61bf-deaf-a3f6-898dff283e5b","to":"56fbca1b-935b-bf29-2f3e-e2bc8445b8fc","type":"Bound","inducer":"none"},{"from":"586b3410-e97f-b942-f9be-deaad485115a","to":"107df8f1-4b39-e9f2-9ac4-c7ac4a6aef3f","type":"Bound","inducer":"none"},{"from":"56fbca1b-935b-bf29-2f3e-e2bc8445b8fc","to":"586b3410-e97f-b942-f9be-deaad485115a","type":"Repressor","inducer":"none"},{"from":"107df8f1-4b39-e9f2-9ac4-c7ac4a6aef3f","to":"029edd25-075e-1a49-961f-61790e7d7f41","type":"Repressor","inducer":"none"}]}
+data = {"part":[{"id":"40bb0f60-61bf-deaf-a3f6-898dff283e5b","name":"BBa_J120015","type":"Protein"},{"id":"495cb769-d906-8248-5f5a-37225aa13ea1","name":"Repressor","type":"Repressor"},{"id":"586b3410-e97f-b942-f9be-deaad485115a","name":"BBa_K106669","type":"Protein"},{"id":"f466e36c-868e-7c9c-3cf0-824e5d04c1ef","name":"Repressor","type":"Repressor"},{"id":"029edd25-075e-1a49-961f-61790e7d7f41","name":"BBa_J120015","type":"Protein"}],"link":[{"from":"40bb0f60-61bf-deaf-a3f6-898dff283e5b","to":"495cb769-d906-8248-5f5a-37225aa13ea1","type":"Bound","inducer":"none"},{"from":"586b3410-e97f-b942-f9be-deaad485115a","to":"f466e36c-868e-7c9c-3cf0-824e5d04c1ef","type":"Bound","inducer":"none"},{"from":"495cb769-d906-8248-5f5a-37225aa13ea1","to":"586b3410-e97f-b942-f9be-deaad485115a","type":"Repressor","inducer":"Positive"},{"from":"f466e36c-868e-7c9c-3cf0-824e5d04c1ef","to":"029edd25-075e-1a49-961f-61790e7d7f41","type":"Repressor","inducer":"Positive"}]}
 #data = {"part": [ 
 			#{ "id"  : "1", 
 				#"name": "BBa_C0060", 
@@ -454,6 +454,7 @@ def dump_group(network, database):
     grp = []
     # get name and type of group member
     for elem in data[i]:
+      print elem
       xml_file = find_file(elem + ".xml", ".")
       grp.append({"name": elem, "type": component_union.get_part_type(xml_file)})
     for idx in range(1, len(grp) - 1, 2):
@@ -594,11 +595,16 @@ def update_controller(db, update_info):
     orig_promoter = gene_circuit["groups"][grp_id]["sbol"][0]["name"]
     p_cluster = db.getPromoterCluster(orig_promoter)
     prev_node = group["from"]
+    if "cluster" not in detail:
+      detail["cluster"] = False
+    if not (detail["type"] == "promoter" and detail["cluster"]):
+        promoter_set.remove(db.getPromoterCluster(orig_promoter))
     if prev_node != -1:
       prev_grp = gene_circuit["proteins"][prev_node]["grp_id"]
       prev_pos = gene_circuit["proteins"][prev_node]["pos"]
       orig_repressor = gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"]
-      regulator_set.remove(db.getRegulatorCluster(orig_repressor))
+      if not (detail["type"] == "K1" and detail["cluster"]):
+          regulator_set.remove(db.getRegulatorCluster(orig_repressor))
 
     link_type = group["type"]
     cor_ind_type = group["corep_ind_type"]
@@ -607,8 +613,6 @@ def update_controller(db, update_info):
     if detail["type"] == "PoPS":
       promoter_value = float(detail["new_value"])
       #select best promoter
-      if "cluster" not in detail:
-        detail["cluster"] = False
       if detail["cluster"]:
         best_promoter = db.find_promoter_in_cluster(detail["part_name"],\
             p_type, promoter_value)
@@ -624,12 +628,14 @@ def update_controller(db, update_info):
       if link_type == "Positive":
         best_regulator = db.getActivatorNearValue(regulator_value, cor_ind_type,\
             regulator_set, promoter_set)
-        best_promoter = find_promoter(db, promoter_set, activator=best_regulator["Number"])
+        best_promoter = find_promoter(db, promoter_set,\
+            activator=best_regulator["Number"])
         promoter_value = best_promoter[p_type]
       else:
         best_regulator = db.getRepressorNearValue(regulator_value,\
             cor_ind_type, regulator_set, promoter_set)
-        best_promoter = find_promoter(db, promoter_set, repressor=best_regulator["Number"])
+        best_promoter = find_promoter(db, promoter_set,\
+            repressor = best_regulator["Number"])
         promoter_value = best_promoter[p_type]
       regulator_value = log10(best_regulator["K1"])
 
@@ -673,9 +679,9 @@ def update_controller(db, update_info):
 
 if __name__ == "__main__":
   db = database.SqliteDatabase()
-  print dump_group(data, db)
-  update = {u'detail': {u'new_value': 0.4, u'type': u'PoPS', u'pro_id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790', u'part_name': 
-u'BBa_K091104', u'cluster': True}, u'gene_circuit': {u'proteins': {u'e53e441d-c811-6d5e-212e-07dbae64f8db': {u'RiPS': 0.12, 
+  #print dump_group(data, db)
+  update = {u'detail': {u'new_value': 0.4, u'type': u'K1', u'pro_id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790', u'part_name': 
+u'BBa_K091104', u'cluster': False}, u'gene_circuit': {u'proteins': {u'e53e441d-c811-6d5e-212e-07dbae64f8db': {u'RiPS': 0.12, 
 u'name': u'BBa_C0073', u'repress_rate': 0, u'concen': None, u'grp_id': u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'pos': 4, 
 u'PoPS': 0.84, u'before_regulated': 2, u'K1': None, u'induce_rate': 0, u'copy': 23, u'display': False}, 
 u'91c1e8d5-a282-9de4-2df3-47a6fcb74790': {u'RiPS': 0.12, u'name': u'BBa_K389001', u'repress_rate': 0, u'concen': None, 
