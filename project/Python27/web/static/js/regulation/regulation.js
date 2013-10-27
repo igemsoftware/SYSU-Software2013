@@ -742,6 +742,7 @@ $().ready(function() {
                 figure.setId(part.id);    // 设置id
                 figure.name = part.name;
                 figure.TYPE = part.type;
+                figure.label.setText(figure.name);
 
                 app.view.collection.push(figure.getId());
             }
