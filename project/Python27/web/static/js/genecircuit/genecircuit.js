@@ -47,7 +47,7 @@ $.fn.scale = function(options) {
 				if(options.lines[i].type == options.direction) {
 					$(this).append("<div id=\"" + options.aTextureId + "-" + options.direction + "-" + i.toString() + "\" class=\"line\"></div>");
 					var that = $("#" + options.aTextureId + "-" + options.direction + "-" + i.toString());
-					var per = (1 - options.lines[i].val / (options.max-options.min)) * 100;
+					var per = (1 - (options.lines[i].val-options.min) / (options.max-options.min)) * 100;
 					that.css("top", per.toString() + "%");
 					if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
 					else if(options.lines[i].type == "right"){ 
