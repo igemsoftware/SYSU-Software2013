@@ -64,7 +64,7 @@ function handlerData(){
 }
 window.onload=function() {
 	$('#linkabove').click(function(){
-		window.location.pathname = "/plasmid";
+		window.location.pathname = "/genecircuit";
 	});
   var data = handlerData();
   console.log(data);

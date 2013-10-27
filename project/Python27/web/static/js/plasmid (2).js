@@ -764,7 +764,7 @@ $(function(){
 		window.location.pathname = "/protocol";
 	});
 	$('#linkabove').click(function(){
-		window.location.pathname = "/simulation";
+		window.location.pathname = "/genecircuit";
 	});
 	handlerWebSocket();		
 });
