@@ -1093,6 +1093,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         });
 
         if (ctx.config) {
+            console.log(ctx.config);
             resetConfig();
             $("input[name=part_id]").attr({
                 'value': ctx.config.part_id

@@ -3,6 +3,8 @@ function BiobrickAdder() {
 
 	this.type = null;
 
+	this.config = null;
+
 	this.nickname = null;
 
 	this.offsetTop = null;
