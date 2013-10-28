@@ -218,7 +218,7 @@ var protein = {
 			aTextureId: aTextureId + "-concen", 
 			aSlider: $("#" + aTextureId + " .concen"), 
 			min: 0, 
-			max: 100, 
+			max: 0.1, 
 			type: "concen", 
 		}); 
 
@@ -311,7 +311,7 @@ var protein = {
 			orientation: "vertical",
 			range: "min",
 			min: 0,
-			max: 100,
+			max: 0.1,
 			step: 0.0001,
 			value: 60,
 			stop: function(event, ui) {
@@ -327,7 +327,7 @@ var protein = {
 				randomValue();
 			},
 			slide: function(event, ui) { 
-				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(0)); 
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(3)); 
 			} 
 		});
 
@@ -362,7 +362,7 @@ var protein = {
 			$("#" + aTextureId + " .concen").removeClass("unuse");
 		}
 		$("#" + aTextureId + " .concen").slider("value", aData.concen);
-		$("#" + aTextureId + " .concen").find(".ui-slider-handle").text($("#" + aTextureId + " .concen").slider("value").toFixed(0)); 
+		$("#" + aTextureId + " .concen").find(".ui-slider-handle").text($("#" + aTextureId + " .concen").slider("value").toFixed(3)); 
 		$("#" + aTextureId + " .before-regulated").trigger("update", aData.before_regulated);
 		$("#" + aTextureId + " .repress-rate").trigger("update", aData.repress_rate);
 		$("#" + aTextureId + " .induce-rate").trigger("update", aData.induce_rate);

@@ -103,7 +103,7 @@ class DNA_Simulate:
     ##
     # @brief  set corepressor in class
     #
-    # @param corepressor     name of corepressor
+    # @param corepressor     concen of corepressor
     # @param k               K value of corepressor
     # @param hillcoeff       hill coefficiency of corepressor
     #
@@ -117,11 +117,12 @@ class DNA_Simulate:
             raise InvalidParameter
         self.CorepConst = pow(corepressor / k, hillcoeff)
         self.IndConst   = None
+
     # --------------------------------------------------------------------------
     ##
     # @brief  set inducer in class
     #
-    # @param inducer     name of inducer
+    # @param inducer     concen of inducer
     # @param k           K value of inducer
     # @param hillcoeff   hill coefficiency of inducer
     #
@@ -134,6 +135,9 @@ class DNA_Simulate:
         if inducer < 0 or hillcoeff <= 0 or k <= 0:
             raise InvalidParameter
         self.IndConst   = pow(inducer / k, hillcoeff)
+        print "-------"
+        print inducer, k
+        print self.IndConst
         self.CorepConst = None
 
 # --------------------------------------------------------------------------
