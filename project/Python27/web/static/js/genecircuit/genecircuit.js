@@ -231,6 +231,8 @@ var protein = {
 			step: 0.0001,
 			value: 0,
 			stop: function(event, ui) {
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(2)); 
+
 				detail.type = "PoPS";
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
@@ -277,6 +279,7 @@ var protein = {
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				detail.cluster = false;
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(0)); 
 				randomValue(); 
 			},
 			slide: function(event, ui) { 
@@ -300,6 +303,7 @@ var protein = {
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				detail.cluster = false;
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(1)); 
 				randomValue();
 			},
 			slide: function(event, ui) { 
@@ -324,6 +328,7 @@ var protein = {
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
 				detail.cluster = false;
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(3)); 
 				randomValue();
 			},
 			slide: function(event, ui) { 
