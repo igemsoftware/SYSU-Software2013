@@ -307,6 +307,16 @@ g.Shapes.Protein = graphiti.shape.icon.ProteinIcon.extend({
         this.Activate = new g.Buttons.Activate();
         this.Inhibit = new g.Buttons.Inhibit();
         this.CoExpress = new g.Buttons.CoExpress();
+
+        // Create any Draw2D figure as decoration for the connection
+        //
+        this.label = new graphiti.shape.basic.Label("Unknown");
+        this.label.setColor("#0d0d0d");
+        this.label.setFontColor("#0d0d0d");
+
+        // add the new decoration to the connection with a position locator.
+        //
+        this.addFigure(this.label, new graphiti.layout.locator.BottomLocator(this));
     },
 
     onClick: function() {
@@ -481,6 +491,18 @@ g.Shapes.R = graphiti.shape.icon.R.extend({
         }
 
         this.TYPE = "R";
+        // Buttons
+        this.remove = new g.Buttons.Remove();
+    },
+
+    onClick: function() {
+        g.toolbar(this);
+    },
+
+    onDoubleClick: function() {
+        if (this.remove || this.label) {
+            this.resetChildren();
+        }
     }
 });
 
@@ -1012,6 +1034,9 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             newone.setId(id);
             newone.path = path;
             newone.name = name;
+            if (type == "Protein") {
+                newone.label.setText(newone.name);
+            }
 
             // 设置连接
             if (figure.getConnections().getSize() !== 0) {
@@ -1068,6 +1093,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
         });
 
         if (ctx.config) {
+            console.log(ctx.config);
             resetConfig();
             $("input[name=part_id]").attr({
                 'value': ctx.config.part_id
@@ -1148,6 +1174,22 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             ctx.resetChildren();
         }
 
+        if (ctx.TYPE == "Protein") {
+            // Create any Draw2D figure as decoration for the connection
+            //
+            ctx.label = new graphiti.shape.basic.Label("Unknown");
+            ctx.label.setColor("#0d0d0d");
+            ctx.label.setFontColor("#0d0d0d");
+
+            if (ctx.name) {
+                ctx.label.setText(ctx.name);
+            }
+
+            // add the new decoration to the connection with a position locator.
+            //
+            ctx.addFigure(ctx.label, new graphiti.layout.locator.BottomLocator(ctx));
+        }
+
         // add remove button and label
         ctx.addFigure(ctx.remove, new graphiti.layout.locator.TopLocator(ctx));
         // ctx.addFigure(ctx.label, new graphiti.layout.locator.BottomLocator(ctx));
@@ -1162,6 +1204,23 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 var figure = canvas.getFigure(canvas.collection[i]);
                 if (figure !== null && ctx.getId() !== figure.getId() && (figure.TYPE == "Protein") && figure.getConnections().getSize() == 0) {
                     figure.resetChildren();
+
+                    if (figure.TYPE == "Protein") {
+                        // Create any Draw2D figure as decoration for the connection
+                        //
+                        figure.label = new graphiti.shape.basic.Label("Unknown");
+                        figure.label.setColor("#0d0d0d");
+                        figure.label.setFontColor("#0d0d0d");
+
+                        if (figure.name) {
+                            figure.label.setText(figure.name);
+                        }
+
+                        // add the new decoration to the connection with a position locator.
+                        //
+                        figure.addFigure(figure.label, new graphiti.layout.locator.BottomLocator(figure));
+                    }
+
                     figure.addFigure(figure.Activate, new graphiti.layout.locator.TopLeftLocator(figure));
                     figure.addFigure(figure.Inhibit, new graphiti.layout.locator.TopLocator(figure));
                     figure.addFigure(figure.CoExpress, new graphiti.layout.locator.TopRightLocator(figure));
@@ -1189,7 +1248,7 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
                 "display": "block"
             });
 
-        } else if (ctx.TYPE == "RORA") {
+        } else if (ctx.TYPE == "RORA" || ctx.TYPE == "R" || ctx.TYPE == "A") {
             for (var i = 0; i < canvas.collection.length; i++) {
                 var figure = canvas.getFigure(canvas.collection[i]);
                 if (figure !== null && ctx.getId() !== figure.getId() && figure.TYPE == "Protein") {
@@ -1210,8 +1269,25 @@ g.Buttons.Unbind = graphiti.shape.icon.CoExpress.extend({
             ctx.resetChildren();
         }
 
-        if (ctx.getChildren().getSize() > 1)
+        if (ctx.getChildren().getSize() > 1) {
             ctx.resetChildren();
+        }
+
+        if (ctx.TYPE == "Protein") {
+            // Create any Draw2D figure as decoration for the connection
+            //
+            ctx.label = new graphiti.shape.basic.Label("Unknown");
+            ctx.label.setColor("#0d0d0d");
+            ctx.label.setFontColor("#0d0d0d");
+
+            if (ctx.name) {
+                ctx.label.setText(ctx.name);
+            }
+
+            // add the new decoration to the connection with a position locator.
+            //
+            ctx.addFigure(ctx.label, new graphiti.layout.locator.BottomLocator(ctx));
+        }
     };
 })(g);
 

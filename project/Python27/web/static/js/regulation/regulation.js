@@ -100,6 +100,8 @@ $().ready(function() {
 
     // logout
     $("#logout").click(function() {
+        window.sessionStorage.removeItem("regulationWork");
+
         ws.send(JSON.stringify({
             'request': 'loginOut'
         }));
@@ -158,6 +160,7 @@ $().ready(function() {
         // 清除原来的内容
         app = null;
         $("#canvas").remove();
+        window.sessionStorage.removeItem("regulationWork");
 
         // 新建画布
         $("#canvas-mask").append("<div id=\"canvas\"></div>");
@@ -488,7 +491,7 @@ $().ready(function() {
             var figure = {};
             if (figures[i].TYPE == "Protein" || figures[i].TYPE == "R" || figures[i].TYPE == "A") {
                 figure.id = figures[i].getId();
-                figure.name = figures[i].name;                
+                figure.name = figures[i].name;
 
                 if (figures[i].TYPE == "A")
                     figure.type = "Activator";
@@ -742,6 +745,9 @@ $().ready(function() {
                 figure.setId(part.id);    // 设置id
                 figure.name = part.name;
                 figure.TYPE = part.type;
+                figure.path = part.path;
+                figure.config = part.config;
+                figure.label.setText(figure.name);
 
                 app.view.collection.push(figure.getId());
             }
