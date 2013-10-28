@@ -287,20 +287,21 @@ def get_promoter_label(database, actrep, l_type, cor_ind_type, get_all = True):
 
 # --------------------------------------------------------------------------
 ##
-# @brief get promoter labels, which indicate alternatives of current promoter
+# @brief get regulator labels, which indicate alternatives of current promoter
 #
 # @param database      an instance of database
-# @param promoter      the promoter regulated by the regulator
+# @param regulator     the regulator
 # @param l_type        link type
 # @param cor_ind_type  corepressor or inducer type
 # @param get_all       if get_all is False, get self promoter only, true by default
 #
-# @returns  the labels of the promoter
+# @returns  the labels of the regulator
 #
 # --------------------------------------------------------------------------
-def get_regulator_label(database, promoter, l_type, cor_ind_type, get_all = True):
+def get_regulator_label(database, regulator, l_type, cor_ind_type, get_all = True):
+  RCluster = database.getRegulatorCluster(regulator)
   ret = []
-  self_option = database.getSelfRegulatorOption(promoter, l_type, cor_ind_type)
+  self_option = database.getSelfRegulatorOption(RCluster, l_type, cor_ind_type)
   right_regulator = set()
   for item in self_option:
     print item
@@ -508,7 +509,7 @@ def dump_group(network, database):
     proteins[i]["pops_option"] = get_promoter_label(database, regulator, \
         l_type, corep_ind_type)
     if corep_ind_type != "None":
-      proteins[i]["k1_option"] = get_regulator_label(database, promoter["name"], \
+      proteins[i]["k1_option"] = get_regulator_label(database, regulator, \
         l_type, corep_ind_type)
 
   # do not display regulation protein

@@ -599,7 +599,7 @@ class SqliteDatabase:
 		decodejson = json.loads(jsonEncoded)
 		return decodejson
 
-	def getSelfRegulatorOption(self, promoter, link_type, cor_ind_type):
+	def getSelfRegulatorOption(self, RCluster, link_type, cor_ind_type):
 		if cor_ind_type == "Inducer":
 			cor_ind_type = "Induced"
 		if cor_ind_type == "Corepressor":
@@ -607,15 +607,16 @@ class SqliteDatabase:
 		if cor_ind_type not in {"Induced", "Corepressed"}:
 			sql_cmd = """
 					SELECT * FROM relation
-					WHERE ActRreType = '%s' AND PromoterNumber = '%s'
+					WHERE ActRreType = '%s' AND Cluster = '%s'
           AND IncCorType IS NULL
-					""" % (link_type, promoter)
+					""" % (link_type, RCluster)
 		else:
 			sql_cmd = """
 					SELECT * FROM relation
-					WHERE ActRreType = '%s' AND PromoterNumber = '%s'
+					WHERE ActRreType = '%s' AND Cluster = '%s'
 					AND relation.IncCorType = '%s'
-					""" % (link_type, promoter, cor_ind_type)
+					""" % (link_type, RCluster, cor_ind_type)
+		print sql_cmd
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)

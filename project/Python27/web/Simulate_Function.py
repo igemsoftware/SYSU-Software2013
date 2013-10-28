@@ -115,10 +115,9 @@ def Simulate(isStochastic, isDelay, circuit, corepind, database, time, dt):
                         HillCoeff2 = corepressor['HillCoeff2']
                         DNAdict[proid].SetCorepressor(concen, K2, HillCoeff2)
                 elif Type == 'Inducer':
-                    print regulator
-                    print promoter
                     inducer = database.find_cor_ind('Induced',\
                         regulator, promoter)
+                    print inducer
                     for k in range(plassize[grpid]):
                         proid = plaspro[grpid][k]
                         concen = circuit['proteins'][proid]['concen']
@@ -154,10 +153,9 @@ if __name__ == "__main__":
 
     import database
     db = database.SqliteDatabase()
-    #corepind = {5: {"time": 20},
-    #            7: {"time": 60}}
-    corepind = {}
-    gene_circuit = u'{"proteins":{"06f19df8-844f-cf01-56f9-eb39dcca4826":{"RiPS":0.336,"name":"BBa_C0070","before_regulated":6.4915199999999995,"concen":null,"grp_id":"19d6f6ed-a3db-d38a-9399-abe589a36b16","pos":2,"PoPS":0.84,"pops_option":[{"des":"asdfasdf","val":0.9,"type":"left"},{"des":"asdfasdfaaaaaaa\\naaaaaaaddddd","val":0.6,"type":"left"},{"des":"dddads1qwerqwerqwerqwer\\nfasdfasdfdd","val":0.2,"type":"right"}],"repress_rate":0,"K1":null,"induce_rate":0,"copy":23,"display":true},"2217f133-2061-4b53-9431-d5aa8ae76e1c":{"RiPS":0.336,"name":"BBa_C0076","before_regulated":1.8547200000000001,"concen":null,"grp_id":"2217f133-2061-4b53-9431-d5aa8ae76e1c","pos":2,"PoPS":0.24,"pops_option":[{"des":"asdfasdf","val":0.2,"type":"left"},{"des":"ddddddddddddd","val":0.5,"type":"left"},{"des":"ddddd","val":0.5,"type":"right"}],"repress_rate":-0.3010299956639812,"K1":-6.920818753952375,"induce_rate":-0.3010299956639812,"copy":23,"display":true},"19d6f6ed-a3db-d38a-9399-abe589a36b16":{"RiPS":0.336,"name":"BBa_K864201","before_regulated":6.4915199999999995,"concen":null,"grp_id":"19d6f6ed-a3db-d38a-9399-abe589a36b16","pos":4,"PoPS":0.84,"pops_option":[{"des":"asdfasdf","val":0.2,"type":"left"},{"des":"ddddd","val":0.5,"type":"left"},{"des":"ddddd","val":0.5,"type":"right"}],"repress_rate":0,"K1":null,"induce_rate":0,"copy":23,"display":false}},"plasmids":[["2217f133-2061-4b53-9431-d5aa8ae76e1c","19d6f6ed-a3db-d38a-9399-abe589a36b16"]],"groups":{"2217f133-2061-4b53-9431-d5aa8ae76e1c":{"from":"19d6f6ed-a3db-d38a-9399-abe589a36b16","state":"cis","corep_ind_type":"None","to":[],"sbol":[{"type":"Promoter","name":"BBa_I756014"},{"type":"RBS","name":"BBa_J61101"},{"type":"Protein","name":"BBa_C0076","id":"2217f133-2061-4b53-9431-d5aa8ae76e1c"},{"type":"Terminator","name":"BBa_B0012"}],"type":"Negative"},"19d6f6ed-a3db-d38a-9399-abe589a36b16":{"from":-1,"state":"cis","corep_ind_type":"None","to":["2217f133-2061-4b53-9431-d5aa8ae76e1c"],"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61101"},{"type":"Protein","name":"BBa_C0070","id":"06f19df8-844f-cf01-56f9-eb39dcca4826"},{"type":"RBS","name":"BBa_J61101"},{"type":"Repressor","name":"BBa_K864201","id":"19d6f6ed-a3db-d38a-9399-abe589a36b16"},{"type":"Terminator","name":"BBa_B0012"}],"type":"Constitutive"}}}'
+    corepind = {u'c3778d5e-4d73-963c-bb45-da0e789c534e': {u'time':
+      1807.18954248366}}
+    gene_circuit = u'{"proteins":{"0592d795-5c0b-b9ec-cda5-3a60c22e5e56":{"grp_id":"0592d795-5c0b-b9ec-cda5-3a60c22e5e56","display":false,"pos":4,"name":"BBa_C0062","PoPS":0.84,"RiPS":0.12,"copy":23,"K1":null,"concen":null,"before_regulated":2,"repress_rate":0,"induce_rate":0},"c3778d5e-4d73-963c-bb45-da0e789c534e":{"grp_id":"c3778d5e-4d73-963c-bb45-da0e789c534e","display":true,"pos":2,"name":"BBa_K678035","PoPS":0.0005,"RiPS":0.12,"copy":23,"K1":-1.5229,"concen":1,"before_regulated":0,"repress_rate":1,"induce_rate":1},"61fa1536-fb17-b8cb-2ff5-5887c9879717":{"grp_id":"0592d795-5c0b-b9ec-cda5-3a60c22e5e56","display":true,"pos":2,"name":"BBa_K525404","PoPS":0.84,"RiPS":0.12,"copy":23,"K1":null,"concen":null,"before_regulated":2,"repress_rate":0,"induce_rate":0}},"plasmids":[["0592d795-5c0b-b9ec-cda5-3a60c22e5e56","c3778d5e-4d73-963c-bb45-da0e789c534e"]],"groups":{"0592d795-5c0b-b9ec-cda5-3a60c22e5e56":{"sbol":[{"type":"Promoter","name":"BBa_I712074"},{"type":"RBS","name":"BBa_J61101"},{"type":"Protein","name":"BBa_K525404","id":"61fa1536-fb17-b8cb-2ff5-5887c9879717"},{"type":"RBS","name":"BBa_J61101"},{"type":"Activator","name":"BBa_C0062","id":"0592d795-5c0b-b9ec-cda5-3a60c22e5e56"},{"type":"Terminator","name":"BBa_B0012"}],"state":"cis","from":-1,"to":["c3778d5e-4d73-963c-bb45-da0e789c534e"],"type":"Constitutive","corep_ind_type":"None"},"c3778d5e-4d73-963c-bb45-da0e789c534e":{"sbol":[{"type":"Promoter","name":"BBa_R1062"},{"type":"RBS","name":"BBa_J61101"},{"type":"Protein","name":"BBa_K678035","id":"c3778d5e-4d73-963c-bb45-da0e789c534e"},{"type":"Terminator","name":"BBa_B0012"}],"state":"cis","from":"0592d795-5c0b-b9ec-cda5-3a60c22e5e56","to":[],"type":"Positive","corep_ind_type":"Inducer","corep_ind":"AHL"}}}'
     import json
     gene_circuit = json.loads(gene_circuit)
     print Simulate(False, True, gene_circuit, corepind, db, 6000, 100)
