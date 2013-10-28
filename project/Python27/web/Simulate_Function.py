@@ -46,7 +46,7 @@ def Simulate(isStochastic, isDelay, circuit, corepind, database, time, dt):
         DegRate = 0.00288
         for i in circuit["proteins"]:
           if i not in corepind:
-            corepind[i] = {"time": time}
+            corepind[i] = {"time": 0}
         plasid   = [x for sublist in circuit['plasmids'] for x in sublist]
         # the number of proteins in a group
         plassize = {}
@@ -111,6 +111,7 @@ def Simulate(isStochastic, isDelay, circuit, corepind, database, time, dt):
                     for k in range(plassize[grpid]):
                         proid = plaspro[grpid][k]
                         concen = circuit['proteins'][proid]['concen']
+                        print "Concen: %f" % concen
                         K2 = corepressor['K2']
                         HillCoeff2 = corepressor['HillCoeff2']
                         DNAdict[proid].SetCorepressor(concen, K2, HillCoeff2)
@@ -121,6 +122,7 @@ def Simulate(isStochastic, isDelay, circuit, corepind, database, time, dt):
                     for k in range(plassize[grpid]):
                         proid = plaspro[grpid][k]
                         concen = circuit['proteins'][proid]['concen']
+                        print "Concen: %f" % concen
                         K2 = inducer['K2']
                         HillCoeff2 = inducer['HillCoeff2']
                         DNAdict[proid].SetInducer(concen, K2, HillCoeff2)
