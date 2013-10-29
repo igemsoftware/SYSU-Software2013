@@ -141,7 +141,7 @@ $(document).ready(function() {
 		var username = $("input[name=username]").val(),
 			pw = $("input[name=password]").val(),
 			email = $("input[name=email]").val(),
-			gender = $("select[name=gender]").val(),
+			gender = $("select[name=gender]").val().toLowerCase(),
 			question = $("input[name=question]").val(),
 			answer = $("input[name=answer]").val();
 
@@ -153,7 +153,7 @@ $(document).ready(function() {
 			'name': username,
 			'password': pw,
 			'email': email,
-			'gender': gender,
+			'gender': gender == "male" ? "1" : "0",
 			'question': question,
 			'answer': answer
 		}));
