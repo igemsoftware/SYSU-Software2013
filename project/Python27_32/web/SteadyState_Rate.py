@@ -13,7 +13,7 @@ def ActRepRate(circuit, database):
     for n in range(len(PlasID)):
         group      = circuit['groups'][PlasID[n]]
         promoter   = database.select_with_name('Promoter', group['sbol'][0]['name'])
-        terminator = database.select_with_name('Terminator', group['sbol'][-1]['name'])
+        terminator = database.select_with_name('terminator', group['sbol'][-1]['name'])
         for k in range(PlasSize[PlasID[n]]):
             rbs   = database.select_with_name('RBS', group['sbol'][2*k+1]['name'])
             proid = group['sbol'][2*k+2]['id']
@@ -26,8 +26,8 @@ def ActRepRate(circuit, database):
             dataset['CopyNumber']  = circuit['proteins'][proid]['copy']
             dataset['MPPromoter']  = promoter['MPPromoter']
             dataset['LeakageRate'] = promoter['LeakageRate']
-            dataset['Efficiency']        = terminator['Efficiency']
-            dataset['MPRBS']     = rbs['MPRBS']
+            dataset['Efficiency']  = terminator['Efficiency']
+            dataset['MPRBS']       = rbs['MPRBS']
             dataset['DegRatemRNA'] = 0.00288
             dataset['DegRatePro']  = 0.00288
             if dataset['Type'] == 'Positive':
@@ -97,24 +97,26 @@ def CorepIndRate(circuit, database):
             dataset['MPRBS']     = rbs['MPRBS']
             dataset['DegRatemRNA'] = 0.00288
             dataset['DegRatePro']  = 0.00288
+            regulator = {}
             if dataset['Type'] == 'Positive':
                 activator = database.select_with_name('activator', circuit['proteins'][dataset['From']]['name'])
+                regulator = activator
                 dataset['K1']         = activator['K1']
                 dataset['HillCoeff1'] = activator['HillCoeff1']
             elif dataset['Type'] == 'Negative':
                 repressor = database.select_with_name('repressor', circuit['proteins'][dataset['From']]['name'])
+                regulator = repressor
                 dataset['K1']         = repressor['K1']
                 dataset['HillCoeff1'] = repressor['HillCoeff1']
             if group['corep_ind_type'] == 'Corepressor':
-                corepressor = database.select_with_name('Corepressor',\
-                    circuit['groups'][PlasID[n]]['corep_ind'])
+                corepressor = database.find_cor_ind("Corepressed",\
+                    regulator["Number"], promoter['Number'])
                 dataset['Corepressor'] = circuit['proteins'][proid]['concen']
                 dataset['K2']          = corepressor['K2']
                 dataset['HillCoeff2']  = corepressor['HillCoeff2']
             elif group['corep_ind_type'] == 'Inducer':
-                inducer = database.select_with_name('Inducer',\
-                    circuit['groups'][PlasID[n]]['corep_ind'])
-                # dataset['Inducer']    = corepind[PlasID[n]]['concen']
+                inducer = database.find_cor_ind("Induced",\
+                    regulator['Number'], promoter['Number'])
                 dataset['Inducer'] = circuit['proteins'][proid]['concen']
                 dataset['K2']         = inducer['K2']
                 dataset['HillCoeff2'] = inducer['HillCoeff2']
@@ -145,6 +147,7 @@ def CorepIndRate(circuit, database):
     Rate = {}
     for n in range(len(DictKey)):
         Rate[DictKey[n]] = Concen_ActRep[DictKey[n]] / Concen_None[DictKey[n]]
+    print "Rate %s" % Rate
     return Rate
 
 if __name__ == "__main__":

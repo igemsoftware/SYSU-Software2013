@@ -69,12 +69,12 @@ graphiti.command.CommandConnect = graphiti.command.Command.extend({
        // 
        if(this.type === "Activate"){
         this.connection.setTargetDecorator(this.decorator);
-        this.connection.setColor(new graphiti.util.Color("#0000ff"));
+        this.connection.setColor(new graphiti.util.Color("#43B967"));
         this.label = new graphiti.shape.icon.Activate();
         this.connection.TYPE = "Activator";
        }else if(this.type === "Inhibit"){
         this.connection.setTargetDecorator(this.decorator);
-        this.connection.setColor(new graphiti.util.Color("#ff0000"));
+        this.connection.setColor(new graphiti.util.Color("#E14545"));
         this.label = new graphiti.shape.icon.Inhibit();
         this.connection.TYPE = "Repressor";
        }else{

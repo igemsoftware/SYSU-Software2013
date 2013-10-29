@@ -11,141 +11,179 @@
   <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="../static/css/reset.css">
   <link rel="stylesheet" href="../static/css/graphiti.css">  
+  <link rel="stylesheet" href="../static/css/help2.css">
   <script src="../static/js/ichartjs.v1.2/ichart_test.js"></script>   
   <script src="../static/js/jquery-1.8.0.min.js"></script>
   <script src="../static/js/bootstrap.min.js"></script>  
+  <script src="../static/js/bootstrap-tooltip.js"></script>
   <script src="../static/js/lib/canvas2image.js"></script>
   <script src="../static/js/lib/base64.js"></script>
-   <script src="../static/js/createnewpart/FileSaver.js"></script>
+  <script src="../static/js/createnewpart/FileSaver.js"></script>
   <script src="../static/js/plasmid (2).js"></script>
   <script src="../static/js/jCanvaScript.1.5.18.js"></script>
   <script src="../static/js/simulation/simulationFilMenu.js"></script>
-  
+  <script src="../static/js/help.js"></script>
+
+
 </head>
   <body>
+  <!--the loading div-->
   <div class="modal fade" id='mymodal'>
       <div class="modal-body">
         <img id='loading' src="../static/img/loading.gif" style='display:block; width:85px; margin: 0 auto;'>
       </div>
   </div>
-	<div class="mycontainer" id="regulation-container"> 	
-		<div class="header">
-        	<!-- logo -->
-            <a href="http://2013.igem.org/Team:SYSU-Software" target="_blank">
-            	<img src="../static/img/logo.png" alt="sysu-software">
+  <!--the loading div end-->
+  <div class="mycontainer" id="regulation-container"> 	
+    <div class="header">
+          <!-- logo -->
+            <a title="Go to our wiki~" href="http://2013.igem.org/Team:SYSU-Software" target="_blank">			
+              <img src="../static/img/logo.png" alt="sysu-software">
             </a>
+            <!-- logo end-->
             <!-- navigation -->
-            	<div class="nav">
-                	<ul>
-                        <li><a href="index">Regulation network</a></li>
-                        <li><a href="genecircuit">Gene Circuit</a></li>
-                        <li class="active"><a href="plasmid">Plasmid</a></li>
-                        <li><a href="protocol">Protocol</a></li>
-                        <li><a href="simulation">Simulation</a></li>
-                	</ul>
-                <div class="pointer-arrow" style="left:370px;"></div>
-            	</div>
-    	</div>
-    	<div id="content" >
+            <div class="nav">
+<div id="start-help">
+            <img src="../static/img/help/Cast_logo_robot_help.png" alt="help" onclick="starthelp();">
+           </div>
+
+                <ul><li><a href="index">Regulation network</a></li>                    
+                    <li><a href="javascript:void(0);" >Gene Circuit</a></li>                    
+                    <li><a href="javascript:void(0);">Simulation</a></li>
+                    <li class="arrow arrow-left" id="linkabove"><a href="javascript:void(0);">&nbsp</a></li>
+                    <li class="active"><a href="javascript:void(0);">Plasmid</a></li>
+                    <li class="arrow arrow-right" id="linknext"><a href="javascript:void(0);">&nbsp</a></li>
+                    <li><a href="javascript:void(0);">Protocol</a></li>
+                </ul>
+                <div class="pointer-arrow" style="left:430px"></div>
+            </div>
+            <!-- navigation end -->
+        </div>
+      <div id="content" >
             <div id="canvas-mask" >
-                <div id="canvas" style="background-image:url(../static/img/painterbg2.png);"'>
-                	<div id='seqPanel' style="width:99%;margin-left:5px;height:115px;float:left;">
+                <div id="canvas" style="background-image:url(../static/img/painterbg2.png);">
+                  <div id='seqPanel' style="width:99%;margin-left:5px;height:115px;float:left;">
                         <label id='x1' style="width:25%;height:15px;float:left;">1</label>    
                         <label id='x2' style="width:25%;height:15px;float:left;">21</label>
                         <label id='x3' style="width:25%;height:15px;float:left;">41</label>
                         <label id='x4' style="width:25%;height:15px;float:left;">61</label>
-                        <pre contenteditable="false" id="seqCurrentText" style="resize:none;width:100%;height:40px;overflow:hidden;font-size:33px;line-height:90%;background-color:#f4f4f4;"></pre>   
-                        <canvas id="plasmid-canvas" width="1290" height="80"></canvas>      
-                    </div>
-                    <div id='drawCanvasDiv' style="width:67%;height:100%;float:left;margin-left:7px;">      
-                        <div id='canvasDiv' style="width:100%;height:100%;left: 0px;top:0px;position:relative;" onmousemove="canvasMouseMove(this,event);" onmousedown="canvasMouseDown(this,event);" onmouseup="canvasMouseUp(this,event);">
+                        <pre contenteditable="false" id="seqCurrentText" style="resize:none;width:100%;height:40px;overflow:hidden;font-size:33px;line-height:90%;background-color:#f4f4f4;" data-toggle="tooltip" title="the sequence of plasmid on the current place"><script>$('#seqCurrentText').tooltip();</script></pre>   
+                        <canvas id="plasmid-canvas" width="1800" height="80" ></canvas>      
+                      </div>
+                      <div id='drawCanvasDiv' style="width:67%;height:90%;float:left;margin-left:17px;">      
+                        <div id='canvasDiv' style="width:100%;height:100%;left: 0px;top:0px;" onmousemove="canvasMouseMove(this,event);" onmousedown="canvasMouseDown(this,event);" onmouseup="canvasMouseUp(this,event);">
                         </div> 
-                    </div>  
-    <div id='optionpanel' style="width:30%;height:400px;float:left;">
-   		<select id='standardSelect' name="standard" style="border:solid 2px #20A2DE;width:100%;height:10%;" onChange="standardOnChange(this);">
-        	<option selected="selected" value="">Assembly Standard</option>
-            <option value="RFC10">RFC 10</option>
-            <option value="RFC20">RFC 20</option>
-            <option value="RFC21">RFC 21</option>
-            <option value="RFC23">RFC 23</option>
-        </select>        
-        <input name="saveplasmidgraphBtn" style="background-color:#20A2DE;color:white;width:100%;height:10%;border:none;border-radius:0px;" type="submit" value="Save Plasmid Graph" onClick="saveGraph();"/>
-        	<div style="width:100%;height:10%;">
-           		<label style="height:100%;float:left;">Sequence</label>
-            	<input id="copy-botton" style="width:100px;cursor:pointer;height:100%;float:right;background-color:#FFBF43;border:none;border-radius:0px;" type="submit" value="downloadSeq" onClick="copyBtnOnClick(this);"/>        
-        	</div>    	        
-        <div style="width:100%;height:70%; overflow: scroll; float:left;overflow-x: hidden;border-style:solid;border-width:1px;word-break:break-all;background-color:#f4f4f4;" id="sequenceDiv"></div>
-				</div>
+                      </div>  
+                      <div id='optionpanel' style="width:30%;height:90%;float:left;">
+                        <select id='standardSelect' name="standard" style="border:solid 2px #20A2DE;width:100%;height:10%;" onChange="standardOnChange(this);"  data-toggle="tooltip" title="change the standard"><script>$('#standardSelect').tooltip();</script>
+                          <option selected="selected" value="">Assembly Standard</option>
+                          <option value="RFC10">RFC 10</option>
+                          <option value="RFC20">RFC 20</option>
+                          <option value="RFC21">RFC 21</option>
+                          <option value="RFC23">RFC 23</option>
+                        </select>        
+                        <input name="saveplasmidgraphBtn" style="background-color:#20A2DE;color:white;width:100%;height:10%;border:none;border-radius:0px;" type="submit" value="Save Plasmid Graph" onClick="saveGraph();" id='saveplasmid' data-toggle="tooltip" title="Click this button to save and download the plasmid."/><script>$('#saveplasmid').tooltip();</script>
+                        <div style="width:100%;height:10%;">
+                          <label style="height:100%;float:left;">Sequence</label>
+                          <input id="copy-botton" style="width:100px;cursor:pointer;height:100%;float:right;background-color:#FFBF43;border:none;border-radius:0px;" type="submit" value="downloadSeq" onClick="copyBtnOnClick(this);" data-toggle="tooltip" title="Click this button to save and download the sequence." data-placement="left"/><script>$('#copy-botton').tooltip();</script>        
+                        </div>    	        
+                        <div id="sequenceDiv" style="width:100%;height:60%; overflow: scroll; float:left;overflow-x: hidden;border-style:solid;border-width:1px;word-break:break-all;background-color:#f4f4f4;" data-toggle="tooltip" title="the whole sequence of the plasmid"><script>$('#sequenceDiv').tooltip();</script>        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-  </div>
-	
-    
-     <div id="right-container">
-            <div class="trigger trigger-right"></div>
+              </div>
 
-            <!-- right menu list starts -->
-            <div class="accordion" id="accordion2">
 
-                <!-- basic menu starts -->
-                <div class="accordion-group">
+              <div id="right-container">
+                <div class="trigger trigger-right"></div>
+
+                <!-- right menu list starts -->
+                <div class="accordion" id="accordion2">
+
+                  <!-- basic menu starts -->
+                  <div class="accordion-group">
                     <!-- accordion-heading starts -->
                     <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                            Menu
-                            <i class="icon-chevron-down" style="display: block; float: right"></i>
-                        </a>
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                        Menu
+                        <i class="icon-chevron-down" style="display: block; float: right"></i>
+                      </a>
                     </div>
                     <!-- accordion-heading ends -->
 
                     <!-- accordion-body starts -->
                     <div id="collapseOne" class="accordion-body collapse in">
-                        <!-- accordion-inner starts -->
-                        <div class="accordion-inner">
-                            <div id="menu">
-                                <!-- userview starts -->
-                                <div id="user-view" class="block">
-                                    <div id="user-view-left">
-                                        <div id="username">Nobody</div>
-                                        <div id="logout">Logout</div>
-                                    </div>
-                                    <div id="user-view-right">
-                                        <div class="avatar-container">
-                                            <img src="../static/img/avatar.png">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- userview ends -->
+                      <!-- accordion-inner starts -->
+                      <div class="accordion-inner">
+                        <div id="menu">
+                          <!-- userview starts -->
+                          <div id="user-view" class="block">
+                            <div id="user-view-left">
+                              <div id="username">Nobody</div>
+                              <div id="logout" data-toggle='tooltip' title='click to logout'>Logout</div>
+                            </div>
+                            <div id="user-view-right">
+                              <div class="avatar-container">
+                                <img src="../static/img/avatar.png">
+                              </div>
+                            </div>
+                          </div>
+                          <!-- userview ends -->
 
-                                <!-- commandmenu starts -->
-                                <div id="commandmenu" class="block">
-                                    <div id="button-group">
-                                        <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal">My Files</button>
-                                    </div>
-                                </div>
-                                <!-- commandmenu ends -->
+                          <!-- commandmenu starts -->
+                          <div id="commandmenu" class="block">
+                            <div id="button-group">
+                              <button class="mybtn" id="myfile"  data-toggle="tooltip" title='click to see your file list'>My Files</button>
+                            </div>
+                          </div>
+                          <!-- commandmenu ends -->
 
-                                <!-- filemenu starts -->
-                                <div id="filemenu" class="block">
-                                    <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename">
-                                    <button class="mybtn" id="save">
-                                        <!-- <i class="icon-ok"></i> -->
-                                        √  Save
-                                    </button>
-                                    <a class="mybtn" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
-                                    <button class="mybtn" id="clear" role="button">                                        
-                                        ×  Clear
-                                    </button>
-                                </div>
-                                <!-- filemenu ends --> </div>
-                            <!-- menu ends --> </div>
-                        <!-- accordion-inner ends --> </div>
+                          <!-- filemenu starts -->
+                          <div id="filemenu" class="block">
+                            <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename">
+                            <button class="mybtn" id="save" data-toggle='tooltip' title='save this plasmid graph to database'><script>$('#logout').tooltip();$('#myfile').tooltip();$('#fn-input').tooltip();$('#save').tooltip();</script>
+                              <!-- <i class="icon-ok"></i> -->
+                              √  Save
+                            </button>
+                            <a class="mybtn" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
+                            <button class="mybtn" id="clear" role="button">                                        
+                              ×  Clear
+                            </button>
+                          </div>
+                          <!-- filemenu ends --> </div>
+                        <!-- menu ends --> </div>
+                      <!-- accordion-inner ends --> </div>
                     <!-- accordion-body ends --> </div>
-                <!-- basic menu ends -->               
-    <!-- right menu list ends -->
+                  <!-- basic menu ends -->               
+                  <!-- right menu list ends -->
 
-</div>
-<!-- right container ends -->
-</body>
-</html>
+              </div></div>
+              <!-- right container ends -->
+              <div id="help">
+                <div id="closehelp" onclick="closehelp();">
+                  Close X 
+                </div>
+                <div id="help-content" class="row-fluid">
+                  <div class="span3" id="help-index">
+                    <ul class="nav nav-list" id="help-Tab">
+                      <li class="help-list active"><a href="#help0" data-toggle="tab">View different parts</a></li>
+                      <li class="help-list"><a href="#help1" data-toggle="tab">Different types of plasmid</a></li>
+                      <li class="help-list"><a href="#help2" data-toggle="tab">Save and download</a></li>
+                    </ul> 
+                  </div>
+                  <div class="span8 tab-content" id="help-TabContent">
+                    <div class="tab-pane active" id="help0">
+                      <img src="../static/img/help/plasmid/0.jpg" alt="The image may have lost.">
+                    </div>
+                    <div class="tab-pane" id="help1">
+                      <img src="../static/img/help/plasmid/1.jpg" alt="The image may have lost.">
+                    </div>
+                    <div class="tab-pane" id="help2">
+                      <img src="../static/img/help/plasmid/2.jpg" alt="The image may have lost.">
+                    </div>
+                  </div> 
+                </div>
+
+              </body>
+            </html>

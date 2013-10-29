@@ -17,10 +17,13 @@
 
 #genecircuit-canvas {
 	margin: 0 auto;
-	width: 1284px;
-	height: 534px;
+	/* width: 1284px; */
+	/* height: 534px; */
+	width: 90%;
+	height: 90%;
 	border-radius: 6px;
 	background-color: #ebebeb;
+	padding: 20px;
 }
 
 #content {
@@ -48,7 +51,7 @@
 
 #content-row1 {
 	width: 100%;
-	height: 48%;
+	height: 51%;
 	margin-bottom: 5px;
 	/* letter-spacing: -4px; */
 	/* font-size: 0; */
@@ -56,7 +59,7 @@
 
 #content-row2 {
 	width: 100%;
-	height: 50%;
+	height: 48%;
 	/* letter-spacing: -4px; */
 	/* font-size: 0; */
 	position: relative;
@@ -65,7 +68,7 @@
 #regulation-view {
 	/* display: inline-block;  */
 	float: left;
-	width: 20%;
+	width: 9%;
 	height: 100%;
 }
 
@@ -85,7 +88,8 @@
 
 .browser img {
 	width: 95%;
-	height: 100%;
+	/* height: 100%; */
+	margin-top: 55px;
 }
 
 .module-title {
@@ -97,6 +101,10 @@
 
 .module-title em {
 	font-weight: bold;
+}
+
+.module-title h2 {
+	line-height: 20px;
 }
 
 .btn-more {
@@ -112,7 +120,7 @@
 #dashboard-view {
 	/* display: inline-block; */
 	float: left;
-	width: 50%;
+	width: 61%;
 	height: 100%;
 	/* overflow-y: scroll; */
 	/* overflow-x: hidden; */
@@ -132,7 +140,8 @@
 .proteins {
 	float: left;
 	/* width: 245px; */
-	width: 295px;
+	/* width: 295px; */
+	width: 330px;
 	margin: 2px;
 	border: dashed 1px #A29E95;
 	border-radius: 5px;
@@ -148,6 +157,10 @@
 
 .proteins .protein-range {
 	text-align: center;
+}
+
+.protein-range span {
+	display: block;
 }
 
 .dashboard-range {
@@ -203,13 +216,40 @@
 	display: inline-block;
 }
 
-.protein-range.mul{
+.protein-range.mul.single{
 	width: 30%;
 }
 
-.protein-range .slider {
-	margin: 6px auto;
+.protein-range.mul.double{
+	/* width: 36%; */
 }
+
+.protein-range .slider {
+	margin: 6px 0;
+	display: inline-block;
+}
+
+.protein-range .scale {
+	display: inline-block;
+	margin: 6px 0;
+	height: 100px;
+	width: 15px;
+	font-size: 20px;
+	vertical-align: top;
+	position: relative;
+}
+
+.scale .line {
+	content: '.';
+	width: 100%;
+	height: 0px;
+  border: 0.1em solid #666666;
+	cursor: pointer;
+	top: 0%;
+	position: absolute;
+	border-width: 1px 0 0 0;
+}
+
 
 .dashboard {
   position: relative;
@@ -344,8 +384,8 @@
 
 #cmd {
 	position: absolute;
-	right: 20px;
-	bottom: 20px;
+	right: 10px;
+	bottom: 0px;
 }
 
 .sbol {
@@ -495,13 +535,14 @@
 .plasmids {
 	border: dotted 1px #848b89;
 	border-radius: 4px;
-	margin: 3px;
+	margin: 6px 3px;
 	min-height: 103px;
 	position: relative;
 	-webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+	/* background: #dddcdc; */
 }
 
 .plasmids:after {
@@ -586,4 +627,14 @@
 	position: absolute;
 	right: 150px;
 	bottom: 10px;
+}
+
+.tooltip {
+	z-index: 10;
+	position: fixed;
+}
+
+.cmd_undo_redo {
+	cursor: pointer;
+	margin: 0 10px;
 }

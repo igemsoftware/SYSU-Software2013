@@ -1,6 +1,7 @@
 /* refer to donuts */
 /* dashboard */
 (function($) {
+
 $.fn.dashboard = function(options) {
 	options = options || {};
 	return this.each(function() {
@@ -18,10 +19,12 @@ $.fn.dashboard = function(options) {
 				per = 100;
 			else if (per < 0)
 				per = 0;
+			/* if is before regulated */
+			/* if(options.max == 100 && options.min == 0) per = 100*Math.pow(per/100, 0.3); */
 			per = Math.floor(per);
 			$(this).find(".arrow1").css('transform', 'rotate(' + ((1.8 * (per+3)) - 180) + 'deg)');
 			$(this).find(".arrow2").css('transform', 'rotate(' + ((1.8 * (per-3)) - 180) + 'deg)');
-			if(options.max == 1000) {
+			if(options.max == 100) {
 				$(this).find(".dashboard-value").text(val.toFixed(0));
 			} else if(options.max == 10) {
 				$(this).find(".dashboard-value").text(val.toFixed(3));
@@ -29,6 +32,54 @@ $.fn.dashboard = function(options) {
 		});
 
 		$(this).trigger('update', 0);
+
+	});
+}
+})(jQuery);
+
+/* scale */
+(function($) {
+$.fn.scale = function(options) {
+	options = options || {};
+	return this.each(function() {
+		if(options.lines) {
+			for(var i = 0; i < options.lines.length; i++) {
+				if(options.lines[i].type == options.direction) {
+					$(this).append("<div id=\"" + options.aTextureId + "-" + options.direction + "-" + i.toString() + "\" class=\"line\"></div>");
+					var that = $("#" + options.aTextureId + "-" + options.direction + "-" + i.toString());
+					var per = (1 - (options.lines[i].val-options.min) / (options.max-options.min)) * 100;
+					that.css("top", per.toString() + "%");
+					if(options.lines[i].type == "left") that.css("border-color", "#ec9797");
+					else if(options.lines[i].type == "right"){ 
+						that.css("border-color", "#43aa60");
+						that.css("border-width", "1px 0 1px 0");
+					}
+					that.bind("click", function(){
+						var aThat = that;
+						var aOptions = options;
+						var aPer = per;
+						var aI = i;
+						return function(){
+							aOptions.aSlider.slider("value", (1 - aPer / 100) * (aOptions.max - aOptions.min) + aOptions.min); 
+							aOptions.aSlider.find(".ui-slider-handle").text(aOptions.aSlider.slider("value").toFixed(2)); 
+							detail.type = aOptions.type;
+							var id_str = aOptions.aSlider.parents(".proteins").attr('id');
+							detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
+							detail.new_value = aOptions.aSlider.slider("value");
+							if(aOptions.direction == "right"){ 
+								detail.cluster = true;
+								detail.part_name = aOptions.lines[aI].des;
+							} else detail.cluster = false;
+							randomValue(); 
+						};
+					}()); 
+					that.tooltip({
+						delay: { show: 0, hide: 50,},
+						title: options.lines[i].des,
+					});
+				}
+			}
+		}
 
 	});
 }
@@ -45,18 +96,47 @@ var protein = {
     if (!aData['display'])
       $("#" + aTextureId).hide();
 
-		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">1000</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul\"><div class=\"slider pops\"></div><span>PoPS</span></div><div class=\"protein-range mul\"><div class=\"slider rips\"></div><span>RiPS</span></div><div class=\"protein-range mul\"><div class=\"slider copy\"></div><span>copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider k1\"></div><span>K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"slider concen\"></div><span>concen</span></div></div>");
+		$("#" + aTextureId).append("<div class=\"module-title\"><em>protein1</em></div><div class=\"dashboard-unit\"><div><div class=\"dashboard before-regulated\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">0</span><span class=\"upper-bound\">100</span></div><span>before<br/> regulated</span></div><div class=\"protein-range mul double\"><div class=\"pops-scale scale left\"></div><div class=\"slider pops\"></div><div class=\"pops-scale scale right\"></div><span title=\"The strength of promoter\">PoPS</span></div><div class=\"protein-range mul single\"><div class=\"rips-scale scale left\"></div><div class=\"slider rips\"></div><span title=\"The strength of RBS\">RiPS</span></div><div class=\"protein-range mul single\"><div class=\"copy-scale scale left\"></div><div class=\"slider copy\"></div><span title=\"The copy number of plasmid backbone\">copy</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard repress-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>repress<br/> rate</span></div><div class=\"protein-range\"><div class=\"k1-scale scale left\"></div><div class=\"slider k1\"></div><div class=\"k1-scale scale right\"></div><span title=\"The reaction constant of transcriptional regulation\">K1</span></div></div><div class=\"dashboard-unit\"><div><div class=\"dashboard induce-rate\"></div><div class=\"dashboard-range\"><span class=\"lower-bound\">-10</span><span class=\"upper-bound\">10</span></div><span>induce<br/> rate</span></div><div class=\"protein-range\"><div class=\"concen-scale scale left\"></div><div class=\"slider concen\"></div><span title=\"The concentration of inducer\/corepressor\">concen</span></div></div>");
 		// $("#" + aTextureId + " .module-title em").text(aTextureId); 
 		$("#" + aTextureId + " .module-title em").text(aData['name']);
 		$("#" + aTextureId).data("grp_id", aData['grp_id']);
 		$("#" + aTextureId).data("display", aData['display']);
 		$("#" + aTextureId).data("pos", aData['pos']);
+		var popsOptionLeft = [];
+		var popsOptionRight = [];
+		if(aData['pops_option']) {
+			for(var i = 0; i < aData['pops_option'].length; i++) {
+				if(aData['pops_option'][i].type == 'left') {
+					popsOptionLeft.push(aData['pops_option'][i]);
+				} else if(aData['pops_option'][i].type == 'right') {
+					popsOptionRight.push(aData['pops_option'][i]);
+				}
+			}
+		}
+		$("#" + aTextureId).data("pops_option_left", popsOptionLeft);
+		$("#" + aTextureId).data("pops_option_right", popsOptionRight);
+		$("#" + aTextureId).data("rips_option", aData['rips_option']);
+		$("#" + aTextureId).data("copy_option", aData['copy_option']);
+		var k1OptionLeft = [];
+		var k1OptionRight = [];
+		if(aData['k1_option']) {
+			for(var i = 0; i < aData['k1_option'].length; i++) {
+				if(aData['k1_option'][i].type == 'left') {
+					k1OptionLeft.push(aData['k1_option'][i]);
+				} else if(aData['k1_option'][i].type == 'right') {
+					k1OptionRight.push(aData['k1_option'][i]);
+				}
+			}
+		}
+		$("#" + aTextureId).data("k1_option_left", k1OptionLeft);
+		$("#" + aTextureId).data("k1_option_right", k1OptionRight);
+		$("#" + aTextureId).data("concen_option", aData['concen_option']);
 
 		$("#" + aTextureId + " .before-regulated").dashboard({
 			size: 40,		
 			percentage: 0,
 			min: 0,
-			max: 1000,
+			max: 100,
 		})
 
 		$("#" + aTextureId + " .repress-rate").dashboard({
@@ -73,6 +153,75 @@ var protein = {
 			max: 10,
 		});
 
+		$("#" + aTextureId + " .pops-scale.left").scale({
+			lines: aData["pops_option"], 
+			aTextureId: aTextureId + "-pops",
+			aSlider: $("#" + aTextureId + " .pops"),
+			min: 0,
+			max: 1,
+			type: "PoPS",
+			direction: "left",
+		});
+
+		$("#" + aTextureId + " .pops-scale.right").scale({
+			lines: aData["pops_option"], 
+			aTextureId: aTextureId + "-pops",
+			aSlider: $("#" + aTextureId + " .pops"),
+			min: 0,
+			max: 1,
+			type: "PoPS",
+			direction: "right",
+		});
+
+		$("#" + aTextureId + " .rips-scale").scale({ 
+			lines: aData["rips_option"],  
+			aTextureId: aTextureId + "-rips", 
+			aSlider: $("#" + aTextureId + " .rips"), 
+			min: 0, 
+			max: 1, 
+			type: "RiPS", 
+			direction: "left",
+		}); 
+ 
+		$("#" + aTextureId + " .copy-scale").scale({ 
+			lines: aData["copy_option"],  
+			aTextureId: aTextureId + "-copy", 
+			aSlider: $("#" + aTextureId + " .copy"), 
+			min: 0, 
+			max: 100, 
+			type: "copy", 
+			direction: "left",
+		}); 
+ 
+		$("#" + aTextureId + " .k1-scale.left").scale({ 
+			lines: aData["k1_option"],  
+			aTextureId: aTextureId + "-k1", 
+			aSlider: $("#" + aTextureId + " .k1"), 
+			min: -10, 
+			max: 10, 
+			type: "K1", 
+			direction: "left",
+		}); 
+
+		$("#" + aTextureId + " .k1-scale.right").scale({ 
+			lines: aData["k1_option"],  
+			aTextureId: aTextureId + "-k1", 
+			aSlider: $("#" + aTextureId + " .k1"), 
+			min: -10, 
+			max: 10, 
+			type: "K1", 
+			direction: "right",
+		}); 
+		 
+		$("#" + aTextureId + " .concen-scale").scale({ 
+			lines: aData["concen_option"],  
+			aTextureId: aTextureId + "-concen", 
+			aSlider: $("#" + aTextureId + " .concen"), 
+			min: 0, 
+			max: 0.1, 
+			type: "concen", 
+		}); 
+
 		/* $("#" + aTextureId + " .protein-range .slider").slider({ */
 		$("#" + aTextureId + " .pops").slider({
 			orientation: "vertical",
@@ -82,15 +231,18 @@ var protein = {
 			step: 0.0001,
 			value: 0,
 			stop: function(event, ui) {
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(2)); 
+
 				detail.type = "PoPS";
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				detail.cluster = false;
 				randomValue(); 
 			},
 			slide: function(event, ui) { 
 				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(2)); 
-			} 
+			},
 		});
 
 		$("#" + aTextureId + " .rips").slider({
@@ -105,6 +257,7 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				detail.cluster = false;
 				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(2)); 
 				randomValue(); 
 			},
@@ -117,7 +270,7 @@ var protein = {
 			orientation: "vertical",
 			range: "min",
 			min: 0,
-			max: 1000,
+			max: 100,
 			step: 0.0001,
 			value: 0,
 			stop: function(event, ui) {
@@ -125,6 +278,8 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				detail.cluster = false;
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(0)); 
 				randomValue(); 
 			},
 			slide: function(event, ui) { 
@@ -147,7 +302,9 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
-				randomValue(); 
+				detail.cluster = false;
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(1)); 
+				randomValue();
 			},
 			slide: function(event, ui) { 
 				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(1)); 
@@ -158,7 +315,7 @@ var protein = {
 			orientation: "vertical",
 			range: "min",
 			min: 0,
-			max: 100,
+			max: 0.1,
 			step: 0.0001,
 			value: 60,
 			stop: function(event, ui) {
@@ -170,10 +327,12 @@ var protein = {
         var id_str = $(this).parents(".proteins").attr('id');
 				detail.pro_id = id_str.substring(id_str.indexOf('-') + 1, id_str.length);
 				detail.new_value = $(this).slider("value");
+				detail.cluster = false;
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(3)); 
 				randomValue();
 			},
 			slide: function(event, ui) { 
-				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(0)); 
+				$(this).find(".ui-slider-handle").text($(this).slider("value").toFixed(3)); 
 			} 
 		});
 
@@ -208,11 +367,43 @@ var protein = {
 			$("#" + aTextureId + " .concen").removeClass("unuse");
 		}
 		$("#" + aTextureId + " .concen").slider("value", aData.concen);
-		$("#" + aTextureId + " .concen").find(".ui-slider-handle").text($("#" + aTextureId + " .concen").slider("value").toFixed(0)); 
+		$("#" + aTextureId + " .concen").find(".ui-slider-handle").text($("#" + aTextureId + " .concen").slider("value").toFixed(3)); 
 		$("#" + aTextureId + " .before-regulated").trigger("update", aData.before_regulated);
 		$("#" + aTextureId + " .repress-rate").trigger("update", aData.repress_rate);
 		$("#" + aTextureId + " .induce-rate").trigger("update", aData.induce_rate);
+	  $("#" + aTextureId + " .module-title em").text(aData.name);	
+		$("#" + aTextureId).data("pos", aData.pos);
 	},
+	setRightScale: function(aTextureId, aData) {
+		if(aData["pops_option"]) {
+			$("#" + aTextureId).data("pops_option_right", aData["pops_option"]);
+		} else {
+			$("#" + aTextureId).data("pops_option_right", []);
+		}
+		$("#" + aTextureId + " .pops-scale.right").empty().scale({
+			lines: aData["pops_option"], 
+			aTextureId: aTextureId + "-pops",
+			aSlider: $("#" + aTextureId + " .pops"),
+			min: 0,
+			max: 1,
+			type: "PoPS",
+			direction: "right",
+		});
+		if(aData["k1_option"]) {
+			$("#" + aTextureId).data("k1_option_right", aData["k1_option"]);
+		} else {
+			$("#" + aTextureId).data("k1_option_right", []);
+		}
+		$("#" + aTextureId + " .k1-scale.right").empty().scale({
+			lines: aData["k1_option"], 
+			aTextureId: aTextureId + "-k1",
+			aSlider: $("#" + aTextureId + " .k1"),
+			min: -10,
+			max: 10,
+			type: "K1",
+			direction: "right",
+		});
+	}
 }
 
 /* group */
@@ -222,8 +413,8 @@ var group = {
 		this.setData(aTextureId, aData, "init");
 	},
 	setTexture: function(aTextureId, aData) {
-							
-							
+
+
 		$("#" + aTextureId).append("<ul class=\"sbol-components\"></ul><div class=\"move-left cmd-move\">&lt</div><div class=\"move-right cmd-move\">&gt</div><button class=\"sbol-switch switch-on\">trans</button>");
 		for(var i = 0; i < aData.sbol.length; i++) {
 			var type = 'Promoter.PNG';
@@ -340,7 +531,7 @@ var plasmid =  {
 						
 		// $("#" + aTextureId + " div .label").text(aTextureId); 
 		/* $("#" + aTextureId + " div .label").html("<a href='plasmid'><i class='icon-zoom-in'></i>" + aTextureId + "</a>"); */
-		$("#" + aTextureId + " div .label").html("<span class='view-plasmid'><i class='icon-zoom-in'></i>" + aTextureId + "</span>");
+		$("#" + aTextureId + " div .label").html("<span class='view-plasmid' title='View plasmid sequence'><i class='icon-zoom-in'></i>" + aTextureId + "</span>");
 		$("#" + aTextureId).append("<div id='" + aTextureId + "-first' style='display:none'></div>");
 
 		for(var i = 0; i < aData.length; i++) {
@@ -372,10 +563,11 @@ var plasmid =  {
 		while($("#plasmid-" + count).length > 0) {
 			count += 1;
 		}
+		var prePlasmid = $(".plasmids:last");
 		$("#plasmids-view .mCSB_container").append("<div class='plasmids' id='plasmid-" + count.toString() + "'></div>");	
 		var aTextureId = "plasmid-" + count.toString();
 		$("#" + aTextureId).append("<div><span class=\"label\"></span></div><div class=\"cmd-del\">x</div>");
-		$("#" + aTextureId + " div .label").html("<span class='view-plasmid'><i class='icon-zoom-in'></i>" + aTextureId + "</span>");
+		$("#" + aTextureId + " div .label").html("<span class='view-plasmid' title='View plasmid sequence'><i class='icon-zoom-in'></i>" + aTextureId + "</span>");
 		$("#" + aTextureId).append("<div id='" + aTextureId + "-first' style='display:none'></div>");
 		checkEmptyPlasmid();
 		/* $("#" + aTextureId).append("<div id='" + aTextureId + "-first'></div>"); */
@@ -386,8 +578,16 @@ var plasmid =  {
 		$("#plasmids-view").mCustomScrollbar("update");
 		$("#plasmids-view").mCustomScrollbar("scrollTo", "bottom");
 		this.viewPlasmid(aTextureId);
+		// return $("#" + aTextureId); 
+		
+		// command.tempCmd.type = "NewPlasmid"; 
+		// command.tempCmd.pre = prePlasmid; 
+		// command.tempCmd.newOne = $("#" + aTextureId); 
+		// command.cmdConfirm(); 
+		
 	},
 	viewPlasmid: function(aTextureId) {
+		$("#" + aTextureId + " div .label .view-plasmid").tooltip();
 		$("#" + aTextureId + " div .label .view-plasmid").click(function(){
       var data = {};
 			var circuit = [];
@@ -411,10 +611,33 @@ var plasmid =  {
 			});	
       data.circuit = circuit;
 			sessionStorage.genecircuitSave=JSON.stringify({'genecircuit':data});
-			sessionStorage.gene_circuit = JSON.stringify(getDataCollection());
+
+
+
+
+			var dataCollection = getDataCollection();
+			var pLength = $("#dashboard-view .mCSB_container .proteins").length;
+			for(var i = 0; i < pLength; i++) {
+				var pid = $(".proteins:eq(" + i.toString() + ")").attr('id');
+
+				pid_i = pid.substring(pid.indexOf('-') + 1, pid.length);
+				var p = $("#" + pid);
+				
+				dataCollection.proteins[pid_i].pops_option = p.data('pops_option_left').concat(p.data('pops_option_right'));
+				dataCollection.proteins[pid_i].rips_option = p.data('rips_option');
+				dataCollection.proteins[pid_i].copy_option = p.data('copy_option');
+				dataCollection.proteins[pid_i].k1_option = p.data('k1_option_left').concat(p.data('k1_option_right'));
+				dataCollection.proteins[pid_i].concen = p.data('concen_option');
+			}
+
+
+			sessionStorage.gene_circuit = JSON.stringify(dataCollection);
+			// sessionStorage.regulation = undefined; 
+			sessionStorage.curPage = 'plasmid';
 			// console.log(data); 
 			// sendMessage 
 			// console.log(sessionStorage);  
+			// console.log("CCC", dataCollection); 
 			window.location.href="plasmid";    
 		});
 					
@@ -423,6 +646,11 @@ var plasmid =  {
 
 
 $(".empty-plasmid .cmd-del").live('click', function(){
+	// command.tempCmd.type = "DelPlasmid"; 
+	// command.tempCmd.pre = prePlasmid; 
+	// command.tempCmd.newOne = $("#" + aTextureId); 
+	// command.cmdConfirm(); 
+
 	$(this).parents(".plasmids").remove();
 	$("#plasmids-view").mCustomScrollbar("update");
 	$("#plasmids-view").mCustomScrollbar("scrollTo", "bottom");
@@ -516,6 +744,7 @@ var detail = {
 	type: "",
 	pro_id: 0,
 	new_value: 0,
+	cluster: false,
 }
 
 /* command */
@@ -546,6 +775,7 @@ var historyStack = {
 		this.stack.push(dataCollection);
 		this.pointer += 1;
 		this.stack[this.pointer].cmd = command.cmd;
+		this.stack[this.pointer].genecircuitData = genecircuitData;
 	},
 	setState: function(p) {
 		var curState = this.stack[p];
@@ -571,6 +801,8 @@ var historyStack = {
 			} 
 			plasmid.setData(tId, groups); 
 		} 
+
+		genecircuitData = this.stack[this.pointer].genecircuitData;
 	},
 	undo: function() {
 		if(this.pointer > 0) {
@@ -581,7 +813,14 @@ var historyStack = {
 				$("#" + curCmd.from).after(temp);
 			}
 			this.setState(this.pointer);
-			/* this.setCurrentStack(stack[pointer], stack[pointer+1]); */
+
+			// update simulation 
+			ws.send(JSON.stringify({'request'     : 'Simulate',
+									'isStochastic': false,
+									// 'gene_circuit':JSON.stringify(this.stack[this.pointer].genecircuitData), 
+									'gene_circuit':JSON.stringify(genecircuitData), 
+									'corepind':{},
+			}));
 		}
 	},
 	redo: function() {
@@ -594,6 +833,14 @@ var historyStack = {
 			}
 			this.setState(this.pointer);
 			/* this.setCurrentStack(stack[pointer], stack[pointer+1]); */
+
+			// update simulation 
+			ws.send(JSON.stringify({'request'     : 'Simulate',
+									'isStochastic': false,
+									// 'gene_circuit':JSON.stringify(this.stack[this.pointer].genecircuitData), 
+									'gene_circuit':JSON.stringify(genecircuitData), 
+									'corepind':{},
+			}));
 		}
 	}
 }
@@ -689,6 +936,7 @@ var init = function(genecircuitData) {
 		// $("#dashboard-view .mCSB_container").append("<div class='proteins new-proteins' id='protein-" + i.toString() + "'></div>"); 
 		// protein.init("protein-" + i.toString(), genecircuitData.proteins[i]); 
 	// } 
+	console.log("init", genecircuitData);
 	for(var prop in genecircuitData.proteins) {
 		$("#dashboard-view .mCSB_container").append("<div class='proteins new-proteins' id='protein-" + prop + "'></div>"); 
 		protein.init("protein-" + prop, genecircuitData.proteins[prop]); 
@@ -716,6 +964,7 @@ var updateGen = function(genecircuitData) {
 	for(var prop in genecircuitData.proteins) {
 		var tId = "protein-" + prop;
 		protein.setData(tId, genecircuitData.proteins[prop]);
+		protein.setRightScale(tId, genecircuitData.proteins[prop]); 
 	}
 	for(var i = 0; i < genecircuitData.plasmids.length; i++) {
 		var tId = $("#plasmids-view .mCSB_container .plasmids:eq(" + i.toString() + ")").attr("id");
@@ -777,6 +1026,14 @@ $(function(){
 
 	$("#cmd-new-plasmid").click(function(){
 		plasmid.addPlasmid();
+	});
+
+	$("#linknext").click(function(){
+		$(".view-plasmid").tooltip('show');
+		/* $("#btn-edit").tooltip('show'); */
+		$("#btn-viewmore").tooltip('show');
+		/* setTimeout("$(\".view-plasmid\").tooltip('hide');$(\"#btn-edit\").tooltip('hide');$(\"#btn-viewmore\").tooltip('hide');", 500); */
+		setTimeout("$(\".view-plasmid\").tooltip('hide');$(\"#btn-viewmore\").tooltip('hide');", 1000);
 	});
 });
 

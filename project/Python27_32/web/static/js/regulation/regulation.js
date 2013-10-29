@@ -13,22 +13,40 @@ $().ready(function() {
         e.preventDefault();
     };
 
-    // click header 
-    $(".header").click(function() {
-        console.log(app.view.figures);
+    $("#linktogc").click(function(){
+        window.location.pathname = "/genecircuit";
     });
+
+
+    // click header 
+    // $(".header").click(function() {
+    //     // console.log(app.view.figures);
+        
+    //     window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
+    //     console.log(window.sessionStorage.getItem("regulationWork"));
+    // });
 
     // toggle left-container
     $(".trigger-left").click(function() {
         var left = $("#left-container").css("left");
 
+        $("#right-container").css("right", "-270px");
+
         if (parseInt(left) == 0) {
             $("#left-container").css({
                 left: '-270px'
             });
+
+            $("#canvas").css({
+                left: '0px'
+            });
         } else {
             $("#left-container").css({
                 left: '0px'
+            });
+
+            $("#canvas").css({
+                left: '270px'
             });
         }
     });
@@ -37,13 +55,23 @@ $().ready(function() {
     $(".trigger-right").click(function() {
         var right = $("#right-container").css("right");
 
+        $("#left-container").css("left", "-270px");
+
         if (parseInt(right) == 0) {
             $("#right-container").css({
                 right: '-270px'
             });
+
+            $("#canvas").css({
+                left: '0px'
+            });
         } else {
             $("#right-container").css({
                 right: '0px'
+            });
+
+            $("#canvas").css({
+                left: '-270px'
             });
         }
     });
@@ -51,6 +79,10 @@ $().ready(function() {
     $("#content").click(function() {
         $("#left-container").css({
             left: '-270px'
+        });
+
+        $("#canvas").css({
+            left: '0px'
         });
 
         $("#right-container").css({
@@ -68,6 +100,8 @@ $().ready(function() {
 
     // logout
     $("#logout").click(function() {
+        window.sessionStorage.removeItem("regulationWork");
+
         ws.send(JSON.stringify({
             'request': 'loginOut'
         }));
@@ -75,10 +109,6 @@ $().ready(function() {
 
     // load file list
     $("#myfile").click(function() {
-        // ws.send(JSON.stringify({
-        //     'request': 'getUserFileList'
-        // }));
-        // window.location.pathname = "/file_manager";
         canvasToJSON();
 		window.location.pathname = "/file_manager";
     });
@@ -127,7 +157,14 @@ $().ready(function() {
     
     // clear the canvas
     $("#clear").click(function() {
-        app.view = new g.View("canvas");
+        // 清除原来的内容
+        app = null;
+        $("#canvas").remove();
+        window.sessionStorage.removeItem("regulationWork");
+
+        // 新建画布
+        $("#canvas-mask").append("<div id=\"canvas\"></div>");
+        app = new g.Application();
     });
 
     // save configuration of protein 
@@ -369,17 +406,18 @@ $().ready(function() {
                 return;
             }
         })();
-    }
+    };
 
     // Cleanly close websocket when unload window
     window.onbeforeunload = function() {
         var jsonData = JSON.stringify(canvasToJSON());
-        // console.log(jsonData);
         ws.send(JSON.stringify({
             'request': 'indexSaveToGeneCircuit',
             'data': jsonData
         }));
         sessionStorage.regulation = jsonData;
+
+        window.sessionStorage.setItem("regulationWork", JSON.stringify(canvasToSaveData()));
 
         ws.onclose = function() {}; // disable onclose handler first
         ws.close();
@@ -418,12 +456,25 @@ $().ready(function() {
 
 
 
-    var canvasToJSON = function() {
+    if (window.sessionStorage) {
+        regulationCache = window.sessionStorage;
+
+        var regulationWork = regulationCache.getItem("regulationWork");
+        if (regulationWork) {
+            repaintCanvas(regulationWork);
+        }
+
+        $("#right-container").css("right", "-270px");
+    } else {
+        alert("Your browser does not support sessionStorage!");
+    }
+
+    function canvasToJSON() {
         var figures = app.view.figures.data,
             lines = app.view.lines.data;
 
-        console.log(figures);
-        console.log(lines);
+        // console.log(figures);
+        // console.log(lines);
         var figuresCount = app.view.collection.length,
             linesCount = app.view.connections.length;
 
@@ -530,11 +581,9 @@ $().ready(function() {
         return data;
     };
 
-    var canvasToSaveData = function() {
+    function canvasToSaveData() {
         var figures = app.view.figures.data,
             lines = app.view.lines.data;
-        console.log(figures);
-        console.log(lines);
 
         var figuresCount = app.view.collection.length,
             linesCount = app.view.connections.length;
@@ -544,32 +593,128 @@ $().ready(function() {
             link: []
         };
 
+
+        // 添加part信息
         for (var i = 0; i < figuresCount; i++) {
             var figure = {};
-            figure.id = i;
-            figure.name = figures[i].id;
-            figure.type = figures[i].TYPE;
-            figure.xPos = figures[i].getX();
-            figure.yPos = figures[i].getY();
+            if (figures[i].TYPE == "Protein" || figures[i].TYPE == "R" || figures[i].TYPE == "A") {
+                figure.id = figures[i].getId();
+                figure.name = figures[i].name;
+                figure.xPos = figures[i].getAbsoluteX();
+                figure.yPos = figures[i].getAbsoluteY();
 
+                if (figures[i].TYPE == "A")
+                    figure.type = "Activator";
+                else if (figures[i].TYPE == "R")
+                    figure.type = "Repressor";
+                else {
+                    figure.config = figures[i].config;
+                    figure.path = figures[i].path;
+                    figure.type = figures[i].TYPE;
+                }
 
-            data.part.push(figure);
+                data.part.push(figure);
+
+                // 添加R/A绑定信息
+                if (figures[i].getParent() && figures[i].getParent().TYPE == "Container") {
+                    for (var j = 0; j < figures[i].getParent().getChildren().getSize(); j++) {
+                        var sibling = figures[i].getParent().getChildren().get(j);
+                        if (sibling.TYPE == "R") {
+                            var repressor = {};
+                            repressor.id = sibling.getId();
+                            repressor.name = "Repressor";
+                            repressor.type = "Repressor";
+                            repressor.xPos = sibling.getAbsoluteX();
+                            repressor.yPos = sibling.getAbsoluteY();
+                            data.part.push(repressor);
+
+                            // 添加绑定链接信息
+                            var line = {};
+                            line.from = figures[i].getId();
+                            line.to = repressor.id;
+                            line.type = "Bound";
+                            line.inducer = "none";
+                            data.link.push(line);
+
+                        } else if (sibling.TYPE == "A") {
+                            var activator = {};
+                            activator.id = sibling.getId();
+                            activator.name = "Activator";
+                            activator.type = "Activator";
+                            activator.xPos = sibling.getAbsoluteX();
+                            activator.yPos = sibling.getAbsoluteY();
+                            data.part.push(activator);
+
+                            // 添加绑定链接信息
+                            var line = {};
+                            line.from = figures[i].getId();
+                            line.to = activator.id;
+                            line.type = "Bound";
+                            line.inducer = "none";
+                            data.link.push(line);
+                        }
+                    };
+                }
+            }
         }
 
+
+        // 添加link信息（除蛋白绑定外）
         for (var i = 0; i < linesCount; i++) {
             var line = {};
-            line.from = lines[i].sourcePort.parent.id;
-            line.to = lines[i].targetPort.parent.id;
-            line.type = lines[i].TYPE;
-            line.inducer = "none";
 
-            data.link.push(line);
+            // 
+            if (lines[i].sourcePort.parent.TYPE !== "Inducer") {
+                line.from = lines[i].sourcePort.parent.id;
+                line.to = lines[i].targetPort.parent.id;
+                line.type = lines[i].TYPE;
+                line.inducer = "none";
+
+                // find connections that was regulated by inducer
+                var lineChildren = lines[i].getChildren();
+
+                for (var j = 0; j < lineChildren.size; j++) {
+                    if (lineChildren.get(j).TYPE == "HybridPort") {
+                        var lineType = lineChildren.get(j).decorator;
+
+                        if (lineType == "T") {
+                            line.inducer = "Negative";
+                        } else if (lineType == "A") {
+                            line.inducer = "Positive";
+                        }
+
+                        break;
+                    }                   
+                };
+
+                data.link.push(line);
+            } else {
+                // add Inducer info to parts collection
+                console.log(lines[i].targetPort.parent);
+                // console.log(lines[i].sourcePort.parent);
+                
+                var idc = {};
+                idc.id = lines[i].sourcePort.parent.id;
+                idc.type = "Inducer";
+                idc.targetId = lines[i].targetPort.parent.targetPort.parent.id;
+                idc.linkType = lines[i].TYPE;
+                idc.xPos = lines[i].sourcePort.parent.getAbsoluteX();
+                idc.yPos = lines[i].sourcePort.parent.getAbsoluteY();
+
+                data.part.push(idc);
+            }
         };
-        
+
+        // 添加蛋白绑定信息
+        var len = app.view.boundPairs.length;
+        for (var i = 0; i < len ; i++) {
+            data.link.push(app.view.boundPairs[i]);
+        };
+
         return data;
     };
 
-    var repaintCanvas = function(msg) {
+    function repaintCanvas(msg) {
         var model = eval('(' + msg + ')');
         console.log(model);
 
@@ -580,49 +725,114 @@ $().ready(function() {
         for (var i = 0; i < model.link.length; i++) {
             repaintLine(model.link[i]);
         };
+
+        for (var i = 0; i < model.part.length; i++) {
+            repaintInducer(model.part[i]);
+        };
         
 
         function repaintFigure(part) {
-            var type = 'g.Shapes.' + part.type;
+            if (part.type == "Protein") {
+                var type = 'g.Shapes.' + part.type;
 
-            var figure = eval("new " + type + "()");   // 实例化对象
+                var figure = eval("new " + type + "()");   // 实例化对象
 
-            var command = new graphiti.command.CommandAdd(app.view, figure, part.xPos, part.yPos);
-            app.view.getCommandStack().execute(command);    // 添加到命令栈中
+                var command = new graphiti.command.CommandAdd(app.view, figure, part.xPos, part.yPos);
+                app.view.getCommandStack().execute(command);    // 添加到命令栈中
 
-            figure.setId(part.name);    // 设置id
-            figure.label.setText(part.name.substr(0, part.name.length - 2));    // 设置label
+                app.view.collection.remove(figure.getId());
 
-            app.view.collection.push(part.name);    // 放入collection中
-            app.view.collection.counter += 1;
+                figure.setId(part.id);    // 设置id
+                figure.name = part.name;
+                figure.TYPE = part.type;
+                figure.path = part.path;
+                figure.config = part.config;
+                figure.label.setText(figure.name);
+
+                app.view.collection.push(figure.getId());
+            }
+        };
+
+        function repaintInducer(part) {
+            if (part.type == "Inducer") {
+                var type = 'g.Shapes.' + part.type;
+
+                var figure = eval('new ' + type + '()');
+
+                var command = new graphiti.command.CommandAdd(app.view, figure, part.xPos, part.yPos);
+                app.view.getCommandStack().execute(command);    // 添加到命令栈中
+
+                app.view.collection.remove(figure.getId());
+
+                figure.setId(part.id);
+                figure.TYPE = part.type;
+
+                app.view.collection.push(figure.getId());
+
+
+                figure.onClick();
+
+                var line = getLine(part.targetId);
+
+                if (part.linkType == "Activator") {
+                    line.Activator.onClick();
+                } else if (part.linkType == "Repressor") {
+                    line.Repressor.onClick();
+                }
+
+            }
+
+            function getLine(id) {
+                var lines = app.view.lines;
+                for (var i = 0; i < lines.getSize(); i++) {
+                    if (lines.get(i).targetPort.parent.id == id) {
+                        return lines.get(i);
+                    }
+                };
+            }
         };
 
         function repaintLine(link) {
-            var source = app.view.getFigure(link.from);
-            var target = app.view.getFigure(link.to);
+            
+            if (link.type === "Bound") {
+                /*
+                 *  Get source and target item of link.
+                 */
+                var source = app.view.getFigure(link.from);
+                var targetArr = getTarget(link.to);
 
-            var sourcePort, targetPort;
+                for (var idx = 0; idx < targetArr.length; idx++) {
+                    var target = app.view.getFigure(targetArr[idx].id);
 
-            if (source.TYPE == 'Protein' || source.TYPE == 'PandP') {
-                sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomLocator(source));
-            } else if (source.TYPE == 'PandA' || source.TYPE == 'PandR' || source.TYPE == 'PandRORA') {
-                sourcePort = source.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(source));
+                    app.view.currentSelected = link.from;
+                    source.onClick();
+
+                    if (targetArr[idx].type == "Activator") {
+                        target.Activate.onClick();
+                    } else if (targetArr[idx].type == "Repressor") {
+                        target.Inhibit.onClick();
+                    }
+                };
+
+                if (targetArr.length == 0) {
+                    var target = app.view.getFigure(link.to);
+
+                    source.onClick();
+
+                    target.CoExpress.onClick();
+                }
             }
 
-            if (target.TYPE == 'Protein' || target.TYPE == 'PandP') {
-                targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomLocator(target));
-            } else if (target.TYPE == 'PandA' || target.TYPE == 'PandR' || target.TYPE == 'PandRORA') {
-                targetPort = target.createPort("hybrid", new graphiti.layout.locator.BottomRightLocator(target));
-            }
+            function getTarget(boundId) {
+                var retArr = [];
 
-            if (link.type == 'Activator') {
-                var command = new graphiti.command.CommandConnect(app.view, targetPort, sourcePort, null, "Activate"); // 连接两点
-                app.view.getCommandStack().execute(command); // 添加到命令栈中
-                app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
-            } else if (link.type == 'Repressor') {
-                var command = new graphiti.command.CommandConnect(app.view, targetPort, sourcePort, null, "Inhibit"); // 连接两点
-                app.view.getCommandStack().execute(command); // 添加到命令栈中
-                app.view.connections.push(command.connection.getId()); // 添加connection的id到connections集合中
+                for (var j = 0; j < model.link.length; j++) {
+                    if (model.link[j].from == boundId) {
+                        retArr.push({id: model.link[j].to, type: model.link[j].type});
+                    }
+                };
+
+                return retArr;
             }
         };
     };

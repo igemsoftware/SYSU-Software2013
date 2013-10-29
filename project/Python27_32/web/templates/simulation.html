@@ -1,146 +1,162 @@
-  <!doctype html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
-  <title>Simulation</title>
-  <meta name="description" content="">
-  <meta name="author" content="Jiexin Guo,Jianhong Li">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="../static/css/bootstrap.min.css">  
-  <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="../static/css/demo.css" type="text/css"/>	
-  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="../static/css/reset.css">
-  <link rel="stylesheet" href="../static/css/graphiti.css">
-  <script type="text/javascript" src="../static/js/ichartjs.v1.2/ichart_test.js"></script>  
-  <!--<script src="../static/js/underscore-min.js"></script>-->
-  <script src="../static/js/jquery-1.8.0.min.js"></script>
-  <script src="../static/js/bootstrap.min.js"></script>
-  <script src="../static/js/lib/canvas2image.js"></script>
-  <script src="../static/js/lib/base64.js"></script>
-  <!--<script src="../static/js/jquery-ui-1.8.23.custom.min.js"></script>-->
-  <script src="../static/js/draw_simulation_curve.js"></script>
-  <script src="../static/js/simulation.js"></script>
-  <script src="../static/js/simulation/simulationFilMenu.js"></script> 
-  <!--<script src="../static/js/jCanvaScript.1.5.18.js"></script> --> 
-</head>
-<body>
-	<div class="modal fade" id='mymodal'>
-      
-        <img id='loading' src="../static/img/loading.gif" style='display:block; width:85px; margin: 0 auto;' >
-      
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
+    <title>Simulation</title>
+    <meta name="description" content="">
+    <meta name="author" content="Jiexin Guo,Jianhong Li">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="../static/css/demo.css" type="text/css"/>	
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/graphiti.css">
+    <link rel="stylesheet" href="../static/css/help1.css">
+    <script type="text/javascript" src="../static/js/ichartjs.v1.2/ichart_test.js"></script>  
+    <script src="../static/js/jquery-1.8.0.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap-tooltip.js"></script>
+    <script src="../static/js/lib/canvas2image.js"></script>
+    <script src="../static/js/lib/base64.js"></script>
+    <script src="../static/js/draw_simulation_curve.js"></script>
+    <script src="../static/js/simulation.js"></script>
+    <script src="../static/js/simulation/simulationFilMenu.js"></script> 
+    <script src="../static/js/help.js"></script>
+  </head>
+  <body>
+    <div class="modal fade" id='mymodal'>
+
+      <img id='loading' src="../static/img/loading.gif" style='display:block; width:85px; margin: 0 auto;' >
+
     </div> 
-	<div class="mycontainer" id="regulation-container">
-    	<div class="header">
-        	<a href="http://2013.igem.org/Team:SYSU-Software" target="_blank">
-            	<img src="../static/img/logo.png" alt="sysu-software" >
-            </a>
-            <div class="nav">
-                <ul>
-                    <li><a href="index">Regulation network</a></li>
-                    <li><a href="genecircuit">Gene Circuit</a></li>
-                    <li><a href="plasmid">Plasmid</a></li>
-                    <li><a href="protocol">Protocol</a></li>
-                    <li class="active"><a href="simulation">Simulation</a></li>
-                </ul>
-                <div class="pointer-arrow" style="left:596px;color:#f4f4f4;"></div>
+    <div class="mycontainer" id="regulation-container">
+      <div class="header">
+        <a href="http://2013.igem.org/Team:SYSU-Software" target="_blank">
+          <img src="../static/img/logo.png" alt="sysu-software" >
+        </a>
+        <div class="nav">
+          <div id="start-help">
+            <img src="../static/img/help/Cast_logo_robot_help.png" alt="help" onclick="starthelp();">
+          </div>
+          <ul>
+            <li><a href="index">Regulation network</a></li>                    
+            <li ><a href="javascript:void(0);" >Gene Circuit</a></li>
+            <li class="arrow arrow-left" id="linkabove"><a href="javascript:void(0);">&nbsp</a></li>
+            <li class="active"><a href="javascript:void(0);">Simulation</a></li>
+            <li class="arrow arrow-right" id="linknext"><a href="javascript:void(0);">&nbsp</a></li>
+            <li><a href="javascript:void(0);">Plasmid</a></li>
+            <li><a href="javascript:void(0);">Protocol</a></li>
+          </ul>
+          <div class="pointer-arrow" style="left:335px"></div>
+        </div>
+      </div>        
+      <div id="content">
+        <div id="canvas-mask">                
+          <div id='canvasDiv' style='padding-left:30px;width:60%;height:97.5%;left:30px;top:30px;float:left;' ></div>                
+          <div style="float:left;width:33%;height:100%;">    
+            <div style="height:24%;width:100%;background-color:#f4f4f4;" title='Choose genes whose simulation curve will be displayed.'>  
+              <label class="btn" style="font-size:16px;font-family: Arial,Verdana,Sans-serif;background:#608d93;color:#FFF;height:20%;width:99.5%;padding: 5px 0;cursor:default;">Curve</label>
+              <div id="Curve" style="margin:2px"></div> 
             </div>
-        </div>        
-        <div id="content">
-            <div id="canvas-mask">                
-            	<div id='canvasDiv' style="padding-left:30px;width:60%;height:100%;float:left;left:30px;top:30px;"></div>   
-                <div style="width:30%;height:25%;padding-left:35px;float:left;border-style: outset;background-color:#f4f4f4;">  
-                <label>Curve</label>                  
-                  <div id="Curve" >
-                  </div> 
-                 </div>
-                 <div id="Option" style="width:30%;height:25%;padding-left:35px;float:left;border-style: outset;background-color:#f4f4f4;"> 
-                 <label>Option</label>       
-                 <input type="checkbox" id="stochastic" style="margin:15px;" onChange="stochasticOnChange(this);">stochastic</input>        	
-                 <br>	 
-                 <input type="checkbox" id="timedelay" style="margin:15px;">time delay</input>
-                 </div>    
-                 <div style="padding-left:35px;width:30%;height:25%;float:left;border-style: outset;background-color:#f4f4f4;">
-                 <label>Inducer</label> 
-                 <div id="Inducer" >                  
-                 </div>    
-                 </div>      
-                  <div id="buttons" style="padding-left:35px;width:30%;height:20%;float:left;border-style: outset;background-color:#f4f4f4;"> 
-                   <input id="back-botton" class="btn" style="width:30%;height:30%;cursor:pointer;float:left;margin:30px;" type="submit" value="back" onClick="window.history.back(-1);"/>
-                   <input id="save-button" class="btn" style="width:30%;cursor:pointer;float:right;height:30%;margin:30px;" type="submit" value="Save Graph" onClick="saveGraph();"/>
-                 </div>    
-			 </div>
-        </div>    	
-  	</div> <!-- /container -->
-  
-  
-  <div id="right-container">
-            <div class="trigger trigger-right"></div>
+            <div id="Option" style="height:25%;width:100%;background-color:#f4f4f4;"> 
+              <label class="btn" style="font-size:16px;font-family: Arial,Verdana,Sans-serif;background:#608d93;color:#FFF;height:20%;width:99.5%;padding: 5px 0;cursor:default;" title="Take randomness in transcription and translation into account">Option</label>       
+              <span id='sto1' data-toggle="tooltip" title="Take randomness in transcription and translation into account" data-placement='left' style='cursor:pointer'><input type="checkbox" id="stochastic" style="margin:15px;" onChange="stateOnChange(this);"  /><script>$('#sto1').tooltip();</script>stochastic </span>       	
+              <br>	 
+              <span id='timedel1' data-toggle="tooltip" title="Take time delay in transcription and translation process into account." data-placement='left' style='cursor:pointer'><input type="checkbox" id="delay" style="margin:15px;" onChange="stateOnChange(this)" /><script>$('#timedel1').tooltip();</script>time delay</span>
+            </div>    
+            <div style="height:25%;width:100%;display:block;background-color:#f4f4f4;">
+              <label class="btn" style="font-size:16px;font-family: Arial,Verdana,Sans-serif;background:#608d93;color:#FFF;height:20%;width:99.5%;padding: 5px 0;cursor:default;" title="Add inducer into the system. Then select an inducer and click on the curve to select a time point on which inducer will be added">Inducer</label> 
+              <div id="Inducer"> </div>    
+            </div>      
+            <div id="buttons" style="height:20%;display:block;background-color:#f4f4f4;width:100%;"> 
 
-            <!-- right menu list starts -->
-            <div class="accordion" id="accordion2">
+              <input id="back-botton" class="btn" style="font-size:16px;font-family:Arial,Verdana,Sans-serif;width:30%;height:30%;float:left;margin:30px;background:#f95f53;color:white;" type="submit" value="back" onClick="window.history.back(-1);" data-toggle="tooltip" title="go back to gene circuit"/><script>$('#back-botton').tooltip();</script>
 
-                <!-- basic menu starts -->
-                <div class="accordion-group">
-                    <!-- accordion-heading starts -->
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                            Menu
-                            <i class="icon-chevron-down" style="display: block; float: right"></i>
-                        </a>
+              <input id="save-button" class="btn" style="font-size:16px;font-family:Arial,Verdana,Sans-serif;width:30%;cursor:pointer;float:right;height:30%;margin:30px;background:#20a2de;color:white;" type="submit" value="Save Graph" onClick="saveGraph();" data-toggle="tooltip" title="save and download the simulation graph"/><script>$('#save-button').tooltip();</script>
+            </div>    
+          </div>
+        </div>
+      </div>    	
+    </div> <!-- /container -->
+
+
+    <div id="right-container">
+      <div class="trigger trigger-right"></div>
+
+      <!-- right menu list starts -->
+      <div class="accordion" id="accordion2">
+
+        <!-- basic menu starts -->
+        <div class="accordion-group">
+          <!-- accordion-heading starts -->
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+              Menu
+              <i class="icon-chevron-down" style="display: block; float: right"></i>
+            </a>
+          </div>
+          <!-- accordion-heading ends -->
+
+          <!-- accordion-body starts -->
+          <div id="collapseOne" class="accordion-body collapse in">
+            <!-- accordion-inner starts -->
+            <div class="accordion-inner">
+              <div id="menu">
+                <!-- userview starts -->
+                <div id="user-view" class="block">
+                  <div id="user-view-left">
+                    <div id="username">Nobody</div>
+                    <div id="logout">Logout</div>
+                  </div>
+                  <div id="user-view-right">
+                    <div class="avatar-container">
+                      <img src="../static/img/avatar.png" alt="user">
                     </div>
-                    <!-- accordion-heading ends -->
+                  </div>
+                </div>
+                <!-- userview ends -->
 
-                    <!-- accordion-body starts -->
-                    <div id="collapseOne" class="accordion-body collapse in">
-                        <!-- accordion-inner starts -->
-                        <div class="accordion-inner">
-                            <div id="menu">
-                                <!-- userview starts -->
-                                <div id="user-view" class="block">
-                                    <div id="user-view-left">
-                                        <div id="username">Nobody</div>
-                                        <div id="logout">Logout</div>
-                                    </div>
-                                    <div id="user-view-right">
-                                        <div class="avatar-container">
-                                            <img src="../static/img/avatar.png">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- userview ends -->
+                <!-- commandmenu starts -->
+                <div id="commandmenu" class="block">
+                  <div id="button-group">
+                    <button class="mybtn" id="myfile">My Files</button>
+                  </div>
+                </div>
+                <!-- commandmenu ends -->
 
-                                <!-- commandmenu starts -->
-                                <div id="commandmenu" class="block">
-                                    <div id="button-group">
-                                        <button class="mybtn" id="myfile" href="#filelist-modal" data-toggle="modal">My Files</button>
-                                    </div>
-                                </div>
-                                <!-- commandmenu ends -->
+                <!-- filemenu starts -->
+                <div id="filemenu" class="block">
+                  <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename">
+                  <button class="mybtn" id="save">
+                    <!-- <i class="icon-ok"></i> -->
+                    √  Save
+                  </button>
+                  <a class="mybtn" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
+                  <button class="mybtn" id="clear" role="button">                                        
+                    ×  Clear
+                  </button>
+                </div>
+                <!-- filemenu ends --> </div>
+              <!-- menu ends --> </div>
+            <!-- accordion-inner ends --> </div>
+          <!-- accordion-body ends --> </div>
+        <!-- basic menu ends -->               
+        <!-- right menu list ends -->
 
-                                <!-- filemenu starts -->
-                                <div id="filemenu" class="block">
-                                    <input id="fn-input" type="text" name="filename" maxlength="10" data-toggle="tooltip" title="filename can not be empty" placeholder="filename">
-                                    <button class="mybtn" id="save">
-                                        <!-- <i class="icon-ok"></i> -->
-                                        √  Save
-                                    </button>
-                                    <a class="mybtn" id="save-trigger" href="#save-modal" data-toggle="modal" role="button" style="display:none;"></a>
-                                    <button class="mybtn" id="clear" role="button">                                        
-                                        ×  Clear
-                                    </button>
-                                </div>
-                                <!-- filemenu ends --> </div>
-                            <!-- menu ends --> </div>
-                        <!-- accordion-inner ends --> </div>
-                    <!-- accordion-body ends --> </div>
-                <!-- basic menu ends -->               
-    <!-- right menu list ends -->
+    </div></div>
+    <!-- right container ends -->
+    <div id="help">
+      <div id="closehelp" onclick="closehelp();">
+        Close X 
+      </div>
+      <div id="help-content">
+        <img src="..\static\img\help\simulation\0.jpg" alt="The image may have lost.">
+      </div>
+    </div>
 
-</div>
-<!-- right container ends -->
 
-</body>
+  </body>
 </html>

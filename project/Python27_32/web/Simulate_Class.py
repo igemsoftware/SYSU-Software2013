@@ -46,7 +46,8 @@ class DNA_Simulate:
         if ty not in ['Constitutive', 'Positive', 'Negative']:
             raise InvalidParameter
         if copynumber <= 0 or tspromoter <= 0 or leakagerate < 0 or tere <=0:
-            raise InvalidParameter
+            pass
+            #raise InvalidParameter
         self.Type = ty
         self.CopyNumber  = copynumber
         self.TSPromoter  = tspromoter
@@ -102,7 +103,7 @@ class DNA_Simulate:
     ##
     # @brief  set corepressor in class
     #
-    # @param corepressor     name of corepressor
+    # @param corepressor     concen of corepressor
     # @param k               K value of corepressor
     # @param hillcoeff       hill coefficiency of corepressor
     #
@@ -116,11 +117,12 @@ class DNA_Simulate:
             raise InvalidParameter
         self.CorepConst = pow(corepressor / k, hillcoeff)
         self.IndConst   = None
+
     # --------------------------------------------------------------------------
     ##
     # @brief  set inducer in class
     #
-    # @param inducer     name of inducer
+    # @param inducer     concen of inducer
     # @param k           K value of inducer
     # @param hillcoeff   hill coefficiency of inducer
     #
@@ -133,6 +135,9 @@ class DNA_Simulate:
         if inducer < 0 or hillcoeff <= 0 or k <= 0:
             raise InvalidParameter
         self.IndConst   = pow(inducer / k, hillcoeff)
+        print "-------"
+        print inducer, k
+        print self.IndConst
         self.CorepConst = None
 
 # --------------------------------------------------------------------------
@@ -143,6 +148,7 @@ class DNA_Simulate:
 class mRNA_Simulate:
     Dt      = None
     TimeLen = None
+    TimeDelay = None
     Concen  = []
     DNA     = None
     TranslE = None
@@ -167,40 +173,58 @@ class mRNA_Simulate:
             self.DNA = dna
         else:
             raise IllegalSetting
-    def IniConcen(self, timelen, dt, ini):
+    def IniConcen(self, isDelay, timelen, dt, ini):
         if timelen <= 0 or dt <= 0 or ini < 0:
             raise InvalidParameter
         self.Dt        = dt
         self.TimeLen   = timelen
-        self.Concen    = [None] * self.TimeLen
+        self.Concen    = [0] * self.TimeLen
         self.Concen[0] = ini
+        if isDelay:
+            self.TimeDelay = int(ceil(40 / self.Dt)) # [Time-delay: 40s]
+        else:
+            self.TimeDelay = 1
+
     def Compute_Concen(self, n, isStochastic = False):
         if self.DNA.Type == 'Constitutive':
             production = self.Dt * self.DNA.CopyNumber * self.DNA.TSPromoter
         elif self.DNA.Type == 'Positive':
             if self.DNA.Activator and self.DNA.Activator.Concen[n-1]:
                 if self.DNA.CorepConst:
-                    Activator  = pow(self.DNA.Activator.Concen[n-1] / self.DNA.K / (1 + self.DNA.CorepConst), self.DNA.HillCoeff)
-                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) * (1 - 1 / (1 + Activator)) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                    Activator  = pow(self.DNA.Activator.Concen[n-self.TimeDelay] / self.DNA.K / (1 + 
+self.DNA.CorepConst), self.DNA.HillCoeff)
+                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - 
+self.DNA.LeakageRate) * (1 - 1 / (1 + Activator)) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
                 elif self.DNA.IndConst:
-                    Activator  = pow(self.DNA.Activator.Concen[n-1] / self.DNA.K / (1 + self.DNA.IndConst), self.DNA.HillCoeff)
-                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) * (1 - 1 / (1 + Activator) / (1 + self.DNA.IndConst))+ self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                    Activator  = pow(self.DNA.Activator.Concen[n-self.TimeDelay] / self.DNA.K / (1 + 
+self.DNA.IndConst), self.DNA.HillCoeff)
+                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - \
+self.DNA.LeakageRate) * (1 - 1 / (1 + Activator) / (1 + self.DNA.IndConst))+\
+                    self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
                 else:
-                    Activator  = pow(self.DNA.Activator.Concen[n-1] / self.DNA.K, self.DNA.HillCoeff)
-                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) * (1 - 1 / (1 + Activator)) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                    Activator  = pow(self.DNA.Activator.Concen[n-self.TimeDelay] / self.DNA.K, 
+self.DNA.HillCoeff)
+                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - 
+self.DNA.LeakageRate) * (1 - 1 / (1 + Activator)) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
             else:
                 production = self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
         elif self.DNA.Type == 'Negative':
             if self.DNA.Repressor:
                 if self.DNA.CorepConst:
-                    Repressor  = pow(self.DNA.Repressor.Concen[n-1] / self.DNA.K / (1 + self.DNA.CorepConst), self.DNA.HillCoeff)
-                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) / (1 + Repressor) / (1 + self.DNA.CorepConst) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                    Repressor  = pow(self.DNA.Repressor.Concen[n-self.TimeDelay] / self.DNA.K / (1 + 
+self.DNA.CorepConst), self.DNA.HillCoeff)
+                    production = self.Dt * self.DNA.CopyNumber * \
+                        (self.DNA.TSPromoter - self.DNA.LeakageRate) / (1 + Repressor) / (1 + self.DNA.CorepConst) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
                 elif self.DNA.IndConst:
-                    Repressor  = pow(self.DNA.Repressor.Concen[n-1] / self.DNA.K / (1 + self.DNA.IndConst), self.DNA.HillCoeff)
-                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) / (1 + Repressor) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                    Repressor  = pow(self.DNA.Repressor.Concen[n-self.TimeDelay] / self.DNA.K / (1 + 
+self.DNA.IndConst), self.DNA.HillCoeff)
+                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - 
+self.DNA.LeakageRate) / (1 + Repressor) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
                 else:
-                    Repressor  = pow(self.DNA.Repressor.Concen[n-1] / self.DNA.K, self.DNA.HillCoeff)
-                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) / (1 + Repressor) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                    Repressor  = pow(self.DNA.Repressor.Concen[n-self.TimeDelay] / self.DNA.K, 
+self.DNA.HillCoeff)
+                    production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - 
+self.DNA.LeakageRate) / (1 + Repressor) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
             else:
                 production = self.Dt * self.DNA.CopyNumber * self.DNA.TSPromoter
         degradation = self.Dt * self.DegRate * self.Concen[n-1]
@@ -209,30 +233,72 @@ class mRNA_Simulate:
             degradation = degradation * Poissrnd(degradation)
         self.Concen[n] = self.Concen[n-1] + production - degradation
 
+    #def Compute_Concen(self, n, isStochastic = False):
+        #if self.DNA.Type == 'Constitutive':
+            #production = self.Dt * self.DNA.CopyNumber * self.DNA.TSPromoter
+        #elif self.DNA.Type == 'Positive':
+            #if self.DNA.Activator and self.DNA.Activator.Concen[n-1]:
+                #if self.DNA.CorepConst:
+                    #Activator  = pow(self.DNA.Activator.Concen[n-1] / self.DNA.K / (1 + self.DNA.CorepConst), self.DNA.HillCoeff)
+                    #production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) * (1 - 1 / (1 + Activator)) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                #elif self.DNA.IndConst:
+                    #Activator  = pow(self.DNA.Activator.Concen[n-1] / self.DNA.K / (1 + self.DNA.IndConst), self.DNA.HillCoeff)
+                    #production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) * (1 - 1 / (1 + Activator) / (1 + self.DNA.IndConst))+ self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                #else:
+                    #Activator  = pow(self.DNA.Activator.Concen[n-1] / self.DNA.K, self.DNA.HillCoeff)
+                    #production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) * (1 - 1 / (1 + Activator)) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+            #else:
+                #production = self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+        #elif self.DNA.Type == 'Negative':
+            #if self.DNA.Repressor:
+                #if self.DNA.CorepConst:
+                    #Repressor  = pow(self.DNA.Repressor.Concen[n-1] / self.DNA.K / (1 + self.DNA.CorepConst), self.DNA.HillCoeff)
+                    #production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) / (1 + Repressor) / (1 + self.DNA.CorepConst) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                #elif self.DNA.IndConst:
+                    #Repressor  = pow(self.DNA.Repressor.Concen[n-1] / self.DNA.K / (1 + self.DNA.IndConst), self.DNA.HillCoeff)
+                    #production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) / (1 + Repressor) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+                #else:
+                    #Repressor  = pow(self.DNA.Repressor.Concen[n-1] / self.DNA.K, self.DNA.HillCoeff)
+                    #production = self.Dt * self.DNA.CopyNumber * (self.DNA.TSPromoter - self.DNA.LeakageRate) / (1 + Repressor) + self.Dt * self.DNA.CopyNumber * self.DNA.LeakageRate
+            #else:
+                #production = self.Dt * self.DNA.CopyNumber * self.DNA.TSPromoter
+        #degradation = self.Dt * self.DegRate * self.Concen[n-1]
+        #if isStochastic:
+            #production  = production  * Poissrnd(production )
+            #degradation = degradation * Poissrnd(degradation)
+        #self.Concen[n] = self.Concen[n-1] + production - degradation
+
 class Protein_Simulate:
-    Dt      = None
-    TimeLen = None
-    Concen  = []
-    mRNA    = None
-    DegRate = None
+    Dt        = None
+    TimeLen   = None
+    TimeDelay = None
+    Concen    = []
+    mRNA      = None
+    DegRate   = None
     def SetData(self, degrate):
         if degrate < 0:
             raise InvalidParameter
         self.DegRate = degrate
-    def IniConcen(self, timelen, dt, ini):
+    def IniConcen(self, isDelay, timelen, dt, ini):
         if timelen <= 0 or dt <= 0 or ini < 0:
             raise InvalidParameter
         self.Dt        = dt
         self.TimeLen   = timelen
-        self.Concen    = [None] * self.TimeLen
+        self.Concen    = [0] * self.TimeLen
         self.Concen[0] = ini
+        if isDelay:
+            self.TimeDelay = int(ceil(20 / self.Dt)) # [Time-delay: 20s]
+        else:
+            self.TimeDelay = 1
+
     def Connect(self, mrna):
         if isinstance(mrna, mRNA_Simulate):
             self.mRNA = mrna
         else:
             raise IllegalSetting
     def Compute_Concen(self, n, isStochastic):
-        production  = self.Dt * self.mRNA.TranslE * self.mRNA.DNA.TerE * self.mRNA.Concen[n-1]
+        production  = self.Dt * self.mRNA.TranslE * self.mRNA.DNA.TerE *\
+        self.mRNA.Concen[n-self.TimeDelay]
         degradation = self.Dt * self.DegRate * self.Concen[n-1]
         if isStochastic:
             production  = production  * Poissrnd(production )
