@@ -1,7 +1,8 @@
 flask
-Jinja
+Jinja2
 Werkzeug
 gevent
 greenlet
 gevent-websocket
 rsa
+xmltodict
