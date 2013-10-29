@@ -340,7 +340,6 @@ class SqliteDatabase:
 		temp=''
 		for row in result.fetchall():
 			temp=temp+row[0]+','
-		print temp
 		return temp
 
 	def select_row(self, tableName, idx):
@@ -353,6 +352,39 @@ class SqliteDatabase:
 		else:
 			return decodejson[0]['Number']		
 
+	def find_actrep(self, link, regulator_set, promoter_set):
+		idx = len(regulator_set) + 1
+		if link["type"] == "Repressor":
+			act_rep_type = "Negative"
+		else:
+			act_rep_type = "Positive"
+		if link["inducer"] not in {"Positive", "Negative"}:
+			sql_cmd = """
+				SELECT relation.ActRreNumber, relation.Cluster AS RCluster,
+				promoter.Cluster FROM promoter INNER JOIN relation
+				WHERE ActRreType = "%s" AND IncCorType IS NULL
+				ORDER BY ActRreNumber DESC
+			""" % (act_rep_type)
+		else:
+			if link["inducer"] == "Positive":
+				inc_cor_type = "Induced"
+			if link["inducer"] == "Negative":
+				inc_cor_type = "Corepressed"
+			sql_cmd = """
+				SELECT relation.ActRreNumber, relation.Cluster AS RCluster,
+				promoter.Cluster FROM promoter INNER JOIN relation
+				WHERE ActRreType = "%s" AND IncCorType = "%s"
+				ORDER BY ActRreNumber DESC
+			""" % (act_rep_type, inc_cor_type)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		for item in decodejson:
+			if item["RCluster"] not in regulator_set and item["Cluster"] not in promoter_set:
+				regulator_set.add(item["RCluster"])
+				promoter_set.add(item["Cluster"])
+				return item["ActRreNumber"]
+
 	def select_with_name(self, table, name):
 		self.__cursor.execute('SELECT * FROM %s WHERE Number = "%s"' % (table,\
       name))
@@ -363,17 +395,64 @@ class SqliteDatabase:
 		else:
 			return None
 
-	def find_promoter_with_repressor(self, repressor = None):
-		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')		
+	def find_promoter(self, promoter_set, act_rep, act_rep_type):
+		sql_cmd = """
+			SELECT promoter.* FROM promoter INNER JOIN relation
+			ON promoter.Number = relation.PromoterNumber
+			WHERE ActRreNumber = "%s" AND ActRreType = "%s"
+			""" % (act_rep, act_rep_type)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
+		print promoter_set
 		if decodejson != []:
-			return decodejson[0]
+			for item in decodejson:
+				if item["Cluster"] not in promoter_set:
+					promoter_set.add(item["Cluster"])
+					return item
+			return None
 		else:
 			return None
 
-	def find_promoter_with_activator(self, activator = None):
-		self.__cursor.execute('SELECT * FROM promoter ORDER BY random() LIMIT 1')
+	def find_promoter_in_cluster(self, part_name, p_type, value):
+		sql_cmd = """
+			SELECT * FROM promoter WHERE Number = '%s' AND %s = '%s'
+		""" % (part_name, p_type, value)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
+	def find_promoter_with_activator(self, promoter_set, activator = None):
+		self.__cursor.execute('SELECT PromoterNumber FROM relation WHERE\
+    ActRreNumber = "%s" AND ActRreType = "Positive"' % activator)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		promoter = decodejson[0]["PromoterNumber"]
+		self.__cursor.execute('SELECT * FROM promoter WHERE Number = "%s"' %
+        promoter)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if decodejson != []:
+			for item in decodejson:
+				if item["Cluster"] not in promoter_set:
+					promoter_set.add(item["Cluster"])
+					return item
+		else:
+			return None
+
+	def find_cor_ind(self, cor_ind_type, regulator, promoter):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+
+		print cor_ind_type, regulator, promoter
+		sql_cmd = """SELECT IncCorName, HillCoeff2, K2 FROM relation WHERE
+				ActRreNumber = '%s' AND PromoterNumber = '%s' AND IncCorType = '%s'
+				""" % (regulator, promoter, cor_ind_type)
+		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		if decodejson != []:
@@ -405,65 +484,270 @@ class SqliteDatabase:
 		else:
 			return None
 
-	def find_repressor_with_promoter(self, promoter):
-		self.__cursor.execute('SELECT * FROM repressor ORDER BY random() LIMIT 1')
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		if decodejson != []:
-			return decodejson[0]
-		else:
+	def find_actrep_with_promoter(self, promoter, link_type, cor_ind_type, regulator_set):
+		if link_type == "Constitutive":
 			return None
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		idx = len(regulator_set) + 1
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = 'SELECT DISTINCT ActRreNumber FROM relation WHERE\
+					PromoterNumber = "%s" AND ActRreType = "%s" AND IncCorType IS NULL\
+					ORDER BY ActRreNumber DESC LIMIT 0, %s' % (promoter, link_type, idx)
+		else:
+			sql_cmd = 'SELECT DISTINCT ActRreNumber FROM relation WHERE\
+					PromoterNumber = "%s" AND ActRreType = "%s" AND IncCorType = "%s"\
+					ORDER BY ActRreNumber DESC LIMIT 0, %s' % (promoter, link_type, cor_ind_type, idx)
 
-	def find_activator_with_promoter(self, promoter):
-		self.__cursor.execute('SELECT * FROM activator ORDER BY random() LIMIT 1')
+		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
-		if decodejson != []:
-			return decodejson[0]
+		actrep = decodejson[0]["ActRreNumber"]
+		if link_type == "Positive":
+			actrep_table = "activator"
+		elif link_type == "Negative":
+			actrep_table = "repressor"
+		self.__cursor.execute('SELECT * FROM %s WHERE Number = "%s"' %
+        (actrep_table, actrep))
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]
+
+	def getPromoterCluster(self, promoter):
+		sql_cmd = """
+			SELECT Cluster FROM promoter WHERE Number = '%s'
+		""" % promoter
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]["Cluster"]
+
+	def getRegulatorCluster(self, regulator):
+		sql_cmd = """
+			SELECT Cluster FROM relation WHERE ActRreNumber = '%s'
+		""" % regulator
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson[0]["Cluster"]
+
+	def getAllPromoterOption(self, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT promoter.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+          AND relation.IncCorType IS NULL
+					""" % (link_type)
 		else:
-			return None
-	
+			sql_cmd = """
+					SELECT promoter.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+					AND relation.IncCorType = '%s'
+					""" % (link_type, cor_ind_type)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
+	def getSelfPromoterOption(self, actrep, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT promoter.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+          AND relation.ActRreNumber = '%s' AND relation.IncCorType IS NULL
+					""" % (link_type, actrep)
+		else:
+			sql_cmd = """
+					SELECT promoter.* FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+					AND relation.ActRreNumber = '%s' AND relation.IncCorType = '%s'
+					""" % (link_type, actrep, cor_ind_type)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
+	def getAllRegulatorOption(self, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT * FROM relation
+					WHERE relation.ActRreType = '%s'
+          AND relation.IncCorType IS NULL
+					""" % (link_type)
+		else:
+			sql_cmd = """
+					SELECT * FROM relation
+					WHERE relation.ActRreType = '%s'
+					AND relation.IncCorType = '%s'
+					""" % (link_type, cor_ind_type)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
+	def getSelfRegulatorOption(self, RCluster, link_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT * FROM relation
+					WHERE ActRreType = '%s' AND Cluster = '%s'
+          AND IncCorType IS NULL
+					""" % (link_type, RCluster)
+		else:
+			sql_cmd = """
+					SELECT * FROM relation
+					WHERE ActRreType = '%s' AND Cluster = '%s'
+					AND relation.IncCorType = '%s'
+					""" % (link_type, RCluster, cor_ind_type)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		return decodejson
+
 	def getRBSNearValue(self,idealValue):
-		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%f) limit 0,1' %idealValue)
+		self.__cursor.execute('select * from RBS order by abs(RBS.MPRBS-%e) limit 0,1' %idealValue)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
 	def getPlasmidBackboneNearValue(self,idealValue):
 		self.__cursor.execute('select * from plasmid_backbone order by\
-        abs(CopyNumber-%f) limit 0,1' %idealValue)
+        abs(CopyNumber-%e) limit 0,1' %idealValue)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]
 
-	def getRepressedPromoterNearValue(self, idealValue, repressor_list, link_type, p_type):
-		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
-				limit 0,%d" % (link_type, p_type, idealValue, len(repressor_list)+1)
+	def getPromoterNearValue(self, idealValue, regulator_set, promoter_set, \
+			link_type, p_type, cor_ind_type):
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		if cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT promoter.*, relation.ActRreNumber, relation.PromoterNumber,
+					relation.ActRreType, relation.Cluster AS RCluster
+					FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = "%s"
+					AND relation.IncCorType IS NULL ORDER BY abs(promoter.%s - %e)
+					""" % (link_type, p_type, idealValue)
+
+		else:
+			sql_cmd = """
+					SELECT promoter.*, relation.ActRreNumber, relation.PromoterNumber,
+					relation.ActRreType, relation.Cluster AS RCluster
+					FROM promoter INNER JOIN relation
+					ON promoter.Number = relation.PromoterNumber WHERE relation.ActRreType = '%s'
+					AND relation.IncCorType = "%s" ORDER BY abs(promoter.%s - %e)
+					""" % (link_type, cor_ind_type, p_type, idealValue)
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		if p_type != "PoPS":
+			for item in decodejson:
+				regulator = item["RCluster"]
+				promoter = item["Cluster"]
+				if regulator not in regulator_set and promoter not in promoter_set:
+					regulator_set.add(regulator)
+					promoter_set.add(promoter)
+					return item
+		else:
+			return decodejson[0]
+
+	def getRepressorNearValue(self, idealValue, cor_ind_type, regulator_set,\
+      promoter_set):
+		idx = len(regulator_set) + 1
+		idx = 999999
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		elif cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT relation.ActRreNumber AS Number, relation.Cluster,
+					relation.K1, relation.HillCoeff1, relation.IncCorType,
+					relation.K2, relation.HillCoeff2,
+          relation.PromoterNumber, promoter.Cluster AS PCluster
+					FROM relation INNER JOIN promoter
+					ON promoter.Number = relation.PromoterNumber WHERE
+					relation.IncCorType IS NULL AND relation.ActRreType = "Negative"
+					ORDER BY abs(relation.K1 - %e)
+					""" % (idealValue)
+		else:
+			sql_cmd = """
+					SELECT relation.ActRreNumber AS Number, relation.Cluster,
+					relation.K1, relation.HillCoeff1, relation.IncCorType,
+					relation.K2, relation.HillCoeff2,
+          relation.PromoterNumber, promoter.Cluster AS PCluster
+					FROM relation INNER JOIN promoter
+					ON promoter.Number = relation.PromoterNumber WHERE
+					relation.IncCorType = "%s" AND relation.ActRreType = "Negative"
+					ORDER BY abs(relation.K1 - %e)
+					""" % (cor_ind_type, idealValue)
+		print sql_cmd
+		self.__cursor.execute(sql_cmd)
+		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
+		decodejson = json.loads(jsonEncoded)
+		print decodejson
+		for item in decodejson:
+			regulator = item["Cluster"]
+			promoter = item["PCluster"]
+			if regulator not in regulator_set and promoter not in promoter_set:
+				regulator_set.add(regulator)
+				promoter_set.add(promoter)
+				return item
+
+	def getActivatorNearValue(self, idealValue, cor_ind_type, regulator_set,\
+      promoter_set):
+		idx = len(regulator_set) + 1
+		idx = 999999
+		if cor_ind_type == "Inducer":
+			cor_ind_type = "Induced"
+		elif cor_ind_type == "Corepressor":
+			cor_ind_type = "Corepressed"
+		if cor_ind_type not in {"Induced", "Corepressed"}:
+			sql_cmd = """
+					SELECT activator.*, relation.*, promoter.Cluster AS PCluster FROM
+					activator, promoter INNER JOIN relation
+					ON activator.Number = relation.ActRreNumber WHERE
+					relation.IncCorType IS NULL AND relation.ActRreType = "Positive"
+					ORDER BY abs(activator.K1 - %e)
+					""" % (idealValue)
+		else:
+			sql_cmd = """
+					SELECT activator.*, relation.*, promoter.Cluster AS PCluster FROM
+					activator, promoter INNER JOIN relation
+					ON activator.Number = relation.ActRreNumber WHERE
+					relation.IncCorType = "%s" AND relation.ActRreType = "Positive"
+					ORDER BY abs(activator.K1 - %e)
+					""" % (cor_ind_type, idealValue)
 		self.__cursor.execute(sql_cmd)
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		for item in decodejson:
-			if self.find_repressor_with_promoter(item["Number"]) not in repressor_list:
-				return item
-
-	def getActivatedPromoterNearValue(self, idealValue, activator_list, link_type, p_type):
-		sql_cmd = "select * from promoter WHERE type='%s' order by abs(%s - %f)\
-				limit 0,%d" % (link_type, p_type, idealValue, len(activator_list)+1)
-		self.__cursor.execute(sql_cmd)
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		for item in decodejson:
-			if self.find_activator_with_promoter(item["Number"]) not in activator_list:
-				return item
-
-	def getRepressorNearValue(self, idealValue, repressor_list):
-		self.__cursor.execute('select * from repressor order by abs(K1-%f)\
-				limit 0,%d' % (idealValue, len(repressor_list)+1))
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		for item in decodejson:
-			if item["Number"] not in repressor_list:
-				repressor_list.append(item["Number"])
+			regulator = item["Cluster"]
+			promoter = item["PCluster"]
+			if regulator not in regulator_set and promoter not in promoter_set:
+				regulator_set.add(regulator)
+				promoter_set.add(promoter)
 				return item
 
 	def getUserRememberMeTime(self,username):
@@ -471,16 +755,7 @@ class SqliteDatabase:
 		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
 		decodejson = json.loads(jsonEncoded)
 		return decodejson[0]['rememberTime']
-				
-	def getActivatorNearValue(self, idealValue, activator_list):
-		self.__cursor.execute('select * from activator order by abs(K1-%f)\
-				limit 0,%d' % (idealValue, len(activator_list)+1))
-		jsonEncoded = jsonUtil.turnSelectionResultToJson(self.__cursor.description,self.__cursor.fetchall())
-		decodejson = json.loads(jsonEncoded)
-		for item in decodejson:
-			if item["Number"] not in activator_list:
-				activator_list.append(item["Number"])
-				return item
+
 	def getUserPartByLoginuser(self):
 		excuteString = "SELECT part_id,part_name AS Name,part_type as Type,part_author as Author,uploadUser as username FROM userPart WHERE uploadUser = '%s'" % self.getUserNameById(self.userId)
 		self.__cursor.execute(excuteString)

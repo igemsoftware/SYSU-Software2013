@@ -52,14 +52,17 @@ graphiti.Connection = graphiti.shape.basic.PolyLine.extend({
       this.startDecoSet = null;
       this.endDecoSet=null;
   
-      
+      this.regulated = false;
+      this.Activator = new g.Buttons.Activate();
+      this.Repressor = new g.Buttons.Inhibit();
+
       this.sourceAnchor = new graphiti.ConnectionAnchor(this);
       this.targetAnchor = new graphiti.ConnectionAnchor(this);
     
       this.router = this.DEFAULT_ROUTER;
 
       this.setColor("#4cbf2f");
-      this.setStroke(2);
+      this.setStroke(3);
     },
     
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../static/css/navlist.css">
     <script src="../static/js/jquery-1.8.0.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap-tooltip.js"></script>
     <script src="../static/js/createnewpart/FileSaver.js"></script>
     <script src='../static/js/filemanager.min.js'></script>    
   </head>
@@ -25,32 +26,35 @@
         <button class="btn" data-dismiss="modal" aria-hidden="true" onClick="location.reload();">关闭</button>
       </div>
     </div>    
-    <div class="span3">
-    <ul class="nav nav-list bs-docs-sidenav affix" id="navlist">
-      <li class="active">
-        <a href="#yourfilelist" data-toggle="tab">
+    <div id='leftcol' class="span3" style="margin:10px;padding-left:70px;padding-top:80px;">
+    <ul class="nav nav-list bs-docs-sidenav affix" id="navlist" >
+      <li class="active" title='show your own file list here' data-toggle="tooltip" id='navlist1'>
+        <a href="#yourfilelist" data-toggle="tab" >
           <i class="icon-chevron-right"></i>
           Your File list
         </a>
       </li>
-      <li>
+      <li title='show all the shared files here' data-toggle="tooltip" id='navlist2'>
         <a href="#sharefilelist" data-toggle="tab">
           <i class="icon-chevron-right"></i>
           Shared File List
         </a>
       </li>  
-      <li>
+      <li title='show your parts here' data-toggle="tooltip" id='navlist3'>
         <a href="#yourpartlist" data-toggle="tab">
+          <script>$('#navlist1').tooltip();$('#navlist2').tooltip();$('#navlist3').tooltip();</script>
           <i class="icon-chevron-right"></i>
           Your Part List
         </a>
-      </li>      
-    </ul>
+      </li>   
+          
+    </ul>     
     <button type="button" class="btn btn-default btn-large" onClick="window.history.back(-1);">
  		<span class="icon-arrow-left"></span> Back
-	</button>  
+	</button>
   	</div>
-    <div class="span9 tab-content">
+    
+    <div class="span10 tab-content" style="margin:10px;padding-top:80px;">
     <div class="tab-pane active" id="yourfilelist">
     <h2>Your File List</h2>
     <table class="table table-hover table-bordered">
