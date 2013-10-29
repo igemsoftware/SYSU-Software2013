@@ -4,19 +4,28 @@ var time, dt;
 var proteinNames=[];
 var inducerList=[[2,'inducer1'],[7,'inducer2']];
 var corepind ={}; //{5: {"time": 20},7: {"time": 60}}
-function stochasticOnChange(obj)
+function stateOnChange(obj)
 {
 	//ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
     isStochastic = $('#stochastic')[0].checked;
+    isDelay      = $('#delay')[0].checked;
+    console.log(isStochastic);
     gene_circuit = sessionStorage.gene_circuit;
     ws.send(JSON.stringify({'request'     : 'Simulate',
                             'isStochastic': isStochastic,
+                            'isDelay'     : isDelay,
                             'gene_circuit': gene_circuit,
                             'corepind'    : corepind
     }));
 	$('#mymodal').modal({keyboard:false});
 }
 $(document).ready(function () {
+	$('#linknext').click(function(){
+		window.location.pathname = "/plasmid";
+	});
+	$('#linkabove').click(function(){
+		window.location.pathname = "/genecircuit";
+	});
   if ("WebSocket" in window) {
     ws = new WebSocket("ws://" + document.domain + ":5000/ws");
     ws.onmessage = function (msg) {
@@ -28,12 +37,12 @@ $(document).ready(function () {
         data = turnRawDatatoData(raw_data);
         time = message.result.time;
         dt = message.result.dt;
-        var width1 = document.getElementById('canvasDiv').clientWidth ;
-        var height1 = document.getElementById('canvasDiv').clientHeight ;
+        var width1 = document.getElementById('canvasDiv').clientWidth -parseInt(document.getElementById('canvasDiv').style.left);
+        var height1 = document.getElementById('canvasDiv').clientHeight -parseInt(document.getElementById('canvasDiv').style.top);		
         run(data,'canvasDiv', width1, height1, time, dt);
 		$("#Inducer").empty();
 		$("#Curve").empty();
-		inducerList=getinducerList(sessionStorage.gene_circuit);		
+		inducerList=getinducerList(sessionStorage.gene_circuit);
         for(var i=0;i<data.length;i++)
         {
           var w=document.getElementById('Curve').clientWidth/3/6;
@@ -70,16 +79,14 @@ $(document).ready(function () {
   // Bind send button to websocket
   ws.onopen = function() {
 	ws.send(JSON.stringify({'request': 'getLoginedUserName'}));
-	if($('#stochastic').attr("checked")==true)
-	{
-		isStochastic = true;
-	}else{
-    	isStochastic = false;
-	}
+  isStochastic = $('#stochastic')[0].checked;
+  isDelay = $('#delay')[0].checked;
+
     gene_circuit = sessionStorage.gene_circuit;
     corepind = {};
     ws.send(JSON.stringify({'request'     : 'Simulate',
                             'isStochastic': isStochastic,
+                            'isDelay'     : isDelay,
                             'gene_circuit': gene_circuit,
                             'corepind'    : corepind
     }));
@@ -100,10 +107,14 @@ function getinducerList(circuit)
 	//console.log(obj);
 	for (x in obj['groups'])
 	{
-		
-		if(obj.groups[x].corep_ind_type==="Inducer")
+		var corep_ind_type = obj.groups[x].corep_ind_type;
+		var corep_ind = obj.groups[x].corep_ind;
+		if(corep_ind_type ==="Inducer" || corep_ind_type === "Corepressor")
 		{
-			ret.push([x,obj.groups[x].corep_ind]);
+      var display = corep_ind_type.substring(0, 3) + "_" + corep_ind;
+      console.log(x);
+      console.log(display);
+			ret.push([x, display]);
 		}
 	}
 	obj=null;
@@ -111,6 +122,7 @@ function getinducerList(circuit)
 }
 function createAnInputCheckBoxForInducer(index,width,height,inducerIndex,inducerName){
 	var div=document.createElement("div");
+	div.setAttribute('title', 'Add inducer into the system. Then select an inducer and click on the curve to select a time point on which inducer will be added');
 	var o=document.createElement("input");
     o.type="radio";
     o.name="inducerRadio";
@@ -157,8 +169,9 @@ function createAnInputCheckBox(index,width,height,proteinName){
 		}
     var width1 = document.getElementById('canvasDiv').clientWidth;
     var height1 = document.getElementById('canvasDiv').clientHeight;
-		run(newdata, 'canvasDiv', width1, height1, time, dt);
-		chart.resize(document.getElementById('canvasDiv').clientWidth,document.getElementById('canvasDiv').clientHeight);
+	console.log(width1);	
+		run(newdata, 'canvasDiv', width1*0.9, height1*0.9, time, dt);
+		chart.resize(document.getElementById('canvasDiv').clientWidth*0.97,document.getElementById('canvasDiv').clientHeight*0.97);
 	}
 	div.appendChild(o);
 	div.appendChild(document.createTextNode(proteinName));

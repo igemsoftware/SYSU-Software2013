@@ -17,40 +17,72 @@ import database
 from math import log10
 
 prom_name = "BBa_I712074"
-rbs_name = "BBa_J61104"
-term_name = "BBa_B0013"
+rbs_name = "BBa_J61101"
+term_name = "BBa_B0012"
 
-# --------------------------------------------------------------------------
-##
-# @brief find a unique repressor
-#
-# @param database  database instance
-# @param item      repressor
-# @param regulator_list currently used repressor and activator
-#
-# @returns   selected repressor
-#
-# --------------------------------------------------------------------------
-def find_repressor(database, item, regulator_list):
-  item = database.select_row("repressor", len(regulator_list) + 1)
-  regulator_list += item
-  return str(item)
+data = {"part":[{"id":"40bb0f60-61bf-deaf-a3f6-898dff283e5b","name":"BBa_J120015","type":"Protein"},{"id":"495cb769-d906-8248-5f5a-37225aa13ea1","name":"Repressor","type":"Repressor"},{"id":"586b3410-e97f-b942-f9be-deaad485115a","name":"BBa_K106669","type":"Protein"},{"id":"f466e36c-868e-7c9c-3cf0-824e5d04c1ef","name":"Repressor","type":"Repressor"},{"id":"029edd25-075e-1a49-961f-61790e7d7f41","name":"BBa_J120015","type":"Protein"}],"link":[{"from":"40bb0f60-61bf-deaf-a3f6-898dff283e5b","to":"495cb769-d906-8248-5f5a-37225aa13ea1","type":"Bound","inducer":"none"},{"from":"586b3410-e97f-b942-f9be-deaad485115a","to":"f466e36c-868e-7c9c-3cf0-824e5d04c1ef","type":"Bound","inducer":"none"},{"from":"495cb769-d906-8248-5f5a-37225aa13ea1","to":"586b3410-e97f-b942-f9be-deaad485115a","type":"Repressor","inducer":"Positive"},{"from":"f466e36c-868e-7c9c-3cf0-824e5d04c1ef","to":"029edd25-075e-1a49-961f-61790e7d7f41","type":"Repressor","inducer":"Positive"}]}
+#data = {"part": [ 
+			#{ "id"  : "1", 
+				#"name": "BBa_C0060", 
+				#"type": "Protein" 
+      #}, 
+      #{ "id"  : "2", 
+        #"name": "BBa_C0060", 
+        #"type": "Protein" 
+      #}, 
+      #{ "id"  : "3", 
+        #"name": "Repressor", 
+        #"type": "Repressor" 
+      #}, 
+      #{ "id"  : "4", 
+        #"name": "Repressor", 
+        #"type": "Repressor" 
+      #}, 
+      #{ "id"  : "5", 
+        #"name": "BBa_C0160", 
+        #"type": "Protein" 
+      #}, 
+      #{ "id"  : "6", 
+        #"name": "BBa_C0178", 
+        #"type": "Protein" 
+      #}, 
+      #{ "id"  : "7", 
+        #"name": "BBa_C0178",
+        #"type": "Protein"
+      #}
 
-# --------------------------------------------------------------------------
-##
-# @brief find a unique activator
-#
-# @param database        database instance
-# @param item            activator
-# @param regulator_list  currently used repressor and activator
-#
-# @returns   select activator
-#
-# --------------------------------------------------------------------------
-def find_activator(database, item, regulator_list):
-  item = database.select_row("activator", len(regulator_list) + 1)
-  regulator_list += item
-  return str(item)
+      #],
+      #"link": [
+        #{ "from": "1",
+          #"to"  : "2",
+          #"type": "Bound",
+      #},
+      #{ "from": "2",
+        #"to"  : "3",
+        #"type": "Bound",
+      #},
+      #{ "from": "3",
+        #"to"  : "4",
+        #"type": "Bound",
+      #},
+      #{ "from": "3",
+        #"to"  : "5",
+        #"type": "Repressor",
+        #"inducer": "None"
+      #},
+      #{ "from": "4",
+        #"to"  : "6",
+        #"type": "Repressor",
+        #"inducer": "Positive"
+        #},
+      #{ "from": "6",
+        #"to"  : "7",
+        #"type": "Bound",
+        #},
+
+      #]
+		#};
+
 
 # --------------------------------------------------------------------------
 ##
@@ -63,11 +95,11 @@ def find_activator(database, item, regulator_list):
 # @returns   selected promoter
 #
 # --------------------------------------------------------------------------
-def find_promoter(db, activator = None, repressor = None):
+def find_promoter(db, promoter_set, activator = None, repressor = None):
   if activator is not None:
-    return db.find_promoter_with_activator(activator)
+    return db.find_promoter(promoter_set, activator, "Positive")
   else:
-    return db.find_promoter_with_repressor(repressor)
+    return db.find_promoter(promoter_set, repressor, "Negative")
 
 # --------------------------------------------------------------------------
 ##
@@ -84,6 +116,22 @@ def find_file(name, path):
         if name in files:
             return os.path.join(root, name)
 
+# --------------------------------------------------------------------------
+##
+# @brief  get promoter parameter type
+#
+# @param p_type link type
+#
+# @returns   promoter paramter type
+#
+# --------------------------------------------------------------------------
+def get_type_of_promoter(p_type):
+  if p_type == "Constitutive":
+    return "PoPS"
+  elif p_type == "Negative":
+    return "MPPromoter"
+  elif p_type == "Positive":
+    return "LeakageRate"
 
 # --------------------------------------------------------------------------
 ##
@@ -143,7 +191,8 @@ def work(data, database):
   bound_list = {}
   pro_pos = {}
   rev_bound_list = {}
-  regulator_list = []
+  regulator_set = set()
+  promoter_set  = set()
   # Initialization
   for part in data["part"]:
     idx = part["id"]
@@ -171,31 +220,114 @@ def work(data, database):
       rev_bound_list[v] = u
       del groups[u]
 
-  # replace repressor with exact component
-  for elem in groups:
-    for i in xrange(len(groups[elem])):
-      if groups[elem][i] == "Repressor":
-        groups[elem][i] = find_repressor(database, groups[elem][i],\
-            regulator_list)
-      if groups[elem][i] == "Activator":
-        groups[elem][i] = find_activator(database, groups[elem][i],\
-            regulator_list)
 
   for i in bound_list:
     bound_list[i] = find_bound_src(bound_list[i], bound_list)
   for link in data["link"]:
     if link["type"] == "Bound":
       continue
-    next_grp = bound_list[link["from"]]
-    for p in data["part"]:
-      if p["id"] == link["from"]:
-        cur = p
-        break
-    if cur["type"] == "Repressor":
-      groups[next_grp][0] = find_promoter(database, repressor=cur["name"])["Number"]
-    if cur["type"] == "Activator":
-      groups[next_grp][0] = find_promoter(database, activator=cur["name"])["Number"]
+    next_grp = bound_list[link["to"]]
+    cur_grp = bound_list[link["from"]]
+    #for p in data["part"]:
+      #if p["id"] == link["from"]:
+        #cur = p
+        #break
+
+    # replace repressor with exact component
+    groups[cur_grp][pro_pos[link["from"]]] = database.find_actrep(link,\
+        regulator_set, promoter_set)
+
+    # find promoter
+    regulator = groups[cur_grp][pro_pos[link["from"]]]
+    if link["type"] == "Repressor":
+      promoter = find_promoter(database, promoter_set, repressor = regulator)
+    if link["type"] == "Activator":
+      promoter = find_promoter(database, promoter_set, activator = regulator)
+    groups[next_grp][0] = promoter["Number"]
   return (groups, bound_list, pro_pos)
+
+# --------------------------------------------------------------------------
+##
+# @brief get promoter labels, which indicate alternatives of current promoter
+#
+# @param database      an instance of database
+# @param actrep        activator or repressor that regulates the promoter
+# @param l_type        link type
+# @param cor_ind_type  corepressor or inducer type
+# @param get_all       if get_all is False, get self promoter only, true by default
+#
+# @returns  the labels of the promoter
+#
+# --------------------------------------------------------------------------
+def get_promoter_label(database, actrep, l_type, cor_ind_type, get_all = True):
+  ret = []
+  self_option = database.getSelfPromoterOption(actrep, l_type, cor_ind_type)
+  right_promoter = set()
+  for item in self_option:
+    p_value = item[get_type_of_promoter(l_type)]
+    hash_str = str(item["Number"])+str(p_value)
+    if hash_str in right_promoter:
+      continue
+    ret.append({"des": item["Number"],
+      "val": p_value,
+      "type": "right"})
+    right_promoter.add(hash_str)
+  if get_all:
+    pops_option = database.getAllPromoterOption(l_type, cor_ind_type)
+    for item in pops_option:
+      p_value = item[get_type_of_promoter(l_type)]
+      hash_str = str(item["Number"])+str(p_value)
+      if hash_str in right_promoter:
+        continue
+      ret.append({"des": item["Number"],
+        "val": p_value,
+        "type": "left"})
+      right_promoter.add(str(item["Number"])+str(p_value))
+  return ret
+
+# --------------------------------------------------------------------------
+##
+# @brief get regulator labels, which indicate alternatives of current promoter
+#
+# @param database      an instance of database
+# @param regulator     the regulator
+# @param l_type        link type
+# @param cor_ind_type  corepressor or inducer type
+# @param get_all       if get_all is False, get self promoter only, true by default
+#
+# @returns  the labels of the regulator
+#
+# --------------------------------------------------------------------------
+def get_regulator_label(database, regulator, l_type, cor_ind_type, get_all = True):
+  RCluster = database.getRegulatorCluster(regulator)
+  ret = []
+  self_option = database.getSelfRegulatorOption(RCluster, l_type, cor_ind_type)
+  right_regulator = set()
+  for item in self_option:
+    print item
+    r_value = item["K1"]
+    print r_value
+    hash_str = str(item["ActRreNumber"])+str(r_value)
+    if hash_str in right_regulator:
+      continue
+    ret.append({"des": item["ActRreNumber"],
+      "val": log10(r_value),
+      "type": "right"})
+    right_regulator.add(hash_str)
+  if get_all:
+    k1_option = database.getAllRegulatorOption(l_type, cor_ind_type)
+    for item in k1_option:
+      r_value = item["K1"]
+      print r_value
+      hash_str = str(item["ActRreNumber"])+str(r_value)
+      if hash_str in right_regulator:
+        continue
+      ret.append({"des": item["ActRreNumber"],
+        "val": log10(r_value),
+        "type": "left"})
+      right_regulator.add(str(item["ActRreNumber"])+str(r_value))
+  return ret
+
 
 # --------------------------------------------------------------------------
 ##
@@ -221,7 +353,7 @@ def get_pro_info(database, protein_idx, groups, grp_id, regulator, backbone = "p
     regulator_info = database.select_with_name("repressor", regulator)
   else:
     regulator_info = None
-  promoter_info= database.select_with_name("promoter", cur_group[0]["name"])
+  promoter_info = database.select_with_name("promoter", cur_group[0]["name"])
   rbs_info= database.select_with_name("RBS", cur_group[protein_idx - 1]["name"])
   plasmid_backbone_info = database.select_with_name("plasmid_backbone", backbone)
   ret["grp_id"] = grp_id
@@ -342,7 +474,7 @@ def dump_group(network, database):
         l_type = link_type[j]
         i_type = inducer_type[j]
         break
-    groups[i] = {"sbol":grp, "state": "cis", "type": l_type,\
+    groups[i] = {"sbol":grp, "state": "cis", "type": l_type,
         "corep_ind_type": i_type, "from": prev, "to": []}
     plasmid.append(i)
 
@@ -355,6 +487,8 @@ def dump_group(network, database):
     groups[b_list[i]]["sbol"][pro_pos[i]]["id"] = i
 
     # get protein info
+    ## get promoter of the group
+    promoter = groups[b_list[i]]["sbol"][0]["name"]
     ## get coresponding repressor
     prev_node = cur_group["from"]
     if prev_node != -1:
@@ -364,15 +498,19 @@ def dump_group(network, database):
       regulator = None
     ## get inducer of a link
     corep_ind_type = cur_group["corep_ind_type"]
-    if corep_ind_type != "None" and cur_group["type"] == "Positive":
-      inducer = database.find_inducer_with_activator(regulator, corep_ind_type)
-      groups[b_list[i]]["corep_ind"] = inducer["Number"]
-    if corep_ind_type != "None" and cur_group["type"] == "Negative":
-      inducer = database.find_inducer_with_activator(regulator, corep_ind_type)
-      groups[b_list[i]]["corep_ind"] = inducer["Number"]
+    if corep_ind_type != "None":
+      cur_group["corep_ind"] = database.find_cor_ind(corep_ind_type,\
+        regulator, promoter)["IncCorName"]
     ## get protein info
     proteins[i] = get_pro_info(database, pro_pos[i], groups, b_list[i],\
         regulator)
+    promoter = groups[b_list[i]]["sbol"][0]
+    l_type = groups[b_list[i]]["type"]
+    proteins[i]["pops_option"] = get_promoter_label(database, regulator, \
+        l_type, corep_ind_type)
+    if corep_ind_type != "None":
+      proteins[i]["k1_option"] = get_regulator_label(database, regulator, \
+        l_type, corep_ind_type)
 
   # do not display regulation protein
   for part in network["part"]:
@@ -388,22 +526,6 @@ def dump_group(network, database):
   update_proteins_repress(database, gene_circuit)
   return gene_circuit
 
-# --------------------------------------------------------------------------
-##
-# @brief  get promoter parameter type
-#
-# @param p_type link type
-#
-# @returns   promoter paramter type
-#
-# --------------------------------------------------------------------------
-def get_type_of_promoter(p_type):
-  if p_type == "Constitutive":
-    return "PoPS"
-  elif p_type == "Negative":
-    return "MPPromoter"
-  elif p_type == "Positive":
-    return "LeakageRate"
 
 # --------------------------------------------------------------------------
 ##
@@ -439,9 +561,10 @@ def js_formatter(gene_circuit):
 # --------------------------------------------------------------------------
 def update_controller(db, update_info):
   gene_circuit = js_formatter(update_info["gene_circuit"])
-  # regulator_list = [name for name in gene_circuit["proteins"]]
-  regulator_list = [i["name"] for i in gene_circuit["proteins"].values() if
-      not i["display"]]
+  regulator_set = set([db.getRegulatorCluster(i["name"]) for i in \
+      gene_circuit["proteins"].values() if not i["display"]])
+  promoter_set = set([db.getPromoterCluster(i["sbol"][0]["name"]) for i in \
+      gene_circuit["groups"].values()])
   detail = update_info["detail"]
   pro_id = detail["pro_id"]
   protein = gene_circuit["proteins"][pro_id]
@@ -449,7 +572,10 @@ def update_controller(db, update_info):
   pro_idx = protein["pos"]
   grp_id = protein["grp_id"]
   group = gene_circuit["groups"][grp_id]
-  if detail["type"] == "RiPS":
+  if detail["type"] == "concen":
+    concen_value = float(detail["new_value"])
+    gene_circuit["proteins"][pro_id]["concen"] = concen_value
+  elif detail["type"] == "RiPS":
     rbs_value = float(detail["new_value"])
     # idx = get_index_in_group(pro_name, group["sbol"])
     bestRBS = db.getRBSNearValue(rbs_value)
@@ -469,64 +595,93 @@ def update_controller(db, update_info):
         gene_circuit["proteins"][i]["copy"] = best_value
 
   elif detail["type"] == "PoPS" or detail["type"] == "K1":
+    orig_promoter = gene_circuit["groups"][grp_id]["sbol"][0]["name"]
+    p_cluster = db.getPromoterCluster(orig_promoter)
+    prev_node = group["from"]
+    if "cluster" not in detail:
+      detail["cluster"] = False
+    if not (detail["type"] == "promoter" and detail["cluster"]):
+        promoter_set.remove(db.getPromoterCluster(orig_promoter))
+    if prev_node != -1:
+      prev_grp = gene_circuit["proteins"][prev_node]["grp_id"]
+      prev_pos = gene_circuit["proteins"][prev_node]["pos"]
+      orig_repressor = gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"]
+      if not (detail["type"] == "K1" and detail["cluster"]):
+          regulator_set.remove(db.getRegulatorCluster(orig_repressor))
+
     link_type = group["type"]
+    cor_ind_type = group["corep_ind_type"]
     p_type = get_type_of_promoter(link_type)
     # pre_work, find best_promoter and best_repressor
     if detail["type"] == "PoPS":
       promoter_value = float(detail["new_value"])
-      #select best promoter according to link type
-      if link_type == "Positive":
-        best_promoter = db.getActivatedPromoterNearValue(promoter_value,\
-            regulator_list, link_type, p_type)
-        best_regulator = db.find_activator_with_promoter(best_promoter["Number"])
-        regulator_value = log10(best_regulator["K1"])
-      elif link_type == "Negative":
-        best_promoter = db.getRepressedPromoterNearValue(promoter_value,\
-            regulator_list, link_type, p_type)
-        best_regulator = db.find_repressor_with_promoter(best_promoter["Number"])
-        regulator_value = log10(best_regulator["K1"])
+      #select best promoter
+      if detail["cluster"]:
+        best_promoter = db.find_promoter_in_cluster(detail["part_name"],\
+            p_type, promoter_value)
       else:
-        best_promoter = db.getRepressedPromoterNearValue(promoter_value,\
-            [], link_type, p_type)
+        best_promoter = db.getPromoterNearValue(promoter_value,\
+            regulator_set, promoter_set, link_type, p_type, cor_ind_type)
+        if link_type in {"Positive", "Negative"}:
+          best_regulator = db.find_actrep_with_promoter(best_promoter["Number"],\
+              link_type, cor_ind_type, regulator_set)
+          regulator_value = log10(best_regulator["K1"])
     else:
       regulator_value = pow(10, float(detail["new_value"]))
       if link_type == "Positive":
-        best_regulator = db.getActivatorNearValue(regulator_value, regulator_list)
-        best_promoter = find_promoter(db, activator=best_regulator["Number"])
+        best_regulator = db.getActivatorNearValue(regulator_value, cor_ind_type,\
+            regulator_set, promoter_set)
+        best_promoter = find_promoter(db, promoter_set,\
+            activator=best_regulator["Number"])
         promoter_value = best_promoter[p_type]
       else:
-        best_regulator = db.getRepressorNearValue(regulator_value, regulator_list)
-        best_promoter = find_promoter(db, repressor=best_regulator["Number"])
+        best_regulator = db.getRepressorNearValue(regulator_value,\
+            cor_ind_type, regulator_set, promoter_set)
+        best_promoter = find_promoter(db, promoter_set,\
+            repressor = best_regulator["Number"])
         promoter_value = best_promoter[p_type]
+      regulator_value = log10(best_regulator["K1"])
 
-    # update corresponding repressor
-    prev_node = group["from"]
     regulator = None
-    # update related promoters
+    # update promoters of self
     if detail["type"] == "PoPS":
       gene_circuit["groups"][grp_id]["sbol"][0]["name"] = best_promoter["Number"]
       for j in range(2, len(group["sbol"]), 2):
         pro2_id = gene_circuit["groups"][grp_id]["sbol"][j]["id"]
         gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
 
-    if prev_node != -1:
-      prev_grp = gene_circuit["proteins"][prev_node]["grp_id"]
-      prev_pos = gene_circuit["proteins"][prev_node]["pos"]
-      gene_circuit["proteins"][prev_node]["K1"] = regulator_value
-      gene_circuit["proteins"][prev_node]["name"] = best_regulator["Number"]
-      gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"] = best_regulator["Number"]
+    if not (detail["type"] == "PoPS" and detail["cluster"]):
+      # update corresponding repressor
+      if prev_node != -1:
+        gene_circuit["proteins"][pro_id]["K1"] = regulator_value
+        gene_circuit["proteins"][prev_node]["name"] = best_regulator["Number"]
+        gene_circuit["groups"][prev_grp]["sbol"][prev_pos]["name"] = best_regulator["Number"]
 
-      # update related promoters
-      for i in gene_circuit["groups"]:
-        if gene_circuit["groups"][i]["from"] == prev_node:
-          gene_circuit["groups"][i]["sbol"][0]["name"] = best_promoter["Number"]
-          for j in range(2, len(gene_circuit["groups"][i]["sbol"]), 2):
-            pro2_id = gene_circuit["groups"][i]["sbol"][j]["id"]
-            gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
+        # update related promoters
+        for i in gene_circuit["groups"]:
+          if gene_circuit["groups"][i]["from"] == prev_node:
+            gene_circuit["groups"][i]["sbol"][0]["name"] = best_promoter["Number"]
+            for j in range(2, len(gene_circuit["groups"][i]["sbol"]), 2):
+              pro2_id = gene_circuit["groups"][i]["sbol"][j]["id"]
+              gene_circuit["proteins"][pro2_id]["PoPS"] = best_promoter[p_type]
 
+  for i in gene_circuit["proteins"]:
+    grp_id = gene_circuit["proteins"][i]["grp_id"]
+    prev_node = gene_circuit["groups"][grp_id]["from"]
+    if prev_node == -1:
+      labels = {}
+    else:
+      regulator = gene_circuit["proteins"][prev_node]["name"]
+      l_type = gene_circuit["groups"][grp_id]["type"]
+      cor_ind_type = gene_circuit["groups"][grp_id]["corep_ind_type"]
+      labels = get_promoter_label(db, regulator, l_type, cor_ind_type,\
+          get_all = False)
+    gene_circuit["proteins"][i]["pops_option"] = labels
   update_proteins_repress(db, gene_circuit)
   return gene_circuit
 
 if __name__ == "__main__":
   db = database.SqliteDatabase()
   print dump_group(data, db)
+  update = {u'detail': {u'new_value': 0.4, u'type': u'K1', u'pro_id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790', u'part_name': u'BBa_K091104', u'cluster': False}, u'gene_circuit': {u'proteins': {u'e53e441d-c811-6d5e-212e-07dbae64f8db': {u'RiPS': 0.12, u'name': u'BBa_C0073', u'repress_rate': 0, u'concen': None, u'grp_id': u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'pos': 4, u'PoPS': 0.84, u'before_regulated': 2, u'K1': None, u'induce_rate': 0, u'copy': 23, u'display': False}, u'91c1e8d5-a282-9de4-2df3-47a6fcb74790': {u'RiPS': 0.12, u'name': u'BBa_K389001', u'repress_rate': 0, u'concen': None, u'grp_id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790', u'pos': 2, u'PoPS': 0.4, u'before_regulated': 0, u'K1': -0.0969, u'induce_rate': 0, u'copy': 23, u'display': True}, u'a6feb6a7-1752-a351-0912-7dd9ee4ee596': {u'RiPS': 0.12, u'name': u'BBa_K126000', u'repress_rate': 0, u'concen': None, u'grp_id': u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'pos': 2, u'PoPS': 0.84, u'before_regulated': 2, u'K1': None, u'induce_rate': 0, u'copy': 23, u'display': True}}, u'plasmids': [[u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'91c1e8d5-a282-9de4-2df3-47a6fcb74790']], u'groups': {u'e53e441d-c811-6d5e-212e-07dbae64f8db': {u'from': -1, u'state': u'cis', u'corep_ind_type': u'None', u'to': [u'91c1e8d5-a282-9de4-2df3-47a6fcb74790'], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_I712074'}, {u'type': u'RBS', u'name': u'BBa_J61101'}, {u'type': u'Protein', u'name': u'BBa_K126000', u'id': u'a6feb6a7-1752-a351-0912-7dd9ee4ee596'}, {u'type': u'RBS', u'name': u'BBa_J61101'}, {u'type': u'Repressor', u'name': u'BBa_C0073', u'id': u'e53e441d-c811-6d5e-212e-07dbae64f8db'}, {u'type': u'Terminator', u'name': u'BBa_B0012'}], u'type': u'Constitutive'}, u'91c1e8d5-a282-9de4-2df3-47a6fcb74790': {u'from': u'e53e441d-c811-6d5e-212e-07dbae64f8db', u'state': u'cis', u'corep_ind_type': u'None', u'to': [], u'sbol': [{u'type': u'Promoter', u'name': u'BBa_K101000'}, {u'type': u'RBS', u'name': u'BBa_J61101'}, {u'type': u'Protein', u'name': u'BBa_K389001', u'id': u'91c1e8d5-a282-9de4-2df3-47a6fcb74790'}, {u'type': u'Terminator', u'name': u'BBa_B0012'}], u'type': u'Negative'}}}}
+  print update_controller(db, update)

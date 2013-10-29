@@ -165,6 +165,7 @@ class apis():
       return user.loadUserData(self.db,message['fileName'],"default")
   def Simulate(self, message):
     isStochastic = message["isStochastic"]
+    isDelay = message["isDelay"]
     gene_circuit = group.js_formatter(json.loads(message["gene_circuit"]))
     corepind = message["corepind"]
     time = 6000
@@ -173,7 +174,7 @@ class apis():
     dt = 100
     if message.has_key("dt"):
       time = message["dt"]
-    return Simulate_Function.Simulate(isStochastic,\
+    return Simulate_Function.Simulate(isStochastic, isDelay,\
         gene_circuit, corepind, self.db, time, dt)
   def getGroup(self, message):
     return group.dump_group(message["data"], self.db)

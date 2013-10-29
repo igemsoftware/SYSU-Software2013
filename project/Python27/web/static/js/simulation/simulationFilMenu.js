@@ -52,6 +52,9 @@ $().ready(function() {
     $("#myfile").click(function() {        
         window.location.pathname = "/file_manager";
     });	
+	$("#clear").click(function() {        
+        document.getElementById('fn-input').value='';
+    });	
     // save file
     $("#save").click(function() {		
         var fnInput = $("#fn-input");

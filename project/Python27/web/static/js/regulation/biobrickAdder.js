@@ -3,15 +3,20 @@ function BiobrickAdder() {
 
 	this.type = null;
 
+	this.config = null;
+
+	this.nickname = null;
+
 	this.offsetTop = null;
 
 	this.offsetLeft = null;
 };
 
 BiobrickAdder.prototype = {
-	init: function(name, type, offsetTop, offsetLeft, config, path) {
+	init: function(name, type, offsetTop, offsetLeft, config, path, nickname) {
 		this.name = name;
 		this.type = type;
+		this.nickname = nickname;
 		this.offsetTop = offsetTop;
 		this.offsetLeft = offsetLeft;
 
@@ -59,6 +64,11 @@ BiobrickAdder.prototype = {
     	app.view.getCommandStack().execute(command);	// 添加到命令栈中
 
 		figure.name = this.name;	// 设置id
+		figure.nickname = this.nickname;
+
+		if (this.type == "g.Shapes.Protein") {
+			figure.label.setText(this.name);
+		}
 
 		if (this.config)
 			figure.config = this.config;
