@@ -6,3 +6,4 @@ greenlet
 gevent-websocket
 rsa
 xmltodict
+markupsafe
